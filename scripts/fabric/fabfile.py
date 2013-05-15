@@ -4,7 +4,7 @@ from fabric.contrib.console import confirm
 from fabric.colors import yellow
 
 www_folder = 'police.codedots.com'
-symlinks = ['sites', 'config/config.php']
+symlinks = ['sites/5388', 'config/config.php']
 
 # Host configuration blocks:
 def production():
