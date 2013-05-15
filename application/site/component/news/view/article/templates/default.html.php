@@ -13,12 +13,7 @@
 <script type="text/javascript">stLight.options({publisher:'91c73e48-a5e0-43ea-988f-57d099f878c7'});</script>
 
 <ktml:module position="left">
-    <h3><i class="icon-question-sign"></i> Vragen</h3>
-    <p>Meer weten over cybercrime of drugs? Of wat de politie doet tegen woninginbraak?</p>
-    <p><a href="<?= $site ?>/vragen">Beantwoord uw vraag &rarr;</a></p>
-    <h3><i class="icon-road"></i>Verkeer</h3>
-    <p>Bent u opzoek naar informatie over controle acties of verkeersmaatregelen?</p>
-    <p><a href="<?= $site ?>/verkeer">Bekijk verkeersinformatie &rarr;</a></p>
+    <?= @template('com:news.view.articles.default_sidebar.html') ?>
 </ktml:module>
 
 <div class="page-header clearfix">
@@ -30,7 +25,7 @@
 </div>
 
 <? if($article->thumbnail): ?>
-    <img class="thumbnail" src="<?= $article->thumbnail ?>" align="right" style="margin:0 0 20px 20px;" />
+    <img class="thumbnail" src="<?= $article->thumbnail ?>" />
 <? endif; ?>
 
 <?= $article->introtext ?>

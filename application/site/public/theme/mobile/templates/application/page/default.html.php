@@ -32,7 +32,7 @@
                     <span><?= @escape($zone->title); ?></span>
                 </a>
 
-                <span class="slogan hidden-phone">Bel <strong>112</strong> als elke seconde telt. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
+                <span class="slogan hidden-phone">Bel <strong>101</strong> als elke seconde telt. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
 
                 <div class="navbar-inner">
                     <ktml:modules position="navigation">
@@ -51,7 +51,7 @@
 
     </div>
 
-    <div class="container-breadcrumb">
+    <div class="container-breadcrumb hidden-phone">
         <ktml:modules position="breadcrumbs">
             <ktml:modules:content />
         </ktml:modules>
@@ -70,20 +70,20 @@
         </div>
     </div>
 
-    <div class="container-media hidden-phone">
+    <div class="container-media">
         <div class="row">
-            <div class="span6">
+            <div class="span6 hidden-phone">
                 <h3><?= @text('Laatste nieuws') ?></h3>
                 <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->limit('2')->getRowset())) ?>
             </div>
-            <div class="span3">
+            <div class="span3 hidden-phone">
                 <h3><?= @text('Meer weten') ?></h3>
                 <ktml:modules position="footermenu">
                     <ktml:modules:content />
                 </ktml:modules>
             </div>
             <div class="span3">
-                <h3>Volg ons via</h3>
+                <h3 class="hidden-phone">Volg ons via</h3>
                 <ul class="social">
                     <li class="social__item">
                         <span class="icon-stack">
@@ -105,18 +105,13 @@
     <div id="push"></div>
 </div>
 
-<div class="container copyright">
-    <div class="span6">
-
-    </div>
-    <div class="span6 text-right">
-        <ul>
-            <li>© 2013 Lokale Politie - <?= @escape($zone->title); ?></li>
-            <li><a target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a></li>
-            <li><a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a></li>
-            <li><a target="_blank" href="http://www.belgium.be"><image src="media://application/images/icon_belgium.gif" /></a></li>
-        </ul>
-    </div>
+<div class="container container-copyright">
+    <p>
+        © 2013 Lokale Politie - <?= @escape($zone->title); ?>
+        <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
+        <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a>
+        <a style="margin-left: 10px" target="_blank" href="http://www.belgium.be"><image src="media://application/images/icon_belgium.gif" /></a>
+    </p>
 </div>
 
 </body>
