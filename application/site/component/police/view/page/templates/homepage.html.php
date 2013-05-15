@@ -11,7 +11,7 @@
 <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
 
 <div class="row">
-    <div class="span8">
+    <div class="span8 hidden-phone">
         <? foreach (@object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <div class="page-header">
                 <h1><a href="<?= $site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a></h1>
@@ -35,7 +35,7 @@
     </div>
     <div class="span4">
         <div class="box">
-            <p><strong><i class="icon-phone"></i> 112</strong> voor dringende hulp</p>
+            <p><strong><i class="icon-phone"></i> 101</strong> voor dringende hulp</p>
             <p><strong><i class="icon-phone"></i> <?= $zone->telephone ?></strong> geen spoed, wél politie.</p>
             <hr />
             <h3><i class="icon-comments-alt"></i> Contacteer ons</h3>
