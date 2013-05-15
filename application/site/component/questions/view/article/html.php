@@ -1,6 +1,6 @@
 <?php
 /**
- * Belgian Police Web Platform - Districts Component
+ * Belgian Police Web Platform - Questions Component
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class NewsViewArticleHtml extends Library\ViewHtml
+class QuestionsViewArticleHtml extends Library\ViewHtml
 {
     public function render()
     {
