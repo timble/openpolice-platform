@@ -51,7 +51,7 @@
 
     </div>
 
-    <div class="container-breadcrumb hidden-phone">
+    <div class="container-breadcrumb">
         <ktml:modules position="breadcrumbs">
             <ktml:modules:content />
         </ktml:modules>
