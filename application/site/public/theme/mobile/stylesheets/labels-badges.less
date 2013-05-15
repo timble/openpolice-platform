@@ -1,0 +1,17 @@
+// Colors
+// Only give background-color difference to links (and to simplify, we don't qualifty with `a` but [href] attribute)
+.label,
+.badge {
+    // Important (red)
+    &-control         { background-color: @errorText; }
+    &-control[href]   { background-color: darken(@errorText, 10%); }
+    // Warnings (orange)
+    &-construction           { background-color: @orange; }
+    &-construction[href]     { background-color: darken(@orange, 10%); }
+    // Success (green)
+    &-event           { background-color: @successText; }
+    &-event[href]     { background-color: darken(@successText, 10%); }
+    // Info (turquoise)
+    &-measure              { background-color: @infoText; }
+    &-measure[href]        { background-color: darken(@infoText, 10%); }
+}

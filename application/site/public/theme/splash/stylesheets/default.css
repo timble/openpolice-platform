@@ -1,0 +1,54 @@
+@import "../../mobile/stylesheets/default.css";
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #FFF;
+  /* Override default.css */
+
+  margin: 0;
+}
+.container {
+  border: 0 none;
+}
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -60px;
+}
+#push,
+#footer {
+  height: 60px;
+}
+.splash {
+  text-align: center;
+  padding-top: 200px;
+  margin: 0 20px;
+}
+.splash .logo {
+  height: 95px;
+}
+.splash form {
+  margin-top: 25px;
+}
+.splash input:focus {
+  border: 1px solid #4C90FE;
+}
+.splash button {
+  margin-top: 20px;
+}
+.splash .splash-language {
+  margin-top: 20px;
+}
+.splash .splash-language a {
+  margin: 0 5px;
+}
+#footer {
+  background-color: #F1F1F1;
+  padding-top: 10px;
+}
+#footer .container {
+  background-color: #F1F1F1;
+}

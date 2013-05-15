@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: config.xml 1290 2011-05-16 22:11:55Z johanjanssens $ -->
+<config>
+	<params>
+		<param name="zones_zone_id" type="text" default="" label="Zone Code" description="Zone Code" />
+	</params>
+</config>

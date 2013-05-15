@@ -1,0 +1,8 @@
+body { overflow-y: auto; }
+
+img[align="left"] {	float: left; }
+img[align="right"] { float: right; }
+
+#right {
+	width: 200px; /* Box-sizing fix */
+}

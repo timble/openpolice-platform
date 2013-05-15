@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <positions>
+        <position>breadcrumbs</position>
+        <position>left</position>
+        <position>right</position>
+        <position>top</position>
+        <position>user1</position>
+        <position>user2</position>
+        <position>user3</position>
+        <position>user4</position>
+        <position>syndicate</position>
+        <position>telephone</position>
+    </positions>
+    <params>
+    </params>
+</config>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="List layout">
+		<message>
+			<![CDATA[Displays a list of all the Events]]>
+		</message>
+	</layout>
+	<state>
+		<url addpath="/components/com_jams/elements">
+			<param name="category" type="categories" default=""
+				key_field="id" 
+				label="Select Category" 
+				description="The category to be listed." />
+		</url>
+	</state>
+</metadata>

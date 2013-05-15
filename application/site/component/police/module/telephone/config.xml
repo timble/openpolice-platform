@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+<params addpath="/application/admin/component/contacts/element">
+    <param name="contacts_contact_id" type="contact" default="" label="Contact" description="The contact used for the contact information"/>
+    <param name="emergency" type="list" default="1" label="Emergency" description="Show emergency number">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </param>
+</params>
+</config>

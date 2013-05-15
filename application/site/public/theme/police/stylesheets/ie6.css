@@ -1,0 +1,5 @@
+body { overflow-y: auto; }
+
+#left {
+	width: 210px !important;
+}

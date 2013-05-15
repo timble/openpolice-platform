@@ -1,0 +1,129 @@
+/*------------------------------------*\
+    Flaunt JS Navigation
+\*------------------------------------*/
+@media (max-width: @navbarCollapseWidth) {
+    .section-header {
+        .navbar {
+            position:relative;
+            display:inline-block;
+        }
+        .navbar .nav {
+            text-align:left;
+            display: none;
+        }
+
+        .navbar-inner > .nav {
+            border-top: 1px solid @blue;
+        }
+        .nav > li {
+            float:left;
+            *display:inline;
+            zoom:1;
+            position:relative;
+        }
+        .nav > li a {
+            display:block;
+        }
+        .nav > li > a:hover {
+
+        }
+        .nav > li:hover .nav {
+            display:block;
+        }
+        /* Navigation submenu */
+        .nav .nav {
+            display:none;
+            position:absolute;
+            left:0;
+            width:180px;
+            background-color: @navbarBackgroundHighlight;
+        }
+        .nav .nav li a {
+            display:block;
+            padding-left: 26px;
+        }
+        .nav .nav li a:hover {
+
+        }
+        /* Mobile navigation */
+        .nav-mobile {
+            display:none; /* Hide from browsers that don't support media queries */
+            cursor:pointer;
+            position:absolute;
+            top:0;
+            right:0;
+            background:@navbarBackground url(../img/nav.svg) no-repeat center center;
+            background-size:18px;
+            height:50px;
+            width:50px;
+            border-left: 1px solid @blue;
+        }
+        /* Mobile navigation, clickable area for revealing <ul> */
+        .nav-click {
+            position:absolute;
+            top:0;
+            right:0;
+            display:none;
+            height:48px;
+            width:50px;
+            cursor:pointer;
+            border-left: 1px solid @blue;
+        }
+        .nav-click i {
+            display:block;
+            height:48px;
+            width:48px;
+            background:url(../img/drop.svg) no-repeat center center;
+            background-size:20px;
+        }
+        .nav-click:hover {
+
+        }
+        .nav-rotate {
+            -webkit-transform:rotate(180deg);
+            -moz-transform:rotate(180deg);
+            -ms-transform:rotate(180deg);
+            -o-transform:rotate(180deg);
+            transform:rotate(180deg);
+        }
+    }
+}
+
+/*------------------------------------*\
+    Media Queries
+\*------------------------------------*/
+
+@media only screen and (max-width: @navbarCollapseWidth) {
+    .section-header {
+        .nav-mobile {
+            display:block;
+        }
+        .navbar {
+            width:100%;
+
+        }
+        .nav {
+            display:none;
+        }
+        .nav li {
+            width:100%;
+            float:none;
+        }
+        .nav li > a {
+
+        }
+        .nav-click {
+            display:block;
+        }
+        .nav-mobile-open {
+
+        }
+        .nav li:hover .nav {
+            display:none;
+        }
+        .nav .nav {
+            position:static;
+            width:100%;
+        }
+    }
+}

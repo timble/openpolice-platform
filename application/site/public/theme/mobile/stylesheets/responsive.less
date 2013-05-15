@@ -1,0 +1,203 @@
+//
+// Menu is not collapsed
+// --------------------------------------------------
+//
+// Responsive: Tablet to desktop
+// --------------------------------------------------
+@media (min-width: @navbarCollapseDesktopWidth) and (max-width: 979px) {
+    .container {
+        width: @gridRowWidth768 + 38px;
+    }
+
+    .section-header {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        .span3 {
+            float: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .span9 {
+            float: none;
+            width: 100%;
+            margin: 0;
+            margin-top: 20px;
+        }
+    }
+
+    .container-content.police {
+        .span3 {
+            width: 352px;
+        }
+    }
+}
+
+
+@media (min-width: @navbarCollapseWidth) {
+    /* Customize the navbar links to be fill the entire space of the .navbar */
+    .navbar .navbar-inner {
+        padding: 0;
+    }
+    .navbar .nav {
+        margin: 0;
+        display: table;
+    }
+    .navbar .nav li {
+        display: table-cell;
+        width: 1%;
+        float: none;
+    }
+    .navbar .nav li a {
+        text-align: center;
+    }
+    .navbar .nav li:first-child a {
+        border-left: 0;
+    }
+    .navbar .nav li:last-child a {
+        border-right: 0;
+    }
+}
+
+
+//
+// Menu is collapsed
+// --------------------------------------------------
+@media (max-width: @navbarCollapseWidth) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .container {
+        border: 0 none;
+        width: 100%;
+    }
+
+    .section-header {
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        .span3 {
+            display: none;
+        }
+
+        .span9 {
+            min-height: 50px;
+            padding-top: 50px;
+            margin-top: 0;
+            background-color: @navbarBackgroundHighlight;
+
+            .logo {
+                display: block;
+            }
+
+            .navbar-inner {
+                .border-radius(0);
+                border-top: 0 none;
+                border-left: 0 none;
+                border-right: 0 none;
+                margin-right: 0;
+            }
+
+            .navbar-inner {
+                min-height: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .container-content {
+        &.news {
+            .thumbnail {
+                float: none;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+
+    .section-banner {
+        display: none;
+    }
+
+    .container-footer {
+        border: 0 none;
+        text-align: left;
+    }
+
+    // COLLAPSIBLE NAVBAR
+    // ------------------
+    // Block-level the nav
+    .navbar-responsive .nav {
+        margin: 0;
+    }
+
+    .navbar-responsive .nav > li > a {
+        border-bottom: 1px solid @blue;
+    }
+    .navbar-responsive .nav .nav-header {
+        color: @navbarText;
+        text-shadow: none;
+    }
+    // Nav and dropdown links in navbar
+    .navbar-responsive .nav > li > a,
+    .navbar-responsive .dropdown-menu a {
+        padding: 13px 15px;
+        font-weight: bold;
+        color: @navbarLinkColor;
+    }
+
+    html,
+    body {
+        height: 100%;
+        background: @white;
+        /* The html and body elements cannot have any padding or margin. */
+    }
+    /* Wrapper for page content to push down footer */
+    #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+    }
+
+    /* Set the fixed height of the footer here */
+    #push,
+    #footer {
+        height: 60px;
+    }
+
+    // Responsive table
+    // ------------------
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+        border-top: 1px solid #DDD;
+    }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-top: 0 none !important;
+        position: relative;
+    }
+
+    td:first-of-type {
+        font-size: 1.15em;
+    }
+}
