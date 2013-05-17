@@ -8,8 +8,8 @@
  */
 ?>
 <? $columns = @helper('module.count', array('condition' => 'left')) ? '9' : '12' ?>
-<? $zone = @object('com:police.model.zone')->id(@object('application')->getCfg('site' ))->getRow() ?>
 <? $site = @escape(@object('application')->getCfg('site' )) ?>
+<? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
 <? if($component == 'police') { $columns = '12'; } ?>
 
 <!DOCTYPE HTML>
