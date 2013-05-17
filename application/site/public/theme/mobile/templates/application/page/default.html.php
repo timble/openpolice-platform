@@ -21,16 +21,20 @@
     <div class="section-header">
         <div class="row-fluid">
             <div class="span3">
-                <a class="logo" href="/<?= $site ?>">
-                    <img src="media://application/images/logo-nl.png" /><br />
-                    <span><?= @escape($zone->title); ?></span>
-                </a>
+                <div class="logo" itemscope itemtype="http://schema.org/Organization">
+                    <a itemprop="url" href="/<?= $site ?>">
+                        <img itemprop="logo" src="media://application/images/logo-nl.png" />
+                        <span><?= @escape($zone->title); ?></span>
+                    </a>
+                </div>
             </div>
             <div class="span9 navbar navbar-responsive">
                 <a class="logo-mobile" href="/<?= $site ?>">
                     <img src="media://application/images/logo-flame.png" />
                     <span><?= @escape($zone->title); ?></span>
                 </a>
+
+
 
                 <span class="slogan hidden-phone">Bel <strong>101</strong> als elke seconde telt. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
 
