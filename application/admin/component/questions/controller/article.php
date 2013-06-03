@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class QuestionsControllerArticle extends ApplicationControllerDefault
+class QuestionsControllerArticle extends Library\ControllerModel
 { 
     protected function _initialize(Library\ObjectConfig $config)
     {

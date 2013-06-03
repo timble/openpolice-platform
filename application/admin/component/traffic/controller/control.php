@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class TrafficControllerControl extends ApplicationControllerDefault
+class TrafficControllerControl extends Library\ControllerModel
 { 
     protected function _initialize(Library\ObjectConfig $config)
     {

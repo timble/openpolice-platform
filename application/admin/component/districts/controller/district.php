@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class DistrictsControllerDistrict extends ApplicationControllerDefault
+class DistrictsControllerDistrict extends Library\ControllerModel
 { 
     protected function _initialize(Library\ObjectConfig $config)
     {
