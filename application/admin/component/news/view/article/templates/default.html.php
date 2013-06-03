@@ -43,24 +43,24 @@
 	</div>
 	<div class="sidebar">        
 	    <div class="scrollable">
-	        <fieldset class="form-horizontal">
+	        <fieldset>
 	        	<legend><?= @text('Publish') ?></legend>
-	            <div class="control-group">
-	                <label class="control-label" for="published"><?= @text('Published') ?></label>
-	                <div class="controls">
+	            <div>
+	                <label for="published"><?= @text('Published') ?></label>
+	                <div>
 	                    <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
 	                </div>
 	            </div>
-	            <div class="control-group">
-	        	    <label class="control-label" for="publish_on"><?= @text('Publish on') ?></label>
+	            <div>
+	        	    <label for="publish_on"><?= @text('Publish on') ?></label>
 	                <div class="controls controls-calendar">
-	                    <?= @helper('behavior.calendar', array('date' => $article->publish_on, 'name' => 'publish_on')); ?>
+                        <input type="datetime-local" name="publish_on" value="<?= $article->publish_on ?>" />
 	                </div>
 	            </div>
-	            <div class="control-group">
-	                <label class="control-label" for="unpublish_on"><?= @text('Unpublish on') ?></label>
+	            <div>
+	                <label for="unpublish_on"><?= @text('Unpublish on') ?></label>
 	                <div class="controls controls-calendar">
-	                    <?= @helper('behavior.calendar', array('date' => $article->unpublish_on, 'name' => 'unpublish_on')); ?>
+                        <input type="datetime-local" name="unpublish_on" value="<?= $article->publish_on ?>" />
 	                </div>
 	            </div>
 	        </fieldset>

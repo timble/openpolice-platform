@@ -8,29 +8,29 @@
  */
 ?>
 
-<fieldset class="form-horizontal">
+<fieldset>
 	<legend><?= @text('Density').' '.$name ?></legend>
-	<div class="control-group">
-	    <label class="control-label" for="densities['.$number.'][traffic]">
+	<div>
+	    <label for="densities['.$number.'][traffic]">
 	    	<?= @text( 'Traffic type' ); ?>
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][traffic]', 'selected' => $density->type, 'validate' => false, 'url' => $url.'traffic')) ?>
 	    </div>
 	</div>
-	<div class="control-group">
-	    <label class="control-label" for="densities['.$number.'][start]">
+	<div>
+	    <label for="densities['.$number.'][start]">
 	    	<?= @text( 'Start' ); ?>
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][start]', 'selected' => $density->start, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>
-	<div class="control-group">
-	    <label class="control-label" for="densities['.$number.'][end]">
+	<div>
+	    <label for="densities['.$number.'][end]">
 	    	<?= @text( 'End' ); ?>
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][end]', 'selected' => $density->end, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>

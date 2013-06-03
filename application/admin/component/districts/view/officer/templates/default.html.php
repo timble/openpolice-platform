@@ -23,80 +23,80 @@
 	<div class="main">
 		<div class="scrollable row-fluid">
 			<div class="span8">
-				<fieldset class="form-horizontal">
+				<fieldset>
 					<legend><?= @text( 'Basic Information' ); ?></legend>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Firstname' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input class="required" type="text" name="firstname" size="32" maxlength="250" value="<?= $officer->firstname; ?>" />
 					    </div>
 					</div>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Lastname' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input class="required" type="text" name="lastname" size="32" maxlength="250" value="<?= $officer->lastname; ?>" />
 					    </div>
 					</div>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Position' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input type="text" name="position" size="32" maxlength="250" value="<?= $officer->position; ?>" />
 					    </div>
 					</div>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Number' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input type="text" name="number" size="32" maxlength="250" value="<?= $officer->number; ?>" />
 					    </div>
 					</div>
 				</fieldset>
-				<fieldset class="form-horizontal">
+				<fieldset>
 					<legend><?= @text( 'Contact information' ); ?></legend>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Phone' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input type="text" name="phone" size="32" maxlength="250" value="<?= $officer->phone; ?>" />
 					    </div>
 					</div>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Mobile' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input type="text" name="mobile" size="32" maxlength="250" value="<?= $officer->mobile; ?>" />
 					    </div>
 					</div>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'E-mail' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input type="text" name="email" size="32" maxlength="250" value="<?= $officer->email; ?>" />
 					    </div>
 					</div>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Twitter' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input type="text" name="params[twitter]" size="32" maxlength="250" value="<?= $params->twitter; ?>" />
 					    </div>
 					</div>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Facebook' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input type="text" name="params[facebook]" size="32" maxlength="250" value="<?= $params->facebook; ?>" />
 					    </div>
 					</div>
@@ -115,21 +115,21 @@
 				</fieldset>
 			</div>
 			<div class="span4">
-				<fieldset class="form-horizontal">
+				<fieldset>
 					<legend><?= @text( 'Extra information' ); ?></legend>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Image' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <?= @helper('image.listbox', array('name' => 'params[avatar]', 'directory' => JPATH_IMAGES.'/avatars', 'selected' => $params->avatar)); ?>
 					    </div>
 					</div>
-					<div class="control-group">
-					    <label class="control-label" for="">
+					<div>
+					    <label for="">
 					    	<?= @text( 'Show image' ); ?>
 					    </label>
-					    <div class="controls">
+					    <div>
 					        <input type="checkbox" name="params[show_avatar]" value="1" <?= $params->show_avatar ? 'checked="checked"' : '' ?> />
 					    </div>
 					</div>

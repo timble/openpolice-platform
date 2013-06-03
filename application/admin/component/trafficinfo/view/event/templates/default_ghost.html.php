@@ -8,48 +8,48 @@
  */
 ?>
 
-<fieldset class="form-horizontal">
+<fieldset>
 	<legend><?= @text( 'Location' ); ?></legend>
-	<div class="control-group">
-	    <label class="control-label" for="name">
+	<div>
+	    <label for="name">
 	    	<?= @text( 'Road' ); ?>*
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_road', 'selected' => $event->trafficinfo_item_id_road, 'validate' => true, 'url' => $url.'roads')) ?>
 	    </div>
 	</div>
-	<div class="control-group">
-	    <label class="control-label" for="name">
+	<div>
+	    <label for="name">
 	    	<?= @text( 'Direction' ); ?>
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_place_direction', 'selected' => $event->trafficinfo_item_id_place_direction, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>
-	<div class="control-group">
-	    <label class="control-label" for="name">
+	<div>
+	    <label for="name">
 	    	<?= @text( 'Place' ); ?>
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_place', 'selected' => $event->trafficinfo_item_id_place, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>
-	<div class="control-group">
-	    <label class="control-label" for="name">
+	<div>
+	    <label for="name">
 	    	<?= @text( 'Kilometer post' ); ?>
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <input type="text" name="information[kilometre_post]" size="5" maxlength="5" value="<?= $event->kilometre_post; ?>" />
 	    </div>
 	</div>
 </fieldset>
-<fieldset class="form-horizontal">
+<fieldset>
 	<legend><?= @text( 'Details' ); ?>:</legend>
-	<div class="control-group">
-	    <label class="control-label" for="name">
+	<div>
+	    <label for="name">
 	    	<?= @text( 'Source' ); ?>
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'filter' => array('group' => 'source'))) ?>
 	    </div>
 	</div>

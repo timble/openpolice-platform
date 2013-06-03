@@ -23,37 +23,37 @@
 		</div>
 	
 		<div class="scrollable">
-			<fieldset class="form-horizontal">
+			<fieldset>
 				<legend><?= @text( 'Information' ); ?>:</legend>
-				<div class="control-group">
-				    <label class="control-label" for="id">
+				<div>
+				    <label for="id">
 				    	<?= @text( 'ID' ); ?>
 				    </label>
-				    <div class="controls">
+				    <div>
 				        <input class="required" type="text" name="id" maxlength="4" value="<?= $zone->id; ?>" />
 				    </div>
 				</div>
-                <div class="control-group">
-				    <label class="control-label" for="name">
+                <div>
+				    <label for="name">
 				    	<?= @text( 'Language' ); ?>
 				    </label>
-				    <div class="controls">
+				    <div>
 				        <?= @helper('listbox.language', array('deselect' => false)) ?>
 				    </div>
 				</div>
-                <div class="control-group">
-				    <label class="control-label" for="chief_name">
+                <div>
+				    <label for="chief_name">
 				    	<?= @text( 'Chief name' ); ?>
 				    </label>
-				    <div class="controls">
+				    <div>
 				        <input class="required" type="text" name="chief_name" value="<?= $zone->chief_name; ?>" />
 				    </div>
 				</div>
-                <div class="control-group">
-				    <label class="control-label" for="chief_email">
+                <div>
+				    <label for="chief_email">
 				    	<?= @text( 'Chief email' ); ?>
 				    </label>
-				    <div class="controls">
+				    <div>
 				        <input class="required" type="text" name="chief_email" value="<?= $zone->chief_email; ?>" />
 				    </div>
 				</div>
