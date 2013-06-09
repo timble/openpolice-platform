@@ -9,12 +9,12 @@
 ?>
 
 <div class="scopebar">
-    <div class="scopebar-group">
+    <div class="scopebar__group">
         <a class="<?= is_null($state->search) && is_null($state->parent_id) ? 'active' : ''; ?>" href="<?= @route('search=&parent_id' ) ?>">
             <?= @text('All') ?>
         </a>
     </div>
-    <div class="scopebar-search">
+    <div class="scopebar__search">
         <?= @helper('grid.search') ?>
     </div>
 </div>
