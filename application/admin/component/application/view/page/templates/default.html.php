@@ -15,6 +15,10 @@
 
 <body class="com_<?= $component ?>">
 <div id="container">
+    <div id="panel-pages">
+        <?= @template('com:pages.view.pages.list.html', array('state' => $state)); ?>
+    </div>
+    <div id="panel-wrapper">
     <div id="panel-header">
         <div id="menu">
         	<?= @helper('menubar.render')?>
@@ -22,7 +26,7 @@
         <?= @helper('toolbar.render', array('toolbar' => $toolbar, 'attribs' => array('id' => 'statusmenu')))?>
 	</div>
 
-    <?= @helper('tabbar.render', array('tabbar' => $tabbar, 'attribs' => array('id' => 'menubar')))?>
+    <?= @helper('tabbar.render', array('tabbar' => $tabbar))?>
 
     <ktml:modules position="toolbar">
     <div id="panel-toolbar">
@@ -48,6 +52,7 @@
                 <ktml:modules:content />
             </div>
         </ktml:modules>
+    </div>
     </div>
 </div>
 
