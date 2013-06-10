@@ -64,10 +64,10 @@
             <? endif; ?>
         </div>
         <div class="span3">
-            <? if(count($attachments)) : ?>
-                <? foreach($attachments as $item) : ?>
+            <? if($contact->isAttachable()) : ?>
+                <? foreach($contact->getAttachments() as $item) : ?>
                     <? if($item->file->isImage()) : ?>
-                        <img class="thumbnail" style="margin-bottom: 6px" src="<?= $item->thumbnail->thumbnail ?>" />
+                        <img class="photo thumbnail" align="right" src="<?= $item->thumbnail->thumbnail ?>" />
                     <? endif ?>
                 <? endforeach ?>
             <? endif ?>
