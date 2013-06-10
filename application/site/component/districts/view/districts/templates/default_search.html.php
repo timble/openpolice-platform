@@ -8,13 +8,8 @@
  */
 ?>
 
-<script src="media://js/mootools.js" />
-<script src="media://js/koowa.js" />
-
 <style src="media://districts/select2/select2.css" />
 <script src="media://districts/select2/select2.min.js" />
-
-<?= @helper('behavior.validator') ?>
 
 <script>
     $jQuery(document).ready(function() {
@@ -65,7 +60,7 @@
                 <div class="control-group">
                     <label class="control-label" for="zone_street_id"><?= @text('My street') ?>:</label>
                     <div class="controls">
-                        <input type="hidden" class="bigdrop required" id="streets" name="street" value="<?= $state->street ?>" style="width: 100%; display: none;" tabindex="1">
+                        <input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" style="width: 100%; display: none;" tabindex="1" required>
                     </div>
                 </div>
             </div>
@@ -73,7 +68,7 @@
                 <div class="control-group">
                     <label class="control-label" for="number"><?= @text('My number') ?>:</label>
                     <div class="controls">
-                        <input style="max-width: 90%;" type="text" name="number" class="required" id="number" maxlength="4" value="<?= $state->number; ?>" tabindex="2" />
+                        <input style="max-width: 90%;" type="number" name="number" value="<?= $state->number; ?>" tabindex="2" required />
                     </div>
                 </div>
             </div>
