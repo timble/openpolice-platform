@@ -18,46 +18,43 @@
 
 <script>
     $jQuery(document).ready(function() {
-
     	function format(item) { return item.title; };
-
         $jQuery("#streets").select2({
-                placeholder: "Search for your street",
-                minimumInputLength: 1,
-                ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                    url: "?view=streets&format=json",
-                    dataType: 'json',
-                    data: function (term) {
-                        return {
-                            search: term, // search term
-                            page_limit: 10
-                        };
-                    },
-                    results: function (data) { // parse the results into the format expected by Select2.
-                        // since we are using custom formatting functions we do not need to alter remote JSON data
-                        var results = [];
-                        $jQuery.each(data.items, function(i, item) {
-                            results.push(item.data);
-                        });
-                        return {results: results};
-                    }
+            placeholder: "Search for your street",
+            minimumInputLength: 1,
+            ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+                url: "?view=streets&format=json",
+                dataType: 'json',
+                data: function (term) {
+                    return {
+                        search: term, // search term
+                        page_limit: 10
+                    };
                 },
-                initSelection: function(element, callback) {
-                    // the input tag has a value attribute preloaded that points to a preselected movie's id
-                    // this function resolves that id attribute to an object that select2 can render
-                    // using its formatResult renderer - that way the movie name is shown preselected
-                    var id=$jQuery(element).val();
-                    if (id!=="") {
-                        $jQuery.ajax("?view=street&format=json&id="+id, {
-                            dataType: "json"
-                        }).done(function(data) { callback(data.item); });
-                    }
-                },
-                formatResult: format, // omitted for brevity, see the source of this page
-                formatSelection: format, // omitted for brevity, see the source of this page
-                dropdownCssClass: "bigdrop" // apply css that makes the dropdown taller
-            });
-
+                results: function (data) { // parse the results into the format expected by Select2.
+                    // since we are using custom formatting functions we do not need to alter remote JSON data
+                    var results = [];
+                    $jQuery.each(data.items, function(i, item) {
+                        results.push(item.data);
+                    });
+                    return {results: results};
+                }
+            },
+            initSelection: function(element, callback) {
+                // the input tag has a value attribute preloaded that points to a preselected movie's id
+                // this function resolves that id attribute to an object that select2 can render
+                // using its formatResult renderer - that way the movie name is shown preselected
+                var id=$jQuery(element).val();
+                if (id!=="") {
+                    $jQuery.ajax("?view=street&format=json&id="+id, {
+                        dataType: "json"
+                    }).done(function(data) { callback(data.item); });
+                }
+            },
+            formatResult: format, // omitted for brevity, see the source of this page
+            formatSelection: format, // omitted for brevity, see the source of this page
+            dropdownCssClass: "bigdrop" // apply css that makes the dropdown taller
+        });
     });
 </script>
     
@@ -81,8 +78,6 @@
                 </div>
             </div>
         </div>
-
-
 	</fieldset>
 	<div class="form-actions" style="margin-bottom: 0; margin-top: 0; padding-left: 0;padding-bottom: 0;">
 		<button class="btn" tabindex="3"><?= @text('Search') ?></button> <?= @text('or') ?> <a tabindex="4" href="#"><?= @text('Start over') ?></a>
