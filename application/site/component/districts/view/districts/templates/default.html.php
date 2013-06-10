@@ -9,7 +9,7 @@
 ?>
 
 <div class="page-header">
-    <h1><?= @text('Find your districts officer') ?></h1>
+    <h1><?= @escape($params->get('page_title')); ?></h1>
 </div>
 
 <?= @template('default_search.html'); ?>
