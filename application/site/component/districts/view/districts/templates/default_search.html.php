@@ -8,8 +8,13 @@
  */
 ?>
 
+<script src="media://js/mootools.js" />
+<script src="media://js/koowa.js" />
+
 <style src="media://districts/select2/select2.css" />
 <script src="media://districts/select2/select2.min.js" />
+
+<?= @helper('behavior.validator') ?>
 
 <script>
     $jQuery(document).ready(function() {
@@ -56,12 +61,12 @@
     });
 </script>
     
-<form action="" method="get" class="well">
+<form action="" method="get" class="well -koowa-form">
 	<fieldset>
 		<div class="control-group">
 			<label class="control-label" for="zone_street_id"><?= @text('Enter the first letters of your street and select your street from the list') ?>:</label>
 			<div class="controls">
-				<input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" style="width: 100%; display: none;" tabindex="1">
+				<input type="hidden" class="bigdrop required" id="streets" name="street" value="<?= $state->street ?>" style="width: 100%; display: none;" tabindex="1">
 			</div>
 		</div>
 		<div class="control-group">
