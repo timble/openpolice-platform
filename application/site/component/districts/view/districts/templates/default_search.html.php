@@ -63,20 +63,28 @@
     
 <form action="" method="get" class="well -koowa-form">
 	<fieldset>
-		<div class="control-group">
-			<label class="control-label" for="zone_street_id"><?= @text('Enter the first letters of your street and select your street from the list') ?>:</label>
-			<div class="controls">
-				<input type="hidden" class="bigdrop required" id="streets" name="street" value="<?= $state->street ?>" style="width: 100%; display: none;" tabindex="1">
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="number"><?= @text('Enter your number') ?>:</label>
-			<div class="controls">
-				<input type="text" name="number" class="required" id="number" size="10" maxlength="4" value="<?= $state->number; ?>" tabindex="2" />
-			</div>
-		</div>
+        <div class="row-fluid">
+            <div class="span9">
+                <div class="control-group">
+                    <label class="control-label" for="zone_street_id"><?= @text('My street') ?>:</label>
+                    <div class="controls">
+                        <input type="hidden" class="bigdrop required" id="streets" name="street" value="<?= $state->street ?>" style="width: 100%; display: none;" tabindex="1">
+                    </div>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="control-group">
+                    <label class="control-label" for="number"><?= @text('My number') ?>:</label>
+                    <div class="controls">
+                        <input style="max-width: 90%;" type="text" name="number" class="required" id="number" maxlength="4" value="<?= $state->number; ?>" tabindex="2" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 	</fieldset>
-	<div class="form-actions" style="margin-bottom: 0; padding-left: 0;padding-bottom: 0;">
+	<div class="form-actions" style="margin-bottom: 0; margin-top: 0; padding-left: 0;padding-bottom: 0;">
 		<button class="btn" tabindex="3"><?= @text('Search') ?></button> <?= @text('or') ?> <a tabindex="4" href="#"><?= @text('Start over') ?></a>
 	</div>
 </form>
