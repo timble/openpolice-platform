@@ -15,7 +15,7 @@
 <?= @template('default_search.html') ?>
 
 <? if($state->category || $state->term) : ?>
-<ul>
+<ul class="nav nav-pills nav-stacked">
 <? foreach ($articles as $article) : ?>
     <li>
         <a href="<?= @helper('route.article', array('row' => $article)) ?>">
