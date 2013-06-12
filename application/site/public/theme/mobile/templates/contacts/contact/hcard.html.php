@@ -8,6 +8,9 @@
  */
 ?>
 
+<?= @helper('behavior.mootools') ?>
+<?= @helper('behavior.modal') ?>
+
 <address class="vcard">
     <div class="page-header">
         <h1 class="fn url" href="<?= @route(); ?>"><?= $contact->name?></h1>
@@ -67,13 +70,16 @@
             <? if($contact->isAttachable()) : ?>
                 <? foreach($contact->getAttachments() as $item) : ?>
                     <? if($item->file->isImage()) : ?>
-                        <img class="photo thumbnail" align="right" src="<?= $item->thumbnail->thumbnail ?>" />
+                        <img style="margin-bottom: 10px" class="photo thumbnail" align="right" src="<?= $item->thumbnail->thumbnail ?>" />
                     <? endif ?>
                 <? endforeach ?>
             <? endif ?>
             <? if ($contact->address) : ?>
-                <img class="thumbnail"  src="http://maps.googleapis.com/maps/api/staticmap?zoom=15&size=200x200&maptype=roadmap
-&markers=<?= $contact->address ?>,<?= $contact->suburb ?>,<?= $contact->country ?>&sensor=false" />
+                <? $map = "http://maps.googleapis.com/maps/api/staticmap?maptype=roadmap
+&markers='.$contact->address.','.$contact->suburb.','.$contact->country.'&sensor=false"; ?>
+                <a rel="{handler: 'image'}" class="modal" href="<?= $map ?>&size=800x600&zoom=15">
+                    <img class="thumbnail" src="<?= $map ?>&size=200x200&zoom=13" />
+                </a>
             <? endif; ?>
         </div>
     </div>
