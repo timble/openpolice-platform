@@ -64,7 +64,7 @@
                     <ktml:modules:content />
                 </div>
             </ktml:modules>
-            <div class="span<?= $columns ?>">
+            <div class="span<?= $columns ?> component">
                 <ktml:content />
             </div>
         </div>
@@ -74,7 +74,7 @@
         <div class="row">
             <div class="span6 hidden-phone">
                 <h3><?= @text('Laatste nieuws') ?></h3>
-                <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->limit('2')->getRowset())) ?>
+                <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
             </div>
             <div class="span3 hidden-phone">
                 <h3><?= @text('Meer weten') ?></h3>
