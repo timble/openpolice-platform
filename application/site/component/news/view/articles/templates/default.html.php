@@ -13,8 +13,9 @@
 </ktml:module>
 
 <? foreach ($articles as $article) : ?>
+    <? $link = @helper('route.article', array('row' => $article)); ?>
     <div class="page-header">
-        <h1><a href="<?= @helper('route.article', array('row' => $article)) ?>"><?= $article->title ?></a></h1>
+        <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
         <span class="timestamp">
             <?= @helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'))) ?>
         </span>
@@ -22,13 +23,15 @@
 
     <div class="clearfix">
         <? if($article->thumbnail): ?>
-            <img class="thumbnail" src="<?= $article->thumbnail ?>" />
+            <a href="<?= $link ?>">
+                <img class="thumbnail" src="<?= $article->thumbnail ?>" />
+            </a>
         <? endif; ?>
 
         <?= $article->introtext ?>
 
         <? if ($article->fulltext) : ?>
-            <a href="<?= @helper('route.article', array('row' => $article)) ?>"><?= @text('Read more') ?></a>
+            <a href="<?= $link ?>"><?= @text('Read more') ?></a>
         <? endif; ?>
     </div>
 <? endforeach; ?>
