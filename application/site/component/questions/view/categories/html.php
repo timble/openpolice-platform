@@ -9,7 +9,15 @@
 
 use Nooku\Library;
 
-class QuestionsControllerTerm extends TermsControllerTerm
+class QuestionsViewCategoriesHtml extends Library\ViewHtml
 {
+    public function render()
+    {
+        //Get the parameters
+        $params = $this->getObject('application')->getParams();
 
+        $this->params = $params;
+
+        return parent::render();
+    }
 }

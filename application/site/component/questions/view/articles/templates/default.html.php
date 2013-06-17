@@ -14,7 +14,11 @@
 
 <?= @template('default_search.html') ?>
 
-<? if($state->category || $state->term) : ?>
+<? if(!$state->category AND !$state->searchword) : ?>
+<?= @template('com:questions.view.categories.list.html', array('categories' => @object('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset())) ?>
+<? endif ?>
+
+<? if($state->category AND !$state->searchword) : ?>
 <ul class="nav nav-pills nav-stacked">
 <? foreach ($articles as $article) : ?>
     <li>
@@ -24,6 +28,22 @@
     </li>
 <? endforeach; ?>
 </ul>
+<? endif ?>
 
+<? if($state->searchword) : ?>
+<? foreach ($articles as $article): ?>
+    <div class="page-header">
+        <h1>
+            <a href="<?= @helper('route.article', array('row' => $article)) ?>">
+                <?= @highlight($article->title) ?>
+            </a>
+        </h1>
+    </div>
+
+    <?= @highlight($article->text) ?>
+<? endforeach ?>
+<? endif ?>
+
+<? if($state->category OR $state->searchword) : ?>
 <?= @helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 <? endif ?>

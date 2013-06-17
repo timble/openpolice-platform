@@ -24,19 +24,7 @@ class QuestionsRouter extends Library\DispatcherRouter
 
         $view = $page->getLink()->query['view'];
 
-        if($view == 'categories')
-        {
-            if(isset($query['category']))
-            {
-                if($query['category'] != $page->getLink()->query['category']) {
-                    $segments[] = $query['category'];
-                }
-            }
 
-            if(isset($query['id'])) {
-                $segments[] = $query['id'];
-            }
-        }
 
         if($view == 'articles')
         {

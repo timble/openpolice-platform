@@ -15,7 +15,6 @@ class QuestionsBootstrapper extends Library\BootstrapperAbstract
     {
         $manager = $this->getObjectManager();
 
-        $manager->registerAlias('com:articles.model.terms', 'com:terms.model.terms');
         $manager->registerAlias('com:questions.model.categories', 'com:categories.model.categories');
     }
 }
