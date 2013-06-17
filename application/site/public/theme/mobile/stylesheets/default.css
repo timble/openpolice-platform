@@ -5145,6 +5145,10 @@ h3 {
 .container-content .component .article {
   margin-bottom: 60px;
 }
+.container-content .component .article__introtext {
+  font-weight: bold;
+  margin-bottom: 22px;
+}
 .container-content.news .page-header h1,
 .container-content.police .page-header h1 {
   margin-bottom: 4px;

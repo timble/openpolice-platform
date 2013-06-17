@@ -27,7 +27,7 @@
     <img class="thumbnail" src="<?= $article->thumbnail ?>" />
 <? endif; ?>
 
-<?= $article->introtext ?>
+<div class="article__introtext"><?= $article->introtext ?></div>
 <?= $article->fulltext ?>
 
 <?= @template('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->image))) ?>
