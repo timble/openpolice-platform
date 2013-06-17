@@ -34,31 +34,32 @@
 	</div>
 	<div class="sidebar">
 		<div class="scrollable">
-			<fieldset class="form-horizontal">
+			<fieldset>
 				<legend><?= @text('Publish') ?></legend>
-				<div class="control-group">
-				    <label class="control-label" for="published"><?= @text('Published') ?></label>
-				    <div class="controls">
+				<div>
+				    <label for="published"><?= @text('Published') ?></label>
+				    <div>
 				        <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
 				    </div>
 				</div>
 			</fieldset>
-            <fieldset class="form-horizontal">
+            <fieldset>
                 <legend><?= @text('Details') ?></legend>
-                <div class="control-group">
-                    <label class="control-label" for="date">
+                <div>
+                    <label for="date">
                         <?= @text('Start on') ?>
                     </label>
                     <div class="controls-calendar">
                         <?= @helper('behavior.calendar', array('date' => $article->start_on, 'name' => 'start_on')); ?>
+                        <input type="datetime-local" name="start_on" value="<?= $article->start_on ?>" />
                     </div>
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="date">
+                <div>
+                    <label for="date">
                         <?= @text('End on') ?>
                     </label>
                     <div class="controls-calendar">
-                        <?= @helper('behavior.calendar', array('date' => $article->end_on, 'name' => 'end_on')); ?>
+                        <input type="datetime-local" name="end_on" value="<?= $article->end_on ?>" />
                     </div>
                 </div>
             </fieldset>
@@ -74,7 +75,7 @@
                     ?>
                 </div>
             </fieldset>
-            <fieldset class="form-horizontal">
+            <fieldset>
                 <legend><?= @text('Streets') ?></legend>
                     <?= @helper('com:streets.listbox.streets', array('selected' => $streets, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
                     <script data-inline> $jQuery(".select-streets").select2(); </script>

@@ -8,7 +8,7 @@
  */
 use Nooku\Library;
 
-class TrafficControllerArticle extends ApplicationControllerDefault
+class TrafficControllerArticle extends Library\ControllerModel
 {
     public function getRequest()
 	{

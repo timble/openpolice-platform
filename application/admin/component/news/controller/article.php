@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class NewsControllerArticle extends ApplicationControllerDefault
+class NewsControllerArticle extends Library\ControllerModel
 { 
     protected function _initialize(Library\ObjectConfig $config)
     {

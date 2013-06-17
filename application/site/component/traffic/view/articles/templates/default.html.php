@@ -23,7 +23,9 @@
 		<? foreach ($articles as $article) : ?>
 		<tr>
 			<td nowrap><a href="<?= @helper('route.article', array('row' => $article)) ?>"><?= $article->title ?></a></td>
-            <td nowrap><?= @helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'))).' '.@text('till').' '.@helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) ?></td>
+            <td nowrap>
+                <?= @helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'))) ?>
+                <?= $article->end_on ? @text('till').' '.@helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) : '' ?></td>
 		</tr>
 		<? endforeach; ?>
 	</tbody>

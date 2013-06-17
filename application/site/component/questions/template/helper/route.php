@@ -21,7 +21,7 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
         $article = $config->row;
 
         $needles = array(
-            array('view' => 'article' , 'id' => $article->id),
+            array('view' => 'articles' , 'category' => $article->categories_category_id),
 		);
 
         $route = array(
@@ -31,9 +31,40 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
         );
 
 		if($item = $this->_findPage($needles)) {
-			$route['Itemid'] = $item->id;
+            $route['Itemid'] = $item->id;
 		};
 
         return $this->getTemplate()->getView()->getRoute($route);
 	}
+
+    public function category($config = array())
+    {
+        $config   = new Library\ObjectConfig($config);
+        $config->append(array(
+            'layout' => 'default'
+        ));
+
+        $category = $config->row;
+
+        $needles = array(
+            array('view' => 'articles'   , 'category' => $category->id)
+        );
+
+        $route = array(
+            'view'      => 'articles',
+            'category'  => $category->getSlug(),
+            'layout'    => $config->layout
+        );
+
+        if($item = $this->_findPage($needles))
+        {
+            if(isset($item->getLink()->query['layout'])) {
+                $route['layout'] = $item->getLink()->query['layout'];
+            }
+
+            $route['Itemid'] = $item->id;
+        };
+
+        return $this->getTemplate()->getView()->getRoute($route);
+    }
 }

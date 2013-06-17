@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class StreetsControllerStreet extends ApplicationControllerDefault
+class StreetsControllerStreet extends Library\ControllerModel
 { 
     protected function _initialize(Library\ObjectConfig $config)
     {

@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class PoliceControllerMunicipality extends ApplicationControllerDefault
+class PoliceControllerMunicipality extends Library\ControllerModel
 { 
     protected function _initialize(Library\ObjectConfig $config)
     {

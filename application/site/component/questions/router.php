@@ -24,20 +24,6 @@ class QuestionsRouter extends Library\DispatcherRouter
 
         $view = $page->getLink()->query['view'];
 
-        if($view == 'categories')
-        {
-            if(isset($query['category']))
-            {
-                if($query['category'] != $page->getLink()->query['category']) {
-                    $segments[] = $query['category'];
-                }
-            }
-
-            if(isset($query['id'])) {
-                $segments[] = $query['id'];
-            }
-        }
-
         if($view == 'articles')
         {
             if(isset($query['id'])) {
@@ -45,17 +31,12 @@ class QuestionsRouter extends Library\DispatcherRouter
             }
         }
 
-        //Todo : move to the the generic component router
-        if(isset($page->getLink()->query['layout']) && isset($query['layout']))
-        {
-            if($page->getLink()->query['layout'] == $query['layout']) {
-                unset($query['layout']);
-            }
-        }
-
         unset($query['category']);
         unset($query['id']);
         unset($query['view']);
+        unset($query['layout']);
+        unset($query['published']);
+        unset($query['limit']);
 
         return $segments;
     }

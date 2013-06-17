@@ -16,6 +16,9 @@ class NewsViewArticleHtml extends Library\ViewHtml
         //Get the article
         $article = $this->getModel()->getData();
 
+        //Set the pathway
+        $this->getObject('application')->getPathway()->addItem($article->title, '');
+
         //Get the attachments
         if ($article->id && $article->isAttachable()) {
             $this->attachments($article->getAttachments());

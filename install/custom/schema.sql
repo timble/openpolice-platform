@@ -100,12 +100,12 @@ CREATE TABLE `police_municipalities` (
   PRIMARY KEY (`police_municipality_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2775 DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'police_zones'
 CREATE TABLE `police_zones` (
   `police_zone_id` int(11) unsigned NOT NULL,
   `title` varchar(250) NOT NULL DEFAULT '',
   `language` int(11) NOT NULL,
   `telephone` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
   `chief_name` varchar(250) NOT NULL,
   `chief_email` varchar(250) NOT NULL,
   `twitter` varchar(250) DEFAULT NULL,

@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class TrafficinfoControllerEvent extends ApplicationControllerDefault
+class TrafficinfoControllerEvent extends Library\ControllerModel
 {
     public function getRequest()
 	{

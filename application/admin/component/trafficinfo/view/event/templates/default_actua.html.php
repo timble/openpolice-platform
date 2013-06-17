@@ -8,13 +8,13 @@
  */
 ?>
 
-<fieldset class="form-horizontal">
+<fieldset>
 	<legend><?= @text( 'Details' ); ?></legend>
-	<div class="control-group">
-	    <label class="control-label" for="name">
+	<div>
+	    <label for="name">
 	    	<?= @text( 'Title' ); ?>
 	    </label>
-	    <div class="controls">
+	    <div>
 	        <input class="required" type="text" name="title" maxlength="255" value="<?= $event->title ?>" placeholder="<?= @text('Title') ?>" />
 	    </div>
 	</div>

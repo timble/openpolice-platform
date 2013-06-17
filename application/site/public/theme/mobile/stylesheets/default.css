@@ -1,3 +1,4 @@
+@import "../../bootstrap/stylesheets/validation.css";
 .clearfix {
   *zoom: 1;
 }
@@ -4997,6 +4998,9 @@ h3 {
 .page-header {
   margin-bottom: 14px;
 }
+.highlight {
+  background-color: yellow;
+}
 #wrap {
   border-left: 1px solid #dcdcdc;
   border-right: 1px solid #dcdcdc;
@@ -5127,6 +5131,24 @@ h3 {
 .container-content .sidebar {
   margin-top: 24px;
 }
+.container-content .sidebar .span3 {
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.container-content .component h2 {
+  margin-top: 30px;
+}
+.container-content .component h3 {
+  margin-top: 20px;
+}
+.container-content .component .article {
+  margin-bottom: 60px;
+}
+.container-content .component .article__introtext {
+  font-weight: bold;
+  margin-bottom: 22px;
+}
 .container-content.news .page-header h1,
 .container-content.police .page-header h1 {
   margin-bottom: 4px;
@@ -5139,7 +5161,7 @@ h3 {
 .container-content.news .thumbnail,
 .container-content.police .thumbnail {
   float: right;
-  margin-bottom: 10px;
+  margin: 0 0 20px 20px;
 }
 .container-content.districts ul li.twitter {
   list-style: url("../images/twitter.png");
@@ -5210,16 +5232,9 @@ h3 {
 .container-footer .social {
   float: right;
 }
-.copyright {
+.container-copyright {
   font-size: 11.9px;
-}
-.copyright ul {
-  list-style: none;
-  float: right;
-}
-.copyright ul li {
-  float: left;
-  margin-left: 10px;
+  text-align: right;
 }
 /*!
  * twitter/bootstrap Responsive v2.3.1
@@ -6097,6 +6112,10 @@ h3 {
   body {
     padding-left: 0;
     padding-right: 0;
+    background-color: #f6f6f6;
+  }
+  #wrap {
+    border: 0 none;
   }
   .container {
     border: 0 none;
@@ -6116,7 +6135,7 @@ h3 {
     margin-top: 0;
     background-color: #0063cc;
   }
-  .section-header .span9 .logo {
+  .section-header .span9 .logo-mobile {
     display: block;
   }
   .section-header .span9 .navbar-inner {
@@ -6133,17 +6152,27 @@ h3 {
     padding-left: 0;
     padding-right: 0;
   }
-  .container-content.news .thumbnail {
+  .container-content.news .thumbnail,
+  .container-content.police .thumbnail {
     float: none;
     text-align: center;
     width: 100%;
+    margin: 0 0 10px;
   }
   .section-banner {
     display: none;
   }
-  .container-footer {
-    border: 0 none;
-    text-align: left;
+  .container-media {
+    text-align: center;
+  }
+  .container-media ul {
+    margin-top: 10px;
+  }
+  .container-media ul li {
+    display: inline;
+  }
+  .container-copyright {
+    text-align: center;
   }
   .navbar-responsive .nav {
     margin: 0;
@@ -6160,27 +6189,6 @@ h3 {
     padding: 13px 15px;
     font-weight: bold;
     color: #ffffff;
-  }
-  html,
-  body {
-    height: 100%;
-    background: #ffffff;
-    /* The html and body elements cannot have any padding or margin. */
-  
-  }
-  /* Wrapper for page content to push down footer */
-  #wrap {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    /* Negative indent footer by it's height */
-  
-    margin: 0 auto -60px;
-  }
-  /* Set the fixed height of the footer here */
-  #push,
-  #footer {
-    height: 60px;
   }
   /* Force table to not be like tables anymore */
   table,

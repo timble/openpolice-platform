@@ -60,11 +60,11 @@ window.addEvent('domready', function() {
 		<div class="scrollable">
 			<fieldset class="form-horizontal" style="margin: 20px 20px 20px 0;">
 			<legend><?= @text( 'Text' ); ?></legend>
-			<div class="control-group">
-			    <label class="control-label" for="name">
+			<div>
+			    <label for="name">
 			    	<?= @text( 'Text' ); ?>
 			    </label>
-			    <div class="controls">
+			    <div>
 			        <?= @helper('listbox.items', array('autocomplete' => false, 'value' => 'id', 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'filter' => array('group' => 'text'), 'attribs' => array('id' => 'items'))) ?>
 			    </div>
 			</div>

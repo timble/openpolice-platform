@@ -20,4 +20,16 @@ class QuestionsViewArticlesHtml extends Library\ViewHtml
 
         return parent::render();
     }
+
+    public function highlight($text)
+    {
+        if ($searchword = $this->getModel()->getState()->searchword) {
+            $words = explode(' ', $searchword);
+
+            foreach($words as $word) {
+                $text = preg_replace('/'.$word.'(?![^<]*?>)/i', '<span class="highlight">' . $word . '</span>', $text);
+            }
+        }
+        return $text;
+    }
 }

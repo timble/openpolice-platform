@@ -68,6 +68,11 @@
     body {
         padding-left: 0;
         padding-right: 0;
+        background-color: lighten(@grayLighter, 3%);
+    }
+
+    #wrap {
+        border: 0 none;
     }
 
     .container {
@@ -90,7 +95,7 @@
             margin-top: 0;
             background-color: @navbarBackgroundHighlight;
 
-            .logo {
+            .logo-mobile {
                 display: block;
             }
 
@@ -111,11 +116,13 @@
     }
 
     .container-content {
-        &.news {
+        &.news,
+        &.police {
             .thumbnail {
                 float: none;
                 text-align: center;
                 width: 100%;
+                margin: 0 0 10px;
             }
         }
     }
@@ -124,9 +131,18 @@
         display: none;
     }
 
-    .container-footer {
-        border: 0 none;
-        text-align: left;
+    .container-media {
+        text-align: center;
+        ul {
+            margin-top: 10px;
+            li {
+                display: inline;
+            }
+        }
+    }
+
+    .container-copyright {
+        text-align: center;
     }
 
     // COLLAPSIBLE NAVBAR
@@ -149,27 +165,6 @@
         padding: 13px 15px;
         font-weight: bold;
         color: @navbarLinkColor;
-    }
-
-    html,
-    body {
-        height: 100%;
-        background: @white;
-        /* The html and body elements cannot have any padding or margin. */
-    }
-    /* Wrapper for page content to push down footer */
-    #wrap {
-        min-height: 100%;
-        height: auto !important;
-        height: 100%;
-        /* Negative indent footer by it's height */
-        margin: 0 auto -60px;
-    }
-
-    /* Set the fixed height of the footer here */
-    #push,
-    #footer {
-        height: 60px;
     }
 
     // Responsive table

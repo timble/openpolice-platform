@@ -25,13 +25,13 @@
 		</div>
 	
 		<div class="scrollable">
-			<fieldset class="form-horizontal">
+			<fieldset>
 				<legend><?= @text( 'Information' ); ?>:</legend>
-				<div class="control-group">
-				    <label class="control-label" for="name">
+				<div>
+				    <label for="name">
 				    	<?= @text( 'Municipality' ); ?>
 				    </label>
-				    <div class="controls">
+				    <div>
 				        <?= @helper('com:police.listbox.municipalities', array('deselect' => false, 'filter' => array('zone' => '5388'))) ?>
 				    </div>
 				</div>

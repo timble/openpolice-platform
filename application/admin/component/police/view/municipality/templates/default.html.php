@@ -25,29 +25,29 @@
 		</div>
 	
 		<div class="scrollable">
-			<fieldset class="form-horizontal">
+			<fieldset>
 				<legend><?= @text( 'Information' ); ?>:</legend>
-				<div class="control-group">
-				    <label class="control-label" for="postcode">
+				<div>
+				    <label for="postcode">
 				    	<?= @text( 'Postcode' ); ?>
 				    </label>
-				    <div class="controls">
+				    <div>
 				        <input class="required" type="text" name="postcode" maxlength="4" value="<?= $municipality->postcode; ?>" />
 				    </div>
 				</div>
-                <div class="control-group">
-				    <label class="control-label" for="name">
+                <div>
+				    <label for="name">
 				    	<?= @text( 'Zone' ); ?>
 				    </label>
-				    <div class="controls">
+				    <div>
 				        <?= @helper('listbox.zones', array('deselect' => false, 'attribs' => array('class' => 'chzn-select'))) ?>
 				    </div>
 				</div>
-                <div class="control-group">
-				    <label class="control-label" for="postcode">
+                <div>
+				    <label for="postcode">
 				    	<?= @text( 'City' ); ?>
 				    </label>
-				    <div class="controls">
+				    <div>
 				        <?= @helper('com:police.listbox.cities',
 							array(
 								'autocomplete' => true,

@@ -25,19 +25,19 @@
 		</div>
 		
 		<div class="form-content">
-			<fieldset class="form-horizontal">
+			<fieldset>
 				<legend><?= @text( 'Information' ); ?>:</legend>
 				
-				<div class="control-group">
+				<div>
 					<label for="title_fr" class="control-label"><?= @text( 'Title FR' ); ?>:</label>
-					<div class="controls">
+					<div>
 						<input type="text" name="title_fr" size="32" maxlength="250" value="<?= $item->title_fr; ?>" />
 					</div>
 				</div>
 				
-				<div class="control-group">
+				<div>
 					<label for="type" class="control-label"><?= @text( 'Type' ); ?>:</label>
-					<div class="controls">
+					<div>
 						<?= @helper('listbox.groups', array('selected'  => $item->group)) ?>	
 					</div>
 				</div>				

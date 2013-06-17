@@ -9,14 +9,13 @@
 
 use Nooku\Library;
 
-class QuestionsControllerArticle extends ApplicationControllerDefault
+class QuestionsControllerArticle extends Library\ControllerModel
 { 
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
         	'behaviors' => array(
-                'com:activities.controller.behavior.loggable',
-                'com:terms.controller.behavior.taggable'
+                'com:activities.controller.behavior.loggable'
             ),
         ));
     

@@ -13,54 +13,68 @@
 
 <script>
     $jQuery(document).ready(function() {
-
     	function format(item) { return item.title; };
-
         $jQuery("#streets").select2({
-                placeholder: "Search for your street",
-                minimumInputLength: 1,
-                ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                    url: "?view=streets&format=json",
-                    dataType: 'json',
-                    data: function (term, page) {
-                        return {
-                            search: term, // search term
-                            page_limit: 10
-                        };
-                    },
-                    results: function (data, page) { // parse the results into the format expected by Select2.
-                        // since we are using custom formatting functions we do not need to alter remote JSON data
-                        var results = [];
-                        $jQuery.each(data.items, function(i, item) {
-                            results.push(item.data);
-                        });
-                        return {results: results};
-                    }
+            placeholder: "Search for your street",
+            minimumInputLength: 1,
+            ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+                url: "?view=streets&format=json",
+                dataType: 'json',
+                data: function (term) {
+                    return {
+                        search: term, // search term
+                        page_limit: 10
+                    };
                 },
-                formatResult: format, // omitted for brevity, see the source of this page
-                formatSelection: format, // omitted for brevity, see the source of this page
-                dropdownCssClass: "bigdrop" // apply css that makes the dropdown taller
-            });
-
+                results: function (data) { // parse the results into the format expected by Select2.
+                    // since we are using custom formatting functions we do not need to alter remote JSON data
+                    var results = [];
+                    $jQuery.each(data.items, function(i, item) {
+                        results.push(item.data);
+                    });
+                    return {results: results};
+                }
+            },
+            initSelection: function(element, callback) {
+                // the input tag has a value attribute preloaded that points to a preselected movie's id
+                // this function resolves that id attribute to an object that select2 can render
+                // using its formatResult renderer - that way the movie name is shown preselected
+                var id=$jQuery(element).val();
+                if (id!=="") {
+                    $jQuery.ajax("?view=street&format=json&id="+id, {
+                        dataType: "json"
+                    }).done(function(data) { callback(data.item); });
+                }
+            },
+            formatResult: format, // omitted for brevity, see the source of this page
+            formatSelection: format, // omitted for brevity, see the source of this page
+            dropdownCssClass: "bigdrop" // apply css that makes the dropdown taller
+        });
     });
 </script>
     
-<form action="" method="get" class="well">
+<form action="" method="get" class="well -koowa-form">
 	<fieldset>
-		<div class="control-group">
-			<label class="control-label" for="zone_street_id"><?= @text('Enter the first letters of your street and select your street from the list') ?>:</label>
-			<div class="controls">
-				<input type="hidden" class="bigdrop" id="streets" name="street" style="width: 100%; display: none;" tabindex="2">
-			</div>
-		</div>
-		<div class="control-group">
-			<label class="control-label" for="number"><?= @text('Enter your number') ?>:</label>
-			<div class="controls">
-				<input type="text" name="number" class="required" id="number" size="10" maxlength="4" value="<?= $state->number; ?>" tabindex="2" />
-			</div>
-		</div>
+        <div class="row-fluid">
+            <div class="span9">
+                <div class="control-group">
+                    <label class="control-label" for="zone_street_id"><?= @text('My street') ?>:</label>
+                    <div class="controls">
+                        <input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" style="width: 100%; display: none;" tabindex="1" required>
+                    </div>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="control-group">
+                    <label class="control-label" for="number"><?= @text('My number') ?>:</label>
+                    <div class="controls">
+                        <input style="max-width: 90%;" type="number" name="number" value="<?= $state->number; ?>" tabindex="2" required />
+                    </div>
+                </div>
+            </div>
+        </div>
 	</fieldset>
-	<div class="form-actions" style="margin-bottom: 0; padding-left: 0;padding-bottom: 0;">
+	<div class="form-actions" style="margin-bottom: 0; margin-top: 0; padding-left: 0;padding-bottom: 0;">
 		<button class="btn" tabindex="3"><?= @text('Search') ?></button> <?= @text('or') ?> <a tabindex="4" href="#"><?= @text('Start over') ?></a>
 	</div>
 </form>

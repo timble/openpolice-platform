@@ -20,6 +20,8 @@
 @import "icons";
 @import "labels-badges";
 
+@import "../../bootstrap/stylesheets/validation.css";
+
 body {
     background-color: @grayLighter;
 }
@@ -36,6 +38,10 @@ h1, h2, h3 {
 
 .page-header {
     margin-bottom: 14px;
+}
+
+.highlight {
+    background-color: yellow;
 }
 
 #wrap {
@@ -191,6 +197,26 @@ h1, h2, h3 {
 
     .sidebar {
         margin-top: 24px;
+
+        .span3 {
+            border-bottom: 1px solid @grayLighter;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .component {
+        h2 { margin-top: 30px; }
+        h3 { margin-top: 20px; }
+
+        .article {
+            margin-bottom: 60px;
+        }
+
+        .article__introtext {
+            font-weight: bold;
+            margin-bottom: @baseLineHeight;
+        }
     }
 
     &.news,
@@ -208,7 +234,7 @@ h1, h2, h3 {
 
         .thumbnail {
             float: right;
-            margin-bottom: 10px;
+            margin:0 0 20px 20px;
         }
     }
 
@@ -288,18 +314,10 @@ h1, h2, h3 {
     }
 }
 
-.copyright {
+.container-copyright {
     font-size: @fontSizeSmall;
 
-    ul {
-        list-style: none;
-        float: right;
-
-        li {
-            float: left;
-            margin-left: 10px;
-        }
-    }
+    text-align: right;
 }
 
 // MEDIA QUERIES
