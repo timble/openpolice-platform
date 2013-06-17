@@ -4998,6 +4998,9 @@ h3 {
 .page-header {
   margin-bottom: 14px;
 }
+.highlight {
+  background-color: yellow;
+}
 #wrap {
   border-left: 1px solid #dcdcdc;
   border-right: 1px solid #dcdcdc;
