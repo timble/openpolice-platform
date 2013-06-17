@@ -32,6 +32,7 @@
 
 <? if($state->searchword) : ?>
 <? foreach ($articles as $article): ?>
+<div class="article">
     <div class="page-header">
         <h1>
             <a href="<?= @helper('route.article', array('row' => $article)) ?>">
@@ -41,6 +42,7 @@
     </div>
 
     <?= @highlight($article->text) ?>
+</div>
 <? endforeach ?>
 <? endif ?>
 

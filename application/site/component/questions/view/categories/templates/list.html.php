@@ -8,10 +8,10 @@
  */
 ?>
 
-<ul class="thumbnails">
+<ul class="nav nav-pills nav-stacked">
 <? foreach ($categories as $category): ?>
-    <li class="span3" style="text-align: center">
-        <a class="btn btn-block" href="<?= @helper('route.category', array('row' => $category)) ?>">
+    <li>
+        <a href="<?= @helper('route.category', array('row' => $category)) ?>">
             <?= $category->title ?>
         </a>
     </li>
