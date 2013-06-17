@@ -18,11 +18,6 @@ def deploy():
     git_directory = '/var/www/' + www_folder + '/git'
     shared_directory = '/var/www/' + www_folder + '/shared'
     with cd(git_directory):
-        print(yellow("-- Git: Remove staged and working directory changes"))
-        run("git reset --hard")
-        print(yellow("-- Git: Remove untracked files"))
-        run("git clean -f -d")
-
         print(yellow("-- Git: pull from origin"))
         run("git pull origin")
 
