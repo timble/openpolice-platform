@@ -9,7 +9,7 @@
 ?>
 
 <ktml:module position="left">
-    <?= @template('default_sidebar.html') ?>
+    <?= @template('com:police.view.page.homepage_shortcuts.html') ?>
 </ktml:module>
 
 <? foreach ($articles as $article) : ?>

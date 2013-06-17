@@ -7,13 +7,12 @@
  * @link		http://www.police.be
  */
 ?>
-<? $site = @object('application')->getCfg('site') ?>
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher:'91c73e48-a5e0-43ea-988f-57d099f878c7'});</script>
 
 <ktml:module position="left">
-    <?= @template('com:news.view.articles.default_sidebar.html') ?>
+    <?= @template('com:police.view.page.homepage_shortcuts.html') ?>
 </ktml:module>
 
 <div class="page-header clearfix">
