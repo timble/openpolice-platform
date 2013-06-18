@@ -5122,6 +5122,9 @@ h3 {
 .container-breadcrumb .breadcrumb {
   margin-bottom: 0;
 }
+.container-breadcrumb .breadcrumb li::first-letter {
+  text-transform: uppercase;
+}
 .container-content {
   padding-left: 19px;
   padding-right: 19px;
