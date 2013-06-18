@@ -18,9 +18,6 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
             'name'         => 'news',
             'behaviors'    =>  array(
                 'sluggable', 'lockable', 'creatable', 'modifiable', 'stickable',
-                'com:articles.database.behavior.publishable' => array(
-                    'table' => 'news', 'identity_column' => 'news_article_id'
-                ),
                 'com:attachments.database.behavior.attachable'
             ),
           	'filters' => array(

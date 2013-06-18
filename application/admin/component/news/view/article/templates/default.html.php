@@ -52,15 +52,9 @@
 	                </div>
 	            </div>
 	            <div>
-	        	    <label for="publish_on"><?= @text('Publish on') ?></label>
+	        	    <label for="created_on"><?= @text('Created on') ?></label>
 	                <div class="controls controls-calendar">
-                        <input type="datetime-local" name="publish_on" value="<?= $article->publish_on ?>" />
-	                </div>
-	            </div>
-	            <div>
-	                <label for="unpublish_on"><?= @text('Unpublish on') ?></label>
-	                <div class="controls controls-calendar">
-                        <input type="datetime-local" name="unpublish_on" value="<?= $article->publish_on ?>" />
+                        <input type="datetime-local" name="created_on" value="<?= gmdate('Y-m-d\TH:i:s', strtotime($article->created_on)) ?>" />
 	                </div>
 	            </div>
 	        </fieldset>

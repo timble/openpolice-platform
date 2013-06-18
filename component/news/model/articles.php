@@ -28,7 +28,7 @@ class ModelArticles extends Library\ModelTable
 	
 		$query->columns(array(
 			'thumbnail'      => 'thumbnails.thumbnail',
-            'ordering_date'  => 'IF(tbl.publish_on, tbl.publish_on, tbl.created_on)'
+            'ordering_date'  => 'IF(tbl.publish_on, tbl.created_on, tbl.created_on)'
 		));
 	}
     
