@@ -3,17 +3,42 @@
 \*------------------------------------*/
 @media (max-width: @navbarCollapseWidth) {
     .section-header {
+        // COLLAPSIBLE NAVBAR
+        // ------------------
+        // Block-level the nav
         .navbar {
             position:relative;
             display:inline-block;
+
+            .nav {
+                margin: 0;
+            }
         }
         .navbar ul {
             text-align:left;
-            display: none;
+
+            &.is-hidden {
+                display: none;
+            }
         }
 
         .navbar-inner > ul {
             border-top: 1px solid @blue;
+        }
+
+        ul {
+            margin: 0;
+        }
+
+        ul li > a {
+            border-bottom: 1px solid @blue;
+        }
+
+        // Nav and dropdown links in navbar
+        .nav li > a {
+            padding: 13px 15px;
+            font-weight: bold;
+            color: @navbarLinkColor;
         }
         ul > li {
             float:left;
@@ -27,9 +52,6 @@
         ul > li > a:hover {
 
         }
-        ul > li:hover .nav {
-            display:block;
-        }
         /* Navigation submenu */
         ul ul {
             display:none;
@@ -38,9 +60,12 @@
             width:180px;
             background-color: @navbarBackgroundHighlight;
         }
-        ul ul li a {
+        .nav ul {
+            margin-bottom: 0;
+        }
+        .nav ul li > a {
             display:block;
-            padding-left: 26px;
+            padding-left: 32px;
         }
         ul ul li a:hover {
 
@@ -118,12 +143,16 @@
         .nav-mobile-open {
 
         }
-        ul li:hover ul {
-            display:none;
-        }
         ul ul {
             position:static;
             width:100%;
         }
     }
 }
+
+//
+// Responsive: Navbar
+// --------------------------------------------------
+
+
+
