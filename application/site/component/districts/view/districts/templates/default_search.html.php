@@ -15,8 +15,8 @@
     $jQuery(document).ready(function() {
     	function format(item) { return item.title; };
         $jQuery("#streets").select2({
-            placeholder: "Search for your street",
-            minimumInputLength: 1,
+            placeholder: "<?= @text('Search') ?> ...",
+            minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
                 url: "?view=streets&format=json",
                 dataType: 'json',
@@ -48,7 +48,11 @@
             },
             formatResult: format, // omitted for brevity, see the source of this page
             formatSelection: format, // omitted for brevity, see the source of this page
-            dropdownCssClass: "bigdrop" // apply css that makes the dropdown taller
+            dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
+            formatInputTooShort: false,
+            formatSearching: function () { return "<?= @text('Please wait') ?> ..."; },
+            formatNoMatches: function () { return "<?= @text('No matches found') ?>"; }
+
         });
     });
 </script>

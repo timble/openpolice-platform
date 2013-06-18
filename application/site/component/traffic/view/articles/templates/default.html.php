@@ -15,8 +15,8 @@
 <table class="table table-striped">
 	<thead>
     <tr>
-        <th><?= @text('Wat') ?></th>
-        <th><?= @text('Wanneer') ?></th>
+        <th><?= @text('What') ?></th>
+        <th><?= @text('When') ?></th>
     </tr>
 	</thead>
 	<tbody>
