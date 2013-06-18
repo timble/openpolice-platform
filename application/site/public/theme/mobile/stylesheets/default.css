@@ -5155,6 +5155,21 @@ h3 {
   font-weight: bold;
   margin-bottom: 22px;
 }
+.container-content .component .column--double {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+.container-content .component .column--triple {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+.container-content .component .column--quad {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  column-count: 4;
+}
 .container-content.news .page-header h1,
 .container-content.police .page-header h1 {
   margin-bottom: 4px;
@@ -6164,6 +6179,16 @@ h3 {
     text-align: center;
     width: 100%;
     margin: 0 0 10px;
+  }
+  .container-content .component .column--triple {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  .container-content .component .column--quad {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
   }
   .section-banner {
     display: none;

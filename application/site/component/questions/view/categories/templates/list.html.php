@@ -8,7 +8,7 @@
  */
 ?>
 
-<ul class="nav nav-pills nav-stacked">
+<ul class="nav nav-pills nav-stacked column--triple">
 <? foreach ($categories as $category): ?>
     <li>
         <a href="<?= @helper('route.category', array('row' => $category)) ?>">
