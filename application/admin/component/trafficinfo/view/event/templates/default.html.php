@@ -57,37 +57,35 @@ window.addEvent('domready', function() {
 	</div> 
 	
 	<div class="sidebar" style="width: 600px;">
-		<div class="scrollable">
-			<fieldset class="form-horizontal" style="margin: 20px 20px 20px 0;">
-			<legend><?= @text( 'Text' ); ?></legend>
-			<div>
-			    <label for="name">
-			    	<?= @text( 'Text' ); ?>
-			    </label>
-			    <div>
-			        <?= @helper('listbox.items', array('autocomplete' => false, 'value' => 'id', 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'filter' => array('group' => 'text'), 'attribs' => array('id' => 'items'))) ?>
-			    </div>
-			</div>
-			</fieldset>
+        <fieldset class="form-horizontal" style="margin: 20px 20px 20px 0;">
+            <legend><?= @text( 'Text' ); ?></legend>
+            <div>
+                <label for="name">
+                    <?= @text( 'Text' ); ?>
+                </label>
+                <div>
+                    <?= @helper('listbox.items', array('autocomplete' => false, 'value' => 'id', 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'filter' => array('group' => 'text'), 'attribs' => array('id' => 'items'))) ?>
+                </div>
+            </div>
+        </fieldset>
 	
-	<?
-	switch ($event->id ? $event->trafficinfo_category_id : $state->category) {
-	    case 2:
-	        echo @template('form_workers');
-	        break;
-	    case 3:
-	        echo @template('form_ghost');
-	        break;
-	    case 5:
-	        echo @template('form_actua');
-	        break;
-	    case 4:
-	        echo @template('form_density');
-	        break;
-	    default:
-	    	echo @template('form_default');
-	}
-	 ?>
-	 </div>
+        <?
+        switch ($event->id ? $event->trafficinfo_category_id : $state->category) {
+            case 2:
+                echo @template('form_workers');
+                break;
+            case 3:
+                echo @template('form_ghost');
+                break;
+            case 5:
+                echo @template('form_actua');
+                break;
+            case 4:
+                echo @template('form_density');
+                break;
+            default:
+                echo @template('form_default');
+        }
+         ?>
 	 </div>
 </form>

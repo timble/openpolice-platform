@@ -41,46 +41,44 @@
 		
 		<?= @object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
 	</div>
-	<div class="sidebar">        
-	    <div class="scrollable">
-	        <fieldset>
-	        	<legend><?= @text('Publish') ?></legend>
-	            <div>
-	                <label for="published"><?= @text('Published') ?></label>
-	                <div>
-	                    <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
-	                </div>
-	            </div>
-	            <div>
-	        	    <label for="created_on"><?= @text('Created on') ?></label>
-	                <div class="controls controls-calendar">
-                        <input type="datetime-local" name="created_on" value="<?= gmdate('Y-m-d\TH:i:s', strtotime($article->created_on)) ?>" />
-	                </div>
-	            </div>
-	        </fieldset>
+	<div class="sidebar">
+        <fieldset>
+            <legend><?= @text('Publish') ?></legend>
+            <div>
+                <label for="published"><?= @text('Published') ?></label>
+                <div>
+                    <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
+                </div>
+            </div>
+            <div>
+                <label for="created_on"><?= @text('Created on') ?></label>
+                <div class="controls controls-calendar">
+                    <input type="datetime-local" name="created_on" value="<?= gmdate('Y-m-d\TH:i:s', strtotime($article->created_on)) ?>" />
+                </div>
+            </div>
+        </fieldset>
 
-            <? if($article->isAttachable()) : ?>
-                <fieldset>
-                    <legend><?= @text('Attachments') ?></legend>
-                    <? if (!$article->isNew()) : ?>
-                        <?= @template('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'assignable' => true, 'image' => $article->image)) ?>
-                    <? endif ?>
-                    <?= @template('com:attachments.view.attachments.upload.html') ?>
-                </fieldset>
-            <? endif ?>
-	        
-	        <? if($article->isTranslatable()) : ?>
-	        <fieldset>
-	            <legend><?= @text('Translations') ?></legend>
-	            <? $translations = $article->getTranslations() ?>
-	            <? foreach($article->getLanguages() as $language) : ?>
-	                <?= $language->name.':' ?>
-	                <? $translation = $translations->find(array('iso_code' => $language->iso_code)) ?>
-	                <?= @helper('com:languages.grid.status',
-	                    array('status' => $translation->status, 'original' => $translation->original, 'deleted' => $translation->deleted)) ?>
-	            <? endforeach ?>
-	        </fieldset>
-	        <? endif ?>
-    	</div>
+        <? if($article->isAttachable()) : ?>
+            <fieldset>
+                <legend><?= @text('Attachments') ?></legend>
+                <? if (!$article->isNew()) : ?>
+                    <?= @template('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'assignable' => true, 'image' => $article->image)) ?>
+                <? endif ?>
+                <?= @template('com:attachments.view.attachments.upload.html') ?>
+            </fieldset>
+        <? endif ?>
+
+        <? if($article->isTranslatable()) : ?>
+        <fieldset>
+            <legend><?= @text('Translations') ?></legend>
+            <? $translations = $article->getTranslations() ?>
+            <? foreach($article->getLanguages() as $language) : ?>
+                <?= $language->name.':' ?>
+                <? $translation = $translations->find(array('iso_code' => $language->iso_code)) ?>
+                <?= @helper('com:languages.grid.status',
+                    array('status' => $translation->status, 'original' => $translation->original, 'deleted' => $translation->deleted)) ?>
+            <? endforeach ?>
+        </fieldset>
+        <? endif ?>
     </div>
 </form>

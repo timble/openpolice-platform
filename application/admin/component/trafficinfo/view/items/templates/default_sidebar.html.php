@@ -9,7 +9,7 @@
 ?>
 
 <h3><?= @text('Lists')?></h3>
-<nav class="scrollable">
+<ul class="navigation">
 	<a class="<?= $state->group == null ? 'active' : ''; ?>" href="<?= @route('group=' ) ?>">
 		<?= 'All groups' ?>
 	</a>
@@ -34,4 +34,4 @@
 	<a class="<?= $state->group == 'text' ? 'active' : ''; ?>" href="<?= @route('group=text' ) ?>">
 		<?= @text('Texts') ?>
 	</a>
-</nav>
+</ul>

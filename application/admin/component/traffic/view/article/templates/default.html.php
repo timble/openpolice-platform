@@ -33,53 +33,51 @@
 		<?= @object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
 	</div>
 	<div class="sidebar">
-		<div class="scrollable">
-			<fieldset>
-				<legend><?= @text('Publish') ?></legend>
-				<div>
-				    <label for="published"><?= @text('Published') ?></label>
-				    <div>
-				        <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
-				    </div>
-				</div>
-			</fieldset>
-            <fieldset>
-                <legend><?= @text('Details') ?></legend>
+        <fieldset>
+            <legend><?= @text('Publish') ?></legend>
+            <div>
+                <label for="published"><?= @text('Published') ?></label>
                 <div>
-                    <label for="date">
-                        <?= @text('Start on') ?>
-                    </label>
-                    <div class="controls-calendar">
-                        <?= @helper('behavior.calendar', array('date' => $article->start_on, 'name' => 'start_on')); ?>
-                        <input type="datetime-local" name="start_on" value="<?= $article->start_on ?>" />
-                    </div>
+                    <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
                 </div>
-                <div>
-                    <label for="date">
-                        <?= @text('End on') ?>
-                    </label>
-                    <div class="controls-calendar">
-                        <input type="datetime-local" name="end_on" value="<?= $article->end_on ?>" />
-                    </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><?= @text('Details') ?></legend>
+            <div>
+                <label for="date">
+                    <?= @text('Start on') ?>
+                </label>
+                <div class="controls-calendar">
+                    <?= @helper('behavior.calendar', array('date' => $article->start_on, 'name' => 'start_on')); ?>
+                    <input type="datetime-local" name="start_on" value="<?= $article->start_on ?>" />
                 </div>
-            </fieldset>
-            <fieldset class="categories group">
-                <legend><?= @text('Category') ?></legend>
-                <div>
-                    <?= @helper('listbox.radiolist', array(
-                        'list'     => @object('com:traffic.model.categories')->sort('title')->table('traffic')->getRowset(),
-                        'selected' => $article->categories_category_id,
-                        'name'     => 'categories_category_id',
-                        'text'     => 'title',
-                    ));
-                    ?>
+            </div>
+            <div>
+                <label for="date">
+                    <?= @text('End on') ?>
+                </label>
+                <div class="controls-calendar">
+                    <input type="datetime-local" name="end_on" value="<?= $article->end_on ?>" />
                 </div>
-            </fieldset>
-            <fieldset>
-                <legend><?= @text('Streets') ?></legend>
-                    <?= @helper('com:streets.listbox.streets', array('selected' => $streets, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
-                    <script data-inline> $jQuery(".select-streets").select2(); </script>
-            </fieldset>
-	    </div>
-	</div>
+            </div>
+        </fieldset>
+        <fieldset class="categories group">
+            <legend><?= @text('Category') ?></legend>
+            <div>
+                <?= @helper('listbox.radiolist', array(
+                    'list'     => @object('com:traffic.model.categories')->sort('title')->table('traffic')->getRowset(),
+                    'selected' => $article->categories_category_id,
+                    'name'     => 'categories_category_id',
+                    'text'     => 'title',
+                ));
+                ?>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend><?= @text('Streets') ?></legend>
+                <?= @helper('com:streets.listbox.streets', array('selected' => $streets, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
+                <script data-inline> $jQuery(".select-streets").select2(); </script>
+        </fieldset>
+    </div>
 </form>

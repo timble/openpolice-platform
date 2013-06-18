@@ -8,7 +8,7 @@
  */
 ?>
 
-<nav class="scrollable">
+<ul class="navigation">
 	<a class="<?= $state->district == null ? 'active' : ''; ?>" href="<?= @route('district=' ) ?>">
 		<?= 'All districts' ?>
 	</a>
@@ -17,4 +17,4 @@
 		<?= @escape($district->title) ?>
 	</a>
 	<? endforeach ?>
-</nav>
+</ul>
