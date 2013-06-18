@@ -19,10 +19,9 @@ class PoliceControllerMunicipality extends Library\ControllerModel
 		if ($context->request->getFormat() == 'html')
 		{
 			if ($municipality->police_zone_id) {
-				$context->response->setRedirect('http://www.lokalepolitie.be/'.$municipality->police_zone_id);
+                $this->getObject('application')->redirect('http://www.lokalepolitie.be/'.$municipality->police_zone_id);
+                return true;
 			}
-
-			return true;
 		}
 
 		return $municipality;
