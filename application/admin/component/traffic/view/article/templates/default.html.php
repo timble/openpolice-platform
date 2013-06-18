@@ -49,8 +49,7 @@
                     <?= @text('Start on') ?>
                 </label>
                 <div class="controls-calendar">
-                    <?= @helper('behavior.calendar', array('date' => $article->start_on, 'name' => 'start_on')); ?>
-                    <input type="datetime-local" name="start_on" value="<?= $article->start_on ?>" />
+                    <input type="date" name="start_on" value="<?= gmdate('Y-m-d\TH:i:s', strtotime($article->start_on)) ?>" />
                 </div>
             </div>
             <div>
@@ -58,7 +57,7 @@
                     <?= @text('End on') ?>
                 </label>
                 <div class="controls-calendar">
-                    <input type="datetime-local" name="end_on" value="<?= $article->end_on ?>" />
+                    <input type="date" name="end_on" value="<?= gmdate('Y-m-d\TH:i:s', strtotime($article->end_on)) ?>" />
                 </div>
             </div>
         </fieldset>
