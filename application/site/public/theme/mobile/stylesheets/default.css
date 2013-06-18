@@ -5073,8 +5073,11 @@ h3 {
 .section-header .navbar-inner .nav {
   float: none;
 }
-.section-header .nav .nav {
+.section-header .nav ul {
   display: none;
+  margin-left: 0;
+  margin-bottom: 22px;
+  list-style: none;
 }
 .section-header .subnavigation {
   list-style: none;
@@ -5967,33 +5970,33 @@ h3 {
     position: relative;
     display: inline-block;
   }
-  .section-header .navbar .nav {
+  .section-header .navbar ul {
     text-align: left;
     display: none;
   }
-  .section-header .navbar-inner > .nav {
+  .section-header .navbar-inner > ul {
     border-top: 1px solid #004fa3;
   }
-  .section-header .nav > li {
+  .section-header ul > li {
     float: left;
     *display: inline;
     zoom: 1;
     position: relative;
   }
-  .section-header .nav > li a {
+  .section-header ul > li a {
     display: block;
   }
-  .section-header .nav > li:hover .nav {
+  .section-header ul > li:hover .nav {
     display: block;
   }
-  .section-header .nav .nav {
+  .section-header ul ul {
     display: none;
     position: absolute;
     left: 0;
     width: 180px;
     background-color: #0063cc;
   }
-  .section-header .nav .nav li a {
+  .section-header ul ul li a {
     display: block;
     padding-left: 26px;
   }
@@ -6046,20 +6049,20 @@ h3 {
   .section-header .navbar {
     width: 100%;
   }
-  .section-header .nav {
+  .section-header ul {
     display: none;
   }
-  .section-header .nav li {
+  .section-header ul li {
     width: 100%;
     float: none;
   }
   .section-header .nav-click {
     display: block;
   }
-  .section-header .nav li:hover .nav {
+  .section-header ul li:hover ul {
     display: none;
   }
-  .section-header .nav .nav {
+  .section-header ul ul {
     position: static;
     width: 100%;
   }
@@ -6180,14 +6183,14 @@ h3 {
   .navbar-responsive .nav {
     margin: 0;
   }
-  .navbar-responsive .nav > li > a {
+  .navbar-responsive .nav li > a {
     border-bottom: 1px solid #004fa3;
   }
   .navbar-responsive .nav .nav-header {
     color: #ffffff;
     text-shadow: none;
   }
-  .navbar-responsive .nav > li > a,
+  .navbar-responsive .nav li > a,
   .navbar-responsive .dropdown-menu a {
     padding: 13px 15px;
     font-weight: bold;
