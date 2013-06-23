@@ -9,7 +9,7 @@
 ?>
 
 <?= @helper('behavior.mootools') ?>
-<?= @helper('behavior.modal') ?>
+<?= @helper('behavior.modal', array('selector' => 'a.modalbox')) ?>
 
 <address class="vcard">
     <div class="page-header">
@@ -77,7 +77,7 @@
             <? if ($contact->address) : ?>
                 <? $map = "http://maps.googleapis.com/maps/api/staticmap?maptype=roadmap
 &markers='.$contact->address.','.$contact->suburb.','.$contact->country.'&sensor=false"; ?>
-                <a rel="{handler: 'image'}" class="modal" href="<?= $map ?>&size=800x600&zoom=15">
+                <a rel="{handler: 'image'}" class="modalbox" href="<?= $map ?>&size=800x600&zoom=15">
                     <img class="thumbnail" src="<?= $map ?>&size=200x200&zoom=13" />
                 </a>
             <? endif; ?>
