@@ -33,7 +33,7 @@
                     <img src="media://application/images/logo-flame.png" />
                     <span><?= @escape($zone->title); ?></span>
                 </a>
-                <span class="slogan hidden-phone">Bel <strong>112</strong> voor dringende politiehulp. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
+                <span class="slogan hidden-phone">Bel <strong>101</strong> voor dringende politiehulp. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
                 <div class="navbar-inner">
                     <ktml:modules position="navigation">
                         <ktml:modules:content />
