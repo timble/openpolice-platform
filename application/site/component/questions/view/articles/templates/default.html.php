@@ -49,3 +49,5 @@
 <? if($state->category OR $state->searchword) : ?>
 <?= @helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 <? endif ?>
+
+<?= @template('default_contact.html') ?>

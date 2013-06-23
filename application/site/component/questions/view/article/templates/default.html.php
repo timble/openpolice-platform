@@ -13,3 +13,5 @@
 </div>
 
 <?= $article->text ?>
+
+<?= @template('com:questions.view.articles.default_contact.html') ?>
