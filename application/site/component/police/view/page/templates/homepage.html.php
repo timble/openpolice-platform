@@ -35,7 +35,7 @@
     </div>
     <div class="span4">
         <div class="box">
-            <p><strong><i class="icon-phone"></i> 101</strong> voor dringende hulp</p>
+            <p><strong><i class="icon-phone"></i> 101</strong> voor dringende politiehulp</p>
             <p><strong><i class="icon-phone"></i> <?= $zone->telephone ?></strong> geen spoed</p>
             <hr />
             <h3><i class="icon-comments-alt"></i> Contacteer ons</h3>
