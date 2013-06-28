@@ -10,7 +10,7 @@
 <? $columns = @helper('module.count', array('condition' => 'left')) ? '9' : '12' ?>
 <? $site = @escape(@object('application')->getCfg('site' )) ?>
 <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
-<? if($component == 'police') { $columns = '12'; } ?>
+<? if($extension == 'police') { $columns = '12'; } ?>
 
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
@@ -57,7 +57,7 @@
         </ktml:modules>
     </div>
 
-    <div class="container-content <?= $component ?>">
+    <div class="container-content <?= $extension ?>">
         <div class="row">
             <ktml:modules position="left">
                 <div class="span3 sidebar hidden-phone">
