@@ -20,8 +20,7 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
                 'sluggable', 'lockable', 'creatable', 'modifiable',
                 'orderable' => array(
                     'strategy' => 'flat'
-                ),
-                'com:terms.database.behavior.taggable'
+                )
             ),
           	'filters' => array(
           	    'text'   => array('html', 'tidy')

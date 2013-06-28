@@ -22,13 +22,6 @@ class ModelArticles extends Library\ModelTable
             ->insert('sort', 'cmd', 'title')
             ->insert('searchword', 'string');
 	}
-
-    protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
-    {
-        parent::_buildQueryJoins($query);
-
-        $query->join(array('terms' => 'terms_relations'), 'terms.row = tbl.questions_article_id');
-    }
 	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
 	{
