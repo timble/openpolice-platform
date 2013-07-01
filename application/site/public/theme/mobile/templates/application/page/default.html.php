@@ -86,17 +86,10 @@
                 <h3 class="hidden-phone">Volg ons via</h3>
                 <ul class="social">
                     <li class="social__item">
-                        <span class="icon-stack">
-                          <i class="icon-circle icon-stack-base icon-blue"></i>
-                          <i class="icon-twitter icon-light"></i>
-                        </span>
                         <a href="http://www.twitter.com/politieleuven">Twitter</a>
                     </li>
                     <li class="social__item">
-                        <span class="icon-stack">
-                          <i class="icon-circle icon-stack-base icon-blue"></i>
-                          <i class="icon-facebook icon-light"></i>
-                        </span> <a href="http://www.facebook.com/politieleuven">Facebook</a>
+                        <a href="http://www.facebook.com/politieleuven">Facebook</a>
                     </li>
                 </ul>
             </div>
