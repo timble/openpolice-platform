@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ecde9f895f288b7e86762b9389c863b2",
+    "hash": "16a9df50c9ffb44e2d61241970ebd1d3",
     "packages": [
         {
             "name": "imagine/imagine",
@@ -51,6 +51,34 @@
                 "image processing"
             ],
             "time": "2012-12-13 18:31:18"
+        },
+        {
+            "name": "jlong/sass-twitter-bootstrap",
+            "version": "v2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jlong/sass-twitter-bootstrap.git",
+                "reference": "v2.3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jlong/sass-twitter-bootstrap/zipball/v2.3.2",
+                "reference": "v2.3.2",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "A sass port of the sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+            "homepage": "http://github.com/jlong/sass-twitter-bootstrap/",
+            "keywords": [
+                "bootstrap",
+                "css",
+                "sass"
+            ],
+            "time": "2013-05-21 19:52:16"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -116,6 +144,7 @@
                 "shasum": ""
             },
             "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -125,10 +154,6 @@
                 "bootstrap",
                 "css"
             ],
-            "support": {
-                "source": "https://github.com/twitter/bootstrap/tree/v2.3.1",
-                "issues": "https://github.com/twitter/bootstrap/issues"
-            },
             "time": "2013-03-01 05:24:27"
         }
     ],
