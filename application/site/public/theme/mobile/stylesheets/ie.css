@@ -6168,41 +6168,40 @@ h1, h2, h3 {
     width: 352px;
   }
 }
-@media screen and (min-width: 767px) {
-  /* Customize the navbar links to be fill the entire space of the .navbar */
-  /* line 39, _responsive.scss */
-  .navbar .navbar-inner {
-    padding: 0;
-  }
-
-  /* line 42, _responsive.scss */
-  .navbar .nav, .navbar .section-header .nav ul, .section-header .nav .navbar ul {
-    margin: 0;
-    display: table;
-  }
-
-  /* line 46, _responsive.scss */
-  .navbar .nav li, .section-header .nav .navbar ul li {
-    display: table-cell;
-    width: 1%;
-    float: none;
-  }
-
-  /* line 51, _responsive.scss */
-  .navbar .nav li a, .section-header .nav .navbar ul li a {
-    text-align: center;
-  }
-
-  /* line 54, _responsive.scss */
-  .navbar .nav li:first-child a, .section-header .nav .navbar ul li:first-child a {
-    border-left: 0;
-  }
-
-  /* line 57, _responsive.scss */
-  .navbar .nav li:last-child a, .section-header .nav .navbar ul li:last-child a {
-    border-right: 0;
-  }
+/* Customize the navbar links to be fill the entire space of the .navbar */
+/* line 39, _responsive.scss */
+.navbar .navbar-inner {
+  padding: 0;
 }
+
+/* line 42, _responsive.scss */
+.navbar .nav, .navbar .section-header .nav ul, .section-header .nav .navbar ul {
+  margin: 0;
+  display: table;
+}
+
+/* line 46, _responsive.scss */
+.navbar .nav li, .section-header .nav .navbar ul li {
+  display: table-cell;
+  width: 1%;
+  float: none;
+}
+
+/* line 51, _responsive.scss */
+.navbar .nav li a, .section-header .nav .navbar ul li a {
+  text-align: center;
+}
+
+/* line 54, _responsive.scss */
+.navbar .nav li:first-child a, .section-header .nav .navbar ul li:first-child a {
+  border-left: 0;
+}
+
+/* line 57, _responsive.scss */
+.navbar .nav li:last-child a, .section-header .nav .navbar ul li:last-child a {
+  border-right: 0;
+}
+
 @media (max-width: 767px) {
   /* line 66, _responsive.scss */
   body {

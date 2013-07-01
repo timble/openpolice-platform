@@ -34,32 +34,30 @@
     }
 }
 
-
-@media (min-width: $navbarCollapseWidth) {
-    /* Customize the navbar links to be fill the entire space of the .navbar */
-    .navbar .navbar-inner {
-        padding: 0;
-    }
-    .navbar .nav {
-        margin: 0;
-        display: table;
-    }
-    .navbar .nav li {
-        display: table-cell;
-        width: 1%;
-        float: none;
-    }
-    .navbar .nav li a {
-        text-align: center;
-    }
-    .navbar .nav li:first-child a {
-        border-left: 0;
-    }
-    .navbar .nav li:last-child a {
-        border-right: 0;
-    }
+@include respond-min($navbarCollapseWidth) {
+  /* Customize the navbar links to be fill the entire space of the .navbar */
+  .navbar .navbar-inner {
+    padding: 0;
+  }
+  .navbar .nav {
+    margin: 0;
+    display: table;
+  }
+  .navbar .nav li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+  }
+  .navbar .nav li a {
+    text-align: center;
+  }
+  .navbar .nav li:first-child a {
+    border-left: 0;
+  }
+  .navbar .nav li:last-child a {
+    border-right: 0;
+  }
 }
-
 
 //
 // Menu is collapsed
