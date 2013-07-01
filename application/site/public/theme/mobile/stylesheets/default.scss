@@ -36,23 +36,17 @@ h1, h2, h3 {
     background-color: yellow;
 }
 
-#wrap {
-    border-left: 1px solid darken($grayLighter, 7%);
-    border-right: 1px solid darken($grayLighter, 7%);
-    border-bottom: 1px solid darken($grayLighter, 7%);
-    background-color: $white;
-    @include border-radius(0 0 5px 5px);
+.container-fluid {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.container {
-    width: $gridRowWidth + 38px;
+#wrap {
+    background-color: $white;
 }
 
 .section-header  {
     margin-bottom: 20px;
-
-    padding-left: 20px;
-    padding-right: 20px;
 
     .span3 {
         .logo {
@@ -75,12 +69,10 @@ h1, h2, h3 {
         }
     }
 
-    .nav-header {
-        padding: 3px 0;
-        text-indent: 15px;
-    }
+    .navbar {
+      margin-bottom: 0;
 
-    .logo-mobile {
+      .navbar__logo {
         display:none; /* Hide from browsers that don't support media queries */
         cursor:pointer;
         position:absolute;
@@ -93,47 +85,18 @@ h1, h2, h3 {
         background-color: $navbarBackground;
 
         img {
-            margin: 10px 0 0 0;
-            float: left;
+          margin: 10px 0 0 0;
+          float: left;
         }
 
         span {
-            margin: 13px 0  0 6px;
-            display: block;
-            float: left;
-            color: $white;
+          margin: 13px 0  0 6px;
+          display: block;
+          float: left;
+          color: $white;
+          color: $white;
         }
-    }
-
-    .nav-pills {
-        font-size: $fontSizeSmall;
-    }
-
-    .navbar {
-        margin-bottom: 0;
-    }
-
-    .navbar-inner {
-        margin-bottom: 0;
-
-        .nav {
-            float: none;
-        }
-    }
-
-    .nav ul {
-        display: none;
-        @extend .nav;
-    }
-
-    .subnavigation {
-        list-style: none;
-
-        li {
-            font-size: $fontSizeSmall;
-            line-height: 16px;
-        }
-
+      }
     }
 
     .slogan {
@@ -164,13 +127,10 @@ h1, h2, h3 {
         @include box-shadow(inset 0px 0px 3px 3px rgba(0,0,0,0.4));
     }
 
-    margin: 0 20px;
     @include border-radius(5px);
 
     img {
         display:block;
-
-        margin: 0 20px;
     }
 }
 
@@ -182,12 +142,10 @@ h1, h2, h3 {
             text-transform: uppercase;
         }
     }
-    margin: 5px 20px 0;
+    margin: 5px 0;
 }
 
 .container-content {
-    padding-left: 19px;
-    padding-right: 19px;
     padding-top: 10px;
 
     margin-bottom: 30px;
@@ -199,6 +157,8 @@ h1, h2, h3 {
             border-bottom: 1px solid $grayLighter;
             padding-bottom: 10px;
             margin-bottom: 10px;
+          float: none;
+          width: 100%;
         }
     }
 
@@ -271,7 +231,7 @@ h1, h2, h3 {
 }
 
 .container-media {
-    padding: 10px 19px 30px;
+    padding: 10px 0 30px;
 
     background-color: lighten($grayLighter, 3%);
     border-top: 1px solid darken($grayLighter, 7%);
@@ -324,5 +284,4 @@ h1, h2, h3 {
 // MEDIA QUERIES
 // ------------------
 @import "bootstrap-responsive";
-@import "responsive-navbar";
 @import "responsive";

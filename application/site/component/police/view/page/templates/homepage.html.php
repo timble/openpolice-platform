@@ -10,7 +10,7 @@
 <? $site = @object('application')->getCfg('site') ?>
 <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
 
-<div class="row">
+<div class="row-fluid">
     <div class="span8 hidden-phone">
         <? foreach (@object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <div class="page-header">
@@ -49,4 +49,6 @@
     </div>
 </div>
 <hr />
-<?= @template('homepage_shortcuts.html') ?>
+<div class="row-fluid">
+    <?= @template('homepage_shortcuts.html') ?>
+</div>

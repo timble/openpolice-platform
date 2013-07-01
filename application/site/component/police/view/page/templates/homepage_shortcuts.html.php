@@ -1,6 +1,6 @@
 <? $site = @object('application')->getCfg('site') ?>
 
-<div class="row">
+
     <div class="span3">
         <h3><i class="icon-file-alt"></i> Aangifte doen</h3>
         <p>Aangifte doen is belangrijk, alleen dan kan de politie een onderzoek starten.</p>
@@ -21,4 +21,3 @@
         <p>Iets verloren? Misschien hebben wij je verloren voorwerp gevonden.</p>
         <p><a href="#">Zoek je verloren voorwerpen &rarr;</a></p>
     </div>
-</div>

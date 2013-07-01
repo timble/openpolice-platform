@@ -17,7 +17,7 @@
 
 <?= @template('page_head.html') ?>
 <body>
-<div id="wrap" class="container">
+<div id="wrap" class="container-fluid">
     <div class="section-header">
         <div class="row-fluid">
             <div class="span3">
@@ -28,16 +28,18 @@
                     </a>
                 </div>
             </div>
-            <div class="span9 navbar navbar-responsive">
-                <a class="logo-mobile" href="/<?= $site ?>">
+            <div class="span9">
+                <span class="slogan hidden-phone">Bel <strong>101</strong> voor dringende politiehulp. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
+                <div class="navbar navbar-responsive">
+                <a class="navbar__logo" href="/<?= $site ?>">
                     <img src="media://application/images/logo-flame.png" />
                     <span><?= @escape($zone->title); ?></span>
                 </a>
-                <span class="slogan hidden-phone">Bel <strong>101</strong> voor dringende politiehulp. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
                 <div class="navbar-inner">
                     <ktml:modules position="navigation">
                         <ktml:modules:content />
                     </ktml:modules>
+                </div>
                 </div>
             </div>
         </div>
@@ -58,7 +60,7 @@
     </div>
 
     <div class="container-content <?= $extension ?>">
-        <div class="row">
+        <div class="row-fluid">
             <ktml:modules position="left">
                 <div class="span3 sidebar hidden-phone">
                     <ktml:modules:content />
@@ -71,7 +73,7 @@
     </div>
 
     <div class="container-media">
-        <div class="row">
+        <div class="row-fluid">
             <div class="span6 hidden-phone">
                 <h3><?= @text('Laatste nieuws') ?></h3>
                 <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
@@ -98,7 +100,7 @@
     <div id="push"></div>
 </div>
 
-<div class="container container-copyright">
+<div class="container-fluid container-copyright">
     <p>
         © 2013 Lokale Politie - <?= @escape($zone->title); ?>
         <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -

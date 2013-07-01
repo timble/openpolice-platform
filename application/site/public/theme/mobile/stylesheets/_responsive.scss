@@ -1,3 +1,17 @@
+@include respond-min(998px) {
+  .container-fluid {
+    width: $gridRowWidth;
+    margin: 0 auto;
+  }
+
+  #wrap {
+    border-left: 1px solid darken($grayLighter, 7%);
+    border-right: 1px solid darken($grayLighter, 7%);
+    border-bottom: 1px solid darken($grayLighter, 7%);
+    @include border-radius(0 0 5px 5px);
+  }
+}
+
 //
 // Menu is not collapsed
 // --------------------------------------------------
@@ -10,9 +24,6 @@
     }
 
     .section-header {
-        padding-left: 20px;
-        padding-right: 20px;
-
         .span3 {
             float: none;
             width: 100%;
@@ -69,15 +80,6 @@
         background-color: lighten($grayLighter, 3%);
     }
 
-    #wrap {
-        border: 0 none;
-    }
-
-    .container {
-        border: 0 none;
-        width: 100%;
-    }
-
     .section-header {
         margin-bottom: 0;
         padding-left: 0;
@@ -87,29 +89,66 @@
             display: none;
         }
 
-        .span9 {
-            min-height: 50px;
+        .navbar {
+          width: 100%;
+          background-color: $navbarBackgroundHighlight;
+          position:relative;
+          display:inline-block;
+
+          .navbar__logo {
+              display: block;
+          }
+
+          .navbar__handle {
+            display:block;
+            cursor:pointer;
+            position:absolute;
+            top:0;
+            right:0;
+            background:$navbarBackground url(../img/nav.svg) no-repeat center center;
+            background-size:18px;
+            height:50px;
+            width:50px;
+            border-left: 1px solid $blue;
+          }
+
+          .navbar-inner {
+            @include border-radius(0);
+            border-top: 0 none;
+            border-left: 0 none;
+            border-right: 0 none;
+            margin-right: 0;
+            min-height: 0;
+            padding-left: 0;
+            padding-right: 0;
             padding-top: 50px;
-            margin-top: 0;
-            background-color: $navbarBackgroundHighlight;
 
-            .logo-mobile {
-                display: block;
-            }
+            .nav {
+              margin: 0;
+              text-align:left;
+              border-top: 1px solid $blue;
 
-            .navbar-inner {
-                @include border-radius(0);
-                border-top: 0 none;
-                border-left: 0 none;
-                border-right: 0 none;
-                margin-right: 0;
-            }
+              &.is-hidden {
+                display: none;
+                visibility: hidden;
+              }
 
-            .navbar-inner {
-                min-height: 0;
-                padding-left: 0;
-                padding-right: 0;
+              li {
+                width: 100%;
+                *display:inline;
+                zoom:1;
+                position:relative;
+              }
+
+              a {
+                display:block;
+                border-bottom: 1px solid $blue;
+                padding: 13px 15px;
+                font-weight: bold;
+                color: $navbarLinkColor;
+              }
             }
+          }
         }
     }
 
