@@ -1,0 +1,158 @@
+/*------------------------------------*\
+    Flaunt JS Navigation
+\*------------------------------------*/
+@media (max-width: $navbarCollapseWidth) {
+    .section-header {
+        // COLLAPSIBLE NAVBAR
+        // ------------------
+        // Block-level the nav
+        .navbar {
+            position:relative;
+            display:inline-block;
+
+            .nav {
+                margin: 0;
+            }
+        }
+        .navbar ul {
+            text-align:left;
+
+            &.is-hidden {
+                display: none;
+            }
+        }
+
+        .navbar-inner > ul {
+            border-top: 1px solid $blue;
+        }
+
+        ul {
+            margin: 0;
+        }
+
+        ul li > a {
+            border-bottom: 1px solid $blue;
+        }
+
+        // Nav and dropdown links in navbar
+        .nav li > a {
+            padding: 13px 15px;
+            font-weight: bold;
+            color: $navbarLinkColor;
+        }
+        ul > li {
+            float:left;
+            *display:inline;
+            zoom:1;
+            position:relative;
+        }
+        ul > li a {
+            display:block;
+        }
+        ul > li > a:hover {
+
+        }
+        /* Navigation submenu */
+        ul ul {
+            display:none;
+            position:absolute;
+            left:0;
+            width:180px;
+            background-color: $navbarBackgroundHighlight;
+        }
+        .nav ul {
+            margin-bottom: 0;
+        }
+        .nav ul li > a {
+            display:block;
+            padding-left: 32px;
+        }
+        ul ul li a:hover {
+
+        }
+        /* Mobile navigation */
+        .nav-mobile {
+            display:none; /* Hide from browsers that don't support media queries */
+            cursor:pointer;
+            position:absolute;
+            top:0;
+            right:0;
+            background:$navbarBackground url(../img/nav.svg) no-repeat center center;
+            background-size:18px;
+            height:50px;
+            width:50px;
+            border-left: 1px solid $blue;
+        }
+        /* Mobile navigation, clickable area for revealing <ul> */
+        .nav-click {
+            position:absolute;
+            top:0;
+            right:0;
+            display:none;
+            height:48px;
+            width:50px;
+            cursor:pointer;
+            border-left: 1px solid $blue;
+        }
+        .nav-click i {
+            display:block;
+            height:48px;
+            width:48px;
+            background:url(../img/drop.svg) no-repeat center center;
+            background-size:20px;
+        }
+        .nav-click:hover {
+
+        }
+        .nav-rotate {
+            -webkit-transform:rotate(180deg);
+            -moz-transform:rotate(180deg);
+            -ms-transform:rotate(180deg);
+            -o-transform:rotate(180deg);
+            transform:rotate(180deg);
+        }
+    }
+}
+
+/*------------------------------------*\
+    Media Queries
+\*------------------------------------*/
+
+@media only screen and (max-width: $navbarCollapseWidth) {
+    .section-header {
+        .nav-mobile {
+            display:block;
+        }
+        .navbar {
+            width:100%;
+
+        }
+        ul {
+            display:none;
+        }
+        ul li {
+            width:100%;
+            float:none;
+        }
+        ul li > a {
+
+        }
+        .nav-click {
+            display:block;
+        }
+        .nav-mobile-open {
+
+        }
+        ul ul {
+            position:static;
+            width:100%;
+        }
+    }
+}
+
+//
+// Responsive: Navbar
+// --------------------------------------------------
+
+
+

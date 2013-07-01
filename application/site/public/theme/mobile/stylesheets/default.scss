@@ -1,0 +1,329 @@
+@import "bootstrap";
+@import "mixins";
+
+    // Joomla system
+@import "system";
+
+    // Banners
+@import "banners";
+
+
+
+@import "icons";
+
+
+@import "../../bootstrap/stylesheets/validation.css";
+
+body {
+    background-color: $grayLighter;
+}
+
+html { font-size:100.01%; }
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+
+h1, h2, h3 {
+    font-weight: normal; line-height: 24px;
+}
+
+.page-header {
+    margin-bottom: 14px;
+}
+
+
+.highlight {
+    background-color: yellow;
+}
+
+#wrap {
+    border-left: 1px solid darken($grayLighter, 7%);
+    border-right: 1px solid darken($grayLighter, 7%);
+    border-bottom: 1px solid darken($grayLighter, 7%);
+    background-color: $white;
+    @include border-radius(0 0 5px 5px);
+}
+
+.container {
+    width: $gridRowWidth + 38px;
+}
+
+.section-header  {
+    margin-bottom: 20px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .span3 {
+        .logo {
+            padding-top: 26px;
+            display: block;
+            text-decoration: none;
+            color: $linkColor;
+
+            img {
+                width: 160px;
+                vertical-align: bottom;
+                margin-left: 10px;
+            }
+
+            span {
+                margin-left: 60px;
+                margin-top: 3px;
+                display: block;
+            }
+        }
+    }
+
+    .nav-header {
+        padding: 3px 0;
+        text-indent: 15px;
+    }
+
+    .logo-mobile {
+        display:none; /* Hide from browsers that don't support media queries */
+        cursor:pointer;
+        position:absolute;
+        top: 0;
+        left:0px;
+        padding: 0 14px;
+        height: 50px;
+
+        border-right: 1px solid $blue;
+        background-color: $navbarBackground;
+
+        img {
+            margin: 10px 0 0 0;
+            float: left;
+        }
+
+        span {
+            margin: 13px 0  0 6px;
+            display: block;
+            float: left;
+            color: $white;
+        }
+    }
+
+    .nav-pills {
+        font-size: $fontSizeSmall;
+    }
+
+    .navbar {
+        margin-bottom: 0;
+    }
+
+    .navbar-inner {
+        margin-bottom: 0;
+
+        .nav {
+            float: none;
+        }
+    }
+
+    .nav ul {
+        display: none;
+        @extend .nav;
+    }
+
+    .subnavigation {
+        list-style: none;
+
+        li {
+            font-size: $fontSizeSmall;
+            line-height: 16px;
+        }
+
+    }
+
+    .slogan {
+        margin: 25px 0 10px;
+        display: block;
+        text-align: center;
+
+        strong {
+            font-size: $fontSizeLarge;
+            color: $blue;
+        }
+    }
+}
+
+.section-banner {
+    display:block;
+    position:relative;
+    border: 1px solid $black;
+
+    height: 120px;
+
+    &::before {
+        display:block;
+        content:'';
+        position:absolute;
+        width:100%;
+        height:100%;
+        @include box-shadow(inset 0px 0px 3px 3px rgba(0,0,0,0.4));
+    }
+
+    margin: 0 20px;
+    @include border-radius(5px);
+
+    img {
+        display:block;
+
+        margin: 0 20px;
+    }
+}
+
+.container-breadcrumb {
+    .breadcrumb {
+        margin-bottom: 0;
+
+        li::first-letter {
+            text-transform: uppercase;
+        }
+    }
+    margin: 5px 20px 0;
+}
+
+.container-content {
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 10px;
+
+    margin-bottom: 30px;
+
+    .sidebar {
+        margin-top: 24px;
+
+        .span3 {
+            border-bottom: 1px solid $grayLighter;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .component {
+        h2 { margin-top: 30px; }
+        h3 { margin-top: 20px; }
+
+        .article {
+            margin-bottom: 60px;
+        }
+
+        .article__introtext {
+            font-weight: bold;
+            margin-bottom: $baseLineHeight;
+        }
+
+        .column--double { @include column-count(2); }
+        .column--triple { @include column-count(3); }
+        .column--quad   { @include column-count(4); }
+    }
+
+    &.news,
+    &.police {
+        .page-header {
+            h1 {
+                margin-bottom: 4px;
+            }
+
+            .timestamp {
+                @extend .muted;
+                font-size: $fontSizeSmall;
+            }
+        }
+
+        .thumbnail {
+            float: right;
+            margin:0 0 20px 20px;
+        }
+    }
+
+    &.districts {
+        ul li.twitter {
+            list-style: url("../images/twitter.png");
+        }
+        ul li.facebook {
+            list-style: url("../images/facebook.gif");
+        }
+    }
+
+    &.news {
+
+    }
+
+    .box {
+        background: $grayLighter;
+        padding: 20px;
+        margin-top: 20px;
+        @include border-radius(5px);
+
+        strong {
+            color: $blue;
+            font-size: 18px;
+        }
+
+        ul {
+            margin-left: 24px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.container-media {
+    padding: 10px 19px 30px;
+
+    background-color: lighten($grayLighter, 3%);
+    border-top: 1px solid darken($grayLighter, 7%);
+
+    @include border-radius(0 0 5px 5px);
+
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+
+    .social {
+
+    }
+
+    .social__item {
+        margin-bottom: 8px;
+    }
+}
+
+.container-footer  {
+    padding: 0 10px;
+    @include clearfix();
+
+    border-bottom: 1px solid darken($grayLighter, 7%);
+    @include gradient-vertical(lighten($blue, 10%),$blue);
+    color: $white;
+
+    line-height: 30px;
+
+    font-size: $fontSizeSmall;
+
+    text-align: center;
+
+    a {
+        color: $white;
+    }
+
+    .social {
+        float: right;
+    }
+}
+
+.container-copyright {
+    font-size: $fontSizeSmall;
+
+    text-align: right;
+}
+
+// MEDIA QUERIES
+// ------------------
+@import "bootstrap-responsive";
+@import "responsive-navbar";
+@import "responsive";
