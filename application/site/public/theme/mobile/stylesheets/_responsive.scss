@@ -23,7 +23,7 @@
         width: $gridRowWidth768 + 38px;
     }
 
-    .section-header {
+    .container-header {
         .span3 {
             float: none;
             width: 100%;
@@ -80,139 +80,144 @@
         background-color: lighten($grayLighter, 3%);
     }
 
-    .section-header {
-        margin-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
+  .container-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
-        .span3 {
-            display: none;
-        }
+  .container-header {
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
 
-        .navbar {
-          width: 100%;
-          background-color: $navbarBackgroundHighlight;
-          position:relative;
-          display:inline-block;
-
-          .navbar__logo {
-              display: block;
-          }
-
-          .navbar__handle {
-            display:block;
-            cursor:pointer;
-            position:absolute;
-            top:0;
-            right:0;
-            background:$navbarBackground url(../img/nav.svg) no-repeat center center;
-            background-size:18px;
-            height:50px;
-            width:50px;
-            border-left: 1px solid $blue;
-          }
-
-          .navbar-inner {
-            @include border-radius(0);
-            border-top: 0 none;
-            border-left: 0 none;
-            border-right: 0 none;
-            margin-right: 0;
-            min-height: 0;
-            padding-left: 0;
-            padding-right: 0;
-            padding-top: 50px;
-
-            .nav {
-              margin: 0;
-              text-align:left;
-              border-top: 1px solid $blue;
-
-              &.is-hidden {
-                display: none;
-                visibility: hidden;
-              }
-
-              li {
-                width: 100%;
-                *display:inline;
-                zoom:1;
-                position:relative;
-              }
-
-              a {
-                display:block;
-                border-bottom: 1px solid $blue;
-                padding: 13px 15px;
-                font-weight: bold;
-                color: $navbarLinkColor;
-              }
-            }
-          }
-        }
-    }
-
-    .container-content {
-        &.news,
-        &.police {
-            .thumbnail {
-                float: none;
-                text-align: center;
-                width: 100%;
-                margin: 0 0 10px;
-            }
-        }
-
-        .component {
-            .column--triple { @include column-count(2); }
-            .column--quad { @include column-count(2); }
-        }
-    }
-
-    .section-banner {
+    .span3 {
         display: none;
     }
 
-    .container-media {
-        text-align: center;
-        ul {
-            margin-top: 10px;
-            li {
-                display: inline;
-            }
+    .navbar {
+      width: 100%;
+      background-color: $navbarBackgroundHighlight;
+      position:relative;
+      display:inline-block;
+
+      .navbar__logo {
+          display: block;
+      }
+
+      .navbar__handle {
+        display:block;
+        cursor:pointer;
+        position:absolute;
+        top:0;
+        right:0;
+        background:$navbarBackground url(../img/nav.svg) no-repeat center center;
+        background-size:18px;
+        height:50px;
+        width:50px;
+        border-left: 1px solid $blue;
+      }
+
+      .navbar-inner {
+        @include border-radius(0);
+        border-top: 0 none;
+        border-left: 0 none;
+        border-right: 0 none;
+        margin-right: 0;
+        min-height: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 50px;
+
+        .nav {
+          margin: 0;
+          text-align:left;
+          border-top: 1px solid $blue;
+
+          &.is-hidden {
+            display: none;
+            visibility: hidden;
+          }
+
+          li {
+            width: 100%;
+            *display:inline;
+            zoom:1;
+            position:relative;
+          }
+
+          a {
+            display:block;
+            border-bottom: 1px solid $blue;
+            padding: 13px 15px;
+            font-weight: bold;
+            color: $navbarLinkColor;
+          }
         }
+      }
     }
+  }
 
-    .container-copyright {
-        text-align: center;
-    }
+  .container-content {
+      &.news,
+      &.police {
+          .thumbnail {
+              float: none;
+              text-align: center;
+              width: 100%;
+              margin: 0 0 10px;
+          }
+      }
 
-    // Responsive table
-    // ------------------
-    /* Force table to not be like tables anymore */
-    table, thead, tbody, th, td, tr {
-        display: block;
-    }
+      .component {
+        .column--triple { @include column-count(2); }
+          .column--quad { @include column-count(2); }
+      }
+  }
 
-    /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
+  .container-banner {
+      display: none;
+  }
 
-    tr {
-        border-top: 1px solid #DDD;
-    }
+  .container-media {
+      text-align: center;
+      ul {
+          margin-top: 10px;
+          li {
+              display: inline;
+          }
+      }
+  }
 
-    td {
-        /* Behave  like a "row" */
-        border: none;
-        border-top: 0 none !important;
-        position: relative;
-    }
+  .container-copyright {
+      text-align: center;
+  }
 
-    td:first-of-type {
-        font-size: 1.15em;
-    }
+  // Responsive table
+  // ------------------
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+      display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+
+  tr {
+      border-top: 1px solid #DDD;
+  }
+
+  td {
+      /* Behave  like a "row" */
+      border: none;
+      border-top: 0 none !important;
+      position: relative;
+  }
+
+  td:first-of-type {
+      font-size: 1.15em;
+  }
 }

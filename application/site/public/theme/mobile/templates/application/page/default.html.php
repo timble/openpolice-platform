@@ -18,7 +18,7 @@
 <?= @template('page_head.html') ?>
 <body>
 <div id="wrap" class="container-fluid">
-    <div class="section-header">
+    <div class="container-header">
         <div class="row-fluid">
             <div class="span3">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
@@ -45,12 +45,8 @@
         </div>
     </div>
 
-    <ktml:modules position="telephone">
-        <ktml:modules:content />
-    </ktml:modules>
-
-    <div class="section-banner banner5388">
-
+    <div class="container-banner banner5388">
+        <img src="media://application/images/banners/<?= $site ?>.jpg" />
     </div>
 
     <div class="container-breadcrumb">
