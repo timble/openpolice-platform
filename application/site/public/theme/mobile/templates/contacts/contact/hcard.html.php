@@ -18,7 +18,7 @@
     <?if ($contact->con_position) : ?>
         <h2 class="title"><?= $contact->con_position?></h2>
     <? endif;?>
-    <div class="row">
+    <div class="row-fluid">
         <div class="span6">
             <div class="adr">
                 <? if ($contact->address) : ?>
