@@ -14,9 +14,12 @@ class TrafficControllerArticle extends Library\ControllerModel
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
-        	'behaviors' => array('com:activities.controller.behavior.loggable'),
+        	'behaviors' => array(
+                'com:activities.controller.behavior.loggable',
+                'com:streets.controller.behavior.streetable'
+            ),
         ));
-    
+
         parent::_initialize($config);
     }
 }

@@ -19,7 +19,7 @@ class ModelRelations extends Library\ModelTable
 		$this->getState()
 		    ->insert('street' , 'int')
 		    ->insert('row' , 'int')
-		    ->insert('table' , 'string');
+		    ->insert('table' , 'string', $this->getIdentifier()->package);
 	}
 	
 	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)

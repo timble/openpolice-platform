@@ -1,0 +1,88 @@
+<?php
+/**
+ * Belgian Police Web Platform - Streets Component
+ *
+ * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
+ * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @link		http://www.police.be
+ */
+
+namespace Nooku\Component\Streets;
+
+use Nooku\Library;
+
+/**
+ * Streetable Controller Behavior
+ */
+class ControllerBehaviorStreetable extends Library\BehaviorAbstract
+{
+    protected function _saveRelations(Library\CommandContext $context)
+    {
+        if ($context->error) {
+            return;
+        }
+
+        $row   = $context->result;
+        $table = $row->getTable()->getBase();
+
+        // Remove all existing relations
+        if($row->id && $row->getTable()->getBase())
+        {
+            $rows = $this->getObject('com:streets.model.relations')
+                ->row($row->id)
+                ->table($table)
+                ->getRowset();
+
+            $rows->delete();
+        }
+
+        if($row->streets)
+        {
+            // Save streets as relations
+            foreach ($row->streets as $street)
+            {
+                $relation = $this->getObject('com:streets.database.row.relation');
+                $relation->streets_street_id = $street;
+                $relation->row		  = $row->id;
+                $relation->table      = $table;
+
+                if(!$relation->load()) {
+                    $relation->save();
+                }
+            }
+        }
+
+        return true;
+    }
+
+    protected function _afterControllerAdd(Library\CommandContext $context)
+    {
+        $this->_saveRelations($context);
+    }
+
+    protected function _afterControllerEdit(Library\CommandContext $context)
+    {
+        $this->_saveRelations($context);
+    }
+
+    protected function _afterControllerDelete(Library\CommandContext $context)
+    {
+        $status = $context->result->getStatus();
+
+        if($status == Library\Database::STATUS_DELETED || $status == 'trashed')
+        {
+            $id = $context->result->get('id');
+            $table = $context->result->getTable()->getBase();
+
+            if(!empty($id) && $id != 0)
+            {
+                $rows = $this->getObject('com:streets.model.relations')
+                    ->row($id)
+                    ->table($table)
+                    ->getRowset();
+
+                $rows->delete();
+            }
+        }
+    }
+}

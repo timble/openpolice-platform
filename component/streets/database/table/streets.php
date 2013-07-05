@@ -16,7 +16,9 @@ class DatabaseTableStreets extends Library\DatabaseTableAbstract
     {        
         $config->append(array(
             'name'      => 'streets',
-            'behaviors' =>  array('lockable', 'creatable', 'modifiable', 'sluggable')
+            'behaviors' =>  array(
+                'lockable', 'creatable', 'modifiable', 'sluggable'
+            )
         ));
      
         parent::_initialize($config);

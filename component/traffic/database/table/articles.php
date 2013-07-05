@@ -16,7 +16,10 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
     {        
         $config->append(array(
             'name'         => 'traffic',
-            'behaviors'    =>  array('sluggable', 'lockable', 'creatable', 'modifiable'),
+            'behaviors'    =>  array(
+                'sluggable', 'lockable', 'creatable', 'modifiable',
+                'com:streets.database.behavior.streetable'
+            ),
             'filters' => array(
                 'text'   => array('html', 'tidy')
             )

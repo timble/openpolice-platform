@@ -10,30 +10,20 @@
 use Nooku\Library;
 
 class StreetsTemplateHelperListbox extends Library\TemplateHelperListbox
-{	
-	public function street($config = array())
-	{
-	    $config = new Library\ObjectConfig($config);
-		$config->append(array(
-			'model'		=> 'streets',
-			'name'		=> 'streets_street_id'
-		));
-		
-		$config->text = 'title';
-		
-		return parent::_render($config);
-	}
-	
+{
 	public function streets($config = array())
 	{
 	    $config = new Library\ObjectConfig($config);
 		$config->append(array(
-			'identifier'  => 'com:streets.model.streets',
+			'model'     => 'streets',
+            'value'		=> 'id',
+            'text'		=> 'title',
 			'name'		=> 'streets[]',
-			'value'		=> 'id'
+            'prompt'    => false
 		));
 		
 		$config->text = 'title';
+        $config->sort = 'title';
 		
 		return parent::_render($config);
 	}
