@@ -14,9 +14,10 @@ class QuestionsViewArticlesHtml extends Library\ViewHtml
     public function render()
     {
         //Get the parameters
-        $params = $this->getObject('application')->getParams();
+        $this->params = $this->getObject('application')->getParams();
 
-        $this->params = $params;
+        // Get the zone
+        $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow();
 
         return parent::render();
     }

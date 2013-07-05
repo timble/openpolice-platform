@@ -10,10 +10,8 @@
 
 <div class="well">
     <form action="<?=@route('option=com_questions&view=articles')?>" method="get" class="form-search" style="margin-bottom: 0;">
-        <div class="input-append">
-            <input id="searchword" name="searchword" class="span7 search-query" type="text"
-                   value="<?=@escape($state->searchword)?>" placeholder="<?=@text('Search')?> ..."/>
-            <button type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
-        </div>
+        <input id="searchword" name="searchword" class="" style="width: 80%" type="text"
+               value="<?=@escape($state->searchword)?>" placeholder="<?=@text('Search')?> ..."/>
+        <button type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
     </form>
 </div>

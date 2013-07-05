@@ -8,9 +8,6 @@
  */
 ?>
 
-
 <div class="well well-small text-center">
-    <? $site = @escape(@object('application')->getCfg('site' )) ?>
-    <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
-    Je vraag blijft onbeantwoord? Contacteer ons via  <a href="mailto:<?= $zone->email ?>"><?= $zone->email ?></a> of <?= $zone->telephone ?>.
+    <?= @text('Je vraag blijft onbeantwoord? Contacteer ons via') ?> <a href="mailto:<?= $zone->email ?>"><?= $zone->email ?></a> <?= @text('of') ?> <?= $zone->telephone ?>.
 </div>
