@@ -48,16 +48,16 @@
                 <label for="date">
                     <?= @text('Start on') ?>
                 </label>
-                <div class="controls-calendar">
-                    <input type="date" name="start_on" value="<?= gmdate('Y-m-d\TH:i:s', strtotime($article->start_on)) ?>" />
+                <div>
+                    <?= @helper('com:articles.date.datetime', array('row' => $article, 'name' => 'start_on', 'type' => 'date')) ?>
                 </div>
             </div>
             <div>
                 <label for="date">
                     <?= @text('End on') ?>
                 </label>
-                <div class="controls-calendar">
-                    <input type="date" name="end_on" value="<?= gmdate('Y-m-d\TH:i:s', strtotime($article->end_on)) ?>" />
+                <div>
+                    <?= @helper('com:articles.date.datetime', array('row' => $article, 'name' => 'end_on', 'type' => 'date')) ?>
                 </div>
             </div>
         </fieldset>

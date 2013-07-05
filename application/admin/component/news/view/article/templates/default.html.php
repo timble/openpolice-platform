@@ -52,8 +52,8 @@
             </div>
             <div>
                 <label for="created_on"><?= @text('Created on') ?></label>
-                <div class="controls controls-calendar">
-                    <input type="datetime-local" name="created_on" value="<?= gmdate('Y-m-d\TH:i:s', strtotime($article->created_on)) ?>" />
+                <div class="controls">
+                    <?= @helper('com:articles.date.datetime', array('row' => $article, 'name' => 'created_on')) ?>
                 </div>
             </div>
         </fieldset>
