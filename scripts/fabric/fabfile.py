@@ -21,9 +21,11 @@ def deploy():
         print(yellow("-- Git: pull from origin"))
         run("git pull origin")
 
-        print(yellow("-- Running composer"))
-        run("composer install")
-
         print(yellow("-- Creating symlinks to shared items"))
         for symlink in symlinks:
              run("ln -fns " + shared_directory + "/" + symlink + " " + git_directory + "/" + symlink)
+
+        with cd(git_directory + '/install/custom'):
+
+            print(yellow("-- Running composer"))
+            run("composer install")
