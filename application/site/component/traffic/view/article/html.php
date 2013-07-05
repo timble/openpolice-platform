@@ -12,13 +12,11 @@ class TrafficViewArticleHtml extends Library\ViewHtml
 {
     public function render()
     {
-        //Get the contact
+        //Get the article
         $article = $this->getModel()->getData();
 
         //Set the pathway
 		$this->getObject('application')->getPathway()->addItem($article->title, '');
-
-		$this->streets = $this->getObject('com:streets.model.relations')->row($article->id)->table('traffic_articles')->getRowset();
 
         return parent::render();
     }

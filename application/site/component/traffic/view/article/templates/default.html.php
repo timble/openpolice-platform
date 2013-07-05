@@ -14,12 +14,22 @@
     <?= $article->end_on ? @text('till').' '.@helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) : '' ?></td>
 </div>
 
-<div class="well well-small">
-    <ul>
-        <? foreach ($streets as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
-    </ul>
+<div class="row-fluid">
+    <? if($article->text) : ?>
+    <div class="span8">
+        <?= $article->text ?>
+    </div>
+    <? endif ?>
+    <div class="span4">
+        <? if($article->isStreetable()) : ?>
+            <div class="well well-small">
+                <ul>
+                    <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
+                </ul>
+            </div>
+        <? endif ?>
+    </div>
 </div>
 
-<? if($article->text) : ?>
-    <?= $article->text ?>
-<? endif ?>
+
+
