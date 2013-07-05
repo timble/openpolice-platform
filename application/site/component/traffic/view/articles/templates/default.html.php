@@ -12,17 +12,8 @@
     <h1><?php echo @escape($params->get('page_title')); ?></h1>
 </div>
 
-<table class="table table-striped">
-	<tbody>
-		<? foreach ($articles as $article) : ?>
-		<tr>
-			<td style="width: 100%"><a href="<?= @helper('route.article', array('row' => $article)) ?>"><?= $article->title ?></a></td>
-            <td nowrap>
-                <?= @helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'))) ?>
-                <?= $article->end_on ? @text('till').' '.@helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) : '' ?></td>
-		</tr>
-		<? endforeach; ?>
-	</tbody>
-</table>
+<? foreach ($articles as $article) : ?>
+    <?= @template('default_item.html', array('article' => $article)) ?>
+<? endforeach; ?>
 
 <?= @helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
