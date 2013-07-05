@@ -130,6 +130,7 @@ git commit -m "Update Nooku Framework.
 Branch: origin/$branch
 Commit: $(git --git-dir=$HOME/.git-cache/nooku-framework/.git rev-parse origin/$branch)"
 
-print(yellow("-- Running custom composer"))
+# Composer
+printf "$(tput bold)%s$(tput sgr0)\n" "Running custom composer..."
 cd "$repo/install/custom"
 run("composer install")
