@@ -16,5 +16,7 @@ class QuestionsBootstrapper extends Library\BootstrapperAbstract
         $manager = $this->getObjectManager();
 
         $manager->registerAlias('com:questions.model.categories', 'com:categories.model.categories');
+        $manager->registerAlias('com:questions.view.attachment.file' , 'com:attachments.view.attachment.file');
+        $manager->registerAlias('com:questions.controller.attachment' , 'com:articles.controller.attachment');
     }
 }

@@ -14,3 +14,13 @@
         <?= @template('com:articles.view.article.default_categories.html', array('categories' =>  @object('com:articles.model.categories')->sort('title')->table('questions')->getRowset(), 'article' => $article)) ?>
     </div>
 </fieldset>
+
+<? if($article->isAttachable()) : ?>
+<fieldset>
+    <legend><?= @text('Attachments') ?></legend>
+    <? if (!$article->isNew()) : ?>
+        <?= @template('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'assignable' => true, 'image' => $article->image)) ?>
+    <? endif ?>
+    <?= @template('com:attachments.view.attachments.upload.html') ?>
+</fieldset>
+<? endif ?>

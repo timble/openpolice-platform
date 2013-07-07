@@ -19,6 +19,9 @@ class QuestionsViewArticleHtml extends Library\ViewHtml
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($article->title, '');
 
+        // Get the zone
+        $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow();
+
         //Get the attachments
         if ($article->id && $article->isAttachable()) {
             $this->attachments($article->getAttachments());

@@ -15,7 +15,8 @@ class QuestionsControllerArticle extends Library\ControllerModel
     {
         $config->append(array(
         	'behaviors' => array(
-                'com:activities.controller.behavior.loggable'
+                'com:activities.controller.behavior.loggable',
+                'com:attachments.controller.behavior.attachable'
             ),
         ));
     

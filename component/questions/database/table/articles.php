@@ -18,6 +18,7 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
             'name'         => 'questions',
             'behaviors'    =>  array(
                 'sluggable', 'lockable', 'creatable', 'modifiable',
+                'com:attachments.database.behavior.attachable',
                 'orderable' => array(
                     'strategy' => 'flat'
                 )
