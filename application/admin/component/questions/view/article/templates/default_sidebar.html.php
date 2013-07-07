@@ -19,7 +19,7 @@
 <fieldset>
     <legend><?= @text('Attachments') ?></legend>
     <? if (!$article->isNew()) : ?>
-        <?= @template('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'assignable' => true, 'image' => $article->image)) ?>
+        <?= @template('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
     <? endif ?>
     <?= @template('com:attachments.view.attachments.upload.html') ?>
 </fieldset>
