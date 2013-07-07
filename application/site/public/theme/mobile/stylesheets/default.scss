@@ -158,6 +158,7 @@ h1, h2, h3 {
 
         .article__thumbnail {
           margin: 0 0 20px 20px;
+          float: right;
         }
 
         .article__introtext {
@@ -181,11 +182,6 @@ h1, h2, h3 {
                 @extend .muted;
                 font-size: $fontSizeSmall;
             }
-        }
-
-        .thumbnail {
-            float: right;
-            margin:0 0 20px 20px;
         }
     }
 
@@ -214,7 +210,6 @@ h1, h2, h3 {
         }
 
         ul {
-            margin-left: 24px;
             margin-bottom: 0;
         }
     }
