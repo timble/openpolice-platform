@@ -29,7 +29,7 @@
 <form action="" method="post" id="article-form" class="-koowa-form" enctype="multipart/form-data">
 	<input type="hidden" name="access" value="0" />
 	<input type="hidden" name="published" value="0" />
-	
+
 	<div class="main">
 		<div class="title">
 			<input class="required" type="text" name="title" maxlength="255" value="<?= $article->title ?>" placeholder="<?= @text('Title') ?>" />
@@ -38,7 +38,7 @@
 			    <input type="text" name="slug" maxlength="255" value="<?= $article->slug ?>" />
 			</div>
 		</div>
-		
+
 		<?= @object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
 	</div>
 	<div class="sidebar">
@@ -62,7 +62,7 @@
             <fieldset>
                 <legend><?= @text('Attachments') ?></legend>
                 <? if (!$article->isNew()) : ?>
-                    <?= @template('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'assignable' => true, 'image' => $article->image)) ?>
+                    <?= @template('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
                 <? endif ?>
                 <?= @template('com:attachments.view.attachments.upload.html') ?>
             </fieldset>

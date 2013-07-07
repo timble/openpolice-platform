@@ -23,11 +23,9 @@
     <span style="float:right" class='st_sharethis' displayText='ShareThis'></span>
 </div>
 
-<? if($article->thumbnail): ?>
-    <img class="thumbnail" src="<?= $article->thumbnail ?>" />
-<? endif; ?>
+<?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
 
 <div class="article__introtext"><?= $article->introtext ?></div>
 <?= $article->fulltext ?>
 
-<?= @template('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->image))) ?>
+<?= @template('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>

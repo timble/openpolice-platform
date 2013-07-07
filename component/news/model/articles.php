@@ -36,7 +36,8 @@ class ModelArticles extends Library\ModelTable
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = tbl.image');
+        $query->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id')
+              ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path');
     }
 	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

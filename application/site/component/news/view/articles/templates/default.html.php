@@ -24,7 +24,7 @@
     <div class="clearfix">
         <? if($article->thumbnail): ?>
             <a href="<?= $link ?>">
-                <img class="thumbnail" src="<?= $article->thumbnail ?>" />
+                <?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
             </a>
         <? endif; ?>
 
