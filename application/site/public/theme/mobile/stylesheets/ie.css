@@ -5024,6 +5024,13 @@ h1, h2, h3 {
 /* line 269, default.scss */
 .container-copyright {
   font-size: 11.9px;
+}
+/* line 272, default.scss */
+.container-copyright p {
+  margin: 3px 20px;
+}
+/* line 276, default.scss */
+.container-copyright .copyright {
   text-align: right;
 }
 
@@ -5544,31 +5551,32 @@ h1, h2, h3 {
     display: inline;
   }
 
-  /* line 191, _responsive.scss */
-  .container-copyright {
+  /* line 192, _responsive.scss */
+  .container-copyright,
+  .container-copyright .copyright {
     text-align: center;
   }
 
   /* Force table to not be like tables anymore */
-  /* line 198, _responsive.scss */
+  /* line 199, _responsive.scss */
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
-  /* line 203, _responsive.scss */
+  /* line 204, _responsive.scss */
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  /* line 209, _responsive.scss */
+  /* line 210, _responsive.scss */
   tr {
     border-top: 1px solid #DDD;
   }
 
-  /* line 213, _responsive.scss */
+  /* line 214, _responsive.scss */
   td {
     /* Behave  like a "row" */
     border: none;
@@ -5576,7 +5584,7 @@ h1, h2, h3 {
     position: relative;
   }
 
-  /* line 220, _responsive.scss */
+  /* line 221, _responsive.scss */
   td:first-of-type {
     font-size: 1.15em;
   }

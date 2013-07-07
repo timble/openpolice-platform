@@ -69,27 +69,19 @@
     </div>
 
     <div class="container-media">
-        <div class="row-fluid">
-            <div class="span6 hidden-phone">
+        <div class="row-fluid hidden-phone">
+            <div class="span6">
                 <h3><?= @text('Laatste nieuws') ?></h3>
-                <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
+                <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
             </div>
-            <div class="span3 hidden-phone">
+            <div class="span3">
                 <h3 style="padding-left: 12px" ><?= @text('Meer weten') ?></h3>
                 <ktml:modules position="footermenu">
                     <ktml:modules:content />
                 </ktml:modules>
             </div>
             <div class="span3">
-                <h3 class="hidden-phone">Volg ons via</h3>
-                <ul class="social">
-                    <li class="social__item">
-                        <a href="http://www.twitter.com/politieleuven">Twitter</a>
-                    </li>
-                    <li class="social__item">
-                        <a href="http://www.facebook.com/politieleuven">Facebook</a>
-                    </li>
-                </ul>
+
             </div>
         </div>
     </div>
@@ -97,12 +89,21 @@
 </div>
 
 <div class="container-fluid container-copyright">
-    <p>
-        © 2013 Lokale Politie - <?= @escape($zone->title); ?>
-        <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
-        <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a>
-        <a style="margin-left: 10px" target="_blank" href="http://www.belgium.be"><image src="media://application/images/icon_belgium.gif" /></a>
-    </p>
+    <div class="row-fluid">
+        <div class="span6">
+            <p>
+                <a href="http://www.twitter.com/politieleuven">Twitter</a> | <a href="http://www.facebook.com/politieleuven">Facebook</a>
+            </p>
+        </div>
+        <div class="span6 copyright">
+            <p>
+                © 2013 Lokale Politie - <?= @escape($zone->title); ?>
+                <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
+                <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a>
+                <a style="margin-left: 10px" target="_blank" href="http://www.belgium.be"><image src="media://application/images/icon_belgium.gif" /></a>
+            </p>
+        </div>
+    </div>
 </div>
 
 </body>

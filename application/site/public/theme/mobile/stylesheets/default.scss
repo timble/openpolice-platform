@@ -269,7 +269,13 @@ h1, h2, h3 {
 .container-copyright {
     font-size: $fontSizeSmall;
 
+  p {
+    margin: 3px 20px;
+  }
+
+  .copyright {
     text-align: right;
+  }
 }
 
 // MEDIA QUERIES
