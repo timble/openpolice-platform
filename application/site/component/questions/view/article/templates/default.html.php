@@ -12,6 +12,10 @@
     <h1><?= @escape($article->title); ?></h1>
 </div>
 
-<?= $article->text ?>
+<div class="clearfix">
+    <?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+
+    <?= $article->text ?>
+</div>
 
 <?= @template('com:questions.view.articles.default_contact.html') ?>
