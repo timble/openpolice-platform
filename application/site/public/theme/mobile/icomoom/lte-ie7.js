@@ -3,14 +3,16 @@
 window.onload = function() {
 	function addIcon(el, entity) {
 		var html = el.innerHTML;
-		el.innerHTML = '<span style="font-family: \'belgianpolice\'">' + entity + '</span>' + html;
+		el.innerHTML = '<span style="font-family: \'icomoon\'">' + entity + '</span>' + html;
 	}
 	var icons = {
 			'icon-question-sign' : '&#xf059;',
 			'icon-road' : '&#xe003;',
 			'icon-key' : '&#xe002;',
 			'icon-search' : '&#xf002;',
-			'icon-file-alt' : '&#xf0f6;'
+			'icon-file-alt' : '&#xf0f6;',
+			'icon-twitter' : '&#xe000;',
+			'icon-facebook' : '&#xe001;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;

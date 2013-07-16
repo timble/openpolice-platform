@@ -1,17 +1,17 @@
 @font-face {
-	font-family: 'belgianpolice';
-	src:url('fonts/belgianpolice.eot');
-	src:url('fonts/belgianpolice.eot?#iefix') format('embedded-opentype'),
-		url('fonts/belgianpolice.woff') format('woff'),
-		url('fonts/belgianpolice.ttf') format('truetype'),
-		url('fonts/belgianpolice.svg#belgianpolice') format('svg');
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-	font-family: 'belgianpolice';
+	font-family: 'icomoon';
 	content: attr(data-icon);
 	speak: none;
 	font-weight: normal;
@@ -27,8 +27,8 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-question-sign, .icon-road, .icon-key, .icon-search, .icon-file-alt {
-	font-family: 'belgianpolice';
+.icon-question-sign, .icon-road, .icon-key, .icon-search, .icon-file-alt, .icon-twitter, .icon-facebook {
+	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -51,4 +51,10 @@ you can use the generic selector below, but it's slower:
 }
 .icon-file-alt:before {
 	content: "\f0f6";
+}
+.icon-twitter:before {
+	content: "\e000";
+}
+.icon-facebook:before {
+	content: "\e001";
 }

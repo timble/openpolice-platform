@@ -22,7 +22,7 @@
 <form method="post" action="" class="-koowa-form form-horizontal">
     <input type="hidden" name="published" value="0" />
     <input type="hidden" name="access" value="0" />
-    
+
     <fieldset>
         <input class="input-block-level" type="text" name="title" maxlength="100" value="<? echo @escape($article->title); ?>" style="margin-bottom: 10px"/>
         <?= @object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
