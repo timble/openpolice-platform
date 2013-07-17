@@ -19,7 +19,7 @@
         <h2 class="title"><?= $contact->con_position?></h2>
     <? endif;?>
     <div class="row-fluid">
-        <div class="span6">
+        <div class="span8">
             <div class="adr">
                 <? if ($contact->address) : ?>
                     <div class="street-address"><?= $contact->address?></div>
@@ -66,7 +66,7 @@
                 </p>
             <? endif; ?>
         </div>
-        <div class="span3">
+        <div class="span4">
             <? if($contact->isAttachable()) : ?>
                 <? foreach($contact->getAttachments() as $item) : ?>
                     <? if($item->file->isImage()) : ?>
@@ -74,12 +74,18 @@
                     <? endif ?>
                 <? endforeach ?>
             <? endif ?>
+
+        </div>
+
+    </div>
+    <div class="row-fluid">
+        <div class="span12">
             <? if ($contact->address) : ?>
                 <? $map = "http://maps.googleapis.com/maps/api/staticmap?maptype=roadmap
 &markers='.$contact->address.','.$contact->suburb.','.$contact->country.'&sensor=false"; ?>
                 <a rel="{handler: 'image'}" class="modalbox" href="<?= $map ?>&size=800x600&zoom=15">
-                    <img class="thumbnail" src="<?= $map ?>&size=200x200&zoom=13" />
-                </a>
+                    <img class="thumbnail" src="<?= $map ?>&size=650x120&zoom=13" />
+                </a
             <? endif; ?>
         </div>
     </div>
