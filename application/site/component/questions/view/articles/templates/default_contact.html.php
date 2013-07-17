@@ -9,5 +9,5 @@
 ?>
 
 <div class="well well-small text-center">
-    <?= @text('Je vraag blijft onbeantwoord? Contacteer ons via') ?> <a href="mailto:<?= $zone->email ?>"><?= $zone->email ?></a> <?= @text('of') ?> <?= $zone->telephone ?>.
+    <?= @text('Je vraag blijft onbeantwoord? Contacteer ons via') ?> <a href="mailto:<?= $zone->email ?>"><?= $zone->email ?></a> <?= @text('of') ?> <span class="nowrap"><?= $zone->telephone ?></span>.
 </div>
