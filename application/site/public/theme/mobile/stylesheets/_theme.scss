@@ -1,0 +1,281 @@
+@import "utils";
+
+@import "bootstrap";
+@import "mixins";
+
+@import "icons";
+
+@import "../../bootstrap/stylesheets/validation.css";
+
+body {
+  background-color: $grayLighter;
+}
+
+html { font-size:100.01%; }
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+
+h1, h2, h3 {
+  font-weight: normal; line-height: 24px;
+}
+
+.page-header {
+  margin-bottom: 14px;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.container-header,
+.container-banner,
+.container-breadcrumb,
+.container-content,
+.container-media {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#wrap {
+  background-color: $white;
+}
+
+.container-header  {
+  margin-bottom: 20px;
+
+  .span3 {
+    .logo {
+      padding-top: 26px;
+      display: block;
+      text-decoration: none;
+      color: $linkColor;
+
+      img {
+        width: 160px;
+        vertical-align: bottom;
+        margin-left: 10px;
+      }
+
+      span {
+        margin-left: 60px;
+        margin-top: 3px;
+        display: block;
+      }
+    }
+  }
+
+  .navbar {
+    margin-bottom: 0;
+
+    .navbar__logo {
+      display:none; /* Hide from browsers that don't support media queries */
+      cursor:pointer;
+      position:absolute;
+      top: 0;
+      left:0px;
+      padding: 0 14px;
+      height: 50px;
+
+      border-right: 1px solid $blue;
+      background-color: $navbarBackground;
+
+      img {
+        margin: 10px 0 0 0;
+        float: left;
+      }
+
+      span {
+        margin: 13px 0  0 6px;
+        display: block;
+        float: left;
+        color: $white;
+        color: $white;
+      }
+    }
+  }
+
+  .slogan {
+    margin: 25px 0 10px;
+    display: block;
+    text-align: center;
+
+    strong {
+      font-size: $fontSizeLarge;
+      color: $blue;
+    }
+  }
+}
+
+.container-banner img {
+  border: 1px solid $black;
+  @include border-radius(5px);
+}
+
+.container-breadcrumb {
+  .breadcrumb {
+    margin-bottom: 0;
+
+    li::first-letter {
+      text-transform: uppercase;
+    }
+  }
+  margin: 5px 0;
+}
+
+.container-content {
+  padding-top: 10px;
+
+  margin-bottom: 30px;
+
+  .sidebar {
+    margin-top: 24px;
+
+    .span3 {
+      border-bottom: 1px solid $grayLighter;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      float: none;
+      width: 100%;
+    }
+  }
+
+  .component {
+    h2 { margin-top: 30px; }
+    h3 { margin-top: 20px; }
+
+    .article {
+      margin-bottom: 60px;
+    }
+
+    .article__thumbnail {
+      margin: 0 0 20px 20px;
+      float: right;
+    }
+
+    .article__introtext {
+      font-weight: bold;
+      margin-bottom: $baseLineHeight;
+    }
+
+    .column--double { @include column-count(2); }
+    .column--triple { @include column-count(3); }
+    .column--quad   { @include column-count(4); }
+  }
+
+  &.news,
+  &.police {
+    .page-header {
+      h1 {
+        margin-bottom: 4px;
+      }
+
+      .timestamp {
+        @extend .muted;
+        font-size: $fontSizeSmall;
+      }
+    }
+  }
+
+  &.districts {
+    ul li.twitter {
+      list-style: url("../images/twitter.png");
+    }
+    ul li.facebook {
+      list-style: url("../images/facebook.gif");
+    }
+  }
+
+  &.news {
+
+  }
+
+  .box {
+    background: $grayLighter;
+    padding: 20px;
+    margin-top: 20px;
+    @include border-radius(5px);
+
+    strong {
+      color: $blue;
+      font-size: 18px;
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.container-media {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: lighten($grayLighter, 3%);
+  border-top: 1px solid darken($grayLighter, 7%);
+
+  @include border-radius(0 0 5px 5px);
+
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+
+  .social {
+
+  }
+
+  .social__item {
+    margin-bottom: 8px;
+  }
+}
+
+.container-footer  {
+  padding: 0 10px;
+  @include clearfix();
+
+  border-bottom: 1px solid darken($grayLighter, 7%);
+  @include gradient-vertical(lighten($blue, 10%),$blue);
+  color: $white;
+
+  line-height: 30px;
+
+  font-size: $fontSizeSmall;
+
+  text-align: center;
+
+  a {
+    color: $white;
+  }
+
+  .social {
+    float: right;
+  }
+}
+
+.container-copyright {
+  font-size: $fontSizeSmall;
+
+  p {
+    margin: 3px 20px;
+  }
+
+  .copyright {
+    text-align: right;
+  }
+}
+
+// MEDIA QUERIES
+// ------------------
+@import "bootstrap-responsive";
+@import "responsive";

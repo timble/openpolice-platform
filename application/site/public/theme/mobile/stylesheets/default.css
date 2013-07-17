@@ -4718,54 +4718,59 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   box-sizing: border-box;
 }
 
-/* line 10, default.scss */
+/* line 10, _theme.scss */
 body {
   background-color: #eeeeee;
 }
 
-/* line 14, default.scss */
+/* line 14, _theme.scss */
 html {
   font-size: 100.01%;
 }
 
-/* line 16, default.scss */
+/* line 16, _theme.scss */
 h1 {
   font-size: 24px;
 }
 
-/* line 17, default.scss */
+/* line 17, _theme.scss */
 h2 {
   font-size: 20px;
 }
 
-/* line 18, default.scss */
+/* line 18, _theme.scss */
 h3 {
   font-size: 18px;
 }
 
-/* line 20, default.scss */
+/* line 20, _theme.scss */
 h1, h2, h3 {
   font-weight: normal;
   line-height: 24px;
 }
 
-/* line 24, default.scss */
+/* line 24, _theme.scss */
 .page-header {
   margin-bottom: 14px;
 }
 
-/* line 28, default.scss */
+/* line 28, _theme.scss */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 34, default.scss */
+/* line 33, _theme.scss */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* line 37, _theme.scss */
 .highlight {
   background-color: yellow;
 }
 
-/* line 42, default.scss */
+/* line 45, _theme.scss */
 .container-header,
 .container-banner,
 .container-breadcrumb,
@@ -4775,39 +4780,39 @@ h1, h2, h3 {
   padding-right: 20px;
 }
 
-/* line 47, default.scss */
+/* line 50, _theme.scss */
 #wrap {
   background-color: white;
 }
 
-/* line 51, default.scss */
+/* line 54, _theme.scss */
 .container-header {
   margin-bottom: 20px;
 }
-/* line 55, default.scss */
+/* line 58, _theme.scss */
 .container-header .span3 .logo {
   padding-top: 26px;
   display: block;
   text-decoration: none;
   color: #004fa3;
 }
-/* line 61, default.scss */
+/* line 64, _theme.scss */
 .container-header .span3 .logo img {
   width: 160px;
   vertical-align: bottom;
   margin-left: 10px;
 }
-/* line 67, default.scss */
+/* line 70, _theme.scss */
 .container-header .span3 .logo span {
   margin-left: 60px;
   margin-top: 3px;
   display: block;
 }
-/* line 75, default.scss */
+/* line 78, _theme.scss */
 .container-header .navbar {
   margin-bottom: 0;
 }
-/* line 78, default.scss */
+/* line 81, _theme.scss */
 .container-header .navbar .navbar__logo {
   display: none;
   /* Hide from browsers that don't support media queries */
@@ -4820,63 +4825,62 @@ h1, h2, h3 {
   border-right: 1px solid #004fa3;
   background-color: #0059b7;
 }
-/* line 90, default.scss */
+/* line 93, _theme.scss */
 .container-header .navbar .navbar__logo img {
   margin: 10px 0 0 0;
   float: left;
 }
-/* line 95, default.scss */
+/* line 98, _theme.scss */
 .container-header .navbar .navbar__logo span {
-  margin: 13px 0  0 6px;
+  margin: 13px 0 0 6px;
   display: block;
   float: left;
   color: white;
   color: white;
 }
-/* line 105, default.scss */
+/* line 108, _theme.scss */
 .container-header .slogan {
   margin: 25px 0 10px;
   display: block;
   text-align: center;
 }
-/* line 110, default.scss */
+/* line 113, _theme.scss */
 .container-header .slogan strong {
   font-size: 17.5px;
   color: #004fa3;
 }
 
-/* line 117, default.scss */
+/* line 120, _theme.scss */
 .container-banner img {
   border: 1px solid black;
-  height: 120px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
-/* line 123, default.scss */
+/* line 125, _theme.scss */
 .container-breadcrumb {
   margin: 5px 0;
 }
-/* line 124, default.scss */
+/* line 126, _theme.scss */
 .container-breadcrumb .breadcrumb {
   margin-bottom: 0;
 }
-/* line 127, default.scss */
+/* line 129, _theme.scss */
 .container-breadcrumb .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
 
-/* line 134, default.scss */
+/* line 136, _theme.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 139, default.scss */
+/* line 141, _theme.scss */
 .container-content .sidebar {
   margin-top: 24px;
 }
-/* line 142, default.scss */
+/* line 144, _theme.scss */
 .container-content .sidebar .span3 {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 10px;
@@ -4884,63 +4888,63 @@ h1, h2, h3 {
   float: none;
   width: 100%;
 }
-/* line 152, default.scss */
+/* line 154, _theme.scss */
 .container-content .component h2 {
   margin-top: 30px;
 }
-/* line 153, default.scss */
+/* line 155, _theme.scss */
 .container-content .component h3 {
   margin-top: 20px;
 }
-/* line 155, default.scss */
+/* line 157, _theme.scss */
 .container-content .component .article {
   margin-bottom: 60px;
 }
-/* line 159, default.scss */
+/* line 161, _theme.scss */
 .container-content .component .article__thumbnail {
   margin: 0 0 20px 20px;
   float: right;
 }
-/* line 164, default.scss */
+/* line 166, _theme.scss */
 .container-content .component .article__introtext {
   font-weight: bold;
   margin-bottom: 22px;
 }
-/* line 169, default.scss */
+/* line 171, _theme.scss */
 .container-content .component .column--double {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 170, default.scss */
+/* line 172, _theme.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 171, default.scss */
+/* line 173, _theme.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
 }
-/* line 177, default.scss */
+/* line 179, _theme.scss */
 .container-content.news .page-header h1, .container-content.police .page-header h1 {
   margin-bottom: 4px;
 }
-/* line 181, default.scss */
+/* line 183, _theme.scss */
 .container-content.news .page-header .timestamp, .container-content.police .page-header .timestamp {
   font-size: 11.9px;
 }
-/* line 189, default.scss */
+/* line 191, _theme.scss */
 .container-content.districts ul li.twitter {
   list-style: url("../images/twitter.png");
 }
-/* line 192, default.scss */
+/* line 194, _theme.scss */
 .container-content.districts ul li.facebook {
   list-style: url("../images/facebook.gif");
 }
-/* line 201, default.scss */
+/* line 203, _theme.scss */
 .container-content .box {
   background: #eeeeee;
   padding: 20px;
@@ -4949,17 +4953,17 @@ h1, h2, h3 {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 207, default.scss */
+/* line 209, _theme.scss */
 .container-content .box strong {
   color: #004fa3;
   font-size: 18px;
 }
-/* line 212, default.scss */
+/* line 214, _theme.scss */
 .container-content .box ul {
   margin-bottom: 0;
 }
 
-/* line 218, default.scss */
+/* line 220, _theme.scss */
 .container-media {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4969,17 +4973,17 @@ h1, h2, h3 {
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 227, default.scss */
+/* line 229, _theme.scss */
 .container-media ul {
   list-style: none;
   margin: 0;
 }
-/* line 236, default.scss */
+/* line 238, _theme.scss */
 .container-media .social__item {
   margin-bottom: 8px;
 }
 
-/* line 241, default.scss */
+/* line 243, _theme.scss */
 .container-footer {
   padding: 0 10px;
   *zoom: 1;
@@ -5007,24 +5011,24 @@ h1, h2, h3 {
 .container-footer:after {
   clear: both;
 }
-/* line 255, default.scss */
+/* line 257, _theme.scss */
 .container-footer a {
   color: white;
 }
-/* line 259, default.scss */
+/* line 261, _theme.scss */
 .container-footer .social {
   float: right;
 }
 
-/* line 264, default.scss */
+/* line 266, _theme.scss */
 .container-copyright {
   font-size: 11.9px;
 }
-/* line 267, default.scss */
+/* line 269, _theme.scss */
 .container-copyright p {
   margin: 3px 20px;
 }
-/* line 271, default.scss */
+/* line 273, _theme.scss */
 .container-copyright .copyright {
   text-align: right;
 }
