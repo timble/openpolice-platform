@@ -2615,29 +2615,29 @@ input[type="button"].btn-block {
 .btn-warning {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #f9a732;
-  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
-  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
-  background-image: -o-linear-gradient(top, #fbb450, #f89406);
-  background-image: linear-gradient(to bottom, #fbb450, #f89406);
+  background-color: #e59042;
+  background-image: -moz-linear-gradient(top, #eaa05c, #de791c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eaa05c), to(#de791c));
+  background-image: -webkit-linear-gradient(top, #eaa05c, #de791c);
+  background-image: -o-linear-gradient(top, #eaa05c, #de791c);
+  background-image: linear-gradient(to bottom, #eaa05c, #de791c);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFBB450', endColorstr='#FFF89406', GradientType=0);
-  border-color: #f89406 #f89406 #ad6704;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEAA05C', endColorstr='#FFDE791C', GradientType=0);
+  border-color: #de791c #de791c #9a5413;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #f89406;
+  *background-color: #de791c;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 /* line 513, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled] {
   color: white;
-  background-color: #f89406;
-  *background-color: #df8505;
+  background-color: #de791c;
+  *background-color: #c76d19;
 }
 /* line 521, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
 .btn-warning:active, .btn-warning.active {
-  background-color: #c67605 \9;
+  background-color: #b16016 \9;
 }
 
 /* line 153, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_buttons.scss */
@@ -3001,7 +3001,7 @@ input[type="submit"].btn.btn-mini {
 }
 /* line 143, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_button-groups.scss */
 .btn-group.open .btn-warning.dropdown-toggle {
-  background-color: #f89406;
+  background-color: #de791c;
 }
 /* line 146, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_button-groups.scss */
 .btn-group.open .btn-danger.dropdown-toggle {
@@ -4718,59 +4718,74 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   box-sizing: border-box;
 }
 
-/* line 10, _theme.scss */
+/* line 3, _bootstrap-overrides.scss */
+.nav > .active > a,
+.nav > .active > a:hover,
+.nav > .active > a:focus {
+  cursor: auto;
+}
+
+/* line 4, modules/_navs.scss */
+.nav-tabs .active a,
+.nav-tabs .active a:hover,
+.nav-tabs .active a:focus {
+  background-color: #004fa3;
+  color: white;
+}
+
+/* line 14, _theme.scss */
 body {
   background-color: #eeeeee;
 }
 
-/* line 14, _theme.scss */
+/* line 18, _theme.scss */
 html {
   font-size: 100.01%;
 }
 
-/* line 16, _theme.scss */
+/* line 20, _theme.scss */
 h1 {
   font-size: 24px;
 }
 
-/* line 17, _theme.scss */
+/* line 21, _theme.scss */
 h2 {
   font-size: 20px;
 }
 
-/* line 18, _theme.scss */
+/* line 22, _theme.scss */
 h3 {
   font-size: 18px;
 }
 
-/* line 20, _theme.scss */
+/* line 24, _theme.scss */
 h1, h2, h3 {
   font-weight: normal;
   line-height: 24px;
 }
 
-/* line 24, _theme.scss */
+/* line 28, _theme.scss */
 .page-header {
   margin-bottom: 14px;
 }
 
-/* line 28, _theme.scss */
+/* line 32, _theme.scss */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 33, _theme.scss */
+/* line 37, _theme.scss */
 .nowrap {
   white-space: nowrap;
 }
 
-/* line 37, _theme.scss */
+/* line 41, _theme.scss */
 .highlight {
   background-color: yellow;
 }
 
-/* line 45, _theme.scss */
+/* line 49, _theme.scss */
 .container-header,
 .container-banner,
 .container-breadcrumb,
@@ -4780,39 +4795,39 @@ h1, h2, h3 {
   padding-right: 20px;
 }
 
-/* line 50, _theme.scss */
+/* line 54, _theme.scss */
 #wrap {
   background-color: white;
 }
 
-/* line 54, _theme.scss */
+/* line 58, _theme.scss */
 .container-header {
   margin-bottom: 20px;
 }
-/* line 58, _theme.scss */
+/* line 62, _theme.scss */
 .container-header .span3 .logo {
   padding-top: 26px;
   display: block;
   text-decoration: none;
   color: #004fa3;
 }
-/* line 64, _theme.scss */
+/* line 68, _theme.scss */
 .container-header .span3 .logo img {
   width: 160px;
   vertical-align: bottom;
   margin-left: 10px;
 }
-/* line 70, _theme.scss */
+/* line 74, _theme.scss */
 .container-header .span3 .logo span {
   margin-left: 60px;
   margin-top: 3px;
   display: block;
 }
-/* line 78, _theme.scss */
+/* line 82, _theme.scss */
 .container-header .navbar {
   margin-bottom: 0;
 }
-/* line 81, _theme.scss */
+/* line 85, _theme.scss */
 .container-header .navbar .navbar__logo {
   display: none;
   /* Hide from browsers that don't support media queries */
@@ -4825,12 +4840,12 @@ h1, h2, h3 {
   border-right: 1px solid #004fa3;
   background-color: #0059b7;
 }
-/* line 93, _theme.scss */
+/* line 97, _theme.scss */
 .container-header .navbar .navbar__logo img {
   margin: 10px 0 0 0;
   float: left;
 }
-/* line 98, _theme.scss */
+/* line 102, _theme.scss */
 .container-header .navbar .navbar__logo span {
   margin: 13px 0 0 6px;
   display: block;
@@ -4838,19 +4853,19 @@ h1, h2, h3 {
   color: white;
   color: white;
 }
-/* line 108, _theme.scss */
+/* line 112, _theme.scss */
 .container-header .slogan {
   margin: 25px 0 10px;
   display: block;
   text-align: center;
 }
-/* line 113, _theme.scss */
+/* line 117, _theme.scss */
 .container-header .slogan strong {
   font-size: 17.5px;
   color: #004fa3;
 }
 
-/* line 120, _theme.scss */
+/* line 124, _theme.scss */
 .container-banner img {
   border: 1px solid black;
   -webkit-border-radius: 5px;
@@ -4858,29 +4873,29 @@ h1, h2, h3 {
   border-radius: 5px;
 }
 
-/* line 125, _theme.scss */
+/* line 129, _theme.scss */
 .container-breadcrumb {
   margin: 5px 0;
 }
-/* line 126, _theme.scss */
+/* line 130, _theme.scss */
 .container-breadcrumb .breadcrumb {
   margin-bottom: 0;
 }
-/* line 129, _theme.scss */
+/* line 133, _theme.scss */
 .container-breadcrumb .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
 
-/* line 136, _theme.scss */
+/* line 140, _theme.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 141, _theme.scss */
+/* line 145, _theme.scss */
 .container-content .sidebar {
   margin-top: 24px;
 }
-/* line 144, _theme.scss */
+/* line 148, _theme.scss */
 .container-content .sidebar .span3 {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 10px;
@@ -4888,63 +4903,63 @@ h1, h2, h3 {
   float: none;
   width: 100%;
 }
-/* line 154, _theme.scss */
+/* line 158, _theme.scss */
 .container-content .component h2 {
   margin-top: 30px;
 }
-/* line 155, _theme.scss */
+/* line 159, _theme.scss */
 .container-content .component h3 {
   margin-top: 20px;
 }
-/* line 157, _theme.scss */
+/* line 161, _theme.scss */
 .container-content .component .article {
   margin-bottom: 60px;
 }
-/* line 161, _theme.scss */
+/* line 165, _theme.scss */
 .container-content .component .article__thumbnail {
   margin: 0 0 20px 20px;
   float: right;
 }
-/* line 166, _theme.scss */
+/* line 170, _theme.scss */
 .container-content .component .article__introtext {
   font-weight: bold;
   margin-bottom: 22px;
 }
-/* line 171, _theme.scss */
+/* line 175, _theme.scss */
 .container-content .component .column--double {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 172, _theme.scss */
+/* line 176, _theme.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 173, _theme.scss */
+/* line 177, _theme.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
 }
-/* line 179, _theme.scss */
+/* line 183, _theme.scss */
 .container-content.news .page-header h1, .container-content.police .page-header h1 {
   margin-bottom: 4px;
 }
-/* line 183, _theme.scss */
+/* line 187, _theme.scss */
 .container-content.news .page-header .timestamp, .container-content.police .page-header .timestamp {
   font-size: 11.9px;
 }
-/* line 191, _theme.scss */
+/* line 195, _theme.scss */
 .container-content.districts ul li.twitter {
   list-style: url("../images/twitter.png");
 }
-/* line 194, _theme.scss */
+/* line 198, _theme.scss */
 .container-content.districts ul li.facebook {
   list-style: url("../images/facebook.gif");
 }
-/* line 203, _theme.scss */
+/* line 207, _theme.scss */
 .container-content .box {
   background: #eeeeee;
   padding: 20px;
@@ -4953,17 +4968,17 @@ h1, h2, h3 {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 209, _theme.scss */
+/* line 213, _theme.scss */
 .container-content .box strong {
   color: #004fa3;
   font-size: 18px;
 }
-/* line 214, _theme.scss */
+/* line 218, _theme.scss */
 .container-content .box ul {
   margin-bottom: 0;
 }
 
-/* line 220, _theme.scss */
+/* line 224, _theme.scss */
 .container-media {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4973,17 +4988,17 @@ h1, h2, h3 {
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 229, _theme.scss */
+/* line 233, _theme.scss */
 .container-media ul {
   list-style: none;
   margin: 0;
 }
-/* line 238, _theme.scss */
+/* line 242, _theme.scss */
 .container-media .social__item {
   margin-bottom: 8px;
 }
 
-/* line 243, _theme.scss */
+/* line 247, _theme.scss */
 .container-footer {
   padding: 0 10px;
   *zoom: 1;
@@ -5011,24 +5026,24 @@ h1, h2, h3 {
 .container-footer:after {
   clear: both;
 }
-/* line 257, _theme.scss */
+/* line 261, _theme.scss */
 .container-footer a {
   color: white;
 }
-/* line 261, _theme.scss */
+/* line 265, _theme.scss */
 .container-footer .social {
   float: right;
 }
 
-/* line 266, _theme.scss */
+/* line 270, _theme.scss */
 .container-copyright {
   font-size: 11.9px;
 }
-/* line 269, _theme.scss */
+/* line 273, _theme.scss */
 .container-copyright p {
   margin: 3px 20px;
 }
-/* line 273, _theme.scss */
+/* line 277, _theme.scss */
 .container-copyright .copyright {
   text-align: right;
 }
