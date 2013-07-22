@@ -1,6 +1,5 @@
 <h2>
-    <?= @helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'))) ?>
-    <?= $article->end_on ? @text('till').' '.@helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) : '' ?>
+    <?= @helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
     <small><?= $article->title ?></small>
 </h2>
 

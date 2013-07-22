@@ -50,7 +50,7 @@ class ModelArticles extends Library\ModelTable
 		}
 
 		if ($state->date == 'upcoming') {
-            $query->where('(tbl.end_on >= :today OR (tbl.end_on IS NULL AND tbl.start_on >= :today))')->bind(array('today' => date('Y-m-d')));
+            $query->where('(tbl.end_on >= :today OR tbl.end_on IS NULL)')->bind(array('today' => date('Y-m-d')));
 		}
 	}
 }
