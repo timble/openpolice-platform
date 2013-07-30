@@ -74,19 +74,6 @@
                     <? endif ?>
                 <? endforeach ?>
             <? endif ?>
-
-        </div>
-
-    </div>
-    <div class="row-fluid">
-        <div class="span12">
-            <? if ($contact->address) : ?>
-                <? $map = "http://maps.googleapis.com/maps/api/staticmap?maptype=roadmap
-&markers='.$contact->address.','.$contact->suburb.','.$contact->country.'&sensor=false"; ?>
-                <a rel="{handler: 'image'}" class="modalbox" href="<?= $map ?>&size=800x600&zoom=15">
-                    <img class="thumbnail" src="<?= $map ?>&size=650x120&zoom=13" />
-                </a
-            <? endif; ?>
         </div>
     </div>
 </address>
