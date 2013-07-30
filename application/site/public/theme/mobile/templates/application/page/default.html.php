@@ -81,7 +81,8 @@
                 </ktml:modules>
             </div>
             <div class="span3">
-
+                <h3>Mijn wijkinspecteur</h3>
+                <?= @template('default_district.html') ?>
             </div>
         </div>
     </div>
