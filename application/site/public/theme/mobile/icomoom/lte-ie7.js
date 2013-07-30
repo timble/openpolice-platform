@@ -14,7 +14,8 @@ window.onload = function() {
 			'icon-facebook' : '&#xe001;',
 			'icon-file' : '&#xf15b;',
 			'icon-folder-close' : '&#x1f4c1;',
-			'icon-folder-open' : '&#x1f4c2;'
+			'icon-folder-open' : '&#x1f4c2;',
+			'icon-question' : '&#xf128;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, html, c, el;

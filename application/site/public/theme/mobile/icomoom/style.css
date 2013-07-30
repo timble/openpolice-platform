@@ -27,7 +27,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-road, .icon-key, .icon-search, .icon-file-alt, .icon-twitter, .icon-facebook, .icon-file, .icon-folder-close, .icon-folder-open {
+.icon-road, .icon-key, .icon-search, .icon-file-alt, .icon-twitter, .icon-facebook, .icon-file, .icon-folder-close, .icon-folder-open, .icon-question {
 	font-family: 'fontawesome';
 	speak: none;
 	font-style: normal;
@@ -63,4 +63,7 @@ you can use the generic selector below, but it's slower:
 }
 .icon-folder-open:before {
 	content: "\1f4c2";
+}
+.icon-question:before {
+	content: "\f128";
 }
