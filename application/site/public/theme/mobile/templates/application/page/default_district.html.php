@@ -42,7 +42,6 @@
             formatInputTooShort: false,
             formatSearching: function () { return "<?= @text('Please wait') ?> ..."; },
             formatNoMatches: function () { return "<?= @text('No matches found') ?>"; }
-
         });
     });
 </script>
@@ -52,13 +51,13 @@
         <div class="control-group">
             <label class="control-label" for="zone_street_id"><?= @text('Mijn straat') ?>:</label>
             <div class="controls">
-                <input type="hidden" class="bigdrop" id="streets2" name="street" value="" style="width: 90%; display: none;" tabindex="1" required>
+                <input type="hidden" class="bigdrop" id="streets2" name="street" value="<?= @$_COOKIE ['district_street'] ?>" style="width: 90%; display: none;" tabindex="1" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="number"><?= @text('Mijn huisnummer') ?>:</label>
             <div class="controls">
-                <input style="max-width: 85%;" type="number" name="number" value="" tabindex="2" required />
+                <input style="width: 84%;" type="number" name="number" value="<?= @$_COOKIE ['district_number'] ?>" tabindex="2" required />
             </div>
         </div>
     </fieldset>

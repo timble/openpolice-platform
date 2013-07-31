@@ -16,7 +16,13 @@ class DistrictsViewDistrictsHtml extends Library\ViewHtml
         //Get the parameters
         $params = $this->getObject('application')->getParams();
 
+        // Get the state
+        $state = $this->getModel()->getState();
+
         $this->params   = $params;
+
+        setcookie ("district_street", $state->street, time()+3600*24*(2), '/5388' );
+        setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
 
         return parent::render();
     }
