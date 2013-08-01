@@ -9,13 +9,13 @@
 ?>
 
 <div class="page-header">
-    <h1><?= @escape($article->title); ?></h1>
+    <h1><?= @escape($question->title); ?></h1>
 </div>
 
 <div class="clearfix">
-    <?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+    <?= @helper('com:attachments.image.thumbnail', array('row' => $question)) ?>
 
-    <?= $article->text ?>
+    <?= $question->text ?>
 </div>
 
-<?= @template('com:questions.view.articles.default_contact.html') ?>
+<?= @template('com:questions.view.questions.default_contact.html') ?>

@@ -10,7 +10,7 @@
 namespace Nooku\Component\Questions;
 use Nooku\Library;
 
-class DatabaseRowArticle extends Library\DatabaseRowTable
+class DatabaseRowQuestion extends Library\DatabaseRowTable
 {
     public function __get($column)
     {
@@ -37,7 +37,7 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         	$this->introtext = trim($text);
         	$this->fulltext = '';
         }
-        
+
         $result   = parent::save();
 
         return $result;

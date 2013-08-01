@@ -10,7 +10,7 @@
 namespace Nooku\Component\Questions;
 use Nooku\Library;
 
-class DatabaseTableArticles extends Library\DatabaseTableAbstract
+class DatabaseTableQuestions extends Library\DatabaseTableAbstract
 {
     public function  _initialize(Library\ObjectConfig $config)
     {        
@@ -19,9 +19,6 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
             'behaviors'    =>  array(
                 'sluggable', 'lockable', 'creatable', 'modifiable',
                 'com:attachments.database.behavior.attachable',
-                'orderable' => array(
-                    'strategy' => 'flat'
-                )
             ),
           	'filters' => array(
           	    'text'   => array('html', 'tidy')

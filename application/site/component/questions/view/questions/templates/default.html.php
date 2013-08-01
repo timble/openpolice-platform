@@ -20,10 +20,10 @@
 
 <? if($state->category AND !$state->searchword) : ?>
 <ul class="nav nav-pills nav-stacked">
-<? foreach ($articles as $article) : ?>
+<? foreach ($questions as $question) : ?>
     <li>
-        <a href="<?= @helper('route.article', array('row' => $article)) ?>">
-            <?= $article->title; ?>
+        <a href="<?= @helper('route.question', array('row' => $question)) ?>">
+            <?= $question->title; ?>
         </a>
     </li>
 <? endforeach; ?>
@@ -31,17 +31,17 @@
 <? endif ?>
 
 <? if($state->searchword) : ?>
-<? foreach ($articles as $article): ?>
-<div class="article">
+<? foreach ($questions as $question): ?>
+<div class="question">
     <div class="page-header">
         <h1>
-            <a href="<?= @helper('route.article', array('row' => $article)) ?>">
-                <?= @highlight($article->title) ?>
+            <a href="<?= @helper('route.question', array('row' => $question)) ?>">
+                <?= @highlight($question->title) ?>
             </a>
         </h1>
     </div>
 
-    <?= @highlight($article->text) ?>
+    <?= @highlight($question->text) ?>
 </div>
 <? endforeach ?>
 <? endif ?>

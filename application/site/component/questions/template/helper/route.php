@@ -11,22 +11,22 @@ use Nooku\Library;
 
 class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
 {
-    public function article($config = array())
+    public function question($config = array())
 	{
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
             'layout'   => null
         ));
 
-        $article = $config->row;
+        $question = $config->row;
 
         $needles = array(
-            array('view' => 'articles' , 'category' => $article->categories_category_id),
+            array('view' => 'questions' , 'category' => $question->categories_category_id),
 		);
 
         $route = array(
-            'view'     => 'article',
-            'id'       => $article->getSlug(),
+            'view'     => 'question',
+            'id'       => $question->getSlug(),
             'layout'   => $config->layout,
         );
 
@@ -47,11 +47,11 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
         $category = $config->row;
 
         $needles = array(
-            array('view' => 'articles'   , 'category' => $category->id)
+            array('view' => 'questions'   , 'category' => $category->id)
         );
 
         $route = array(
-            'view'      => 'articles',
+            'view'      => 'questions',
             'category'  => $category->getSlug(),
             'layout'    => $config->layout
         );

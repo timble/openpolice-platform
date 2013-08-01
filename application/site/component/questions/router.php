@@ -24,7 +24,7 @@ class QuestionsRouter extends Library\DispatcherRouter
 
         $view = $page->getLink()->query['view'];
 
-        if($view == 'articles')
+        if($view == 'questions')
         {
             if(isset($query['id'])) {
                 $segments[] = $query['id'];
@@ -59,7 +59,7 @@ class QuestionsRouter extends Library\DispatcherRouter
                 $segment = array_shift( $path );
 
                 $vars['category'] = $segment;
-                $vars['view'] = 'articles';
+                $vars['view'] = 'questions';
             }
 
             if($count)
@@ -68,17 +68,17 @@ class QuestionsRouter extends Library\DispatcherRouter
                 $segment = array_shift( $path) ;
 
                 $vars['id']     = $segment;
-                $vars['view']   = 'article';
+                $vars['view']   = 'question';
                 $vars['layout'] = 'default';
             }
         }
 
-        if($view == 'articles')
+        if($view == 'questions')
         {
             $segment = array_shift( $path) ;
 
             $vars['id']     = $segment;
-            $vars['view']   = 'article';
+            $vars['view']   = 'question';
             $vars['layout'] = 'default';
         }
 

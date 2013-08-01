@@ -10,7 +10,7 @@
 namespace Nooku\Component\Questions;
 use Nooku\Library;
 
-class ModelArticles extends Library\ModelTable
+class ModelQuestions extends Library\ModelTable
 {
 	public function __construct(Library\ObjectConfig $config)
 	{
