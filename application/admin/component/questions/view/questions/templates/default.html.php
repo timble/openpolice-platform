@@ -48,22 +48,22 @@
 		</tr>
 	</tfoot>
 	<tbody<?= $sortable ? ' class="sortable"' : '' ?>>
-		<? foreach ($articles as $article) : ?>
+		<? foreach ($questions as $question) : ?>
 		<tr>
             <? if($sortable) : ?>
                 <td class="handle">
-                    <span class="text-small data-order"><?= $article->ordering ?></span>
+                    <span class="text-small data-order"><?= $question->ordering ?></span>
                 </td>
             <? endif ?>
             <td align="center">
-				<?= @helper('grid.checkbox', array('row' => $article))?>
+				<?= @helper('grid.checkbox', array('row' => $question))?>
 			</td>
             <td align="center">
-                <?= @helper('grid.enable', array('row' => $article, 'field' => 'published')) ?>
+                <?= @helper('grid.enable', array('row' => $question, 'field' => 'published')) ?>
             </td>
             <td class="ellipsis">
-				<a href="<?= @route( 'view=article&task=edit&id='.$article->id ); ?>">
-					<?= $article->title ?>
+				<a href="<?= @route( 'view=question&task=edit&id='.$question->id ); ?>">
+					<?= $question->title ?>
 				</a>
 			</td>
 		</tr>

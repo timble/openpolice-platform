@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class NewsViewArticleHtml extends Library\ViewHtml
+class QuestionsViewQuestionHtml extends Library\ViewHtml
 {
     public function render()
     {

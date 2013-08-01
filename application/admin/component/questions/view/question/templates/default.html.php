@@ -18,20 +18,20 @@
     <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
 </ktml:module>
 
-<form action="" method="post" id="article-form" class="-koowa-form" enctype="multipart/form-data">
+<form action="" method="post" id="question-form" class="-koowa-form" enctype="multipart/form-data">
 	<input type="hidden" name="access" value="0" />
 	<input type="hidden" name="published" value="0" />
 	
 	<div class="main">
 		<div class="title">
-			<input class="required" type="text" name="title" maxlength="255" value="<?= $article->title ?>" placeholder="<?= @text('Title') ?>" />
+			<input class="required" type="text" name="title" maxlength="255" value="<?= $question->title ?>" placeholder="<?= @text('Title') ?>" />
 			<div class="slug">
 			    <span class="add-on">Slug</span>
-			    <input type="text" name="slug" maxlength="255" value="<?= $article->slug ?>" />
+			    <input type="text" name="slug" maxlength="255" value="<?= $question->slug ?>" />
 			</div>
 		</div>
 		
-		<?= @object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
+		<?= @object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $question->text)) ?>
 	</div>
 	<div class="sidebar">
 	    <?= @template('default_sidebar.html') ?>
