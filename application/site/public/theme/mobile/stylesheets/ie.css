@@ -4919,47 +4919,48 @@ h1, h2, h3 {
 .container-content .component .article__thumbnail {
   margin: 0 0 20px 20px;
   float: right;
+  max-width: 40%;
 }
-/* line 170, _theme.scss */
+/* line 171, _theme.scss */
 .container-content .component .article__introtext {
   font-weight: bold;
   margin-bottom: 22px;
 }
-/* line 175, _theme.scss */
+/* line 176, _theme.scss */
 .container-content .component .column--double {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 176, _theme.scss */
+/* line 177, _theme.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 177, _theme.scss */
+/* line 178, _theme.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
 }
-/* line 183, _theme.scss */
+/* line 184, _theme.scss */
 .container-content.news .page-header h1, .container-content.police .page-header h1 {
   margin-bottom: 4px;
 }
-/* line 187, _theme.scss */
+/* line 188, _theme.scss */
 .container-content.news .page-header .timestamp, .container-content.police .page-header .timestamp {
   font-size: 11.9px;
 }
-/* line 195, _theme.scss */
+/* line 196, _theme.scss */
 .container-content.districts ul li.twitter {
   list-style: url("../images/twitter.png");
 }
-/* line 198, _theme.scss */
+/* line 199, _theme.scss */
 .container-content.districts ul li.facebook {
   list-style: url("../images/facebook.gif");
 }
-/* line 207, _theme.scss */
+/* line 208, _theme.scss */
 .container-content .box {
   background: #eeeeee;
   padding: 20px;
@@ -4968,17 +4969,17 @@ h1, h2, h3 {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 213, _theme.scss */
+/* line 214, _theme.scss */
 .container-content .box strong {
   color: #004fa3;
   font-size: 18px;
 }
-/* line 218, _theme.scss */
+/* line 219, _theme.scss */
 .container-content .box ul {
   margin-bottom: 0;
 }
 
-/* line 224, _theme.scss */
+/* line 225, _theme.scss */
 .container-media {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4988,17 +4989,17 @@ h1, h2, h3 {
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 233, _theme.scss */
+/* line 234, _theme.scss */
 .container-media ul {
   list-style: none;
   margin: 0;
 }
-/* line 242, _theme.scss */
+/* line 243, _theme.scss */
 .container-media .social__item {
   margin-bottom: 8px;
 }
 
-/* line 247, _theme.scss */
+/* line 248, _theme.scss */
 .container-footer {
   padding: 0 10px;
   *zoom: 1;
@@ -5026,24 +5027,24 @@ h1, h2, h3 {
 .container-footer:after {
   clear: both;
 }
-/* line 261, _theme.scss */
+/* line 262, _theme.scss */
 .container-footer a {
   color: white;
 }
-/* line 265, _theme.scss */
+/* line 266, _theme.scss */
 .container-footer .social {
   float: right;
 }
 
-/* line 270, _theme.scss */
+/* line 271, _theme.scss */
 .container-copyright {
   font-size: 11.9px;
 }
-/* line 273, _theme.scss */
+/* line 274, _theme.scss */
 .container-copyright p {
   margin: 3px 20px;
 }
-/* line 277, _theme.scss */
+/* line 278, _theme.scss */
 .container-copyright .copyright {
   text-align: right;
 }
@@ -5527,70 +5528,63 @@ h1, h2, h3 {
     color: white;
   }
 
-  /* line 163, _responsive.scss */
-  .container-content.news .thumbnail, .container-content.police .thumbnail {
-    float: none;
-    text-align: center;
-    width: 100%;
-    margin: 0 0 10px;
-  }
-  /* line 172, _responsive.scss */
+  /* line 162, _responsive.scss */
   .container-content .component .column--triple {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
   }
-  /* line 173, _responsive.scss */
+  /* line 163, _responsive.scss */
   .container-content .component .column--quad {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
   }
 
-  /* line 177, _responsive.scss */
+  /* line 167, _responsive.scss */
   .container-banner {
     display: none;
   }
 
-  /* line 181, _responsive.scss */
+  /* line 171, _responsive.scss */
   .container-media {
     text-align: center;
   }
-  /* line 183, _responsive.scss */
+  /* line 173, _responsive.scss */
   .container-media ul {
     margin-top: 10px;
   }
-  /* line 185, _responsive.scss */
+  /* line 175, _responsive.scss */
   .container-media ul li {
     display: inline;
   }
 
-  /* line 192, _responsive.scss */
+  /* line 182, _responsive.scss */
   .container-copyright,
   .container-copyright .copyright {
     text-align: center;
   }
 
   /* Force table to not be like tables anymore */
-  /* line 199, _responsive.scss */
+  /* line 189, _responsive.scss */
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
-  /* line 204, _responsive.scss */
+  /* line 194, _responsive.scss */
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  /* line 210, _responsive.scss */
+  /* line 200, _responsive.scss */
   tr {
     border-top: 1px solid #DDD;
   }
 
-  /* line 214, _responsive.scss */
+  /* line 204, _responsive.scss */
   td {
     /* Behave  like a "row" */
     border: none;
@@ -5598,7 +5592,7 @@ h1, h2, h3 {
     position: relative;
   }
 
-  /* line 221, _responsive.scss */
+  /* line 211, _responsive.scss */
   td:first-of-type {
     font-size: 1.15em;
   }

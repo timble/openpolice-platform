@@ -158,16 +158,6 @@
   }
 
   .container-content {
-      &.news,
-      &.police {
-          .thumbnail {
-              float: none;
-              text-align: center;
-              width: 100%;
-              margin: 0 0 10px;
-          }
-      }
-
       .component {
         .column--triple { @include column-count(2); }
           .column--quad { @include column-count(2); }
