@@ -39,6 +39,7 @@ class ObjectLocatorComponent extends ObjectLocatorAbstract
                 '<Package><Class>',
                 'Nooku\Component\<Package>\<Class>',
                 'Nooku\Component\<Package>\<Path><Name>',
+                'Application<Path>Default',
                 'Nooku\Library\<Path><Name>',
                 'Nooku\Library\<Path>Default',
             )

@@ -16,7 +16,7 @@ use Nooku\Library;
  * @package    Nooku_Server
  * @subpackage Articles
  */
-class ArticlesControllerPermissionArticle extends ApplicationControllerPermissionAbstract
+class ArticlesControllerPermissionArticle extends ApplicationControllerPermissionDefault
 {
     public function canRead()
     {

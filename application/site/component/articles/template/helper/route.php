@@ -58,6 +58,7 @@ class ArticlesTemplateHelperRoute extends PagesTemplateHelperRoute
 
         $needles = array(
             array('view' => 'category'   , 'id' => $category->id),
+            array('view' => 'categories' , 'id' => $category->section),
         );
 
         $route = array(

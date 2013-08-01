@@ -10,16 +10,21 @@
 use Nooku\Library;
 
 /**
- * Editor Controller Permission Class
+ * Section Controller Class
  *
  * @author     Arunas Mazeika <http://nooku.assembla.com/profile/arunasmazeika>
  * @package    Nooku_Server
- * @subpackage Wysiwyg
+ * @subpackage Articles
  */
-class WysiwygControllerPermissionEditor extends ApplicationControllerPermissionDefault
+class ArticlesControllerSection extends Library\ControllerModel
 {
-    public function canRender()
+    public function getRequest()
     {
-        return true;
+        $request = parent::getRequest();
+
+        // Only return published items.
+        $request->query->published = 1;
+
+        return $request;
     }
 }
