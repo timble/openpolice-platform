@@ -121,7 +121,7 @@ CREATE TABLE `police_zones` (
 
 
 CREATE TABLE `questions` (
-  `questions_article_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `questions_question_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `categories_category_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) DEFAULT NULL,
@@ -136,7 +136,7 @@ CREATE TABLE `questions` (
   `locked_on` datetime DEFAULT NULL,
   `ordering` int(11) DEFAULT '0',
   `params` text,
-  PRIMARY KEY (`questions_article_id`)
+  PRIMARY KEY (`questions_question_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
