@@ -7,10 +7,8 @@
  * @link		http://www.police.be
  */
 ?>
-<? $columns = @helper('module.count', array('condition' => 'left')) ? '9' : '12' ?>
 <? $site = @escape(@object('application')->getCfg('site' )) ?>
 <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
-<? if($extension == 'police') { $columns = '12'; } ?>
 
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
@@ -57,12 +55,15 @@
 
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">
-            <ktml:modules position="left">
-                <div class="span3 sidebar hidden-phone">
+            <div class="span3 sidebar hidden-phone">
+                <ktml:modules position="left">
                     <ktml:modules:content />
-                </div>
-            </ktml:modules>
-            <div class="span<?= $columns ?> component">
+                </ktml:modules>
+                <? if(!@helper('module.count', array('condition' => 'left'))) : ?>
+                <?= @template('com:police.view.page.homepage_shortcuts.html') ?>
+                <? endif ?>
+            </div>
+            <div class="span9 component">
                 <ktml:content />
             </div>
         </div>

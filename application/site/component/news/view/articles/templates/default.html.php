@@ -8,10 +8,6 @@
  */
 ?>
 
-<ktml:module position="left">
-    <?= @template('com:police.view.page.homepage_shortcuts.html') ?>
-</ktml:module>
-
 <? foreach ($articles as $article) : ?>
     <? $link = @helper('route.article', array('row' => $article)); ?>
     <div class="page-header">
