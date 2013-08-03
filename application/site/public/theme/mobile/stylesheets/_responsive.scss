@@ -1,4 +1,4 @@
-@include respond-min(998px) {
+@include respond-min(979px) {
   .container-fluid {
     width: $gridRowWidth;
     margin: 0 auto;
@@ -18,19 +18,15 @@
 //
 // Responsive: Tablet to desktop
 // --------------------------------------------------
-@media (min-width: $navbarCollapseDesktopWidth) and (max-width: 979px) {
-    .container {
-        width: $gridRowWidth768 + 38px;
-    }
-
+@media (min-width: $navbarCollapseDesktopWidth) and (max-width: 978px) {
     .container-header {
-        .span3 {
+        .span1 {
             float: none;
             width: 100%;
             text-align: center;
         }
 
-        .span9 {
+        .span3 {
             float: none;
             width: 100%;
             margin: 0;
@@ -39,7 +35,7 @@
     }
 
     .container-content.police {
-        .span3 {
+        .span1 {
             width: 352px;
         }
     }
@@ -90,7 +86,7 @@
     padding-left: 0;
     padding-right: 0;
 
-    .span3 {
+    .span1 {
         display: none;
     }
 

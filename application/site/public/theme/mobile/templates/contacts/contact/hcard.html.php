@@ -19,7 +19,7 @@
         <h2 class="title"><?= $contact->con_position?></h2>
     <? endif;?>
     <div class="row-fluid">
-        <div class="span8">
+        <div class="span3">
             <div class="adr">
                 <? if ($contact->address) : ?>
                     <div class="street-address"><?= $contact->address?></div>
@@ -66,7 +66,7 @@
                 </p>
             <? endif; ?>
         </div>
-        <div class="span4">
+        <div class="span1">
             <? if($contact->isAttachable()) : ?>
                 <? foreach($contact->getAttachments() as $item) : ?>
                     <? if($item->file->isImage()) : ?>

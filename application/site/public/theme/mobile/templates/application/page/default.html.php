@@ -18,7 +18,7 @@
 <div id="wrap" class="container-fluid">
     <div class="container-header">
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span1">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
                         <img itemprop="logo" src="media://application/images/logo-nl.png" />
@@ -26,7 +26,7 @@
                     </a>
                 </div>
             </div>
-            <div class="span9">
+            <div class="span3">
                 <span class="slogan hidden-phone">Bel <strong>101</strong> voor dringende politiehulp. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
                 <div class="navbar navbar-responsive">
                 <a class="navbar__logo" href="/<?= $site ?>">
@@ -56,7 +56,7 @@
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">
             <? if($extension !== 'police') : ?>
-            <div class="span3 sidebar hidden-phone">
+            <div class="span1 sidebar hidden-phone">
                 <ktml:modules position="left">
                     <ktml:modules:content />
                 </ktml:modules>
@@ -65,7 +65,7 @@
                 <? endif ?>
             </div>
             <? endif; ?>
-            <div class="span<?= $extension == 'police' ? '12' : '9' ?> component">
+            <div class="span<?= $extension == 'police' ? '4' : '3' ?> component">
                 <ktml:content />
             </div>
         </div>
@@ -73,17 +73,17 @@
 
     <div class="container-media">
         <div class="row-fluid hidden-phone">
-            <div class="span6">
+            <div class="span2">
                 <h3><?= @text('Laatste nieuws') ?></h3>
                 <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
             </div>
-            <div class="span3">
+            <div class="span1">
                 <h3 style="padding-left: 12px" ><?= @text('Meer weten') ?></h3>
                 <ktml:modules position="footermenu">
                     <ktml:modules:content />
                 </ktml:modules>
             </div>
-            <div class="span3">
+            <div class="span1">
                 <h3>Mijn wijkinspecteur</h3>
                 <?= @template('default_district.html') ?>
             </div>
