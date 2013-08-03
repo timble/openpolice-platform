@@ -12,11 +12,11 @@
 </div>
 <div<?= $class ? ' class="'.$class.'"' : '' ?>>
     <h3><i class="icon-road"></i>Verkeersinformatie</h3>
-    <p>Op zoek naar informatie over controles, verkeersmaatregelen of wegenwerken?</p>
+    <p>Zoek je informatie over controles, maatregelen of wegenwerken?</p>
     <p><a href="<?= $site ?>/verkeer">Bekijk de verkeersinformatie &rarr;</a></p>
 </div>
 <div<?= $class ? ' class="'.$class.'"' : '' ?>>
     <h3><i class="icon-key"></i> Verloren voorwerpen</h3>
     <p>Iets verloren? Misschien hebben wij je verloren voorwerp gevonden.</p>
-    <p><a href="<?= $site ?>/vragen/verlies-of-diefstal/93-ik-ben-iets-kwijt-wat-nu">Zoek je verloren voorwerpen &rarr;</a></p>
+    <p><a href="<?= $site ?>/vragen/verlies-of-diefstal/93-ik-ben-iets-kwijt-wat-nu">Verloren voorwerpen &rarr;</a></p>
 </div>
