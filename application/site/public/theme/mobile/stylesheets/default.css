@@ -4927,14 +4927,26 @@ h1, h2, h3 {
   .container-breadcrumb {
     padding-top: 60px;
   }
+  /* line 87, _responsive.scss */
+  .container-breadcrumb li:last-child {
+    display: none;
+  }
+  /* line 90, _responsive.scss */
+  .container-breadcrumb .divider:last-of-type {
+    display: none;
+  }
+  /* line 93, _responsive.scss */
+  .container-breadcrumb li:first-child {
+    display: inline;
+  }
 
-  /* line 88, _responsive.scss */
+  /* line 98, _responsive.scss */
   .container-content {
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  /* line 93, _responsive.scss */
+  /* line 103, _responsive.scss */
   .container-header {
     margin-bottom: 0;
     padding-left: 0;
@@ -4942,22 +4954,22 @@ h1, h2, h3 {
     position: fixed;
     width: 100%;
   }
-  /* line 100, _responsive.scss */
+  /* line 110, _responsive.scss */
   .container-header .span3 {
     display: none;
   }
-  /* line 104, _responsive.scss */
+  /* line 114, _responsive.scss */
   .container-header .navbar {
     width: 100%;
     background-color: #0063cc;
     position: relative;
     display: inline-block;
   }
-  /* line 110, _responsive.scss */
+  /* line 120, _responsive.scss */
   .container-header .navbar .navbar__logo {
     display: block;
   }
-  /* line 114, _responsive.scss */
+  /* line 124, _responsive.scss */
   .container-header .navbar .navbar__handle {
     display: block;
     cursor: pointer;
@@ -4970,7 +4982,7 @@ h1, h2, h3 {
     width: 50px;
     border-left: 1px solid #004fa3;
   }
-  /* line 127, _responsive.scss */
+  /* line 137, _responsive.scss */
   .container-header .navbar .navbar-inner {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -4984,25 +4996,25 @@ h1, h2, h3 {
     padding-right: 0;
     padding-top: 50px;
   }
-  /* line 138, _responsive.scss */
+  /* line 148, _responsive.scss */
   .container-header .navbar .navbar-inner .nav {
     margin: 0;
     text-align: left;
     border-top: 1px solid #004fa3;
   }
-  /* line 143, _responsive.scss */
+  /* line 153, _responsive.scss */
   .container-header .navbar .navbar-inner .nav.is-hidden {
     display: none;
     visibility: hidden;
   }
-  /* line 148, _responsive.scss */
+  /* line 158, _responsive.scss */
   .container-header .navbar .navbar-inner .nav li {
     width: 100%;
     *display: inline;
     zoom: 1;
     position: relative;
   }
-  /* line 155, _responsive.scss */
+  /* line 165, _responsive.scss */
   .container-header .navbar .navbar-inner .nav a {
     display: block;
     border-bottom: 1px solid #004fa3;
@@ -5011,63 +5023,63 @@ h1, h2, h3 {
     color: white;
   }
 
-  /* line 169, _responsive.scss */
+  /* line 179, _responsive.scss */
   .container-content .component .column--triple {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
   }
-  /* line 170, _responsive.scss */
+  /* line 180, _responsive.scss */
   .container-content .component .column--quad {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
   }
 
-  /* line 174, _responsive.scss */
+  /* line 184, _responsive.scss */
   .container-banner {
     display: none;
   }
 
-  /* line 178, _responsive.scss */
+  /* line 188, _responsive.scss */
   .container-media {
     text-align: center;
   }
-  /* line 180, _responsive.scss */
+  /* line 190, _responsive.scss */
   .container-media ul {
     margin-top: 10px;
   }
-  /* line 182, _responsive.scss */
+  /* line 192, _responsive.scss */
   .container-media ul li {
     display: inline;
   }
 
-  /* line 189, _responsive.scss */
+  /* line 199, _responsive.scss */
   .container-copyright,
   .container-copyright .copyright {
     text-align: center;
   }
 
   /* Force table to not be like tables anymore */
-  /* line 196, _responsive.scss */
+  /* line 206, _responsive.scss */
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
-  /* line 201, _responsive.scss */
+  /* line 211, _responsive.scss */
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  /* line 207, _responsive.scss */
+  /* line 217, _responsive.scss */
   tr {
     border-top: 1px solid #DDD;
   }
 
-  /* line 211, _responsive.scss */
+  /* line 221, _responsive.scss */
   td {
     /* Behave  like a "row" */
     border: none;
@@ -5075,7 +5087,7 @@ h1, h2, h3 {
     position: relative;
   }
 
-  /* line 218, _responsive.scss */
+  /* line 228, _responsive.scss */
   td:first-of-type {
     font-size: 1.15em;
   }

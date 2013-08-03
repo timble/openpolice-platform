@@ -83,6 +83,16 @@
 
   .container-breadcrumb {
     padding-top: 60px;
+
+    li:last-child {
+      display: none;
+    }
+    .divider:last-of-type {
+      display: none;
+    }
+    li:first-child {
+      display: inline;
+    }
   }
 
   .container-content {
