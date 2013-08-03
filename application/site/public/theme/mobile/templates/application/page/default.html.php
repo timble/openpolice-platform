@@ -55,6 +55,7 @@
 
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">
+            <? if($extension !== 'police') : ?>
             <div class="span3 sidebar hidden-phone">
                 <ktml:modules position="left">
                     <ktml:modules:content />
@@ -63,7 +64,8 @@
                 <?= @template('com:police.view.page.homepage_shortcuts.html') ?>
                 <? endif ?>
             </div>
-            <div class="span9 component">
+            <? endif; ?>
+            <div class="span<?= $extension == 'police' ? '12' : '9' ?> component">
                 <ktml:content />
             </div>
         </div>
