@@ -78,7 +78,12 @@
         padding-left: 0;
         padding-right: 0;
         background-color: lighten($grayLighter, 3%);
+
     }
+
+  .container-breadcrumb {
+    padding-top: 60px;
+  }
 
   .container-content {
     padding-left: 20px;
@@ -89,6 +94,8 @@
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
+    position: fixed;
+    width: 100%;
 
     .span3 {
         display: none;

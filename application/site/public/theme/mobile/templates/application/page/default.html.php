@@ -89,7 +89,6 @@
             </div>
         </div>
     </div>
-    <div id="push"></div>
 </div>
 
 <div class="container-fluid container-copyright">
