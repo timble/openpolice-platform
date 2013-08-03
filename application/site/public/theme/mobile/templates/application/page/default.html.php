@@ -47,7 +47,7 @@
         <img src="media://application/images/banners/<?= $site ?>.jpg" />
     </div>
 
-    <div class="container-breadcrumb">
+    <div class="container-breadcrumb hidden-phone">
         <ktml:modules position="breadcrumbs">
             <ktml:modules:content />
         </ktml:modules>
