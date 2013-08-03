@@ -98,7 +98,7 @@
                 <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
             </p>
         </div>
-        <div class="span6 copyright">
+        <div class="span6 copyright hidden-phone">
             <p>
                 © 2013 Lokale Politie - <?= @escape($zone->title); ?>
                 <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
