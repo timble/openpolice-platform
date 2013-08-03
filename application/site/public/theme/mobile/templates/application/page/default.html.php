@@ -61,7 +61,7 @@
                     <ktml:modules:content />
                 </ktml:modules>
                 <? if(!@helper('module.count', array('condition' => 'left'))) : ?>
-                <?= @template('com:police.view.page.homepage_shortcuts.html') ?>
+                <?= @template('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
                 <? endif ?>
             </div>
             <? endif; ?>
