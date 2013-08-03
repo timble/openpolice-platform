@@ -11,10 +11,6 @@
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher:'91c73e48-a5e0-43ea-988f-57d099f878c7'});</script>
 
-<ktml:module position="left">
-    <?= @template('com:police.view.page.homepage_shortcuts.html') ?>
-</ktml:module>
-
 <div class="page-header clearfix">
     <h1><?= $article->title ?></h1>
     <span class="timestamp">
