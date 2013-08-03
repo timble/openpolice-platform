@@ -1,5 +1,3 @@
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/variables";
-
 $textColor: 			$grayDarker;
 
 $sansFontFamily:        Helvetica, sans-serif;
@@ -33,12 +31,5 @@ $navbarLinkBackgroundActive:      darken($navbarBackground, 8%);
 
 $navbarBrandColor:                $navbarLinkColor;
 
-$gridColumns:             4;
-$gridColumnWidth:         210px;
+$gridColumnWidth:         50px;
 $gridGutterWidth:         30px;
-$gridRowWidth:            ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1));
-
-// Fluid grid
-// -------------------------
-$fluidGridColumnWidth:    percentage($gridColumnWidth/$gridRowWidth);
-$fluidGridGutterWidth:    percentage($gridGutterWidth/$gridRowWidth);

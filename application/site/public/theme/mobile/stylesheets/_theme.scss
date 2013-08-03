@@ -1,8 +1,5 @@
 @import "utils";
-
-// Variables override
 @import "variables-custom";
-@import "variables";
 
 @import "bootstrap";
 @import "bootstrap-overrides";
@@ -63,7 +60,7 @@ h1, h2, h3 {
 .container-header  {
   margin-bottom: 20px;
 
-  .span1 {
+  .span3 {
     .logo {
       padding-top: 26px;
       display: block;
