@@ -1,0 +1,50 @@
+//
+// Tables
+// --------------------------------------------------
+
+// BASELINE STYLES
+// ---------------
+
+.table {
+  max-width: 100%;
+  background-color: $tableBackground;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin-bottom: $baseLineHeight;
+  // Cells
+  th,
+  td {
+    padding: 8px;
+    line-height: $baseLineHeight;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid $tableBorder;
+  }
+  th {
+    font-weight: bold;
+  }
+  // Bottom align for column headings
+  thead th {
+    vertical-align: bottom;
+  }
+  // Remove top border from thead by default
+  thead tr th,
+  thead tr td {
+    border-top: 0;
+  }
+}
+
+
+// ZEBRA-STRIPING
+// --------------
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table-striped {
+  tbody {
+    > tr:nth-child(odd) > td,
+    > tr:nth-child(odd) > th {
+      background-color: $tableBackgroundAccent;
+    }
+  }
+}
