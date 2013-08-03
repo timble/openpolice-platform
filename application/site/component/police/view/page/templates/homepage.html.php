@@ -49,5 +49,5 @@
 </div>
 <hr />
 <div class="row-fluid">
-    <?= @template('homepage_shortcuts.html', array('class' => 'span1')) ?>
+    <?= @template('homepage_shortcuts.html', array('class' => 'span3')) ?>
 </div>

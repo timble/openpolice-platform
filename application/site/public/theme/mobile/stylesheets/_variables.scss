@@ -33,3 +33,6 @@ $navbarBrandColor:                $navbarLinkColor;
 
 $gridColumnWidth:         50px;
 $gridGutterWidth:         30px;
+
+$fluidGridColumnWidth:    percentage($gridColumnWidth/$gridRowWidth);
+$fluidGridGutterWidth:    percentage($gridGutterWidth/$gridRowWidth);
