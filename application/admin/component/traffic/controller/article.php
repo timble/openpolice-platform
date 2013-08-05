@@ -15,6 +15,7 @@ class TrafficControllerArticle extends Library\ControllerModel
     {
         $config->append(array(
         	'behaviors' => array(
+                'editable',
                 'com:activities.controller.behavior.loggable',
                 'com:streets.controller.behavior.streetable'
             ),
