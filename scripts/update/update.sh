@@ -26,7 +26,6 @@ dirs=(
   "application/site/component/trafficinfo"
   "application/site/component/questions"
   "application/site/public/theme/mobile"
-  "application/site/public/theme/police"
   "application/site/public/theme/splash"
   "component/districts"
   "component/news"
