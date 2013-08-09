@@ -71,8 +71,8 @@
         </div>
     </div>
 
-    <div class="container-media">
-        <div class="row-fluid hidden-phone">
+    <div class="container-media hidden-phone">
+        <div class="row-fluid">
             <div class="span6">
                 <h3><?= @text('Laatste nieuws') ?></h3>
                 <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>

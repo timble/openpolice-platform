@@ -51,15 +51,15 @@
         <div class="control-group">
             <label class="control-label" for="zone_street_id"><?= @text('Mijn straat') ?>:</label>
             <div class="controls">
-                <input type="hidden" class="bigdrop" id="streets2" name="street" value="<?= @$_COOKIE ['district_street'] ?>" style="width: 90%; display: none;" tabindex="1" required>
+                <input type="hidden" class="bigdrop" id="streets2" name="street" value="<?= @$_COOKIE ['district_street'] ?>" style="width: 90%; display: none;" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="number"><?= @text('Mijn huisnummer') ?>:</label>
             <div class="controls">
-                <input style="width: 84%;" type="number" name="number" value="<?= @$_COOKIE ['district_number'] ?>" tabindex="2" required />
+                <input style="width: 84%;" type="number" name="number" value="<?= @$_COOKIE ['district_number'] ?>" required />
             </div>
         </div>
     </fieldset>
-    <button class="btn" tabindex="3"><?= @text('Search') ?></button>
+    <button class="btn"><?= @text('Search') ?></button>
 </form>
