@@ -67,6 +67,7 @@ h1, h2, h3 {
 
 article {
   @extend .separator--below;
+  @extend .clearfix;
 
   &:last-of-type {
     border: 0 none;
