@@ -4,6 +4,9 @@ $orange: #DE791C;
 $cyan: #9CC5C8;
 $cool-gray: #807C81;
 
+$cyanLight: lighten($cyan, 20%);
+$cyanLighter: lighten($cyan, 24%);
+
 $color103: #CAB23D;
 $color123: #FFCA46;
 $color130: #F8973D;

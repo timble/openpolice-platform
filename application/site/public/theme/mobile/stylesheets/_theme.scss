@@ -28,7 +28,13 @@ h1, h2, h3 {
 }
 
 .page-header {
-  margin-bottom: 14px;
+  margin-bottom: 0px;
+  border: 0 none;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: $cyanLighter;
 }
 
 .container-fluid {
@@ -42,6 +48,43 @@ h1, h2, h3 {
 
 .highlight {
   background-color: yellow;
+}
+
+.text--strong {
+  color: $blue;
+  font-weight: bold;
+}
+.text--small {
+  font-size: 0.9em;
+  @extend .muted;
+}
+
+.separator--below {
+  border-bottom: 1px solid $grayLighter;
+  padding-bottom: $gridGutterWidth;
+  margin-bottom: 14px;
+}
+
+article {
+  @extend .separator--below;
+
+  &:last-of-type {
+    border: 0 none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .page-header {
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .timestamp {
+      padding-top: 4px;
+      @extend .muted;
+      font-size: $fontSizeSmall;
+    }
+  }
 }
 
 .container-header,
@@ -59,6 +102,10 @@ h1, h2, h3 {
 
 .container-header  {
   margin-bottom: 20px;
+
+  .text--strong {
+    font-size: $fontSizeLarge;
+  }
 
   .span3 {
     .logo {
@@ -112,11 +159,6 @@ h1, h2, h3 {
     margin: 25px 0 10px;
     display: block;
     text-align: center;
-
-    strong {
-      font-size: $fontSizeLarge;
-      color: $blue;
-    }
   }
 }
 
@@ -139,10 +181,10 @@ h1, h2, h3 {
 .container-content {
   padding-top: 10px;
 
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 
   .sidebar {
-    margin-top: 24px;
+    margin-top: 20px;
 
     .sidebar__element {
       border-bottom: 1px solid $grayLighter;
@@ -152,11 +194,13 @@ h1, h2, h3 {
   }
 
   .component {
-    h2 { margin-top: 30px; }
-    h3 { margin-top: 20px; }
-
     .article {
-      margin-bottom: 60px;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $grayLighter;
+
+      h2 { margin-top: 30px; }
+      h3 { margin-top: 20px; }
     }
 
     .article__thumbnail {
@@ -175,20 +219,6 @@ h1, h2, h3 {
     .column--quad   { @include column-count(4); }
   }
 
-  &.news,
-  &.police {
-    .page-header {
-      h1 {
-        margin-bottom: 4px;
-      }
-
-      .timestamp {
-        @extend .muted;
-        font-size: $fontSizeSmall;
-      }
-    }
-  }
-
   &.districts {
     ul li.twitter {
       list-style: url("../images/twitter.png");
@@ -203,18 +233,28 @@ h1, h2, h3 {
   }
 
   .box {
-    background: $grayLighter;
-    padding: 20px;
+    border-left: 1px solid $grayLighter;
+
+    padding: 0 18px;
     margin-top: 20px;
     @include border-radius(5px);
 
-    strong {
-      color: $blue;
-      font-size: 18px;
-    }
-
     ul {
       margin-bottom: 0;
+    }
+
+    .well {
+      box-shadow: none;
+      border: 0 none;
+    }
+
+    .nav-tabs > li > a {
+      border: 0 none;
+      border-bottom: 1px solid $grayLighter !important;
+      @include border-radius(0 !important);
+    }
+    .nav-tabs > li:last-child > a {
+      border: 0 none !important;
     }
   }
 }

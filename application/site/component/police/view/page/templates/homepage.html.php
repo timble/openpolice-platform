@@ -10,7 +10,7 @@
 <? $site = @object('application')->getCfg('site') ?>
 <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
 
-<div class="row-fluid">
+<div class="row-fluid separator--below">
     <div class="span8 hidden-phone">
         <? foreach (@object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <div class="page-header">
@@ -35,19 +35,23 @@
     </div>
     <div class="span4">
         <div class="box">
-            <p><strong><i class="icon-phone"></i> 101</strong> voor dringende politiehulp</p>
-            <p><strong><i class="icon-phone"></i> <?= $zone->telephone ?></strong> geen spoed</p>
-            <hr />
-            <ul class="nav nav-pills nav-stacked">
+            <h3>Contacteer ons</h3>
+            <div  class="well" style="padding: 8px 12px; margin-bottom: 12px">
+                <div><span class="text--strong"><a href="tel:101">101</a></span> <span class="text--small">voor dringende politiehulp</span></div>
+                <div><span class="text--strong"><a href="tel:<?= $zone->telephone ?>"><?= $zone->telephone ?></a></span> <span class="text--small">geen spoed</span></div>
+            </div>
+
+            <ul class="nav nav-tabs nav-stacked">
                 <li><a href="/<?= $site ?>/contact/commissariaten">Commissariaten</a></li>
                 <li><a href="/<?= $site ?>/contact/je-wijkinspecteur">Je wijkinspecteur</a></li>
                 <li><a href="/<?= $site ?>/contact/diensten">Diensten</a></li>
                 <li><a href="/<?= $site ?>/contact/noodnummers">Noodnummers</a></li>
             </ul>
+
         </div>
     </div>
 </div>
-<hr />
+
 <div class="row-fluid">
     <?= @template('homepage_shortcuts.html', array('class' => 'span3')) ?>
 </div>
