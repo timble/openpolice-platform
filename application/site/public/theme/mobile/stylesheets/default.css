@@ -3834,7 +3834,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 27, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail {
+.thumbnail, .container-content .component .article__thumbnail {
   display: block;
   padding: 4px;
   line-height: 22px;
@@ -3852,8 +3852,9 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 38, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-a.thumbnail:hover,
-a.thumbnail:focus {
+a.thumbnail:hover, .container-content .component a.article__thumbnail:hover,
+a.thumbnail:focus,
+.container-content .component a.article__thumbnail:focus {
   border-color: #004fa3;
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
@@ -3861,7 +3862,7 @@ a.thumbnail:focus {
 }
 
 /* line 44, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail > img {
+.thumbnail > img, .container-content .component .article__thumbnail > img {
   display: block;
   max-width: 100%;
   margin-left: auto;
@@ -3869,7 +3870,7 @@ a.thumbnail:focus {
 }
 
 /* line 50, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail .caption {
+.thumbnail .caption, .container-content .component .article__thumbnail .caption {
   padding: 9px;
   color: #555555;
 }
@@ -4419,38 +4420,38 @@ article .page-header .timestamp {
   float: right;
   max-width: 40%;
 }
-/* line 212, _theme.scss */
+/* line 214, _theme.scss */
 .container-content .component .article__introtext {
   font-weight: bold;
   margin-bottom: 22px;
 }
-/* line 217, _theme.scss */
+/* line 219, _theme.scss */
 .container-content .component .column--double {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 218, _theme.scss */
+/* line 220, _theme.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 219, _theme.scss */
+/* line 221, _theme.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
 }
-/* line 223, _theme.scss */
+/* line 225, _theme.scss */
 .container-content.districts ul li.twitter {
   list-style: url("../images/twitter.png");
 }
-/* line 226, _theme.scss */
+/* line 228, _theme.scss */
 .container-content.districts ul li.facebook {
   list-style: url("../images/facebook.gif");
 }
-/* line 235, _theme.scss */
+/* line 237, _theme.scss */
 .container-content .box {
   border-left: 1px solid #eeeeee;
   padding: 0 18px;
@@ -4459,16 +4460,16 @@ article .page-header .timestamp {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 242, _theme.scss */
+/* line 244, _theme.scss */
 .container-content .box ul {
   margin-bottom: 0;
 }
-/* line 246, _theme.scss */
+/* line 248, _theme.scss */
 .container-content .box .well {
   box-shadow: none;
   border: 0 none;
 }
-/* line 251, _theme.scss */
+/* line 253, _theme.scss */
 .container-content .box .nav-tabs > li > a {
   border: 0 none;
   border-bottom: 1px solid #eeeeee !important;
@@ -4476,12 +4477,12 @@ article .page-header .timestamp {
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
 }
-/* line 256, _theme.scss */
+/* line 258, _theme.scss */
 .container-content .box .nav-tabs > li:last-child > a {
   border: 0 none !important;
 }
 
-/* line 262, _theme.scss */
+/* line 264, _theme.scss */
 .container-media {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4491,17 +4492,17 @@ article .page-header .timestamp {
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 271, _theme.scss */
+/* line 273, _theme.scss */
 .container-media ul {
   list-style: none;
   margin: 0;
 }
-/* line 280, _theme.scss */
+/* line 282, _theme.scss */
 .container-media .social__item {
   margin-bottom: 8px;
 }
 
-/* line 285, _theme.scss */
+/* line 287, _theme.scss */
 .container-footer {
   padding: 0 10px;
   *zoom: 1;
@@ -4529,24 +4530,24 @@ article .page-header .timestamp {
 .container-footer:after {
   clear: both;
 }
-/* line 299, _theme.scss */
+/* line 301, _theme.scss */
 .container-footer a {
   color: white;
 }
-/* line 303, _theme.scss */
+/* line 305, _theme.scss */
 .container-footer .social {
   float: right;
 }
 
-/* line 308, _theme.scss */
+/* line 310, _theme.scss */
 .container-copyright {
   font-size: 11.9px;
 }
-/* line 311, _theme.scss */
+/* line 313, _theme.scss */
 .container-copyright p {
   margin: 3px 20px;
 }
-/* line 315, _theme.scss */
+/* line 317, _theme.scss */
 .container-copyright .copyright {
   text-align: right;
 }

@@ -207,6 +207,8 @@ article {
       margin: 0 0 20px 20px;
       float: right;
       max-width: 40%;
+
+      @extend .thumbnail;
     }
 
     .article__introtext {
