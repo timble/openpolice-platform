@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="span9">
-                <span class="slogan hidden-phone">Bel <strong>101</strong> voor dringende politiehulp. Geen spoed, wél politie? Bel <strong><?= @escape($zone->telephone); ?></strong></span>
+                <span class="slogan hidden-phone">Bel <a class="text--strong" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" href="tel:<?= @escape($zone->telephone); ?>"><?= @escape($zone->telephone); ?></a></span>
                 <div class="navbar navbar-responsive">
                 <a class="navbar__logo" href="/<?= $site ?>">
                     <img src="media://application/images/logo-flame.png" />
