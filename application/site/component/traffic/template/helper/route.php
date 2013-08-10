@@ -10,32 +10,6 @@ use Nooku\Library;
 
 class TrafficTemplateHelperRoute extends PagesTemplateHelperRoute
 {
-    public function control($config = array())
-	{
-        $config   = new Library\ObjectConfig($config);
-        $config->append(array(
-            'layout'   => null
-        ));
-
-        $control = $config->row;
-
-        $needles = array(
-            array('view' => 'control' , 'id' => $control->id),
-		);
-
-        $route = array(
-            'view'     => 'control',
-            'id'       => $control->getSlug(),
-            'layout'   => $config->layout,
-        );
-
-		if($item = $this->_findPage($needles)) {
-			$route['Itemid'] = $item->id;
-		};
-
-		return $this->getTemplate()->getView()->getRoute(http_build_query($route, '', '&'));
-	}
-	
     public function article($config = array())
 	{
         $config   = new Library\ObjectConfig($config);
@@ -61,4 +35,35 @@ class TrafficTemplateHelperRoute extends PagesTemplateHelperRoute
 
 		return $this->getTemplate()->getView()->getRoute(http_build_query($route, '', '&'));
 	}
+
+    public function category($config = array())
+    {
+        $config   = new Library\ObjectConfig($config);
+        $config->append(array(
+            'layout' => null
+        ));
+
+        $category = $config->row;
+
+        $needles = array(
+            array('view' => 'articles', 'category' => $category->id),
+        );
+
+        $route = array(
+            'view'     => 'articles',
+            'category' => $category->getSlug(),
+            'layout'   => $config->layout
+        );
+
+        if($page = $this->_findPage($needles))
+        {
+            if(isset($page->getLink()->query['layout'])) {
+                $route['layout'] = $page->getLink()->query['layout'];
+            }
+
+            $route['Itemid'] = $page->id;
+        };
+
+        return $this->getTemplate()->getView()->getRoute($route);
+    }
 }
