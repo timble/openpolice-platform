@@ -12,6 +12,8 @@
     <h1><?php echo @escape($params->get('page_title')); ?></h1>
 </div>
 
+<?= $category->description ?>
+
 <table class="table table-striped">
     <tbody>
     <? foreach ($articles as $article) : ?>

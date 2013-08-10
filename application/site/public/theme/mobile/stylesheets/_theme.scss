@@ -181,7 +181,7 @@ article {
 .container-content {
   padding-top: 10px;
 
-  margin-bottom: 20px;
+  margin-bottom: $gridGutterWidth;
 
   .sidebar {
     margin-top: 20px;

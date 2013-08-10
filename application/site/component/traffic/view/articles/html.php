@@ -18,7 +18,20 @@ class TrafficViewArticlesHtml extends Library\ViewHtml
 
         $this->params = $params;
 
+        //Get the category
+        $this->category = $this->getCategory();
+
         return parent::render();
     }
 
+    public function getCategory()
+    {
+        //Get the category
+        $category = $this->getObject('com:categories.model.categories')
+            ->table('traffic')
+            ->id($this->getModel()->getState()->category)
+            ->getRow();
+
+        return $category;
+    }
 }
