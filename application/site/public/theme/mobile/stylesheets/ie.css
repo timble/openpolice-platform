@@ -4374,84 +4374,87 @@ article .page-header .timestamp {
 
 /* line 171, _theme.scss */
 .container-breadcrumb {
+  font-size: 0.9em;
   margin: 5px 0;
 }
-/* line 172, _theme.scss */
+/* line 173, _theme.scss */
 .container-breadcrumb .breadcrumb {
   margin-bottom: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
-/* line 175, _theme.scss */
+/* line 178, _theme.scss */
 .container-breadcrumb .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
 
-/* line 182, _theme.scss */
+/* line 185, _theme.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 187, _theme.scss */
+/* line 190, _theme.scss */
 .container-content .sidebar {
   margin-top: 20px;
 }
-/* line 190, _theme.scss */
+/* line 193, _theme.scss */
 .container-content .sidebar .sidebar__element {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-/* line 198, _theme.scss */
+/* line 201, _theme.scss */
 .container-content .component .article {
   margin-bottom: 40px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 203, _theme.scss */
+/* line 206, _theme.scss */
 .container-content .component .article h2 {
   margin-top: 30px;
 }
-/* line 204, _theme.scss */
+/* line 207, _theme.scss */
 .container-content .component .article h3 {
   margin-top: 20px;
 }
-/* line 207, _theme.scss */
+/* line 210, _theme.scss */
 .container-content .component .article__thumbnail {
   margin: 0 0 20px 20px;
   float: right;
   max-width: 40%;
 }
-/* line 215, _theme.scss */
+/* line 218, _theme.scss */
 .container-content .component .article__introtext {
   font-weight: bold;
   margin-bottom: 22px;
 }
-/* line 220, _theme.scss */
+/* line 223, _theme.scss */
 .container-content .component .column--double {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 221, _theme.scss */
+/* line 224, _theme.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 222, _theme.scss */
+/* line 225, _theme.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
 }
-/* line 226, _theme.scss */
+/* line 229, _theme.scss */
 .container-content.districts ul li.twitter {
   list-style: url("../images/twitter.png");
 }
-/* line 229, _theme.scss */
+/* line 232, _theme.scss */
 .container-content.districts ul li.facebook {
   list-style: url("../images/facebook.gif");
 }
-/* line 238, _theme.scss */
+/* line 241, _theme.scss */
 .container-content .box {
   border-left: 1px solid #eeeeee;
   padding: 0 18px;
@@ -4460,16 +4463,16 @@ article .page-header .timestamp {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 245, _theme.scss */
+/* line 248, _theme.scss */
 .container-content .box ul {
   margin-bottom: 0;
 }
-/* line 249, _theme.scss */
+/* line 252, _theme.scss */
 .container-content .box .well {
   box-shadow: none;
   border: 0 none;
 }
-/* line 254, _theme.scss */
+/* line 257, _theme.scss */
 .container-content .box .nav-tabs > li > a {
   border: 0 none;
   border-bottom: 1px solid #eeeeee !important;
@@ -4477,12 +4480,12 @@ article .page-header .timestamp {
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
 }
-/* line 259, _theme.scss */
+/* line 262, _theme.scss */
 .container-content .box .nav-tabs > li:last-child > a {
   border: 0 none !important;
 }
 
-/* line 265, _theme.scss */
+/* line 268, _theme.scss */
 .container-media {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4492,17 +4495,17 @@ article .page-header .timestamp {
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 274, _theme.scss */
+/* line 277, _theme.scss */
 .container-media ul {
   list-style: none;
   margin: 0;
 }
-/* line 283, _theme.scss */
+/* line 286, _theme.scss */
 .container-media .social__item {
   margin-bottom: 8px;
 }
 
-/* line 288, _theme.scss */
+/* line 291, _theme.scss */
 .container-footer {
   padding: 0 10px;
   *zoom: 1;
@@ -4530,24 +4533,24 @@ article .page-header .timestamp {
 .container-footer:after {
   clear: both;
 }
-/* line 302, _theme.scss */
+/* line 305, _theme.scss */
 .container-footer a {
   color: white;
 }
-/* line 306, _theme.scss */
+/* line 309, _theme.scss */
 .container-footer .social {
   float: right;
 }
 
-/* line 311, _theme.scss */
+/* line 314, _theme.scss */
 .container-copyright {
   font-size: 11.9px;
 }
-/* line 314, _theme.scss */
+/* line 317, _theme.scss */
 .container-copyright p {
   margin: 3px 20px;
 }
-/* line 318, _theme.scss */
+/* line 321, _theme.scss */
 .container-copyright .copyright {
   text-align: right;
 }

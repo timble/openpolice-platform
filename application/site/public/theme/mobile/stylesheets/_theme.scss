@@ -169,8 +169,11 @@ article {
 }
 
 .container-breadcrumb {
+  font-size: 0.9em;
   .breadcrumb {
     margin-bottom: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
 
     li::first-letter {
       text-transform: uppercase;
