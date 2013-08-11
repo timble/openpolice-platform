@@ -44,8 +44,8 @@
             </div>
 
             <ul class="nav nav-tabs nav-stacked">
-                <li><a href="/<?= $site ?>/contact/commissariaten">Commissariaten</a></li>
                 <li><a href="/<?= $site ?>/contact/je-wijkinspecteur">Je wijkinspecteur</a></li>
+                <li><a href="/<?= $site ?>/contact/commissariaten">Commissariaten</a></li>
                 <li><a href="/<?= $site ?>/contact/diensten">Diensten</a></li>
                 <li><a href="/<?= $site ?>/contact/noodnummers">Noodnummers</a></li>
             </ul>
