@@ -3834,7 +3834,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 27, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail, .container-content .component .article__thumbnail {
+.thumbnail, article .article__thumbnail {
   display: block;
   padding: 4px;
   line-height: 22px;
@@ -3852,9 +3852,9 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* line 38, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-a.thumbnail:hover, .container-content .component a.article__thumbnail:hover,
+a.thumbnail:hover, article a.article__thumbnail:hover,
 a.thumbnail:focus,
-.container-content .component a.article__thumbnail:focus {
+article a.article__thumbnail:focus {
   border-color: #004fa3;
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
@@ -3862,7 +3862,7 @@ a.thumbnail:focus,
 }
 
 /* line 44, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail > img, .container-content .component .article__thumbnail > img {
+.thumbnail > img, article .article__thumbnail > img {
   display: block;
   max-width: 100%;
   margin-left: auto;
@@ -3870,7 +3870,7 @@ a.thumbnail:focus,
 }
 
 /* line 50, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail .caption, .container-content .component .article__thumbnail .caption {
+.thumbnail .caption, article .article__thumbnail .caption {
   padding: 9px;
   color: #555555;
 }
@@ -4272,22 +4272,50 @@ h1, h2, h3 {
 }
 
 /* line 72, _theme.scss */
+article h2 {
+  margin-top: 30px;
+}
+/* line 73, _theme.scss */
+article h3 {
+  margin-top: 20px;
+}
+/* line 76, _theme.scss */
+article p a, article li a {
+  border-bottom: 1px dotted #004fa3;
+}
+/* line 79, _theme.scss */
+article p a:hover, article li a:hover {
+  border-bottom: 1px solid #005580;
+  text-decoration: none;
+}
+/* line 86, _theme.scss */
+article .article__thumbnail {
+  margin: 0 0 20px 20px;
+  float: right;
+  max-width: 40%;
+}
+/* line 94, _theme.scss */
+article .article__introtext {
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+/* line 99, _theme.scss */
 article:last-of-type {
   border: 0 none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 79, _theme.scss */
+/* line 106, _theme.scss */
 article .page-header h1 {
   margin-bottom: 0;
 }
-/* line 83, _theme.scss */
+/* line 110, _theme.scss */
 article .page-header .timestamp {
   padding-top: 4px;
   font-size: 11.9px;
 }
 
-/* line 95, _theme.scss */
+/* line 122, _theme.scss */
 .container-header,
 .container-banner,
 .container-breadcrumb,
@@ -4297,43 +4325,43 @@ article .page-header .timestamp {
   padding-right: 20px;
 }
 
-/* line 100, _theme.scss */
+/* line 127, _theme.scss */
 #wrap {
   background-color: white;
 }
 
-/* line 104, _theme.scss */
+/* line 131, _theme.scss */
 .container-header {
   margin-bottom: 20px;
 }
-/* line 107, _theme.scss */
+/* line 134, _theme.scss */
 .container-header .text--strong {
   font-size: 17.5px;
 }
-/* line 112, _theme.scss */
+/* line 139, _theme.scss */
 .container-header .span3 .logo {
   padding-top: 26px;
   display: block;
   text-decoration: none;
   color: #004fa3;
 }
-/* line 118, _theme.scss */
+/* line 145, _theme.scss */
 .container-header .span3 .logo img {
   width: 160px;
   vertical-align: bottom;
   margin-left: 10px;
 }
-/* line 124, _theme.scss */
+/* line 151, _theme.scss */
 .container-header .span3 .logo span {
   margin-left: 60px;
   margin-top: 3px;
   display: block;
 }
-/* line 132, _theme.scss */
+/* line 159, _theme.scss */
 .container-header .navbar {
   margin-bottom: 0;
 }
-/* line 135, _theme.scss */
+/* line 162, _theme.scss */
 .container-header .navbar .navbar__logo {
   display: none;
   /* Hide from browsers that don't support media queries */
@@ -4344,12 +4372,12 @@ article .page-header .timestamp {
   padding: 0 14px;
   height: 50px;
 }
-/* line 144, _theme.scss */
+/* line 171, _theme.scss */
 .container-header .navbar .navbar__logo img {
   margin: 10px 0 0 0;
   float: left;
 }
-/* line 149, _theme.scss */
+/* line 176, _theme.scss */
 .container-header .navbar .navbar__logo span {
   margin: 13px 0 0 6px;
   display: block;
@@ -4357,14 +4385,14 @@ article .page-header .timestamp {
   color: white;
   color: white;
 }
-/* line 159, _theme.scss */
+/* line 186, _theme.scss */
 .container-header .slogan {
   margin: 25px 0 10px;
   display: block;
   text-align: center;
 }
 
-/* line 166, _theme.scss */
+/* line 193, _theme.scss */
 .container-banner img {
   border: 1px solid black;
   -webkit-border-radius: 5px;
@@ -4372,89 +4400,64 @@ article .page-header .timestamp {
   border-radius: 5px;
 }
 
-/* line 171, _theme.scss */
+/* line 198, _theme.scss */
 .container-breadcrumb {
   font-size: 0.9em;
   margin: 5px 0;
 }
-/* line 173, _theme.scss */
+/* line 200, _theme.scss */
 .container-breadcrumb .breadcrumb {
   margin-bottom: 0;
   padding-top: 4px;
   padding-bottom: 4px;
 }
-/* line 178, _theme.scss */
+/* line 205, _theme.scss */
 .container-breadcrumb .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
 
-/* line 185, _theme.scss */
+/* line 212, _theme.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 190, _theme.scss */
+/* line 217, _theme.scss */
 .container-content .sidebar {
   margin-top: 20px;
 }
-/* line 193, _theme.scss */
+/* line 220, _theme.scss */
 .container-content .sidebar .sidebar__element {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-/* line 201, _theme.scss */
-.container-content .component .article {
-  margin-bottom: 40px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #eeeeee;
-}
-/* line 206, _theme.scss */
-.container-content .component .article h2 {
-  margin-top: 30px;
-}
-/* line 207, _theme.scss */
-.container-content .component .article h3 {
-  margin-top: 20px;
-}
-/* line 210, _theme.scss */
-.container-content .component .article__thumbnail {
-  margin: 0 0 20px 20px;
-  float: right;
-  max-width: 40%;
-}
-/* line 218, _theme.scss */
-.container-content .component .article__introtext {
-  font-weight: bold;
-  margin-bottom: 22px;
-}
-/* line 224, _theme.scss */
+/* line 228, _theme.scss */
 .container-content .component .column--double {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 225, _theme.scss */
+/* line 229, _theme.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 226, _theme.scss */
+/* line 230, _theme.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
 }
-/* line 230, _theme.scss */
+/* line 234, _theme.scss */
 .container-content.districts ul li.twitter {
   list-style: url("../images/twitter.png");
 }
-/* line 233, _theme.scss */
+/* line 237, _theme.scss */
 .container-content.districts ul li.facebook {
   list-style: url("../images/facebook.gif");
 }
-/* line 242, _theme.scss */
+/* line 246, _theme.scss */
 .container-content .box {
   border-left: 1px solid #eeeeee;
   padding: 0 18px;
@@ -4463,16 +4466,16 @@ article .page-header .timestamp {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 249, _theme.scss */
+/* line 253, _theme.scss */
 .container-content .box ul {
   margin-bottom: 0;
 }
-/* line 253, _theme.scss */
+/* line 257, _theme.scss */
 .container-content .box .well {
   box-shadow: none;
   border: 0 none;
 }
-/* line 258, _theme.scss */
+/* line 262, _theme.scss */
 .container-content .box .nav-tabs > li > a {
   border: 0 none;
   border-bottom: 1px solid #eeeeee !important;
@@ -4480,12 +4483,12 @@ article .page-header .timestamp {
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
 }
-/* line 263, _theme.scss */
+/* line 267, _theme.scss */
 .container-content .box .nav-tabs > li:last-child > a {
   border: 0 none !important;
 }
 
-/* line 269, _theme.scss */
+/* line 273, _theme.scss */
 .container-media {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4495,17 +4498,17 @@ article .page-header .timestamp {
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 278, _theme.scss */
+/* line 282, _theme.scss */
 .container-media ul {
   list-style: none;
   margin: 0;
 }
-/* line 287, _theme.scss */
+/* line 291, _theme.scss */
 .container-media .social__item {
   margin-bottom: 8px;
 }
 
-/* line 292, _theme.scss */
+/* line 296, _theme.scss */
 .container-footer {
   padding: 0 10px;
   *zoom: 1;
@@ -4533,24 +4536,24 @@ article .page-header .timestamp {
 .container-footer:after {
   clear: both;
 }
-/* line 306, _theme.scss */
+/* line 310, _theme.scss */
 .container-footer a {
   color: white;
 }
-/* line 310, _theme.scss */
+/* line 314, _theme.scss */
 .container-footer .social {
   float: right;
 }
 
-/* line 315, _theme.scss */
+/* line 319, _theme.scss */
 .container-copyright {
   font-size: 11.9px;
 }
-/* line 318, _theme.scss */
+/* line 322, _theme.scss */
 .container-copyright p {
   margin: 3px 20px;
 }
-/* line 322, _theme.scss */
+/* line 326, _theme.scss */
 .container-copyright .copyright {
   text-align: right;
 }

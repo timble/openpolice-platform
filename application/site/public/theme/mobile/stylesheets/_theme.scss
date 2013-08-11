@@ -69,6 +69,33 @@ article {
   @extend .separator--below;
   @extend .clearfix;
 
+  h2 { margin-top: 30px; }
+  h3 { margin-top: 20px; }
+
+  p, li {
+    a {
+      border-bottom: 1px dotted $linkColor;
+
+      &:hover {
+        border-bottom: 1px solid $linkColorHover;
+        text-decoration: none;
+      }
+    }
+
+  }
+  .article__thumbnail {
+    margin: 0 0 20px 20px;
+    float: right;
+    max-width: 40%;
+
+    @extend .thumbnail;
+  }
+
+  .article__introtext {
+    font-weight: bold;
+    margin-bottom: $baseLineHeight;
+  }
+
   &:last-of-type {
     border: 0 none;
     margin-bottom: 0;
@@ -198,28 +225,6 @@ article {
   }
 
   .component {
-    .article {
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid $grayLighter;
-
-      h2 { margin-top: 30px; }
-      h3 { margin-top: 20px; }
-    }
-
-    .article__thumbnail {
-      margin: 0 0 20px 20px;
-      float: right;
-      max-width: 40%;
-
-      @extend .thumbnail;
-    }
-
-    .article__introtext {
-      font-weight: bold;
-      margin-bottom: $baseLineHeight;
-    }
-
     .column--double { @include column-count(2); }
     .column--triple { @include column-count(3); }
     .column--quad   { @include column-count(4); }
