@@ -19,6 +19,13 @@ class QuestionsViewQuestionsHtml extends Library\ViewHtml
         // Get the zone
         $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow();
 
+        //Set the pathway
+        if($this->getModel()->getState()->category) {
+            $category = $this->getCategory();
+            $this->getObject('application')->getPathway()->addItem($category->title, '');
+            $this->category = $category;
+        }
+
         return parent::render();
     }
 
@@ -32,5 +39,16 @@ class QuestionsViewQuestionsHtml extends Library\ViewHtml
             }
         }
         return $text;
+    }
+
+    public function getCategory()
+    {
+        //Get the category
+        $category = $this->getObject('com:categories.model.categories')
+            ->table('questions')
+            ->id($this->getModel()->getState()->category)
+            ->getRow();
+
+        return $category;
     }
 }

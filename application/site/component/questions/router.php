@@ -24,6 +24,17 @@ class QuestionsRouter extends Library\DispatcherRouter
 
         $view = $page->getLink()->query['view'];
 
+        if($view == 'categories')
+        {
+            if(isset($query['category'])) {
+                $segments[] = $query['category'];
+            }
+
+            if(isset($query['id'])) {
+                $segments[] = $query['id'];
+            }
+        }
+
         if($view == 'questions')
         {
             if(isset($query['id'])) {
@@ -31,12 +42,17 @@ class QuestionsRouter extends Library\DispatcherRouter
             }
         }
 
+        //Todo : move to the the generic component router
+        if(isset($page->getLink()->query['layout']) && isset($query['layout']))
+        {
+            if($page->getLink()->query['layout'] == $query['layout']) {
+                unset($query['layout']);
+            }
+        }
+
         unset($query['category']);
         unset($query['id']);
         unset($query['view']);
-        unset($query['layout']);
-        unset($query['published']);
-        unset($query['limit']);
 
         return $segments;
     }
@@ -53,7 +69,7 @@ class QuestionsRouter extends Library\DispatcherRouter
 
         if($view == 'categories')
         {
-            if($count)
+            if ($count)
             {
                 $count--;
                 $segment = array_shift( $path );
@@ -62,14 +78,13 @@ class QuestionsRouter extends Library\DispatcherRouter
                 $vars['view'] = 'questions';
             }
 
-            if($count)
+            if ($count)
             {
                 $count--;
-                $segment = array_shift( $path) ;
+                $segment = array_shift( $path ) ;
 
-                $vars['id']     = $segment;
-                $vars['view']   = 'question';
-                $vars['layout'] = 'default';
+                $vars['id'] = $segment;
+                $vars['view'] = 'question';
             }
         }
 
@@ -77,11 +92,15 @@ class QuestionsRouter extends Library\DispatcherRouter
         {
             $segment = array_shift( $path) ;
 
-            $vars['id']     = $segment;
-            $vars['view']   = 'question';
-            $vars['layout'] = 'default';
+            $vars['id'] = $segment;
+            $vars['view'] = 'question';
+        }
+
+        if(count($path) && $path[0] == 'message') {
+            $vars['view'] = 'message';
         }
 
         return $vars;
     }
 }
+

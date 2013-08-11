@@ -8,11 +8,19 @@
 */
 ?>
 
-<div class="page-header">
-    <h1><?php echo @escape($params->get('page_title')); ?></h1>
-</div>
 
-<?= @template('default_search.html') ?>
+
+<? if(!$state->category) : ?>
+    <div class="page-header">
+        <h1><?php echo @escape($params->get('page_title')); ?></h1>
+    </div>
+
+    <?= @template('default_search.html') ?>
+<? else : ?>
+    <div class="page-header">
+        <h1><?php echo @escape($category->title); ?></h1>
+    </div>
+<? endif ?>
 
 <? if(!$state->category AND !$state->searchword) : ?>
 <?= @template('com:questions.view.categories.list.html', array('categories' => @object('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset())) ?>
@@ -32,7 +40,7 @@
 
 <? if($state->searchword) : ?>
 <? foreach ($questions as $question): ?>
-<div class="question">
+<article>
     <div class="page-header">
         <h1>
             <a href="<?= @helper('route.question', array('row' => $question)) ?>">
@@ -42,7 +50,7 @@
     </div>
 
     <?= @highlight($question->text) ?>
-</div>
+</article>
 <? endforeach ?>
 <? endif ?>
 

@@ -12,57 +12,62 @@ use Nooku\Library;
 class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
 {
     public function question($config = array())
-	{
+    {
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
-            'layout'   => null
+            'layout'   => null,
+            'category' => null
         ));
 
         $question = $config->row;
 
+        $category = $this->getObject('com:categories.model.category')->id($question->categories_category_id)->getRow();
+
         $needles = array(
-            array('view' => 'questions' , 'category' => $question->categories_category_id),
-		);
+            array('view' => 'question' , 'id' => $question->id),
+            array('view' => 'category', 'id' => $question->category),
+        );
 
         $route = array(
             'view'     => 'question',
             'id'       => $question->getSlug(),
             'layout'   => $config->layout,
+            'category' => $category->getSlug()
         );
 
-		if($item = $this->_findPage($needles)) {
+        if($item = $this->_findPage($needles)) {
             $route['Itemid'] = $item->id;
-		};
+        };
 
         return $this->getTemplate()->getView()->getRoute($route);
-	}
+    }
 
     public function category($config = array())
     {
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
-            'layout' => 'default'
+            'layout' => null
         ));
 
         $category = $config->row;
 
         $needles = array(
-            array('view' => 'questions'   , 'category' => $category->id)
+            array('view' => 'questions', 'category' => $category->id),
         );
 
         $route = array(
-            'view'      => 'questions',
-            'category'  => $category->getSlug(),
-            'layout'    => $config->layout
+            'view'     => 'questions',
+            'category' => $category->getSlug(),
+            'layout'   => $config->layout
         );
 
-        if($item = $this->_findPage($needles))
+        if($page = $this->_findPage($needles))
         {
-            if(isset($item->getLink()->query['layout'])) {
-                $route['layout'] = $item->getLink()->query['layout'];
+            if(isset($page->getLink()->query['layout'])) {
+                $route['layout'] = $page->getLink()->query['layout'];
             }
 
-            $route['Itemid'] = $item->id;
+            $route['Itemid'] = $page->id;
         };
 
         return $this->getTemplate()->getView()->getRoute($route);
