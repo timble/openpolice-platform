@@ -26,7 +26,7 @@ class TrafficTemplateHelperRoute extends PagesTemplateHelperRoute
         $route = array(
             'view'     => 'article',
             'id'       => $article->getSlug(),
-            'layout'   => 'default',
+            'layout'   => $config->layout
         );
 
 		if($item = $this->_findPage($needles)) {

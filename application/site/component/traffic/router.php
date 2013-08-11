@@ -42,13 +42,10 @@ class TrafficRouter extends Library\DispatcherRouter
             }
         }
 
-        if(isset($query['view']) && $query['view'] == 'message') {
-            $segments[] = 'message';
-        }
-
         unset($query['category']);
         unset($query['id']);
         unset($query['view']);
+        unset($query['layout']);
 
         return $segments;
     }
@@ -81,6 +78,7 @@ class TrafficRouter extends Library\DispatcherRouter
 
                 $vars['id'] = $segment;
                 $vars['view'] = 'article';
+                $vars['layout'] = 'default';
             }
         }
 
@@ -90,10 +88,7 @@ class TrafficRouter extends Library\DispatcherRouter
 
             $vars['id'] = $segment;
             $vars['view'] = 'article';
-        }
-
-        if(count($path) && $path[0] == 'message') {
-            $vars['view'] = 'message';
+            $vars['layout'] = 'default';
         }
 
         return $vars;
