@@ -23,3 +23,5 @@
         </li>
     <? endforeach ?>
 </ul>
+
+<?= @template('com:questions.view.questions.default_contact.html') ?>
