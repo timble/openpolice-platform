@@ -108,6 +108,10 @@ fi
 
 rm -rf "$temp"
 
+# Temporarily making sure updates don't break the proxy configuration
+# by replacing the proxies array() with the proxy being used on the server.
+sed -i '' "s/\'proxies\' => array()/\'proxies\' => array('127.0.0.1')/g" ./library/dispatcher/request/request.php
+
 # Test if there was a conflict.
 cd "$repo"
 
