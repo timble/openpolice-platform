@@ -26,11 +26,8 @@ class TrafficRouter extends Library\DispatcherRouter
 
         if($view == 'categories')
         {
-            if(isset($query['category']))
-            {
-                if($query['category'] != $page->getLink()->query['category']) {
-                    $segments[] = $query['category'];
-                }
+            if(isset($query['category'])) {
+                $segments[] = $query['category'];
             }
 
             if(isset($query['id'])) {
@@ -45,17 +42,10 @@ class TrafficRouter extends Library\DispatcherRouter
             }
         }
 
-        //Todo : move to the the generic component router
-        if(isset($page->getLink()->query['layout']) && isset($query['layout']))
-        {
-            if($page->getLink()->query['layout'] == $query['layout']) {
-                unset($query['layout']);
-            }
-        }
-
         unset($query['category']);
         unset($query['id']);
         unset($query['view']);
+        unset($query['layout']);
 
         return $segments;
     }
@@ -72,7 +62,7 @@ class TrafficRouter extends Library\DispatcherRouter
 
         if($view == 'categories')
         {
-            if($count)
+            if ($count)
             {
                 $count--;
                 $segment = array_shift( $path );
@@ -81,13 +71,13 @@ class TrafficRouter extends Library\DispatcherRouter
                 $vars['view'] = 'articles';
             }
 
-            if($count)
+            if ($count)
             {
                 $count--;
-                $segment = array_shift( $path) ;
+                $segment = array_shift( $path ) ;
 
-                $vars['id']     = $segment;
-                $vars['view']   = 'article';
+                $vars['id'] = $segment;
+                $vars['view'] = 'article';
                 $vars['layout'] = 'default';
             }
         }
@@ -96,8 +86,8 @@ class TrafficRouter extends Library\DispatcherRouter
         {
             $segment = array_shift( $path) ;
 
-            $vars['id']     = $segment;
-            $vars['view']   = 'article';
+            $vars['id'] = $segment;
+            $vars['view'] = 'article';
             $vars['layout'] = 'default';
         }
 

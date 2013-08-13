@@ -18,6 +18,10 @@ class QuestionsViewCategoriesHtml extends Library\ViewHtml
 
         $this->params = $params;
 
+        // Get the zone
+        $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow();
+
+
         return parent::render();
     }
 }

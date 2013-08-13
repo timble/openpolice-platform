@@ -9,12 +9,7 @@
 
 use Nooku\Library;
 
-class TrafficBootstrapper extends Library\BootstrapperAbstract
+class TrafficControllerCategory extends CategoriesControllerCategory
 {
-    public function bootstrap()
-    {
-        $manager = $this->getObjectManager();
 
-        $manager->registerAlias('com:traffic.model.categories', 'com:categories.model.categories');
-    }
 }
