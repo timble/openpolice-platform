@@ -96,10 +96,6 @@ class QuestionsRouter extends Library\DispatcherRouter
             $vars['view'] = 'question';
         }
 
-        if(count($path) && $path[0] == 'message') {
-            $vars['view'] = 'message';
-        }
-
         return $vars;
     }
 }
