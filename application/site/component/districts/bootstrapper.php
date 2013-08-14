@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Belgian Police Web Platform - Districts Component
  *
