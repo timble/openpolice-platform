@@ -1,24 +1,24 @@
+@import "variables";
+
 // Load bootstrap
-@import "bootstrap.less";
+@import "bootstrap.scss";
 @import "validation.css";
 
-// Sprite icons path
-// -------------------------
-@iconSpritePath:          "../images/glyphicons-halflings.png";
-@iconWhiteSpritePath:     "../images/glyphicons-halflings-white.png";
+@import "blocks/article";
+@import "blocks/sidebar";
 
 /*
  * Bootstrap Image Gallery CSS 2.5.3
  * https://github.com/blueimp/Bootstrap-Image-Gallery
  */
-@import "bootstrap-image-gallery.less";
+@import "bootstrap-image-gallery.scss";
 
 html {
 	overflow-y: scroll;
 }
 
 body {
-	margin-top: @gridGutterWidth;
+	margin-top: $gridGutterWidth;
 }
 
 // HEADINGS
@@ -39,60 +39,6 @@ h3 { font-size: 16px; }
 	}
 }
 
-.readmore {
-	a {
-		.btn();
-	}
-}
-
-.sidebar {
-	.mod_mainmenu.well {
-		padding: 0;
-
-		h3 {
-			padding: 4px 12px;
-		}
-	}
-}
-
-section article {
-	margin-bottom: @gridGutterWidth * 2;
-
-	.page-header {
-		margin-bottom: 14px;
-	}
-}
-
-/* Extend Bootstrap to optimise nested navigation */
-.nav-list ul {
-	margin-left: -15px;
-	margin-right: -15px;
-
-	a {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-}
-
-.module.mod_login {
-	form {
-		margin-left: 15px;
-		margin-right: 15px;
-
-		input {
-			width: 90%;
-		}
-
-		.form-actions {
-			padding: 10px 0;
-
-			.btn {
-				width: auto;
-			}
-		}
-	}
-}
-
 // Password check
 #password-check.score1 { color: #FF0000; }
 #password-check.score2 { color: #FF5F5F; }
@@ -102,12 +48,6 @@ section article {
 
 .highlight {
     background-color: yellow;
-}
-
-/* Add margins to thumbnails in articles */
-article .pull-right .thumbnail {
-    margin-left: 20px;
-    margin-bottom: 20px;
 }
 
 /* com:application.view.page.login.html */
@@ -120,8 +60,8 @@ body.login {
         margin: 0 auto;
         background-color: #fff;
         border: 1px solid #e5e5e5;
-        .border-radius(5px);
-        .box-shadow(0 1px 2px rgba(0,0,0,.05));
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
 
         .form-content {
             padding: 10px 30px 0;
@@ -134,7 +74,7 @@ body.login {
         .form-actions {
             margin-bottom: 0;
             padding: 19px 30px;
-            .border-radius(0 0 5px 5px);
+            border-radius: 0 0 5px 5px;
         }
 
         input {
