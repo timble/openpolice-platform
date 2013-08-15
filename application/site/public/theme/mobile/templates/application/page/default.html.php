@@ -94,9 +94,7 @@
 <div class="container-fluid container-copyright">
     <div class="row-fluid">
         <div class="span6">
-            <p>
-                <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
-            </p>
+            <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
         </div>
         <div class="span6 copyright hidden-phone">
             <p>

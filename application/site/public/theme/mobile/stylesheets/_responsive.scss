@@ -101,6 +101,7 @@
       background-color: $navbarBackgroundHighlight;
 
       .navbar__logo {
+        display: block;
         cursor:pointer;
         position:absolute;
         top: 0;
@@ -177,7 +178,9 @@
   }
 
   .container-content {
-      .component {
+    margin-bottom: 0;
+
+    .component {
         .column--triple { @include column-count(2); }
           .column--quad { @include column-count(2); }
       }
@@ -199,19 +202,9 @@
       display: none;
   }
 
-  .container-media {
-      text-align: center;
-      ul {
-          margin-top: 10px;
-          li {
-              display: inline;
-          }
-      }
-  }
-
-  .container-copyright,
-  .container-copyright .copyright {
-      text-align: center;
+  .container-copyright {
+    padding-top: 8px;
+    text-align: center;
   }
 
   // Responsive table

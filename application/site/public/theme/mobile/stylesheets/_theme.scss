@@ -159,6 +159,10 @@ article {
 
   .navbar {
     margin-bottom: 0;
+
+    .navbar__logo {
+      display: none;
+    }
   }
 
   .slogan {
