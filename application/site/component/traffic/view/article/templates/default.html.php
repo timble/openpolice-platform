@@ -8,25 +8,29 @@
  */
 ?>
 
-<div class="page-header">
-	<h1><?= $article->title ?></h1>
-    <?= @helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'))) ?>
-    <?= $article->end_on ? @text('till').' '.@helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) : '' ?></td>
-</div>
+<article>
+    <div class="page-header">
+        <h1><?= $article->title ?></h1>
+        <div class="timestamp">
+            <?= @helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'))) ?>
+            <?= $article->end_on ? @text('till').' '.@helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) : '' ?></td>
+        </div>
+    </div>
 
-<div class="row-fluid">
-    <? if($article->text) : ?>
-    <div class="span8">
-        <?= $article->text ?>
-    </div>
-    <? endif ?>
-    <div class="span4">
-        <? if($article->isStreetable()) : ?>
-            <div class="well well-small">
-                <ul>
-                    <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
-                </ul>
-            </div>
+    <div class="row-fluid">
+        <? if($article->text) : ?>
+        <div class="span8">
+            <?= $article->text ?>
+        </div>
         <? endif ?>
+        <div class="span4">
+            <? if($article->isStreetable()) : ?>
+                <div class="well well-small">
+                    <ul>
+                        <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
+                    </ul>
+                </div>
+            <? endif ?>
+        </div>
     </div>
-</div>
+</article>
