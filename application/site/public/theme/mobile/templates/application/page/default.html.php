@@ -29,15 +29,15 @@
             <div class="span9">
                 <span class="slogan hidden-phone">Bel <a class="text--strong" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" href="tel:<?= @escape($zone->telephone); ?>"><?= @escape($zone->telephone); ?></a></span>
                 <div class="navbar navbar-responsive">
-                <a class="navbar__logo" href="/<?= $site ?>">
-                    <img src="media://application/images/logo-flame.png" />
-                    <span><?= @escape($zone->title); ?></span>
-                </a>
-                <div class="navbar-inner">
-                    <ktml:modules position="navigation">
-                        <ktml:modules:content />
-                    </ktml:modules>
-                </div>
+                    <div class="navbar-inner">
+                        <ktml:modules position="navigation">
+                            <ktml:modules:content />
+                        </ktml:modules>
+                    </div>
+                    <a class="navbar__logo" href="/<?= $site ?>">
+                        <img src="media://application/images/logo-flame.png" />
+                        <span><?= @escape($zone->title); ?></span>
+                    </a>
                 </div>
             </div>
         </div>

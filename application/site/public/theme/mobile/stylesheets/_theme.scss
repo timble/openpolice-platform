@@ -159,29 +159,6 @@ article {
 
   .navbar {
     margin-bottom: 0;
-
-    .navbar__logo {
-      display:none; /* Hide from browsers that don't support media queries */
-      cursor:pointer;
-      position:absolute;
-      top: 0;
-      left:0px;
-      padding: 0 14px;
-      height: 50px;
-
-      img {
-        margin: 10px 0 0 0;
-        float: left;
-      }
-
-      span {
-        margin: 13px 0  0 6px;
-        display: block;
-        float: left;
-        color: $white;
-        color: $white;
-      }
-    }
   }
 
   .slogan {

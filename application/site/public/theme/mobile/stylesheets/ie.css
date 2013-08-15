@@ -4006,38 +4006,14 @@ article .page-header .timestamp {
 .container-header .navbar {
   margin-bottom: 0;
 }
-/* line 163, _theme.scss */
-.container-header .navbar .navbar__logo {
-  display: none;
-  /* Hide from browsers that don't support media queries */
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0px;
-  padding: 0 14px;
-  height: 50px;
-}
-/* line 172, _theme.scss */
-.container-header .navbar .navbar__logo img {
-  margin: 10px 0 0 0;
-  float: left;
-}
-/* line 177, _theme.scss */
-.container-header .navbar .navbar__logo span {
-  margin: 13px 0  0 6px;
-  display: block;
-  float: left;
-  color: white;
-  color: white;
-}
-/* line 187, _theme.scss */
+/* line 164, _theme.scss */
 .container-header .slogan {
   margin: 25px 0 10px;
   display: block;
   text-align: center;
 }
 
-/* line 194, _theme.scss */
+/* line 171, _theme.scss */
 .container-banner img {
   border: 1px solid black;
   -webkit-border-radius: 5px;
@@ -4045,64 +4021,64 @@ article .page-header .timestamp {
   border-radius: 5px;
 }
 
-/* line 199, _theme.scss */
+/* line 176, _theme.scss */
 .container-breadcrumb {
   font-size: 0.9em;
   margin: 5px 0;
 }
-/* line 201, _theme.scss */
+/* line 178, _theme.scss */
 .container-breadcrumb .breadcrumb {
   margin-bottom: 0;
   padding-top: 4px;
   padding-bottom: 4px;
 }
-/* line 206, _theme.scss */
+/* line 183, _theme.scss */
 .container-breadcrumb .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
 
-/* line 213, _theme.scss */
+/* line 190, _theme.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 218, _theme.scss */
+/* line 195, _theme.scss */
 .container-content .sidebar {
   margin-top: 20px;
 }
-/* line 221, _theme.scss */
+/* line 198, _theme.scss */
 .container-content .sidebar .sidebar__element {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-/* line 229, _theme.scss */
+/* line 206, _theme.scss */
 .container-content .component .column--double {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 230, _theme.scss */
+/* line 207, _theme.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 231, _theme.scss */
+/* line 208, _theme.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
 }
-/* line 235, _theme.scss */
+/* line 212, _theme.scss */
 .container-content.districts ul li.twitter {
   list-style: url("../images/twitter.png");
 }
-/* line 238, _theme.scss */
+/* line 215, _theme.scss */
 .container-content.districts ul li.facebook {
   list-style: url("../images/facebook.gif");
 }
-/* line 247, _theme.scss */
+/* line 224, _theme.scss */
 .container-content .box {
   border-left: 1px solid #eeeeee;
   padding: 0 18px;
@@ -4111,17 +4087,17 @@ article .page-header .timestamp {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 254, _theme.scss */
+/* line 231, _theme.scss */
 .container-content .box ul {
   margin-bottom: 0;
 }
-/* line 258, _theme.scss */
+/* line 235, _theme.scss */
 .container-content .box .well {
   box-shadow: none;
   border: 0 none;
 }
 
-/* line 265, _theme.scss */
+/* line 242, _theme.scss */
 .container-media {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4131,17 +4107,17 @@ article .page-header .timestamp {
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
 }
-/* line 274, _theme.scss */
+/* line 251, _theme.scss */
 .container-media ul {
   list-style: none;
   margin: 0;
 }
-/* line 283, _theme.scss */
+/* line 260, _theme.scss */
 .container-media .social__item {
   margin-bottom: 8px;
 }
 
-/* line 288, _theme.scss */
+/* line 265, _theme.scss */
 .container-footer {
   padding: 0 10px;
   *zoom: 1;
@@ -4169,24 +4145,24 @@ article .page-header .timestamp {
 .container-footer:after {
   clear: both;
 }
-/* line 302, _theme.scss */
+/* line 279, _theme.scss */
 .container-footer a {
   color: white;
 }
-/* line 306, _theme.scss */
+/* line 283, _theme.scss */
 .container-footer .social {
   float: right;
 }
 
-/* line 311, _theme.scss */
+/* line 288, _theme.scss */
 .container-copyright {
   font-size: 11.9px;
 }
-/* line 314, _theme.scss */
+/* line 291, _theme.scss */
 .container-copyright p {
   margin: 3px 20px;
 }
-/* line 318, _theme.scss */
+/* line 295, _theme.scss */
 .container-copyright .copyright {
   text-align: right;
 }
@@ -4591,48 +4567,63 @@ article .page-header .timestamp {
 
   /* line 84, _responsive.scss */
   .container-content {
-    padding-top: 55px;
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  /* line 90, _responsive.scss */
+  /* line 89, _responsive.scss */
   .container-header {
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
-    position: fixed;
     width: 100%;
   }
-  /* line 97, _responsive.scss */
+  /* line 95, _responsive.scss */
   .container-header .span3 {
     display: none;
   }
-  /* line 101, _responsive.scss */
+  /* line 99, _responsive.scss */
   .container-header .navbar {
     width: 100%;
     background-color: #0063cc;
-    position: relative;
-    display: inline-block;
   }
-  /* line 107, _responsive.scss */
+  /* line 103, _responsive.scss */
   .container-header .navbar .navbar__logo {
-    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    float: right;
+    padding: 0 14px;
+    height: 50px;
   }
-  /* line 111, _responsive.scss */
+  /* line 112, _responsive.scss */
+  .container-header .navbar .navbar__logo img {
+    margin: 12px 0 0 0;
+    float: left;
+  }
+  /* line 117, _responsive.scss */
+  .container-header .navbar .navbar__logo span {
+    margin: 15px 0  0 6px;
+    display: block;
+    float: left;
+    color: white;
+    color: white;
+  }
+  /* line 126, _responsive.scss */
   .container-header .navbar .navbar__handle {
     display: block;
     cursor: pointer;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     background: #0059b7 url(../img/nav.svg) no-repeat center center;
     background-size: 18px;
     height: 50px;
     width: 50px;
     border-left: 1px solid #004fa3;
   }
-  /* line 124, _responsive.scss */
+  /* line 139, _responsive.scss */
   .container-header .navbar .navbar-inner {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -4646,25 +4637,25 @@ article .page-header .timestamp {
     padding-right: 0;
     padding-top: 50px;
   }
-  /* line 135, _responsive.scss */
+  /* line 150, _responsive.scss */
   .container-header .navbar .navbar-inner .nav {
     margin: 0;
     text-align: left;
     border-top: 1px solid #004fa3;
   }
-  /* line 140, _responsive.scss */
+  /* line 155, _responsive.scss */
   .container-header .navbar .navbar-inner .nav.is-hidden {
     display: none;
     visibility: hidden;
   }
-  /* line 145, _responsive.scss */
+  /* line 160, _responsive.scss */
   .container-header .navbar .navbar-inner .nav li {
     width: 100%;
     *display: inline;
     zoom: 1;
     position: relative;
   }
-  /* line 152, _responsive.scss */
+  /* line 167, _responsive.scss */
   .container-header .navbar .navbar-inner .nav a {
     display: block;
     border-bottom: 1px solid #004fa3;
@@ -4673,74 +4664,74 @@ article .page-header .timestamp {
     color: white;
   }
 
-  /* line 166, _responsive.scss */
+  /* line 181, _responsive.scss */
   .container-content .component .column--triple {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
   }
-  /* line 167, _responsive.scss */
+  /* line 182, _responsive.scss */
   .container-content .component .column--quad {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
   }
-  /* line 171, _responsive.scss */
+  /* line 186, _responsive.scss */
   .container-content.police .span4 .box {
     margin-left: 0;
     border: 0 none;
     padding: 0;
   }
-  /* line 176, _responsive.scss */
+  /* line 191, _responsive.scss */
   .container-content.police .separator--below, .container-content.police article {
     border: 0 none;
     padding-bottom: 0;
   }
 
-  /* line 183, _responsive.scss */
+  /* line 198, _responsive.scss */
   .container-banner {
     display: none;
   }
 
-  /* line 187, _responsive.scss */
+  /* line 202, _responsive.scss */
   .container-media {
     text-align: center;
   }
-  /* line 189, _responsive.scss */
+  /* line 204, _responsive.scss */
   .container-media ul {
     margin-top: 10px;
   }
-  /* line 191, _responsive.scss */
+  /* line 206, _responsive.scss */
   .container-media ul li {
     display: inline;
   }
 
-  /* line 198, _responsive.scss */
+  /* line 213, _responsive.scss */
   .container-copyright,
   .container-copyright .copyright {
     text-align: center;
   }
 
   /* Force table to not be like tables anymore */
-  /* line 205, _responsive.scss */
+  /* line 220, _responsive.scss */
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
-  /* line 210, _responsive.scss */
+  /* line 225, _responsive.scss */
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  /* line 216, _responsive.scss */
+  /* line 231, _responsive.scss */
   tr {
     border-top: 1px solid #DDD;
   }
 
-  /* line 220, _responsive.scss */
+  /* line 235, _responsive.scss */
   td {
     /* Behave  like a "row" */
     border: none;
@@ -4748,7 +4739,7 @@ article .page-header .timestamp {
     position: relative;
   }
 
-  /* line 227, _responsive.scss */
+  /* line 242, _responsive.scss */
   td:first-of-type {
     font-size: 1.15em;
   }

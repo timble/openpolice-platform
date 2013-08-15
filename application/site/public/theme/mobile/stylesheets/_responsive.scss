@@ -82,7 +82,6 @@
     }
 
   .container-content {
-    padding-top: 55px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -91,7 +90,6 @@
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
-    position: fixed;
     width: 100%;
 
     .span3 {
@@ -101,11 +99,28 @@
     .navbar {
       width: 100%;
       background-color: $navbarBackgroundHighlight;
-      position:relative;
-      display:inline-block;
 
       .navbar__logo {
+        cursor:pointer;
+        position:absolute;
+        top: 0;
+        right:0px;
+        float: right;
+        padding: 0 14px;
+        height: 50px;
+
+        img {
+          margin: 12px 0 0 0;
+          float: left;
+        }
+
+        span {
+          margin: 15px 0  0 6px;
           display: block;
+          float: left;
+          color: $white;
+          color: $white;
+        }
       }
 
       .navbar__handle {
@@ -113,7 +128,7 @@
         cursor:pointer;
         position:absolute;
         top:0;
-        right:0;
+        left:0;
         background:$navbarBackground url(../img/nav.svg) no-repeat center center;
         background-size:18px;
         height:50px;
