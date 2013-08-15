@@ -4703,51 +4703,62 @@ article .page-header .timestamp {
     -moz-column-count: 2;
     column-count: 2;
   }
-
   /* line 171, _responsive.scss */
+  .container-content.police .span4 .box {
+    margin-left: 0;
+    border: 0 none;
+    padding: 0;
+  }
+  /* line 176, _responsive.scss */
+  .container-content.police .separator--below, .container-content.police article {
+    border: 0 none;
+    padding-bottom: 0;
+  }
+
+  /* line 183, _responsive.scss */
   .container-banner {
     display: none;
   }
 
-  /* line 175, _responsive.scss */
+  /* line 187, _responsive.scss */
   .container-media {
     text-align: center;
   }
-  /* line 177, _responsive.scss */
+  /* line 189, _responsive.scss */
   .container-media ul {
     margin-top: 10px;
   }
-  /* line 179, _responsive.scss */
+  /* line 191, _responsive.scss */
   .container-media ul li {
     display: inline;
   }
 
-  /* line 186, _responsive.scss */
+  /* line 198, _responsive.scss */
   .container-copyright,
   .container-copyright .copyright {
     text-align: center;
   }
 
   /* Force table to not be like tables anymore */
-  /* line 193, _responsive.scss */
+  /* line 205, _responsive.scss */
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
   /* Hide table headers (but not display: none;, for accessibility) */
-  /* line 198, _responsive.scss */
+  /* line 210, _responsive.scss */
   thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  /* line 204, _responsive.scss */
+  /* line 216, _responsive.scss */
   tr {
     border-top: 1px solid #DDD;
   }
 
-  /* line 208, _responsive.scss */
+  /* line 220, _responsive.scss */
   td {
     /* Behave  like a "row" */
     border: none;
@@ -4755,7 +4766,7 @@ article .page-header .timestamp {
     position: relative;
   }
 
-  /* line 215, _responsive.scss */
+  /* line 227, _responsive.scss */
   td:first-of-type {
     font-size: 1.15em;
   }

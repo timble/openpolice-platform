@@ -166,6 +166,18 @@
         .column--triple { @include column-count(2); }
           .column--quad { @include column-count(2); }
       }
+
+      &.police {
+        .span4 .box {
+          margin-left: 0;
+          border: 0 none;
+          padding: 0;
+        }
+        .separator--below {
+          border: 0 none;
+          padding-bottom: 0;
+        }
+      }
   }
 
   .container-banner {
