@@ -19,7 +19,11 @@
 // Responsive: Tablet to desktop
 // --------------------------------------------------
 @media (min-width: $navbarCollapseDesktopWidth) and (max-width: 979px) {
-    .container {
+  body {
+    background-color: lighten($grayLighter, 3%);
+  }
+
+  .container {
         width: $gridRowWidth768 + 38px;
     }
 
@@ -203,6 +207,7 @@
   .container-copyright {
     padding-top: 8px;
     text-align: center;
+    border-top: 1px solid darken($grayLighter, 7%);
   }
 
   // Responsive table

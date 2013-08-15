@@ -91,7 +91,8 @@
     </div>
 </div>
 
-<div class="container-fluid container-copyright">
+<div class="container-fluid">
+    <div class="container-copyright">
     <div class="row-fluid">
         <div class="span6">
             <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
@@ -104,6 +105,7 @@
                 <a style="margin-left: 10px" target="_blank" href="http://www.belgium.be"><image src="media://application/images/icon_belgium.gif" /></a>
             </p>
         </div>
+    </div>
     </div>
 </div>
 

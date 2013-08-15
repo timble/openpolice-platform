@@ -267,35 +267,9 @@ article {
   }
 }
 
-.container-footer  {
-  padding: 0 10px;
-  @include clearfix();
-
-  border-bottom: 1px solid darken($grayLighter, 7%);
-  @include gradient-vertical(lighten($blue, 10%),$blue);
-  color: $white;
-
-  line-height: 30px;
-
-  font-size: $fontSizeSmall;
-
-  text-align: center;
-
-  a {
-    color: $white;
-  }
-
-  .social {
-    float: right;
-  }
-}
-
 .container-copyright {
   font-size: $fontSizeSmall;
-
-  p {
-    margin: 3px 20px;
-  }
+  padding: 3px 20px;
 
   .copyright {
     text-align: right;
