@@ -1,0 +1,4 @@
+.container-banner img {
+  border: 1px solid $black;
+  @include border-radius(5px);
+}

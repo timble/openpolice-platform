@@ -19,7 +19,7 @@
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: $grayLighter;
+  background-color: $cyanLighter;
 }
 
 // TABS AND PILLS
@@ -56,7 +56,7 @@
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   color: $gray;
-  background-color: $bodyBackground;
+  background-color: $white;
   cursor: default;
 }
 

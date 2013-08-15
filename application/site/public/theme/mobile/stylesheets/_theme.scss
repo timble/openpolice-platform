@@ -11,13 +11,13 @@
 
 @import "../../bootstrap/stylesheets/validation.css";
 
+@import "blocks/article";
+@import "blocks/banner";
 @import "blocks/table";
 @import "blocks/navs";
 @import "blocks/pagination";
-
-body {
-  background-color: $grayLighter;
-}
+@import "blocks/lists";
+@import "blocks/breadcrumbs";
 
 html { font-size:100.01%; }
 
@@ -32,11 +32,6 @@ h1, h2, h3 {
 .page-header {
   margin-bottom: 0px;
   border: 0 none;
-}
-
-.nav > li > a:hover,
-.nav > li > a:focus {
-  background-color: $cyanLighter;
 }
 
 .container-fluid {
@@ -67,61 +62,11 @@ h1, h2, h3 {
   margin-bottom: 14px;
 }
 
-article {
-  @extend .separator--below;
-  @extend .clearfix;
-
-  h2 { margin-top: 30px; }
-  h3 { margin-top: 20px; }
-
-  p, li {
-    a {
-      border-bottom: 1px dotted $linkColor;
-
-      &:hover {
-        border-bottom: 1px solid $linkColorHover;
-        text-decoration: none;
-      }
-    }
-
-  }
-  .article__thumbnail {
-    margin: 0 0 20px 20px;
-    float: right;
-    max-width: 40%;
-
-    @extend .thumbnail;
-  }
-
-  .article__introtext {
-    font-weight: bold;
-    margin-bottom: $baseLineHeight;
-  }
-
-  &:last-of-type {
-    border: 0 none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .page-header {
-    h1 {
-      margin-bottom: 0;
-    }
-
-    .timestamp {
-      padding-top: 4px;
-      @extend .muted;
-      font-size: $fontSizeSmall;
-    }
-  }
-}
-
 .container-header,
 .container-banner,
 .container-breadcrumb,
 .container-content,
-.container-media {
+.container-footer {
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -173,25 +118,6 @@ article {
   }
 }
 
-.container-banner img {
-  border: 1px solid $black;
-  @include border-radius(5px);
-}
-
-.container-breadcrumb {
-  font-size: 0.9em;
-  .breadcrumb {
-    margin-bottom: 0;
-    padding-top: 4px;
-    padding-bottom: 4px;
-
-    li::first-letter {
-      text-transform: uppercase;
-    }
-  }
-  margin: 5px 0;
-}
-
 .container-content {
   padding-top: 10px;
 
@@ -205,25 +131,6 @@ article {
       padding-bottom: 10px;
       margin-bottom: 20px;
     }
-  }
-
-  .component {
-    .column--double { @include column-count(2); }
-    .column--triple { @include column-count(3); }
-    .column--quad   { @include column-count(4); }
-  }
-
-  &.districts {
-    ul li.twitter {
-      list-style: url("../images/twitter.png");
-    }
-    ul li.facebook {
-      list-style: url("../images/facebook.gif");
-    }
-  }
-
-  &.news {
-
   }
 
   .box {
@@ -244,7 +151,7 @@ article {
   }
 }
 
-.container-media {
+.container-footer {
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -252,19 +159,6 @@ article {
   border-top: 1px solid darken($grayLighter, 7%);
 
   @include border-radius(0 0 5px 5px);
-
-  ul {
-    list-style: none;
-    margin: 0;
-  }
-
-  .social {
-
-  }
-
-  .social__item {
-    margin-bottom: 8px;
-  }
 }
 
 .container-copyright {

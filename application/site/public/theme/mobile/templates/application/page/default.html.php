@@ -71,7 +71,7 @@
         </div>
     </div>
 
-    <div class="container-media hidden-phone">
+    <div class="container-footer hidden-phone">
         <div class="row-fluid">
             <div class="span6">
                 <h3><?= @text('Laatste nieuws') ?></h3>
@@ -98,12 +98,10 @@
             <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
         </div>
         <div class="span6 copyright hidden-phone">
-            <p>
-                © 2013 Lokale Politie - <?= @escape($zone->title); ?>
-                <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
-                <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a>
-                <a style="margin-left: 10px" target="_blank" href="http://www.belgium.be"><image src="media://application/images/icon_belgium.gif" /></a>
-            </p>
+            © 2013 Lokale Politie - <?= @escape($zone->title); ?>
+            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
+            <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a>
+            <a style="margin-left: 10px" target="_blank" href="http://www.belgium.be"><image src="media://application/images/icon_belgium.gif" /></a>
         </div>
     </div>
     </div>

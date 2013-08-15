@@ -1,0 +1,13 @@
+ul {
+  &.column--double { @include column-count(2); }
+  &.column--triple { @include column-count(3); }
+  &.column--quad   { @include column-count(4); }
+
+  li.twitter {
+    list-style: url("../images/twitter.png");
+  }
+  li.facebook {
+    list-style: url("../images/facebook.gif");
+  }
+}
+
