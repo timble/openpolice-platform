@@ -3674,14 +3674,6 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   cursor: auto;
 }
 
-/* line 4, modules/_navs.scss */
-.nav-tabs .active a,
-.nav-tabs .active a:hover,
-.nav-tabs .active a:focus {
-  background-color: #004fa3;
-  color: white;
-}
-
 /* line 5, blocks/_article.scss */
 article h2 {
   margin-top: 30px;
@@ -3936,73 +3928,73 @@ ul li.facebook {
   text-transform: uppercase;
 }
 
-/* line 22, _theme.scss */
+/* line 20, _theme.scss */
 html {
   font-size: 100.01%;
 }
 
-/* line 24, _theme.scss */
+/* line 22, _theme.scss */
 h1 {
   font-size: 24px;
 }
 
-/* line 25, _theme.scss */
+/* line 23, _theme.scss */
 h2 {
   font-size: 20px;
 }
 
-/* line 26, _theme.scss */
+/* line 24, _theme.scss */
 h3 {
   font-size: 18px;
 }
 
-/* line 28, _theme.scss */
+/* line 26, _theme.scss */
 h1, h2, h3 {
   font-weight: normal;
   line-height: 24px;
 }
 
-/* line 32, _theme.scss */
+/* line 30, _theme.scss */
 .page-header {
   margin-bottom: 0px;
   border: 0 none;
 }
 
-/* line 37, _theme.scss */
+/* line 35, _theme.scss */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 42, _theme.scss */
+/* line 40, _theme.scss */
 .nowrap {
   white-space: nowrap;
 }
 
-/* line 46, _theme.scss */
+/* line 44, _theme.scss */
 .highlight {
   background-color: yellow;
 }
 
-/* line 50, _theme.scss */
+/* line 48, _theme.scss */
 .text--strong {
   color: #004fa3;
   font-weight: bold;
 }
 
-/* line 54, _theme.scss */
+/* line 52, _theme.scss */
 .text--small {
   font-size: 0.9em;
 }
 
-/* line 59, _theme.scss */
+/* line 57, _theme.scss */
 .separator--below, article {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 30px;
   margin-bottom: 14px;
 }
 
-/* line 69, _theme.scss */
+/* line 67, _theme.scss */
 .container-header,
 .container-banner,
 .container-breadcrumb,
@@ -4012,69 +4004,69 @@ h1, h2, h3 {
   padding-right: 20px;
 }
 
-/* line 74, _theme.scss */
+/* line 72, _theme.scss */
 #wrap {
   background-color: white;
 }
 
-/* line 78, _theme.scss */
+/* line 76, _theme.scss */
 .container-header {
   margin-bottom: 20px;
 }
-/* line 81, _theme.scss */
+/* line 79, _theme.scss */
 .container-header .text--strong {
   font-size: 17.5px;
 }
-/* line 86, _theme.scss */
+/* line 84, _theme.scss */
 .container-header .span3 .logo {
   padding-top: 26px;
   display: block;
   text-decoration: none;
   color: #004fa3;
 }
-/* line 92, _theme.scss */
+/* line 90, _theme.scss */
 .container-header .span3 .logo img {
   width: 160px;
   vertical-align: bottom;
   margin-left: 10px;
 }
-/* line 98, _theme.scss */
+/* line 96, _theme.scss */
 .container-header .span3 .logo span {
   margin-left: 60px;
   margin-top: 3px;
   display: block;
 }
-/* line 106, _theme.scss */
+/* line 104, _theme.scss */
 .container-header .navbar {
   margin-bottom: 0;
 }
-/* line 109, _theme.scss */
+/* line 107, _theme.scss */
 .container-header .navbar .navbar__logo {
   display: none;
 }
-/* line 114, _theme.scss */
+/* line 112, _theme.scss */
 .container-header .slogan {
   margin: 25px 0 10px;
   display: block;
   text-align: center;
 }
 
-/* line 121, _theme.scss */
+/* line 119, _theme.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 126, _theme.scss */
+/* line 124, _theme.scss */
 .container-content .sidebar {
   margin-top: 20px;
 }
-/* line 129, _theme.scss */
+/* line 127, _theme.scss */
 .container-content .sidebar .sidebar__element {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-/* line 136, _theme.scss */
+/* line 134, _theme.scss */
 .container-content .box {
   border-left: 1px solid #eeeeee;
   padding: 0 18px;
@@ -4083,17 +4075,17 @@ h1, h2, h3 {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 143, _theme.scss */
+/* line 141, _theme.scss */
 .container-content .box ul {
   margin-bottom: 0;
 }
-/* line 147, _theme.scss */
+/* line 145, _theme.scss */
 .container-content .box .well {
   box-shadow: none;
   border: 0 none;
 }
 
-/* line 154, _theme.scss */
+/* line 152, _theme.scss */
 .container-footer {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4104,12 +4096,12 @@ h1, h2, h3 {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 164, _theme.scss */
+/* line 162, _theme.scss */
 .container-copyright {
   font-size: 11.9px;
   padding: 3px 20px;
 }
-/* line 168, _theme.scss */
+/* line 166, _theme.scss */
 .container-copyright .copyright {
   text-align: right;
 }
