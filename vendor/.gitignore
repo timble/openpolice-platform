@@ -5,3 +5,5 @@
 !.gitignore
 !phpmailer
 !joomla
+!imagine
+!swiftmailer

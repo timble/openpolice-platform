@@ -35,6 +35,7 @@ dirs=(
   "component/trafficinfo"
   "component/questions"
   "install/custom"
+  "vendor/.gitignore"
 )
 
 ## Function definitions
