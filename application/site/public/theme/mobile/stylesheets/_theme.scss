@@ -12,6 +12,7 @@
 @import "../../bootstrap/stylesheets/validation.css";
 
 @import "blocks/table";
+@import "blocks/navs";
 
 body {
   background-color: $grayLighter;
@@ -257,15 +258,6 @@ article {
     .well {
       box-shadow: none;
       border: 0 none;
-    }
-
-    .nav-tabs > li > a {
-      border: 0 none;
-      border-bottom: 1px solid $grayLighter !important;
-      @include border-radius(0 !important);
-    }
-    .nav-tabs > li:last-child > a {
-      border: 0 none !important;
     }
   }
 }
