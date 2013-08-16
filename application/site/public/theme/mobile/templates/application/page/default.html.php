@@ -36,7 +36,7 @@
                     </div>
                     <a class="navbar__logo" href="/<?= $site ?>">
                         <img src="media://application/images/logo-flame.png" />
-                        <span><?= @escape($zone->title); ?></span>
+                        <?= @escape($zone->title); ?>
                     </a>
                 </div>
             </div>

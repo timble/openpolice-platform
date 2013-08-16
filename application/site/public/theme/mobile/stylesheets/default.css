@@ -3360,66 +3360,60 @@ h1, h2, h3 {
   background-color: white;
 }
 
-/* line 43, _basic.scss */
+/* line 51, _basic.scss */
+.container-header .row-fluid .span3,
+.container-header .slogan,
+.container-header .is-hidden,
+.container-breadcrumb,
+.container-banner,
+.container-footer,
+.container-content .sidebar,
+.container-content.police .sticky,
+.container-copyright .copyright {
+  display: none;
+}
+
+/* line 55, _basic.scss */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 48, _basic.scss */
+/* line 60, _basic.scss */
 .container-content {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 53, _basic.scss */
+/* line 65, _basic.scss */
 .container-header {
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   width: 100%;
 }
-/* line 59, _basic.scss */
-.container-header .row-fluid .span3 {
-  display: none;
-}
-/* line 63, _basic.scss */
-.container-header .slogan {
-  display: none;
-}
-/* line 67, _basic.scss */
+/* line 71, _basic.scss */
 .container-header .navbar {
   width: 100%;
   background-color: #0063cc;
   margin-bottom: 0;
 }
-/* line 72, _basic.scss */
+/* line 76, _basic.scss */
 .container-header .navbar .navbar__logo {
-  display: block;
-  cursor: pointer;
   position: absolute;
   top: 0;
   right: 0px;
   float: right;
-  padding: 0 14px;
-  height: 50px;
+  padding-right: 20px;
+  line-height: 50px;
+  color: white;
 }
-/* line 82, _basic.scss */
+/* line 85, _basic.scss */
 .container-header .navbar .navbar__logo img {
-  margin: 12px 0 0 0;
-  float: left;
+  margin-right: 6px;
 }
-/* line 87, _basic.scss */
-.container-header .navbar .navbar__logo span {
-  margin: 15px 0  0 6px;
-  display: block;
-  float: left;
-  color: white;
-  color: white;
-}
-/* line 96, _basic.scss */
+/* line 90, _basic.scss */
 .container-header .navbar .navbar__handle {
-  display: block;
   cursor: pointer;
   position: absolute;
   top: 0;
@@ -3427,10 +3421,10 @@ h1, h2, h3 {
   background: #0059b7 url(../img/nav.svg) no-repeat center center;
   background-size: 18px;
   height: 50px;
-  width: 50px;
-  border-left: 1px solid #004fa3;
+  width: 56px;
+  border-right: 1px solid #004fa3;
 }
-/* line 109, _basic.scss */
+/* line 102, _basic.scss */
 .container-header .navbar .navbar-inner {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -3444,76 +3438,58 @@ h1, h2, h3 {
   padding-right: 0;
   padding-top: 50px;
 }
-/* line 120, _basic.scss */
+/* line 113, _basic.scss */
 .container-header .navbar .navbar-inner .nav {
   margin: 0;
   text-align: left;
   border-top: 1px solid #004fa3;
 }
-/* line 125, _basic.scss */
-.container-header .navbar .navbar-inner .nav.is-hidden {
-  display: none;
-  visibility: hidden;
-}
-/* line 130, _basic.scss */
+/* line 118, _basic.scss */
 .container-header .navbar .navbar-inner .nav li {
   width: 100%;
   *display: inline;
   zoom: 1;
   position: relative;
 }
-/* line 137, _basic.scss */
+/* line 125, _basic.scss */
 .container-header .navbar .navbar-inner .nav a {
   display: block;
   border-bottom: 1px solid #004fa3;
-  padding: 13px 15px;
+  padding: 13px 20px;
   font-weight: bold;
   color: white;
 }
 
-/* line 153, _basic.scss */
-.container-breadcrumb,
-.container-banner,
-.container-footer,
-.container-content .sidebar,
-.container-copyright .copyright {
-  display: none;
-}
-
-/* line 157, _basic.scss */
+/* line 137, _basic.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 162, _basic.scss */
+/* line 142, _basic.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 163, _basic.scss */
+/* line 143, _basic.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 167, _basic.scss */
-.container-content.police .sticky {
-  display: none;
-}
-/* line 171, _basic.scss */
+/* line 147, _basic.scss */
 .container-content.police .box {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 176, _basic.scss */
+/* line 152, _basic.scss */
 .container-content.police .separator--below, .container-content.police article {
   border: 0 none;
   padding-bottom: 0;
 }
 
-/* line 183, _basic.scss */
+/* line 159, _basic.scss */
 .container-copyright {
   padding: 3px 20px;
   text-align: center;
@@ -3521,39 +3497,7 @@ h1, h2, h3 {
   font-size: 11.9px;
 }
 
-/* Force table to not be like tables anymore */
-/* line 193, _basic.scss */
-table, thead, tbody, th, td, tr {
-  display: block;
-}
-
-/* Hide table headers (but not display: none;, for accessibility) */
-/* line 198, _basic.scss */
-thead tr {
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-}
-
-/* line 204, _basic.scss */
-tr {
-  border-top: 1px solid #DDD;
-}
-
-/* line 208, _basic.scss */
-td {
-  /* Behave  like a "row" */
-  border: none;
-  border-top: 0 none !important;
-  position: relative;
-}
-
-/* line 215, _basic.scss */
-td:first-of-type {
-  font-size: 1.15em;
-}
-
-/* line 219, _basic.scss */
+/* line 166, _basic.scss */
 article {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 30px;
@@ -3884,44 +3828,81 @@ article .page-header .timestamp {
     text-align: center;
   }
 }
-/* line 8, blocks/_table.scss */
+/* Force table to not be like tables anymore */
+/* line 4, blocks/_table.scss */
 .table {
   max-width: 100%;
-  background-color: transparent;
-  border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
-  margin-bottom: 22px;
+  /* Hide table headers (but not display: none;, for accessibility) */
 }
-/* line 17, blocks/_table.scss */
-.table th,
-.table td {
+/* line 8, blocks/_table.scss */
+.table th, .table td {
   padding: 8px;
-  line-height: 22px;
-  text-align: left;
-  vertical-align: top;
-  border-top: 1px solid #dddddd;
+}
+/* line 12, blocks/_table.scss */
+.table td {
+  /* Behave  like a "row" */
+  clear: left;
+  float: left;
+  border: none;
+}
+/* line 19, blocks/_table.scss */
+.table td:nth-child(n+2) {
+  display: none;
 }
 /* line 24, blocks/_table.scss */
-.table th {
-  font-weight: bold;
-}
-/* line 28, blocks/_table.scss */
-.table thead th {
-  vertical-align: bottom;
-}
-/* line 33, blocks/_table.scss */
-.table thead tr th,
-.table thead tr td {
-  border-top: 0;
+.table thead tr {
+  display: none;
 }
 
-/* line 46, blocks/_table.scss */
-.table-striped tbody > tr:nth-child(odd) > td,
-.table-striped tbody > tr:nth-child(odd) > th {
+/* line 36, blocks/_table.scss */
+.table-striped tbody > tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
+@media screen and (min-width: 767px) {
+  /* line 50, blocks/_table.scss */
+  .table {
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 22px;
+  }
+  /* line 57, blocks/_table.scss */
+  .table th,
+  .table td {
+    display: table-cell !important;
+    line-height: 22px;
+    text-align: left;
+    vertical-align: top;
+  }
+  /* line 63, blocks/_table.scss */
+  .table td {
+    clear: none;
+    float: none;
+  }
+  /* line 67, blocks/_table.scss */
+  .table tbody tr {
+    border-top: 1px solid #dddddd;
+  }
+  /* line 70, blocks/_table.scss */
+  .table th {
+    font-weight: bold;
+  }
+  /* line 74, blocks/_table.scss */
+  .table thead tr {
+    display: table-row;
+  }
+  /* line 78, blocks/_table.scss */
+  .table thead th {
+    vertical-align: bottom;
+  }
+  /* line 83, blocks/_table.scss */
+  .table thead tr th,
+  .table thead tr td {
+    border-top: 0;
+  }
+}
 /* line 9, blocks/_navs.scss */
 .nav {
   margin-left: 0;
@@ -4092,17 +4073,25 @@ ul li.facebook {
     background-color: #f6f6f6;
   }
 
-  /* line 11, _desktop.scss */
+  /* line 7, _desktop.scss */
+  .navbar__handle,
+  .navbar__logo {
+    display: none;
+  }
+
+  /* line 18, _desktop.scss */
   .container-header .row-fluid .span3,
+  .container-header .is-hidden,
   .container-breadcrumb,
   .container-banner,
   .container-footer,
   .container-content .sidebar,
+  .container-content.police .sticky,
   .container-copyright .copyright {
     display: block;
   }
 
-  /* line 19, _desktop.scss */
+  /* line 26, _desktop.scss */
   .container-header,
   .container-banner,
   .container-breadcrumb,
@@ -4112,29 +4101,25 @@ ul li.facebook {
     padding-right: 20px;
   }
 
-  /* line 24, _desktop.scss */
+  /* line 31, _desktop.scss */
   .container {
     width: 762px;
   }
 
-  /* line 29, _desktop.scss */
+  /* line 36, _desktop.scss */
   .container-header .span3 {
     float: none;
     width: 100%;
     text-align: center;
   }
-  /* line 35, _desktop.scss */
+  /* line 42, _desktop.scss */
   .container-header .span9 {
     float: none;
     width: 100%;
     margin: 20px 0 0 0;
   }
 
-  /* line 43, _desktop.scss */
-  .container-content.police .sticky {
-    display: block;
-  }
-  /* line 47, _desktop.scss */
+  /* line 50, _desktop.scss */
   .container-content.police .box {
     border-left: 1px solid #eeeeee;
     padding: 0 18px;
@@ -4143,38 +4128,34 @@ ul li.facebook {
     -moz-border-radius: 5px;
     border-radius: 5px;
   }
-  /* line 54, _desktop.scss */
+  /* line 57, _desktop.scss */
   .container-content.police .box ul {
     margin-bottom: 0;
   }
-  /* line 58, _desktop.scss */
+  /* line 61, _desktop.scss */
   .container-content.police .box .well {
     box-shadow: none;
     border: 0 none;
   }
-  /* line 64, _desktop.scss */
+  /* line 67, _desktop.scss */
   .container-content.police .span3 {
     width: 47.87234%;
     min-height: 125px;
   }
-  /* line 69, _desktop.scss */
+  /* line 72, _desktop.scss */
   .container-content.police .span3:nth-child(3) {
     margin-left: 0;
   }
 
-  /* line 74, _desktop.scss */
+  /* line 77, _desktop.scss */
   .container-header {
     width: auto;
   }
-  /* line 76, _desktop.scss */
+  /* line 79, _desktop.scss */
   .container-header .navbar {
     background: none;
   }
-  /* line 79, _desktop.scss */
-  .container-header .navbar .navbar__handle {
-    display: none;
-  }
-  /* line 83, _desktop.scss */
+  /* line 82, _desktop.scss */
   .container-header .navbar .navbar-inner {
     padding: 0;
     -webkit-border-radius: 4px;
@@ -4184,37 +4165,32 @@ ul li.facebook {
     /* Customize the navbar links to be fill the entire space of the .navbar */
   }
   /* line 88, _desktop.scss */
-  .container-header .navbar .navbar-inner .nav.is-hidden {
-    display: block;
-    visibility: visible;
-  }
-  /* line 94, _desktop.scss */
   .container-header .navbar .navbar-inner .nav {
     margin: 0;
     display: table;
     border: 0 none;
   }
-  /* line 99, _desktop.scss */
+  /* line 93, _desktop.scss */
   .container-header .navbar .navbar-inner .nav li {
     display: table-cell;
     width: 1%;
     float: none;
   }
-  /* line 104, _desktop.scss */
+  /* line 98, _desktop.scss */
   .container-header .navbar .navbar-inner .nav li a {
     text-align: center;
     padding: 5px 15px 5px;
     border: 0 none;
     font-weight: normal;
   }
-  /* line 110, _desktop.scss */
+  /* line 104, _desktop.scss */
   .container-header .navbar .navbar-inner .nav li:first-child a {
     border-left: 0;
     -webkit-border-radius: 4px 0 0 4px;
     -moz-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
   }
-  /* line 114, _desktop.scss */
+  /* line 108, _desktop.scss */
   .container-header .navbar .navbar-inner .nav li:last-child a {
     border-right: 0;
     -webkit-border-radius: 0 4px 4px 0;
@@ -4222,18 +4198,18 @@ ul li.facebook {
     border-radius: 0 4px 4px 0;
   }
 
-  /* line 123, _desktop.scss */
+  /* line 117, _desktop.scss */
   .container-content .sidebar {
     margin-top: 20px;
   }
-  /* line 126, _desktop.scss */
+  /* line 120, _desktop.scss */
   .container-content .sidebar .sidebar__element {
     border-bottom: 1px solid #eeeeee;
     padding-bottom: 10px;
     margin-bottom: 20px;
   }
 
-  /* line 134, _desktop.scss */
+  /* line 128, _desktop.scss */
   .container-footer {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -4244,28 +4220,29 @@ ul li.facebook {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 144, _desktop.scss */
+  /* line 138, _desktop.scss */
   .container-copyright {
     text-align: left;
+    border-top: 0 none;
   }
-  /* line 146, _desktop.scss */
+  /* line 141, _desktop.scss */
   .container-copyright .copyright {
     text-align: right;
   }
 }
 @media screen and (min-width: 998px) {
-  /* line 153, _desktop.scss */
+  /* line 148, _desktop.scss */
   body {
     background-color: #eeeeee;
   }
 
-  /* line 157, _desktop.scss */
+  /* line 152, _desktop.scss */
   .container-fluid {
     width: 940px;
     margin: 0 auto;
   }
 
-  /* line 162, _desktop.scss */
+  /* line 157, _desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -4275,24 +4252,24 @@ ul li.facebook {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 170, _desktop.scss */
+  /* line 165, _desktop.scss */
   .container-header .span3 {
     float: left;
     width: 22.34043%;
     text-align: left;
   }
-  /* line 176, _desktop.scss */
+  /* line 171, _desktop.scss */
   .container-header .span9 {
     float: left;
     width: 73.40426%;
     margin: 0 0 0 3.19149%;
   }
 
-  /* line 184, _desktop.scss */
+  /* line 179, _desktop.scss */
   .container-content.police .span3 {
     width: 22.34043%;
   }
-  /* line 187, _desktop.scss */
+  /* line 182, _desktop.scss */
   .container-content.police .span3:nth-child(3) {
     margin-left: 3.19149%;
   }

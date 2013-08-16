@@ -3,11 +3,18 @@
     background-color: lighten($grayLighter, 3%);
   }
 
+  .navbar__handle,
+  .navbar__logo {
+    display: none;
+  }
+
   .container-header .row-fluid .span3,
+  .container-header .is-hidden,
   .container-breadcrumb,
   .container-banner,
   .container-footer,
   .container-content .sidebar,
+  .container-content.police .sticky,
   .container-copyright .copyright {
     display: block;
   }
@@ -40,10 +47,6 @@
   }
 
   .container-content.police {
-    .sticky {
-      display: block;
-    }
-
     .box {
       border-left: 1px solid $grayLighter;
 
@@ -76,19 +79,10 @@
     .navbar {
       background: none;
 
-      .navbar__handle {
-        display: none;
-      }
-
       .navbar-inner {
         padding: 0;
         @include border-radius($baseBorderRadius);
         border: 1px solid #003166;
-
-        .nav.is-hidden {
-          display: block;
-          visibility: visible;
-        }
 
         /* Customize the navbar links to be fill the entire space of the .navbar */
         .nav {
@@ -143,6 +137,7 @@
 
   .container-copyright {
     text-align: left;
+    border-top: 0 none;
     .copyright {
       text-align: right;
     }

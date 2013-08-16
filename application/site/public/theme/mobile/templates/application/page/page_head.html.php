@@ -25,8 +25,12 @@
 
     <link href="media://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <style src="media://application/stylesheets/default.css" />
+    <!--[if lte IE 8]>
     <style src="media://application/stylesheets/ie1.css" />
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <style src="media://application/stylesheets/default.css" />
+    <!--<![endif]-->
 
     <script src="media://districts/jquery/jquery.js" />
     <script type="text/javascript">
