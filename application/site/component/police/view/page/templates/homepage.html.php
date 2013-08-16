@@ -11,7 +11,7 @@
 <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
 
 <div class="row-fluid separator--below">
-    <div class="span8 hidden-phone">
+    <div class="span8 sticky">
         <? foreach (@object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <article>
                 <div class="page-header">

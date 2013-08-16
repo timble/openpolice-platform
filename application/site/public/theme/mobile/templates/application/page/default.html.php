@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="span9">
-                <span class="slogan hidden-phone">Bel <a class="text--strong" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" href="tel:<?= @escape($zone->telephone); ?>"><?= @escape($zone->telephone); ?></a></span>
+                <span class="slogan">Bel <a class="text--strong" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" href="tel:<?= @escape($zone->telephone); ?>"><?= @escape($zone->telephone); ?></a></span>
                 <div class="navbar navbar-responsive">
                     <div class="navbar-inner">
                         <ktml:modules position="navigation">
@@ -47,7 +47,7 @@
         <img src="media://application/images/banners/<?= $site ?>.jpg" />
     </div>
 
-    <div class="container-breadcrumb hidden-phone">
+    <div class="container-breadcrumb">
         <ktml:modules position="breadcrumbs">
             <ktml:modules:content />
         </ktml:modules>
@@ -56,7 +56,7 @@
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">
             <? if($extension !== 'police') : ?>
-            <div class="span3 sidebar hidden-phone">
+            <div class="span3 sidebar">
                 <ktml:modules position="left">
                     <ktml:modules:content />
                 </ktml:modules>
@@ -71,7 +71,7 @@
         </div>
     </div>
 
-    <div class="container-footer hidden-phone">
+    <div class="container-footer">
         <div class="row-fluid">
             <div class="span6">
                 <h3><?= @text('Laatste nieuws') ?></h3>
@@ -97,7 +97,7 @@
         <div class="span6">
             <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
         </div>
-        <div class="span6 copyright hidden-phone">
+        <div class="span6 copyright">
             © 2013 Lokale Politie - <?= @escape($zone->title); ?>
             <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
             <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a>

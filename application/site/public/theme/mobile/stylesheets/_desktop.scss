@@ -1,0 +1,191 @@
+@include respond-min($navbarCollapseWidth) {
+  body {
+    background-color: lighten($grayLighter, 3%);
+  }
+
+  .container-header .row-fluid .span3,
+  .container-breadcrumb,
+  .container-banner,
+  .container-footer,
+  .container-content .sidebar,
+  .container-copyright .copyright {
+    display: block;
+  }
+
+  .container-header,
+  .container-banner,
+  .container-breadcrumb,
+  .container-content,
+  .container-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .container {
+    width: $gridRowWidth768 + 38px;
+  }
+
+  .container-header {
+    .span3 {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    .span9 {
+      float: none;
+      width: 100%;
+      margin: 20px 0 0 0;
+    }
+  }
+
+  .container-content.police {
+    .sticky {
+      display: block;
+    }
+
+    .box {
+      border-left: 1px solid $grayLighter;
+
+      padding: 0 18px;
+      margin-top: 20px;
+      @include border-radius(5px);
+
+      ul {
+        margin-bottom: 0;
+      }
+
+      .well {
+        box-shadow: none;
+        border: 0 none;
+      }
+    }
+
+    .span3 {
+      width: ($fluidGridColumnWidth * 6) + ($fluidGridGutterWidth * 5);
+      min-height: 125px;
+    }
+
+    .span3:nth-child(3) {
+      margin-left: 0;
+    }
+  }
+
+  .container-header {
+    width: auto;
+    .navbar {
+      background: none;
+
+      .navbar__handle {
+        display: none;
+      }
+
+      .navbar-inner {
+        padding: 0;
+        @include border-radius($baseBorderRadius);
+        border: 1px solid #003166;
+
+        .nav.is-hidden {
+          display: block;
+          visibility: visible;
+        }
+
+        /* Customize the navbar links to be fill the entire space of the .navbar */
+        .nav {
+          margin: 0;
+          display: table;
+          border: 0 none;
+        }
+        .nav li {
+          display: table-cell;
+          width: 1%;
+          float: none;
+        }
+        .nav li a {
+          text-align: center;
+          padding: 5px 15px 5px;
+          border: 0 none;
+          font-weight: normal;
+        }
+        .nav li:first-child a {
+          border-left: 0;
+          @include border-radius($baseBorderRadius 0 0 $baseBorderRadius);
+        }
+        .nav li:last-child a {
+          border-right: 0;
+          @include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
+        }
+      }
+    }
+  }
+
+  .container-content {
+    .sidebar {
+      margin-top: 20px;
+
+      .sidebar__element {
+        border-bottom: 1px solid $grayLighter;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .container-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: lighten($grayLighter, 3%);
+    border-top: 1px solid darken($grayLighter, 7%);
+
+    @include border-radius(0 0 5px 5px);
+  }
+
+  .container-copyright {
+    text-align: left;
+    .copyright {
+      text-align: right;
+    }
+  }
+}
+
+@include respond-min(998px) {
+  body {
+    background-color: $bodyBackground;
+  }
+
+  .container-fluid {
+    width: $gridRowWidth;
+    margin: 0 auto;
+  }
+
+  #wrap {
+    border-left: 1px solid darken($grayLighter, 7%);
+    border-right: 1px solid darken($grayLighter, 7%);
+    border-bottom: 1px solid darken($grayLighter, 7%);
+    @include border-radius(0 0 5px 5px);
+  }
+
+  .container-header {
+    .span3 {
+      float: left;
+      width: 22.34043%;
+      text-align: left;
+    }
+
+    .span9 {
+      float: left;
+      width: 73.40426%;
+      margin: 0 0 0 3.19149%;
+    }
+  }
+
+  .container-content.police {
+    .span3 {
+      width: ($fluidGridColumnWidth * 3) + ($fluidGridGutterWidth * 2);
+    }
+    .span3:nth-child(3) {
+      margin-left: $fluidGridGutterWidth;
+    }
+  }
+}
