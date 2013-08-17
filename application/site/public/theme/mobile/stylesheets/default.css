@@ -341,15 +341,15 @@ cite {
 }
 
 /* line 31, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.muted, .text--small, article .page-header .timestamp {
+.muted, .text--small, article header .timestamp {
   color: #999999;
 }
 
 /* line 33, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-a.muted:hover, a.text--small:hover, article .page-header a.timestamp:hover,
+a.muted:hover, a.text--small:hover, article header a.timestamp:hover,
 a.muted:focus,
 a.text--small:focus,
-article .page-header a.timestamp:focus {
+article header a.timestamp:focus {
   color: gray;
 }
 
@@ -3219,17 +3219,17 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 }
 
 /* line 33, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.clearfix, article {
+.clearfix, article, article .entry-content, article header {
   *zoom: 1;
 }
 /* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.clearfix:before, article:before, .clearfix:after, article:after {
+.clearfix:before, article:before, article .entry-content:before, article header:before, .clearfix:after, article:after, article .entry-content:after, article header:after {
   display: table;
   content: "";
   line-height: 0;
 }
 /* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.clearfix:after, article:after {
+.clearfix:after, article:after, article .entry-content:after, article header:after {
   clear: both;
 }
 
@@ -3715,28 +3715,33 @@ article p a:hover, article li a:hover {
   text-decoration: none;
 }
 /* line 19, blocks/_article.scss */
+article .entry-summary {
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+/* line 28, blocks/_article.scss */
 article .article__thumbnail {
   margin: 0 0 20px 20px;
   float: right;
   max-width: 40%;
 }
-/* line 27, blocks/_article.scss */
-article .article__introtext {
-  font-weight: bold;
-  margin-bottom: 22px;
-}
-/* line 32, blocks/_article.scss */
+/* line 36, blocks/_article.scss */
 article:last-of-type {
   border: 0 none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 39, blocks/_article.scss */
-article .page-header h1 {
+/* line 42, blocks/_article.scss */
+article header {
+  padding-bottom: 10px;
+  margin: 22px 0px 11px;
+}
+/* line 48, blocks/_article.scss */
+article header h1 {
   margin-bottom: 0;
 }
-/* line 43, blocks/_article.scss */
-article .page-header .timestamp {
+/* line 52, blocks/_article.scss */
+article header .timestamp {
   padding-top: 4px;
   font-size: 11.9px;
 }
@@ -4076,7 +4081,7 @@ ul li.facebook {
   /* line 7, _desktop.scss */
   .navbar__handle,
   .navbar__logo {
-    display: none;
+    display: none !important;
   }
 
   /* line 18, _desktop.scss */

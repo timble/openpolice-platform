@@ -11,26 +11,24 @@
 <? foreach ($articles as $article) : ?>
     <article>
         <? $link = @helper('route.article', array('row' => $article)); ?>
-        <div class="page-header">
+        <header>
             <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
             <div class="timestamp">
-                <?= @helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'))) ?>
+                <?= @helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
             </div>
-        </div>
+        </header>
 
-        <div class="clearfix">
-            <? if($article->thumbnail): ?>
-                <a href="<?= $link ?>">
-                    <?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
-                </a>
-            <? endif; ?>
+        <? if($article->thumbnail): ?>
+            <a href="<?= $link ?>">
+                <?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+            </a>
+        <? endif; ?>
 
-            <?= $article->introtext ?>
+        <?= $article->introtext ?>
 
-            <? if ($article->fulltext) : ?>
-                <a href="<?= $link ?>"><?= @text('Read more') ?></a>
-            <? endif; ?>
-        </div>
+        <? if ($article->fulltext) : ?>
+            <a href="<?= $link ?>"><?= @text('Read more') ?></a>
+        <? endif; ?>
     </article>
 <? endforeach; ?>
 <?= @helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>

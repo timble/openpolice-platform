@@ -8,14 +8,17 @@
  */
 ?>
 
-<article>
-    <div class="page-header">
-        <h1><?= $article->title ?></h1>
+<article class="vevent">
+    <header>
+        <h1 class="summary"><?= $article->title ?></h1>
         <div class="timestamp">
-            <?= @helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'))) ?>
-            <?= $article->end_on ? @text('till').' '.@helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) : '' ?></td>
+            <?= @helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'), 'attribs' => array('class' => 'dtstart'))) ?>
+            <? if($article->end_on) : ?>
+                <?= @text('till') ?>
+                <?= @helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'), 'attribs' => array('class' => 'dtend'))); ?>
+            <? endif ?>
         </div>
-    </div>
+    </header>
 
     <div class="row-fluid">
         <? if($article->text) : ?>
