@@ -41,6 +41,7 @@ dirs=(
 
 files=(
   "vendor/.gitignore"
+  "config/config.php"
 )
 
 ## Function definitions
@@ -81,12 +82,6 @@ do
   mkdir -p "$(dirname $temp/files/$file)" && cp -r "$repo/$file" "$(dirname $temp/files/$file)"
 done
 
-if [ -f "$repo/config/config.php" ]
-then
-  printf "%s\n" "config.php"
-  cp "$repo/config/config.php" $temp
-fi
-
 # Update Nooku Framework
 printf "$(tput bold)%s$(tput sgr0)\n" "Updating Nooku Framework..."
 mkdir -p "$HOME/.git-cache"
@@ -117,11 +112,6 @@ for file in "${files[@]}"
 do
   cp -r "$temp/files/$file" "$(dirname $repo/$file)"
 done
-
-if [ -f "$temp/config.php" ]
-then
-  cp "$temp/config.php" "$repo/config/config.php"
-fi
 
 rm -rf "$temp"
 
