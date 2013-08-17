@@ -38,6 +38,10 @@ dirs=(
   "vendor/.gitignore"
 )
 
+files=(
+  "vendor/.gitignore"
+)
+
 ## Function definitions
 die() #@ DESCRIPTION: print error message and exit with supplied return code
 {     #@ USAGE: die STATUS [MESSAGE]
@@ -68,6 +72,12 @@ for dir in "${dirs[@]}"
 do
   printf "%s\n" "$dir"
   mkdir -p "$temp/$dir" && cp -r "$repo/$dir/" "$temp/$dir"
+done
+
+for file in "${files[@]}"
+do
+  printf "%s\n" "$file"
+  cp -r "$repo/$file/" "$temp/$file"
 done
 
 if [ -f "$repo/config/config.php" ]
