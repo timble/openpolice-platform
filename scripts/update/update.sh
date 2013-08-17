@@ -152,5 +152,5 @@ Commit: $(git --git-dir=$HOME/.git-cache/nooku-framework/.git rev-parse origin/$
 
 # Composer
 printf "$(tput bold)%s$(tput sgr0)\n" "Running custom composer..."
-cd "$repo"
+cd "$repo/install/custom"
 composer install
