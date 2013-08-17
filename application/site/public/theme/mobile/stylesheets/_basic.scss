@@ -36,6 +36,16 @@ h1, h2, h3 {
   border: 0 none;
 }
 
+.separator--below {
+  border-bottom: 1px solid $grayLighter;
+  padding-bottom: $gridGutterWidth;
+  margin-bottom: 14px;
+}
+
+article {
+  @extend .separator--below;
+}
+
 #wrap {
   background-color: $white;
 }
@@ -144,14 +154,14 @@ h1, h2, h3 {
   }
 
   &.police {
-    .box {
+    .contact {
       margin-left: 0;
       border: 0 none;
       padding: 0;
     }
-    .separator--below {
-      border: 0 none;
-      padding-bottom: 0;
+    article {
+      border: 0 none !important;
+      padding-bottom: 0 !important;
     }
   }
 }
@@ -161,10 +171,4 @@ h1, h2, h3 {
   text-align: center;
   border-top: 1px solid darken($grayLighter, 7%);
   font-size: $fontSizeSmall;
-}
-
-article {
-  border-bottom: 1px solid $grayLighter;
-  padding-bottom: $gridGutterWidth;
-  margin-bottom: 14px;
 }

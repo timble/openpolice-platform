@@ -44,14 +44,21 @@
     </div>
 
     <div class="container-banner banner5388">
-        <img src="media://application/images/banners/<?= $site ?>.jpg" />
+        <div class="row-fluid">
+            <div class="span12">
+                <img src="media://application/images/banners/<?= $site ?>.jpg" />
+            </div>
+        </div>
     </div>
-
+    <ktml:modules position="breadcrumbs">
     <div class="container-breadcrumb">
-        <ktml:modules position="breadcrumbs">
-            <ktml:modules:content />
-        </ktml:modules>
+        <div class="row-fluid">
+            <div class="span12">
+                <ktml:modules:content />
+            </div>
+        </div>
     </div>
+    </ktml:modules>
 
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">

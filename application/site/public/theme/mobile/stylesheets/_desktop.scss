@@ -47,7 +47,7 @@
   }
 
   .container-content.police {
-    .box {
+    .contact {
       border-left: 1px solid $grayLighter;
 
       padding: 0 18px;
@@ -59,9 +59,14 @@
       }
 
       .well {
-        box-shadow: none;
-        border: 0 none;
+        margin-bottom: 10px
       }
+    }
+
+    .separator--below {
+      border-bottom: 1px solid $grayLighter;
+      padding-bottom: $gridGutterWidth;
+      margin-bottom: 14px;
     }
 
     .span3 {
@@ -164,14 +169,15 @@
   .container-header {
     .span3 {
       float: left;
-      width: 22.34043%;
+      width: ($fluidGridColumnWidth * 3) + ($fluidGridGutterWidth * 2);
       text-align: left;
     }
 
     .span9 {
       float: left;
-      width: 73.40426%;
-      margin: 0 0 0 3.19149%;
+      width: ($fluidGridColumnWidth * 9) + ($fluidGridGutterWidth * 8);
+      margin-left: $fluidGridGutterWidth;
+      margin-top: 0;
     }
   }
 

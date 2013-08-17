@@ -1712,42 +1712,6 @@ legend + .control-group {
   padding-left: 180px;
 }
 
-/* line 7, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_wells.scss */
-.well {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: whitesmoke;
-  border: 1px solid #e3e3e3;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_wells.scss */
-.well blockquote {
-  border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
-}
-
-/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_wells.scss */
-.well-large {
-  padding: 24px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-}
-
-/* line 26, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_wells.scss */
-.well-small {
-  padding: 9px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
 /* line 10, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_buttons.scss */
 .btn {
   display: inline-block;
@@ -3356,11 +3320,18 @@ h1, h2, h3 {
 }
 
 /* line 39, _basic.scss */
+.separator--below, article {
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 30px;
+  margin-bottom: 14px;
+}
+
+/* line 49, _basic.scss */
 #wrap {
   background-color: white;
 }
 
-/* line 51, _basic.scss */
+/* line 61, _basic.scss */
 .container-header .row-fluid .span3,
 .container-header .slogan,
 .container-header .is-hidden,
@@ -3373,32 +3344,32 @@ h1, h2, h3 {
   display: none;
 }
 
-/* line 55, _basic.scss */
+/* line 65, _basic.scss */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 60, _basic.scss */
+/* line 70, _basic.scss */
 .container-content {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 65, _basic.scss */
+/* line 75, _basic.scss */
 .container-header {
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
   width: 100%;
 }
-/* line 71, _basic.scss */
+/* line 81, _basic.scss */
 .container-header .navbar {
   width: 100%;
   background-color: #0063cc;
   margin-bottom: 0;
 }
-/* line 76, _basic.scss */
+/* line 86, _basic.scss */
 .container-header .navbar .navbar__logo {
   position: absolute;
   top: 0;
@@ -3408,11 +3379,11 @@ h1, h2, h3 {
   line-height: 50px;
   color: white;
 }
-/* line 85, _basic.scss */
+/* line 95, _basic.scss */
 .container-header .navbar .navbar__logo img {
   margin-right: 6px;
 }
-/* line 90, _basic.scss */
+/* line 100, _basic.scss */
 .container-header .navbar .navbar__handle {
   cursor: pointer;
   position: absolute;
@@ -3424,7 +3395,7 @@ h1, h2, h3 {
   width: 56px;
   border-right: 1px solid #004fa3;
 }
-/* line 102, _basic.scss */
+/* line 112, _basic.scss */
 .container-header .navbar .navbar-inner {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -3438,20 +3409,20 @@ h1, h2, h3 {
   padding-right: 0;
   padding-top: 50px;
 }
-/* line 113, _basic.scss */
+/* line 123, _basic.scss */
 .container-header .navbar .navbar-inner .nav {
   margin: 0;
   text-align: left;
   border-top: 1px solid #004fa3;
 }
-/* line 118, _basic.scss */
+/* line 128, _basic.scss */
 .container-header .navbar .navbar-inner .nav li {
   width: 100%;
   *display: inline;
   zoom: 1;
   position: relative;
 }
-/* line 125, _basic.scss */
+/* line 135, _basic.scss */
 .container-header .navbar .navbar-inner .nav a {
   display: block;
   border-bottom: 1px solid #004fa3;
@@ -3460,48 +3431,41 @@ h1, h2, h3 {
   color: white;
 }
 
-/* line 137, _basic.scss */
+/* line 147, _basic.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 142, _basic.scss */
+/* line 152, _basic.scss */
 .container-content .component .column--triple {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 143, _basic.scss */
+/* line 153, _basic.scss */
 .container-content .component .column--quad {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 147, _basic.scss */
-.container-content.police .box {
+/* line 157, _basic.scss */
+.container-content.police .contact {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 152, _basic.scss */
-.container-content.police .separator--below, .container-content.police article {
-  border: 0 none;
-  padding-bottom: 0;
+/* line 162, _basic.scss */
+.container-content.police article {
+  border: 0 none !important;
+  padding-bottom: 0 !important;
 }
 
-/* line 159, _basic.scss */
+/* line 169, _basic.scss */
 .container-copyright {
   padding: 3px 20px;
   text-align: center;
   border-top: 1px solid gainsboro;
   font-size: 11.9px;
-}
-
-/* line 166, _basic.scss */
-article {
-  border-bottom: 1px solid #eeeeee;
-  padding-bottom: 30px;
-  margin-bottom: 14px;
 }
 
 /* line 614, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
@@ -3778,10 +3742,13 @@ article .page-header .timestamp {
 
 /* line 1, blocks/_banner.scss */
 .container-banner img {
-  border: 1px solid black;
+  border: 1px solid #555555;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* line 2, blocks/_header.scss */
@@ -4003,18 +3970,23 @@ article .page-header .timestamp {
   border-bottom: 1px solid #eeeeee;
 }
 
-/* line 102, blocks/_navs.scss */
+/* line 101, blocks/_navs.scss */
+.nav-tabs.nav-stacked > li:last-child > a {
+  border-bottom: 0 none !important;
+}
+
+/* line 105, blocks/_navs.scss */
 .nav-tabs.nav-stacked > li > a:hover,
 .nav-tabs.nav-stacked > li > a:focus {
   z-index: 2;
 }
 
-/* line 107, blocks/_navs.scss */
+/* line 110, blocks/_navs.scss */
 .nav-pills.nav-stacked > li > a {
   margin-bottom: 3px;
 }
 
-/* line 110, blocks/_navs.scss */
+/* line 113, blocks/_navs.scss */
 .nav-pills.nav-stacked > li:last-child > a {
   margin-bottom: 1px;
 }
@@ -4062,6 +4034,34 @@ ul li.facebook {
 /* line 8, blocks/_breadcrumbs.scss */
 .breadcrumb li::first-letter {
   text-transform: uppercase;
+}
+
+/* line 7, blocks/_wells.scss */
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 17, blocks/_wells.scss */
+.well--large {
+  padding: 24px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+/* line 21, blocks/_wells.scss */
+.well--small {
+  padding: 8px 12px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
 }
 
 /* line 2, _desktop.scss */
@@ -4116,7 +4116,7 @@ body {
 }
 
 /* line 50, _desktop.scss */
-.container-content.police .box {
+.container-content.police .contact {
   border-left: 1px solid #eeeeee;
   padding: 0 18px;
   margin-top: 20px;
@@ -4125,33 +4125,38 @@ body {
   border-radius: 5px;
 }
 /* line 57, _desktop.scss */
-.container-content.police .box ul {
+.container-content.police .contact ul {
   margin-bottom: 0;
 }
 /* line 61, _desktop.scss */
-.container-content.police .box .well {
-  box-shadow: none;
-  border: 0 none;
+.container-content.police .contact .well {
+  margin-bottom: 10px;
 }
-/* line 67, _desktop.scss */
+/* line 66, _desktop.scss */
+.container-content.police .separator--below, .container-content.police article {
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 30px;
+  margin-bottom: 14px;
+}
+/* line 72, _desktop.scss */
 .container-content.police .span3 {
   width: 47.87234%;
   min-height: 125px;
 }
-/* line 72, _desktop.scss */
+/* line 77, _desktop.scss */
 .container-content.police .span3:nth-child(3) {
   margin-left: 0;
 }
 
-/* line 77, _desktop.scss */
+/* line 82, _desktop.scss */
 .container-header {
   width: auto;
 }
-/* line 79, _desktop.scss */
+/* line 84, _desktop.scss */
 .container-header .navbar {
   background: none;
 }
-/* line 82, _desktop.scss */
+/* line 87, _desktop.scss */
 .container-header .navbar .navbar-inner {
   padding: 0;
   -webkit-border-radius: 4px;
@@ -4160,33 +4165,33 @@ body {
   border: 1px solid #003166;
   /* Customize the navbar links to be fill the entire space of the .navbar */
 }
-/* line 88, _desktop.scss */
+/* line 93, _desktop.scss */
 .container-header .navbar .navbar-inner .nav {
   margin: 0;
   display: table;
   border: 0 none;
 }
-/* line 93, _desktop.scss */
+/* line 98, _desktop.scss */
 .container-header .navbar .navbar-inner .nav li {
   display: table-cell;
   width: 1%;
   float: none;
 }
-/* line 98, _desktop.scss */
+/* line 103, _desktop.scss */
 .container-header .navbar .navbar-inner .nav li a {
   text-align: center;
   padding: 5px 15px 5px;
   border: 0 none;
   font-weight: normal;
 }
-/* line 104, _desktop.scss */
+/* line 109, _desktop.scss */
 .container-header .navbar .navbar-inner .nav li:first-child a {
   border-left: 0;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
 }
-/* line 108, _desktop.scss */
+/* line 113, _desktop.scss */
 .container-header .navbar .navbar-inner .nav li:last-child a {
   border-right: 0;
   -webkit-border-radius: 0 4px 4px 0;
@@ -4194,18 +4199,18 @@ body {
   border-radius: 0 4px 4px 0;
 }
 
-/* line 117, _desktop.scss */
+/* line 122, _desktop.scss */
 .container-content .sidebar {
   margin-top: 20px;
 }
-/* line 120, _desktop.scss */
+/* line 125, _desktop.scss */
 .container-content .sidebar .sidebar__element {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-/* line 128, _desktop.scss */
+/* line 133, _desktop.scss */
 .container-footer {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -4216,28 +4221,28 @@ body {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 138, _desktop.scss */
+/* line 143, _desktop.scss */
 .container-copyright {
   text-align: left;
   border-top: 0 none;
 }
-/* line 141, _desktop.scss */
+/* line 146, _desktop.scss */
 .container-copyright .copyright {
   text-align: right;
 }
 
-/* line 148, _desktop.scss */
+/* line 153, _desktop.scss */
 body {
   background-color: #eeeeee;
 }
 
-/* line 152, _desktop.scss */
+/* line 157, _desktop.scss */
 .container-fluid {
   width: 940px;
   margin: 0 auto;
 }
 
-/* line 157, _desktop.scss */
+/* line 162, _desktop.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -4247,24 +4252,25 @@ body {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 165, _desktop.scss */
+/* line 170, _desktop.scss */
 .container-header .span3 {
   float: left;
   width: 22.34043%;
   text-align: left;
 }
-/* line 171, _desktop.scss */
+/* line 176, _desktop.scss */
 .container-header .span9 {
   float: left;
   width: 73.40426%;
-  margin: 0 0 0 3.19149%;
+  margin-left: 3.19149%;
+  margin-top: 0;
 }
 
-/* line 179, _desktop.scss */
+/* line 185, _desktop.scss */
 .container-content.police .span3 {
   width: 22.34043%;
 }
-/* line 182, _desktop.scss */
+/* line 188, _desktop.scss */
 .container-content.police .span3:nth-child(3) {
   margin-left: 3.19149%;
 }
