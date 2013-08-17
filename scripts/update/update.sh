@@ -76,7 +76,7 @@ done
 for file in "${files[@]}"
 do
   printf "%s\n" "$file"
-  mkdir -p "dirname $temp/$file" && cp -r "$repo/$file/" "$temp/$file"
+  mkdir -p "dirname $temp/$file" && cp "$repo/$file/" "$temp/$file"
 done
 
 if [ -f "$repo/config/config.php" ]
