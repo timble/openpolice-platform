@@ -35,6 +35,13 @@ dirs=(
   "component/trafficinfo"
   "component/questions"
   "install/custom"
+  "vendor/imagine"
+  "vendor/swiftmailer"
+)
+
+files=(
+  "vendor/.gitignore"
+  "config/config.php"
 )
 
 ## Function definitions
@@ -66,14 +73,14 @@ mkdir "$temp"
 for dir in "${dirs[@]}"
 do
   printf "%s\n" "$dir"
-  mkdir -p "$temp/$dir" && cp -r "$repo/$dir/" "$temp/$dir"
+  mkdir -p "$temp/directories/$dir" && cp -r "$repo/$dir/" "$temp/directories/$dir"
 done
 
-if [ -f "$repo/config/config.php" ]
-then
-  printf "%s\n" "config.php"
-  cp "$repo/config/config.php" $temp
-fi
+for file in "${files[@]}"
+do
+  printf "%s\n" "$file"
+  mkdir -p "$(dirname $temp/files/$file)" && cp -r "$repo/$file" "$(dirname $temp/files/$file)"
+done
 
 # Update Nooku Framework
 printf "$(tput bold)%s$(tput sgr0)\n" "Updating Nooku Framework..."
@@ -98,13 +105,13 @@ printf "$(tput bold)%s$(tput sgr0)\n" "Moving custom files back into repository.
 
 for dir in "${dirs[@]}"
 do
-  mkdir -p "$repo/$dir" && cp -r "$temp/$dir/" "$repo/$dir"
+  mkdir -p "$repo/$dir" && cp -r "$temp/directories/$dir/" "$repo/$dir"
 done
 
-if [ -f "$temp/config.php" ]
-then
-  cp "$temp/config.php" "$repo/config/config.php"
-fi
+for file in "${files[@]}"
+do
+  cp -r "$temp/files/$file" "$(dirname $repo/$file)"
+done
 
 rm -rf "$temp"
 

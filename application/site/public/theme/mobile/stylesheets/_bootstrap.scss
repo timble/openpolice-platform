@@ -12,7 +12,7 @@
 
 // Grid system and page structure
 @import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/scaffolding";
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/grid";
+//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/grid";
 @import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/layouts";
 
 // Base CSS
@@ -24,7 +24,7 @@
 // Components: common
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/sprites";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/dropdowns";
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/wells";
+//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/wells";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/component-animations";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/close";
 
@@ -34,7 +34,7 @@
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
 
 // Components: Nav
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/navs";
+//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/navs";
 @import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/navbar";
 @import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/breadcrumbs";
 @import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/pagination";

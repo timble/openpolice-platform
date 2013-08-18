@@ -11,7 +11,7 @@
 <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
 
 <div class="row-fluid separator--below">
-    <div class="span8 hidden-phone">
+    <div class="span8 sticky">
         <? foreach (@object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <article>
                 <div class="page-header">
@@ -36,10 +36,10 @@
         <? endforeach; ?>
     </div>
     <div class="span4">
-        <div class="box">
+        <div class="contact">
             <h3>Contacteer ons</h3>
-            <div  class="well" style="padding: 8px 12px; margin-bottom: 12px">
-                <div><span class="text--strong"><a href="tel:101">101</a></span> <span class="text--small">voor dringende politiehulp</span></div>
+            <div  class="well well--small">
+                <div><span class="text--strong"><a href="tel:101">101</a></span> <span class="text--small">dringende politiehulp</span></div>
                 <div><span class="text--strong"><a href="tel:<?= $zone->telephone ?>"><?= $zone->telephone ?></a></span> <span class="text--small">geen spoed</span></div>
             </div>
 

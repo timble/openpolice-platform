@@ -1,37 +1,28 @@
-//
-// Tables
-// --------------------------------------------------
-
-// BASELINE STYLES
-// ---------------
-
+// Responsive table
+// ------------------
+/* Force table to not be like tables anymore */
 .table {
   max-width: 100%;
-  background-color: $tableBackground;
-  border-collapse: collapse;
-  border-spacing: 0;
   width: 100%;
-  margin-bottom: $baseLineHeight;
-  // Cells
-  th,
-  td {
+
+  th, td {
     padding: 8px;
-    line-height: $baseLineHeight;
-    text-align: left;
-    vertical-align: top;
-    border-top: 1px solid $tableBorder;
   }
-  th {
-    font-weight: bold;
+
+  td {
+    /* Behave  like a "row" */
+    clear: left;
+    float: left;
+    border: none;
   }
-  // Bottom align for column headings
-  thead th {
-    vertical-align: bottom;
+
+  td:nth-child(n+2) {
+    display: none;
   }
-  // Remove top border from thead by default
-  thead tr th,
-  thead tr td {
-    border-top: 0;
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    display: none;
   }
 }
 
@@ -42,9 +33,55 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .table-striped {
   tbody {
-    > tr:nth-child(odd) > td,
-    > tr:nth-child(odd) > th {
+    > tr:nth-child(odd) {
       background-color: $tableBackgroundAccent;
+    }
+  }
+}
+
+@include respond-min($navbarCollapseWidth) {
+  //
+  // Tables
+  // --------------------------------------------------
+
+  // BASELINE STYLES
+  // ---------------
+
+  .table {
+    background-color: $tableBackground;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: $baseLineHeight;
+    // Cells
+    th,
+    td {
+      display: table-cell !important;
+      line-height: $baseLineHeight;
+      text-align: left;
+      vertical-align: top;
+    }
+    td {
+      clear: none;
+      float: none;
+    }
+    tbody tr {
+      border-top: 1px solid $tableBorder;
+    }
+    th {
+      font-weight: bold;
+    }
+    // Show thead
+    thead tr {
+      display: table-row;
+    }
+    // Bottom align for column headings
+    thead th {
+      vertical-align: bottom;
+    }
+    // Remove top border from thead by default
+    thead tr th,
+    thead tr td {
+      border-top: 0;
     }
   }
 }

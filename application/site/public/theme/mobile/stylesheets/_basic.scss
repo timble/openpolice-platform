@@ -1,0 +1,174 @@
+body {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: lighten($grayLighter, 3%);
+}
+
+html { font-size:100.01%; }
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+
+h1, h2, h3 {
+  font-weight: normal; line-height: 24px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.text--strong {
+  color: $blue;
+  font-weight: bold;
+}
+.text--small {
+  font-size: 0.9em;
+  @extend .muted;
+}
+
+.page-header {
+  margin-bottom: 0px;
+  border: 0 none;
+}
+
+.separator--below {
+  border-bottom: 1px solid $grayLighter;
+  padding-bottom: $gridGutterWidth;
+  margin-bottom: 14px;
+}
+
+article {
+  @extend .separator--below;
+}
+
+#wrap {
+  background-color: $white;
+}
+
+.container-header .row-fluid .span3,
+.container-header .slogan,
+.container-header .is-hidden,
+.container-breadcrumb,
+.container-banner,
+.container-footer,
+.container-content .sidebar,
+.container-content.police .sticky,
+.container-copyright .copyright {
+  display: none;
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container-header {
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+
+  .navbar {
+    width: 100%;
+    background-color: $navbarBackgroundHighlight;
+    margin-bottom: 0;
+
+    .navbar__logo {
+      position:absolute;
+      top: 0;
+      right:0px;
+      float: right;
+      padding-right: 20px;
+      line-height: 50px;
+      color: $white;
+
+      img {
+        margin-right: 6px;
+      }
+    }
+
+    .navbar__handle {
+      cursor:pointer;
+      position:absolute;
+      top:0;
+      left:0;
+      background: $navbarBackground url(../img/nav.svg) no-repeat center center;
+      background-size:18px;
+      height:50px;
+      width:56px;
+      border-right: 1px solid $blue;
+    }
+
+    .navbar-inner {
+      @include border-radius(0);
+      border-top: 0 none;
+      border-left: 0 none;
+      border-right: 0 none;
+      margin-right: 0;
+      min-height: 0;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 50px;
+
+      .nav {
+        margin: 0;
+        text-align:left;
+        border-top: 1px solid $blue;
+
+        li {
+          width: 100%;
+          *display:inline;
+          zoom:1;
+          position:relative;
+        }
+
+        a {
+          display:block;
+          border-bottom: 1px solid $blue;
+          padding: 13px 20px;
+          font-weight: bold;
+          color: $navbarLinkColor;
+        }
+      }
+    }
+  }
+}
+
+.container-content {
+  padding-top: 10px;
+  margin-bottom: $gridGutterWidth;
+
+  .component {
+    .column--triple { @include column-count(2); }
+    .column--quad { @include column-count(2); }
+  }
+
+  &.police {
+    .contact {
+      margin-left: 0;
+      border: 0 none;
+      padding: 0;
+    }
+    article {
+      border: 0 none !important;
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+.container-copyright {
+  padding: 3px 20px;
+  text-align: center;
+  border-top: 1px solid darken($grayLighter, 7%);
+  font-size: $fontSizeSmall;
+}
