@@ -18,10 +18,10 @@
 <div id="wrap" class="container-fluid">
     <div class="container-header">
         <div class="row-fluid">
-            <div class="span3">
+            <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img itemprop="logo" src="media://application/images/logo-nl.png" />
+                        <img itemprop="logo" src="media://application/images/logo-nl.jpg" />
                         <span><?= @escape($zone->title); ?></span>
                     </a>
                 </div>
@@ -45,7 +45,7 @@
 
     <div class="container-banner banner5388">
         <div class="row-fluid">
-            <div class="span12">
+            <div class="span12 alpha">
                 <img src="media://application/images/banners/<?= $site ?>.jpg" />
             </div>
         </div>
@@ -53,7 +53,7 @@
     <ktml:modules position="breadcrumbs">
     <div class="container-breadcrumb">
         <div class="row-fluid">
-            <div class="span12">
+            <div class="span12 alpha">
                 <ktml:modules:content />
             </div>
         </div>
@@ -63,7 +63,7 @@
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">
             <? if($extension !== 'police') : ?>
-            <div class="span3 sidebar">
+            <div class="span3 alpha sidebar">
                 <ktml:modules position="left">
                     <ktml:modules:content />
                 </ktml:modules>
@@ -72,7 +72,7 @@
                 <? endif ?>
             </div>
             <? endif; ?>
-            <div class="span<?= $extension == 'police' ? '12' : '9' ?> component">
+            <div class="span<?= $extension == 'police' ? '12 alpha' : '9' ?> component">
                 <ktml:content />
             </div>
         </div>
@@ -80,7 +80,7 @@
 
     <div class="container-footer">
         <div class="row-fluid">
-            <div class="span6">
+            <div class="span6 alpha">
                 <h3><?= @text('Laatste nieuws') ?></h3>
                 <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
             </div>
@@ -101,7 +101,7 @@
 <div class="container-fluid">
     <div class="container-copyright">
     <div class="row-fluid">
-        <div class="span6">
+        <div class="span6 alpha">
             <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
         </div>
         <div class="span6 copyright">

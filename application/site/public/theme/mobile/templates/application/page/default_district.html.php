@@ -4,7 +4,7 @@
 <script>
     $jQuery(document).ready(function() {
         function format(item) { return item.title; };
-        $jQuery("#streets2").select2({
+        $jQuery("#streets_footer").select2({
             placeholder: "<?= @text('Search') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
@@ -51,13 +51,13 @@
         <div class="control-group">
             <label class="control-label" for="zone_street_id"><?= @text('Mijn straat') ?>:</label>
             <div class="controls">
-                <input type="hidden" class="bigdrop" id="streets2" name="street" value="<?= @$_COOKIE ['district_street'] ?>" style="width: 90%; display: none;" required>
+                <input type="hidden" class="bigdrop" id="streets_footer" name="street" value="<?= @$_COOKIE ['district_street'] ?>" style="display: none;" required>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="number"><?= @text('Mijn huisnummer') ?>:</label>
             <div class="controls">
-                <input style="width: 84%;" type="number" name="number" value="<?= @$_COOKIE ['district_number'] ?>" required />
+                <input type="number" name="number" value="<?= @$_COOKIE ['district_number'] ?>" required />
             </div>
         </div>
     </fieldset>

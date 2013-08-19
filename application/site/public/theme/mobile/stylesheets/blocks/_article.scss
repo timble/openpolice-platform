@@ -25,12 +25,15 @@ article {
     @extend .clearfix;
   }
 
-  .article__thumbnail {
-    margin: 0 0 20px 20px;
+  figure {
     float: right;
     max-width: 40%;
 
-    @extend .thumbnail;
+    img {
+      margin: 0 0 20px 20px;
+
+      @extend .thumbnail;
+    }
   }
 
   &:last-of-type {

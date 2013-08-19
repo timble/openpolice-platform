@@ -14,6 +14,10 @@ h1, h2, h3 {
   font-weight: normal; line-height: 24px;
 }
 
+figure {
+  margin: 0;
+}
+
 .nowrap {
   white-space: nowrap;
 }
@@ -40,6 +44,11 @@ h1, h2, h3 {
   border-bottom: 1px solid $grayLighter;
   padding-bottom: $gridGutterWidth;
   margin-bottom: 14px;
+}
+
+// Select2
+.bigdrop {
+  width: 100%;
 }
 
 article {
@@ -147,11 +156,6 @@ article {
 .container-content {
   padding-top: 10px;
   margin-bottom: $gridGutterWidth;
-
-  .component {
-    .column--triple { @include column-count(2); }
-    .column--quad { @include column-count(2); }
-  }
 
   &.police {
     .contact {
