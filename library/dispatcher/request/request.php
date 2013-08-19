@@ -141,7 +141,7 @@ class DispatcherRequest extends ControllerRequest implements DispatcherRequestIn
             if(isset($_SERVER['PATH_TRANSLATED'])) {
                 $_SERVER['DOCUMENT_ROOT'] = str_replace( '\\', '/', substr(str_replace('\\\\', '\\', $_SERVER['PATH_TRANSLATED']), 0, 0 - strlen($_SERVER['PHP_SELF'])));
             }
-         }
+        }
 
         //Set the authorization
         if (!isset($_SERVER['PHP_AUTH_USER']))
@@ -254,7 +254,7 @@ class DispatcherRequest extends ControllerRequest implements DispatcherRequestIn
             'data'    => $_POST,
             'cookies' => $_COOKIE,
             'files'   => $_FILES,
-            'proxies' => array('127.0.0.1')
+            'proxies' => array()
         ));
 
         parent::_initialize($config);
@@ -892,7 +892,7 @@ class DispatcherRequest extends ControllerRequest implements DispatcherRequestIn
         if ($this->isProxied() && $this->_headers->has('X-Forwarded-Proto')) {
             $scheme  = $this->_headers->get('X-Forwarded-Proto');
         } else {
-           $scheme  = isset($_SERVER['HTTPS']) ? strtolower($_SERVER['HTTPS']) : 'http';
+            $scheme  = isset($_SERVER['HTTPS']) ? strtolower($_SERVER['HTTPS']) : 'http';
         }
 
         return in_array(strtolower($scheme), array('https', 'on', '1'));
