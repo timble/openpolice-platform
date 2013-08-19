@@ -23,7 +23,9 @@
 
         <? if($category->thumbnail) : ?>
             <a href="/<?= $site ?>/contact/je-wijkinspecteur">
-                <img class="article__thumbnail" src="" />
+                <figure>
+                    <img src="" />
+                </figure>
             </a>
         <? endif ?>
 
@@ -45,7 +47,9 @@
 
         <? if($category->thumbnail) : ?>
             <a href="<?= @helper('route.category', array('row' => $category)) ?>">
-                <img class="article__thumbnail" src="<?= $category->thumbnail ?>" />
+                <figure>
+                    <img src="<?= $category->thumbnail ?>" />
+                </figure>
             </a>
         <? endif ?>
 
