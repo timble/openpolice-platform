@@ -63,14 +63,14 @@
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">
             <? if($extension !== 'police') : ?>
-            <div class="span3 alpha sidebar">
+            <aside class="span3 alpha sidebar">
                 <ktml:modules position="left">
                     <ktml:modules:content />
                 </ktml:modules>
                 <? if(!@helper('module.count', array('condition' => 'left'))) : ?>
                 <?= @template('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
                 <? endif ?>
-            </div>
+            </aside>
             <? endif; ?>
             <div class="span<?= $extension == 'police' ? '12 alpha' : '9' ?> component">
                 <ktml:content />
