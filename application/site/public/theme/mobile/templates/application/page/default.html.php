@@ -85,7 +85,7 @@
                 <?= @template('com:news.view.articles.list.html', array('articles' =>  @object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
             </div>
             <div class="span3">
-                <h3 style="padding-left: 12px" ><?= @text('Meer weten') ?></h3>
+                <h3><?= @text('Meer weten') ?></h3>
                 <ktml:modules position="footermenu">
                     <ktml:modules:content />
                 </ktml:modules>
