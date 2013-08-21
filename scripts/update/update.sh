@@ -60,6 +60,13 @@ then
   die 1 "Git 1.7 or newer is required."
 fi
 
+# Make sure we are in a feature branch
+BRANCH=$(git symbolic-ref --short -q HEAD)
+if [[ $BRANCH != feature/* ]]
+then
+  die 1 "You can only update the framework on a feature branch."
+fi
+
 # Test if Git repository is empty
 if test -n "$(git status --porcelain)"
 then
