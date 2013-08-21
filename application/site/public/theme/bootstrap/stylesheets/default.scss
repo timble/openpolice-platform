@@ -27,6 +27,12 @@ h1 { font-size: 21px; }
 h2 { font-size: 19px; }
 h3 { font-size: 16px; }
 
+article {
+  header {
+    @extend .page-header;
+  }
+}
+
 .page-header {
 	h1 {
 		line-height: 21px;
@@ -91,4 +97,8 @@ body.login {
     &.level3 { margin-left: (18px * 2); margin-right: 6px; }
     &.level4 { margin-left: (18px * 3); margin-right: 6px; }
     &.level5 { margin-left: (18px * 4); margin-right: 6px; }
+}
+
+.pagination {
+  text-align: center;
 }

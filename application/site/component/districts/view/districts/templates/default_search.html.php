@@ -64,7 +64,7 @@
                 <div class="control-group">
                     <label class="control-label" for="zone_street_id"><?= @text('My street') ?>:</label>
                     <div class="controls">
-                        <input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" style="width: 100%; display: none;" tabindex="1" required>
+                        <input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" style="display: none;" tabindex="1" required>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 <div class="control-group">
                     <label class="control-label" for="number"><?= @text('My number') ?>:</label>
                     <div class="controls">
-                        <input style="max-width: 90%;" type="number" name="number" value="<?= $state->number; ?>" tabindex="2" required />
+                        <input type="number" name="number" value="<?= $state->number; ?>" tabindex="2" required />
                     </div>
                 </div>
             </div>

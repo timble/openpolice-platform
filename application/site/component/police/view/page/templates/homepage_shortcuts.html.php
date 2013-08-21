@@ -1,6 +1,6 @@
 <? $site = @object('application')->getCfg('site') ?>
 
-<div<?= $class ? ' class="'.$class.'"' : '' ?>>
+<div<?= $class ? ' class="'.$class.' alpha"' : '' ?>>
     <h3><i class="icon-file-alt1"></i> Vergunningen</h3>
     <p>Een parkeerplaats nodig voor de verhuiswagen? Of om een container te plaatsen?</p>
     <a href="<?= $site ?>/vragen/vergunningen">Vergunning aanvragen &rarr;</a>

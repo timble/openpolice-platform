@@ -11,15 +11,15 @@
 <? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
 
 <div class="row-fluid separator--below">
-    <div class="span8 sticky">
+    <div class="span8 sticky alpha">
         <? foreach (@object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <article>
-                <div class="page-header">
+                <header>
                     <h1><a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a></h1>
                     <span class="timestamp">
                         <?= @helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'))) ?>
                     </span>
-                </div>
+                </header>
 
                 <div class="clearfix">
                     <a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
