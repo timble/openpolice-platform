@@ -28,16 +28,17 @@
             </div>
             <div class="span9">
                 <span class="slogan">Bel <a class="text--strong" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" href="tel:<?= @escape($zone->telephone); ?>"><?= @escape($zone->telephone); ?></a></span>
-                <div class="navbar navbar-responsive">
-                    <div class="navbar-inner">
-                        <ktml:modules position="navigation">
-                            <ktml:modules:content />
-                        </ktml:modules>
+                <div class="navbar">
+                    <div class="navbar__handlebar">
+                        <div class="navbar__handle">&equiv;</div>
+                        <a class="navbar__logo" href="/<?= $site ?>">
+                            <img src="media://application/images/logo-flame.png" />
+                            <?= @escape($zone->title); ?>
+                        </a>
                     </div>
-                    <a class="navbar__logo" href="/<?= $site ?>">
-                        <img src="media://application/images/logo-flame.png" />
-                        <?= @escape($zone->title); ?>
-                    </a>
+                    <ktml:modules position="navigation">
+                        <ktml:modules:content />
+                    </ktml:modules>
                 </div>
             </div>
         </div>
