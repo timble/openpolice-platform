@@ -28,6 +28,10 @@
     <style src="media://application/stylesheets/default.css" />
     <style src="media://application/stylesheets/ie.css" condition="if lte IE 8" />
 
+    <!--[if lte IE 8]>
+    <script src="media://application/js/html5shiv.js" />
+    <![endif]-->
+
     <script src="media://districts/jquery/jquery.js" />
     <script type="text/javascript">
     var $jQuery = jQuery.noConflict();
