@@ -8,10 +8,21 @@
  * using public key authentication.
  */
 
-require_once '../../config/config.php';
+// Get the authentication credentials
+$authfile = '/var/www/v2.lokalepolitie.be/private/db.auth';
+if(!file_exists($authfile)) {
+    exit('Could not find MySQL credentials ('.$authfile.')');
+}
 
-$config = new JConfig();
+$config = new stdClass;
 
+$contents   = trim(file_get_contents($authfile));
+$values     = explode(':', $contents);
+
+$config->user = $values[0];
+$config->password = implode('', array_slice($values, 1));
+
+// Start syncing
 $tmp = '/tmp/'.uniqid();
 
 // Start with the mysql dumps: get the most recent one from
