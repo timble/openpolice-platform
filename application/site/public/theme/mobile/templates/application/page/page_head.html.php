@@ -36,6 +36,6 @@
         $jQuery.stayInWebApp();
     });
     </script>
-    <script src="media://application/js/flaunt.js" />
+    <script src="media://application/js/navbar.js" />
     <script src="media://application/js/webapp.js" />
 </head>
