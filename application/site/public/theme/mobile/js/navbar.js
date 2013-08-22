@@ -12,7 +12,7 @@
 		
 		// Click to show the navigation
 		$('.navbar__handle').click(function(){
-            $('.navbar .navbar-inner > .nav').toggleClass('is-hidden');
+            $('.navbar .navbar-inner .nav').toggleClass('is-hidden');
 		});
 	});
 })(jQuery);
