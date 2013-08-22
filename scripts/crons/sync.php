@@ -55,6 +55,13 @@ foreach(glob("v2_*.sql") as $file)
 echo "-- Syncing shared folders".PHP_EOL;
 exec('rsync --rsh "ssh -p 9999" deploy@172.18.150.10:/var/www/v2.lokalepolitie.be/capistrano/shared/ /var/www/v2.lokalepolitie.be/capistrano/shared/ --update --perms --owner --group --recursive --times --links');
 
+// Make sure to copy over the variable nginx configuration files
+echo "-- Updating Nginx configuration".PHP_EOL;
+$files = array('v2.inc', 'v2.stage.inc', 'redirect.inc');
+foreach($files as $file) {
+    exec('scp -P 9999 deploy@172.18.150.10:/etc/nginx/conf.d/' . $file . ' /etc/nginx/conf.d/' . $file);
+}
+
 // Get rid of our temporary directories and files
 chdir('/tmp/');
 exec('rm -rf ' . $tmp);
