@@ -43,6 +43,8 @@ files=(
   "vendor/.gitignore"
   "config/config.php"
   "application/site/component/application/resources/language/nl-NL.ini"
+  "application/site/component/contacts/resources/language/nl-NL.ini"
+  "application/site/component/files/resources/language/nl-NL.ini"
 )
 
 ## Function definitions
