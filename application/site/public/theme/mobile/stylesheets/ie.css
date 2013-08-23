@@ -1517,17 +1517,17 @@ figure {
   margin-bottom: 14px;
 }
 
-/* line 50, _basic.scss */
+/* line 51, _basic.scss */
 .bigdrop {
   width: 100%;
 }
 
-/* line 58, _basic.scss */
+/* line 59, _basic.scss */
 #wrap {
   background-color: white;
 }
 
-/* line 70, _basic.scss */
+/* line 71, _basic.scss */
 .container-header .row-fluid .span3,
 .container-header .slogan,
 .container-header .is-hidden,
@@ -1540,19 +1540,19 @@ figure {
   display: none;
 }
 
-/* line 74, _basic.scss */
+/* line 75, _basic.scss */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 79, _basic.scss */
+/* line 80, _basic.scss */
 .container-content {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 84, _basic.scss */
+/* line 85, _basic.scss */
 .container-header {
   margin-bottom: 0;
   padding-left: 0;
@@ -1560,24 +1560,24 @@ figure {
   width: 100%;
 }
 
-/* line 91, _basic.scss */
+/* line 92, _basic.scss */
 .container-content {
   padding-top: 10px;
   margin-bottom: 30px;
 }
-/* line 96, _basic.scss */
+/* line 97, _basic.scss */
 .container-content.police .contact {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 101, _basic.scss */
+/* line 102, _basic.scss */
 .container-content.police article {
   border: 0 none !important;
   padding-bottom: 0 !important;
 }
 
-/* line 108, _basic.scss */
+/* line 109, _basic.scss */
 .container-copyright {
   padding: 3px 20px;
   text-align: center;
