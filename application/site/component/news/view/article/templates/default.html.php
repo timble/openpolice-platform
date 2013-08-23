@@ -15,17 +15,17 @@
     <header>
         <h1 class="entry-title"><?= $article->title ?></h1>
         <span class="timestamp">
-            <?= @helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
+            <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </span>
         <span style="float:right" class='st_sharethis' displayText='ShareThis'></span>
     </header>
 
-    <?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+    <?= helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
 
     <div class="entry-summary"><?= $article->introtext ?></div>
     <div class="entry-content"><?= $article->fulltext ?></div>
 
     <div class="entry-content-asset">
-        <?= @template('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
+        <?= include('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
 </article>

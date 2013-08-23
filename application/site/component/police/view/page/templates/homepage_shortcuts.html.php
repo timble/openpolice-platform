@@ -1,4 +1,4 @@
-<? $site = @object('application')->getCfg('site') ?>
+<? $site = object('application')->getCfg('site') ?>
 
 <div<?= $class ? ' class="'.$class.' alpha"' : '' ?>>
     <h3><i class="icon-file-alt1"></i> Vergunningen</h3>

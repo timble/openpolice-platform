@@ -10,7 +10,7 @@
 namespace Nooku\Component\News;
 use Nooku\Library;
 
-class ControllerToolbarArticle extends Library\ControllerToolbarModel
+class ControllerToolbarArticle extends Library\ControllerToolbarActionbar
 {
     public function onAfterControllerBrowse(Library\Event $event)
     {

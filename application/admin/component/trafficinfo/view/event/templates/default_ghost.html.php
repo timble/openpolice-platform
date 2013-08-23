@@ -9,34 +9,34 @@
 ?>
 
 <fieldset>
-	<legend><?= @text( 'Location' ); ?></legend>
+	<legend><?= translate( 'Location' ); ?></legend>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Road' ); ?>*
+	    	<?= translate( 'Road' ); ?>*
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_road', 'selected' => $event->trafficinfo_item_id_road, 'validate' => true, 'url' => $url.'roads')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_road', 'selected' => $event->trafficinfo_item_id_road, 'validate' => true, 'url' => $url.'roads')) ?>
 	    </div>
 	</div>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Direction' ); ?>
+	    	<?= translate( 'Direction' ); ?>
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_place_direction', 'selected' => $event->trafficinfo_item_id_place_direction, 'validate' => false, 'url' => $url.'places')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_place_direction', 'selected' => $event->trafficinfo_item_id_place_direction, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Place' ); ?>
+	    	<?= translate( 'Place' ); ?>
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_place', 'selected' => $event->trafficinfo_item_id_place, 'validate' => false, 'url' => $url.'places')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_place', 'selected' => $event->trafficinfo_item_id_place, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Kilometer post' ); ?>
+	    	<?= translate( 'Kilometer post' ); ?>
 	    </label>
 	    <div>
 	        <input type="text" name="information[kilometre_post]" size="5" maxlength="5" value="<?= $event->kilometre_post; ?>" />
@@ -44,13 +44,13 @@
 	</div>
 </fieldset>
 <fieldset>
-	<legend><?= @text( 'Details' ); ?>:</legend>
+	<legend><?= translate( 'Details' ); ?>:</legend>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Source' ); ?>
+	    	<?= translate( 'Source' ); ?>
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'filter' => array('group' => 'source'))) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'filter' => array('group' => 'source'))) ?>
 	    </div>
 	</div>
 </fieldset>

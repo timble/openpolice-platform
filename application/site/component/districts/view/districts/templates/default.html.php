@@ -9,19 +9,19 @@
 ?>
 
 <div class="page-header">
-    <h1><?= @escape($params->get('page_title')); ?></h1>
+    <h1><?= escape($params->get('page_title')); ?></h1>
 </div>
 
-<?= @template('default_search.html'); ?>
+<?= include('default_search.html'); ?>
 
 <? if ($state->street && $state->number) : ?>
 
     <? foreach ($districts as $district) : ?>
-        <?= @template('com:districts.view.district.default.html', array('district' => $district)); ?>
+        <?= include('com:districts.view.district.default.html', array('district' => $district)); ?>
     <? endforeach; ?>
     <? if(!count($districts)) : ?>
-        <h2><?= @text('No neighbourhood officer found') ?></h2>
-        <h3><?= @text('Try again or get in touch with one of our locations') ?></h3>
-        <?= @template('com:districts.view.locations.default.html', array('locations' => @object('com:zone.model.locations')->getRowset())); ?>
+        <h2><?= translate('No neighbourhood officer found') ?></h2>
+        <h3><?= translate('Try again or get in touch with one of our locations') ?></h3>
+        <?= include('com:districts.view.locations.default.html', array('locations' => object('com:zone.model.locations')->getRowset())); ?>
     <? endif ?>
 <? endif ?>

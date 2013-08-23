@@ -9,9 +9,9 @@
 ?>
 
 <div class="well">
-    <form action="<?=@route('option=com_questions&view=questions&Itemid=67')?>" method="get" class="form-search" style="margin-bottom: 0;">
+    <form action="<?=route('option=com_questions&view=questions&Itemid=67')?>" method="get" class="form-search" style="margin-bottom: 0;">
         <input id="searchword" name="searchword" class="" style="width: 80%" type="text"
-               value="<?=@escape($state->searchword)?>" placeholder="<?=@text('Search')?> ..."/>
-        <button type="submit" class="btn btn-primary"><?= @text('Search') ?></button>
+               value="<?=escape($state->searchword)?>" placeholder="<?=translate('Search')?> ..."/>
+        <button type="submit" class="btn btn-primary"><?= translate('Search') ?></button>
     </form>
 </div>

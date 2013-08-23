@@ -9,29 +9,29 @@
 ?>
 
 <fieldset>
-	<legend><?= @text('Density').' '.$name ?></legend>
+	<legend><?= translate('Density').' '.$name ?></legend>
 	<div>
 	    <label for="densities['.$number.'][traffic]">
-	    	<?= @text( 'Traffic type' ); ?>
+	    	<?= translate( 'Traffic type' ); ?>
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][traffic]', 'selected' => $density->type, 'validate' => false, 'url' => $url.'traffic')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][traffic]', 'selected' => $density->type, 'validate' => false, 'url' => $url.'traffic')) ?>
 	    </div>
 	</div>
 	<div>
 	    <label for="densities['.$number.'][start]">
-	    	<?= @text( 'Start' ); ?>
+	    	<?= translate( 'Start' ); ?>
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][start]', 'selected' => $density->start, 'validate' => false, 'url' => $url.'places')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][start]', 'selected' => $density->start, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>
 	<div>
 	    <label for="densities['.$number.'][end]">
-	    	<?= @text( 'End' ); ?>
+	    	<?= translate( 'End' ); ?>
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][end]', 'selected' => $density->end, 'validate' => false, 'url' => $url.'places')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'densities['.$number.'][end]', 'selected' => $density->end, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>
 </fieldset>

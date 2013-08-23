@@ -8,10 +8,10 @@
  */
 ?>
 
-<?= @helper('behavior.validator'); ?>
+<?= helper('behavior.validator'); ?>
 
-<ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+<ktml:module position="actionbar">
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <!--
@@ -21,24 +21,24 @@
 <form action="" method="post" class="-koowa-form">
 	<div class="form-body">
 		<div class="title">
-		    <input class="required" type="text" name="title" maxlength="255" value="<?= $item->title ?>" placeholder="<?= @text('Title') ?>" />
+		    <input class="required" type="text" name="title" maxlength="255" value="<?= $item->title ?>" placeholder="<?= translate('Title') ?>" />
 		</div>
 		
 		<div class="form-content">
 			<fieldset>
-				<legend><?= @text( 'Information' ); ?>:</legend>
+				<legend><?= translate( 'Information' ); ?>:</legend>
 				
 				<div>
-					<label for="title_fr" class="control-label"><?= @text( 'Title FR' ); ?>:</label>
+					<label for="title_fr" class="control-label"><?= translate( 'Title FR' ); ?>:</label>
 					<div>
 						<input type="text" name="title_fr" size="32" maxlength="250" value="<?= $item->title_fr; ?>" />
 					</div>
 				</div>
 				
 				<div>
-					<label for="type" class="control-label"><?= @text( 'Type' ); ?>:</label>
+					<label for="type" class="control-label"><?= translate( 'Type' ); ?>:</label>
 					<div>
-						<?= @helper('listbox.groups', array('selected'  => $item->group)) ?>	
+						<?= helper('listbox.groups', array('selected'  => $item->group)) ?>
 					</div>
 				</div>				
 			</fieldset>

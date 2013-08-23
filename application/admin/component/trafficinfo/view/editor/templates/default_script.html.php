@@ -9,7 +9,7 @@
 ?>
 
 <? /* Image and article buttons needs this in order to work */ ?>
-<?= @helper('behavior.modal') ?>
+<?= helper('behavior.modal') ?>
 
 <style src="media://com_wysiwyg/css/default.css" />
 

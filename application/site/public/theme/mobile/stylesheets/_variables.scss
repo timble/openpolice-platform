@@ -20,15 +20,15 @@ $navbarCollapseWidth:             767px;
 $navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
 
 $navbarHeight:                    32px;
-$navbarBackgroundHighlight:       lighten($blue, 8%);
-$navbarBackground:                lighten($blue, 4%);
+$navbarBackgroundHighlight:       lighten($blue, 12%);
+$navbarBackground:                lighten($blue, 8%);
 $navbarBorder:                    darken($navbarBackground, 16%);
 
 $navbarText:                      $white;
 $navbarLinkColor:                 $white;
 $navbarLinkColorHover:            $white;
 $navbarLinkColorActive:           $white;
-$navbarLinkBackgroundHover:       lighten($blue, 10%);
+$navbarLinkBackgroundHover:       lighten($blue, 12%);
 $navbarLinkBackgroundActive:      darken($navbarBackground, 8%);
 
 $navbarBrandColor:                $navbarLinkColor;
