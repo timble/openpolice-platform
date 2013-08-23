@@ -18,10 +18,8 @@ class PoliceTemplateHelperListbox extends Library\TemplateHelperListbox
 			'model' 		=> 'municipalities',
 			'name' 			=> 'police_municipality_id',
 			'value'			=> 'id',
-            'text'          => 'title'
+            'label'         => 'title'
 		));
-        
-        $config->text = "title";
         
 		return parent::_render($config);
 	}
@@ -33,7 +31,7 @@ class PoliceTemplateHelperListbox extends Library\TemplateHelperListbox
 			'model' 		=> 'cities',
 			'name' 			=> 'police_municipality_id',
 			'value'			=> 'id',
-            'text'          => 'title'
+            'label'          => 'title'
 		));
         
 		return parent::_render($config);
@@ -46,7 +44,7 @@ class PoliceTemplateHelperListbox extends Library\TemplateHelperListbox
 			'model' 	=> 'zones',
 			'name' 		=> 'police_zone_id',
 			'value'		=> 'id',
-			'text'		=> 'title'
+            'label'     => 'title'
 		));
 	
 		return parent::_render($config);

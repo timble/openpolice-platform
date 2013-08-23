@@ -17,13 +17,10 @@ class StreetsTemplateHelperListbox extends Library\TemplateHelperListbox
 		$config->append(array(
 			'model'     => 'streets',
             'value'		=> 'id',
-            'text'		=> 'title',
+            'label'		=> 'title',
 			'name'		=> 'streets[]',
             'prompt'    => false
 		));
-		
-		$config->text = 'title';
-        $config->sort = 'title';
 		
 		return parent::_render($config);
 	}
