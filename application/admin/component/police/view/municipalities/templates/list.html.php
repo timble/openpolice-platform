@@ -9,12 +9,12 @@
 ?>
 
 <ul class="navigation">
-	<a class="<?= $state->municipality == null ? 'active' : ''; ?>" href="<?= @route('municipality=' ) ?>">
+	<a class="<?= $state->municipality == null ? 'active' : ''; ?>" href="<?= route('municipality=' ) ?>">
 		<?= 'All municipality' ?>
 	</a>
 	<? foreach ($municipalities as $municipality) : ?>
-	<a class="<?= $state->municipality == $municipality->id ? 'active' : ''; ?>" href="<?= @route('municipality='.$municipality->id ) ?>">
-		<?= @escape($municipality->title) ?>
+	<a class="<?= $state->municipality == $municipality->id ? 'active' : ''; ?>" href="<?= route('municipality='.$municipality->id ) ?>">
+		<?= escape($municipality->title) ?>
 	</a>
 	<? endforeach ?>
 </ul>

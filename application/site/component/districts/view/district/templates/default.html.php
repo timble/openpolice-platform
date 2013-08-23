@@ -8,21 +8,21 @@
  */
 ?>
 
-<? $officers = @object('com:districts.model.districts_officers')->district($district->id)->getRowset(); ?>
+<? $officers = object('com:districts.model.districts_officers')->district($district->id)->getRowset(); ?>
 
 <? if(count($officers)) : ?>
 <div class="clearfix article separator">
 	<? foreach ($officers as $officer) : ?>
-		<?= @template('com:districts.view.district.default_officer.html', array('officer' => @object('com:districts.model.officer')->id($officer->districts_officer_id)->getRow())); ?>
+		<?= include('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
 	<? endforeach ?>
 </div>
 <? else : ?>
-<h2><?= @text('No neighbourhood officer found') ?></h2>
+<h2><?= translate('No neighbourhood officer found') ?></h2>
 <? endif ?>
 <div class="clearfix">
 	<?
-        $contact = @object('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow();
+        $contact = object('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow();
         $contact->misc = null;
     ?>
-    <?= @template('com:contacts.view.contact.hcard.html', array('contact' => $contact)); ?>
+    <?= include('com:contacts.view.contact.hcard.html', array('contact' => $contact)); ?>
 </div>

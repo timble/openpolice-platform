@@ -13,34 +13,34 @@
 <style src="media://css/koowa.css" />
 -->
 
-<ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+<ktml:module position="actionbar">
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <ktml:module position="sidebar">
-    <?= @template('default_sidebar.html'); ?>
+    <?= include('default_sidebar.html'); ?>
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
-	<?= @template('default_scopebar.html'); ?>
+	<?= include('default_scopebar.html'); ?>
 	<table>
 	<thead>
 		<tr>
 			<th width="10">
-				<?= @helper( 'grid.checkall'); ?>
+				<?= helper( 'grid.checkall'); ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'title')) ?>
+				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'municipality')) ?>
+				<?= helper('grid.sort', array('column' => 'municipality')) ?>
 			</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
 			<td colspan="5">
-				<?= @helper('com:application.paginator.pagination', array('total' => $total)) ?>
+				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
 	</tfoot>
@@ -48,13 +48,13 @@
 		<? foreach ($streets as $street) : ?>
 		<tr>
 			<td align="center">
-				<?= @helper('grid.checkbox', array('row' => $street))?>
+				<?= helper('grid.checkbox', array('row' => $street))?>
 			</td>
 			<td>
-				<a href="<?= @route( 'view=street&task=edit&id='. $street->id ); ?>"><?= @escape($street->title); ?></a>
+				<a href="<?= route( 'view=street&task=edit&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
 			</td>
 			<td>
-				<?= @escape($street->municipality); ?>
+				<?= escape($street->municipality); ?>
 			</td>
 		</tr>
 		<? endforeach; ?>

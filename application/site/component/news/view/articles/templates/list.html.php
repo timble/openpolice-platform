@@ -8,7 +8,7 @@
  */
 ?>
 
-<? $site = @object('application')->getCfg('site') ?>
+<? $site = object('application')->getCfg('site') ?>
 
 <ul class="media-list">
     <? foreach ($articles as $article) : ?>
@@ -16,7 +16,7 @@
         <div class="media-body">
             <p class="media-heading" style="margin-bottom: 0"><a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a></p>
             <span class="muted" style="font-size: 0.85em">
-                <?= @helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'))) ?>
+                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'))) ?>
             </span>
         </div>
     </li>

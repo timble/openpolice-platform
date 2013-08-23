@@ -1,0 +1,131 @@
+.navbar {
+  .nav {
+
+
+    a {
+
+    }
+  }
+}
+
+
+//
+// Navbars (Redux)
+// --------------------------------------------------
+
+
+// COMMON STYLES
+// -------------
+// Inner for background effects
+// Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
+.navbar {
+  min-height: $navbarHeight;
+  width: 100%;
+  background-color: $navbarBackground;
+  border-bottom: 1px solid $blue;
+
+  // Prevent floats from breaking the navbar
+  @include clearfix();
+}
+
+.navbar .nav {
+  margin: 0;
+  text-align:left;
+  border-top: 1px solid $blue;
+  width: 100%;
+}
+
+// Links
+.navbar .nav li a {
+  color: $navbarLinkColor;
+  text-decoration: none;
+  text-shadow: 0 1px 0 $navbarBackgroundHighlight;
+  display:block;
+  border-bottom: 1px solid $blue;
+  padding: 13px 20px;
+  font-weight: bold;
+  color: $navbarLinkColor;
+}
+
+// Hover/focus
+.navbar .nav li a:focus,
+.navbar .nav li a:hover {
+  background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
+  color: $navbarLinkColorHover;
+  text-decoration: none;
+}
+
+// Active nav items
+.navbar .nav .active a,
+.navbar .nav .active a:hover,
+.navbar .nav .active a:focus {
+  color: $navbarLinkColorActive;
+  text-decoration: none;
+  background-color: $navbarLinkBackgroundActive;
+  @include box-shadow(inset 0 3px 8px rgba(0,0,0,.125));
+}
+
+.navbar__handlebar {
+  @extend .clearfix;
+
+  .navbar__logo {
+    float: right;
+    padding-right: 20px;
+    line-height: 50px;
+    color: $white;
+
+    img {
+      margin-right: 6px;
+    }
+  }
+
+  .navbar__handle {
+    cursor:pointer;
+    float: left;
+    height:50px;
+    width:56px;
+    line-height: 50px;
+    font-size: 30px;
+    color: $white;
+    text-align: center;
+    border-right: 1px solid $blue;
+  }
+}
+
+@include respond-min($navbarCollapseWidth) {
+  .navbar {
+    border-bottom: 0 none;
+
+    border: 1px solid $navbarBorder;
+    @include border-radius($baseBorderRadius);
+  }
+
+  .navbar {
+    /* Customize the navbar links to be fill the entire space of the .navbar */
+    .nav {
+      margin: 0;
+      display: table;
+      border: 0 none;
+    }
+    .nav li {
+      display: table-cell;
+      width: 1%;
+      float: none;
+    }
+    .nav li a {
+      text-align: center;
+      padding: (($navbarHeight - $baseLineHeight) / 2) 15px (($navbarHeight - $baseLineHeight) / 2);
+      border: 0 none;
+      font-weight: normal;
+    }
+    .nav li:first-child a {
+      border-left: 0;
+      @include border-radius($baseBorderRadius 0 0 $baseBorderRadius);
+    }
+    .nav li:last-child a {
+      border-right: 0;
+      @include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
+    }
+
+  }
+}

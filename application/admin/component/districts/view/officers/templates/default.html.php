@@ -13,30 +13,30 @@
 <style src="media://css/koowa.css" />
 -->
 
-<ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+<ktml:module position="actionbar">
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
-	<?= @template('default_scopebar.html'); ?>
+	<?= include('default_scopebar.html'); ?>
 	<table>
 	<thead>
 		<tr>
 			<th width="10">
-				<?= @helper( 'grid.checkall'); ?>
+				<?= helper( 'grid.checkall'); ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'firstname', 'title' => 'Name')) ?>
+				<?= helper('grid.sort', array('column' => 'firstname', 'title' => 'Name')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'district_count', 'title' => 'Districts')) ?>
+				<?= helper('grid.sort', array('column' => 'district_count', 'title' => 'Districts')) ?>
 			</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
 			<td colspan="4">
-				<?= @helper('com:application.paginator.pagination', array('total' => $total)) ?>
+				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
 	</tfoot>
@@ -44,10 +44,10 @@
 		<? foreach ($officers as $officer) : ?>
 		<tr>
 			<td align="center">
-				<?= @helper('grid.checkbox', array('row' => $officer))?>
+				<?= helper('grid.checkbox', array('row' => $officer))?>
 			</td>
 			<td>
-				<a href="<?= @route( 'view=officer&id='. $officer->id ); ?>"><?= @escape($officer->title); ?></a>
+				<a href="<?= route( 'view=officer&id='. $officer->id ); ?>"><?= escape($officer->title); ?></a>
 			</td>
 			<td class="array-separator">
 				<? foreach($districts_officers->find(array('districts_officer_id' => $officer->id)) as $officer) : ?>
