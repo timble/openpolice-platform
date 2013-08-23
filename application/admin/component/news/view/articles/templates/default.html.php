@@ -30,7 +30,7 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'ordering_date')) ?>
+                <?= helper('grid.sort', array('column' => 'ordering_date', 'title' => 'Created on')) ?>
             </th>
 		</tr>
 	</thead>
