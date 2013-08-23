@@ -15,8 +15,7 @@ set :use_sudo, false
 
 # Deployment settings.
 set :deploy_to, "/var/www/v2.lokalepolitie.be/capistrano"
-set :deploy_via, :copy
-set :copy_via, :scp
+set :deploy_via, :remote_cache
 set :copy_exclude, [".git"]
 set :keep_releases, 3
 
