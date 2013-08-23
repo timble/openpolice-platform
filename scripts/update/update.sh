@@ -42,6 +42,7 @@ dirs=(
 files=(
   "vendor/.gitignore"
   "config/config.php"
+  "application/site/component/resources/language/nl-NL.ini"
 )
 
 ## Function definitions
