@@ -8,11 +8,9 @@
     </div>
 </fieldset>
 
-<fieldset class="categories group">
+<fieldset>
     <legend><?= translate('Category') ?></legend>
-    <div>
-        <?= include('com:articles.view.article.default_categories.html', array('categories' =>  object('com:articles.model.categories')->sort('title')->table('questions')->getRowset(), 'article' => $question)) ?>
-    </div>
+    <?= helper('com:categories.radiolist.categories', array('row' => $question, 'uncategorised' => false)) ?>
 </fieldset>
 
 <? if($question->isAttachable()) : ?>
