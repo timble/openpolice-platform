@@ -61,13 +61,13 @@ article {
 
 .container-header .row-fluid .span3,
 .container-header .slogan,
-.container-header .is-hidden,
 .container-breadcrumb,
 .container-banner,
 .container-footer,
 .container-content .sidebar,
 .container-content.police .sticky,
-.container-copyright .copyright {
+.container-copyright .copyright,
+.is-hidden{
   display: none;
 }
 
