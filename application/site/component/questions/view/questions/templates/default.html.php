@@ -12,25 +12,25 @@
 
 <? if(!$state->category) : ?>
     <div class="page-header">
-        <h1><?php echo @escape($params->get('page_title')); ?></h1>
+        <h1><?php echo escape($params->get('page_title')); ?></h1>
     </div>
 
-    <?= @template('default_search.html') ?>
+    <?= include('default_search.html') ?>
 <? else : ?>
     <div class="page-header">
-        <h1><?php echo @escape($category->title); ?></h1>
+        <h1><?php echo escape($category->title); ?></h1>
     </div>
 <? endif ?>
 
 <? if(!$state->category AND !$state->searchword) : ?>
-<?= @template('com:questions.view.categories.list.html', array('categories' => @object('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset())) ?>
+<?= include('com:questions.view.categories.list.html', array('categories' => object('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset())) ?>
 <? endif ?>
 
 <? if($state->category AND !$state->searchword) : ?>
 <ul class="nav nav-pills nav-stacked">
 <? foreach ($questions as $question) : ?>
     <li>
-        <a href="<?= @helper('route.question', array('row' => $question)) ?>">
+        <a href="<?= helper('route.question', array('row' => $question)) ?>">
             <?= $question->title; ?>
         </a>
     </li>
@@ -43,7 +43,7 @@
 <article>
     <div class="page-header">
         <h1>
-            <a href="<?= @helper('route.question', array('row' => $question)) ?>">
+            <a href="<?= helper('route.question', array('row' => $question)) ?>">
                 <?= @highlight($question->title) ?>
             </a>
         </h1>
@@ -55,7 +55,7 @@
 <? endif ?>
 
 <? if($state->category OR $state->searchword) : ?>
-<?= @helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+<?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 <? endif ?>
 
-<?= @template('default_contact.html') ?>
+<?= include('default_contact.html') ?>

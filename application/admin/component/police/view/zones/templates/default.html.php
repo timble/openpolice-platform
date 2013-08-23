@@ -14,38 +14,38 @@
 -->
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
-	<?= @template('default_scopebar.html'); ?>
+	<?= include('default_scopebar.html'); ?>
 	<table>
 	<thead>
 		<tr>
 			<th width="10">
-				<?= @helper( 'grid.checkall'); ?>
+				<?= helper( 'grid.checkall'); ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'title')) ?>
+				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'zones_zone_id', 'title' => 'Zone ID')) ?>
+				<?= helper('grid.sort', array('column' => 'zones_zone_id', 'title' => 'Zone ID')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'language')) ?>
+				<?= helper('grid.sort', array('column' => 'language')) ?>
 			</th>
             <th>
-				<?= @helper('grid.sort', array('column' => 'chief_name', 'title' => 'Chief name')) ?>
+				<?= helper('grid.sort', array('column' => 'chief_name', 'title' => 'Chief name')) ?>
 			</th>
                         <th>
-				<?= @helper('grid.sort', array('column' => 'chief_email', 'title' => 'Chief email')) ?>
+				<?= helper('grid.sort', array('column' => 'chief_email', 'title' => 'Chief email')) ?>
 			</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
 			<td colspan="6">
-				<?= @helper('com:application.paginator.pagination', array('total' => $total)) ?>
+				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
 	</tfoot>
@@ -53,16 +53,16 @@
 		<? foreach ($zones as $zone) : ?>
 		<tr>
 			<td align="center">
-				<?= @helper('grid.checkbox', array('row' => $zone))?>
+				<?= helper('grid.checkbox', array('row' => $zone))?>
 			</td>
 			<td>
-				<a href="<?= @route( 'view=zone&task=edit&id='. $zone->id ); ?>"><?= @escape($zone->title); ?></a>
+				<a href="<?= route( 'view=zone&task=edit&id='. $zone->id ); ?>"><?= escape($zone->title); ?></a>
 			</td>
 			<td>
 				<?= $zone->id ?>
 			</td>
 			<td>
-				<?= @helper('com:police.grid.language', array('language' => $zone->language)) ?>
+				<?= helper('com:police.grid.language', array('language' => $zone->language)) ?>
 			</td>
             <td>
 				<?= $zone->chief_name ?>

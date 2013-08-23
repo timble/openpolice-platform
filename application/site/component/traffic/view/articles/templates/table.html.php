@@ -9,7 +9,7 @@
 ?>
 
 <div class="page-header">
-    <h1><?php echo @escape($params->get('page_title')); ?></h1>
+    <h1><?php echo escape($params->get('page_title')); ?></h1>
 </div>
 
 <?= $category->description ?>
@@ -18,13 +18,13 @@
     <tbody>
     <? foreach ($articles as $article) : ?>
         <tr>
-            <td style="width: 100%"><a href="<?= @helper('route.article', array('row' => $article)) ?>"><?= $article->title ?></a></td>
+            <td style="width: 100%"><a href="<?= helper('route.article', array('row' => $article)) ?>"><?= $article->title ?></a></td>
             <td nowrap>
-                <?= @helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
+                <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
             </td>
         </tr>
     <? endforeach; ?>
     </tbody>
 </table>
 
-<?= @helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+<?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>

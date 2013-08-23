@@ -8,10 +8,10 @@
  */
 ?>
 
-<?= @helper('behavior.validator'); ?>
+<?= helper('behavior.validator'); ?>
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <script>
@@ -27,7 +27,7 @@ window.addEvent('domready', function() {
 		
 		var req = new Request({
 		    method: 'get',
-		    url: '<?= @route('view=item&format=json') ?>' + '&id=' + this.value,
+		    url: '<?= route('view=item&format=json') ?>' + '&id=' + this.value,
 		    onComplete: function(response) {
 		    	var object = JSON.decode(response);
 
@@ -52,19 +52,19 @@ window.addEvent('domready', function() {
 	<input type="hidden" name="trafficinfo_category_id" value="<?= $event->id ? $event->trafficinfo_category_id : $state->category ?>" />
 	
 	<div class="form-body">		
-		<?// @object('com:trafficinfo.controller.editor')->name('text')->id('text')->text($event->text)->display() ?>
-		<?// @object('com:trafficinfo.controller.editor')->name('text_fr')->id('text_fr')->text($event->text)->display() ?>
+		<?// object('com:trafficinfo.controller.editor')->name('text')->id('text')->text($event->text)->display() ?>
+		<?// object('com:trafficinfo.controller.editor')->name('text_fr')->id('text_fr')->text($event->text)->display() ?>
 	</div> 
 	
 	<div class="sidebar" style="width: 600px;">
         <fieldset class="form-horizontal" style="margin: 20px 20px 20px 0;">
-            <legend><?= @text( 'Text' ); ?></legend>
+            <legend><?= translate( 'Text' ); ?></legend>
             <div>
                 <label for="name">
-                    <?= @text( 'Text' ); ?>
+                    <?= translate( 'Text' ); ?>
                 </label>
                 <div>
-                    <?= @helper('listbox.items', array('autocomplete' => false, 'value' => 'id', 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'filter' => array('group' => 'text'), 'attribs' => array('id' => 'items'))) ?>
+                    <?= helper('listbox.items', array('autocomplete' => false, 'value' => 'id', 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'filter' => array('group' => 'text'), 'attribs' => array('id' => 'items'))) ?>
                 </div>
             </div>
         </fieldset>
@@ -72,19 +72,19 @@ window.addEvent('domready', function() {
         <?
         switch ($event->id ? $event->trafficinfo_category_id : $state->category) {
             case 2:
-                echo @template('form_workers');
+                echo include('form_workers');
                 break;
             case 3:
-                echo @template('form_ghost');
+                echo include('form_ghost');
                 break;
             case 5:
-                echo @template('form_actua');
+                echo include('form_actua');
                 break;
             case 4:
-                echo @template('form_density');
+                echo include('form_density');
                 break;
             default:
-                echo @template('form_default');
+                echo include('form_default');
         }
          ?>
 	 </div>

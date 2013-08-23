@@ -13,18 +13,18 @@
 <style src="media://css/koowa.css" />
 -->
 
-<?= @helper('behavior.sortable') ?>
+<?= helper('behavior.sortable') ?>
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <ktml:module position="sidebar">
-    <?= @template('default_sidebar.html'); ?>
+    <?= include('default_sidebar.html'); ?>
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
-	<?= @template('default_scopebar.html'); ?>
+	<?= include('default_scopebar.html'); ?>
 	<table>
 	<thead>
 		<tr>
@@ -32,18 +32,18 @@
                 <th class="handle"></th>
             <? endif ?>
             <th width="10">
-				<?= @helper( 'grid.checkall'); ?>
+				<?= helper( 'grid.checkall'); ?>
 			</th>
             <th width="1"></th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'title')) ?>
+				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
 			<td colspan="7">
-				<?= @helper('com:application.paginator.pagination', array('total' => $total)) ?>
+				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
 	</tfoot>
@@ -56,13 +56,13 @@
                 </td>
             <? endif ?>
             <td align="center">
-				<?= @helper('grid.checkbox', array('row' => $question))?>
+				<?= helper('grid.checkbox', array('row' => $question))?>
 			</td>
             <td align="center">
-                <?= @helper('grid.enable', array('row' => $question, 'field' => 'published')) ?>
+                <?= helper('grid.enable', array('row' => $question, 'field' => 'published')) ?>
             </td>
             <td class="ellipsis">
-				<a href="<?= @route( 'view=question&task=edit&id='.$question->id ); ?>">
+				<a href="<?= route( 'view=question&task=edit&id='.$question->id ); ?>">
 					<?= $question->title ?>
 				</a>
 			</td>

@@ -9,38 +9,38 @@
 ?>
 
 <fieldset>
-	<legend><?= @text( 'Location' ); ?></legend>
+	<legend><?= translate( 'Location' ); ?></legend>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Road' ); ?>*
+	    	<?= translate( 'Road' ); ?>*
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_road', 'selected' => $event->trafficinfo_item_id_road, 'validate' => true, 'url' => $url.'roads')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_road', 'selected' => $event->trafficinfo_item_id_road, 'validate' => true, 'url' => $url.'roads')) ?>
 	    </div>
 	</div>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Direction' ); ?>
+	    	<?= translate( 'Direction' ); ?>
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_place_direction', 'selected' => $event->trafficinfo_item_id_place_direction, 'validate' => false, 'url' => $url.'places')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_place_direction', 'selected' => $event->trafficinfo_item_id_place_direction, 'validate' => false, 'url' => $url.'places')) ?>
 	    </div>
 	</div>
 </fieldset>
 <fieldset>
-	<legend><?= @text( 'Details' ); ?>:</legend>
+	<legend><?= translate( 'Details' ); ?>:</legend>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Source' ); ?>
+	    	<?= translate( 'Source' ); ?>
 	    </label>
 	    <div>
-	        <?= @helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'url' => $url.'source')) ?>
+	        <?= helper('listbox.items', array('autocomplete' => true, 'name' => 'trafficinfo_item_id_source', 'selected' => $event->trafficinfo_item_id_source, 'validate' => false, 'url' => $url.'source')) ?>
 	    </div>
 	</div>
 </fieldset>
 
 <? $densities = $event->densities ?>
-<?= @template('form_density_repeater', array('name' => '1', 'number' => 'one', 'density' => $densities->one)); ?>
-<?= @template('form_density_repeater', array('name' => '2', 'number' => 'two', 'density' => $densities->two)); ?>
-<?= @template('form_density_repeater', array('name' => '3', 'number' => 'three', 'density' => $densities->three)); ?>
-<?= @template('form_density_repeater', array('name' => '4', 'number' => 'four', 'density' => $densities->four)); ?>
+<?= include('form_density_repeater', array('name' => '1', 'number' => 'one', 'density' => $densities->one)); ?>
+<?= include('form_density_repeater', array('name' => '2', 'number' => 'two', 'density' => $densities->two)); ?>
+<?= include('form_density_repeater', array('name' => '3', 'number' => 'three', 'density' => $densities->three)); ?>
+<?= include('form_density_repeater', array('name' => '4', 'number' => 'four', 'density' => $densities->four)); ?>

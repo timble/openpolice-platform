@@ -9,15 +9,15 @@
 ?>
 
 <div>
-<?= @helper('com:trafficinfo.template.helper.string.location', array('row' => $event)); ?> <? if($event->post) : ?>(<?= @text('Kilometer post') ?>: <?= $event->post ?>)<? endif ?>
+<?= helper('com:trafficinfo.template.helper.string.location', array('row' => $event)); ?> <? if($event->post) : ?>(<?= translate('Kilometer post') ?>: <?= $event->post ?>)<? endif ?>
 </div>
 
 <div>
-<?= @helper('com:trafficinfo.template.helper.string.info', array('row' => $event)); ?>
+<?= helper('com:trafficinfo.template.helper.string.info', array('row' => $event)); ?>
 </div>
 
 <div>
-<?= @helper('com:trafficinfo.template.helper.string.details', array('row' => $event)); ?>
+<?= helper('com:trafficinfo.template.helper.string.details', array('row' => $event)); ?>
 </div>
 
 <? if($event->description) : ?><p><?= $event->description ?></p><? endif; ?>

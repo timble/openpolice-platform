@@ -10,25 +10,25 @@
 
 <? foreach ($articles as $article) : ?>
     <article>
-        <? $link = @helper('route.article', array('row' => $article)); ?>
+        <? $link = helper('route.article', array('row' => $article)); ?>
         <header>
             <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
             <div class="timestamp">
-                <?= @helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
+                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
             </div>
         </header>
 
         <? if($article->thumbnail): ?>
             <a href="<?= $link ?>">
-                <?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+                <?= helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
             </a>
         <? endif; ?>
 
         <?= $article->introtext ?>
 
         <? if ($article->fulltext) : ?>
-            <a href="<?= $link ?>"><?= @text('Read more') ?></a>
+            <a href="<?= $link ?>"><?= translate('Read more') ?></a>
         <? endif; ?>
     </article>
 <? endforeach; ?>
-<?= @helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+<?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>

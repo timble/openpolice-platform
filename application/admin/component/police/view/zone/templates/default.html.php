@@ -13,21 +13,21 @@
 -->
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form">
 	<div class="main">
 		<div class="title">
-		    <input class="required" type="text" name="title" maxlength="255" value="<?= $zone->title ?>" placeholder="<?= @text('Title') ?>" />
+		    <input class="required" type="text" name="title" maxlength="255" value="<?= $zone->title ?>" placeholder="<?= translate('Title') ?>" />
 		</div>
 	
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= @text( 'Information' ); ?>:</legend>
+				<legend><?= translate( 'Information' ); ?>:</legend>
 				<div>
 				    <label for="id">
-				    	<?= @text( 'ID' ); ?>
+				    	<?= translate( 'ID' ); ?>
 				    </label>
 				    <div>
 				        <input class="required" type="text" name="id" maxlength="4" value="<?= $zone->id; ?>" />
@@ -35,15 +35,15 @@
 				</div>
                 <div>
 				    <label for="name">
-				    	<?= @text( 'Language' ); ?>
+				    	<?= translate( 'Language' ); ?>
 				    </label>
 				    <div>
-				        <?= @helper('listbox.language', array('deselect' => false)) ?>
+				        <?= helper('listbox.language', array('deselect' => false)) ?>
 				    </div>
 				</div>
                 <div>
 				    <label for="chief_name">
-				    	<?= @text( 'Chief name' ); ?>
+				    	<?= translate( 'Chief name' ); ?>
 				    </label>
 				    <div>
 				        <input class="required" type="text" name="chief_name" value="<?= $zone->chief_name; ?>" />
@@ -51,7 +51,7 @@
 				</div>
                 <div>
 				    <label for="chief_email">
-				    	<?= @text( 'Chief email' ); ?>
+				    	<?= translate( 'Chief email' ); ?>
 				    </label>
 				    <div>
 				        <input class="required" type="text" name="chief_email" value="<?= $zone->chief_email; ?>" />

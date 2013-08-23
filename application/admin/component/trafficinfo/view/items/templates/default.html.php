@@ -14,33 +14,33 @@
 -->
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <ktml:module position="sidebar">
-    <?= @template('default_sidebar.html'); ?>
+    <?= include('default_sidebar.html'); ?>
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
-	<?= @template('default_scopebar.html'); ?>
+	<?= include('default_scopebar.html'); ?>
 	<table>
 	<thead>
 		<tr>
 			<th width="10">
-				<?= @helper( 'grid.checkall'); ?>
+				<?= helper( 'grid.checkall'); ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'title', 'title' => 'Title NL')) ?>
+				<?= helper('grid.sort', array('column' => 'title', 'title' => 'Title NL')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'title_fr', 'title' => 'Title FR')) ?>
+				<?= helper('grid.sort', array('column' => 'title_fr', 'title' => 'Title FR')) ?>
 			</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
 			<td colspan="4">
-				<?= @helper('com:application.paginator.pagination', array('total' => $total)) ?>
+				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
 	</tfoot>
@@ -48,13 +48,13 @@
 		<? foreach ($items as $item) : ?>
 		<tr>
 			<td align="center">
-				<?= @helper('grid.checkbox', array('row' => $item))?>
+				<?= helper('grid.checkbox', array('row' => $item))?>
 			</td>
 			<td>
-				<a href="<?= @route( 'view=item&task=edit&id='. $item->id ); ?>"><?= @escape($item->title); ?></a>
+				<a href="<?= route( 'view=item&task=edit&id='. $item->id ); ?>"><?= escape($item->title); ?></a>
 			</td>
 			<td>
-				<?= @escape($item->title_fr); ?>
+				<?= escape($item->title_fr); ?>
 			</td>
 		</tr>
 		<? endforeach; ?>

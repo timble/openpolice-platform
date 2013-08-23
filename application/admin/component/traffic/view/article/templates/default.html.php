@@ -8,10 +8,10 @@
  */
 ?>
 
-<?= @helper('behavior.validator'); ?>
+<?= helper('behavior.validator'); ?>
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <!--
@@ -23,49 +23,49 @@
 	
 	<div class="main">
         <div class="title">
-            <input class="required" type="text" name="title" maxlength="255" value="<?= $article->title ?>" placeholder="<?= @text('Title') ?>" />
+            <input class="required" type="text" name="title" maxlength="255" value="<?= $article->title ?>" placeholder="<?= translate('Title') ?>" />
             <div class="slug">
                 <span class="add-on">Slug</span>
                 <input type="text" name="slug" maxlength="255" value="<?= $article->slug ?>" />
             </div>
         </div>
 		
-		<?= @object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
+		<?= object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
 	</div>
 	<div class="sidebar">
         <fieldset>
-            <legend><?= @text('Publish') ?></legend>
+            <legend><?= translate('Publish') ?></legend>
             <div>
-                <label for="published"><?= @text('Published') ?></label>
+                <label for="published"><?= translate('Published') ?></label>
                 <div>
                     <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
                 </div>
             </div>
         </fieldset>
         <fieldset>
-            <legend><?= @text('Details') ?></legend>
+            <legend><?= translate('Details') ?></legend>
             <div>
                 <label for="date">
-                    <?= @text('Start on') ?>
+                    <?= translate('Start on') ?>
                 </label>
                 <div>
-                    <?= @helper('com:articles.date.datetime', array('row' => $article, 'name' => 'start_on', 'type' => 'date')) ?>
+                    <?= helper('com:articles.date.datetime', array('row' => $article, 'name' => 'start_on', 'type' => 'date')) ?>
                 </div>
             </div>
             <div>
                 <label for="date">
-                    <?= @text('End on') ?>
+                    <?= translate('End on') ?>
                 </label>
                 <div>
-                    <?= @helper('com:articles.date.datetime', array('row' => $article, 'name' => 'end_on', 'type' => 'date')) ?>
+                    <?= helper('com:articles.date.datetime', array('row' => $article, 'name' => 'end_on', 'type' => 'date')) ?>
                 </div>
             </div>
         </fieldset>
         <fieldset class="categories group">
-            <legend><?= @text('Category') ?></legend>
+            <legend><?= translate('Category') ?></legend>
             <div>
-                <?= @helper('listbox.radiolist', array(
-                    'list'     => @object('com:traffic.model.categories')->sort('title')->table('traffic')->getRowset(),
+                <?= helper('listbox.radiolist', array(
+                    'list'     => object('com:traffic.model.categories')->sort('title')->table('traffic')->getRowset(),
                     'selected' => $article->categories_category_id,
                     'name'     => 'categories_category_id',
                     'text'     => 'title',
@@ -75,8 +75,8 @@
         </fieldset>
         <? if($article->isStreetable()) : ?>
         <fieldset>
-            <legend><?= @text('Streets') ?></legend>
-                <?= @helper('com:streets.listbox.streets', array('selected' => $article->getStreets()->streets_street_id, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
+            <legend><?= translate('Streets') ?></legend>
+                <?= helper('com:streets.listbox.streets', array('selected' => $article->getStreets()->streets_street_id, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
                 <script data-inline> $jQuery(".select-streets").select2(); </script>
         </fieldset>
         <? endif ?>

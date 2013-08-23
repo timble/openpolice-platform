@@ -8,31 +8,31 @@
  */
 ?>
 
-<?= @helper('behavior.validator'); ?>
+<?= helper('behavior.validator'); ?>
 
 <!--
 <script src="media://js/koowa.js" />
 -->
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form">
 	<div class="main">
 		<div class="title">
-		    <input class="required" type="text" name="title" maxlength="255" value="<?= $street->title ?>" placeholder="<?= @text('Title') ?>" />
+		    <input class="required" type="text" name="title" maxlength="255" value="<?= $street->title ?>" placeholder="<?= translate('Title') ?>" />
 		</div>
 	
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= @text( 'Information' ); ?>:</legend>
+				<legend><?= translate( 'Information' ); ?>:</legend>
 				<div>
 				    <label for="name">
-				    	<?= @text( 'Municipality' ); ?>
+				    	<?= translate( 'Municipality' ); ?>
 				    </label>
 				    <div>
-				        <?= @helper('com:police.listbox.municipalities', array('deselect' => false, 'filter' => array('zone' => '5388'))) ?>
+				        <?= helper('com:police.listbox.municipalities', array('deselect' => false, 'filter' => array('zone' => '5388'))) ?>
 				    </div>
 				</div>
 			</fieldset>

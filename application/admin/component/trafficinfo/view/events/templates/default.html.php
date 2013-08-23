@@ -14,42 +14,42 @@
 -->
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <ktml:module position="sidebar">
-    <?= @template('default_sidebar.html'); ?>
+    <?= include('default_sidebar.html'); ?>
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
-	<?= @template('default_scopebar.html'); ?>
+	<?= include('default_scopebar.html'); ?>
 	<table>
 	<thead>
 		<tr>
 			<th width="10">
-				<?= @helper( 'grid.checkall'); ?>
+				<?= helper( 'grid.checkall'); ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'last_activity_on', 'title' => 'Activity')) ?>
+				<?= helper('grid.sort', array('column' => 'last_activity_on', 'title' => 'Activity')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'category')) ?>
+				<?= helper('grid.sort', array('column' => 'category')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'road')) ?>
+				<?= helper('grid.sort', array('column' => 'road')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'direction')) ?>
+				<?= helper('grid.sort', array('column' => 'direction')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'place')) ?>
+				<?= helper('grid.sort', array('column' => 'place')) ?>
 			</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
 			<td colspan="7">
-				<?= @helper('com:application.paginator.pagination', array('total' => $total)) ?>
+				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
 	</tfoot>
@@ -58,24 +58,24 @@
 		<? $information = $event->information ?>
 		<tr>
 			<td align="center">
-				<?= @helper('grid.checkbox', array('row' => $event))?>
+				<?= helper('grid.checkbox', array('row' => $event))?>
 			</td>
 			<td style="white-space:nowrap;">
-				<a href="<?= @route( 'view=event&task=edit&id='.$event->id.'&category='.$event->categories_category_id ); ?>">
-					<?= @helper('date.humanize', array('date' => $event->last_activity_on)) ?> <small><?= @escape($event->last_activity_by); ?></small>
+				<a href="<?= route( 'view=event&task=edit&id='.$event->id.'&category='.$event->categories_category_id ); ?>">
+					<?= helper('date.humanize', array('date' => $event->last_activity_on)) ?> <small><?= escape($event->last_activity_by); ?></small>
 				</a>
 			</td>
 			<td>
-				<?= @escape($event->category); ?>
+				<?= escape($event->category); ?>
 			</td>
 			<td>
-				<?= @escape($event->road) ?>
+				<?= escape($event->road) ?>
 			</td>
 			<td>
-				<?= @escape($event->place_direction) ?>
+				<?= escape($event->place_direction) ?>
 			</td>
 			<td>
-				<?= @escape($event->place) ?>
+				<?= escape($event->place) ?>
 			</td>
 		</tr>
 		<? endforeach; ?>

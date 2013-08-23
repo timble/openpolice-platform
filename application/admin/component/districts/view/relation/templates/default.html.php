@@ -8,44 +8,44 @@
  */
 ?>
 
-<?= @helper('behavior.validator'); ?>
+<?= helper('behavior.validator'); ?>
 
 <!--
 <script src="media://js/koowa.js" />
 -->
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form">
 	<div class="main">
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= @text( 'Relation' ); ?></legend>
+				<legend><?= translate( 'Relation' ); ?></legend>
 				<div>
 				    <label for="">
-				    	<?= @text( 'District' ); ?>
+				    	<?= translate( 'District' ); ?>
 				    </label>
 				    <div>
-				        <?= @helper('listbox.districts', array('selected' => $relation->districts_district_id, 'deselect' => false, 'attribs' => array('class' => 'select-district', 'style' => 'width:100%'))) ?>
+				        <?= helper('listbox.districts', array('selected' => $relation->districts_district_id, 'deselect' => false, 'attribs' => array('class' => 'select-district', 'style' => 'width:100%'))) ?>
                         <script data-inline> $jQuery(".select-district").select2(); </script>
 				    </div>
 				</div>
 				<div>
 				    <label for="">
-				    	<?= @text( 'Street' ); ?>
+				    	<?= translate( 'Street' ); ?>
 				    </label>
 				    <div>
-				        <?= @helper('com:streets.listbox.streets', array('autocomplete' => true, 'selected' => $relation->street_id, 'validate' => true)) ?>
+				        <?= helper('com:streets.listbox.streets', array('autocomplete' => true, 'selected' => $relation->street_id, 'validate' => true)) ?>
 				    </div>
 				</div>
 			</fieldset>
 			<fieldset>
-				<legend><?= @text( 'Exceptions' ); ?></legend>
+				<legend><?= translate( 'Exceptions' ); ?></legend>
 				<div>
 				    <label for="">
-				    	<?= @text( 'Start' ); ?>
+				    	<?= translate( 'Start' ); ?>
 				    </label>
 				    <div>
 				        <input type="text" name="range_start" size="32" maxlength="250" value="<?= $relation->range_start; ?>" />
@@ -53,7 +53,7 @@
 				</div>
 				<div>
 				    <label for="">
-				    	<?= @text( 'End' ); ?>
+				    	<?= translate( 'End' ); ?>
 				    </label>
 				    <div>
 				        <input type="text" name="range_end" size="32" maxlength="250" value="<?= $relation->range_end == null ? '9999' : $relation->range_end; ?>" />
@@ -61,10 +61,10 @@
 				</div>
 				<div>
 				    <label for="">
-				    	<?= @text( 'Parity' ); ?>
+				    	<?= translate( 'Parity' ); ?>
 				    </label>
 				    <div>
-				        <?= @helper('listbox.parities', array('selected' => $relation->range_parity)) ?>
+				        <?= helper('listbox.parities', array('selected' => $relation->range_parity)) ?>
 				    </div>
 				</div>
 			</fieldset>

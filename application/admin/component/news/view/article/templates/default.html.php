@@ -8,7 +8,7 @@
  */
 ?>
 
-<?= @helper('behavior.validator'); ?>
+<?= helper('behavior.validator'); ?>
 
 <!--
 <script src="media://js/koowa.js" />
@@ -23,7 +23,7 @@
 </script>
 
 <ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <form action="" method="post" id="article-form" class="-koowa-form" enctype="multipart/form-data">
@@ -32,50 +32,50 @@
 
 	<div class="main">
 		<div class="title">
-			<input class="required" type="text" name="title" maxlength="255" value="<?= $article->title ?>" placeholder="<?= @text('Title') ?>" />
+			<input class="required" type="text" name="title" maxlength="255" value="<?= $article->title ?>" placeholder="<?= translate('Title') ?>" />
 			<div class="slug">
 			    <span class="add-on">Slug</span>
 			    <input type="text" name="slug" maxlength="255" value="<?= $article->slug ?>" />
 			</div>
 		</div>
 
-		<?= @object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
+		<?= object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
 	</div>
 	<div class="sidebar">
         <fieldset>
-            <legend><?= @text('Publish') ?></legend>
+            <legend><?= translate('Publish') ?></legend>
             <div>
-                <label for="published"><?= @text('Published') ?></label>
+                <label for="published"><?= translate('Published') ?></label>
                 <div>
                     <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
                 </div>
             </div>
             <div>
-                <label for="created_on"><?= @text('Created on') ?></label>
+                <label for="created_on"><?= translate('Created on') ?></label>
                 <div class="controls">
-                    <?= @helper('com:articles.date.datetime', array('row' => $article, 'name' => 'created_on')) ?>
+                    <?= helper('com:articles.date.datetime', array('row' => $article, 'name' => 'created_on')) ?>
                 </div>
             </div>
         </fieldset>
 
         <? if($article->isAttachable()) : ?>
             <fieldset>
-                <legend><?= @text('Attachments') ?></legend>
+                <legend><?= translate('Attachments') ?></legend>
                 <? if (!$article->isNew()) : ?>
-                    <?= @template('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
+                    <?= include('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
                 <? endif ?>
-                <?= @template('com:attachments.view.attachments.upload.html') ?>
+                <?= include('com:attachments.view.attachments.upload.html') ?>
             </fieldset>
         <? endif ?>
 
         <? if($article->isTranslatable()) : ?>
         <fieldset>
-            <legend><?= @text('Translations') ?></legend>
+            <legend><?= translate('Translations') ?></legend>
             <? $translations = $article->getTranslations() ?>
             <? foreach($article->getLanguages() as $language) : ?>
                 <?= $language->name.':' ?>
                 <? $translation = $translations->find(array('iso_code' => $language->iso_code)) ?>
-                <?= @helper('com:languages.grid.status',
+                <?= helper('com:languages.grid.status',
                     array('status' => $translation->status, 'original' => $translation->original, 'deleted' => $translation->deleted)) ?>
             <? endforeach ?>
         </fieldset>

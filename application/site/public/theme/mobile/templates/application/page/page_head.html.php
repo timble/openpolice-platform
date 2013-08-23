@@ -9,7 +9,7 @@
 ?>
 
 <head>
-    <base href="<?= @url(); ?>" />
+    <base href="<?= url(); ?>" />
     <title>Politie Leuven</title>
 
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
@@ -18,10 +18,10 @@
 
     <link rel="apple-touch-icon" href="media://application/images/apple-touch-icon.png"/>
 
-    <ktml:meta />
-    <ktml:link />
-    <ktml:style />
-    <ktml:script />
+    <ktml:meta>
+    <ktml:link>
+    <ktml:style>
+    <ktml:script>
 
     <link href="media://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
