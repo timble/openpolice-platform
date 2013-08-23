@@ -21,8 +21,7 @@
 <form action="" method="post" class="-koowa-form">
 	<input type="hidden" name="params[show_avatar]" value="0" />
 	<div class="main">
-		<div class="scrollable row-fluid">
-			<div class="span8">
+		<div class="scrollable">
 				<fieldset>
 					<legend><?= translate( 'Basic Information' ); ?></legend>
 					<div>
@@ -114,28 +113,17 @@
 					</ul>
 				</fieldset>
 			</div>
-			<div class="span4">
-				<fieldset>
-					<legend><?= translate( 'Extra information' ); ?></legend>
-					<div>
-					    <label for="">
-					    	<?= translate( 'Image' ); ?>
-					    </label>
-					    <div>
-					        <?= helper('image.listbox', array('name' => 'params[avatar]', 'directory' => JPATH_IMAGES.'/avatars', 'selected' => $params->avatar)); ?>
-					    </div>
-					</div>
-					<div>
-					    <label for="">
-					    	<?= translate( 'Show image' ); ?>
-					    </label>
-					    <div>
-					        <input type="checkbox" name="params[show_avatar]" value="1" <?= $params->show_avatar ? 'checked="checked"' : '' ?> />
-					    </div>
-					</div>
-					
-				</fieldset>
-			</div>
+        </div>
+        <div class="sidebar">
+            <? if($officer->isAttachable()) : ?>
+                <fieldset>
+                    <legend><?= translate('Image') ?></legend>
+                    <? if (!$officer->isNew()) : ?>
+                        <?= include('com:attachments.view.attachments.list.html', array('attachments' => $officer->getAttachments(), 'attachments_attachment_id' => $officer->attachments_attachment_id)) ?>
+                    <? endif ?>
+                    <?= include('com:attachments.view.attachments.upload.html') ?>
+                </fieldset>
+            <? endif ?>
 		</div>
 	</div>
 </form>
