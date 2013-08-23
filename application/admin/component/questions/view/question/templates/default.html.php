@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		
-		<?= object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $question->text)) ?>
+		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $question->text)) ?>
 	</div>
 	<div class="sidebar">
 	    <?= include('default_sidebar.html') ?>

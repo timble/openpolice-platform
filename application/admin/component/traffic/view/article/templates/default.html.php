@@ -30,7 +30,7 @@
             </div>
         </div>
 		
-		<?= object('com:wysiwyg.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
+		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
 	</div>
 	<div class="sidebar">
         <fieldset>
