@@ -28,9 +28,5 @@
 			<? if($officer->mobile) : ?><li><strong><?= translate('Mobile') ?>:</strong> <?= $officer->mobile ?></li><? endif ?>
 			<? if($officer->email) : ?><li><strong><?= translate('Email') ?>:</strong> <a href="mailto:<?= $officer->email ?>"><?= $officer->email ?></a></li><? endif ?>
 		</ul>
-		<ul>	
-			<? if($params->twitter) : ?><li class="twitter"><strong><?= translate('Twitter') ?>:</strong> <a href="http://www.twitter.com/<?= $params->twitter ?>">@<?= $params->twitter ?></a></li><? endif ?>
-			<? if($params->facebook) : ?><li class="facebook"><strong><?= translate('Facebook') ?>:</strong> <a href="http://www.facebook.com/<?= $params->facebook ?>"><?= $params->facebook ?></a></li><? endif ?>
-		</ul>
 	</div>
 </div>

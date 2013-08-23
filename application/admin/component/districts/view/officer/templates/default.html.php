@@ -83,22 +83,6 @@
 					        <input type="text" name="email" size="32" maxlength="250" value="<?= $officer->email; ?>" />
 					    </div>
 					</div>
-					<div>
-					    <label for="">
-					    	<?= translate( 'Twitter' ); ?>
-					    </label>
-					    <div>
-					        <input type="text" name="params[twitter]" size="32" maxlength="250" value="<?= $params->twitter; ?>" />
-					    </div>
-					</div>
-					<div>
-					    <label for="">
-					    	<?= translate( 'Facebook' ); ?>
-					    </label>
-					    <div>
-					        <input type="text" name="params[facebook]" size="32" maxlength="250" value="<?= $params->facebook; ?>" />
-					    </div>
-					</div>
 				</fieldset>
 				<fieldset>
 					<legend><?= translate( 'Districts' ); ?></legend>

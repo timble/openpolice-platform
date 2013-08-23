@@ -2561,28 +2561,20 @@ ul.column--double, ul.column--triple, ul.column--quad {
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 6, blocks/_lists.scss */
-ul li.twitter {
-  list-style: url("../images/twitter.png");
-}
-/* line 9, blocks/_lists.scss */
-ul li.facebook {
-  list-style: url("../images/facebook.gif");
-}
 
-/* line 16, blocks/_lists.scss */
+/* line 9, blocks/_lists.scss */
 ul.column--double {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-/* line 17, blocks/_lists.scss */
+/* line 10, blocks/_lists.scss */
 ul.column--triple {
   -webkit-column-count: 3;
   -moz-column-count: 3;
   column-count: 3;
 }
-/* line 18, blocks/_lists.scss */
+/* line 11, blocks/_lists.scss */
 ul.column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
