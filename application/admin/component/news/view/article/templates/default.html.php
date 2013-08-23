@@ -22,7 +22,7 @@
     }));
 </script>
 
-<ktml:module position="toolbar">
+<ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
 

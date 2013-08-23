@@ -15,7 +15,7 @@
 <script src="media://js/koowa.js" />
 -->
 
-<ktml:module position="toolbar">
+<ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
