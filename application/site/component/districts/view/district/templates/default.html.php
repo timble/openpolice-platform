@@ -13,7 +13,7 @@
 <? if(count($officers)) : ?>
 <div class="clearfix article separator">
 	<? foreach ($officers as $officer) : ?>
-		<?= include('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officer')->id($officer->districts_officer_id)->getRow())); ?>
+		<?= include('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
 	<? endforeach ?>
 </div>
 <? else : ?>
