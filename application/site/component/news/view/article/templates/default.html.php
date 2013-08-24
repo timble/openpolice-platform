@@ -11,6 +11,8 @@
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript">stLight.options({publisher:'91c73e48-a5e0-43ea-988f-57d099f878c7'});</script>
 
+<title content="replace"><?= $article->title ?></title>
+
 <article class="hentry">
     <header>
         <h1 class="entry-title"><?= $article->title ?></h1>
