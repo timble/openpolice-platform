@@ -46,6 +46,11 @@ figure {
   margin-bottom: 14px;
 }
 
+.backtrace {
+  text-align: center;
+  margin: $gridGutterWidth 0;
+}
+
 // Select2
 .bigdrop {
   width: 100%;
