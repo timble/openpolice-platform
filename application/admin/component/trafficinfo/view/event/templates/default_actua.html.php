@@ -9,13 +9,13 @@
 ?>
 
 <fieldset>
-	<legend><?= @text( 'Details' ); ?></legend>
+	<legend><?= translate( 'Details' ); ?></legend>
 	<div>
 	    <label for="name">
-	    	<?= @text( 'Title' ); ?>
+	    	<?= translate( 'Title' ); ?>
 	    </label>
 	    <div>
-	        <input class="required" type="text" name="title" maxlength="255" value="<?= $event->title ?>" placeholder="<?= @text('Title') ?>" />
+	        <input class="required" type="text" name="title" maxlength="255" value="<?= $event->title ?>" placeholder="<?= translate('Title') ?>" />
 	    </div>
 	</div>
 </fieldset>

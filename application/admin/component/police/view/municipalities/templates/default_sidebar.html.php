@@ -8,7 +8,7 @@
  */
 ?>
 
-<?= @helper('behavior.validator') ?>
+<?= helper('behavior.validator') ?>
 
 <script inline>
 window.addEvent('domready', function(){
@@ -27,11 +27,11 @@ window.addEvent('domready', function(){
 
 <form action="" method="get" id="activities-filter">
     <fieldset>
-        <legend><?=@text( 'Filters' )?></legend>
+        <legend><?=translate( 'Filters' )?></legend>
         <div style="padding:10px">
-            <label for="user"><?=@text( 'City' )?></label>
+            <label for="user"><?=translate( 'City' )?></label>
             <div>
-                <?= @helper('com:police.listbox.cities',
+                <?= helper('com:police.listbox.cities',
                         array(
                             'autocomplete' => true,
                             'name'		   => 'parent_id',
@@ -41,8 +41,8 @@ window.addEvent('domready', function(){
             </div>
 
             <div class="btn-group">
-                <input type="submit" name="submitfilter" class="btn" value="<?=@text('Filter')?>" />
-                <input type="reset" name="cancelfilter" class="btn" value="<?=@text('Reset')?>" />
+                <input type="submit" name="submitfilter" class="btn" value="<?=translate('Filter')?>" />
+                <input type="reset" name="cancelfilter" class="btn" value="<?=translate('Reset')?>" />
             </div>
         </div>
     </fieldset>

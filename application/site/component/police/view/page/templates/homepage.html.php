@@ -7,29 +7,29 @@
  * @link		http://www.police.be
  */
 ?>
-<? $site = @object('application')->getCfg('site') ?>
-<? $zone = @object('com:police.model.zone')->id($site)->getRow() ?>
+<? $site = object('application')->getCfg('site') ?>
+<? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
 
 <div class="row-fluid separator--below">
     <div class="span8 sticky alpha">
-        <? foreach (@object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
+        <? foreach (object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <article>
                 <header>
                     <h1><a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a></h1>
                     <span class="timestamp">
-                        <?= @helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'))) ?>
+                        <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'))) ?>
                     </span>
                 </header>
 
                 <div class="clearfix">
                     <a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
-                        <?= @helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+                        <?= helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
                     </a>
 
                     <?= $article->introtext ?>
 
                     <? if ($article->fulltext) : ?>
-                        <a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= @text('Read more') ?></a>
+                        <a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= translate('Read more') ?></a>
                     <? endif; ?>
                 </div>
             </article>
@@ -55,5 +55,5 @@
 </div>
 
 <div class="row-fluid">
-    <?= @template('homepage_shortcuts.html', array('class' => 'span3')) ?>
+    <?= include('homepage_shortcuts.html', array('class' => 'span3')) ?>
 </div>

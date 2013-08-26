@@ -63,14 +63,14 @@ abstract class TemplateFilterAbstract extends Object implements TemplateFilterIn
      *
      * Called from {@link __construct()} as a first step of object instantiation.
      *
-     * @param  Cpnfig $config An optional ObjectConfig object with configuration options
+     * @param  ObjectConfig $config An optional ObjectConfig object with configuration options
      * @return void
      */
     protected function _initialize(ObjectConfig $config)
     {
         $config->append(array(
             'template' => null,
-            'priority' => TemplateFilterChain::PRIORITY_NORMAL,
+            'priority' => TemplateFilter::PRIORITY_NORMAL,
         ));
 
         parent::_initialize($config);

@@ -10,11 +10,11 @@
 
 <div class="scopebar">
     <div class="scopebar__group">
-        <a class="<?= is_null($state->search) && is_null($state->parent_id) ? 'active' : ''; ?>" href="<?= @route('search=&parent_id' ) ?>">
-            <?= @text('All') ?>
+        <a class="<?= is_null($state->search) && is_null($state->parent_id) ? 'active' : ''; ?>" href="<?= route('search=&parent_id' ) ?>">
+            <?= translate('All') ?>
         </a>
     </div>
     <div class="scopebar__search">
-        <?= @helper('grid.search') ?>
+        <?= helper('grid.search') ?>
     </div>
 </div>

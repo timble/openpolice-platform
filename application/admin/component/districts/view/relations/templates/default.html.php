@@ -13,43 +13,43 @@
 <style src="media://css/koowa.css" />
 -->
 
-<ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+<ktml:module position="actionbar">
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <ktml:module position="sidebar">
-	<?= @template('default_sidebar.html'); ?>
+	<?= include('default_sidebar.html'); ?>
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
-	<?= @template('default_scopebar.html'); ?>
+	<?= include('default_scopebar.html'); ?>
 	<table class="adminlist">
 	<thead>
 		<tr>
 			<th width="10">
-				<?= @helper( 'grid.checkall'); ?>
+				<?= helper( 'grid.checkall'); ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'street')) ?>
+				<?= helper('grid.sort', array('column' => 'street')) ?>
 			</th>
 			<th>
-				<?= @helper('grid.sort', array('column' => 'district')) ?>
+				<?= helper('grid.sort', array('column' => 'district')) ?>
 			</th>
 			<th width="40">
-				<?= @helper('grid.sort', array('column' => 'range_start', 'title' => 'Start')) ?>
+				<?= helper('grid.sort', array('column' => 'range_start', 'title' => 'Start')) ?>
 			</th>
 			<th width="40">
-				<?= @helper('grid.sort', array('column' => 'range_end', 'title' => 'End')) ?>
+				<?= helper('grid.sort', array('column' => 'range_end', 'title' => 'End')) ?>
 			</th>
 			<th width="70">
-				<?= @helper('grid.sort', array('column' => 'range_parity', 'title' => 'Parity')) ?>
+				<?= helper('grid.sort', array('column' => 'range_parity', 'title' => 'Parity')) ?>
 			</th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
 			<td colspan="7">
-				<?= @helper('com:application.paginator.pagination', array('total' => $total)) ?>
+				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
 	</tfoot>
@@ -57,22 +57,22 @@
 		<? foreach ($relations as $relation) : ?>
 		<tr>
 			<td align="center">
-				<?= @helper('grid.checkbox', array('row' => $relation))?>
+				<?= helper('grid.checkbox', array('row' => $relation))?>
 			</td>
 			<td>
-				<a href="<?= @route( 'view=relation&id='. $relation->id ); ?>"><?= @escape($relation->street); ?></a>
+				<a href="<?= route( 'view=relation&id='. $relation->id ); ?>"><?= escape($relation->street); ?></a>
 			</td>
 			<td>
-				<?= @escape($relation->district); ?>
+				<?= escape($relation->district); ?>
 			</td>
 			<td>
-				<?= @escape($relation->range_start); ?>
+				<?= escape($relation->range_start); ?>
 			</td>
 			<td>
-				<?= @escape($relation->range_end); ?>
+				<?= escape($relation->range_end); ?>
 			</td>
 			<td>
-				<?= @escape($relation->range_parity); ?>
+				<?= escape($relation->range_parity); ?>
 			</td>
 		</tr>
 		<? endforeach; ?>

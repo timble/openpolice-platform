@@ -8,16 +8,18 @@
  */
 ?>
 
+<title content="replace"><?= $question->title ?></title>
+
 <article>
     <div class="page-header">
-        <h1><?= @escape($question->title); ?></h1>
+        <h1><?= escape($question->title); ?></h1>
     </div>
 
     <div class="clearfix">
-        <?= @helper('com:attachments.image.thumbnail', array('row' => $question)) ?>
+        <?= helper('com:attachments.image.thumbnail', array('row' => $question)) ?>
 
         <?= $question->text ?>
     </div>
 </article>
 
-<?= @template('com:questions.view.questions.default_contact.html') ?>
+<?= include('com:questions.view.questions.default_contact.html') ?>

@@ -9,8 +9,8 @@
 ?>
 
 <head>
-    <base href="<?= @url(); ?>" />
-    <title>Politie Leuven</title>
+    <base href="<?= url(); ?>" />
+    <title><?= title() ?></title>
 
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
     <meta name="viewport" content="width=device-width" />
@@ -18,15 +18,21 @@
 
     <link rel="apple-touch-icon" href="media://application/images/apple-touch-icon.png"/>
 
-    <ktml:meta />
-    <ktml:link />
-    <ktml:style />
-    <ktml:script />
+    <ktml:title>
+    <ktml:meta>
+    <ktml:link>
+    <ktml:style>
+    <ktml:script>
 
     <link href="media://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style src="media://application/stylesheets/default.css" />
-    <style src="media://application/stylesheets/ie.css" condition="if lte IE 8" />
+    <style src="media://application/stylesheets/ie.css" condition="if !(lte IE 6)&!(gte IE 9) " />
+    <style src="media://application/stylesheets/ie7.css" condition="if lte IE 7" />
+
+    <!--[if lte IE 8]>
+    <script src="media://application/js/html5shiv.js" />
+    <![endif]-->
 
     <script src="media://districts/jquery/jquery.js" />
     <script type="text/javascript">

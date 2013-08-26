@@ -10,8 +10,8 @@
 
 <? $densities = $event->densities ?>
 <ul>
-	<li><?= @template('default_density_repeater.html', array('name' => '1', 'density' => $densities->one)); ?></li>
-	<li><?= @template('default_density_repeater.html', array('name' => '2', 'density' => $densities->two)); ?></li>
-	<li><?= @template('default_density_repeater.html', array('name' => '3', 'density' => $densities->three)); ?></li>
-	<li><?= @template('default_density_repeater.html', array('name' => '4', 'density' => $densities->four)); ?></li>
+	<li><?= include('default_density_repeater.html', array('name' => '1', 'density' => $densities->one)); ?></li>
+	<li><?= include('default_density_repeater.html', array('name' => '2', 'density' => $densities->two)); ?></li>
+	<li><?= include('default_density_repeater.html', array('name' => '3', 'density' => $densities->three)); ?></li>
+	<li><?= include('default_density_repeater.html', array('name' => '4', 'density' => $densities->four)); ?></li>
 </ul>

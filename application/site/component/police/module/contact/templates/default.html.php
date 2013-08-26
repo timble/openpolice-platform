@@ -16,5 +16,5 @@
 </p>
 
 <?php if($params->get('link_url')) : ?>
-<p><a href="<?= $params->get('link_url'); ?>"><?= @text('More contact information') ?></a></p>
+<p><a href="<?= $params->get('link_url'); ?>"><?= translate('More contact information') ?></a></p>
 <?php endif ?>

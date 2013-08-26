@@ -8,30 +8,30 @@
  */
 ?>
 
-<h3><?= @text('Lists')?></h3>
+<h3><?= translate('Lists')?></h3>
 <ul class="navigation">
-	<a class="<?= $state->group == null ? 'active' : ''; ?>" href="<?= @route('group=' ) ?>">
+	<a class="<?= $state->group == null ? 'active' : ''; ?>" href="<?= route('group=' ) ?>">
 		<?= 'All groups' ?>
 	</a>
-	<a class="<?= $state->group == 'incident' ? 'active' : ''; ?>" href="<?= @route('group=incident' ) ?>">
-		<?= @text('Incident') ?>
+	<a class="<?= $state->group == 'incident' ? 'active' : ''; ?>" href="<?= route('group=incident' ) ?>">
+		<?= translate('Incident') ?>
 	</a>
-	<a class="<?= $state->group == 'situation' ? 'active' : ''; ?>" href="<?= @route('group=situation' ) ?>">
-		<?= @text('Situation') ?>
+	<a class="<?= $state->group == 'situation' ? 'active' : ''; ?>" href="<?= route('group=situation' ) ?>">
+		<?= translate('Situation') ?>
 	</a>
-	<a class="<?= $state->group == 'traffic' ? 'active' : ''; ?>" href="<?= @route('group=traffic' ) ?>">
-		<?= @text('Traffic') ?>
+	<a class="<?= $state->group == 'traffic' ? 'active' : ''; ?>" href="<?= route('group=traffic' ) ?>">
+		<?= translate('Traffic') ?>
 	</a>
-	<a class="<?= $state->group == 'source' ? 'active' : ''; ?>" href="<?= @route('group=source' ) ?>">
-		<?= @text('Source') ?>
+	<a class="<?= $state->group == 'source' ? 'active' : ''; ?>" href="<?= route('group=source' ) ?>">
+		<?= translate('Source') ?>
 	</a>
-	<a class="<?= $state->group == 'roads' ? 'active' : ''; ?>" href="<?= @route('group=roads' ) ?>">
-		<?= @text('Roads') ?>
+	<a class="<?= $state->group == 'roads' ? 'active' : ''; ?>" href="<?= route('group=roads' ) ?>">
+		<?= translate('Roads') ?>
 	</a>
-	<a class="<?= $state->group == 'places' ? 'active' : ''; ?>" href="<?= @route('group=places' ) ?>">
-		<?= @text('Places') ?>
+	<a class="<?= $state->group == 'places' ? 'active' : ''; ?>" href="<?= route('group=places' ) ?>">
+		<?= translate('Places') ?>
 	</a>
-	<a class="<?= $state->group == 'text' ? 'active' : ''; ?>" href="<?= @route('group=text' ) ?>">
-		<?= @text('Texts') ?>
+	<a class="<?= $state->group == 'text' ? 'active' : ''; ?>" href="<?= route('group=text' ) ?>">
+		<?= translate('Texts') ?>
 	</a>
 </ul>

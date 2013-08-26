@@ -8,10 +8,10 @@
  */
 ?>
 
-<? $site = @escape(@object('application')->getCfg('site' )) ?>
+<? $site = escape(object('application')->getCfg('site' )) ?>
 
 <? if($state->table == 'contacts') : ?>
-    <? $category = @object('com:categories.model.category')->id('30')->getRow() ?>
+    <? $category = object('com:categories.model.category')->id('24')->getRow() ?>
     <article>
         <div class="page-header">
             <h1>
@@ -31,7 +31,7 @@
 
         <?= $category->description ?>
 
-        <a href="/<?= $site ?>/contact/je-wijkinspecteur"><?= @text('Read more') ?></a>
+        <a href="/<?= $site ?>/contact/je-wijkinspecteur"><?= translate('Read more') ?></a>
     </article>
 <? endif ?>
 
@@ -39,14 +39,14 @@
     <article>
         <div class="page-header">
             <h1>
-                <a href="<?= @helper('route.category', array('row' => $category)) ?>">
-                    <?= @escape($category->title);?>
+                <a href="<?= helper('route.category', array('row' => $category)) ?>">
+                    <?= escape($category->title);?>
                 </a>
             </h1>
         </div>
 
         <? if($category->thumbnail) : ?>
-            <a href="<?= @helper('route.category', array('row' => $category)) ?>">
+            <a href="<?= helper('route.category', array('row' => $category)) ?>">
                 <figure>
                     <img src="<?= $category->thumbnail ?>" />
                 </figure>
@@ -57,7 +57,7 @@
             <?= $category->description; ?>
         <? endif; ?>
 
-        <a href="<?= @helper('route.category', array('row' => $category)) ?>"><?= @text('Read more') ?></a>
+        <a href="<?= helper('route.category', array('row' => $category)) ?>"><?= translate('Read more') ?></a>
     </article>
 <? endforeach; ?>
 

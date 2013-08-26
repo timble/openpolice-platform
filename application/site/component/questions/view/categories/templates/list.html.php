@@ -11,7 +11,7 @@
 <ul class="nav nav-pills nav-stacked column--triple">
 <? foreach ($categories as $category): ?>
     <li>
-        <a href="<?= @helper('route.category', array('row' => $category)) ?>">
+        <a href="<?= helper('route.category', array('row' => $category)) ?>">
             <?= $category->title ?>
         </a>
     </li>

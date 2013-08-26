@@ -61,13 +61,13 @@ article {
 
 .container-header .row-fluid .span3,
 .container-header .slogan,
-.container-header .is-hidden,
 .container-breadcrumb,
 .container-banner,
 .container-footer,
 .container-content .sidebar,
 .container-content.police .sticky,
-.container-copyright .copyright {
+.container-copyright .copyright,
+.is-hidden{
   display: none;
 }
 
@@ -86,71 +86,6 @@ article {
   padding-left: 0;
   padding-right: 0;
   width: 100%;
-
-  .navbar {
-    width: 100%;
-    background-color: $navbarBackgroundHighlight;
-    margin-bottom: 0;
-
-    .navbar__logo {
-      position:absolute;
-      top: 0;
-      right:0px;
-      float: right;
-      padding-right: 20px;
-      line-height: 50px;
-      color: $white;
-
-      img {
-        margin-right: 6px;
-      }
-    }
-
-    .navbar__handle {
-      cursor:pointer;
-      position:absolute;
-      top:0;
-      left:0;
-      background: $navbarBackground url(../img/nav.svg) no-repeat center center;
-      background-size:18px;
-      height:50px;
-      width:56px;
-      border-right: 1px solid $blue;
-    }
-
-    .navbar-inner {
-      @include border-radius(0);
-      border-top: 0 none;
-      border-left: 0 none;
-      border-right: 0 none;
-      margin-right: 0;
-      min-height: 0;
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 50px;
-
-      .nav {
-        margin: 0;
-        text-align:left;
-        border-top: 1px solid $blue;
-
-        li {
-          width: 100%;
-          *display:inline;
-          zoom:1;
-          position:relative;
-        }
-
-        a {
-          display:block;
-          border-bottom: 1px solid $blue;
-          padding: 13px 20px;
-          font-weight: bold;
-          color: $navbarLinkColor;
-        }
-      }
-    }
-  }
 }
 
 .container-content {
