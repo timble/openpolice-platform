@@ -254,7 +254,7 @@ class DispatcherRequestAbstract extends ControllerRequest implements DispatcherR
             'data'    => $_POST,
             'cookies' => $_COOKIE,
             'files'   => $_FILES,
-            'proxies' => array()
+            'proxies' => array('127.0.0.1')
         ));
 
         parent::_initialize($config);
