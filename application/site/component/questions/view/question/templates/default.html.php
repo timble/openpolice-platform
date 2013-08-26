@@ -8,6 +8,8 @@
  */
 ?>
 
+<title content="replace"><?= $question->title ?></title>
+
 <article>
     <div class="page-header">
         <h1><?= escape($question->title); ?></h1>

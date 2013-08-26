@@ -8,8 +8,6 @@
 */
 ?>
 
-
-
 <? if(!$state->category) : ?>
     <div class="page-header">
         <h1><?php echo escape($params->get('page_title')); ?></h1>
@@ -20,6 +18,8 @@
     <div class="page-header">
         <h1><?php echo escape($category->title); ?></h1>
     </div>
+
+    <title content="replace"><?= $category->title ?></title>
 <? endif ?>
 
 <? if(!$state->category AND !$state->searchword) : ?>

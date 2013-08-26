@@ -7,7 +7,6 @@
  * @link		http://www.police.be
  */
 ?>
-<? $site = escape(object('application')->getCfg('site' )) ?>
 <? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
 
 <!DOCTYPE HTML>

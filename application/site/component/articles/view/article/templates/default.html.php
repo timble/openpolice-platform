@@ -7,12 +7,15 @@
  * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
  */
 ?>
+
+<title content="replace"><?= $article->title ?></title>
+
 <article <?= !$article->published ? 'class="article-unpublished"' : '' ?>>
     <header>
 	    <? if (object('component')->getController()->canEdit()) : ?>
-	    <a style="float: right;" class="btn btn-mini" href="<?= helper('route.article', array('row' => $article, 'layout' => 'form')) ?>">
-	        <i class="icon-edit"></i>
-	    </a>
+        <div class="btn-toolbar">
+            <ktml:toolbar type="actionbar">
+        </div>
 	    <? endif; ?>
 	    <h1><?= $article->title ?></h1>
 	    <?= helper('date.timestamp', array('row' => $article, 'show_modify_date' => false)); ?>
