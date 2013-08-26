@@ -12,9 +12,9 @@ use Nooku\Library;
 
 class ControllerToolbarArticle extends Library\ControllerToolbarActionbar
 {
-    public function onAfterControllerBrowse(Library\Event $event)
+    protected function _afterControllerBrowse(Library\CommandContext $command)
     {
-        parent::onAfterControllerBrowse($event);
+        parent::_afterControllerBrowse($command);
 
         $this->addSeparator();
         $this->addEnable(array('label' => 'publish', 'attribs' => array('data-data' => '{published:1}')));
