@@ -11,7 +11,7 @@
 <? $site = escape(object('application')->getCfg('site' )) ?>
 
 <? if($state->table == 'contacts') : ?>
-    <? $category = object('com:categories.model.category')->id('30')->getRow() ?>
+    <? $category = object('com:categories.model.category')->id('24')->getRow() ?>
     <article>
         <div class="page-header">
             <h1>
