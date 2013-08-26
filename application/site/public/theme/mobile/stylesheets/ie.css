@@ -2091,24 +2091,145 @@ legend + .control-group {
   margin-left: 10px;
 }
 /* line 22, blocks/_header.scss */
-.container-header .span3 .logo span {
+.container-header .span3 .logo div {
   margin-left: 60px;
   margin-top: 3px;
-  display: block;
 }
-/* line 30, blocks/_header.scss */
-.container-header .navbar {
-  margin-bottom: 0;
-}
-/* line 33, blocks/_header.scss */
-.container-header .navbar .navbar__logo {
-  display: none;
-}
-/* line 38, blocks/_header.scss */
+/* line 29, blocks/_header.scss */
 .container-header .slogan {
   margin: 25px 0 10px;
   display: block;
   text-align: center;
+}
+
+/* line 5, blocks/_header__navbar.scss */
+.navbar {
+  min-height: 32px;
+  width: 100%;
+  background-color: #0063cc;
+  border-bottom: 1px solid #004fa3;
+  *zoom: 1;
+}
+/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
+.navbar:before, .navbar:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
+.navbar:after {
+  clear: both;
+}
+
+/* line 15, blocks/_header__navbar.scss */
+.navbar .nav {
+  margin: 0;
+  text-align: left;
+  border-top: 1px solid #004fa3;
+  width: 100%;
+}
+
+/* line 23, blocks/_header__navbar.scss */
+.navbar .nav li a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #006de0;
+  display: block;
+  border-bottom: 1px solid #004fa3;
+  padding: 13px 20px;
+  font-weight: bold;
+  color: white;
+}
+
+/* line 36, blocks/_header__navbar.scss */
+.navbar .nav li a:focus,
+.navbar .nav li a:hover {
+  background-color: #006de0;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 45, blocks/_header__navbar.scss */
+.navbar .nav .active a,
+.navbar .nav .active a:hover,
+.navbar .nav .active a:focus {
+  color: white;
+  text-decoration: none;
+  background-color: #004fa3;
+  -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+}
+
+/* line 55, blocks/_header__navbar.scss */
+.navbar__handlebar .navbar__logo {
+  float: right;
+  padding-right: 20px;
+  line-height: 50px;
+  color: white;
+}
+/* line 61, blocks/_header__navbar.scss */
+.navbar__handlebar .navbar__logo img {
+  margin-right: 6px;
+}
+/* line 66, blocks/_header__navbar.scss */
+.navbar__handlebar .navbar__handle {
+  cursor: pointer;
+  float: left;
+  height: 50px;
+  width: 56px;
+  line-height: 50px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  border-right: 1px solid #004fa3;
+}
+
+/* line 80, blocks/_header__navbar.scss */
+.navbar {
+  border-bottom: 0 none;
+  border: 1px solid #003b7a;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 87, blocks/_header__navbar.scss */
+.navbar {
+  /* Customize the navbar links to be fill the entire space of the .navbar */
+}
+/* line 89, blocks/_header__navbar.scss */
+.navbar .nav {
+  margin: 0;
+  display: table;
+  border: 0 none;
+}
+/* line 94, blocks/_header__navbar.scss */
+.navbar .nav li {
+  display: table-cell;
+  width: 1%;
+  float: none;
+}
+/* line 99, blocks/_header__navbar.scss */
+.navbar .nav li a {
+  text-align: center;
+  padding: 5px 15px 5px;
+  border: 0 none;
+  font-weight: normal;
+}
+/* line 105, blocks/_header__navbar.scss */
+.navbar .nav li:first-child a {
+  border-left: 0;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+/* line 109, blocks/_header__navbar.scss */
+.navbar .nav li:last-child a {
+  border-right: 0;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
 }
 
 /* Force table to not be like tables anymore */
@@ -2183,136 +2304,6 @@ legend + .control-group {
 .table thead tr th,
 .table thead tr td {
   border-top: 0;
-}
-
-/* line 21, blocks/_navbar.scss */
-.navbar {
-  min-height: 32px;
-  width: 100%;
-  background-color: #0063cc;
-  border-bottom: 1px solid #004fa3;
-  *zoom: 1;
-}
-/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.navbar:before, .navbar:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.navbar:after {
-  clear: both;
-}
-
-/* line 31, blocks/_navbar.scss */
-.navbar .nav {
-  margin: 0;
-  text-align: left;
-  border-top: 1px solid #004fa3;
-  width: 100%;
-}
-
-/* line 39, blocks/_navbar.scss */
-.navbar .nav li a {
-  color: white;
-  text-decoration: none;
-  text-shadow: 0 1px 0 #006de0;
-  display: block;
-  border-bottom: 1px solid #004fa3;
-  padding: 13px 20px;
-  font-weight: bold;
-  color: white;
-}
-
-/* line 52, blocks/_navbar.scss */
-.navbar .nav li a:focus,
-.navbar .nav li a:hover {
-  background-color: #006de0;
-  color: white;
-  text-decoration: none;
-}
-
-/* line 61, blocks/_navbar.scss */
-.navbar .nav .active a,
-.navbar .nav .active a:hover,
-.navbar .nav .active a:focus {
-  color: white;
-  text-decoration: none;
-  background-color: #004fa3;
-  -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
-}
-
-/* line 71, blocks/_navbar.scss */
-.navbar__handlebar .navbar__logo {
-  float: right;
-  padding-right: 20px;
-  line-height: 50px;
-  color: white;
-}
-/* line 77, blocks/_navbar.scss */
-.navbar__handlebar .navbar__logo img {
-  margin-right: 6px;
-}
-/* line 82, blocks/_navbar.scss */
-.navbar__handlebar .navbar__handle {
-  cursor: pointer;
-  float: left;
-  height: 50px;
-  width: 56px;
-  line-height: 50px;
-  font-size: 30px;
-  color: white;
-  text-align: center;
-  border-right: 1px solid #004fa3;
-}
-
-/* line 96, blocks/_navbar.scss */
-.navbar {
-  border-bottom: 0 none;
-  border: 1px solid #003b7a;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-
-/* line 103, blocks/_navbar.scss */
-.navbar {
-  /* Customize the navbar links to be fill the entire space of the .navbar */
-}
-/* line 105, blocks/_navbar.scss */
-.navbar .nav {
-  margin: 0;
-  display: table;
-  border: 0 none;
-}
-/* line 110, blocks/_navbar.scss */
-.navbar .nav li {
-  display: table-cell;
-  width: 1%;
-  float: none;
-}
-/* line 115, blocks/_navbar.scss */
-.navbar .nav li a {
-  text-align: center;
-  padding: 5px 15px 5px;
-  border: 0 none;
-  font-weight: normal;
-}
-/* line 121, blocks/_navbar.scss */
-.navbar .nav li:first-child a {
-  border-left: 0;
-  -webkit-border-radius: 4px 0 0 4px;
-  -moz-border-radius: 4px 0 0 4px;
-  border-radius: 4px 0 0 4px;
-}
-/* line 125, blocks/_navbar.scss */
-.navbar .nav li:last-child a {
-  border-right: 0;
-  -webkit-border-radius: 0 4px 4px 0;
-  -moz-border-radius: 0 4px 4px 0;
-  border-radius: 0 4px 4px 0;
 }
 
 /* line 9, blocks/_navs.scss */
