@@ -8,5 +8,5 @@
  */
 ?>
 
-<h3><?= @text('Municipality')?></h3>
-<?= @template('com:police.view.municipalities.list.html', array('municipalities' => @object('com:police.model.municipalities')->sort('title')->zone('5388')->getRowset())); ?>
+<h3><?= translate('Municipality')?></h3>
+<?= include('com:police.view.municipalities.list.html', array('municipalities' => object('com:police.model.municipalities')->sort('title')->zone('5388')->getRowset())); ?>

@@ -8,28 +8,28 @@
  */
 ?>
 
-<?= @helper('behavior.validator'); ?>
+<?= helper('behavior.validator'); ?>
 
 <!--
 <script src="media://js/koowa.js" />
 -->
 
-<ktml:module position="toolbar">
-    <?= @helper('toolbar.render', array('toolbar' => $toolbar))?>
+<ktml:module position="actionbar">
+    <ktml:toolbar type="actionbar">
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form">
 	<div class="main">
 		<div class="title">
-		    <input class="required" type="text" name="title" maxlength="255" value="<?= $municipality->title ?>" placeholder="<?= @text('Title') ?>" />
+		    <input class="required" type="text" name="title" maxlength="255" value="<?= $municipality->title ?>" placeholder="<?= translate('Title') ?>" />
 		</div>
 	
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= @text( 'Information' ); ?>:</legend>
+				<legend><?= translate( 'Information' ); ?>:</legend>
 				<div>
 				    <label for="postcode">
-				    	<?= @text( 'Postcode' ); ?>
+				    	<?= translate( 'Postcode' ); ?>
 				    </label>
 				    <div>
 				        <input class="required" type="text" name="postcode" maxlength="4" value="<?= $municipality->postcode; ?>" />
@@ -37,18 +37,18 @@
 				</div>
                 <div>
 				    <label for="name">
-				    	<?= @text( 'Zone' ); ?>
+				    	<?= translate( 'Zone' ); ?>
 				    </label>
 				    <div>
-				        <?= @helper('listbox.zones', array('deselect' => false, 'attribs' => array('class' => 'chzn-select'))) ?>
+				        <?= helper('listbox.zones', array('deselect' => false, 'attribs' => array('class' => 'chzn-select'))) ?>
 				    </div>
 				</div>
                 <div>
 				    <label for="postcode">
-				    	<?= @text( 'City' ); ?>
+				    	<?= translate( 'City' ); ?>
 				    </label>
 				    <div>
-				        <?= @helper('com:police.listbox.cities',
+				        <?= helper('com:police.listbox.cities',
 							array(
 								'autocomplete' => true,
 								'name'		   => 'parent_id',

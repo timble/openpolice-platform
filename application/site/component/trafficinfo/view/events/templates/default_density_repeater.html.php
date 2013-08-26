@@ -8,8 +8,8 @@
  */
 ?>
 
-<? $type = @object('com:jams.model.type')->set('id', $density->type)->getRow()->title ?>
-<? $from = @object('com:jams.model.place')->set('id', $density->start)->getRow()->title ?>
-<? $till = @object('com:jams.model.place')->set('id', $density->end)->getRow()->title ?>
+<? $type = object('com:jams.model.type')->set('id', $density->type)->getRow()->title ?>
+<? $from = object('com:jams.model.place')->set('id', $density->start)->getRow()->title ?>
+<? $till = object('com:jams.model.place')->set('id', $density->end)->getRow()->title ?>
 
-<?= $type.' '.@text('from').' '.$from.' '.@text('till').' '.$till ?>
+<?= $type.' '.translate('from').' '.$from.' '.translate('till').' '.$till ?>

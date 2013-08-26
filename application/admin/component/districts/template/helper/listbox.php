@@ -15,12 +15,11 @@ class DistrictsTemplateHelperListbox extends Library\TemplateHelperListbox
 	{
 		$config = new Library\ObjectConfig($config);
 		$config->append(array(
-			'identifier'  => 'com:districts.model.officers',
-			'name' 		=> 'officers[]',
-			'value'		=> 'id'
+			'identifier'    => 'com:districts.model.officers',
+			'name'          => 'officers[]',
+			'value'		    => 'id',
+            'label'         => 'title'
 		));
-		
-		$config->text = 'title';
 
 		return parent::_listbox($config);
 	}
@@ -32,9 +31,8 @@ class DistrictsTemplateHelperListbox extends Library\TemplateHelperListbox
 			'model'  => 'districts',
 			'name' 	 => 'districts_district_id',
 			'value'	 => 'id',
+            'label'  => 'title'
 		));
-		
-		$config->text = 'title';
 
 		return parent::_listbox($config);
 	}

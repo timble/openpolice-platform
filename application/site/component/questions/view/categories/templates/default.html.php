@@ -9,19 +9,19 @@
 ?>
 
 <div class="page-header">
-    <h1><?php echo @escape($params->get('page_title')); ?></h1>
+    <h1><?php echo escape($params->get('page_title')); ?></h1>
 </div>
 
-<?= @template('com:questions.view.questions.default_search.html') ?>
+<?= include('com:questions.view.questions.default_search.html') ?>
 
 <ul class="nav nav-pills nav-stacked column--triple">
     <? foreach ($categories as $category): ?>
         <li>
-            <a href="<?= @helper('route.category', array('row' => $category)) ?>">
+            <a href="<?= helper('route.category', array('row' => $category)) ?>">
                 <?= $category->title ?>
             </a>
         </li>
     <? endforeach ?>
 </ul>
 
-<?= @template('com:questions.view.questions.default_contact.html') ?>
+<?= include('com:questions.view.questions.default_contact.html') ?>

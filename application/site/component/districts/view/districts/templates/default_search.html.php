@@ -15,7 +15,7 @@
     $jQuery(document).ready(function() {
     	function format(item) { return item.title; };
         $jQuery("#streets").select2({
-            placeholder: "<?= @text('Search') ?> ...",
+            placeholder: "<?= translate('Search') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
                 url: "?view=streets&format=json",
@@ -50,8 +50,8 @@
             formatSelection: format, // omitted for brevity, see the source of this page
             dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
             formatInputTooShort: false,
-            formatSearching: function () { return "<?= @text('Please wait') ?> ..."; },
-            formatNoMatches: function () { return "<?= @text('No matches found') ?>"; }
+            formatSearching: function () { return "<?= translate('Please wait') ?> ..."; },
+            formatNoMatches: function () { return "<?= translate('No matches found') ?>"; }
 
         });
     });
@@ -62,7 +62,7 @@
         <div class="row-fluid">
             <div class="span9">
                 <div class="control-group">
-                    <label class="control-label" for="zone_street_id"><?= @text('My street') ?>:</label>
+                    <label class="control-label" for="zone_street_id"><?= translate('My street') ?>:</label>
                     <div class="controls">
                         <input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" style="display: none;" tabindex="1" required>
                     </div>
@@ -70,7 +70,7 @@
             </div>
             <div class="span3">
                 <div class="control-group">
-                    <label class="control-label" for="number"><?= @text('My number') ?>:</label>
+                    <label class="control-label" for="number"><?= translate('My number') ?>:</label>
                     <div class="controls">
                         <input type="number" name="number" value="<?= $state->number; ?>" tabindex="2" required />
                     </div>
@@ -79,6 +79,6 @@
         </div>
 	</fieldset>
 	<div class="form-actions" style="margin-bottom: 0; margin-top: 0; padding-left: 0;padding-bottom: 0;">
-		<button class="btn" tabindex="3"><?= @text('Search') ?></button> <?= @text('or') ?> <a tabindex="4" href="#"><?= @text('Start over') ?></a>
+		<button class="btn" tabindex="3"><?= translate('Search') ?></button> <?= translate('or') ?> <a tabindex="4" href="#"><?= translate('Start over') ?></a>
 	</div>
 </form>

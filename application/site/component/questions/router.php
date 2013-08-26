@@ -83,7 +83,7 @@ class QuestionsRouter extends Library\DispatcherRouter
                 $count--;
                 $segment = array_shift( $path ) ;
 
-                $vars['id'] = $segment;
+                $vars['slug'] = $segment;
                 $vars['view'] = 'question';
             }
         }
@@ -92,7 +92,7 @@ class QuestionsRouter extends Library\DispatcherRouter
         {
             $segment = array_shift( $path) ;
 
-            $vars['id'] = $segment;
+            $vars['slug'] = $segment;
             $vars['view'] = 'question';
         }
 

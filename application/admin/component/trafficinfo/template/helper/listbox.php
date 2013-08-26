@@ -15,10 +15,9 @@ class TrafficinfoTemplateHelperListbox extends Library\TemplateHelperListbox
 	{
 	    $config = new Library\ObjectConfig($config);
 		$config->append(array(
-			'model'		=> 'items'
+			'model'		=> 'items',
+            'label'     => 'title'
 		));
-		
-		$config->text = 'title';
 		
 		return parent::_render($config);
 	}

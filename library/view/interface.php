@@ -47,6 +47,13 @@ interface ViewInterface
 	 * @return 	string 	The name of the object
 	 */
 	public function getName();
+
+    /**
+     * Get the title
+     *
+     * @return 	string 	The title of the view
+     */
+    public function getTitle();
 	
 	/**
 	 * Get the format
@@ -95,7 +102,7 @@ interface ViewInterface
 	 * - foo=bar
 	 * - option=com_mycomp&view=myview&foo=bar
 	 *
-	 * In templates, use @route()
+	 * In templates, use route()
 	 *
 	 * @param	string	$route  The query string used to create the route
 	 * @param 	boolean	$fqr    If TRUE create a fully qualified route. Default TRUE.

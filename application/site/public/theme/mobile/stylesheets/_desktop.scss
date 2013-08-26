@@ -3,9 +3,8 @@
     background-color: lighten($grayLighter, 3%);
   }
 
-  .navbar__handle,
-  .navbar__logo {
-    display: none !important;
+  .navbar__handlebar {
+    display: none;
   }
 
   .container-header .row-fluid .span3,
@@ -81,41 +80,6 @@
 
   .container-header {
     width: auto;
-    .navbar {
-      background: none;
-
-      .navbar-inner {
-        padding: 0;
-        @include border-radius($baseBorderRadius);
-        border: 1px solid #003166;
-
-        /* Customize the navbar links to be fill the entire space of the .navbar */
-        .nav {
-          margin: 0;
-          display: table;
-          border: 0 none;
-        }
-        .nav li {
-          display: table-cell;
-          width: 1%;
-          float: none;
-        }
-        .nav li a {
-          text-align: center;
-          padding: 5px 15px 5px;
-          border: 0 none;
-          font-weight: normal;
-        }
-        .nav li:first-child a {
-          border-left: 0;
-          @include border-radius($baseBorderRadius 0 0 $baseBorderRadius);
-        }
-        .nav li:last-child a {
-          border-right: 0;
-          @include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
-        }
-      }
-    }
   }
 
   .container-content {
