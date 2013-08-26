@@ -8,6 +8,8 @@
  */
 ?>
 
+<title content="replace"><?= $article->title ?></title>
+
 <article class="vevent">
     <header>
         <h1 class="summary"><?= $article->title ?></h1>

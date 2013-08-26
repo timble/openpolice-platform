@@ -10,7 +10,7 @@
 
 <head>
     <base href="<?= url(); ?>" />
-    <title>Politie Leuven</title>
+    <title><?= title() ?></title>
 
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
     <meta name="viewport" content="width=device-width" />
@@ -18,6 +18,7 @@
 
     <link rel="apple-touch-icon" href="media://application/images/apple-touch-icon.png"/>
 
+    <ktml:title>
     <ktml:meta>
     <ktml:link>
     <ktml:style>
