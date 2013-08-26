@@ -7,11 +7,13 @@
  * @link		http://www.police.be
  */
 
+use Nooku\Library;
+
 class ComTrafficinfoControllerToolbarEvent extends ComDefaultControllerToolbarDefault
 {
-    public function onAfterControllerBrowse(KEvent $event)
+    protected function _afterControllerBrowse(Library\CommandContext $context)
     {
-        parent::onAfterControllerBrowse($event);
+        parent::_afterControllerBrowse($context);
 
         $this->reset();
         $this->addJam();
