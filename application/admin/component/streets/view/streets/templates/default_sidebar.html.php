@@ -9,4 +9,4 @@
 ?>
 
 <h3><?= translate('Municipality')?></h3>
-<?= include('com:police.view.municipalities.list.html', array('municipalities' => object('com:police.model.municipalities')->sort('title')->zone('5388')->getRowset())); ?>
+<?= import('com:police.view.municipalities.list.html', array('municipalities' => object('com:police.model.municipalities')->sort('title')->zone('5388')->getRowset())); ?>

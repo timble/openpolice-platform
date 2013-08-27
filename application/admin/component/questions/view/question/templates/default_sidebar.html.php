@@ -17,8 +17,8 @@
 <fieldset>
     <legend><?= translate('Attachments') ?></legend>
     <? if (!$question->isNew()) : ?>
-        <?= include('com:attachments.view.attachments.list.html', array('attachments' => $question->getAttachments(), 'attachments_attachment_id' => $question->attachments_attachment_id)) ?>
+        <?= import('com:attachments.view.attachments.list.html', array('attachments' => $question->getAttachments(), 'attachments_attachment_id' => $question->attachments_attachment_id)) ?>
     <? endif ?>
-    <?= include('com:attachments.view.attachments.upload.html') ?>
+    <?= import('com:attachments.view.attachments.upload.html') ?>
 </fieldset>
 <? endif ?>

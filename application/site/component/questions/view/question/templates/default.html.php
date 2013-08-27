@@ -22,4 +22,4 @@
     </div>
 </article>
 
-<?= include('com:questions.view.questions.default_contact.html') ?>
+<?= import('com:questions.view.questions.default_contact.html') ?>

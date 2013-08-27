@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <link rel="apple-touch-icon" href="media://application/images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" href="assets://application/images/apple-touch-icon.png"/>
 
     <ktml:title>
     <ktml:meta>
@@ -24,17 +24,17 @@
     <ktml:style>
     <ktml:script>
 
-    <link href="media://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <style src="media://application/stylesheets/default.css" />
-    <style src="media://application/stylesheets/ie.css" condition="if !(lte IE 6)&!(gte IE 9) " />
-    <style src="media://application/stylesheets/ie7.css" condition="if lte IE 7" />
+    <style src="assets://application/stylesheets/default.css" />
+    <style src="assets://application/stylesheets/ie.css" condition="if !(lte IE 6)&!(gte IE 9) " />
+    <style src="assets://application/stylesheets/ie7.css" condition="if lte IE 7" />
 
     <!--[if lte IE 8]>
-    <script src="media://application/js/html5shiv.js" />
+    <script src="assets://application/js/html5shiv.js" />
     <![endif]-->
 
-    <script src="media://districts/jquery/jquery.js" />
+    <script src="assets://districts/jquery/jquery.js" />
     <script type="text/javascript">
     var $jQuery = jQuery.noConflict();
 
@@ -42,6 +42,6 @@
         $jQuery.stayInWebApp();
     });
     </script>
-    <script src="media://application/js/navbar.js" />
-    <script src="media://application/js/webapp.js" />
+    <script src="assets://application/js/navbar.js" />
+    <script src="assets://application/js/webapp.js" />
 </head>

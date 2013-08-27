@@ -3,7 +3,7 @@
 </div>
 
 <? if(!$state->category) : ?>
-    <?= include('default_search.html') ?>
+    <?= import('default_search.html') ?>
 <? endif ?>
 
 <? foreach ($questions as $question): ?>

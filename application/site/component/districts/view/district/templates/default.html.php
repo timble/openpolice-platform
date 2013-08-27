@@ -13,7 +13,7 @@
 <? if(count($officers)) : ?>
 <div class="clearfix article separator">
 	<? foreach ($officers as $officer) : ?>
-		<?= include('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
+		<?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
 	<? endforeach ?>
 </div>
 <? else : ?>
@@ -24,5 +24,5 @@
         $contact = object('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow();
         $contact->misc = null;
     ?>
-    <?= include('com:contacts.view.contact.hcard.html', array('contact' => $contact)); ?>
+    <?= import('com:contacts.view.contact.hcard.html', array('contact' => $contact)); ?>
 </div>

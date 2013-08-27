@@ -8,8 +8,8 @@
  */
 ?>
 
-<style src="media://districts/select2/select2.css" />
-<script src="media://districts/select2/select2.min.js" />
+<style src="assets://districts/select2/select2.css" />
+<script src="assets://districts/select2/select2.min.js" />
 
 <script>
     $jQuery(document).ready(function() {
