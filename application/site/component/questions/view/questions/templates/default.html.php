@@ -13,7 +13,7 @@
         <h1><?php echo escape($params->get('page_title')); ?></h1>
     </div>
 
-    <?= include('default_search.html') ?>
+    <?= import('default_search.html') ?>
 <? else : ?>
     <div class="page-header">
         <h1><?php echo escape($category->title); ?></h1>
@@ -23,7 +23,7 @@
 <? endif ?>
 
 <? if(!$state->category AND !$state->searchword) : ?>
-<?= include('com:questions.view.categories.list.html', array('categories' => object('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset())) ?>
+<?= import('com:questions.view.categories.list.html', array('categories' => object('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset())) ?>
 <? endif ?>
 
 <? if($state->category AND !$state->searchword) : ?>
@@ -58,4 +58,4 @@
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 <? endif ?>
 
-<?= include('default_contact.html') ?>
+<?= import('default_contact.html') ?>

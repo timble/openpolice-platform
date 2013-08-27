@@ -72,19 +72,19 @@ window.addEvent('domready', function() {
         <?
         switch ($event->id ? $event->trafficinfo_category_id : $state->category) {
             case 2:
-                echo include('form_workers');
+                echo import('form_workers');
                 break;
             case 3:
-                echo include('form_ghost');
+                echo import('form_ghost');
                 break;
             case 5:
-                echo include('form_actua');
+                echo import('form_actua');
                 break;
             case 4:
-                echo include('form_density');
+                echo import('form_density');
                 break;
             default:
-                echo include('form_default');
+                echo import('form_default');
         }
          ?>
 	 </div>

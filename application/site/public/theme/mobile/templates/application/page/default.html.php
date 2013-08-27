@@ -12,7 +12,7 @@
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
-<?= include('page_head.html') ?>
+<?= import('page_head.html') ?>
 <body>
 <div id="wrap" class="container-fluid">
     <div class="container-header">
@@ -68,7 +68,7 @@
                     <ktml:modules:content>
                 </ktml:modules>
                 <? if(!helper('module.count', array('condition' => 'left'))) : ?>
-                <?= include('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
+                <?= import('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
                 <? endif ?>
             </aside>
             <? endif; ?>
@@ -82,7 +82,7 @@
         <div class="row-fluid">
             <div class="span6 alpha">
                 <h3><?= translate('Laatste nieuws') ?></h3>
-                <?= include('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
+                <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
             </div>
             <div class="span3">
                 <h3><?= translate('Meer weten') ?></h3>
@@ -92,7 +92,7 @@
             </div>
             <div class="span3">
                 <h3>Mijn wijkinspecteur</h3>
-                <?= include('default_district.html') ?>
+                <?= import('default_district.html') ?>
             </div>
         </div>
     </div>

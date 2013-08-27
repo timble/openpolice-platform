@@ -12,16 +12,16 @@
     <h1><?= escape($params->get('page_title')); ?></h1>
 </div>
 
-<?= include('default_search.html'); ?>
+<?= import('default_search.html'); ?>
 
 <? if ($state->street && $state->number) : ?>
 
     <? foreach ($districts as $district) : ?>
-        <?= include('com:districts.view.district.default.html', array('district' => $district)); ?>
+        <?= import('com:districts.view.district.default.html', array('district' => $district)); ?>
     <? endforeach; ?>
     <? if(!count($districts)) : ?>
         <h2><?= translate('No neighbourhood officer found') ?></h2>
         <h3><?= translate('Try again or get in touch with one of our locations') ?></h3>
-        <?= include('com:districts.view.locations.default.html', array('locations' => object('com:zone.model.locations')->getRowset())); ?>
+        <?= import('com:districts.view.locations.default.html', array('locations' => object('com:zone.model.locations')->getRowset())); ?>
     <? endif ?>
 <? endif ?>

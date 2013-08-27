@@ -12,7 +12,7 @@
     <h1><?php echo escape($params->get('page_title')); ?></h1>
 </div>
 
-<?= include('com:questions.view.questions.default_search.html') ?>
+<?= import('com:questions.view.questions.default_search.html') ?>
 
 <ul class="nav nav-pills nav-stacked column--triple">
     <? foreach ($categories as $category): ?>
@@ -24,4 +24,4 @@
     <? endforeach ?>
 </ul>
 
-<?= include('com:questions.view.questions.default_contact.html') ?>
+<?= import('com:questions.view.questions.default_contact.html') ?>

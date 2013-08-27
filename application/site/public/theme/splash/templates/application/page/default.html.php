@@ -10,7 +10,7 @@
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
-<?= include('page_head.html') ?>
+<?= import('page_head.html') ?>
 
 <script>
     $jQuery(document).ready(function() {
