@@ -12,6 +12,10 @@ location ~ ^/theme {
 	try_files $uri @proxy;
 }
 
+location ~ ^/files/ {
+    try_files $uri @proxy;
+}
+
 # Rewrite new sites
 include /etc/nginx/conf.d/v2.inc;
 
