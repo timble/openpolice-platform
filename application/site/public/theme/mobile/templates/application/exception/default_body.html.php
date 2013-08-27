@@ -17,7 +17,7 @@
             <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img itemprop="logo" src="media://application/images/logo-nl.jpg" />
+                        <img itemprop="logo" src="assets://application/images/logo-nl.jpg" />
                         <div><?= escape($zone->title); ?></div>
                     </a>
                 </div>

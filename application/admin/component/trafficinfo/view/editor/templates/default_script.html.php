@@ -11,25 +11,25 @@
 <? /* Image and article buttons needs this in order to work */ ?>
 <?= helper('behavior.modal') ?>
 
-<style src="media://com_wysiwyg/css/default.css" />
+<style src="assets://com_wysiwyg/css/default.css" />
 
 <? if ($options['toggle']) : ?>
-    <style src="media://com_wysiwyg/css/form.css" />
-    <script src="media://com_wysiwyg/js/Fx.Toggle.js" />
+    <style src="assets://com_wysiwyg/css/form.css" />
+    <script src="assets://com_wysiwyg/js/Fx.Toggle.js" />
 <? endif ?>
 
-<script src="media://com_wysiwyg/tinymce/tiny_mce<?= KDEBUG ? '_src.js' : '.js' ?>" />
-<script src="media://com_wysiwyg/js/Editor.js" />
+<script src="assets://com_wysiwyg/tinymce/tiny_mce<?= KDEBUG ? '_src.js' : '.js' ?>" />
+<script src="assets://com_wysiwyg/js/Editor.js" />
 
 <? if($codemirror) : ?>
-<script src="media://com_wysiwyg/codemirror/lib/codemirror.js" />
-<script src="media://com_wysiwyg/codemirror/mode/css/css.js" />
-<script src="media://com_wysiwyg/codemirror/mode/htmlmixed/htmlmixed.js" />
-<script src="media://com_wysiwyg/codemirror/mode/javascript/javascript.js" />
-<script src="media://com_wysiwyg/codemirror/mode/php/php.js" />
-<script src="media://com_wysiwyg/codemirror/mode/xml/xml.js" />
+<script src="assets://com_wysiwyg/codemirror/lib/codemirror.js" />
+<script src="assets://com_wysiwyg/codemirror/mode/css/css.js" />
+<script src="assets://com_wysiwyg/codemirror/mode/htmlmixed/htmlmixed.js" />
+<script src="assets://com_wysiwyg/codemirror/mode/javascript/javascript.js" />
+<script src="assets://com_wysiwyg/codemirror/mode/php/php.js" />
+<script src="assets://com_wysiwyg/codemirror/mode/xml/xml.js" />
 
-<style src="media://com_wysiwyg/codemirror/lib/codemirror.css" />
+<style src="assets://com_wysiwyg/codemirror/lib/codemirror.css" />
 
 <script>	
 var quicktagsL10n = 

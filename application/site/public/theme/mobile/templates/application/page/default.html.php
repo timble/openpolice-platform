@@ -20,7 +20,7 @@
             <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img itemprop="logo" src="media://application/images/logo-nl.jpg" />
+                        <img itemprop="logo" src="assets://application/images/logo-nl.jpg" />
                         <div><?= escape($zone->title); ?></div>
                     </a>
                 </div>
@@ -31,7 +31,7 @@
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>
                         <a class="navbar__logo" href="/<?= $site ?>">
-                            <img src="media://application/images/logo-flame.png" />
+                            <img src="assets://application/images/logo-flame.png" />
                             <?= escape($zone->title); ?>
                         </a>
                     </div>
@@ -46,7 +46,7 @@
     <div class="container-banner banner5388">
         <div class="row-fluid">
             <div class="span12 alpha">
-                <img src="media://application/images/banners/<?= $site ?>.jpg" />
+                <img src="assets://application/images/banners/<?= $site ?>.jpg" />
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
             © 2013 Lokale Politie - <?= escape($zone->title); ?>
             <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
             <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a>
-            <a style="margin-left: 10px" href="http://www.belgium.be"><image src="media://application/images/icon_belgium.gif" /></a>
+            <a style="margin-left: 10px" href="http://www.belgium.be"><image src="assets://application/images/icon_belgium.gif" /></a>
         </div>
     </div>
     </div>

@@ -52,7 +52,7 @@
 	<div class="row-fluid">
         <div class="span10 offset1">
             <div class="splash">
-                <div class="logo"><img src="media://application/images/splash-nl.jpg" /></div>
+                <div class="logo"><img src="assets://application/images/splash-nl.jpg" /></div>
                 <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
                     <input name="id" type="hidden" class="bigdrop" id="municipality" style="display: none; width: 100% ">
                     <br />
