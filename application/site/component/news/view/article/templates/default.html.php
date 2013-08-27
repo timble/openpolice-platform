@@ -28,6 +28,6 @@
     <div class="entry-content"><?= $article->fulltext ?></div>
 
     <div class="entry-content-asset">
-        <?= include('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
+        <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
 </article>

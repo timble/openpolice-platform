@@ -9,4 +9,4 @@
 ?>
 
 <h3><?= translate('Districts')?></h3>
-<?= include('com:districts.view.districts.list.html', array('districts' => object('com:districts.model.districts')->sort('title')->getRowset())); ?>
+<?= import('com:districts.view.districts.list.html', array('districts' => object('com:districts.model.districts')->sort('title')->getRowset())); ?>

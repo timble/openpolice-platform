@@ -11,7 +11,7 @@
 <?= helper('behavior.validator'); ?>
 
 <!--
-<script src="media://js/koowa.js" />
+<script src="assets://js/koowa.js" />
 -->
 
 <ktml:module position="actionbar">
@@ -103,9 +103,9 @@
                 <fieldset>
                     <legend><?= translate('Image') ?></legend>
                     <? if (!$officer->isNew()) : ?>
-                        <?= include('com:attachments.view.attachments.list.html', array('attachments' => $officer->getAttachments(), 'attachments_attachment_id' => $officer->attachments_attachment_id)) ?>
+                        <?= import('com:attachments.view.attachments.list.html', array('attachments' => $officer->getAttachments(), 'attachments_attachment_id' => $officer->attachments_attachment_id)) ?>
                     <? endif ?>
-                    <?= include('com:attachments.view.attachments.upload.html') ?>
+                    <?= import('com:attachments.view.attachments.upload.html') ?>
                 </fieldset>
             <? endif ?>
 		</div>
