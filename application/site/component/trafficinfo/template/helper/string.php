@@ -47,17 +47,17 @@ class TrafficinfoTemplateHelperString extends Library\TemplateHelperAbstract
 		$row  = $config->row;
 		
 		if($row->road) {
-			$output = JText::_('On the').' '.'<strong>'.$row->road.'</strong>';
+			$output = $this->translate('On the').' '.'<strong>'.$row->road.'</strong>';
 			
 			if($row->road_bis) {
 				$output .= ' ('.$row->road_bis.')';
 			}
 			if($row->direction) {
-				$output .= ' '.JText::_('in the direction of').' '.'<strong>'.$row->direction.'</strong>';
+				$output .= ' '.$this->translate('in the direction of').' '.'<strong>'.$row->direction.'</strong>';
 			}
 				
 			if($row->jams_place_id) {
-				$output .= ' '.JText::_('at the level of').' '.'<strong>'.$row->place.'</strong>';
+				$output .= ' '.$this->translate('at the level of').' '.'<strong>'.$row->place.'</strong>';
 			}
 			
 			return $output;
@@ -111,14 +111,14 @@ class TrafficinfoTemplateHelperString extends Library\TemplateHelperAbstract
 		$information = $row->information;
 		
 		if ($row->place_end OR $information->jam_length OR $information->jam_time) {
-			$output = JText::_('Jam').' ';
+			$output = $this->translate('Jam').' ';
 			
 			if($row->place && $row->place_end) {
-				$output .= JText::_('from').' '.$row->place.' ';
+				$output .= $this->translate('from').' '.$row->place.' ';
 			}
 			
 			if($row->place_end) {
-				$output .= JText::_('till').' '.$row->place_end;
+				$output .= $this->translate('till').' '.$row->place_end;
 			}
 			
 			if($row->place_end && $information->jam_length) {
@@ -126,7 +126,7 @@ class TrafficinfoTemplateHelperString extends Library\TemplateHelperAbstract
 			}
 			
 			if($information->jam_length) {
-				$output .= $information->jam_length.' '.JText::_('km').' file';
+				$output .= $information->jam_length.' '.$this->translate('km').' file';
 			}
 			
 			if(($row->place_end OR $information->jam_length) && $information->jam_time) {
@@ -134,7 +134,7 @@ class TrafficinfoTemplateHelperString extends Library\TemplateHelperAbstract
 			}
 			
 			if($information->jam_time) {
-				$output .= $information->jam_time.' '.JText::_('minutes').' '.JText::_('delay');
+				$output .= $information->jam_time.' '.$this->translate('minutes').' '.$this->translate('delay');
 			}
 			
 			return $output;

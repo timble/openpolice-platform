@@ -14,7 +14,7 @@
         <header>
             <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
             <div class="timestamp">
-                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => JText::_('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
+                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
             </div>
         </header>
 

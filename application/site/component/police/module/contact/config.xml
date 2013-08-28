@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<config>
-    <params addpath="/application/admin/component/contacts/element">
-        <param name="contacts_contact_id" type="contact" default="" label="Contact" description="The contact used for the contact information"/>
-        <param name="@spacer" type="spacer" default="" label="" description="" />
-        <param name="link_url" type="text" default="" label="URL" description="URL to page with more contact information" />
-    </params>
-</config>
