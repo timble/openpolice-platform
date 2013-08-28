@@ -48,7 +48,7 @@ server {
         alias $root/sites/$1/files/$2;
     }
 
-   location ~* ^/application/(.*)/public/index.php$ {
+    location ~* ^/application/(.*)/public/index.php$ {
         # for security reasons the next line is highly encouraged
         try_files $uri = 404;
 
