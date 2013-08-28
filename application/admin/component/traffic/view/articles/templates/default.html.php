@@ -60,8 +60,8 @@
 				</a>
 			</td>
 			<td>
-                <?= helper('date.format', array('date'=> $article->start_on, 'format' => JText::_('DATE_FORMAT_LC3'))) ?>
-                <?= $article->end_on ? ' - '.helper('date.format', array('date'=> $article->end_on, 'format' => JText::_('DATE_FORMAT_LC3'))) : ''; ?>
+                <?= helper('date.format', array('date'=> $article->start_on, 'format' => translate('DATE_FORMAT_LC3'))) ?>
+                <?= $article->end_on ? ' - '.helper('date.format', array('date'=> $article->end_on, 'format' => translate('DATE_FORMAT_LC3'))) : ''; ?>
             </td>
 		</tr>
 		<? endforeach; ?>

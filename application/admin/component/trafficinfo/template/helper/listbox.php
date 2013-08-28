@@ -37,7 +37,7 @@ class TrafficinfoTemplateHelperListbox extends Library\TemplateHelperListbox
         $list = array('incident','situation','traffic','source','roads','places','text');
 
         foreach($list as $item) {
-            $options[] = $this->option(array('text' => JText::_(ucfirst($item)), 'value' => $item));
+            $options[] = $this->option(array('text' => $this->translate(ucfirst($item)), 'value' => $item));
         }
 
         $config->options = $options;
