@@ -53,7 +53,7 @@ foreach(glob("v2_*.sql") as $file)
 
 // Now rsync the source files
 echo "-- Syncing shared folders".PHP_EOL;
-exec('rsync --rsh "ssh -p 9999" deploy@172.18.150.10:/var/www/v2.lokalepolitie.be/capistrano/shared/ /var/www/v2.lokalepolitie.be/capistrano/shared/ --update --perms --owner --group --recursive --times --links');
+exec('rsync --rsh "ssh -p 9999" deploy@172.18.150.10:/var/www/v2.lokalepolitie.be/capistrano/shared/ /var/www/v2.lokalepolitie.be/capistrano/shared/ --delete --update --perms --owner --group --recursive --times --links');
 
 // Make sure to copy over the variable nginx configuration files
 echo "-- Updating Nginx configuration".PHP_EOL;

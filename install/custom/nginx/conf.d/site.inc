@@ -21,13 +21,13 @@ include /etc/nginx/conf.d/v2.inc;
 
 # Redirect administrator folder to v2, old v1 admin is accessed through administrator.$host
 location ~ "^/administrator/" {
-        include /etc/nginx/conf.d/proxy.inc;
+    include /etc/nginx/conf.d/proxy.inc;
 	break;
 }
 
 # Add www to URLs
 if ($host ~* ^([a-z0-9\-]+\.(be|fr|nl|de))$) {
-        rewrite ^(.*)$ http://www.$host$1 permanent;
+    rewrite ^(.*)$ http://www.$host$1 permanent;
 }
 
 # Rewrite lokale-politie.be
@@ -118,7 +118,7 @@ proxy_cache_key "$host$request_uri$cookie_sessioncookie";
 location ~ \.php$ {
 	fastcgi_pass	127.0.0.1:9000;
 	fastcgi_index	index.php;
-        fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
 	include	fastcgi_params;
 	expires	0d;
 }
