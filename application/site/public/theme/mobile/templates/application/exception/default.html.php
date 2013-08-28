@@ -13,26 +13,27 @@
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 <head>
+    <title><?= translate('Error').': '.$code; ?></title>
+
     <ktml:style>
-        <ktml:script>
+    <ktml:script>
 
-            <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-            <style src="assets://application/stylesheets/default.css" />
-            <script>
-                function toggleBacktrace() {
-                    var helpBoxOuter = document.getElementById('backtrace__info');
-                    helpBoxOuter.classList.toggle('is-hidden');
-                    var moreLessButton = document.getElementById('backtrace__button');
-                    if (helpBoxOuter.classList.contains('is-hidden')) {
-                        moreLessButton.innerText = moreLessButton.getAttribute('data-text-more');
-                    } else {
-                        moreLessButton.innerText = moreLessButton.getAttribute('data-text-less');
-                    }
-                }
-            </script>
+        <style src="assets://application/stylesheets/default.css" />
 
-            <title><?= translate('Error').': '.$code; ?></title>
+    <script>
+        function toggleBacktrace() {
+            var helpBoxOuter = document.getElementById('backtrace__info');
+            helpBoxOuter.classList.toggle('is-hidden');
+            var moreLessButton = document.getElementById('backtrace__button');
+            if (helpBoxOuter.classList.contains('is-hidden')) {
+                moreLessButton.innerText = moreLessButton.getAttribute('data-text-more');
+            } else {
+                moreLessButton.innerText = moreLessButton.getAttribute('data-text-less');
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -54,15 +55,14 @@
     </div>
 
     <div class="container-content">
+        <h1><?= translate('Page not found') ?> - <?= $code ?></h1>
         <div class="row-fluid">
-            <div class="span12 alpha component">
-                <h1><?= translate('Page not found') ?></h1>
+            <div class="span7 alpha component">
                 <p><strong><?= translate('You may not be able to visit this page because of:'); ?></strong></p>
                 <ol>
                     <li><?= translate('An out-of-date bookmark/favourite'); ?></li>
                     <li><?= translate('A search engine that has an out-of-date listing for this site'); ?></li>
                     <li><?= translate('A mis-typed address'); ?></li>
-                    <li><?= translate('You have no access to this page'); ?></li>
                     <li><?= translate('The requested resource was not found'); ?></li>
                     <li><?= translate('An error has occurred while processing your request.'); ?></li>
                 </ol>
@@ -70,7 +70,13 @@
                 <ul>
                     <li><a href="/" title="<?= translate('Go to the home page'); ?>"><?= translate('Home Page'); ?></a></li>
                 </ul>
-                <p><?= translate('If difficulties persist, please contact the system administrator of this site.'); ?></p>
+            </div>
+            <div class="span5">
+                <img class="thumbnail" src="assets://application/images/error.jpg" />
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
                 <div class="backtrace">
                     <button id="backtrace__button" class="btn" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>">More</button>
                 </div>
