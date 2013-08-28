@@ -8,6 +8,6 @@
  */
 ?>
 
-<?= include('default_script') ?>
+<?= import('default_script') ?>
 
 <textarea id="<?= $id ?>" name="<?= $name ?>" class="editable-<?= $id ?> validate-editor" style="visibility:hidden"><?= $text ?></textarea>

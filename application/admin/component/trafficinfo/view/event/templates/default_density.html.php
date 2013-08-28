@@ -40,7 +40,7 @@
 </fieldset>
 
 <? $densities = $event->densities ?>
-<?= include('form_density_repeater', array('name' => '1', 'number' => 'one', 'density' => $densities->one)); ?>
-<?= include('form_density_repeater', array('name' => '2', 'number' => 'two', 'density' => $densities->two)); ?>
-<?= include('form_density_repeater', array('name' => '3', 'number' => 'three', 'density' => $densities->three)); ?>
-<?= include('form_density_repeater', array('name' => '4', 'number' => 'four', 'density' => $densities->four)); ?>
+<?= import('form_density_repeater', array('name' => '1', 'number' => 'one', 'density' => $densities->one)); ?>
+<?= import('form_density_repeater', array('name' => '2', 'number' => 'two', 'density' => $densities->two)); ?>
+<?= import('form_density_repeater', array('name' => '3', 'number' => 'three', 'density' => $densities->three)); ?>
+<?= import('form_density_repeater', array('name' => '4', 'number' => 'four', 'density' => $densities->four)); ?>

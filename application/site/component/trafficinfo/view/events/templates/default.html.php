@@ -42,7 +42,7 @@
 		</div>
 		
 		<? if($event->jams_category_id == '5') : ?>
-		   <?= include('default_density', array('jam' => $event)); ?>
+		   <?= import('default_density', array('jam' => $event)); ?>
 		<? endif; ?>
 		
 		<div class="footer">

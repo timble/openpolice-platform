@@ -55,5 +55,5 @@
 </div>
 
 <div class="row-fluid">
-    <?= include('homepage_shortcuts.html', array('class' => 'span3')) ?>
+    <?= import('homepage_shortcuts.html', array('class' => 'span3')) ?>
 </div>
