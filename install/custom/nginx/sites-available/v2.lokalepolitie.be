@@ -25,26 +25,32 @@ server {
     }
 
     location /theme/ {
+        expires 30d;
         alias $application_root/site/public/theme/;
     }
 
     location /administrator/theme/ {
-       alias $application_root/admin/public/theme/;
+        expires 30d;
+        alias $application_root/admin/public/theme/;
     }
 
     location ~ /assets/(images|css|js)/(.*)$ {
+        expires 30d;
         alias $root/library/resources/assets/$1/$2;
     }
 
     location ~ /administrator/assets/([_a-z-]+)/(.*)$ {
+        expires 30d;
         try_files /application/admin/component/$1/resources/assets/$2 /component/$1/resources/assets/$2 =404;
     }
 
     location ~ /assets/([_a-z-]+)/(.*)$ {
+        expires 30d;
         try_files /application/site/component/$1/resources/assets/$2 /component/$1/resources/assets/$2 =404;
     }
 
     location ~ /files/([_0-9a-zA-Z-]+)/(.*)$ {
+        expires 30d;
         alias $root/sites/$1/files/$2;
     }
 

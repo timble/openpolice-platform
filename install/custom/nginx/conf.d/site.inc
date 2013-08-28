@@ -97,8 +97,8 @@ location ~* /images/stories/wijk/.*.(html|jpg|jpeg|gif|png)$ {
 	expires 1d;
 }
 
-location ~* ^.+\.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
-	expires 30d;
+location ~* ^/(images|media|files|assets|theme|templates|sites)/.+\.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
+    expires 30d;
 }
 
 error_page	404	/404.html;
