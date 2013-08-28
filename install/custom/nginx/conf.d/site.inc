@@ -1,10 +1,10 @@
-# Create a named location to pass /media and /theme files 
+# Create a named location to pass to /assets, /theme and /files
 location @proxy {
 	include /etc/nginx/conf.d/proxy.inc;
 }
 
 # Proxy static files that can be found on the v2 site
-location ~ ^/media/ {
+location ~ ^/assets/ {
 	try_files $uri @proxy;
 }
 
