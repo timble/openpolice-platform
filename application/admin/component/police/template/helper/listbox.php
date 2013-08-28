@@ -62,10 +62,10 @@ class PoliceTemplateHelperListbox extends Library\TemplateHelperListbox
 	    
 	    $options = array();
 	    
-	    $options[] = $this->option(array('text' => JText::_( 'NL' ), 'value' => '1'));
-	    $options[] = $this->option(array('text' => JText::_( 'FR' ) , 'value' => '2' ));
-	    $options[] = $this->option(array('text' => JText::_( 'NL & FR' ), 'value' => '3' ));
-	    $options[] = $this->option(array('text' => JText::_( 'DE' ), 'value' => '4' ));
+	    $options[] = $this->option(array('text' => $this->translate( 'NL' ), 'value' => '1'));
+	    $options[] = $this->option(array('text' => $this->translate( 'FR' ) , 'value' => '2' ));
+	    $options[] = $this->option(array('text' => $this->translate( 'NL & FR' ), 'value' => '3' ));
+	    $options[] = $this->option(array('text' => $this->translate( 'DE' ), 'value' => '4' ));
 	
 	    //Add the options to the config object
 	    $config->options = $options;

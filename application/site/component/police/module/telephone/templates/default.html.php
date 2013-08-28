@@ -8,4 +8,4 @@
  */
 ?>
 
-<?= JText::_('Call'); ?> <strong><a href="tel:101">101</a></strong> <?= JText::_('in emergency'); ?> <?= JText::_('else'); ?> <strong><a href="tel:<?= $telephone->telephone; ?>"><?= $telephone->telephone; ?></a></strong>
+<?= translate('Call'); ?> <strong><a href="tel:101">101</a></strong> <?= translate('in emergency'); ?> <?= translate('else'); ?> <strong><a href="tel:<?= $telephone->telephone; ?>"><?= $telephone->telephone; ?></a></strong>

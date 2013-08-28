@@ -21,16 +21,16 @@ class TrafficTemplateHelperDate extends Library\TemplateHelperDate
 
         $html = array();
 
-        $html[] = $this->format(array('date'=> $config->start_on, 'format' => JText::_('DATE_FORMAT_LC4')));
+        $html[] = $this->format(array('date'=> $config->start_on, 'format' => $this->translate('DATE_FORMAT_LC4')));
 
         if (!$config->end_on) {
-            $html[] = JText::_('till');
-            $html[] = JText::_('end undefined');
+            $html[] = $this->translate('till');
+            $html[] = $this->translate('end undefined');
         }
 
         if ($config->start_on < $config->end_on) {
-            $html[] = JText::_('till');
-            $html[] = $this->format(array('date'=> $config->end_on, 'format' => JText::_('DATE_FORMAT_LC4')));
+            $html[] = $this->translate('till');
+            $html[] = $this->format(array('date'=> $config->end_on, 'format' => $this->translate('DATE_FORMAT_LC4')));
         }
 
         return implode(' ', $html);
