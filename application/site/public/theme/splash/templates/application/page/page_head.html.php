@@ -20,17 +20,17 @@
     <ktml:style>
     <ktml:script>
 
-    <link href="media://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <style src="media://application/stylesheets/system.css"  />
-    <style src="media://application/stylesheets/general.css"  />
-    <style src="media://application/stylesheets/default.css" />
-    <style src="media://application/stylesheets/print.css" media="print" />
+    <style src="assets://application/stylesheets/system.css"  />
+    <style src="assets://application/stylesheets/general.css"  />
+    <style src="assets://application/stylesheets/default.css" />
+    <style src="assets://application/stylesheets/print.css" media="print" />
 
-    <script src="media://districts/jquery/jquery.js" />
+    <script src="assets://districts/jquery/jquery.js" />
     <script type="text/javascript">
     var $jQuery = jQuery.noConflict();
     </script>
-    <style src="media://districts/select2/select2.css" />
-    <script src="media://districts/select2/select2.min.js" />
+    <style src="assets://districts/select2/select2.css" />
+    <script src="assets://districts/select2/select2.min.js" />
 </head>

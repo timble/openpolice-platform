@@ -9,7 +9,7 @@
 ?>
 
 <!--
-<script src="media://js/koowa.js" />
+<script src="assets://js/koowa.js" />
 -->
 
 <ktml:module position="actionbar">
