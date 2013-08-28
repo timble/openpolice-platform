@@ -10,6 +10,31 @@
 
 <? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
 
+<!DOCTYPE HTML>
+<html lang="<?= $language; ?>" dir="<?= $direction; ?>">
+<head>
+    <ktml:style>
+        <ktml:script>
+
+            <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+            <style src="assets://application/stylesheets/default.css" />
+            <script>
+                function toggleBacktrace() {
+                    var helpBoxOuter = document.getElementById('backtrace__info');
+                    helpBoxOuter.classList.toggle('is-hidden');
+                    var moreLessButton = document.getElementById('backtrace__button');
+                    if (helpBoxOuter.classList.contains('is-hidden')) {
+                        moreLessButton.innerText = moreLessButton.getAttribute('data-text-more');
+                    } else {
+                        moreLessButton.innerText = moreLessButton.getAttribute('data-text-less');
+                    }
+                }
+            </script>
+
+            <title><?= translate('Error').': '.$code; ?></title>
+</head>
+
 <body>
 <div id="wrap" class="container-fluid">
     <div class="container-header">
@@ -60,3 +85,5 @@
 </div>
 
 </body>
+
+</html>
