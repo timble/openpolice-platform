@@ -98,8 +98,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
 
-    background-color: lighten($grayLighter, 3%);
-    border-top: 1px solid darken($grayLighter, 7%);
+    background-color: lighten($grayLighter, 5%);
+    border-top: 1px solid darken($grayLighter, 0%);
 
     @include border-radius(0 0 5px 5px);
   }
