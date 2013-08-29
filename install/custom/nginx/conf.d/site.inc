@@ -21,13 +21,13 @@ include /etc/nginx/conf.d/v2.inc;
 
 # Redirect administrator folder to v2, old v1 admin is accessed through administrator.$host
 location ~ "^/administrator/" {
-        include /etc/nginx/conf.d/proxy.inc;
+    include /etc/nginx/conf.d/proxy.inc;
 	break;
 }
 
 # Add www to URLs
 if ($host ~* ^([a-z0-9\-]+\.(be|fr|nl|de))$) {
-        rewrite ^(.*)$ http://www.$host$1 permanent;
+    rewrite ^(.*)$ http://www.$host$1 permanent;
 }
 
 # Rewrite lokale-politie.be
@@ -97,8 +97,8 @@ location ~* /images/stories/wijk/.*.(html|jpg|jpeg|gif|png)$ {
 	expires 1d;
 }
 
-location ~* ^.+\.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
-	expires 30d;
+location ~* ^/(images|media|files|assets|theme|templates|sites)/.+\.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
+    expires 30d;
 }
 
 error_page	404	/404.html;
@@ -118,7 +118,7 @@ proxy_cache_key "$host$request_uri$cookie_sessioncookie";
 location ~ \.php$ {
 	fastcgi_pass	127.0.0.1:9000;
 	fastcgi_index	index.php;
-        fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
 	include	fastcgi_params;
 	expires	0d;
 }
