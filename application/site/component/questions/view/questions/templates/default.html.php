@@ -8,6 +8,10 @@
 */
 ?>
 
+<ktml:module position="left">
+    <?= import('default_categories.html', array('categories' => $categories, 'selected' => $state->category)) ?>
+</ktml:module>
+
 <title content="replace"><?= escape(translate($params->get('page_title'))); ?></title>
 
 <div class="page-header">
@@ -16,10 +20,6 @@
 
 <? if(!$state->category) : ?>
     <?= import('default_search.html') ?>
-<? endif ?>
-
-<? if(!$state->category AND !$state->searchword) : ?>
-    <?= import('com:questions.view.categories.list.html', array('categories' => object('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset())) ?>
 <? endif ?>
 
 <? if($state->category AND !$state->searchword) : ?>

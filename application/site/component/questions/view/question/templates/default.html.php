@@ -8,6 +8,10 @@
  */
 ?>
 
+<ktml:module position="left">
+    <?= import('com:questions.view.questions.default_categories.html', array('categories' => $categories, 'selected' => $state->category)) ?>
+</ktml:module>
+
 <title content="replace"><?= $question->title ?></title>
 
 <article>
