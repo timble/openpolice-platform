@@ -6,15 +6,14 @@
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link		http://www.police.be
  */
-
 use Nooku\Library;
 
-class QuestionsTemplateFilterAlias extends Library\TemplateFilterAlias
+class QuestionsTemplateFilterFunction extends Library\TemplateFilterFunction
 {
     public function __construct(Library\ObjectConfig $config)
     {
         parent::__construct($config);
 
-        $this->addAlias(array('@highlight(' => '$this->getView()->highlight('), Library\TemplateFilter::MODE_COMPILE);
+        $this->addFunction('highlight', '$this->getView()->highlight(');
     }
 }
