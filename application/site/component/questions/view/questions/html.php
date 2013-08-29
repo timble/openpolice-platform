@@ -22,8 +22,13 @@ class QuestionsViewQuestionsHtml extends Library\ViewHtml
         //Set the pathway
         if($this->getModel()->getState()->category) {
             $category = $this->getCategory();
-            $this->getObject('application')->getPathway()->addItem($category->title, '');
             $this->category = $category;
+
+            $this->params->set('page_title', $category->title);
+
+            $this->getObject('application')->getPathway()->addItem($category->title, '');
+        } else {
+            $this->params->set('page_title', 'Frequently asked questions');
         }
 
         return parent::render();
