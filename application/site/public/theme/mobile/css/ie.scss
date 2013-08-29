@@ -1,0 +1,29 @@
+$old-ie: true;
+$fix-mqs: 998px;
+@import 'default';
+
+.container-header {
+  .nav li a {
+    width: 100px;
+  }
+}
+
+.container-footer {
+  input {
+    width: 188px;
+  }
+}
+
+.span1,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6,
+.span7,
+.span8,
+.span9,
+.span10,
+.span11,
+.span12 { float:left; margin-left: $gridGutterWidth; display:inline; }
+

@@ -79,22 +79,7 @@
     </div>
 
     <div class="container-footer">
-        <div class="row-fluid">
-            <div class="span6 alpha">
-                <h3><?= translate('Laatste nieuws') ?></h3>
-                <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
-            </div>
-            <div class="span3">
-                <h3><?= translate('Meer weten') ?></h3>
-                <ktml:modules position="footermenu">
-                    <ktml:modules:content>
-                </ktml:modules>
-            </div>
-            <div class="span3">
-                <h3>Mijn wijkinspecteur</h3>
-                <?= import('default_district.html') ?>
-            </div>
-        </div>
+        <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->getRowset())) ?>
     </div>
 </div>
 
