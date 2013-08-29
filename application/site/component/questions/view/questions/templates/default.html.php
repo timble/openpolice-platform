@@ -44,12 +44,12 @@
     <div class="page-header">
         <h1>
             <a href="<?= helper('route.question', array('row' => $question)) ?>">
-                <?= @highlight($question->title) ?>
+                <?= highlight($question->title) ?>
             </a>
         </h1>
     </div>
 
-    <?= @highlight($question->text) ?>
+    <?= highlight($question->text) ?>
 </article>
 <? endforeach ?>
 <? endif ?>
