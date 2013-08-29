@@ -10,10 +10,10 @@
 
 <? $site = object('application')->getCfg('site') ?>
 
-<? $i = '1' ?>
-<div class="row-fluid">
+
+
 <? foreach ($articles as $article) : ?>
-    <div class="span6 media<?= !$article->thumbnail ? ' media--imageless' : ''; ?><?= $i % 2 == 0 ? '' : ' alpha' ?>">
+    <div class="media<?= !$article->thumbnail ? ' media--imageless' : ''; ?>">
         <? if($article->thumbnail): ?>
             <a class="pull-left" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
                 <?= helper('com:attachments.image.thumbnail', array('row' => $article, 'class' => 'media-object thumbnail')) ?>
@@ -27,10 +27,4 @@
             </div>
         </div>
     </div>
-
-    <? if($i == '2') : ?>
-        </div><div class="row-fluid">
-    <? endif ?>
-    <? $i++ ?>
 <? endforeach; ?>
-</div>
