@@ -1,9 +1,4 @@
 article {
-  @extend .separator--below;
-}
-
-article {
-  @extend .separator--below;
   @extend .clearfix;
 
   h2 { margin-top: 30px; }
