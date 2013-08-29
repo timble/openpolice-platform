@@ -79,7 +79,16 @@
     </div>
 
     <div class="container-footer">
-        <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->getRowset())) ?>
+        <div class="row-fluid">
+            <div class="span8 alpha">
+                <h3><?= translate('Laatste nieuws') ?></h3>
+                <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
+            </div>
+            <div class="span4">
+                <h3>Je wijkinspecteur</h3>
+                <?= import('default_district.html') ?>
+            </div>
+        </div>
     </div>
 </div>
 

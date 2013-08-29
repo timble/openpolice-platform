@@ -1506,7 +1506,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 }
 /* line 60, organisms/_containers.scss */
 .container-footer img {
-  height: 58px;
+  width: 64px;
 }
 /* line 64, organisms/_containers.scss */
 .container-footer .media--imageless .media-body {
