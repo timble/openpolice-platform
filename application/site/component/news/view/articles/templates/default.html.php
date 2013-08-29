@@ -8,6 +8,10 @@
  */
 ?>
 
+<ktml:module position="left">
+    <?= import('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
+</ktml:module>
+
 <? foreach ($articles as $article) : ?>
     <article>
         <? $link = helper('route.article', array('row' => $article)); ?>

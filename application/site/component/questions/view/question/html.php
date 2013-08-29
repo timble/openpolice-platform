@@ -30,6 +30,8 @@ class QuestionsViewQuestionHtml extends Library\ViewHtml
             $this->attachments($question->getAttachments());
         }
 
+        $this->categories = $this->getObject('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset();
+
         return parent::render();
     }
 

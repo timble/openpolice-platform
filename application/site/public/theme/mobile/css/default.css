@@ -1587,7 +1587,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     margin-bottom: 10px;
   }
   /* line 65, utilities/_desktop.scss */
-  .container-content.police .separator--below, .container-content.police article {
+  .container-content.police .separator--below {
     border-bottom: 1px solid #eeeeee;
     padding-bottom: 30px;
     margin-bottom: 14px;
@@ -1613,12 +1613,10 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   }
   /* line 89, utilities/_desktop.scss */
   .container-content .sidebar .sidebar__element {
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
-  /* line 97, utilities/_desktop.scss */
+  /* line 95, utilities/_desktop.scss */
   .container-footer {
     padding-top: 10px;
     background-color: #fbfbfb;
@@ -1628,29 +1626,29 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 106, utilities/_desktop.scss */
+  /* line 104, utilities/_desktop.scss */
   .container-copyright {
     text-align: left;
     border-top: 0 none;
   }
-  /* line 109, utilities/_desktop.scss */
+  /* line 107, utilities/_desktop.scss */
   .container-copyright .copyright {
     text-align: right;
   }
 }
 @media screen and (min-width: 998px) {
-  /* line 116, utilities/_desktop.scss */
+  /* line 114, utilities/_desktop.scss */
   body {
     background-color: #eeeeee;
   }
 
-  /* line 120, utilities/_desktop.scss */
+  /* line 118, utilities/_desktop.scss */
   .container-fluid {
     width: 940px;
     margin: 0 auto;
   }
 
-  /* line 125, utilities/_desktop.scss */
+  /* line 123, utilities/_desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -1660,13 +1658,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 133, utilities/_desktop.scss */
+  /* line 131, utilities/_desktop.scss */
   .container-header .span3 {
     float: left;
     width: 22.34043%;
     text-align: left;
   }
-  /* line 139, utilities/_desktop.scss */
+  /* line 137, utilities/_desktop.scss */
   .container-header .span9 {
     float: left;
     width: 73.40426%;
@@ -1674,17 +1672,17 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     margin-top: 0;
   }
 
-  /* line 148, utilities/_desktop.scss */
+  /* line 146, utilities/_desktop.scss */
   .container-content.police .span3 {
     width: 22.34043%;
   }
-  /* line 151, utilities/_desktop.scss */
+  /* line 149, utilities/_desktop.scss */
   .container-content.police .span3:nth-child(3) {
     margin-left: 3.19149%;
   }
 }
 /* line 1, utilities/_mixins.scss */
-.separator--below, article {
+.separator--below {
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 30px;
   margin-bottom: 14px;
@@ -1739,57 +1737,57 @@ html {
   font-size: 100.01%;
 }
 
-/* line 9, molecules/_article.scss */
+/* line 4, molecules/_article.scss */
 article h2 {
   margin-top: 30px;
 }
-/* line 10, molecules/_article.scss */
+/* line 5, molecules/_article.scss */
 article h3 {
   margin-top: 20px;
 }
-/* line 13, molecules/_article.scss */
+/* line 8, molecules/_article.scss */
 article p a, article li a {
   border-bottom: 1px dotted #004fa3;
 }
-/* line 16, molecules/_article.scss */
+/* line 11, molecules/_article.scss */
 article p a:hover, article li a:hover {
   border-bottom: 1px solid #005580;
   text-decoration: none;
 }
-/* line 23, molecules/_article.scss */
+/* line 18, molecules/_article.scss */
 article .entry-summary {
   font-weight: bold;
   margin-bottom: 22px;
 }
-/* line 32, molecules/_article.scss */
+/* line 27, molecules/_article.scss */
 article figure {
   float: right;
   max-width: 40%;
 }
-/* line 36, molecules/_article.scss */
+/* line 31, molecules/_article.scss */
 article figure img {
   margin: 0 0 20px 20px;
 }
-/* line 43, molecules/_article.scss */
+/* line 38, molecules/_article.scss */
 article:last-of-type {
   border: 0 none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 49, molecules/_article.scss */
+/* line 44, molecules/_article.scss */
 article .page-header {
   border: 0;
   margin-bottom: 0;
 }
-/* line 54, molecules/_article.scss */
+/* line 49, molecules/_article.scss */
 article header {
   margin: 22px 0px 11px;
 }
-/* line 58, molecules/_article.scss */
+/* line 53, molecules/_article.scss */
 article header h1 {
   margin-bottom: 0;
 }
-/* line 62, molecules/_article.scss */
+/* line 57, molecules/_article.scss */
 article header .timestamp {
   padding-top: 4px;
   font-size: 11.9px;

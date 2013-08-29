@@ -67,9 +67,6 @@
                 <ktml:modules position="left">
                     <ktml:modules:content>
                 </ktml:modules>
-                <? if(!helper('module.count', array('condition' => 'left'))) : ?>
-                <?= import('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
-                <? endif ?>
             </aside>
             <? endif; ?>
             <div class="span<?= $extension == 'police' ? '12 alpha' : '9' ?> component">
