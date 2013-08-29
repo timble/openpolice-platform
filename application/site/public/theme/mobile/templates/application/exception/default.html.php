@@ -20,7 +20,7 @@
 
     <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-        <style src="assets://application/stylesheets/default.css" />
+        <style src="assets://application/css/default.css" />
 
     <script>
         function toggleBacktrace() {

@@ -50,3 +50,18 @@
   border-top: 1px solid darken($grayLighter, 7%);
   font-size: $fontSizeSmall;
 }
+
+.container-footer {
+  .media {
+    margin-top: 0;
+    margin-bottom: $gridGutterWidth / 1.5;
+  }
+
+  img {
+    height: 58px;
+  }
+
+  .media--imageless .media-body {
+    margin-left: 97px;
+  }
+}

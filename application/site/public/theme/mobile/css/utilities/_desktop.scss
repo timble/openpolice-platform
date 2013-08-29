@@ -95,8 +95,7 @@
   }
 
   .container-footer {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: $gridGutterWidth / 1.5;
 
     background-color: lighten($grayLighter, 5%);
     border-top: 1px solid darken($grayLighter, 0%);

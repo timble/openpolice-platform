@@ -1499,6 +1499,20 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   font-size: 11.9px;
 }
 
+/* line 55, organisms/_containers.scss */
+.container-footer .media {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+/* line 60, organisms/_containers.scss */
+.container-footer img {
+  height: 58px;
+}
+/* line 64, organisms/_containers.scss */
+.container-footer .media--imageless .media-body {
+  margin-left: 97px;
+}
+
 /* line 1, organisms/_wrap.scss */
 #wrap {
   background-color: white;
@@ -1606,8 +1620,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 
   /* line 97, utilities/_desktop.scss */
   .container-footer {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
     background-color: #fbfbfb;
     border-top: 1px solid #eeeeee;
     -webkit-border-radius: 0 0 5px 5px;
@@ -1615,29 +1628,29 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 107, utilities/_desktop.scss */
+  /* line 106, utilities/_desktop.scss */
   .container-copyright {
     text-align: left;
     border-top: 0 none;
   }
-  /* line 110, utilities/_desktop.scss */
+  /* line 109, utilities/_desktop.scss */
   .container-copyright .copyright {
     text-align: right;
   }
 }
 @media screen and (min-width: 998px) {
-  /* line 117, utilities/_desktop.scss */
+  /* line 116, utilities/_desktop.scss */
   body {
     background-color: #eeeeee;
   }
 
-  /* line 121, utilities/_desktop.scss */
+  /* line 120, utilities/_desktop.scss */
   .container-fluid {
     width: 940px;
     margin: 0 auto;
   }
 
-  /* line 126, utilities/_desktop.scss */
+  /* line 125, utilities/_desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -1647,13 +1660,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 134, utilities/_desktop.scss */
+  /* line 133, utilities/_desktop.scss */
   .container-header .span3 {
     float: left;
     width: 22.34043%;
     text-align: left;
   }
-  /* line 140, utilities/_desktop.scss */
+  /* line 139, utilities/_desktop.scss */
   .container-header .span9 {
     float: left;
     width: 73.40426%;
@@ -1661,11 +1674,11 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     margin-top: 0;
   }
 
-  /* line 149, utilities/_desktop.scss */
+  /* line 148, utilities/_desktop.scss */
   .container-content.police .span3 {
     width: 22.34043%;
   }
-  /* line 152, utilities/_desktop.scss */
+  /* line 151, utilities/_desktop.scss */
   .container-content.police .span3:nth-child(3) {
     margin-left: 3.19149%;
   }
@@ -2229,6 +2242,11 @@ legend + .control-group {
     float: right;
   }
 }
+/* line 17, molecules/_grid.scss */
+.alpha {
+  margin-left: 0 !important;
+}
+
 @media screen and (min-width: 767px) {
   /* line 2, molecules/_header.scss */
   .container-header {

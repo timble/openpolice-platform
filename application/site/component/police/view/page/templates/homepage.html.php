@@ -37,7 +37,7 @@
     </div>
     <div class="span4">
         <div class="contact">
-            <h3>Contacteer ons</h3>
+
             <div  class="well well--small">
                 <div><span class="text--strong"><a href="tel:101">101</a></span> <span class="text--small">dringende politiehulp</span></div>
                 <div><span class="text--strong"><a href="tel:<?= $zone->telephone ?>"><?= $zone->telephone ?></a></span> <span class="text--small">geen spoed</span></div>
@@ -49,7 +49,6 @@
                 <li><a href="/<?= $site ?>/contact/diensten">Diensten</a></li>
                 <li><a href="/<?= $site ?>/contact/noodnummers">Noodnummers</a></li>
             </ul>
-
         </div>
     </div>
 </div>
