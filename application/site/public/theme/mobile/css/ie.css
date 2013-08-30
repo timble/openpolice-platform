@@ -2775,8 +2775,12 @@ ul.column--quad {
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
+/* line 15, molecules/_wells.scss */
+.well ul {
+  margin-bottom: 0;
+}
 
-/* line 17, molecules/_wells.scss */
+/* line 21, molecules/_wells.scss */
 .well--large {
   padding: 24px;
   -webkit-border-radius: 6px;
@@ -2784,7 +2788,7 @@ ul.column--quad {
   border-radius: 6px;
 }
 
-/* line 21, molecules/_wells.scss */
+/* line 25, molecules/_wells.scss */
 .well--small {
   padding: 8px 12px;
   -webkit-border-radius: 3px;

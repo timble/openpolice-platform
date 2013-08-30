@@ -22,20 +22,16 @@
         </div>
     </header>
 
-    <div class="row-fluid">
-        <? if($article->text) : ?>
-        <div class="span8">
-            <?= $article->text ?>
+    <? if($article->isStreetable()) : ?>
+        <div class="well well-small" style="float: right; margin-left: 30px">
+            <strong><?= translate('Streets') ?></strong>
+            <ul>
+                <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
+            </ul>
         </div>
-        <? endif ?>
-        <div class="span4">
-            <? if($article->isStreetable()) : ?>
-                <div class="well well-small">
-                    <ul>
-                        <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
-                    </ul>
-                </div>
-            <? endif ?>
-        </div>
-    </div>
+    <? endif ?>
+
+    <? if($article->text) : ?>
+        <?= $article->text ?>
+    <? endif ?>
 </article>

@@ -11,6 +11,10 @@
   background-color: $wellBackground;
   border: 1px solid darken($wellBackground, 7%);
   @include border-radius($baseBorderRadius);
+
+  ul {
+    margin-bottom: 0;
+  }
 }
 
 // Sizes
