@@ -8,7 +8,7 @@
  */
 ?>
 
-<ul class="nav nav-tabs nav-stacked">
+<ul class="<?= $class ?>">
     <? foreach ($categories as $category): ?>
         <li <?= $category->id == $selected ? 'class="active"' : '' ?>>
             <a href="<?= helper('route.category', array('row' => $category)) ?>">

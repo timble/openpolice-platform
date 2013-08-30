@@ -10,8 +10,8 @@
 
 <title content="replace"><?= $article->title ?></title>
 
-<article class="vevent">
-    <header>
+<div class="article vevent">
+    <header class="article__header">
         <h1 class="summary"><?= $article->title ?></h1>
         <div class="timestamp">
             <?= helper('date.format', array('date'=> $article->start_on, 'format' => translate('DATE_FORMAT_LC3'), 'attribs' => array('class' => 'dtstart'))) ?>
@@ -22,20 +22,16 @@
         </div>
     </header>
 
-    <div class="row-fluid">
-        <? if($article->text) : ?>
-        <div class="span8">
-            <?= $article->text ?>
+    <? if($article->isStreetable()) : ?>
+        <div class="well" style="float: right; margin-left: 30px">
+            <strong><?= translate('Streets') ?></strong>
+            <ul>
+                <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
+            </ul>
         </div>
-        <? endif ?>
-        <div class="span4">
-            <? if($article->isStreetable()) : ?>
-                <div class="well well-small">
-                    <ul>
-                        <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
-                    </ul>
-                </div>
-            <? endif ?>
-        </div>
-    </div>
-</article>
+    <? endif ?>
+
+    <? if($article->text) : ?>
+        <?= $article->text ?>
+    <? endif ?>
+</div>

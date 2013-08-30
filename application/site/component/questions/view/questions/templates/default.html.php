@@ -9,45 +9,29 @@
 ?>
 
 <ktml:module position="left">
-    <?= import('default_categories.html', array('categories' => $categories, 'selected' => $state->category)) ?>
+    <?= import('default_categories.html', array('categories' => $categories, 'selected' => $state->category, 'class' => 'nav nav-tabs nav-stacked')) ?>
 </ktml:module>
 
 <title content="replace"><?= escape(translate($params->get('page_title'))); ?></title>
 
-<div class="page-header">
-    <h1><?= escape(translate($params->get('page_title'))); ?></h1>
-</div>
+<h1 class="article__header"><?= escape(translate($params->get('page_title'))); ?></h1>
 
 <? if(!$state->category) : ?>
     <?= import('default_search.html') ?>
 <? endif ?>
 
-<? if($state->category AND !$state->searchword) : ?>
+<? if($state->category OR $state->searchword) : ?>
 <ul class="nav nav-pills nav-stacked">
 <? foreach ($questions as $question) : ?>
     <li>
         <a href="<?= helper('route.question', array('row' => $question)) ?>">
-            <?= $question->title; ?>
+            <?= $question->title ?>
         </a>
     </li>
 <? endforeach; ?>
 </ul>
-<? endif ?>
-
-<? if($state->searchword) : ?>
-<? foreach ($questions as $question): ?>
-<article>
-    <header>
-        <h1>
-            <a href="<?= helper('route.question', array('row' => $question)) ?>">
-                <?= highlight($question->title) ?>
-            </a>
-        </h1>
-    </header>
-
-    <?= highlight($question->text) ?>
-</article>
-<? endforeach ?>
+<? else : ?>
+    <?= import('default_categories.html', array('categories' => $categories, 'selected' => $state->category, 'class' => 'nav nav-pills nav-stacked column--double')) ?>
 <? endif ?>
 
 <? if($state->category OR $state->searchword) : ?>

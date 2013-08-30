@@ -8,9 +8,7 @@
  */
 ?>
 
-<div class="page-header">
-    <h1><?php echo escape($params->get('page_title')); ?></h1>
-</div>
+<h1 class="article__header"><?php echo escape($params->get('page_title')); ?></h1>
 
 <? foreach ($articles as $article) : ?>
     <h2>

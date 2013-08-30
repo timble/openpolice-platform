@@ -12,52 +12,40 @@
 
 <? if($state->table == 'contacts') : ?>
     <? $category = object('com:categories.model.category')->id('24')->getRow() ?>
-    <article>
-        <div class="page-header">
-            <h1>
-                <a href="/<?= $site ?>/contact/je-wijkinspecteur">
-                    <?= $category->title ?>
-                </a>
-            </h1>
-        </div>
+    <div class="article">
+        <h1 class="article__header">
+            <a href="/<?= $site ?>/contact/je-wijkinspecteur">
+                <?= $category->title ?>
+            </a>
+        </h1>
 
         <? if($category->thumbnail) : ?>
-            <a href="/<?= $site ?>/contact/je-wijkinspecteur">
-                <figure>
-                    <img src="" />
-                </figure>
+            <a class="article__thumbnail" href="/<?= $site ?>/contact/je-wijkinspecteur">
+                <img src="" />
             </a>
         <? endif ?>
 
         <?= $category->description ?>
-
-        <a href="/<?= $site ?>/contact/je-wijkinspecteur"><?= translate('Read more') ?></a>
-    </article>
+    </div>
 <? endif ?>
 
 <? foreach($categories as $category) : ?>
-    <article>
-        <div class="page-header">
-            <h1>
-                <a href="<?= helper('route.category', array('row' => $category)) ?>">
-                    <?= escape($category->title);?>
-                </a>
-            </h1>
-        </div>
+    <div class="article">
+        <h1 class="article__header">
+            <a href="<?= helper('route.category', array('row' => $category)) ?>">
+                <?= escape($category->title);?>
+            </a>
+        </h1>
 
         <? if($category->thumbnail) : ?>
-            <a href="<?= helper('route.category', array('row' => $category)) ?>">
-                <figure>
-                    <img src="<?= $category->thumbnail ?>" />
-                </figure>
+            <a class="article__thumbnail" href="<?= helper('route.category', array('row' => $category)) ?>">
+                <img src="<?= $category->thumbnail ?>" />
             </a>
         <? endif ?>
 
         <? if ($category->description) : ?>
             <?= $category->description; ?>
         <? endif; ?>
-
-        <a href="<?= helper('route.category', array('row' => $category)) ?>"><?= translate('Read more') ?></a>
-    </article>
+    </div>
 <? endforeach; ?>
 
