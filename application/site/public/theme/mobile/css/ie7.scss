@@ -1,3 +1,5 @@
-figure {
+// Data URIs are not supported in IE7 and lower
+.media-object,
+.article__thumbnail {
   display: none;
 }
