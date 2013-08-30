@@ -1521,8 +1521,8 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 
 @media screen and (min-width: 767px) {
   /* line 2, utilities/_desktop.scss */
-  body {
-    background-color: #f6f6f6;
+  #wrap {
+    border-bottom: 1px solid gainsboro;
   }
 
   /* line 6, utilities/_desktop.scss */
@@ -1620,8 +1620,8 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   /* line 95, utilities/_desktop.scss */
   .container-footer {
     padding-top: 10px;
-    background-color: #fbfbfb;
-    border-top: 1px solid #eeeeee;
+    background-color: whitesmoke;
+    border-top: 1px solid gainsboro;
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
@@ -1639,33 +1639,27 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 }
 @media screen and (min-width: 998px) {
   /* line 114, utilities/_desktop.scss */
-  body {
-    background-color: #eeeeee;
-  }
-
-  /* line 118, utilities/_desktop.scss */
   .container-fluid {
     width: 940px;
     margin: 0 auto;
   }
 
-  /* line 123, utilities/_desktop.scss */
+  /* line 119, utilities/_desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
-    border-bottom: 1px solid gainsboro;
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 131, utilities/_desktop.scss */
+  /* line 126, utilities/_desktop.scss */
   .container-header .span3 {
     float: left;
     width: 22.34043%;
     text-align: left;
   }
-  /* line 137, utilities/_desktop.scss */
+  /* line 132, utilities/_desktop.scss */
   .container-header .span9 {
     float: left;
     width: 73.40426%;
@@ -1673,11 +1667,11 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     margin-top: 0;
   }
 
-  /* line 146, utilities/_desktop.scss */
+  /* line 141, utilities/_desktop.scss */
   .container-content.police .span3 {
     width: 22.34043%;
   }
-  /* line 149, utilities/_desktop.scss */
+  /* line 144, utilities/_desktop.scss */
   .container-content.police .span3:nth-child(3) {
     margin-left: 3.19149%;
   }
@@ -1704,7 +1698,6 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 body {
   padding-left: 0;
   padding-right: 0;
-  background-color: #f6f6f6;
 }
 
 /* line 1, atoms/_figure.scss */
