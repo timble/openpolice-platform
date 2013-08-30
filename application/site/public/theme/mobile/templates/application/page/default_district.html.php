@@ -51,7 +51,7 @@
         <div class="control-group">
             <label class="control-label" for="zone_street_id"><?= translate('Mijn straat') ?>:</label>
             <div class="controls">
-                <input type="hidden" class="bigdrop" id="streets_footer" name="street" value="<?= @$_COOKIE ['district_street'] ?>" style="display: none;" required>
+                <input type="hidden" class="bigdrop" id="streets_footer" name="street" value="<?= @$_COOKIE ['district_street'] ?>" required>
             </div>
         </div>
         <div class="control-group">

@@ -64,7 +64,7 @@
                 <div class="control-group">
                     <label class="control-label" for="zone_street_id"><?= translate('My street') ?>:</label>
                     <div class="controls">
-                        <input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" style="display: none;" tabindex="1" required>
+                        <input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" tabindex="1" required>
                     </div>
                 </div>
             </div>
