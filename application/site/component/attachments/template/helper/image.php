@@ -22,13 +22,13 @@ class AttachmentsTemplateHelperImage extends Library\TemplateHelperDefault
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
             'align' => 'right',
-            'class' => 'thumbnail article__thumbnail'
+            'class' => ''
         ));
 
         $image = $config->row;
 
         if($image->thumbnail) {
-            return '<figure><img class="'.$config->class.'" align="'.$config->align.'" src="'.$image->thumbnail.'" /></figure>';
+            return '<img class="'.$config->class.'" align="'.$config->align.'" src="'.$image->thumbnail.'" />';
         }
 
         return false;

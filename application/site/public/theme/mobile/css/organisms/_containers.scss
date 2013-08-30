@@ -28,7 +28,7 @@
 }
 
 .container-content {
-  padding-top: 10px;
+  padding-top: $gridGutterWidth;
   margin-bottom: $gridGutterWidth;
 
   &.police {

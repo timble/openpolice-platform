@@ -22,8 +22,8 @@
                 </header>
 
                 <div class="clearfix">
-                    <a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
-                        <?= helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+                    <a class="article__thumbnail" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
+                        <img align="right" src="<?= $article->thumbnail ?>" />
                     </a>
 
                     <?= $article->introtext ?>

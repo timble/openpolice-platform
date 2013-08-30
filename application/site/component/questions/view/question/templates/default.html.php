@@ -9,15 +9,13 @@
 ?>
 
 <ktml:module position="left">
-    <?= import('com:questions.view.questions.default_categories.html', array('categories' => $categories, 'selected' => $state->category)) ?>
+    <?= import('com:questions.view.questions.default_categories.html', array('categories' => $categories, 'selected' => $state->category, 'class' => 'nav nav-tabs nav-stacked')) ?>
 </ktml:module>
 
 <title content="replace"><?= $question->title ?></title>
 
-<article>
-    <header>
-        <h1><?= escape($question->title); ?></h1>
-    </header>
+<article class="article">
+    <h1 class="article__header"><?= escape($question->title); ?></h1>
 
     <?= helper('com:attachments.image.thumbnail', array('row' => $question)) ?>
 

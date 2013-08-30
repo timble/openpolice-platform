@@ -17,11 +17,6 @@
   }
 }
 
-// Sizes
-.well--large {
-  padding: 24px;
-  @include border-radius($borderRadiusLarge);
-}
 .well--small {
   padding: 8px 12px;
   @include border-radius($borderRadiusSmall);

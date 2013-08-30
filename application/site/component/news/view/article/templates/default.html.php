@@ -18,8 +18,8 @@
 
 <title content="replace"><?= $article->title ?></title>
 
-<article class="hentry">
-    <header>
+<article class="article hentry">
+    <header class="article__header">
         <h1 class="entry-title"><?= $article->title ?></h1>
         <span class="timestamp">
             <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
@@ -27,7 +27,7 @@
         <span style="float:right" class='st_sharethis' displayText='ShareThis'></span>
     </header>
 
-    <?= helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+    <img class="article__thumbnail" align="right" src="<?= $article->thumbnail ?>" />
 
     <div class="entry-summary"><?= $article->introtext ?></div>
     <div class="entry-content"><?= $article->fulltext ?></div>

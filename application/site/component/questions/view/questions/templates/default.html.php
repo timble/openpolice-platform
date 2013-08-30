@@ -14,9 +14,7 @@
 
 <title content="replace"><?= escape(translate($params->get('page_title'))); ?></title>
 
-<div class="page-header">
-    <h1><?= escape(translate($params->get('page_title'))); ?></h1>
-</div>
+<h1 class="article__header"><?= escape(translate($params->get('page_title'))); ?></h1>
 
 <? if(!$state->category) : ?>
     <?= import('default_search.html') ?>

@@ -23,7 +23,7 @@
     </header>
 
     <? if($article->isStreetable()) : ?>
-        <div class="well well-small" style="float: right; margin-left: 30px">
+        <div class="well" style="float: right; margin-left: 30px">
             <strong><?= translate('Streets') ?></strong>
             <ul>
                 <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
