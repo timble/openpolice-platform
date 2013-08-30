@@ -10,8 +10,8 @@
 
 <title content="replace"><?= $article->title ?></title>
 
-<article class="vevent">
-    <header>
+<div class="article vevent">
+    <header class="article__header">
         <h1 class="summary"><?= $article->title ?></h1>
         <div class="timestamp">
             <?= helper('date.format', array('date'=> $article->start_on, 'format' => translate('DATE_FORMAT_LC3'), 'attribs' => array('class' => 'dtstart'))) ?>
@@ -34,4 +34,4 @@
     <? if($article->text) : ?>
         <?= $article->text ?>
     <? endif ?>
-</article>
+</div>

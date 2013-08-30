@@ -8,7 +8,6 @@
  */
 ?>
 
-<hr />
-<div class="text-center">
+<div class="well well--small text-center">
     <?= translate('Je vraag blijft onbeantwoord? Contacteer ons via') ?> <a href="mailto:<?= $zone->email ?>"><?= $zone->email ?></a> <?= translate('of') ?> <span class="nowrap"><?= $zone->telephone ?></span>.
 </div>
