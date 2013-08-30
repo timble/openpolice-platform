@@ -1,6 +1,6 @@
 @include respond-min($navbarCollapseWidth) {
-  body {
-    background-color: lighten($grayLighter, 3%);
+  #wrap {
+    border-bottom: 1px solid darken($grayLighter, 7%);
   }
 
   .navbar__handlebar {
@@ -95,8 +95,8 @@
   .container-footer {
     padding-top: $gridGutterWidth / 3;
 
-    background-color: lighten($grayLighter, 5%);
-    border-top: 1px solid darken($grayLighter, 0%);
+    background-color: $wellBackground;
+    border-top: 1px solid darken($grayLighter, 7%);
 
     @include border-radius(0 0 5px 5px);
   }
@@ -111,10 +111,6 @@
 }
 
 @include respond-min(998px) {
-  body {
-    background-color: $bodyBackground;
-  }
-
   .container-fluid {
     width: $gridRowWidth;
     margin: 0 auto;
@@ -123,7 +119,6 @@
   #wrap {
     border-left: 1px solid darken($grayLighter, 7%);
     border-right: 1px solid darken($grayLighter, 7%);
-    border-bottom: 1px solid darken($grayLighter, 7%);
     @include border-radius(0 0 5px 5px);
   }
 
