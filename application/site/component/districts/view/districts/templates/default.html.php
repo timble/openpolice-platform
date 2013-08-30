@@ -8,9 +8,7 @@
  */
 ?>
 
-<div class="page-header">
-    <h1><?= escape($params->get('page_title')); ?></h1>
-</div>
+<h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
 
 <?= import('default_search.html'); ?>
 
