@@ -27,12 +27,10 @@
     <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style src="assets://application/css/default.css" />
-    <style src="assets://application/css/ie.css" condition="if !(lte IE 7)&!(gte IE 8) " />
+    <style src="assets://application/css/ie.css" condition="if !(lte IE 7)&!(gte IE 8)" />
     <style src="assets://application/css/ie7.css" condition="if lte IE 8" />
 
-    <!--[if lte IE 8]>
-    <script src="assets://application/js/html5shiv.js" />
-    <![endif]-->
+    <script src="assets://application/js/html5shiv.js" condition="if lte IE 8" />
 
     <script src="assets://districts/jquery/jquery.js" />
     <script type="text/javascript">
@@ -43,9 +41,7 @@
     });
     </script>
 
-    <!--[if lte IE 7]>
-    <script src="assets://application/js/ie7.js" />
-    <![endif]-->
+    <script src="assets://application/js/ie7.js"condition="if lte IE 7" />
 
     <script src="assets://application/js/navbar.js" />
     <script src="assets://application/js/webapp.js" />
