@@ -42,6 +42,11 @@
         $jQuery.stayInWebApp();
     });
     </script>
+
+    <!--[if lte IE 7]>
+    <script src="assets://application/js/ie7.js" />
+    <![endif]-->
+
     <script src="assets://application/js/navbar.js" />
     <script src="assets://application/js/webapp.js" />
 </head>

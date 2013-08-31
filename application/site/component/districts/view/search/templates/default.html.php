@@ -8,13 +8,15 @@
  */
 ?>
 
+<h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
+
 <style src="assets://districts/select2/select2.css" />
 <script src="assets://districts/select2/select2.min.js" />
 
 <script>
     $jQuery(document).ready(function() {
-    	function format(item) { return item.title; };
-        $jQuery("#streets").select2({
+        function format(item) { return item.title; };
+        $jQuery("#autocomplete__streets").select2({
             placeholder: "<?= translate('Search') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
@@ -41,7 +43,7 @@
                 // using its formatResult renderer - that way the movie name is shown preselected
                 var id=$jQuery(element).val();
                 if (id!=="") {
-                    $jQuery.ajax("?view=street&format=json&id="+id, {
+                    $jQuery.ajax("?view=street&format=json&street="+id, {
                         dataType: "json"
                     }).done(function(data) { callback(data.item); });
                 }
@@ -56,29 +58,17 @@
         });
     });
 </script>
-    
+
 <form action="" method="get" class="well -koowa-form">
-	<fieldset>
-        <div class="row-fluid">
-            <div class="span9">
-                <div class="control-group">
-                    <label class="control-label" for="zone_street_id"><?= translate('My street') ?>:</label>
-                    <div class="controls">
-                        <input type="hidden" class="bigdrop" id="streets" name="street" value="<?= $state->street ?>" tabindex="1" required>
-                    </div>
-                </div>
-            </div>
-            <div class="span3">
-                <div class="control-group">
-                    <label class="control-label" for="number"><?= translate('My number') ?>:</label>
-                    <div class="controls">
-                        <input type="number" name="number" value="<?= $state->number; ?>" tabindex="2" required />
-                    </div>
-                </div>
+    <fieldset>
+        <div class="control-group">
+            <label class="control-label" for="zone_street_id"><?= translate('My street') ?>:</label>
+            <div class="controls">
+                <input type="text" class="bigdrop" id="autocomplete__streets" name="street" value="<?= $state->street ?>" tabindex="1">
             </div>
         </div>
-	</fieldset>
-	<div class="form-actions" style="margin-bottom: 0; margin-top: 0; padding-left: 0;padding-bottom: 0;">
-		<button class="btn" tabindex="3"><?= translate('Search') ?></button> <?= translate('or') ?> <a tabindex="4" href="#"><?= translate('Start over') ?></a>
-	</div>
+    </fieldset>
+    <div class="form-actions" style="margin-bottom: 0; margin-top: 0; padding-left: 0;padding-bottom: 0;">
+        <button class="btn" tabindex="3"><?= translate('Search') ?></button> <?= translate('or') ?> <a tabindex="4" href="/<?= $this->getObject('application')->getCfg('site') ?>/contact/je-wijkinspecteur"><?= translate('Start over') ?></a>
+    </div>
 </form>

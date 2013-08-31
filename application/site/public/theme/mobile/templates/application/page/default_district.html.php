@@ -4,7 +4,7 @@
 <script>
     $jQuery(document).ready(function() {
         function format(item) { return item.title; };
-        $jQuery("#streets_footer").select2({
+        $jQuery("#autocomplete__streets--footer").select2({
             placeholder: "<?= translate('Search') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
@@ -51,15 +51,9 @@
         <div class="control-group">
             <label class="control-label" for="zone_street_id"><?= translate('Mijn straat') ?>:</label>
             <div class="controls">
-                <input type="hidden" class="bigdrop" id="streets_footer" name="street" value="<?= @$_COOKIE ['district_street'] ?>" required>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="number"><?= translate('Mijn huisnummer') ?>:</label>
-            <div class="controls">
-                <input type="number" name="number" value="<?= @$_COOKIE ['district_number'] ?>" required />
+                <input type="text" class="bigdrop" id="autocomplete__streets--footer" name="street" value="<?= @$_COOKIE ['district_street'] ?>" required>
             </div>
         </div>
     </fieldset>
-    <button class="btn"><?= translate('Search') ?></button>
+    <button class="btn btn-small"><?= translate('Search') ?></button>
 </form>
