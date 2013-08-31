@@ -1077,34 +1077,6 @@ input[type="submit"].btn.btn-mini {
   text-decoration: none;
 }
 
-/* line 6, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_breadcrumbs.scss */
-.breadcrumb {
-  padding: 8px 15px;
-  margin: 0 0 22px;
-  list-style: none;
-  background-color: #f5f5f5;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-/* line 12, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_breadcrumbs.scss */
-.breadcrumb > li {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-  *zoom: 1;
-  text-shadow: 0 1px 0 white;
-}
-/* line 16, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_breadcrumbs.scss */
-.breadcrumb > li > .divider {
-  padding: 0 5px;
-  color: #ccc;
-}
-/* line 21, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_breadcrumbs.scss */
-.breadcrumb .active {
-  color: #999999;
-}
-
 /* line 9, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
 .thumbnails {
   margin-left: -30px;
@@ -1793,12 +1765,32 @@ html {
 /* line 1, molecules/_breadcrumbs.scss */
 .breadcrumb {
   font-size: 0.9em;
-  margin-top: 4px;
-  margin-bottom: 0;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px 15px;
+  margin: 4px 0 0 0;
+  list-style: none;
+  background-color: whitesmoke;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
 /* line 8, molecules/_breadcrumbs.scss */
+.breadcrumb > li {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  text-shadow: 0 1px 0 white;
+}
+/* line 12, molecules/_breadcrumbs.scss */
+.breadcrumb > li > .divider {
+  padding: 0 5px;
+  color: #ccc;
+}
+/* line 17, molecules/_breadcrumbs.scss */
+.breadcrumb .active {
+  color: #999999;
+}
+/* line 21, molecules/_breadcrumbs.scss */
 .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
@@ -2368,23 +2360,22 @@ legend + .control-group {
 .navbar .nav li {
   display: table-cell;
   width: 1%;
-  float: none;
 }
-/* line 98, molecules/_header__navbar.scss */
+/* line 97, molecules/_header__navbar.scss */
 .navbar .nav li a {
   text-align: center;
   padding: 5px 15px 5px;
   border: 0 none;
   font-weight: normal;
 }
-/* line 104, molecules/_header__navbar.scss */
+/* line 103, molecules/_header__navbar.scss */
 .navbar .nav li:first-child a {
   border-left: 0;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
 }
-/* line 108, molecules/_header__navbar.scss */
+/* line 107, molecules/_header__navbar.scss */
 .navbar .nav li:last-child a {
   border-right: 0;
   -webkit-border-radius: 0 4px 4px 0;
@@ -2758,7 +2749,7 @@ ul.column--quad {
   padding: 19px;
   margin-bottom: 20px;
   background-color: whitesmoke;
-  border: 1px solid #e3e3e3;
+  border: 1px solid #e8e8e8;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -2777,16 +2768,18 @@ ul.column--quad {
 }
 
 /* line 6, ie.scss */
-.container-header .nav li a {
-  width: 100px;
+.container-header .nav li {
+  display: block;
+  float: left;
+  width: 130px;
 }
 
-/* line 12, ie.scss */
+/* line 14, ie.scss */
 .container-footer input {
   width: 188px;
 }
 
-/* line 28, ie.scss */
+/* line 30, ie.scss */
 .span1,
 .span2,
 .span3,

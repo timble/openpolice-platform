@@ -79,7 +79,7 @@
         <div class="row-fluid">
             <div class="span8 alpha">
                 <h3><?= translate('Laatste nieuws') ?></h3>
-                <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
+                <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
             </div>
             <div class="span4">
                 <h3>Je wijkinspecteur</h3>

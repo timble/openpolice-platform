@@ -3,8 +3,10 @@ $fix-mqs: 998px;
 @import 'default';
 
 .container-header {
-  .nav li a {
-    width: 100px;
+  .nav li {
+    display: block;
+    float: left;
+    width: 130px;
   }
 }
 

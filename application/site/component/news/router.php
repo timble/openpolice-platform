@@ -57,6 +57,11 @@ class NewsRouter extends Library\DispatcherRouter
         unset($query['id']);
         unset($query['view']);
 
+        unset($query['limit']);
+        unset($query['sort']);
+        unset($query['direction']);
+        unset($query['published']);
+
         return $segments;
     }
 

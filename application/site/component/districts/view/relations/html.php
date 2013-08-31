@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class DistrictsViewDistrictsHtml extends Library\ViewHtml
+class DistrictsViewRelationsHtml extends Library\ViewHtml
 {
     public function render()
     {
@@ -21,8 +21,8 @@ class DistrictsViewDistrictsHtml extends Library\ViewHtml
 
         $this->params   = $params;
 
-        setcookie ("district_street", $state->street, time()+3600*24*(2), '/5388' );
-        setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
+        //setcookie ("district_street", $state->street, time()+3600*24*(2), '/5388' );
+        //setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
 
         return parent::render();
     }

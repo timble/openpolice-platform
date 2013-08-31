@@ -11,7 +11,7 @@
 <? $params = $officer->params ?>
 
 <div class="page-header">
-	<h2><?= $officer->title ?></h2>
+	<h1><?= $officer->title ?></h1>
 </div>
 <div class="clearfix">
     <?= helper('com:attachments.image.thumbnail', array('row' => $officer)) ?>
