@@ -9,9 +9,12 @@
 ?>
 
 <div class="well">
-    <form action="<?=route('option=com_questions&view=questions&Itemid=36')?>" method="get" class="form-search" style="margin-bottom: 0;">
-        <input id="searchword" name="searchword" class="" style="width: 80%" type="text"
-               value="<?=escape($state->searchword)?>" placeholder="<?=translate('Search')?> ..."/>
-        <button type="submit" class="btn btn-primary"><?= translate('Search') ?></button>
+    <form action="<?=route('option=com_questions&view=questions&Itemid=36')?>" method="get">
+        <div class="form__right">
+            <button type="submit" class="btn btn-primary btn-block" tabindex="2"><?= translate('Zoeken') ?></button>
+        </div>
+        <div class="form__left">
+            <input name="searchword" type="search" value="<?=escape($state->searchword)?>" placeholder="<?=translate('Search')?> ..." tabindex="1"/>
+        </div>
     </form>
 </div>

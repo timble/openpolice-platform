@@ -8,7 +8,8 @@
 
 // Make all forms have space below them
 form {
-  margin: 0 0 $baseLineHeight;
+  width: 100%;
+  @extend .clearfix;
 }
 
 fieldset {
@@ -72,7 +73,7 @@ input {
   color: $gray;
   @include border-radius($inputBorderRadius);
   vertical-align: middle;
-  @include box-sizing(border-box);
+  @include box-sizing(border-box !important);
 }
 
 // Reset appearance properties for textual inputs and textarea
@@ -138,6 +139,10 @@ textarea {
   @include placeholder();
 }
 
+.placeholder {
+  color: $placeholderText;
+}
+
 
 
 // FORM FIELD FEEDBACK STATES
@@ -171,4 +176,15 @@ select:focus:invalid {
 legend + .control-group {
   margin-top: $baseLineHeight;
   -webkit-margin-top-collapse: separate;
+}
+
+
+.form__left {
+  width: auto;
+  margin-right: 110px;
+}
+
+.form__right {
+  width: 100px;
+  float: right;
 }

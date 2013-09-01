@@ -31,6 +31,7 @@
     <style src="assets://application/css/ie7.css" condition="if lte IE 8" />
 
     <script src="assets://application/js/html5shiv.js" condition="if lte IE 8" />
+    <script src="assets://application/js/jquery.placeholder.js" condition="if lte IE 9" />
 
     <script src="assets://districts/jquery/jquery.js" />
     <script type="text/javascript">
