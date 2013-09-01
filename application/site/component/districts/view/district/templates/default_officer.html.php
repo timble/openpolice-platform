@@ -14,7 +14,7 @@
 	<h1><?= $officer->title ?></h1>
 </div>
 <div class="clearfix">
-    <?= helper('com:attachments.image.thumbnail', array('row' => $officer)) ?>
+    <img class="article__thumbnail" src="attachments/<?= $officer->attachment_path ?>">
     <ul>
         <? if($officer->phone) : ?><li><?= translate('Phone') ?>: <?= $officer->phone ?></li><? endif ?>
         <? if($officer->mobile) : ?><li><?= translate('Mobile') ?>: <?= $officer->mobile ?></li><? endif ?>
