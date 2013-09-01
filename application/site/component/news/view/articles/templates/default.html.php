@@ -23,7 +23,7 @@
         </header>
 
         <? if($article->thumbnail): ?>
-            <a class="article__thumbnail" href="<?= $link ?>">
+            <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
                 <img align="right" src="<?= $article->thumbnail ?>" />
             </a>
         <? endif; ?>

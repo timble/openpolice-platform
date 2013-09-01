@@ -5,7 +5,7 @@
     $jQuery(document).ready(function() {
         function format(item) { return item.title; };
         $jQuery("#autocomplete__streets--footer").select2({
-            placeholder: "<?= translate('Search') ?> ...",
+            placeholder: "<?= translate('Search your street') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
                 url: "/5388/contact/je-wijkinspecteur?view=streets&format=json",
@@ -47,13 +47,10 @@
 </script>
 
 <form action="/5388/contact/je-wijkinspecteur" method="get" class="-koowa-form">
-    <fieldset>
-        <div class="control-group">
-            <label class="control-label" for="zone_street_id"><?= translate('Mijn straat') ?>:</label>
-            <div class="controls">
-                <input type="text" class="bigdrop" id="autocomplete__streets--footer" name="street" value="<?= @$_COOKIE ['district_street'] ?>" required>
-            </div>
+    <div class="control-group">
+        <div class="controls">
+            <input type="text" class="bigdrop" id="autocomplete__streets--footer" placeholder="<?= translate('Search your street') ?> ..." name="street" value="<?= @$_COOKIE ['district_street'] ?>">
         </div>
-    </fieldset>
-    <button class="btn btn-small"><?= translate('Search') ?></button>
+    </div>
+    <button class="btn btn-small btn-primary pull-right"><?= translate('Search') ?></button>
 </form>

@@ -10,12 +10,10 @@
 
 <? $site = object('application')->getCfg('site') ?>
 
-
-
 <? foreach ($articles as $article) : ?>
     <div class="media<?= !$article->thumbnail ? ' media--imageless' : ''; ?>">
         <? if($article->thumbnail): ?>
-            <a class="pull-left" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
+            <a tabindex="-1" class="pull-left" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
                 <?= helper('com:attachments.image.thumbnail', array('row' => $article, 'class' => 'media-object thumbnail')) ?>
             </a>
         <? endif; ?>

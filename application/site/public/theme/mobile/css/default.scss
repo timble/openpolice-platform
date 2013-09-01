@@ -18,7 +18,7 @@
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/wells";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/component-animations";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/close";
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/buttons";
+//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/buttons";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/button-groups";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/navs";
@@ -55,6 +55,7 @@
 @import "molecules/article";
 @import "molecules/banner";
 @import "molecules/breadcrumbs";
+@import "molecules/buttons";
 @import "molecules/forms";
 @import "molecules/grid";
 @import "molecules/header";

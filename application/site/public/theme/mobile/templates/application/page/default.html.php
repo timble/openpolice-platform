@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="span9">
-                <span class="slogan">Bel <a class="text--strong" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" href="tel:<?= escape($zone->telephone); ?>"><?= escape($zone->telephone); ?></a></span>
+                <span class="slogan">Bel <a class="text--strong" tabindex="-1" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" tabindex="-1" href="tel:<?= escape($zone->telephone); ?>"><?= escape($zone->telephone); ?></a></span>
                 <div class="navbar">
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>

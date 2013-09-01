@@ -17,7 +17,7 @@
     $jQuery(document).ready(function() {
         function format(item) { return item.title; };
         $jQuery("#autocomplete__streets").select2({
-            placeholder: "<?= translate('Search') ?> ...",
+            placeholder: "<?= translate('Search your street') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
                 url: "?view=streets&format=json",
@@ -59,16 +59,13 @@
     });
 </script>
 
-<form action="" method="get" class="well -koowa-form">
-    <fieldset>
-        <div class="control-group">
-            <label class="control-label" for="zone_street_id"><?= translate('My street') ?>:</label>
-            <div class="controls">
-                <input type="text" class="bigdrop" id="autocomplete__streets" name="street" value="<?= $state->street ?>" tabindex="1">
-            </div>
+<div class="well">
+    <form action="" method="get" class="-koowa-form">
+        <div class="form__right">
+            <button class="btn btn-primary btn-small btn-block" tabindex="2"><?= translate('Search') ?></button>
         </div>
-    </fieldset>
-    <div class="form-actions" style="margin-bottom: 0; margin-top: 0; padding-left: 0;padding-bottom: 0;">
-        <button class="btn" tabindex="3"><?= translate('Search') ?></button> <?= translate('or') ?> <a tabindex="4" href="/<?= $this->getObject('application')->getCfg('site') ?>/contact/je-wijkinspecteur"><?= translate('Start over') ?></a>
-    </div>
-</form>
+        <div class="form__left">
+            <input type="text" class="bigdrop" id="autocomplete__streets" placeholder="<?= @translate('Search your street') ?> ..." tabindex="1" name="street" value="<?= $state->street ?>">
+        </div>
+    </form>
+</div>
