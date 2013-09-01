@@ -26,6 +26,8 @@
         <? endif ?>
 
         <?= $category->description ?>
+
+        <a class="article__readmore" href="/<?= $site ?>/contact/je-wijkinspecteur"><?= translate('Read more') ?></a>
     </div>
 <? endif ?>
 
@@ -46,6 +48,8 @@
         <? if ($category->description) : ?>
             <?= $category->description; ?>
         <? endif; ?>
+
+        <a class="article__readmore" href="<?= helper('route.category', array('row' => $category)) ?>"><?= translate('Read more') ?></a>
     </div>
 <? endforeach; ?>
 
