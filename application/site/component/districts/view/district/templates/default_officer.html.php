@@ -10,11 +10,10 @@
 
 <? $params = $officer->params ?>
 
-<div class="page-header">
-	<h1><?= $officer->title ?></h1>
-</div>
+<h1 class="article__header"><?= $officer->title ?></h1>
+
 <div class="clearfix">
-    <img class="article__thumbnail" src="attachments/<?= $officer->attachment_path ?>">
+    <img class="thumbnail" src="attachments/<?= $officer->attachment_path ?>">
     <ul>
         <? if($officer->phone) : ?><li><?= translate('Phone') ?>: <?= $officer->phone ?></li><? endif ?>
         <? if($officer->mobile) : ?><li><?= translate('Mobile') ?>: <?= $officer->mobile ?></li><? endif ?>

@@ -1251,6 +1251,12 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   width: 100%;
 }
 
+/* line 5, utilities/_select2.scss */
+.select2-container .select2-choice {
+  height: 30px !important;
+  line-height: 30px !important;
+}
+
 /* line 1, utilities/_system.scss */
 .backtrace {
   text-align: center;
