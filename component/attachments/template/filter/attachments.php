@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Url Template Filter
  *
- * Filter rewrites relative files/... paths as inserted by the editor to absolute paths /files/[site]/files/...
+ * Filter rewrites relative attachments/... paths as inserted by the editor to absolute paths /files/[site]/attachments/...
  *
  * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
  * @package Nooku\Component\Attachments
@@ -38,7 +38,7 @@ class TemplateFilterAttachments extends Library\TemplateFilterUrl
         $path = $base->getPath().'/files/'.$site.'/attachments/';
 
         $config->append(array(
-            'aliases' => array('attachments/'  => $path)
+            'aliases' => array('"attachments/'  => '"'.$path)
         ));
 
         parent::_initialize($config);

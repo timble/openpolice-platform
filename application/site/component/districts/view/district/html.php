@@ -19,6 +19,9 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($district->title, '');
 
+        //setcookie ("district_street", $state->street, time()+3600*24*(2), '/5388' );
+        //setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
+
         return parent::render();
     }
 }

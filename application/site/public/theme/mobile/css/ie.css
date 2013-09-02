@@ -2132,7 +2132,7 @@ ul.column--quad {
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   color: #555555;
-  background-color: white;
+  background-color: #ebf3f4;
 }
 
 /* line 67, molecules/_navs.scss */
