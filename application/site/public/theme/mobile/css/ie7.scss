@@ -1,0 +1,27 @@
+@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/variables"; // Modify this for custom colors, font-sizes, etc
+@import "utilities/_variables";
+
+body {
+  width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  margin: 0;
+}
+
+#wrap {
+  border-left: 1px solid darken($grayLighter, 7%);
+  border-right: 1px solid darken($grayLighter, 7%);
+}
+
+.form__left {
+  input {
+    width: 95%; // IE6
+  }
+}
+
+// IE6 and below
+* html .navbar__logo {
+  padding-top: 10px; // IE6
+}

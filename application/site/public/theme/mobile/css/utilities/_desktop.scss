@@ -1,0 +1,148 @@
+@include respond-min($navbarCollapseWidth) {
+  #wrap {
+    border-bottom: 1px solid darken($grayLighter, 7%);
+  }
+
+  .navbar__handlebar {
+    display: none;
+  }
+
+  .container-header .row-fluid .span3,
+  .container-header .is-hidden,
+  .container-breadcrumb,
+  .container-banner,
+  .container-footer,
+  .container-content .sidebar,
+  .container-content.police .sticky,
+  .container-copyright .copyright {
+    display: block;
+  }
+
+  .container-header,
+  .container-banner,
+  .container-breadcrumb,
+  .container-content,
+  .container-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .container {
+    width: $gridRowWidth768 + 38px;
+  }
+
+  .container-header .row-fluid {
+    .span3 {
+      float: none;
+      width: 100%;
+      text-align: center;
+    }
+
+    .span9 {
+      float: none;
+      width: 100%;
+      margin: 20px 0 0 0;
+    }
+  }
+
+  .container-content.police {
+    .contact {
+      border-left: 1px solid $grayLighter;
+
+      padding: 0 18px;
+      margin-top: 20px;
+      @include border-radius(5px);
+
+      ul {
+        margin-bottom: 0;
+      }
+
+      .well {
+        margin-bottom: 10px
+      }
+    }
+
+    .separator--below {
+      border-bottom: 1px solid $grayLighter;
+      padding-bottom: $gridGutterWidth;
+      margin-bottom: 14px;
+    }
+
+    .span3 {
+      width: ($fluidGridColumnWidth * 6) + ($fluidGridGutterWidth * 5);
+      min-height: 125px;
+    }
+
+    .span3:nth-child(3) {
+      margin-left: 0;
+    }
+  }
+
+  .container-header {
+    width: auto;
+  }
+
+  .container-content {
+    .sidebar {
+      margin-top: 20px;
+
+      .sidebar__element {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .container-footer {
+    padding-top: $gridGutterWidth / 3;
+
+    background-color: $wellBackground;
+    border-top: 1px solid darken($grayLighter, 7%);
+
+    @include border-radius(0 0 5px 5px);
+  }
+
+  .container-copyright {
+    text-align: left;
+    border-top: 0 none;
+    .copyright {
+      text-align: right;
+    }
+  }
+}
+
+@include respond-min(998px) {
+  .container-fluid {
+    width: $gridRowWidth;
+    margin: 0 auto;
+  }
+
+  #wrap {
+    border-left: 1px solid darken($grayLighter, 7%);
+    border-right: 1px solid darken($grayLighter, 7%);
+    @include border-radius(0 0 5px 5px);
+  }
+
+  .container-header .row-fluid {
+    .span3 {
+      float: left;
+      width: ($fluidGridColumnWidth * 3) + ($fluidGridGutterWidth * 2);
+      text-align: left;
+    }
+
+    .span9 {
+      float: left;
+      width: ($fluidGridColumnWidth * 9) + ($fluidGridGutterWidth * 8);
+      margin-left: $fluidGridGutterWidth;
+      margin-top: 0;
+    }
+  }
+
+  .container-content.police {
+    .span3 {
+      width: ($fluidGridColumnWidth * 3) + ($fluidGridGutterWidth * 2);
+    }
+    .span3:nth-child(3) {
+      margin-left: $fluidGridGutterWidth;
+    }
+  }
+}

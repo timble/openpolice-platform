@@ -24,19 +24,12 @@ class QuestionsRouter extends Library\DispatcherRouter
 
         $view = $page->getLink()->query['view'];
 
-        if($view == 'categories')
+        if($view == 'questions')
         {
             if(isset($query['category'])) {
                 $segments[] = $query['category'];
             }
 
-            if(isset($query['id'])) {
-                $segments[] = $query['id'];
-            }
-        }
-
-        if($view == 'questions')
-        {
             if(isset($query['id'])) {
                 $segments[] = $query['id'];
             }
@@ -54,6 +47,9 @@ class QuestionsRouter extends Library\DispatcherRouter
         unset($query['id']);
         unset($query['view']);
 
+        unset($query['published']);
+        unset($query['limit']);
+
         return $segments;
     }
 
@@ -67,7 +63,7 @@ class QuestionsRouter extends Library\DispatcherRouter
         $view  = $page->getLink()->query['view'];
         $count = count($path);
 
-        if($view == 'categories')
+        if($view == 'questions')
         {
             if ($count)
             {
@@ -86,14 +82,6 @@ class QuestionsRouter extends Library\DispatcherRouter
                 $vars['slug'] = $segment;
                 $vars['view'] = 'question';
             }
-        }
-
-        if($view == 'questions')
-        {
-            $segment = array_shift( $path) ;
-
-            $vars['slug'] = $segment;
-            $vars['view'] = 'question';
         }
 
         return $vars;

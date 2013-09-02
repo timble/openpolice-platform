@@ -23,21 +23,12 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
 
         $category = $this->getObject('com:categories.model.category')->id($question->categories_category_id)->getRow();
 
-        $needles = array(
-            array('view' => 'question' , 'id' => $question->id),
-            array('view' => 'category', 'id' => $question->category),
-        );
-
         $route = array(
             'view'     => 'question',
             'id'       => $question->getSlug(),
             'layout'   => $config->layout,
             'category' => $category->getSlug()
         );
-
-        if($item = $this->_findPage($needles)) {
-            $route['Itemid'] = $item->id;
-        };
 
         return $this->getTemplate()->getView()->getRoute($route);
     }
@@ -51,24 +42,12 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
 
         $category = $config->row;
 
-        $needles = array(
-            array('view' => 'questions', 'category' => $category->id),
-        );
-
         $route = array(
-            'view'     => 'questions',
-            'category' => $category->getSlug(),
-            'layout'   => $config->layout
+            'view'          => 'questions',
+            'category'      => $category->getSlug(),
+            'layout'        => $config->layout,
+            'searchword'    => null
         );
-
-        if($page = $this->_findPage($needles))
-        {
-            if(isset($page->getLink()->query['layout'])) {
-                $route['layout'] = $page->getLink()->query['layout'];
-            }
-
-            $route['Itemid'] = $page->id;
-        };
 
         return $this->getTemplate()->getView()->getRoute($route);
     }

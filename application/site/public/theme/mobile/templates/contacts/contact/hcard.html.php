@@ -8,13 +8,11 @@
  */
 ?>
 
-<?= helper('behavior.mootools') ?>
-<?= helper('behavior.modal', array('selector' => 'a.modalbox')) ?>
+<? $email_to = str_replace("@", "&#64;", $contact->email_to) ?>
+<? $email_to = str_replace(".", "&#46;", $email_to) ?>
 
 <address class="vcard">
-    <div class="page-header">
-        <h1 class="fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
-    </div>
+    <h1 class="article__header fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
     <?if ($contact->con_position) : ?>
         <h2 class="title"><?= $contact->con_position?></h2>
     <? endif;?>
@@ -56,7 +54,7 @@
                 <?if ($contact->email_to && $contact->params->get('show_email', false)) :?>
                     <li>
                         <span><?= translate('Email') ?></span>:
-                        <a class="email" href="mailto:<?= $contact->email_to?>"><?= $contact->email_to?></a>
+                        <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>
                     </li>
                 <? endif; ?>
             </ul>
@@ -70,7 +68,7 @@
             <? if($contact->isAttachable()) : ?>
                 <? foreach($contact->getAttachments() as $item) : ?>
                     <? if($item->file->isImage()) : ?>
-                        <img style="margin-bottom: 10px" class="photo thumbnail" align="right" src="<?= $item->thumbnail->thumbnail ?>" />
+                        <img style="margin-bottom: 10px" class="photo article__thumbnail" align="right" src="<?= $item->thumbnail->thumbnail ?>" />
                     <? endif ?>
                 <? endforeach ?>
             <? endif ?>

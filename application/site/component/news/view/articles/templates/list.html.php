@@ -10,15 +10,19 @@
 
 <? $site = object('application')->getCfg('site') ?>
 
-<ul class="media-list">
-    <? foreach ($articles as $article) : ?>
-    <li class="media">
+<? foreach ($articles as $article) : ?>
+    <div class="media<?= !$article->thumbnail ? ' media--imageless' : ''; ?>">
+        <? if($article->thumbnail): ?>
+            <a tabindex="-1" class="pull-left" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
+                <?= helper('com:attachments.image.thumbnail', array('row' => $article, 'class' => 'media-object thumbnail')) ?>
+            </a>
+        <? endif; ?>
         <div class="media-body">
-            <p class="media-heading" style="margin-bottom: 0"><a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a></p>
-            <span class="muted" style="font-size: 0.85em">
+            <a class="media-heading" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a>
+
+            <div class="muted" style="font-size: 0.85em">
                 <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'))) ?>
-            </span>
+            </div>
         </div>
-    </li>
-    <? endforeach; ?>
-</ul>
+    </div>
+<? endforeach; ?>

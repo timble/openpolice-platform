@@ -37,7 +37,7 @@ class ModelQuestions extends Library\ModelTable
         parent::_buildQueryJoins($query);
 
         $query->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id')
-            ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path');
+              ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path');
     }
 	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

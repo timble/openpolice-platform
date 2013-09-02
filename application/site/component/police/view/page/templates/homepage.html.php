@@ -14,7 +14,7 @@
     <div class="span8 sticky alpha">
         <? foreach (object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <article>
-                <header>
+                <header class="article__header">
                     <h1><a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a></h1>
                     <span class="timestamp">
                         <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'))) ?>
@@ -22,8 +22,8 @@
                 </header>
 
                 <div class="clearfix">
-                    <a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
-                        <?= helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+                    <a class="article__thumbnail" tabindex="-1" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
+                        <img align="right" src="<?= $article->thumbnail ?>" />
                     </a>
 
                     <?= $article->introtext ?>
@@ -37,10 +37,10 @@
     </div>
     <div class="span4">
         <div class="contact">
-            <h3>Contacteer ons</h3>
+            <h3><?= translate('Contacteer ons') ?></h3>
             <div  class="well well--small">
-                <div><span class="text--strong"><a href="tel:101">101</a></span> <span class="text--small">dringende politiehulp</span></div>
-                <div><span class="text--strong"><a href="tel:<?= $zone->telephone ?>"><?= $zone->telephone ?></a></span> <span class="text--small">geen spoed</span></div>
+                <div><span class="text--strong"><a tabindex="-1" href="tel:101">101</a></span> <span class="text--small">dringende politiehulp</span></div>
+                <div><span class="text--strong"><a tabindex="-1" href="tel:<?= $zone->telephone ?>"><?= $zone->telephone ?></a></span> <span class="text--small">geen spoed</span></div>
             </div>
 
             <ul class="nav nav-tabs nav-stacked">
@@ -49,7 +49,6 @@
                 <li><a href="/<?= $site ?>/contact/diensten">Diensten</a></li>
                 <li><a href="/<?= $site ?>/contact/noodnummers">Noodnummers</a></li>
             </ul>
-
         </div>
     </div>
 </div>
