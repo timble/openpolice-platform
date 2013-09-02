@@ -62,13 +62,12 @@
 
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">
-            <? if($extension !== 'police') : ?>
+            <ktml:modules position="left">
             <aside class="span3 alpha sidebar">
-                <ktml:modules position="left">
-                    <ktml:modules:content>
-                </ktml:modules>
+                <ktml:modules:content>
             </aside>
-            <? endif; ?>
+            </ktml:modules>
+
             <div class="span<?= $extension == 'police' ? '12 alpha' : '9' ?> component">
                 <ktml:content>
             </div>
@@ -93,7 +92,7 @@
     <div class="container-copyright">
     <div class="row-fluid">
         <div class="span6 alpha">
-            <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
+            <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
         <div class="span6 copyright">
             © 2013 Lokale Politie - <?= escape($zone->title); ?>
