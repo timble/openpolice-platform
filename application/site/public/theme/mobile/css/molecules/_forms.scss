@@ -8,7 +8,6 @@
 
 // Make all forms have space below them
 form {
-  width: 100%;
   @extend .clearfix;
 }
 
@@ -148,9 +147,7 @@ select:focus:invalid {
   margin-bottom: $baseLineHeight / 2;
 }
 
-
 .form__left {
-  width: auto;
   margin-right: 110px;
 }
 

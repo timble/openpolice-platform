@@ -28,7 +28,8 @@
 
     <style src="assets://application/css/default.css" />
     <style src="assets://application/css/ie.css" condition="if !(lte IE 7)&!(gte IE 8)" />
-    <style src="assets://application/css/ie7.css" condition="if lte IE 8" />
+    <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
+    <style src="assets://application/css/ie8.css" condition="if lte IE 8" />
 
     <script src="assets://application/js/html5shiv.js" condition="if lte IE 8" />
     <script src="assets://application/js/jquery.placeholder.js" condition="if lte IE 9" />

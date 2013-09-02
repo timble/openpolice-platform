@@ -1474,19 +1474,14 @@ input[type="submit"].btn.btn-small {
   *padding-bottom: 3px;
 }
 
-/* line 10, molecules/_forms.scss */
-form {
-  width: 100%;
-}
-
-/* line 15, molecules/_forms.scss */
+/* line 14, molecules/_forms.scss */
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
-/* line 22, molecules/_forms.scss */
+/* line 21, molecules/_forms.scss */
 legend {
   display: block;
   width: 100%;
@@ -1498,13 +1493,13 @@ legend {
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
-/* line 34, molecules/_forms.scss */
+/* line 33, molecules/_forms.scss */
 legend small {
   font-size: 16.5px;
   color: #999999;
 }
 
-/* line 45, molecules/_forms.scss */
+/* line 44, molecules/_forms.scss */
 label,
 input,
 button,
@@ -1515,7 +1510,7 @@ textarea {
   line-height: 22px;
 }
 
-/* line 51, molecules/_forms.scss */
+/* line 50, molecules/_forms.scss */
 input,
 button,
 select,
@@ -1523,13 +1518,13 @@ textarea {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 56, molecules/_forms.scss */
+/* line 55, molecules/_forms.scss */
 label {
   display: block;
   margin-bottom: 5px;
 }
 
-/* line 67, molecules/_forms.scss */
+/* line 66, molecules/_forms.scss */
 select,
 textarea,
 input {
@@ -1548,18 +1543,18 @@ input {
   box-sizing: border-box !important;
 }
 
-/* line 82, molecules/_forms.scss */
+/* line 81, molecules/_forms.scss */
 input,
 textarea {
   width: 100%;
 }
 
-/* line 86, molecules/_forms.scss */
+/* line 85, molecules/_forms.scss */
 textarea {
   height: auto;
 }
 
-/* line 92, molecules/_forms.scss */
+/* line 91, molecules/_forms.scss */
 textarea,
 input[type="text"],
 input[type="search"] {
@@ -1574,7 +1569,7 @@ input[type="search"] {
   transition: border linear 0.2s, box-shadow linear 0.2s;
   -webkit-appearance: none;
 }
-/* line 100, molecules/_forms.scss */
+/* line 99, molecules/_forms.scss */
 textarea:focus,
 input[type="text"]:focus,
 input[type="search"]:focus {
@@ -1603,19 +1598,19 @@ textarea::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 118, molecules/_forms.scss */
+/* line 117, molecules/_forms.scss */
 .placeholder {
   color: #999999;
 }
 
-/* line 131, molecules/_forms.scss */
+/* line 130, molecules/_forms.scss */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
 }
-/* line 134, molecules/_forms.scss */
+/* line 133, molecules/_forms.scss */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
@@ -1625,18 +1620,17 @@ select:focus:invalid:focus {
   box-shadow: 0 0 6px #f8b9b7;
 }
 
-/* line 147, molecules/_forms.scss */
+/* line 146, molecules/_forms.scss */
 .control-group {
   margin-bottom: 11px;
 }
 
-/* line 152, molecules/_forms.scss */
+/* line 150, molecules/_forms.scss */
 .form__left {
-  width: auto;
   margin-right: 110px;
 }
 
-/* line 157, molecules/_forms.scss */
+/* line 154, molecules/_forms.scss */
 .form__right {
   width: 100px;
   float: right;
@@ -1972,12 +1966,17 @@ select:focus:invalid:focus {
   padding-right: 20px;
   line-height: 50px;
   color: white;
+  zoom: 1;
 }
-/* line 60, molecules/_header__navbar.scss */
+/* line 61, molecules/_header__navbar.scss */
+.navbar__handlebar .navbar__logo:hover {
+  color: white;
+}
+/* line 65, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo img {
   margin-right: 6px;
 }
-/* line 65, molecules/_header__navbar.scss */
+/* line 70, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__handle {
   cursor: pointer;
   float: left;
@@ -1990,7 +1989,7 @@ select:focus:invalid:focus {
   border-right: 1px solid #004fa3;
 }
 
-/* line 79, molecules/_header__navbar.scss */
+/* line 84, molecules/_header__navbar.scss */
 .navbar {
   border-bottom: 0 none;
   border: 1px solid #003b7a;
@@ -1999,36 +1998,36 @@ select:focus:invalid:focus {
   border-radius: 4px;
 }
 
-/* line 86, molecules/_header__navbar.scss */
+/* line 91, molecules/_header__navbar.scss */
 .navbar {
   /* Customize the navbar links to be fill the entire space of the .navbar */
 }
-/* line 88, molecules/_header__navbar.scss */
+/* line 93, molecules/_header__navbar.scss */
 .navbar .nav {
   margin: 0;
   display: table;
   border: 0 none;
 }
-/* line 93, molecules/_header__navbar.scss */
+/* line 98, molecules/_header__navbar.scss */
 .navbar .nav li {
   display: table-cell;
   width: 1%;
 }
-/* line 97, molecules/_header__navbar.scss */
+/* line 102, molecules/_header__navbar.scss */
 .navbar .nav li a {
   text-align: center;
   padding: 5px 15px 5px;
   border: 0 none;
   font-weight: normal;
 }
-/* line 103, molecules/_header__navbar.scss */
+/* line 108, molecules/_header__navbar.scss */
 .navbar .nav li:first-child a {
   border-left: 0;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
 }
-/* line 107, molecules/_header__navbar.scss */
+/* line 112, molecules/_header__navbar.scss */
 .navbar .nav li:last-child a {
   border-right: 0;
   -webkit-border-radius: 0 4px 4px 0;

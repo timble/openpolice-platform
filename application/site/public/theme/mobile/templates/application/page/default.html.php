@@ -31,7 +31,7 @@
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>
                         <a class="navbar__logo" href="/<?= $site ?>">
-                            <img src="assets://application/images/logo-flame.png" />
+                            <img src="assets://application/images/logo-flame.jpg" />
                             <?= escape($zone->title); ?>
                         </a>
                     </div>
