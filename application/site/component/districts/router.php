@@ -24,7 +24,7 @@ class DistrictsRouter extends Library\DispatcherRouter
 
         $view = $page->getLink()->query['view'];
 
-        if($view == 'districts')
+        if($view == 'relations')
         {
             if(isset($query['id'])) {
                 $segments[] = $query['id'];
@@ -34,24 +34,32 @@ class DistrictsRouter extends Library\DispatcherRouter
         unset($query['id']);
         unset($query['view']);
 
+        unset($query['limit']);
+        unset($query['direction']);
+
         return $segments;
     }
 
     public function parse(Library\HttpUrl $url)
     {
         $vars = array();
+        $path = &$url->path;
 
         $page = $this->getObject('application.pages')->getActive();
 
         $view  = $page->getLink()->query['view'];
-        $count = count($segments);
+        $count = count($path);
 
-        if($view == 'districts')
+        if($view == 'relations')
         {
-            $segment = array_shift( $segments) ;
+            if ($count)
+            {
+                $count--;
+                $segment = array_shift( $path ) ;
 
-            $vars['id'] = $segment;
-            $vars['view'] = 'district';
+                $vars['id'] = $segment;
+                $vars['view'] = 'district';
+            }
         }
 
         return $vars;

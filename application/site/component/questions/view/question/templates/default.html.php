@@ -8,18 +8,18 @@
  */
 ?>
 
+<ktml:module position="left">
+    <?= import('com:questions.view.questions.default_categories.html', array('categories' => $categories, 'selected' => $state->category, 'class' => 'nav nav-tabs nav-stacked')) ?>
+</ktml:module>
+
 <title content="replace"><?= $question->title ?></title>
 
-<article>
-    <div class="page-header">
-        <h1><?= escape($question->title); ?></h1>
-    </div>
+<article class="article">
+    <h1 class="article__header"><?= escape($question->title); ?></h1>
 
-    <div class="clearfix">
-        <?= helper('com:attachments.image.thumbnail', array('row' => $question)) ?>
+    <?= helper('com:attachments.image.thumbnail', array('row' => $question)) ?>
 
-        <?= $question->text ?>
-    </div>
+    <?= $question->text ?>
 </article>
 
 <?= import('com:questions.view.questions.default_contact.html') ?>

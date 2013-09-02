@@ -26,12 +26,12 @@
                 </div>
             </div>
             <div class="span9">
-                <span class="slogan">Bel <a class="text--strong" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" href="tel:<?= escape($zone->telephone); ?>"><?= escape($zone->telephone); ?></a></span>
+                <span class="slogan">Bel <a class="text--strong" tabindex="-1" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" tabindex="-1" href="tel:<?= escape($zone->telephone); ?>"><?= escape($zone->telephone); ?></a></span>
                 <div class="navbar">
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>
                         <a class="navbar__logo" href="/<?= $site ?>">
-                            <img src="assets://application/images/logo-flame.png" />
+                            <img src="assets://application/images/logo-flame.jpg" />
                             <?= escape($zone->title); ?>
                         </a>
                     </div>
@@ -62,16 +62,12 @@
 
     <div class="container-content <?= $extension ?>">
         <div class="row-fluid">
-            <? if($extension !== 'police') : ?>
+            <ktml:modules position="left">
             <aside class="span3 alpha sidebar">
-                <ktml:modules position="left">
-                    <ktml:modules:content>
-                </ktml:modules>
-                <? if(!helper('module.count', array('condition' => 'left'))) : ?>
-                <?= import('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
-                <? endif ?>
+                <ktml:modules:content>
             </aside>
-            <? endif; ?>
+            </ktml:modules>
+
             <div class="span<?= $extension == 'police' ? '12 alpha' : '9' ?> component">
                 <ktml:content>
             </div>
@@ -80,18 +76,12 @@
 
     <div class="container-footer">
         <div class="row-fluid">
-            <div class="span6 alpha">
+            <div class="span8 alpha">
                 <h3><?= translate('Laatste nieuws') ?></h3>
-                <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
+                <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
             </div>
-            <div class="span3">
-                <h3><?= translate('Meer weten') ?></h3>
-                <ktml:modules position="footermenu">
-                    <ktml:modules:content>
-                </ktml:modules>
-            </div>
-            <div class="span3">
-                <h3>Mijn wijkinspecteur</h3>
+            <div class="span4">
+                <h3>Je wijkinspecteur</h3>
                 <?= import('default_district.html') ?>
             </div>
         </div>
@@ -102,7 +92,7 @@
     <div class="container-copyright">
     <div class="row-fluid">
         <div class="span6 alpha">
-            <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a>
+            <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
         <div class="span6 copyright">
             © 2013 Lokale Politie - <?= escape($zone->title); ?>

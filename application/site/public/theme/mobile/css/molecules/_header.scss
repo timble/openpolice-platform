@@ -1,0 +1,35 @@
+@include respond-min($navbarCollapseWidth) {
+  .container-header  {
+    margin-bottom: 20px;
+
+    .text--strong {
+      font-size: $fontSizeLarge;
+    }
+
+    .span3 {
+      .logo {
+        padding-top: 26px;
+        display: block;
+        text-decoration: none;
+        color: $linkColor;
+
+        img {
+          width: 160px;
+          vertical-align: bottom;
+          margin-left: 10px;
+        }
+
+        div {
+          margin-left: 60px;
+          margin-top: 3px;
+        }
+      }
+    }
+
+    .slogan {
+      margin: 25px 0 10px;
+      display: block;
+      text-align: center;
+    }
+  }
+}

@@ -14,19 +14,35 @@ class QuestionsViewQuestionHtml extends Library\ViewHtml
     public function render()
     {
         //Get the article
-        $article = $this->getModel()->getData();
+        $question = $this->getModel()->getData();
+
+        $category = $this->getCategory($question);
 
         //Set the pathway
-        $this->getObject('application')->getPathway()->addItem($article->title, '');
+        $this->getObject('application')->getPathway()->addItem($category->title, $this->getTemplate()->getHelper('route')->category(array('row' => $category)));
+        $this->getObject('application')->getPathway()->addItem($question->title, '');
 
         // Get the zone
         $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow();
 
         //Get the attachments
-        if ($article->id && $article->isAttachable()) {
-            $this->attachments($article->getAttachments());
+        if ($question->id && $question->isAttachable()) {
+            $this->attachments($question->getAttachments());
         }
 
+        $this->categories = $this->getObject('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset();
+
         return parent::render();
+    }
+
+    public function getCategory($question)
+    {
+        //Get the category
+        $category = $this->getObject('com:questions.model.categories')
+            ->table('questions')
+            ->id($question->categories_category_id)
+            ->getRow();
+
+        return $category;
     }
 }

@@ -26,7 +26,8 @@ class ModelOfficers extends Library\ModelTable
 
         $query->columns(array(
             'district_count' => 'COUNT(districts_officers.districts_district_id)',
-            'thumbnail'      => 'thumbnails.thumbnail'
+            'thumbnail'      => 'thumbnails.thumbnail',
+            'attachment_path'      => 'attachments.path'
         ));
     }
 	

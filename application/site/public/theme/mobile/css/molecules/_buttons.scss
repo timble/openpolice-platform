@@ -1,0 +1,95 @@
+// Base styles
+// --------------------------------------------------
+
+// Core
+.btn {
+  padding: 4px 12px;
+  margin-bottom: 0; // For input.btn
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid $navbarBorder;
+  @include border-radius($baseBorderRadius);
+  background-color: $navbarBackground;
+  color: $white;
+
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+    color: $white;
+    background-color: $navbarBackgroundHighlight;
+  }
+
+  // Hover/focus state
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    background-position: 0 -15px;
+
+    // transition is only when going to hover/focus, otherwise the background
+    // behind the gradient (there for IE<=9 fallback) gets mismatched
+    @include transition(background-position .1s linear);
+  }
+
+  // Focus state for keyboard and accessibility
+  &:focus {
+    @include tab-focus();
+  }
+
+  // Disabled state
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background-image: none;
+    @include opacity(65);
+    @include box-shadow(none);
+  }
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+// Small
+.btn-small {
+  padding: $paddingSmall;
+  font-size: $fontSizeSmall;
+  @include border-radius($borderRadiusSmall);
+}
+
+
+// Block button
+// -------------------------
+
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  @include box-sizing(border-box);
+}
+
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // IE7 has some default padding on button controls
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+
+  &.btn-small {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  }
+}

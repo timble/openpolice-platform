@@ -8,10 +8,14 @@
  */
 ?>
 
+<ktml:module position="left">
+    <?= import('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
+</ktml:module>
+
 <? foreach ($articles as $article) : ?>
-    <article>
+    <article class="article">
         <? $link = helper('route.article', array('row' => $article)); ?>
-        <header>
+        <header class="article__header">
             <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
             <div class="timestamp">
                 <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
@@ -19,8 +23,8 @@
         </header>
 
         <? if($article->thumbnail): ?>
-            <a href="<?= $link ?>">
-                <?= helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+            <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+                <img align="right" src="<?= $article->thumbnail ?>" />
             </a>
         <? endif; ?>
 

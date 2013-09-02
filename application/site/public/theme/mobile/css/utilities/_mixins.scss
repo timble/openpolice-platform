@@ -1,0 +1,11 @@
+.separator--below {
+  border-bottom: 1px solid $grayLighter;
+  padding-bottom: $gridGutterWidth;
+  margin-bottom: 14px;
+}
+
+@mixin column-count($count) {
+  -webkit-column-count: $count;
+  -moz-column-count: $count;
+  column-count: $count;
+}
