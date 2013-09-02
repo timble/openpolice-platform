@@ -43,6 +43,7 @@ ALTER TABLE `pol_content` DROP INDEX `idx_checkout`;
 -- Update image links
 UPDATE `pol_content` set `introtext` = replace(`introtext`, 'sites/5388/images/Nieuws/', 'files/nieuws/');
 UPDATE `pol_content` set `fulltext` = replace(`fulltext`, 'sites/5388/images/Nieuws/', 'files/nieuws/');
+UPDATE `pol_content` set `introtext` = replace(`introtext`, '<img', '<img class="article__thumbnail"');
 
 RENAME TABLE `pol_content` TO `news`;
 
