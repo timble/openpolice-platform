@@ -1123,13 +1123,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   }
 
   /* line 35, utilities/_desktop.scss */
-  .container-header .span3 {
+  .container-header .row-fluid .span3 {
     float: none;
     width: 100%;
     text-align: center;
   }
   /* line 41, utilities/_desktop.scss */
-  .container-header .span9 {
+  .container-header .row-fluid .span9 {
     float: none;
     width: 100%;
     margin: 20px 0 0 0;
@@ -1219,13 +1219,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   }
 
   /* line 126, utilities/_desktop.scss */
-  .container-header .span3 {
+  .container-header .row-fluid .span3 {
     float: left;
     width: 22.34043%;
     text-align: left;
   }
   /* line 132, utilities/_desktop.scss */
-  .container-header .span9 {
+  .container-header .row-fluid .span9 {
     float: left;
     width: 73.40426%;
     margin-left: 3.19149%;
