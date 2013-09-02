@@ -8,6 +8,8 @@
  */
 ?>
 
+<title content="replace"><?= escape($params->get('page_title')); ?></title>
+
 <h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
 
 <form action="" method="get" class="-koowa-form">
