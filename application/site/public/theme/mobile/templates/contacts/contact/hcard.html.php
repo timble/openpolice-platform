@@ -8,8 +8,8 @@
  */
 ?>
 
-<?= helper('behavior.mootools') ?>
-<?= helper('behavior.modal', array('selector' => 'a.modalbox')) ?>
+<? $email_to = str_replace("@", "&#64;", $contact->email_to) ?>
+<? $email_to = str_replace(".", "&#46;", $email_to) ?>
 
 <address class="vcard">
     <h1 class="article__header fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
@@ -54,7 +54,7 @@
                 <?if ($contact->email_to && $contact->params->get('show_email', false)) :?>
                     <li>
                         <span><?= translate('Email') ?></span>:
-                        <a class="email" href="mailto:<?= $contact->email_to?>"><?= $contact->email_to?></a>
+                        <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>
                     </li>
                 <? endif; ?>
             </ul>
