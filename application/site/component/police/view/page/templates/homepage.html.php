@@ -22,9 +22,11 @@
                 </header>
 
                 <div class="clearfix">
+                    <? if($article->thumbnail) : ?>
                     <a class="article__thumbnail" tabindex="-1" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
                         <img align="right" src="<?= $article->thumbnail ?>" />
                     </a>
+                    <? endif ?>
 
                     <?= $article->introtext ?>
 
