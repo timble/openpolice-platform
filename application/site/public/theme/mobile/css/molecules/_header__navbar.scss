@@ -56,6 +56,11 @@
     padding-right: 20px;
     line-height: 50px;
     color: $white;
+    zoom: 1;
+
+    &:hover {
+      color: $white;
+    }
 
     img {
       margin-right: 6px;
