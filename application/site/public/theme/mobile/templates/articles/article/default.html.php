@@ -8,7 +8,9 @@
     <? endif; ?>
     <h1 class="article__header"><?= $article->title ?></h1>
 
+    <? if($article->thumbnail) : ?>
     <img class="article__thumbnail" align="right" src="<?= $article->thumbnail ?>" />
+    <? endif ?>
 
     <? if($article->fulltext) : ?>
         <div class="entry-summary">
