@@ -27,7 +27,7 @@
     <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style src="assets://application/css/default.css" />
-    <style src="assets://application/css/ie.css" condition="if !(lte IE 7)&!(gte IE 8)" />
+    <style src="assets://application/css/ie.css" condition="if IE 8" />
     <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
     <style src="assets://application/css/ie8.css" condition="if lte IE 8" />
 
