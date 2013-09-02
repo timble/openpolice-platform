@@ -12,9 +12,7 @@
 <?= helper('behavior.modal', array('selector' => 'a.modalbox')) ?>
 
 <address class="vcard">
-    <div class="page-header">
-        <h1 class="fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
-    </div>
+    <h1 class="article__header fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
     <?if ($contact->con_position) : ?>
         <h2 class="title"><?= $contact->con_position?></h2>
     <? endif;?>
