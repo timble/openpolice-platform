@@ -1550,35 +1550,21 @@ input {
   box-sizing: border-box !important;
 }
 
-/* line 83, molecules/_forms.scss */
+/* line 82, molecules/_forms.scss */
 input,
-textarea,
-.uneditable-input {
+textarea {
   width: 100%;
 }
 
-/* line 87, molecules/_forms.scss */
+/* line 86, molecules/_forms.scss */
 textarea {
   height: auto;
 }
 
-/* line 106, molecules/_forms.scss */
+/* line 92, molecules/_forms.scss */
 textarea,
 input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
+input[type="search"] {
   background-color: white;
   border: 1px solid #cccccc;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -1588,42 +1574,19 @@ input[type="color"],
   -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
   -o-transition: border linear 0.2s, box-shadow linear 0.2s;
   transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-appearance: none;
 }
-/* line 113, molecules/_forms.scss */
+/* line 100, molecules/_forms.scss */
 textarea:focus,
 input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-.uneditable-input:focus {
+input[type="search"]:focus {
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
   outline: thin dotted \9;
   /* IE6-9 */
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-}
-
-/* line 128, molecules/_forms.scss */
-input[type="file"],
-input[type="image"],
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-input[type="radio"],
-input[type="checkbox"] {
-  width: auto;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 /* line 83, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
@@ -1642,19 +1605,19 @@ textarea::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 142, molecules/_forms.scss */
+/* line 118, molecules/_forms.scss */
 .placeholder {
   color: #999999;
 }
 
-/* line 155, molecules/_forms.scss */
+/* line 131, molecules/_forms.scss */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
 }
-/* line 158, molecules/_forms.scss */
+/* line 134, molecules/_forms.scss */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
@@ -1664,24 +1627,18 @@ select:focus:invalid:focus {
   box-shadow: 0 0 6px #f8b9b7;
 }
 
-/* line 171, molecules/_forms.scss */
+/* line 147, molecules/_forms.scss */
 .control-group {
   margin-bottom: 11px;
 }
 
-/* line 176, molecules/_forms.scss */
-legend + .control-group {
-  margin-top: 22px;
-  -webkit-margin-top-collapse: separate;
-}
-
-/* line 182, molecules/_forms.scss */
+/* line 152, molecules/_forms.scss */
 .form__left {
   width: auto;
   margin-right: 110px;
 }
 
-/* line 187, molecules/_forms.scss */
+/* line 157, molecules/_forms.scss */
 .form__right {
   width: 100px;
   float: right;
