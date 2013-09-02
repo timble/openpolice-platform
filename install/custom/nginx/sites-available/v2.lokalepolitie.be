@@ -1,8 +1,8 @@
 server {
     server_name ~^v2\.(lokalepolitie|policelocale|lokalepolizei|police|polizei)\.be$;
-
     root   /var/www/v2.lokalepolitie.be/public/;
-    index  index.php;
+
+    include /etc/nginx/conf.d/server.inc;
 
     allow 127.0.0.1;
     deny  all;
