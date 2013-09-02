@@ -10,7 +10,7 @@
 
 <? $params = $officer->params ?>
 
-<h1 class="article__header"><?= $officer->title ?></h1>
+<h2 class="article__header"><?= $officer->title ?></h2>
 
 <div class="clearfix">
     <img class="thumbnail" src="attachments/<?= $officer->attachment_path ?>">

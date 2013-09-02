@@ -8,21 +8,25 @@
  */
 ?>
 
+<title content="replace"><?= escape($district->title) ?></title>
+
+<h1 class="article__header">
+    <?= escape($district->title) ?>
+</h1>
+
 <? $officers = object('com:districts.model.districts_officers')->district($district->id)->getRowset(); ?>
 
-<? if(count($officers)) : ?>
-<div class="clearfix article separator">
-	<? foreach ($officers as $officer) : ?>
-		<?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
-	<? endforeach ?>
-</div>
-<? else : ?>
-<h2><?= translate('No neighbourhood officer found') ?></h2>
-<? endif ?>
-<div class="clearfix">
-	<?
-        $contact = object('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow();
-        $contact->misc = null;
-    ?>
-    <?= import('com:contacts.view.contact.hcard.html', array('contact' => $contact)); ?>
+<div class="row-fluid">
+    <? if(count($officers)) : ?>
+    <div class="span6">
+        <? foreach ($officers as $officer) : ?>
+            <?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
+        <? endforeach ?>
+    </div>
+    <? else : ?>
+    <h2><?= translate('No neighbourhood officer found') ?></h2>
+    <? endif ?>
+    <div class="span6">
+        <?= import('default_contact.html', array('contact' => object('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow())); ?>
+    </div>
 </div>
