@@ -29,6 +29,7 @@ class DatabaseBehaviorStreetable extends Library\DatabaseBehaviorAbstract
         {
             $streets = $model->row($this->id)
                 ->table($this->getTable()->getName())
+                ->sort('title')
                 ->getRowset();
         }
         else $streets = $model->getRowset();
