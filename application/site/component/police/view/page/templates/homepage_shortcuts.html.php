@@ -8,12 +8,12 @@
 <div<?= $class ? ' class="'.$class.'"' : '' ?>>
     <h3>Aangifte</h3>
     <p>Ben je slachtoffer van een misdrijf? Aarzel dan niet om aangifte te doen.</p>
-    <a href="/<?= $site ?>/vragen">Doe aangifte &rarr;</a>
+    <a href="/<?= $site ?>/vragen/14-aangifte/hoe-aangifte-doen">Doe aangifte &rarr;</a>
 </div>
 <div<?= $class ? ' class="'.$class.'"' : '' ?>>
     <h3>Vakantietoezicht</h3>
     <p>Vakantie in binnen- of buitenland? Wij houden een oogje in het zeil.</p>
-    <a href="/<?= $site ?>/verkeer">Toezicht aanvragen &rarr;</a>
+    <a href="/<?= $site ?>/vragen/26-preventie/hoe-een-vakantietoezicht-aanvragen">Toezicht aanvragen &rarr;</a>
 </div>
 <div<?= $class ? ' class="'.$class.'"' : '' ?>>
     <h3>Verloren voorwerpen</h3>
