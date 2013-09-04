@@ -58,17 +58,18 @@
         <h1><?= translate('Page not found') ?> - <?= $code ?></h1>
         <div class="row-fluid">
             <div class="span7 alpha component">
-                <p><strong><?= translate('You may not be able to visit this page because of:'); ?></strong></p>
-                <ol>
+                <p><strong><?= translate('You may not be able to visit this page because of'); ?>:</strong></p>
+                <ul>
                     <li><?= translate('An out-of-date bookmark/favourite'); ?></li>
                     <li><?= translate('A search engine that has an out-of-date listing for this site'); ?></li>
                     <li><?= translate('A mis-typed address'); ?></li>
                     <li><?= translate('The requested resource was not found'); ?></li>
-                    <li><?= translate('An error has occurred while processing your request.'); ?></li>
-                </ol>
-                <p><strong><?= translate('Please try one of the following pages:'); ?></strong></p>
+                    <li><?= translate('An error has occurred while processing your request'); ?></li>
+                </ul>
+                <p><strong><?= translate('Please try one of the following pages'); ?>:</strong></p>
                 <ul>
-                    <li><a href="/" title="<?= translate('Go to the home page'); ?>"><?= translate('Home Page'); ?></a></li>
+                    <li><a href="/<?= $site ?>" title="<?= translate('Home Page'); ?>"><?= translate('Home Page'); ?></a></li>
+                    <li><a href="/<?= $site ?>/contact" title="<?= translate('Contact'); ?>"><?= translate('Contact'); ?></a></li>
                 </ul>
             </div>
             <div class="span5">
