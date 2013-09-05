@@ -46,4 +46,5 @@
             </li>
         <? endif; ?>
     </ul>
+    <?= $contact->misc ?>
 </address>

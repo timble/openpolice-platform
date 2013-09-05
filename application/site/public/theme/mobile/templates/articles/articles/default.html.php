@@ -10,7 +10,9 @@
         <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= highlight($article->title) ?></a>
     </h1>
 
-    <img align="right" src="<?= $article->thumbnail ?>" />
+    <? if($article->thumbnail) : ?>
+    <img class="article__thumbnail" align="right" src="<?= $article->thumbnail ?>" />
+    <? endif ?>
 
     <? if ($article->introtext) : ?>
         <?= $article->introtext ?>

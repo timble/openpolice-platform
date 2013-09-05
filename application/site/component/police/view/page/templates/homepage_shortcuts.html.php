@@ -1,22 +1,22 @@
 <? $site = object('application')->getCfg('site') ?>
 
 <div<?= $class ? ' class="'.$class.' alpha"' : '' ?>>
-    <h3><i class="icon-file-alt1"></i> Vergunningen</h3>
+    <h3>Vergunningen</h3>
     <p>Een parkeerplaats nodig voor de verhuiswagen? Of om een container te plaatsen?</p>
     <a href="/<?= $site ?>/vragen/23-vergunningen">Vergunning aanvragen &rarr;</a>
 </div>
 <div<?= $class ? ' class="'.$class.'"' : '' ?>>
-    <h3><i class="icon-question1"></i> Veelgestelde vragen</h3>
-    <p>Heb je een vraag? Zoek een antwoord tussen veelgestelde vragen.</p>
-    <a href="/<?= $site ?>/vragen">Beantwoord je vraag &rarr;</a>
+    <h3>Aangifte</h3>
+    <p>Ben je slachtoffer van een misdrijf? Aarzel dan niet om aangifte te doen.</p>
+    <a href="/<?= $site ?>/vragen/14-aangifte/hoe-aangifte-doen">Doe aangifte &rarr;</a>
 </div>
 <div<?= $class ? ' class="'.$class.'"' : '' ?>>
-    <h3><i class="icon-road1"></i>Verkeersinformatie</h3>
-    <p>Zoek je informatie over controles, maatregelen of wegenwerken?</p>
-    <a href="/<?= $site ?>/verkeer">Bekijk de verkeersinformatie &rarr;</a>
+    <h3>Vakantietoezicht</h3>
+    <p>Vakantie in binnen- of buitenland? Wij houden een oogje in het zeil.</p>
+    <a href="/<?= $site ?>/vragen/26-preventie/hoe-een-vakantietoezicht-aanvragen">Toezicht aanvragen &rarr;</a>
 </div>
 <div<?= $class ? ' class="'.$class.'"' : '' ?>>
-    <h3><i class="icon-key1"></i> Verloren voorwerpen</h3>
+    <h3>Verloren voorwerpen</h3>
     <p>Iets verloren? Misschien hebben wij je verloren voorwerp gevonden.</p>
     <a href="/<?= $site ?>/vragen/9-verlies-of-diefstal/ik-ben-iets-kwijt-wat-nu">Verloren voorwerpen &rarr;</a>
 </div>
