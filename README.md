@@ -16,15 +16,14 @@ Installation
 * Clone this repository
     ```$ git clone https://github.com/belgianpolice/internet-platform.git```
 * Setup the server
-    ```vagrant box add police [#](#)
+    ```vagrant box add police https://docs.google.com/file/d/0B8ge8rYDyzFhSy1WMjdmSXRkSTQ/edit?usp=sharing```
 * Go to the repository folder and bootup the server
     ```vagrant up```
 * Add the following line into /etc/hosts
-    192.168.52.10 police.dev phpmyadmin.police.dev
+    ```192.168.52.10 police.dev phpmyadmin.police.dev```
 
 
 License
 -------
 
 The files in this archive are released under the GPLv3 license. You can find a copy of this license in [LICENSE](develop/LICENSE.md).
-
