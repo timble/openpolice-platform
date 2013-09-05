@@ -13,6 +13,7 @@
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 <head>
+    <base href="<?= url(); ?>" />
     <title><?= translate('Error').': '.$code; ?></title>
 
     <ktml:style>
