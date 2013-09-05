@@ -20,7 +20,7 @@
             <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img itemprop="logo" src="assets://application/images/logo-nl.jpg" />
+                        <img width="160" itemprop="logo" src="assets://application/images/logo-nl.jpg" />
                         <div><?= escape($zone->title); ?></div>
                     </a>
                 </div>
@@ -46,7 +46,7 @@
     <div class="container-banner banner5388">
         <div class="row-fluid">
             <div class="span12 alpha">
-                <img src="assets://application/images/banners/<?= $site ?>.jpg" />
+                <img width="890" src="assets://application/images/banners/<?= $site ?>.jpg" />
             </div>
         </div>
     </div>
