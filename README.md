@@ -1,7 +1,7 @@
 README
 ======
 
-What is the Police Internet Platform
+What is the Police Internet Platform?
 ------------------------------------
 
 The Police Internet Platform is an open-source platform specifically built for the internet websites of the Belgian Police.
@@ -22,6 +22,14 @@ Installation
 * Add the following line into /etc/hosts
     ```192.168.52.10 police.dev phpmyadmin.police.dev```
 
+Login
+-----
+* Login to ```http://police.dev/administrator/5388```
+
+    ```
+    username: admin@localhost.home
+    password: admin
+    ```
 
 License
 -------
