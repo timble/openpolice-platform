@@ -98,7 +98,7 @@
             © 2013 Lokale Politie - <?= escape($zone->title); ?>
             <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
             <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a>
-            <a style="margin-left: 10px" href="http://www.belgium.be"><image src="assets://application/images/icon_belgium.gif" /></a><strong>Sheriff was here!</strong>
+            <a style="margin-left: 10px" href="http://www.belgium.be"><image src="assets://application/images/icon_belgium.gif" /></a>
         </div>
     </div>
     </div>
