@@ -48,11 +48,11 @@
     <script src="assets://application/js/navbar.js" />
     <script src="assets://application/js/webapp.js" />
 
-    <?php if($site) : ?>
+    <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
     <script type="text/javascript">
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-20242887-1']);
-        _gaq.push(['_setCookiePath', '/<?php echo $site ?>/']);
+        _gaq.push(['_setAccount', '<?= $analytics ?>']);
+        _gaq.push(['_setCookiePath', '/<?= $site ?>/']);
         _gaq.push(['_trackPageview']);
 
         (function() {

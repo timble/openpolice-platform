@@ -40,6 +40,7 @@ dirs=(
 )
 
 files=(
+  "README.md"
   "vendor/.gitignore"
   "config/config.php"
   "application/site/component/application/resources/language/nl-NL.ini"
