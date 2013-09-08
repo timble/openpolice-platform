@@ -1,4 +1,4 @@
-# How to Contribute
+# Contributing Guide
 
 Third-party patches are possible by [using pull requests](https://help.github.com/articles/using-pull-requests).
 
