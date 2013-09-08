@@ -32,7 +32,7 @@ It uses a component based architecture. Written in PHP 5.3, HTML5, CSS3 and Java
 
 ## How to contribute?
 
-Check our [contributing](contributing.md) guide.
+Check our [contributing](CONTRIBUTING.md) guide.
 
 ## License
 
