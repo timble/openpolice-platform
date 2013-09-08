@@ -65,6 +65,11 @@ if ($host ~* (.*polizei.be)$) {
 	rewrite ^(.*)$ http://www.lokalepolitie.be$1 permanent;
 }
 
+# Temporary /developer page
+location /developer {
+    index index.html index.php;
+}
+
 location /
 {
         expires 1d;
