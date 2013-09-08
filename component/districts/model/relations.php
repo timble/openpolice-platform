@@ -27,13 +27,15 @@ class ModelRelations extends Library\ModelTable
 
 		$query->columns(array(
 			'street'    => 'street.title',
-		));
+            'district'  => 'district.title'
+        ));
 	}
 
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
 		$query->join(array('street_relation' => 'streets_relations'), 'street_relation.table = :table AND street_relation.row = tbl.districts_relation_id')->bind(array('table' => 'districts_relations'))
-              ->join(array('street' => 'streets'), 'street.streets_street_id = street_relation.streets_street_id');
+              ->join(array('street' => 'streets'), 'street.streets_street_id = street_relation.streets_street_id')
+              ->join(array('district'   => 'districts'), 'district.districts_district_id = tbl.districts_district_id');
 	}
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
