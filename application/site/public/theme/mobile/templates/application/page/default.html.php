@@ -8,7 +8,6 @@
  */
 ?>
 <? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
-
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
