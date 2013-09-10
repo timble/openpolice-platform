@@ -746,17 +746,22 @@ class DispatcherRequestAbstract extends ControllerRequest implements DispatcherR
                     $accept  = $this->_headers->get('Accept');
                     $formats = $this->_parseAccept($accept);
 
-                    //Get the highest quality format
-                    $mime_type = key($formats);
-
-                    foreach (static::$_formats as $value => $mime_types)
+                    //If the accept contains text/html use it always.
+                    if(!isset($formats['text/html']))
                     {
-                        if (in_array($mime_type, (array) $mime_types))
+                        //Get the highest quality format
+                        $mime_type = key($formats);
+
+                        foreach (static::$_formats as $value => $mime_types)
                         {
-                            $format = $value;
-                            break;
+                            if (in_array($mime_type, (array) $mime_types))
+                            {
+                                $format = $value;
+                                break;
+                            }
                         }
                     }
+                    else $format = 'html';
                 }
             }
             else $format = $this->query->get('format', 'word');
