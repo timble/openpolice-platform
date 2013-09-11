@@ -8,7 +8,6 @@
  */
 ?>
 <? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
-
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
@@ -20,13 +19,13 @@
             <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img itemprop="logo" src="assets://application/images/logo-nl.jpg" />
+                        <img width="160" itemprop="logo" src="assets://application/images/logo-nl.jpg" />
                         <div><?= escape($zone->title); ?></div>
                     </a>
                 </div>
             </div>
             <div class="span9">
-                <span class="slogan">Bel <a class="text--strong" tabindex="-1" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" tabindex="-1" href="tel:<?= escape($zone->telephone); ?>"><?= escape($zone->telephone); ?></a></span>
+                <span class="slogan">Bel <a class="text--strong" tabindex="-1" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" tabindex="-1" href="tel:<?= escape($zone->phone_emergency); ?>"><?= escape($zone->phone_emergency); ?></a></span>
                 <div class="navbar">
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>
@@ -46,7 +45,7 @@
     <div class="container-banner banner5388">
         <div class="row-fluid">
             <div class="span12 alpha">
-                <img src="assets://application/images/banners/<?= $site ?>.jpg" />
+                <img width="890" src="assets://application/images/banners/<?= $site ?>.jpg" />
             </div>
         </div>
     </div>

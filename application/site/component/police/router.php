@@ -22,6 +22,18 @@ class PoliceRouter extends Library\DispatcherRouter
     public function parse(Library\HttpUrl $url)
     {
         $vars = array();
+        $path = &$url->path;
+
+        $page = $this->getObject('application.pages')->getActive();
+
+        $view  = $page->getLink()->query['view'];
+
+        if($view == 'page')
+        {
+            if(!empty($path)) {
+                throw new Library\HttpExceptionNotFound('Page does not exist');
+            }
+        }
 
         return $vars;
     }
