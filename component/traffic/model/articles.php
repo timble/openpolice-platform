@@ -25,7 +25,7 @@ class ModelArticles extends Library\ModelTable
 	
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
-		$query->join(array('street_relation' => 'streets_relations'), 'street_relation.table = :table AND street_relation.row = tbl.traffic_article_id')->bind(array('table' => 'traffic_articles'));
+		$query->join(array('street' => 'traffic_streets'), 'street.traffic_article_id = tbl.traffic_article_id');
 	}
 	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

@@ -40,20 +40,20 @@
 					        <input class="required" type="text" name="lastname" size="32" maxlength="250" value="<?= $officer->lastname; ?>" />
 					    </div>
 					</div>
+                    <div>
+                        <label for="">
+                            <?= translate( 'Number' ); ?>
+                        </label>
+                        <div>
+                            <input class="required" type="text" name="id" size="32" maxlength="250" value="<?= $officer->id; ?>" />
+                        </div>
+                    </div>
 					<div>
 					    <label for="">
 					    	<?= translate( 'Position' ); ?>
 					    </label>
 					    <div>
 					        <input type="text" name="position" size="32" maxlength="250" value="<?= $officer->position; ?>" />
-					    </div>
-					</div>
-					<div>
-					    <label for="">
-					    	<?= translate( 'Number' ); ?>
-					    </label>
-					    <div>
-					        <input type="text" name="number" size="32" maxlength="250" value="<?= $officer->number; ?>" />
 					    </div>
 					</div>
 				</fieldset>

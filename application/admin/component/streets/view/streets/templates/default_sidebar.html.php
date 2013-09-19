@@ -8,5 +8,5 @@
  */
 ?>
 
-<h3><?= translate('Municipality')?></h3>
-<?= import('com:police.view.municipalities.list.html', array('municipalities' => object('com:police.model.municipalities')->sort('title')->zone('5388')->getRowset())); ?>
+<h3><?= translate('Cities')?></h3>
+<?= import('com:streets.view.cities.list.html', array('cities' => object('com:streets.model.cities')->sort('title')->getRowset())); ?>

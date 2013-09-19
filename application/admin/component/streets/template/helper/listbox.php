@@ -21,7 +21,20 @@ class StreetsTemplateHelperListbox extends Library\TemplateHelperListbox
 			'name'		=> 'streets[]',
             'prompt'    => false
 		));
-		
+
 		return parent::_render($config);
 	}
+
+    public function cities($config = array())
+    {
+        $config = new Library\ObjectConfig($config);
+        $config->append(array(
+            'model' 		=> 'cities',
+            'name' 			=> 'streets_city_id',
+            'value'			=> 'id',
+            'label'         => 'title'
+        ));
+
+        return parent::_render($config);
+    }
 }

@@ -23,46 +23,15 @@ class DatabaseBehaviorStreetable extends Library\DatabaseBehaviorAbstract
      */
     public function getStreets()
     {
-        $model = $this->getObject('com:streets.model.relations');
+        // $this->getTable()->getName()
+        $model = $this->getObject('com:traffic.model.streets');
 
         if(!$this->isNew())
         {
-            $streets = $model->row($this->id)
-                ->table($this->getTable()->getName())
-                ->sort('title')
-                ->getRowset();
-        }
-        else $streets = $model->getRowset();
+            $streets = $model->article($this->id)->getRowset();
+
+        } else $streets = $model->getRow();
 
         return $streets;
-    }
-
-    /**
-     * Modify the select query
-     *
-     * If the query's where information includes a street propery, auto-join the streets tables with the query and select
-     * all the rows that have a street.
-     */
-    protected function _beforeTableSelect(Library\CommandContext $context)
-    {
-        $query = $context->query;
-
-        if(!is_null($query))
-        {
-            foreach($query->where as $key => $where)
-            {
-                if($where['condition'] == 'tbl.street')
-                {
-                    $table = $context->caller;
-
-                    $query->where('streets.slug', $where['constraint'],  $where['value']);
-                    $query->where('streets_relations.table','=', $table->getName());
-                    $query->join('LEFT', 'streets_relations AS streets_relations', 'streets_relations.row = tbl.'.$table->getIdentityColumn());
-                    $query->join('LEFT', 'streets AS streets', 'streets.streets_street_id = streets_relations.streets_street_id');
-
-                    unset($context->query->where[$key]);
-                }
-            }
-        }
     }
 }
