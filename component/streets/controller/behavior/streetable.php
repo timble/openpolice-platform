@@ -28,9 +28,8 @@ class ControllerBehaviorStreetable extends Library\BehaviorAbstract
         // Remove all existing relations
         if($row->id && $row->getTable()->getBase())
         {
-            $rows = $this->getObject('com:streets.model.relations')
-                ->row($row->id)
-                ->table($table)
+            $rows = $this->getObject('com:traffic.model.streets')
+                ->article($row->id)
                 ->getRowset();
 
             $rows->delete();
@@ -41,10 +40,9 @@ class ControllerBehaviorStreetable extends Library\BehaviorAbstract
             // Save streets as relations
             foreach ($row->streets as $street)
             {
-                $relation = $this->getObject('com:streets.database.row.relation');
+                $relation = $this->getObject('com:traffic.database.row.street');
                 $relation->streets_street_id = $street;
-                $relation->row		  = $row->id;
-                $relation->table      = $table;
+                $relation->traffic_article_id = $row->id;
 
                 if(!$relation->load()) {
                     $relation->save();
@@ -63,26 +61,5 @@ class ControllerBehaviorStreetable extends Library\BehaviorAbstract
     protected function _afterControllerEdit(Library\CommandContext $context)
     {
         $this->_saveRelations($context);
-    }
-
-    protected function _afterControllerDelete(Library\CommandContext $context)
-    {
-        $status = $context->result->getStatus();
-
-        if($status == Library\Database::STATUS_DELETED || $status == 'trashed')
-        {
-            $id = $context->result->get('id');
-            $table = $context->result->getTable()->getBase();
-
-            if(!empty($id) && $id != 0)
-            {
-                $rows = $this->getObject('com:streets.model.relations')
-                    ->row($id)
-                    ->table($table)
-                    ->getRowset();
-
-                $rows->delete();
-            }
-        }
     }
 }

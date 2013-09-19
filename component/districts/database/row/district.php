@@ -43,19 +43,4 @@ class DatabaseRowDistrict extends Library\DatabaseRowTable
        
         return $result;
     }
-    
-    public function delete()
-    {   	
-    	// Remove records in jos_districts_relations
-    	foreach ($this->getObject('com:districts.model.relations')->districts_district_id($this->id)->getRowset() as $value) {
-    		$this->getObject('com:districts.model.relations')->id($value->id)->getRow()->delete();
-    	}
-    	
-    	// Remove records in jos_districts_districts_officers
-    	foreach ($this->getObject('com:districts.model.districts_officers')->district($this->id)->getRowset() as $value) {
-    		$this->getObject('com:districts.model.districts_officers')->districts_district_id($this->id)->districts_officer_id($value->districts_officer_id)->getRow()->delete();
-    	}
-    		
-    	return parent::delete();
-    }
 }

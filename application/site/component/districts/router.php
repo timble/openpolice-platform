@@ -57,7 +57,7 @@ class DistrictsRouter extends Library\DispatcherRouter
                 $count--;
                 $segment = array_shift( $path ) ;
 
-                $vars['id'] = $segment;
+                $vars['slug'] = $segment;
                 $vars['view'] = 'district';
             }
         }

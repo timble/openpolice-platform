@@ -13,10 +13,6 @@
 <style src="assets://css/koowa.css" />
 -->
 
-<ktml:module position="actionbar">
-    <ktml:toolbar type="actionbar">
-</ktml:module>
-
 <ktml:module position="sidebar">
     <?= import('default_sidebar.html'); ?>
 </ktml:module>
@@ -32,9 +28,9 @@
 			<th>
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
-			<th>
-				<?= helper('grid.sort', array('column' => 'municipality')) ?>
-			</th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'islp')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -53,9 +49,9 @@
 			<td>
 				<a href="<?= route( 'view=street&task=edit&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
 			</td>
-			<td>
-				<?= escape($street->municipality); ?>
-			</td>
+            <td>
+                <?= $street->islp ?>
+            </td>
 		</tr>
 		<? endforeach; ?>
 	</tbody>

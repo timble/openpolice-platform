@@ -26,7 +26,9 @@
         <div class="well" style="float: right; margin-left: 30px">
             <strong><?= translate('Streets') ?></strong>
             <ul>
-                <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
+            <? foreach ($article->getStreets() as $street) : ?>
+                <li><?= $street->street ?></li>
+            <? endforeach; ?>
             </ul>
         </div>
     <? endif ?>
