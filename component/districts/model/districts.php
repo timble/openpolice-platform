@@ -35,17 +35,4 @@ class ModelDistricts extends Library\ModelTable
 			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
 		}
 	}
-
-    public function getOfficers()
-    {
-        $model = $this->getObject('com:districts.model.districts_officers');
-
-        if(!$this->_row->isNew())
-        {
-            $officers = $model->officer($this->_row->id)->getRowset();
-
-        } else $officers = $model->getRow();
-
-        return $officers;
-    }
 }
