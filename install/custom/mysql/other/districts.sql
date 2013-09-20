@@ -127,3 +127,8 @@ WHERE `streets_postcodes`.`streets_postcode_id` = `police_municipalities`.`postc
 UPDATE `streets_cities`, `streets_postcodes`
 SET `streets_cities`.`police_zone_id` = `streets_postcodes`.`police_zone_id`
 WHERE `streets_cities`.`streets_city_id` = `streets_postcodes`.`streets_city_id`;
+
+-- Release
+UPDATE `attachments_relations`, `districts_officers`
+SET `attachments_relations`.`row` = `districts_officers`.`districts_officer_id`
+WHERE `attachments_relations`.`row` = `districts_officers`.`old_id` AND `attachments_relations`.`table` = 'districts_officers';

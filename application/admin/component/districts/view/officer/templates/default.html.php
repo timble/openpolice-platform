@@ -87,12 +87,12 @@
 				<fieldset>
 					<legend><?= translate( 'Districts' ); ?></legend>
 					<ul>
-					<? $districts = $this->getObject('com:districts.model.districts_officers')->officer($officer->id)->getRowset() ?>
-					<? foreach ($this->getObject('com:districts.model.districts_officers')->officer($officer->id)->getRowset() as $value) : ?>
+                        <? if(!count($districts)) : ?>
+                        <li><?= translate('No district') ?></li>
+                        <? else : ?>
+                        <? foreach ($districts as $value) : ?>
 						<li><?= escape($value->district); ?></li>
-					<? endforeach; ?>
-					<? if(!count($districts)) : ?>
-						<li><?= translate('No district') ?></li>
+					    <? endforeach; ?>
 					<? endif ?>
 					</ul>
 				</fieldset>

@@ -13,7 +13,10 @@ class DistrictsViewOfficerHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $officer = $this->getModel()->getData();
+        $model      = $this->getModel();
+        $officer    = $model->getData();
+
+        $this->districts($model->getDistricts());
         
         $this->params($officer->params);
         return parent::render();
