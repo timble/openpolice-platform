@@ -27,7 +27,7 @@
 		
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= translate( 'Distict' ); ?></legend>
+				<legend><?= translate( 'District' ); ?></legend>
                 <div>
                     <label for="id">
                         <?= translate( 'ID' ); ?>
@@ -49,7 +49,7 @@
 				    	<?= translate( 'Officers' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers', 'style' => 'width:100%;'))); ?>
+				        <?= helper('listbox.officers', array('selected' => $officers->districts_officer_id, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers', 'style' => 'width:100%;'))); ?>
                         <script data-inline> $jQuery(".select-officers").select2(); </script>
                     </div>
 				</div>

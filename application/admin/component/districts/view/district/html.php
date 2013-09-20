@@ -12,19 +12,10 @@ use Nooku\Library;
 class DistrictsViewDistrictHtml extends Library\ViewHtml
 {
     public function render()
-    {        
-        $district = $this->getModel()->getData();
-        $officers = array();
-        
-        if($district->id){
-        	$districts_officers = $this->getObject('com:districts.model.districts_officers')->district($district->id)->getRowset();
-        	
-        	foreach ($districts_officers as $key => $value) {
-        		$officers[] = $value->districts_officer_id;
-        	}
-        }
-        
-        $this->officers($officers);
+    {
+        $model = $this->getModel();
+
+        $this->officers($model->getOfficers());
         
         return parent::render();
     }
