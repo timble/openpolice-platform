@@ -14,8 +14,17 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
     public function render()
     {
         $model = $this->getModel();
+        $district = $model->getData();
 
-        $this->officers($model->getOfficers());
+        if(!$district->districts_district_id)
+        {
+            $officers = $this->getObject('com:districts.model.districts_officers')
+                ->district($district->id)
+                ->getRowset()->districts_officer_id;
+
+        } else $officers = null;
+
+        $this->officers($officers);
         
         return parent::render();
     }

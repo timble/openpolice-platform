@@ -68,17 +68,4 @@ class ModelOfficers extends Library\ModelTable
 
         $query->group('tbl.districts_officer_id');
     }
-
-    public function getDistricts()
-    {
-        $model = $this->getObject('com:districts.model.districts_officers');
-
-        if(!$this->_row->isNew())
-        {
-            $districts = $model->officer($this->_row->id)->getRowset();
-
-        } else $districts = null;
-
-        return $districts;
-    }
 }
