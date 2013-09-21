@@ -17,7 +17,7 @@ class ModelRelations extends Library\ModelTable
 		parent::__construct($config);
 
 		$this->getState()
-		    ->insert('street' , 'int')
+		    ->insert('street' , 'string')
 		    ->insert('row' , 'int')
 		    ->insert('table' , 'string', $this->getIdentifier()->package);
 	}
@@ -42,7 +42,7 @@ class ModelRelations extends Library\ModelTable
 		$state = $this->getState();
 		
 		if ($state->street) {
-			$query->where('tbl.streets_street_id = :street')->bind(array('street' => (int) $state->street));
+			$query->where('tbl.streets_street_id = :street')->bind(array('street' => $state->street));
 		}
 		
 		if ($state->row) {

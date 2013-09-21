@@ -20,7 +20,7 @@
         <?= $article->text ?>
     <? endif ?>
 
-    <? if($streets = $this->getObject('com:streets.model.relations')->row($article->id)->table('traffic')->getRowset()) : ?>
+    <? if($streets = $this->getObject('com:traffic.model.streets')->article($article->id)->getRowset()) : ?>
         <? foreach ($streets as $street) : ?>
             <?= $street->street ?>,
         <? endforeach; ?>

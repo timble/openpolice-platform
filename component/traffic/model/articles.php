@@ -23,11 +23,6 @@ class ModelArticles extends Library\ModelTable
 		    ->insert('date' , 'string');
 	}
 	
-	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
-	{
-		$query->join(array('street_relation' => 'streets_relations'), 'street_relation.table = :table AND street_relation.row = tbl.traffic_article_id')->bind(array('table' => 'traffic_articles'));
-	}
-	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
 	{
 	    parent::_buildQueryWhere($query);

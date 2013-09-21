@@ -27,8 +27,16 @@
 		
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= translate( 'Distict' ); ?></legend>
-				<div>
+				<legend><?= translate( 'District' ); ?></legend>
+                <div>
+                    <label for="id">
+                        <?= translate( 'ID' ); ?>
+                    </label>
+                    <div>
+                        <input class="required" type="text" name="id" size="32" maxlength="250" value="<?= $district->id; ?>" />
+                    </div>
+                </div>
+                <div>
 				    <label for="contacts_contact_id">
 				    	<?= translate( 'Location' ); ?>
 				    </label>

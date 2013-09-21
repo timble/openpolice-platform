@@ -11,19 +11,6 @@ use Nooku\Library;
 
 class PoliceTemplateHelperListbox extends Library\TemplateHelperListbox
 {
-    public function municipalities($config = array())
-	{
-		$config = new Library\ObjectConfig($config);
-		$config->append(array(
-			'model' 		=> 'municipalities',
-			'name' 			=> 'police_municipality_id',
-			'value'			=> 'id',
-            'label'         => 'title'
-		));
-        
-		return parent::_render($config);
-	}
-    
     public function cities($config = array())
 	{
 		$config = new Library\ObjectConfig($config);

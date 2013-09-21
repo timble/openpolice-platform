@@ -10,8 +10,13 @@
 
 <div class="scopebar">
     <div class="scopebar__group">
-        <a class="<?= is_null($state->search) ? 'active' : ''; ?>" href="<?= route('search=' ) ?>">
+        <a class="<?= is_null($state->search) && is_null($state->islp) ? 'active' : ''; ?>" href="<?= route('search=&islp=' ) ?>">
             <?= translate('All') ?>
+        </a>
+    </div>
+    <div class="scopebar__group">
+        <a class="<?= $state->islp === 0 ? 'active' : ''; ?>" href="<?= route($state->islp === 0 ? 'islp=' : 'islp=0' ) ?>">
+            <?= 'Missing ISLP' ?>
         </a>
     </div>
     <div class="scopebar__search">
