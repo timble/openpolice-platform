@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Belgian Police Web Platform - Districts Component
  *
@@ -26,7 +26,7 @@ class DistrictsViewOfficerHtml extends Library\ViewHtml
 
         $this->districts($districts);
         $this->params($officer->params);
+
         return parent::render();
     }
-
 }
