@@ -26,7 +26,7 @@
 				<?= helper( 'grid.checkall'); ?>
 			</th>
             <th width="1"></th>
-			<th>
+			<th width="100%">
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
