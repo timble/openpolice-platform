@@ -23,4 +23,14 @@ class NewsControllerArticle extends Library\ControllerModel
     
         parent::_initialize($config);
     }
+
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        $request->query->sort = 'ordering_date';
+        $request->query->direction   = 'DESC';
+
+        return $request;
+    }
 }
