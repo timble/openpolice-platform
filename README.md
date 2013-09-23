@@ -33,7 +33,7 @@ You can use the following commands to manage the server:
 * ```vangrant up``` to initially start the server
 * ```vagrant reload``` reboots the server
 * ```vagrant halt``` powers the server down
-* ```vagrant suspend``` & ```Vagrant suspend``` to make the server sleep/wake up
+* ```vagrant suspend``` & ```vagrant suspend``` to make the server sleep/wake up
 * ```vangrant destroy``` to stop and destroy all resources of the server
 
 More information about the Vagrant command-line interface can be found at [docs.vagrantup.com](http://docs.vagrantup.com/v2/cli/index.html).
