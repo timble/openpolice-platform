@@ -26,7 +26,8 @@ class ModelDistricts_officers extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 	
 		$query->columns(array(
-			'firstname' => 'officer.firstname',
+            'name'      => "CONCAT(officer.firstname, ' ', officer.lastname)",
+            'firstname' => 'officer.firstname',
 			'lastname'  => 'officer.lastname',
 			'district'  => 'district.title'
 		));
