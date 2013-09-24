@@ -58,8 +58,8 @@
 					<?= $article->title ?>
 				</a>
 			</td>
-            <td align="center">
-                <?= $article->ordering_date ?>
+            <td>
+                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'D d/m/Y - G:i')) ?>
             </td>
 		</tr>
 		<? endforeach; ?>
