@@ -20,6 +20,22 @@ It uses a component based architecture. Written in PHP 5.3, HTML5, CSS3 and Java
 * Add the following line to your hosts file
     ```192.168.52.10 police.dev phpmyadmin.police.dev```
 
+Note: Linux users need to install NFS (Network File System) manually, see [help.ubuntu.com](http://help.ubuntu.com/community/SettingUpNFSHowTo) for more information.
+
+
+## Vagrant command-line interface
+
+You can use the following commands to manage the server:
+
+* ```vangrant up``` to initially start the server
+* ```vagrant reload``` reboots the server
+* ```vagrant halt``` powers the server down
+* ```vagrant suspend``` & ```Vagrant suspend``` to make the server sleep/wake up
+* ```vangrant destroy``` to stop and destroy all resources of the server
+
+More information about the Vagrant command-line interface can be found at [docs.vagrantup.com](http://docs.vagrantup.com/v2/cli/index.html).
+
+
 ## Access
 
 * The site application is available at [http://police.dev/5388](http://police.dev/5388).
@@ -33,6 +49,7 @@ It uses a component based architecture. Written in PHP 5.3, HTML5, CSS3 and Java
 ## How to contribute?
 
 Check our [contributing](CONTRIBUTING.md) guide.
+
 
 ## License
 

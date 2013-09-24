@@ -2425,6 +2425,41 @@ ul.column--quad {
   border-radius: 3px;
 }
 
+/* Print stub */
+@media only print {
+  /* line 6, utilities/_print.scss */
+  .container-header .navbar,
+  .container-copyright,
+  .pagination,
+  .st_sharethis {
+    display: none;
+  }
+
+  /* line 10, utilities/_print.scss */
+  .container-header .row-fluid .span3 {
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+  /* line 15, utilities/_print.scss */
+  .container-header .row-fluid .span3 .logo a:after {
+    content: "";
+  }
+  /* line 19, utilities/_print.scss */
+  .container-header .row-fluid .span3 .logo div {
+    padding-left: 50px;
+  }
+
+  /* line 24, utilities/_print.scss */
+  .article__thumbnail:after {
+    content: "" !important;
+  }
+
+  /* line 28, utilities/_print.scss */
+  a {
+    border-bottom: 0 none !important;
+  }
+}
 /* line 6, ie.scss */
 .container-header .nav li {
   display: block;

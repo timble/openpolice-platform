@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 
 use Nooku\Library;
@@ -22,5 +22,15 @@ class NewsControllerArticle extends Library\ControllerModel
         ));
     
         parent::_initialize($config);
+    }
+
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        $request->query->sort = 'ordering_date';
+        $request->query->direction   = 'DESC';
+
+        return $request;
     }
 }

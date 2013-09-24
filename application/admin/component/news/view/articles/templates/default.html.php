@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 
@@ -26,7 +26,7 @@
 				<?= helper( 'grid.checkall'); ?>
 			</th>
             <th width="1"></th>
-			<th>
+			<th width="100%">
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
@@ -58,8 +58,8 @@
 					<?= $article->title ?>
 				</a>
 			</td>
-            <td align="center">
-                <?= $article->ordering_date ?>
+            <td>
+                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'D d/m/Y - G:i')) ?>
             </td>
 		</tr>
 		<? endforeach; ?>
