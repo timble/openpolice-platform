@@ -23,4 +23,15 @@ class TrafficControllerArticle extends Library\ControllerModel
 
         parent::_initialize($config);
     }
+
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        // Set the ordering
+        $request->query->sort = 'start_on';
+        $request->query->direction = 'ASC';
+
+        return $request;
+    }
 }
