@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "efd4c4f59d3888974805f701d6bdc1c7",
+    "hash": "3624aa309de911e7cf2231185f62a893",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -95,34 +95,6 @@
                 "image processing"
             ],
             "time": "2012-12-13 18:31:18"
-        },
-        {
-            "name": "jlong/sass-twitter-bootstrap",
-            "version": "v2.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jlong/sass-twitter-bootstrap.git",
-                "reference": "v2.3.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jlong/sass-twitter-bootstrap/zipball/v2.3.2",
-                "reference": "v2.3.2",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "description": "A sass port of the sleek, intuitive, and powerful front-end framework for faster and easier web development.",
-            "homepage": "http://github.com/jlong/sass-twitter-bootstrap/",
-            "keywords": [
-                "bootstrap",
-                "css",
-                "sass"
-            ],
-            "time": "2013-05-21 19:52:16"
         },
         {
             "name": "swiftmailer/swiftmailer",
