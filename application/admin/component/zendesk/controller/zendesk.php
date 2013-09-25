@@ -33,8 +33,8 @@ class ZendeskControllerZendesk extends Library\ControllerView
         $token = array(
             "jti"   => md5($now . rand()),
             "iat"   => $now,
-            "name"  => $user->name,
-            "email" => $user->email
+            "name"  => $user->getName(),
+            "email" => $user->getEmail()
         );
 
         $jwt = JWT::encode($token, $key);
