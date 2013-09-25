@@ -34,7 +34,7 @@ casper.test.begin('Testing the districts search for Bondgenotenlaan', 4, functio
     });
 
     casper.then(function() {
-        test.assertUrlMatch("/2-leuven-buurt-l11", "District officer is found");
+        test.assertUrlMatch("/leuven-centrum-station-1", "District officer is found");
         test.assertVisible('address', "Address information is visible");
     });
 
