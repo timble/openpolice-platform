@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 
 namespace Nooku\Component\Districts;
@@ -17,7 +17,7 @@ class ModelRelations extends Library\ModelTable
 		parent::__construct($config);
 
 		$this->getState()
-		    ->insert('district' , 'int')
+		    ->insert('district' , 'string')
 		    ->insert('street' , 'string');
 	}
 
@@ -33,8 +33,7 @@ class ModelRelations extends Library\ModelTable
 
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
-		$query->join(array('street_relation' => 'streets_relations'), 'street_relation.table = :table AND street_relation.row = tbl.districts_relation_id')->bind(array('table' => 'districts_relations'))
-              ->join(array('street' => 'streets'), 'street.streets_street_id = street_relation.streets_street_id')
+		$query->join(array('street' => 'streets'), 'street.islp = tbl.islp')
               ->join(array('district'   => 'districts'), 'district.districts_district_id = tbl.districts_district_id');
 	}
 
@@ -48,12 +47,12 @@ class ModelRelations extends Library\ModelTable
 		}
 
 		if ($state->district) {
-			$query->where('tbl.districts_district_id = :district')->bind(array('district' => (int) $state->district));
+			$query->where('tbl.districts_district_id = :district')->bind(array('district' => $state->district));
 		}
 
 		if ($state->street) {
             if(is_numeric($state->street)){
-                $query->where('street.streets_street_id = :street')->bind(array('street' => (int) $state->street));
+                $query->where('street.streets_street_id = :street')->bind(array('street' => $state->street));
             }
 
             if(!is_numeric($state->street)){

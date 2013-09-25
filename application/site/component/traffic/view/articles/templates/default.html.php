@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 
@@ -20,10 +20,8 @@
         <?= $article->text ?>
     <? endif ?>
 
-    <? if($streets = $this->getObject('com:streets.model.relations')->row($article->id)->table('traffic')->getRowset()) : ?>
-        <? foreach ($streets as $street) : ?>
-            <?= $street->street ?>,
-        <? endforeach; ?>
+    <? if($streets = $this->getObject('com:traffic.model.streets')->article($article->id)->getRowset()->street) : ?>
+        <?= implode(", ", $streets) ?>
     <? else : ?>
         <?= translate('Grondgebied van Politie').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
     <? endif ?>

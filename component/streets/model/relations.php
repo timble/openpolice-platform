@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 
 namespace Nooku\Component\Streets;
@@ -17,7 +17,7 @@ class ModelRelations extends Library\ModelTable
 		parent::__construct($config);
 
 		$this->getState()
-		    ->insert('street' , 'int')
+		    ->insert('street' , 'string')
 		    ->insert('row' , 'int')
 		    ->insert('table' , 'string', $this->getIdentifier()->package);
 	}
@@ -42,7 +42,7 @@ class ModelRelations extends Library\ModelTable
 		$state = $this->getState();
 		
 		if ($state->street) {
-			$query->where('tbl.streets_street_id = :street')->bind(array('street' => (int) $state->street));
+			$query->where('tbl.streets_street_id = :street')->bind(array('street' => $state->street));
 		}
 		
 		if ($state->row) {

@@ -4,26 +4,13 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 
 use Nooku\Library;
 
 class PoliceTemplateHelperListbox extends Library\TemplateHelperListbox
 {
-    public function municipalities($config = array())
-	{
-		$config = new Library\ObjectConfig($config);
-		$config->append(array(
-			'model' 		=> 'municipalities',
-			'name' 			=> 'police_municipality_id',
-			'value'			=> 'id',
-            'label'         => 'title'
-		));
-        
-		return parent::_render($config);
-	}
-    
     public function cities($config = array())
 	{
 		$config = new Library\ObjectConfig($config);

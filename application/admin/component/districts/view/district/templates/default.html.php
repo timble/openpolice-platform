@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 
@@ -27,8 +27,16 @@
 		
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= translate( 'Distict' ); ?></legend>
-				<div>
+				<legend><?= translate( 'District' ); ?></legend>
+                <div>
+                    <label for="id">
+                        <?= translate( 'ID' ); ?>
+                    </label>
+                    <div>
+                        <input class="required" type="text" name="id" size="32" maxlength="250" value="<?= $district->id; ?>" />
+                    </div>
+                </div>
+                <div>
 				    <label for="contacts_contact_id">
 				    	<?= translate( 'Location' ); ?>
 				    </label>

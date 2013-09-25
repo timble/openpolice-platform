@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 <? $site = object('application')->getCfg('site') ?>
@@ -42,8 +42,8 @@
             <h3><?= translate('Contacteer ons') ?></h3>
             <div  class="well well--small">
                 <div><span class="text--strong"><a tabindex="-1" href="tel:101">101</a></span> <span class="text--small">dringende politiehulp</span></div>
-                <div><span class="text--strong"><a tabindex="-1" href="tel:<?= $zone->phone_emergency ?>"><?= $zone->phone_emergency ?></a></span> <span class="text--small">geen spoed</span></div>
-                <div><span class="text--strong"><a tabindex="-1" href="tel:<?= $zone->phone_information ?>"><?= $zone->phone_information ?></a></span> <span class="text--small">algemene info</span></div>
+                <div><span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_emergency) ?>"><?= $zone->phone_emergency ?></a></span> <span class="text--small">geen spoed</span></div>
+                <div><span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_information) ?>"><?= $zone->phone_information ?></a></span> <span class="text--small">algemene info</span></div>
             </div>
 
             <ul class="nav nav-tabs nav-stacked">

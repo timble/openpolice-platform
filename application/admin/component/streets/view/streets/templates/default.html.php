@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 
@@ -12,10 +12,6 @@
 <script src="assets://js/koowa.js" />
 <style src="assets://css/koowa.css" />
 -->
-
-<ktml:module position="actionbar">
-    <ktml:toolbar type="actionbar">
-</ktml:module>
 
 <ktml:module position="sidebar">
     <?= import('default_sidebar.html'); ?>
@@ -32,9 +28,9 @@
 			<th>
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
-			<th>
-				<?= helper('grid.sort', array('column' => 'municipality')) ?>
-			</th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'islp')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -53,9 +49,9 @@
 			<td>
 				<a href="<?= route( 'view=street&task=edit&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
 			</td>
-			<td>
-				<?= escape($street->municipality); ?>
-			</td>
+            <td>
+                <?= $street->islp ?>
+            </td>
 		</tr>
 		<? endforeach; ?>
 	</tbody>

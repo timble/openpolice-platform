@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 
 namespace Nooku\Component\Districts;
@@ -17,7 +17,7 @@ class ModelDistricts_officers extends Library\ModelTable
 		parent::__construct($config);
 
 		$this->getState()
-		    ->insert('district' , 'int')
+		    ->insert('district' , 'string')
 		    ->insert('officer' , 'int');
 	}
 	
@@ -44,7 +44,7 @@ class ModelDistricts_officers extends Library\ModelTable
 		$state = $this->getState();
 		
 		if ($state->district) {
-			$query->where('tbl.districts_district_id = :district')->bind(array('district' => (int) $state->district));
+			$query->where('tbl.districts_district_id = :district')->bind(array('district' => $state->district));
 		}
 		
 		if ($state->officer) {
