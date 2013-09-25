@@ -1,29 +1,29 @@
 /*
  * Bootstrap variables
  */
-/* line 4, ie6.scss */
+/* line 4, ie7.scss */
 body {
   width: 600px;
   margin: 0 auto;
 }
 
-/* line 9, ie6.scss */
+/* line 9, ie7.scss */
 form {
   margin: 0;
 }
 
-/* line 13, ie6.scss */
+/* line 13, ie7.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
 }
 
-/* line 19, ie6.scss */
+/* line 19, ie7.scss */
 .form__left input {
   width: 95%;
 }
 
-/* line 25, ie6.scss */
+/* line 25, ie7.scss */
 * html .navbar__logo {
   padding-top: 10px;
 }
