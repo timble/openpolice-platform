@@ -7,16 +7,10 @@ pagespeed Statistics on;
 pagespeed StatisticsLogging on;
 pagespeed LogDir /var/log/pagespeed;
 
-# Image handling
-pagespeed EnableFilters resize_images;
-pagespeed EnableFilters recompress_images;
-pagespeed EnableFilters convert_jpeg_to_progressive;
-
-# JavaScript and CSS assets
-pagespeed EnableFilters rewrite_css;
-
-pagespeed EnableFilters rewrite_javascript;
-pagespeed EnableFilters defer_javascript;
+# Filters
+pagespeed RewriteLevel CoreFilters;
+pagespeed EnableFilters remove_comments,collapse_whitespace,trim_urls;
+pagespeed EnableFilters combine_javascript;
 
 # Ensure requests for pagespeed optimized resources go to the pagespeed
 # handler and no extraneous headers get set.

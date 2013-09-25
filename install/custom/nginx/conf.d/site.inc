@@ -17,12 +17,7 @@ location ~ ^/files/ {
 }
 
 # Forward ngx_pagespeed requests to the proxy since v2 has pagespeed enabled
-location ~ "^/ngx_pagespeed_static/" { try_files $uri @proxy; }
-location ~ "^/ngx_pagespeed_beacon$" { try_files $uri @proxy; }
-# Only allow connections from localhost - IP is always localhost when proxied
-location /ngx_pagespeed_statistics { allow 127.0.0.1; deny all; }
-location /ngx_pagespeed_message { allow 127.0.0.1; deny all; }
-location /pagespeed_console { allow 127.0.0.1; deny all; }
+location ~ "^/(ngx_)?pagespeed_" { try_files $uri @proxy; }
 
 # Rewrite new sites
 include /etc/nginx/conf.d/v2.inc;
