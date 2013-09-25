@@ -1,9 +1,8 @@
 # Ignore everything
-/*
+*
 
 # But not these
 !.gitignore
 !phpmailer
 !joomla
-!imagine
-!swiftmailer
+!jlong

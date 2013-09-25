@@ -19,6 +19,7 @@ dirs=(
   "application/admin/component/trafficinfo"
   "application/admin/component/questions"
   "application/admin/component/uploads"
+  "application/admin/component/zendesk"
   "application/site/component/districts"
   "application/site/component/news"
   "application/site/component/police"
@@ -37,8 +38,7 @@ dirs=(
   "component/questions"
   "component/uploads"
   "install/custom"
-  "vendor/imagine"
-  "vendor/swiftmailer"
+  "vendor/jlong"
 )
 
 files=(
