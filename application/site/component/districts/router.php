@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 
 use Nooku\Library;
@@ -57,7 +57,7 @@ class DistrictsRouter extends Library\DispatcherRouter
                 $count--;
                 $segment = array_shift( $path ) ;
 
-                $vars['id'] = $segment;
+                $vars['slug'] = $segment;
                 $vars['view'] = 'district';
             }
         }

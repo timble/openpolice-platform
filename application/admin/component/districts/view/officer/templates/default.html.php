@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 
@@ -40,20 +40,20 @@
 					        <input class="required" type="text" name="lastname" size="32" maxlength="250" value="<?= $officer->lastname; ?>" />
 					    </div>
 					</div>
+                    <div>
+                        <label for="">
+                            <?= translate( 'Number' ); ?>
+                        </label>
+                        <div>
+                            <input class="required" type="text" name="id" size="32" maxlength="250" value="<?= $officer->id; ?>" />
+                        </div>
+                    </div>
 					<div>
 					    <label for="">
 					    	<?= translate( 'Position' ); ?>
 					    </label>
 					    <div>
 					        <input type="text" name="position" size="32" maxlength="250" value="<?= $officer->position; ?>" />
-					    </div>
-					</div>
-					<div>
-					    <label for="">
-					    	<?= translate( 'Number' ); ?>
-					    </label>
-					    <div>
-					        <input type="text" name="number" size="32" maxlength="250" value="<?= $officer->number; ?>" />
 					    </div>
 					</div>
 				</fieldset>
@@ -87,12 +87,12 @@
 				<fieldset>
 					<legend><?= translate( 'Districts' ); ?></legend>
 					<ul>
-					<? $districts = $this->getObject('com:districts.model.districts_officers')->officer($officer->id)->getRowset() ?>
-					<? foreach ($this->getObject('com:districts.model.districts_officers')->officer($officer->id)->getRowset() as $value) : ?>
+                        <? if(!count($districts)) : ?>
+                        <li><?= translate('No district') ?></li>
+                        <? else : ?>
+                        <? foreach ($districts as $value) : ?>
 						<li><?= escape($value->district); ?></li>
-					<? endforeach; ?>
-					<? if(!count($districts)) : ?>
-						<li><?= translate('No district') ?></li>
+					    <? endforeach; ?>
 					<? endif ?>
 					</ul>
 				</fieldset>

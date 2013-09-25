@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 
@@ -26,7 +26,9 @@
         <div class="well" style="float: right; margin-left: 30px">
             <strong><?= translate('Streets') ?></strong>
             <ul>
-                <? foreach ($article->getStreets() as $street) : ?><li><?= $street->street ?></li><? endforeach; ?>
+            <? foreach ($article->getStreets() as $street) : ?>
+                <li><?= $street->street ?></li>
+            <? endforeach; ?>
             </ul>
         </div>
     <? endif ?>
