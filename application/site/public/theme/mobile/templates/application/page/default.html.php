@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 <? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
@@ -19,18 +19,18 @@
             <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img width="160" itemprop="logo" src="assets://application/images/logo-nl.jpg" />
+                        <img width="160" itemprop="logo" alt="logo" src="assets://application/images/logo-nl.jpg" />
                         <div><?= escape($zone->title); ?></div>
                     </a>
                 </div>
             </div>
             <div class="span9">
-                <span class="slogan">Bel <a class="text--strong" tabindex="-1" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" tabindex="-1" href="tel:<?= escape($zone->phone_emergency); ?>"><?= escape($zone->phone_emergency); ?></a></span>
+                <span class="slogan">Bel <a class="text--strong" tabindex="-1" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" tabindex="-1" href="tel:<?= escape(str_replace(' ', '', $zone->phone_emergency)); ?>"><?= escape($zone->phone_emergency); ?></a></span>
                 <div class="navbar">
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>
                         <a class="navbar__logo" href="/<?= $site ?>">
-                            <img src="assets://application/images/logo-flame.jpg" />
+                            <img src="assets://application/images/logo-flame.jpg" alt="logo" />
                             <?= escape($zone->title); ?>
                         </a>
                     </div>

@@ -4,7 +4,7 @@
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		http://www.police.be
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 
 use Nooku\Library;
@@ -12,18 +12,18 @@ use Nooku\Library;
 class DistrictsViewDistrictHtml extends Library\ViewHtml
 {
     public function render()
-    {        
-        $district = $this->getModel()->getData();
-        $officers = array();
-        
-        if($district->id){
-        	$districts_officers = $this->getObject('com:districts.model.districts_officers')->district($district->id)->getRowset();
-        	
-        	foreach ($districts_officers as $key => $value) {
-        		$officers[] = $value->districts_officer_id;
-        	}
-        }
-        
+    {
+        $model = $this->getModel();
+        $district = $model->getData();
+
+        if(!$district->districts_district_id)
+        {
+            $officers = $this->getObject('com:districts.model.districts_officers')
+                ->district($district->id)
+                ->getRowset()->districts_officer_id;
+
+        } else $officers = null;
+
         $this->officers($officers);
         
         return parent::render();
