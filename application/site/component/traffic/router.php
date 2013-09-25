@@ -47,6 +47,12 @@ class TrafficRouter extends Library\DispatcherRouter
         unset($query['view']);
         unset($query['layout']);
 
+        unset($query['limit']);
+        unset($query['sort']);
+        unset($query['direction']);
+        unset($query['published']);
+        unset($query['date']);
+
         return $segments;
     }
 

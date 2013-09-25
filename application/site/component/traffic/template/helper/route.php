@@ -14,7 +14,8 @@ class TrafficTemplateHelperRoute extends PagesTemplateHelperRoute
 	{
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
-            'layout'   => null
+            'layout'    => null,
+            'format'    => 'html'
         ));
 
         $article = $config->row;
@@ -26,7 +27,8 @@ class TrafficTemplateHelperRoute extends PagesTemplateHelperRoute
         $route = array(
             'view'     => 'article',
             'id'       => $article->getSlug(),
-            'layout'   => $config->layout
+            'layout'   => $config->layout,
+            'format'   => $config->format
         );
 
 		if($item = $this->_findPage($needles)) {
