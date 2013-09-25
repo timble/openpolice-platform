@@ -19,6 +19,7 @@ dirs=(
   "application/admin/component/trafficinfo"
   "application/admin/component/questions"
   "application/admin/component/uploads"
+  "application/admin/component/zendesk"
   "application/site/component/districts"
   "application/site/component/news"
   "application/site/component/police"
@@ -37,13 +38,10 @@ dirs=(
   "component/questions"
   "component/uploads"
   "install/custom"
-  "vendor/imagine"
-  "vendor/swiftmailer"
 )
 
 files=(
   "README.md"
-  "vendor/.gitignore"
   "config/config.php"
   "application/site/component/application/resources/language/nl-NL.ini"
   "application/site/component/contacts/resources/language/nl-NL.ini"

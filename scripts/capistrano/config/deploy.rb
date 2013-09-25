@@ -43,7 +43,12 @@ namespace :deploy do
             end
         end
     end
-    
+
+    desc "Run composer"
+    task :composer, :roles => :app do
+        run "cd #{release_path}/install/custom/ && composer --no-progress install"
+    end
+
     desc "Restart the application."
     task :restart do
         run "curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
@@ -59,4 +64,5 @@ end
 
 # Hook into default tasks.
 after "deploy:update_code", "deploy:symlink_shared"
+after "deploy:update_code", "deploy:composer"
 after "deploy:update", "deploy:cleanup"

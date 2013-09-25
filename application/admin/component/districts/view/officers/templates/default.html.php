@@ -50,9 +50,7 @@
 				<a href="<?= route( 'view=officer&id='. $officer->id ); ?>"><?= escape($officer->title); ?></a>
 			</td>
 			<td class="array-separator">
-				<? foreach($districts_officers->find(array('districts_officer_id' => $officer->id)) as $officer) : ?>
-					<span><?= $officer->district ?></span>
-				<? endforeach; ?>
+                <?= implode(', ', $districts_officers->find(array('districts_officer_id' => $officer->id))->district) ?>
 			</td>
 		</tr>
 		<? endforeach; ?>

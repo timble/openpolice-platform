@@ -55,10 +55,8 @@
 			<td>
 				<?= escape($district->contact); ?>
 			</td>
-			<td class="array-separator">
-				<? foreach($districts_officers->find(array('districts_district_id' => $district->id)) as $officer) : ?>
-					<span><?= $officer->firstname.' '.$officer->lastname ?></span>
-				<? endforeach; ?>
+			<td>
+				<?= implode(', ', $districts_officers->find(array('districts_district_id' => $district->id))->name) ?>
 			</td>
 		</tr>
 		<? endforeach; ?>
