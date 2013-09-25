@@ -15,7 +15,8 @@ class NewsTemplateHelperRoute extends PagesTemplateHelperRoute
 	{
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
-            'layout'   => null
+            'layout'   => null,
+            'format'   => 'html'
         ));
 
         $article = $config->row;
@@ -28,6 +29,7 @@ class NewsTemplateHelperRoute extends PagesTemplateHelperRoute
             'view'     => 'article',
             'id'       => $article->getSlug(),
             'layout'   => $config->layout,
+            'format'   => $config->format,
         );
 
 		if($item = $this->_findPage($needles)) {
