@@ -33,7 +33,7 @@ class ModelRelations extends Library\ModelTable
 
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
-		$query->join(array('street' => 'streets'), 'street.islp = tbl.islp')
+		$query->join(array('street' => 'streets'), 'street.streets_street_id = tbl.streets_street_id')
               ->join(array('district'   => 'districts'), 'district.districts_district_id = tbl.districts_district_id');
 	}
 
@@ -43,7 +43,7 @@ class ModelRelations extends Library\ModelTable
 		$state = $this->getState();
 
 		if ($state->search) {
-			$query->where('street.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+			$query->where('street.title LIKE :search OR tbl.islp LIKE :search ')->bind(array('search' => '%'.$state->search.'%'));
 		}
 
 		if ($state->district) {
