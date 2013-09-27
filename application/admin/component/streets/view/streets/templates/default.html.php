@@ -29,6 +29,9 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
+                <?= helper('grid.sort', array('column' => 'id', 'title' => 'CRAB')) ?>
+            </th>
+            <th>
                 <?= helper('grid.sort', array('column' => 'islp')) ?>
             </th>
 		</tr>
@@ -49,6 +52,9 @@
 			<td>
 				<a href="<?= route( 'view=street&task=edit&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
 			</td>
+            <td>
+                <?= $street->id ?>
+            </td>
             <td>
                 <?= $street->islp ?>
             </td>
