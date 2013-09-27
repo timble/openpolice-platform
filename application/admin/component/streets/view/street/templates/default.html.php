@@ -29,7 +29,7 @@
 				<legend><?= translate( 'Information' ); ?>:</legend>
                 <div>
                     <label for="name">
-                        <?= translate( 'AGIV code' ); ?>
+                        <?= translate( 'CRAB' ); ?>
                     </label>
                     <div>
                         <input class="required" type="text" name="streets_street_id" value="<?= $street->id ?>" />
@@ -37,10 +37,10 @@
                 </div>
                 <div>
                     <label for="name">
-                        <?= translate( 'ISLP code' ); ?>
+                        <?= translate( 'ISLP' ); ?>
                     </label>
                     <div>
-                        <input class="required" type="text" name="islp" value="<?= $street->islp ?>" />
+                        <input type="text" name="islp" value="<?= $street->islp ?>" />
                     </div>
                 </div>
                 <div>

@@ -37,7 +37,7 @@
 				    	<?= translate( 'Street' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('com:streets.listbox.streets', array('autocomplete' => true, 'selected' => $relation->districts_street_id, 'validate' => true)) ?>
+				        <?= helper('com:streets.listbox.streets', array('autocomplete' => true, 'name' => 'streets_street_id', 'selected' => $relation->districts_street_id, 'validate' => true)) ?>
 				    </div>
 				</div>
 			</fieldset>
