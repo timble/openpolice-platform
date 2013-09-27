@@ -119,9 +119,9 @@ SET `traffic_streets`.`streets_street_id` = `streets`.`streets_street_id`
 WHERE `traffic_streets`.`streets_street_id` = `streets`.`islp`;
 
 -- Update districts_relations to use agiv
-UPDATE `districts_relations`, `streets`
-SET `districts_relations`.`streets_street_id` = `streets`.`streets_street_id`
-WHERE `districts_relations`.`islp` = `streets`.`islp`;
+UPDATE `districts_relations`, `streets_islps`
+SET `districts_relations`.`streets_street_id` = `streets_islps`.`streets_street_id`
+WHERE `districts_relations`.`islp` = `streets_islps`.`islp`;
 
 -- Add police_zone_id to streets_postcodes
 UPDATE `streets_postcodes`, `police_municipalities`
