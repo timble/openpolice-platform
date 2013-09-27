@@ -82,6 +82,14 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
         foreach($data as $item)
         {
+            // Get CRAB ID
+            $street = $this->getObject('com:streets.database.row.islp');
+            $street->islp = $item['islp'];
+            if($street->load())
+            {
+                $item['streets_street_id'] = $street->id;
+            }
+
             $parity = null;
             switch ($item['range_parity']) {
                 case 'Even+Oneven':
@@ -96,11 +104,16 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             }
 
             $item['range_parity'] = $parity;
+            $item['id'] = sha1($item['districts_district_id'].$item['islp'].$item['range_start'].$item['range_end'].$item['range_parity']);
 
-            // Add row to districts_relations table
+            // Add row to districts_relations table when ID is unique
             $row = $this->getObject('com:districts.database.row.relation');
-            $row->setData($item);
-            $row->save();
+            $row->id = $item['id'];
+            if(!$row->load())
+            {
+                $row->setData($item);
+                $row->save();
+            }
         }
     }
 
@@ -108,19 +121,25 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     {
         foreach($data as $item)
         {
+            //Get city based on postcode
             $city = $this->getObject('com:streets.database.row.postcodes');
             $city->streets_postcode_id = $item['postcode'];
             $city->load();
 
+            //Get the street
             $street = $this->getObject('com:streets.database.row.streets');
             $street->title = $item['title'];
             $street->city = $city->streets_city_id;
 
             if($street->load()){
-                // Only save when islp field is empty
-                if(!$street->islp){
-                    $street->islp = $item['islp'];
-                    $street->save();
+                //Check if street does not have a islp value
+                if(!$street->islp) {
+                    $islp = $this->getObject('com:streets.database.row.islp');
+
+                    //Set ISLP value and save
+                    $islp->id = $street->id;
+                    $islp->islp = $item['islp'];
+                    $islp->save();
                 }
             }
         }
