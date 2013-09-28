@@ -13,8 +13,8 @@
 <? foreach ($articles as $article) : ?>
     <div class="media<?= !$article->thumbnail ? ' media--imageless' : ''; ?>">
         <? if($article->thumbnail): ?>
-            <a tabindex="-1" class="pull-left" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
-                <?= helper('com:attachments.image.thumbnail', array('row' => $article, 'class' => 'media-object thumbnail')) ?>
+            <a tabindex="-1" class="pull-left thumbnail" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
+                <img class="media-object" align="right" width="200" height="150" src="attachments://<?= $article->path; ?>" />
             </a>
         <? endif; ?>
         <div class="media-body">
