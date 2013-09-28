@@ -24,7 +24,7 @@
 
         <? if($article->thumbnail): ?>
             <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-                <img align="right" src="<?= $article->thumbnail ?>" />
+                <img align="right" width="200" height="150" src="attachments://<?= $article->path; ?>" />
             </a>
         <? endif; ?>
 

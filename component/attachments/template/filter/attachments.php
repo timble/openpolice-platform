@@ -38,7 +38,10 @@ class TemplateFilterAttachments extends Library\TemplateFilterUrl
         $path = $base->getPath().'/files/'.$site.'/attachments/';
 
         $config->append(array(
-            'aliases' => array('"attachments/'  => '"'.$path)
+            'aliases' => array(
+                'attachments://' => $path,
+                '"attachments/'  => '"'.$path
+            )
         ));
 
         parent::_initialize($config);
