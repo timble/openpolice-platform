@@ -17,7 +17,7 @@ location ~ ^/files/ {
 }
 
 # Forward ngx_pagespeed requests to the proxy since v2 has pagespeed enabled
-location ~ "^/(ngx_)?pagespeed_" { try_files $uri @proxy; }
+location ~ "pagespeed" { try_files $uri @proxy; }
 
 # Rewrite new sites
 include /etc/nginx/conf.d/v2.inc;
