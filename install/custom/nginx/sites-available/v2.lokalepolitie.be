@@ -3,6 +3,7 @@ server {
     root   /var/www/v2.lokalepolitie.be/public/;
 
     include /etc/nginx/conf.d/server.inc;
+    include /etc/nginx/conf.d/pagespeed.inc;
 
     allow 127.0.0.1;
     deny  all;

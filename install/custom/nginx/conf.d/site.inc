@@ -16,6 +16,9 @@ location ~ ^/files/ {
     try_files $uri @proxy;
 }
 
+# Forward ngx_pagespeed requests to the proxy since v2 has pagespeed enabled
+location ~ "pagespeed" { try_files $uri @proxy; }
+
 # Rewrite new sites
 include /etc/nginx/conf.d/v2.inc;
 
@@ -125,5 +128,6 @@ location ~ \.php$ {
 	fastcgi_index	index.php;
     fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
 	include	fastcgi_params;
+
 	expires	0d;
 }
