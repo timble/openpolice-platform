@@ -31,19 +31,15 @@ class ArticlesTemplateHelperDate extends Library\TemplateHelperDate
             'type'   => 'datetime-local'
         ));
 
-
-
         $value = null;
         if($value = $config->row->{$config->name}) {
-
-
             switch($config->type) {
                 case 'date':
-                    $value = $this->format(array('date' => $value, 'format' => 'Y-m-d'));
+                    $value = $this->format(array('date' => $value, 'format' => 'Y-m-d', 'timezone' => 'UTC'));
                     break;
                 case 'datetime':
                 case 'datetime-local':
-                    $value = $this->format(array('date'=> $value, 'format' => 'Y-m-d\TH:i:s'));
+                    $value = $this->format(array('date'=> $value, 'format' => 'Y-m-d\TH:i:s', 'timezone' => 'UTC'));
                     break;
             }
         }
