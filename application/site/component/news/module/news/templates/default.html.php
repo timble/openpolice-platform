@@ -11,7 +11,12 @@
 <? $site = object('application')->getCfg('site') ?>
 
 <? foreach ($articles as $article) : ?>
-    <div class="media">
+    <div class="media<?= !$article->thumbnail ? ' media--imageless' : ''; ?>">
+        <? if($article->thumbnail): ?>
+            <a tabindex="-1" class="pull-left thumbnail" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
+                <img class="media-object" align="right" width="64" height="50" src="/files/<?= $site ?>/attachments/<?= $article->path; ?>" />
+            </a>
+        <? endif; ?>
         <div class="media-body">
             <a class="media-heading" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a>
 
