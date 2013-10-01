@@ -42,6 +42,7 @@ dirs=(
 )
 
 files=(
+  ".gitignore"
   "README.md"
   "vendor/.gitignore"
   "config/config.php"
