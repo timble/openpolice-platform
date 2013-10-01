@@ -16,7 +16,7 @@ class QuestionsViewQuestionHtml extends Library\ViewHtml
         //Get the article
         $question = $this->getModel()->getData();
 
-        $category = $this->getCategory($question);
+        $category = $this->getCategory();
 
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($category->title, $this->getTemplate()->getHelper('route')->category(array('row' => $category)));
@@ -35,12 +35,12 @@ class QuestionsViewQuestionHtml extends Library\ViewHtml
         return parent::render();
     }
 
-    public function getCategory($question)
+    public function getCategory()
     {
         //Get the category
         $category = $this->getObject('com:questions.model.categories')
             ->table('questions')
-            ->id($question->categories_category_id)
+            ->slug($this->getModel()->getState()->category)
             ->getRow();
 
         return $category;

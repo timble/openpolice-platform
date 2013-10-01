@@ -53,7 +53,7 @@ class QuestionsViewQuestionsHtml extends Library\ViewHtml
         //Get the category
         $category = $this->getObject('com:categories.model.categories')
             ->table('questions')
-            ->id($this->getModel()->getState()->category)
+            ->slug($this->getModel()->getState()->category)
             ->getRow();
 
         return $category;
