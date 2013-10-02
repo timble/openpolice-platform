@@ -26,7 +26,7 @@ pagespeed MapOriginDomain 127.0.0.1 *.polizei.be;
 # Filters
 pagespeed RewriteLevel CoreFilters;
 pagespeed EnableFilters remove_comments,collapse_whitespace,trim_urls;
-pagespeed EnableFilters combine_javascript,defer_javascript;
+pagespeed EnableFilters combine_javascript;
 pagespeed EnableFilters dedup_inlined_images;
 
 # Ensure requests for pagespeed optimized resources go to the pagespeed
