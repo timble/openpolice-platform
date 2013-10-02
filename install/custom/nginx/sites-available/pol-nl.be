@@ -4,9 +4,14 @@ server {
 
     include /etc/nginx/conf.d/server.inc;
 
+	satisfy any;
+
     auth_basic              "Restricted";
     auth_basic_user_file    /etc/nginx/conf.d/htpasswd;
 
+	allow 127.0.0.0/24;
+	deny all;
+	
     include /etc/nginx/conf.d/site.inc;
 
     include /etc/nginx/conf.d/v2.inc;
