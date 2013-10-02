@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class QuestionsViewQuestionsHtml extends Library\ViewHtml
+class QuestionsViewQuestionsHtml extends QuestionsViewHtml
 {
     public function render()
     {
@@ -30,8 +30,6 @@ class QuestionsViewQuestionsHtml extends Library\ViewHtml
         } else {
             $this->params->set('page_title', 'Frequently asked questions');
         }
-
-        $this->categories = $this->getObject('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset();
 
         return parent::render();
     }

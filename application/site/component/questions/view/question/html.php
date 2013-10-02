@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class QuestionsViewQuestionHtml extends Library\ViewHtml
+class QuestionsViewQuestionHtml extends QuestionsViewHtml
 {
     public function render()
     {
@@ -29,8 +29,6 @@ class QuestionsViewQuestionHtml extends Library\ViewHtml
         if ($question->id && $question->isAttachable()) {
             $this->attachments($question->getAttachments());
         }
-
-        $this->categories = $this->getObject('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset();
 
         return parent::render();
     }
