@@ -31,7 +31,7 @@ class DistrictsControllerRelation extends Library\ControllerModel
 
                         $this->getObject('application')->getRouter()->build($url);
 
-                        return $this->getObject('application')->redirect($url);
+                        return $this->getObject('component')->redirect($url);
                     }
                 }
             }
