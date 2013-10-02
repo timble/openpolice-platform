@@ -27,9 +27,9 @@
         <span style="float:right" class='st_sharethis' displayText='ShareThis'></span>
     </header>
 
-    <? if($article->thumbnail) : ?>
-    <img class="article__thumbnail" align="right" src="<?= $article->thumbnail ?>" />
-    <? endif ?>
+    <?= helper('com:attachments.image.thumbnail', array(
+        'attachment' => $article->attachments_attachment_id,
+        'attribs' => array('width' => '200', 'align' => 'right', 'class' => 'thumbnail'))) ?>
 
     <div class="entry-summary"><?= $article->introtext ?></div>
     <div class="entry-content"><?= $article->fulltext ?></div>

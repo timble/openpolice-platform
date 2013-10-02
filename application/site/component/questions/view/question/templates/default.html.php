@@ -17,7 +17,9 @@
 <article class="article">
     <h1 class="article__header"><?= escape($question->title); ?></h1>
 
-    <?= helper('com:attachments.image.thumbnail', array('row' => $question)) ?>
+    <?= helper('com:attachments.image.thumbnail', array(
+        'attachment' => $article->attachments_attachment_id,
+        'attribs' => array('width' => '200', 'align' => 'right', 'class' => 'thumbnail'))) ?>
 
     <?= $question->text ?>
 </article>
