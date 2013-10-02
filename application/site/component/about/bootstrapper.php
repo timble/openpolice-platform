@@ -8,24 +8,19 @@
  */
 
 use Nooku\Library;
-use Nooku\Component\Attachments;
 
 /**
- * Attachment Controller
+ * Bootstrapper
  *
  * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
- * @package Component\Attachments
+ * @package Component\Articles
  */
-class AttachmentsControllerAttachment extends Attachments\ControllerAttachment
+class AboutBootstrapper extends Library\BootstrapperAbstract
 {
-	protected function _initialize(Library\ObjectConfig $config)
-	{
-		$config->append(array(
-			'request' => array(
-				'view' => 'attachments'
-			)
-		));
-		
-		parent::_initialize($config);
-	}
+    public function bootstrap()
+    {
+        $manager = $this->getObjectManager();
+
+        $manager->registerAlias('com:about.model.categories', 'com:categories.model.categories');
+    }
 }

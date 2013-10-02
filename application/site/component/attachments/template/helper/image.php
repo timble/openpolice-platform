@@ -21,18 +21,15 @@ class AttachmentsTemplateHelperImage extends Library\TemplateHelperDefault
     {
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
-            'attachment' => false,
-            'attribs' => array()
+            'align' => 'right',
+            'class' => ''
         ));
 
-        //Make sure the attachment is set
-        if($config->attachment) {
-            $thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $config->attachment)->load();
+        $image = $config->row;
 
-            //Make sure the thumbnail exist
-            if($thumbnail) {
-                return '<img '.$this->buildAttributes($config->attribs).' src="attachments://'.$thumbnail->thumbnail.'" />';
-            }
+        if($image->thumbnail) {
+            return '<figure><img class="'.$config->class.'" align="'.$config->align.'" src="'.$image->thumbnail.'" /></figure>
+';
         }
 
         return false;

@@ -8,24 +8,14 @@
  */
 
 use Nooku\Library;
-use Nooku\Component\Attachments;
 
 /**
- * Attachment Controller
+ * Category Controller
  *
  * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
- * @package Component\Attachments
+ * @package Component\Articles
  */
-class AttachmentsControllerAttachment extends Attachments\ControllerAttachment
+class AboutControllerCategory extends CategoriesControllerCategory
 {
-	protected function _initialize(Library\ObjectConfig $config)
-	{
-		$config->append(array(
-			'request' => array(
-				'view' => 'attachments'
-			)
-		));
-		
-		parent::_initialize($config);
-	}
+
 }
