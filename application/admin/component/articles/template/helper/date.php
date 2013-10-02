@@ -35,11 +35,11 @@ class ArticlesTemplateHelperDate extends Library\TemplateHelperDate
         if($value = $config->row->{$config->name}) {
             switch($config->type) {
                 case 'date':
-                    $value = $this->format(array('date' => $value, 'format' => 'Y-m-d', 'timezone' => 'UTC'));
+                    $value = gmdate('Y-m-d', strtotime($value));
                     break;
                 case 'datetime':
                 case 'datetime-local':
-                    $value = $this->format(array('date'=> $value, 'format' => 'Y-m-d\TH:i:s', 'timezone' => 'UTC'));
+                    $value = gmdate('Y-m-d\TH:i:s', strtotime($value));
                     break;
             }
         }

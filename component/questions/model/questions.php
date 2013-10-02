@@ -18,7 +18,7 @@ class ModelQuestions extends Library\ModelTable
 
 		$this->getState()
 		    ->insert('published' , 'int')
-            ->insert('category' , 'int')
+            ->insert('category' , 'string')
             ->insert('sort', 'cmd', 'title')
             ->insert('searchword', 'string');
 	}
@@ -37,7 +37,8 @@ class ModelQuestions extends Library\ModelTable
         parent::_buildQueryJoins($query);
 
         $query->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id')
-              ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path');
+              ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path')
+              ->join(array('categories'  => 'categories'), 'categories.categories_category_id = tbl.categories_category_id');
     }
 	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -61,8 +62,8 @@ class ModelQuestions extends Library\ModelTable
 			$query->where('tbl.published = :published')->bind(array('published' => $state->published));
 		}
 
-        if(is_numeric($state->category)) {
-            $query->where('tbl.categories_category_id = :category')->bind(array('category' => $state->category));
+        if($state->category) {
+            $query->where('categories.slug = :category')->bind(array('category' => $state->category));
         }
 	}
 }
