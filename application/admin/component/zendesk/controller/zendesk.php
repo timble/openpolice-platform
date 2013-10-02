@@ -13,16 +13,15 @@ class ZendeskControllerZendesk extends Library\ControllerView
 {
     public function _actionRender(Library\CommandContext $context)
     {
-        $application    = $this->getObject('application');
         $user           = $this->getUser();
 
         if($user->getRole() < 24) {
             $url = clone($context->request->getUrl());
             $url->query['option'] = 'com_dashboard';
 
-            $application->getRouter()->build($url);
+            $this->getObject('application')->getRouter()->build($url);
 
-            return $this->getObject('application')->redirect($url);
+            return $this->getObject('component')->redirect($url);
         }
 
         require_once(JPATH_VENDOR . '/firebase/php-jwt/Firebase/PHP-JWT/Authentication/JWT.php');
@@ -41,6 +40,6 @@ class ZendeskControllerZendesk extends Library\ControllerView
 
         $url = 'https://police.zendesk.com/access/jwt?jwt=' . $jwt;
 
-        return $application->redirect($url);
+        return $this->getObject('component')->redirect($url);
     }
 }
