@@ -9,7 +9,7 @@
 ?>
 
 <ktml:module position="left">
-    <?= import('com:about.view.categories.list.html') ?>
+    <?= import('com:categories.view.categories.list.html') ?>
 </ktml:module>
 
 <? foreach($categories as $category) : ?>

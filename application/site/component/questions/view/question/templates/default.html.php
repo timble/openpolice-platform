@@ -9,7 +9,7 @@
 ?>
 
 <ktml:module position="left">
-    <?= import('com:questions.view.questions.default_categories.html', array('categories' => $categories, 'selected' => $state->category, 'class' => 'nav nav-tabs nav-stacked')) ?>
+    <?= import('com:categories.view.categories.list.html') ?>
 </ktml:module>
 
 <title content="replace"><?= $question->title ?></title>
