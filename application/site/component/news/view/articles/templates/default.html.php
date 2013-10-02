@@ -23,11 +23,13 @@
         </header>
 
         <? if($article->thumbnail): ?>
-            <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+        <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+            <figure>
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('width' => '200', 'align' => 'right', 'class' => 'thumbnail'))) ?>
-            </a>
+                    'attribs' => array('width' => '200', 'align' => 'right'))) ?>
+            </figure>
+        </a>
         <? endif; ?>
 
         <?= $article->introtext ?>
