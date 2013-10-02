@@ -22,9 +22,11 @@
                 </header>
 
                 <div class="clearfix">
-                    <? if($article->thumbnail) : ?>
+                    <? if($article->attachments_attachment_id) : ?>
                     <a class="article__thumbnail" tabindex="-1" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
-                        <img align="right" src="<?= $article->thumbnail ?>" />
+                        <?= helper('com:attachments.image.thumbnail', array(
+                            'attachment' => $article->attachments_attachment_id,
+                            'attribs' => array('width' => '200', 'align' => 'right', 'class' => 'thumbnail'))) ?>
                     </a>
                     <? endif ?>
 
