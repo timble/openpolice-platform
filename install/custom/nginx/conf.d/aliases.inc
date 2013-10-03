@@ -786,7 +786,7 @@ location ~ "^/neteland(?:/.*)?$" {
 	rewrite ^ /5369 permanent;
 }
 
-location ~ "^/(zone|training)(?:/.*)?$" {
+location ~ "^/(zone|training|demo)(?:/.*)?$" {
 	rewrite ^ / redirect;
 }
 
