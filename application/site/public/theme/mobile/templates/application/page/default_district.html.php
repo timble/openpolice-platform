@@ -8,7 +8,7 @@
             placeholder: "<?= translate('Search your street') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "/5388/contact/je-wijkinspecteur?view=streets&format=json",
+                url: "/<?= $site ?>/contact/je-wijkinspecteur?view=streets&format=json",
                 dataType: 'json',
                 data: function (term) {
                     return {
@@ -31,7 +31,7 @@
                 // using its formatResult renderer - that way the movie name is shown preselected
                 var id=$jQuery(element).val();
                 if (id!=="") {
-                    $jQuery.ajax("/5388/contact/je-wijkinspecteur?view=street&format=json&id="+id, {
+                    $jQuery.ajax("/<?= $site ?>/contact/je-wijkinspecteur?view=street&format=json&id="+id, {
                         dataType: "json"
                     }).done(function(data) { callback(data.item); });
                 }
@@ -46,7 +46,7 @@
     });
 </script>
 
-<form action="/5388/contact/je-wijkinspecteur" method="get" class="-koowa-form">
+<form action="/<?= $site ?>/contact/je-wijkinspecteur" method="get" class="-koowa-form">
     <div class="control-group">
         <div class="controls">
             <input type="text" class="bigdrop" id="autocomplete__streets--footer" placeholder="<?= translate('Search your street') ?> ..." name="street" value="<?= @$_COOKIE ['district_street'] ?>">

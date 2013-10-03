@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    <div class="container-banner banner5388">
+    <div class="container-banner">
         <div class="row-fluid">
             <div class="span12 alpha">
                 <img width="890" src="assets://application/images/banners/<?= $site ?>.jpg" alt="<?= translate('Police') ?> <?= escape($zone->title); ?> banner" />
