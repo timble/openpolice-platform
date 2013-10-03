@@ -19,9 +19,6 @@ location ~ ^/files/ {
 # Forward ngx_pagespeed requests to the proxy since v2 has pagespeed enabled
 location ~ "pagespeed" { try_files $uri @proxy; }
 
-# Rewrite new sites
-include /etc/nginx/conf.d/v2.inc;
-
 # Redirect administrator folder to v2, old v1 admin is accessed through administrator.$host
 location ~ "^/administrator/" {
     include /etc/nginx/conf.d/proxy.inc;

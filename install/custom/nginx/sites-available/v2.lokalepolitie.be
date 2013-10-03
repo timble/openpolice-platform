@@ -3,8 +3,11 @@ server {
     root   /var/www/v2.lokalepolitie.be/public/;
 
     include /etc/nginx/conf.d/server.inc;
+
+    include /etc/nginx/conf.d/rewrites.inc;
     include /etc/nginx/conf.d/pagespeed.inc;
 
+    # This server is only available through the proxy
     allow 127.0.0.1;
     deny  all;
 
