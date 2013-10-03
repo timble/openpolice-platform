@@ -24,7 +24,6 @@ server {
 
 # Police application
 server {
-    listen 80;
     server_name www.lokalepolitie.be www.policelocale.be www.lokalepolizei.be;
     root        /var/www/lokalepolitie.be/public;
 
@@ -33,7 +32,7 @@ server {
         expires 1d;
     }
 
-    include /etc/nginx/conf.d/rewrites.inc;
+    include /etc/nginx/conf.d/exceptions.inc;
     include /etc/nginx/conf.d/server.inc;
 
     include /etc/nginx/conf.d/aliases.inc;
