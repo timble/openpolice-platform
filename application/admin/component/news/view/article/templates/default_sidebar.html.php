@@ -25,7 +25,7 @@
     <div>
         <label for="created_on"><?= translate('Created on') ?></label>
         <div class="controls">
-            <?= helper('com:articles.date.datetime', array('row' => $article, 'name' => 'created_on')) ?>
+            <? // helper('com:articles.date.datetime', array('row' => $article, 'name' => 'created_on')) ?>
         </div>
     </div>
 </fieldset>
