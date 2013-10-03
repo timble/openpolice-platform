@@ -21,22 +21,11 @@ class ModelArticles extends Library\ModelTable
             ->insert('category' , 'string');
     }
 
-    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
-    {
-        parent::_buildQueryColumns($query);
-
-        $query->columns(array(
-            'thumbnail'      => 'thumbnails.thumbnail'
-        ));
-    }
-
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id')
-            ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path')
-            ->join(array('categories'  => 'categories'), 'categories.categories_category_id = tbl.categories_category_id');
+        $query->join(array('categories'  => 'categories'), 'categories.categories_category_id = tbl.categories_category_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -52,7 +41,7 @@ class ModelArticles extends Library\ModelTable
             $query->where('tbl.published = :published')->bind(array('published' => $state->published));
         }
 
-        if(!is_numeric($state->category)) {
+        if(!is_numeric($state->category) && !is_null($state->category)) {
             $query->where('categories.slug = :category')->bind(array('category' => $state->category));
         }
 

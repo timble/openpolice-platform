@@ -51,7 +51,7 @@ class ModelQuestions extends Library\ModelTable
 			$query->where('tbl.published = :published')->bind(array('published' => $state->published));
 		}
 
-        if(!is_numeric($state->category)) {
+        if(!is_numeric($state->category) && !is_null($state->category)) {
             $query->where('categories.slug = :category')->bind(array('category' => $state->category));
         }
 
