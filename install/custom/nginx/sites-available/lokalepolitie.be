@@ -7,9 +7,12 @@ server {
         expires 1d;
     }
 
+    include /etc/nginx/conf.d/rewrites.inc;
     include /etc/nginx/conf.d/server.inc;
-    include /etc/nginx/conf.d/redirect.inc;
+
+    include /etc/nginx/conf.d/aliases.inc;
     include /etc/nginx/conf.d/site.inc;
 
+    # Rewrite new sites
     include /etc/nginx/conf.d/v2.inc;
 }
