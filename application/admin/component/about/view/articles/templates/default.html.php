@@ -26,7 +26,7 @@
 
 <ktml:module position="sidebar">
     <h3><?= translate('Categories') ?></h3>
-    <?= import('com:categories.view.categories.list.html', array('categories' => object('com:traffic.model.categories')->sort('title')->table('about')->getRowset())); ?>
+    <?= import('com:categories.view.categories.list.html', array('categories' => object('com:categories.model.categories')->sort('title')->table('about')->getRowset())); ?>
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
@@ -43,9 +43,6 @@
             <th width="1"></th>
             <th>
                 <?= helper('grid.sort', array('column' => 'title')) ?>
-            </th>
-            <th width="1">
-                <?= helper('grid.sort', array('title' => 'Last modified', 'column' => 'last_activity_on')) ?>
             </th>
             <? if($articles->isTranslatable()) : ?>
                 <th width="70">
@@ -86,11 +83,6 @@
                     <? if($article->access) : ?>
                         <span class="label label-important"><?= translate('Registered') ?></span>
                     <? endif; ?>
-                </td>
-                <td>
-                    <?= helper('date.humanize', array('date' => $article->last_activity_on)) ?> by <a href="<?= route('option=com_users&view=user&id='.$article->created_by) ?>">
-                        <?= $article->last_activity_by_name ?>
-                    </a>
                 </td>
                 <? if($article->isTranslatable()) : ?>
                     <td>
