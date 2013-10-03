@@ -40,5 +40,18 @@ exec($cmd);
 echo "-- Syncing site folders".PHP_EOL;
 exec('rsync -vr /var/www/v2.lokalepolitie.be/capistrano/shared/sites/5388/ /var/www/v2.lokalepolitie.be/capistrano/shared/sites/demo/ --delete --update --perms --owner --group --recursive --times --links');
 
+// Remove users and setup demo access
+echo "-- Setting up demo user".PHP_EOL;
+$queries = <<<EOL
+    DELETE FROM `v2_demo`.`users` WHERE `users_user_id` != 1;
+    INSERT INTO `v2_demo`.`users` VALUES (6, 'Demo User', 'belgianpolice@localhost.home', 1, 0, 24, NULL, 1, '2013-10-03 15:05:47', NULL, NULL, NULL, NULL, '', 'timezone=Europe/Brussels\n\n', '784ba67a-e761-467b-ad27-c9224cbf9f52');
+    INSERT INTO `v2_demo`.`users_passwords` VALUES ('belgianpolice@localhost.home', NULL, '$2y$10$/i.iNRmsgFpJFLN6GTS6BODybYCK8Hm.kVm5ydGrO74x2wYzUBfjK', '');
+EOL;
+
+file_put_contents('/tmp/query.sql', $queries);
+$cmd = "mysql -u".escapeshellarg($config->user)." -p".escapeshellarg($config->password)." v2_demo < /tmp/query.sql";
+exec($cmd);
+
 // Clean-up
-exec('rm -f /tmp/5388.sql');
+unlink('/tmp/5388.sql');
+unlink('/tmp/query.sql');
