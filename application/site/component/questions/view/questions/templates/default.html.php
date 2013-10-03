@@ -9,7 +9,7 @@
 ?>
 
 <ktml:module position="left">
-    <?= import('default_categories.html', array('categories' => $categories, 'selected' => $state->category, 'class' => 'nav nav-tabs nav-stacked')) ?>
+    <?= import('com:categories.view.categories.list.html') ?>
 </ktml:module>
 
 <title content="replace"><?= escape(translate($params->get('page_title'))); ?></title>
@@ -31,7 +31,15 @@
 <? endforeach; ?>
 </ul>
 <? else : ?>
-    <?= import('default_categories.html', array('categories' => $categories, 'selected' => $state->category, 'class' => 'nav nav-pills nav-stacked column--double')) ?>
+   <ul class="nav nav-pills nav-stacked column--double">
+        <? foreach ($categories as $category): ?>
+            <li>
+                <a href="<?= helper('route.category', array('row' => $category)) ?>">
+                    <?= $category->title ?>
+                </a>
+            </li>
+        <? endforeach ?>
+    </ul>
 <? endif ?>
 
 <? if($state->category OR $state->searchword) : ?>

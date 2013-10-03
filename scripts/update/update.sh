@@ -11,6 +11,7 @@ branch="develop"
 temp="/tmp/police-$RANDOM"
 
 dirs=(
+  "application/admin/component/about"
   "application/admin/component/districts"
   "application/admin/component/news"
   "application/admin/component/police"
@@ -20,6 +21,7 @@ dirs=(
   "application/admin/component/questions"
   "application/admin/component/uploads"
   "application/admin/component/zendesk"
+  "application/site/component/about"
   "application/site/component/districts"
   "application/site/component/news"
   "application/site/component/police"
@@ -29,6 +31,7 @@ dirs=(
   "application/site/component/questions"
   "application/site/public/theme/mobile"
   "application/site/public/theme/splash"
+  "component/about"
   "component/districts"
   "component/news"
   "component/police"
@@ -42,6 +45,7 @@ dirs=(
 )
 
 files=(
+  ".gitignore"
   "README.md"
   "vendor/.gitignore"
   "config/config.php"

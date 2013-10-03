@@ -30,35 +30,36 @@ class TemplateHelperList extends Library\TemplateHelperAbstract
 
         $result     = '';
         $first      = true;
-        $last_level = 0;
+        $last_depth = 0;
 
-        $pages = clone $config->pages;
-        // We use a CachingIterator to peek ahead to the next item so that we can properly close elements
-        $collection = new \CachingIterator($pages->getIterator(), \CachingIterator::TOSTRING_USE_KEY);
-
-        foreach($collection as $page)
+        foreach(clone $config->pages as $page)
         {
-            $next_page = null;
-            if ($collection->hasNext()) {
-                $next_page = $collection->getInnerIterator()->current();
+            $depth = substr_count($page->path, '/');
+
+            if(substr($page->path, -1) != '/') {
+                $depth++;
             }
 
-            $next_level = is_object($next_page) ? count(explode('/', $next_page->path)) : false;
-            $level = count(explode('/', $page->path));
-
-            // Start a new level
-            if($level > $last_level)
+            if($depth > $last_depth)
             {
-                $attributes = $first ? ' '.$this->buildAttributes($config->attribs) : '';
-                $result .= "\n<ul$attributes>\n";
+                $result .= $first ? '<ul '.$this->buildAttributes($config->attribs).'>' : '<ul>';
 
-                // Used to put the title in the menu
-                if($first && $config->title)
-                {
-                    $result .= '<li class="nav-header">'.$config->title."</li>\n";
+                if($first && $config->title) {
+                    $result .= '<li class="nav-header">'.$config->title.'</li>';
                 }
 
-                $first = false;
+                $last_depth = $depth;
+                $first      = false;
+            }
+
+            if($depth < $last_depth)
+            {
+                $result .= str_repeat('</li></ul>', $last_depth - $depth);
+                $last_depth = $depth;
+            }
+
+            if($depth == $last_depth) {
+                $result .= '</li>';
             }
 
             $classes = array();
@@ -86,8 +87,7 @@ class TemplateHelperList extends Library\TemplateHelperAbstract
                 $classes[] = 'nav-header';
             }
 
-            $result .= '<li'.($classes ? ' class="'.implode(' ', $classes).'"' : '').">\n";
-
+            $result .= '<li '.($classes ? 'class="'.implode(' ', $classes).'"' : '').'>';
             switch($page->type)
             {
                 case 'component':
@@ -119,20 +119,6 @@ class TemplateHelperList extends Library\TemplateHelperAbstract
                     $result .= $page->title;
                     $result .= '</a>';
             }
-
-            //$result .= $level;
-            if ($level < $next_level) {
-                // don't close <li>
-            }
-            elseif ($level === $next_level) {
-                $result .= "\n</li>\n";
-            }
-            elseif ($next_level === false || $level > $next_level) {
-                // Last one of the level
-                $result .= "\n</li>\n</ul>\n";
-            }
-
-            $last_level = $level;
         }
 
         return $result;

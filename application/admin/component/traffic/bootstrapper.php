@@ -16,5 +16,6 @@ class TrafficBootstrapper extends Library\BootstrapperAbstract
         $manager = $this->getObjectManager();
 
         $manager->registerAlias('com:traffic.model.categories', 'com:categories.model.categories');
+        $manager->registerAlias('com:traffic.controller.attachment', 'com:attachments.controller.attachment');
     }
 }
