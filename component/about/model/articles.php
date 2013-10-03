@@ -52,8 +52,12 @@ class ModelArticles extends Library\ModelTable
             $query->where('tbl.published = :published')->bind(array('published' => $state->published));
         }
 
-        if($state->category) {
+        if(!is_numeric($state->category)) {
             $query->where('categories.slug = :category')->bind(array('category' => $state->category));
+        }
+
+        if (is_numeric($state->category)) {
+            $query->where('tbl.categories_category_id = :category')->bind(array('category' => $state->category));
         }
     }
 }
