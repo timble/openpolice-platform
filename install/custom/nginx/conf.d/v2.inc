@@ -4,3 +4,8 @@ location  ~ "^/(5388)(?:/.*)?$"  {
     include /etc/nginx/conf.d/proxy.inc;
     break;
 }
+
+location  ~ "^/demo(?:/.*)?$"  {
+    include /etc/nginx/conf.d/proxy.inc;
+    break;
+}

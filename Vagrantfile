@@ -9,5 +9,6 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/var/www/police.dev", id: "vagrant-root" , :nfs => nfs_setting
 
   config.vm.provision :shell, :inline => '/home/vagrant/scripts/police install'
+  config.vm.provision :shell, :inline => 'if [ -f /etc/php5/conf.d/xdebug.ini ]; then sed -i "s/^/;/" /etc/php5/conf.d/xdebug.ini && service php5-fpm restart; fi'
 
 end
