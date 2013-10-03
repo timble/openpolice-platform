@@ -46,8 +46,12 @@ exec('tar -xvf ' . $filename);
 echo "-- Importing all databases".PHP_EOL;
 foreach(glob("v2_*.sql") as $file)
 {
-    echo "Importing " . $file . PHP_EOL;
     $database = substr($file, 0, -4);
+
+    echo "Creating database " . $database . PHP_EOL;
+    exec("mysql -u".escapeshellarg($config->user)." -p".escapeshellarg($config->password)." -e 'CREATE DATABASE IF NOT EXISTS `".$database."`;'");
+
+    echo "Importing " . $file . PHP_EOL;
     exec("mysql -u".escapeshellarg($config->user)." -p".escapeshellarg($config->password)." ".$database." < " . $file);
 }
 
