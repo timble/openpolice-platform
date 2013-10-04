@@ -1,0 +1,8 @@
+{
+  "name": "select2",
+  "version": "3.4.3",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ivaynberg/select2.git"
+  }
+}
