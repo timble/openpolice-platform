@@ -1,4 +1,6 @@
+
+# Redirect unknown domain names to lokalepolitie.be
 server {
     server_name _;
-    return 444;
+    return       301 http://www.lokalepolitie.be$request_uri;
 }
