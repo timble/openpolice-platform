@@ -15,6 +15,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name=”mobile-web-app-capable” content=”yes”>
 
     <link rel="apple-touch-icon" href="assets://application/images/apple-touch-icon.png"/>
 
@@ -37,7 +38,7 @@
 
     <script src="assets://application/js/html5shiv.js" condition="if lte IE 8" />
     <script src="assets://application/js/jquery.placeholder.js" condition="if lte IE 9" />
-    <script src="assets://application/js/ie7.js"condition="if lte IE 7" />
+    <script src="assets://application/js/ie7.js" condition="if lte IE 7" />
     <script src="assets://application/js/navbar.js" />
 
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
