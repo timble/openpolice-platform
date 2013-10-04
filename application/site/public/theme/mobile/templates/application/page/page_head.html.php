@@ -15,6 +15,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name=”mobile-web-app-capable” content=”yes”>
 
     <link rel="apple-touch-icon" href="assets://application/images/apple-touch-icon.png"/>
 
@@ -27,17 +28,18 @@
     <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style src="assets://application/css/default.css" />
+    <style src="assets://application/components/select2/select2.css" />
     <style src="assets://application/css/ie.css" condition="if IE 8" />
     <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
 
-    <script src="assets://districts/jquery/jquery.js" />
+    <script src="assets://application/js/jquery.js" />
     <script type="text/javascript">
         var $jQuery = jQuery.noConflict();
     </script>
-
+    <script src="assets://application/components/select2/select2.js" />
     <script src="assets://application/js/html5shiv.js" condition="if lte IE 8" />
     <script src="assets://application/js/jquery.placeholder.js" condition="if lte IE 9" />
-    <script src="assets://application/js/ie7.js"condition="if lte IE 7" />
+    <script src="assets://application/js/ie7.js" condition="if lte IE 7" />
     <script src="assets://application/js/navbar.js" />
 
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>

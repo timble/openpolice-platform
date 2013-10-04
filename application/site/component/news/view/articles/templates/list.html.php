@@ -15,7 +15,8 @@
         <? if($article->attachments_attachment_id): ?>
             <a tabindex="-1" class="pull-left thumbnail media-object" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
                 <?= helper('com:attachments.image.thumbnail', array(
-                    'attachment' => $article->attachments_attachment_id)) ?>
+                    'attachment' => $article->attachments_attachment_id,
+                    'attribs' => array('width' => '64px'))) ?>
             </a>
         <? endif; ?>
         <div class="media-body">
