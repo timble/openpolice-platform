@@ -16,14 +16,14 @@
     <article class="article">
         <? $link = helper('route.article', array('row' => $article)); ?>
         <header class="article__header">
-            <h1><a id="ga-title" href="<?= $link ?>"><?= $article->title ?></a></h1>
+            <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
             <div class="timestamp">
                 <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
             </div>
         </header>
 
         <? if($article->thumbnail): ?>
-        <a id="ga-thumbnail" class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+        <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
             <figure>
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
@@ -35,7 +35,7 @@
         <?= $article->introtext ?>
 
         <? if ($article->fulltext) : ?>
-            <a id="ga-readmore" href="<?= $link ?>"><?= translate('Read more') ?></a>
+            <a href="<?= $link ?>"><?= translate('Read more') ?></a>
         <? endif; ?>
     </article>
 <? endforeach; ?>
