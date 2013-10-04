@@ -27,10 +27,10 @@
     <style src="assets://application/stylesheets/default.css" />
     <style src="assets://application/stylesheets/print.css" media="print" />
 
-    <script src="assets://districts/jquery/jquery.js" />
+    <script src="assets://application/js/jquery.js" />
     <script type="text/javascript">
     var $jQuery = jQuery.noConflict();
     </script>
-    <style src="assets://districts/select2/select2.css" />
-    <script src="assets://districts/select2/select2.min.js" />
+    <style src="assets://application/components/select2/select2.css" />
+    <script src="assets://application/components/select2/select2.min.js" />
 </head>
