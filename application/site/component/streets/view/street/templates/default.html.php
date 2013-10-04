@@ -6,6 +6,10 @@
 
 <h1><?= $street->title ?></h1>
 
+<? foreach(object('com:districts.model.relations')->street($street->id)->getRowset() as $district) : ?>
+    <?=  object('com:districts.controller.district')->id($district->districts_district_id)->render(); ?>
+<? endforeach ?>
+
 <? $articles = object('com:traffic.model.articles')->street($street->id)->getRowset(); ?>
 
 <? $categories = object('com:categories.model.categories')->table('traffic')->getRowset(); ?>
