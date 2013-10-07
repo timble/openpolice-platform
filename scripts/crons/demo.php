@@ -38,7 +38,7 @@ exec($cmd);
 
 // Now rsync the sites folder
 echo "-- Syncing site folders".PHP_EOL;
-exec('rsync -vr /var/www/v2.lokalepolitie.be/capistrano/shared/sites/5388/ /var/www/v2.lokalepolitie.be/capistrano/shared/sites/demo/ --delete --update --perms --owner --group --recursive --times --links');
+exec('rsync -vr /var/www/v2.lokalepolitie.be/capistrano/shared/sites/5388/ /var/www/v2.lokalepolitie.be/capistrano/shared/sites/demo/ --exclude config/config.php --delete --update --perms --owner --group --recursive --times --links');
 
 // Remove users and setup demo access
 echo "-- Setting up demo user".PHP_EOL;
