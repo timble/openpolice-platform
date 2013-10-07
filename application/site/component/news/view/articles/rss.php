@@ -20,7 +20,7 @@ class NewsViewArticlesRss extends Library\ViewRss
     public function render()
     {
         //Unable to put this inside the layout because of shorttags conflict
-        echo '<?xml version="1.0" encoding="utf-8" ?>';
+        //echo '<?xml version="1.0" encoding="utf-8" ?>';
 
         //Get the parameters
         $this->params = $this->getObject('application')->getParams();

@@ -22,7 +22,7 @@
             </div>
         </header>
 
-        <? if($article->thumbnail): ?>
+        <? if($article->attachments_attachment_id): ?>
         <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
             <figure>
                 <?= helper('com:attachments.image.thumbnail', array(

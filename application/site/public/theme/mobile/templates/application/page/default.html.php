@@ -19,13 +19,16 @@
             <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img width="160" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-nl.jpg" />
+                        <img width="160" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
                         <div><?= escape($zone->title); ?></div>
                     </a>
                 </div>
             </div>
             <div class="span9">
-                <span class="slogan">Bel <a class="text--strong" tabindex="-1" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" tabindex="-1" href="tel:<?= escape(str_replace(' ', '', $zone->phone_emergency)); ?>"><?= escape($zone->phone_emergency); ?></a></span>
+                <span class="slogan">
+                    <?= JText::sprintf('Call for urgent police assistance', '101', '101') ?>.
+                    <?= JText::sprintf('No emergency, just police', escape(str_replace(' ', '', $zone->phone_emergency)), escape($zone->phone_emergency)) ?>.
+                </span>
                 <div class="navbar">
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>
@@ -76,11 +79,11 @@
     <div class="container-footer">
         <div class="row-fluid">
             <div class="span8 alpha">
-                <h3><?= translate('Laatste nieuws') ?></h3>
+                <h3><?= translate('Latest news') ?></h3>
                 <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
             </div>
             <div class="span4">
-                <h3>Je wijkinspecteur</h3>
+                <h3><?= translate('Your district officer') ?></h3>
                 <?= import('default_district.html') ?>
             </div>
         </div>
@@ -94,7 +97,7 @@
             <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
         <div class="span6 copyright">
-            © 2013 Lokale Politie - <?= escape($zone->title); ?>
+            © 2013 <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
             <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
             <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a> -
             <a href="http://www.belgium.be">Belgium.be</a>
