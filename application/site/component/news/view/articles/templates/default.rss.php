@@ -31,15 +31,21 @@
         <atom:link href="<?= route() ?>" rel="self" type="application/rss+xml"/>
 
         <? foreach($articles as $article) : ?>
-            <item>
-                <title><![CDATA[<?= escape($article->title) ?>]]></title>
-                <link><?= helper('route.article', array('row' => $article)) ?></link>
-                <dc:creator><?= $article->created_by_name ?></dc:creator>
-                <guid isPermaLink="false"><?= helper('route.article', array('row' => $article)) ?></guid>
-                <description><![CDATA[<?= $article->introtext . $article->fulltext ?>]]></description>
-                <pubDate><?= helper('date.format', array('date' => $article->created_on)) ?></pubDate>
-                <dc:date><?= helper('date.format', array('date' => $article->created_on)) ?></dc:date>
-            </item>
+        <item>
+            <title><![CDATA[<?= escape($article->title) ?>]]></title>
+            <link><?= helper('route.article', array('row' => $article)) ?></link>
+            <dc:creator><?= $article->created_by_name ?></dc:creator>
+            <guid isPermaLink="false"><?= helper('route.article', array('row' => $article)) ?></guid>
+            <description><![CDATA[
+                <?= $article->introtext ?>
+                <?= helper('com:attachments.image.thumbnail', array(
+                    'attachment' => $article->attachments_attachment_id
+                )) ?>
+                <?= $article->fulltext ?>
+            ]]></description>
+            <pubDate><?= helper('date.format', array('date' => $article->created_on)) ?></pubDate>
+            <dc:date><?= helper('date.format', array('date' => $article->created_on)) ?></dc:date>
+        </item>
         <? endforeach; ?>
     </channel>
 </rss>
