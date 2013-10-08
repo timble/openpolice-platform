@@ -6,17 +6,14 @@
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link		https://github.com/belgianpolice/internet-platform
  */
+
 use Nooku\Library;
 
-class TrafficViewArticleHtml extends TrafficViewHtml
+class TrafficViewHtml extends Library\ViewHtml
 {
     public function render()
     {
-        //Get the article
-        $article = $this->getModel()->getData();
-
-        //Set the pathway
-		$this->getObject('application')->getPathway()->addItem($article->title, '');
+        $this->categories = $this->getObject('com:traffic.model.categories')->table('traffic')->published(true)->sort('title')->getRowset();
 
         return parent::render();
     }

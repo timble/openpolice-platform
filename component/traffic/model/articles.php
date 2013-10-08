@@ -19,7 +19,7 @@ class ModelArticles extends Library\ModelTable
 		$this->getState()
 		    ->insert('street' , 'int')
 		    ->insert('published' , 'int')
-            ->insert('category' , 'int')
+            ->insert('category' , 'string')
             ->insert('type' , 'string')
 		    ->insert('date' , 'string');
 	}
@@ -38,7 +38,8 @@ class ModelArticles extends Library\ModelTable
         parent::_buildQueryJoins($query);
         $state = $this->getState();
 
-        $query->join(array('creator'  => 'users'), 'creator.users_user_id = tbl.created_by');
+        $query->join(array('categories'  => 'categories'), 'categories.categories_category_id = tbl.categories_category_id')
+              ->join(array('creator'  => 'users'), 'creator.users_user_id = tbl.created_by');
 
         if($state->street)
         {
@@ -54,6 +55,10 @@ class ModelArticles extends Library\ModelTable
 		if ($state->search) {
 			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
 		}
+
+        if(!is_numeric($state->category) && !is_null($state->category)) {
+            $query->where('categories.slug = :category')->bind(array('category' => $state->category));
+        }
 
         if(is_numeric($state->category)) {
             $query->where('tbl.categories_category_id = :category')->bind(array('category' => $state->category));

@@ -6,18 +6,15 @@
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link		https://github.com/belgianpolice/internet-platform
  */
+
 use Nooku\Library;
 
-class TrafficViewArticleHtml extends TrafficViewHtml
+class TrafficBootstrapper extends Library\BootstrapperAbstract
 {
-    public function render()
+    public function bootstrap()
     {
-        //Get the article
-        $article = $this->getModel()->getData();
+        $manager = $this->getObjectManager();
 
-        //Set the pathway
-		$this->getObject('application')->getPathway()->addItem($article->title, '');
-
-        return parent::render();
+        $manager->registerAlias('com:traffic.model.categories', 'com:categories.model.categories');
     }
 }

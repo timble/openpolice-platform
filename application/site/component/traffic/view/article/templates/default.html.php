@@ -8,6 +8,10 @@
  */
 ?>
 
+<ktml:module position="left">
+    <?= import('com:categories.view.categories.list.html') ?>
+</ktml:module>
+
 <title content="replace"><?= $article->title ?></title>
 
 <div class="article vevent">
