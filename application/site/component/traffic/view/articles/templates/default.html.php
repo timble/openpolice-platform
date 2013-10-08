@@ -8,23 +8,35 @@
  */
 ?>
 
-<h1 class="article__header"><?php echo escape($params->get('page_title')); ?></h1>
+<ktml:module position="left">
+    <?= import('com:categories.view.categories.list.html') ?>
+</ktml:module>
 
-<? foreach ($articles as $article) : ?>
-    <h2>
-        <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
-        <small><?= $article->title ?></small>
-    </h2>
+<h1 class="article__header"><?= $category->title ?></h1>
 
-    <? if($article->text) : ?>
-        <?= $article->text ?>
-    <? endif ?>
+<?= $category->description ?>
 
-    <? if($streets = $this->getObject('com:traffic.model.streets')->article($article->id)->getRowset()->street) : ?>
-        <?= implode(", ", $streets) ?>
-    <? else : ?>
-        <?= translate('Grondgebied van Politie').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
-    <? endif ?>
-<? endforeach; ?>
+<table class="table table-striped">
+    <tbody>
+    <? foreach ($articles as $article) : ?>
+        <tr>
+            <td style="width: 100%">
+                <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= $article->title ?></a>
+                <span style="float: right;"><?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?></span><br />
+                <small>
+                    <? if($streets = $this->getObject('com:traffic.model.streets')->article($article->id)->getRowset()->street) : ?>
+                        <?= implode(", ", $streets) ?>
+                    <? else : ?>
+                        <?= translate('Grondgebied van Politie').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
+                    <? endif ?>
+                </small>
+            </td>
+            <td nowrap>
+
+            </td>
+        </tr>
+    <? endforeach; ?>
+    </tbody>
+</table>
 
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>

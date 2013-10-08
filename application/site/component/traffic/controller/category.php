@@ -16,7 +16,17 @@ use Nooku\Library;
  * @package     Nooku_Server
  * @subpackage  Contacts
  */
-class TrafficControllerCategory extends CategoriesControllerCategory
+class TrafficControllerCategory extends Library\ControllerModel
 {
+    public function getRequest()
+    {
+        $request = parent::getRequest();
 
+        $request->query->table     = $this->getIdentifier()->package;
+        $request->query->access    = $this->getUser()->isAuthentic();
+        $request->query->published = 1;
+        $request->query->sort      = 'title';
+
+        return $request;
+    }
 }

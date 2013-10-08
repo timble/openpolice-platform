@@ -6,37 +6,34 @@
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link		https://github.com/belgianpolice/internet-platform
  */
+
 use Nooku\Library;
 
 class TrafficTemplateHelperRoute extends PagesTemplateHelperRoute
 {
     public function article($config = array())
-	{
+    {
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
-            'layout'    => null,
-            'format'    => 'html'
+            'layout'   => null,
+            'category' => null,
+            'format'   => 'html'
         ));
 
         $article = $config->row;
 
-        $needles = array(
-            array('view' => 'article' , 'id' => $article->id),
-		);
+        $category = $this->getObject('com:categories.model.category')->id($article->categories_category_id)->getRow();
 
         $route = array(
             'view'     => 'article',
             'id'       => $article->getSlug(),
             'layout'   => $config->layout,
+            'category' => $category->getSlug(),
             'format'   => $config->format
         );
 
-		if($item = $this->_findPage($needles)) {
-			$route['Itemid'] = $item->id;
-		};
-
-		return $this->getTemplate()->getView()->getRoute(http_build_query($route, '', '&'));
-	}
+        return $this->getTemplate()->getView()->getRoute($route);
+    }
 
     public function category($config = array())
     {
@@ -47,24 +44,11 @@ class TrafficTemplateHelperRoute extends PagesTemplateHelperRoute
 
         $category = $config->row;
 
-        $needles = array(
-            array('view' => 'articles', 'category' => $category->id),
-        );
-
         $route = array(
-            'view'     => 'articles',
-            'category' => $category->getSlug(),
-            'layout'   => $config->layout
+            'view'          => 'articles',
+            'category'      => $category->getSlug(),
+            'layout'        => $config->layout
         );
-
-        if($page = $this->_findPage($needles))
-        {
-            if(isset($page->getLink()->query['layout'])) {
-                $route['layout'] = $page->getLink()->query['layout'];
-            }
-
-            $route['Itemid'] = $page->id;
-        };
 
         return $this->getTemplate()->getView()->getRoute($route);
     }
