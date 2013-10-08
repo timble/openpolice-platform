@@ -19,7 +19,7 @@
         <h1 class="summary"><?= $article->title ?></h1>
         <div class="timestamp">
             <?= helper('date.format', array('date'=> $article->start_on, 'format' => translate('DATE_FORMAT_LC3'), 'attribs' => array('class' => 'dtstart'))) ?>
-            <? if($article->end_on) : ?>
+            <? if($article->end_on && $article->end_on != $article->start_on) : ?>
                 <?= translate('till') ?>
                 <?= helper('date.format', array('date'=> $article->end_on, 'format' => translate('DATE_FORMAT_LC3'), 'attribs' => array('class' => 'dtend'))); ?>
             <? endif ?>
