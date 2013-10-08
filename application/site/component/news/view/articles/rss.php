@@ -17,11 +17,17 @@ use Nooku\Library;
  */
 class NewsViewArticlesRss extends Library\ViewRss
 {
+    protected function _initialize(Library\ObjectConfig $config)
+    {
+        $config->append(array(
+            'template_filters' => array('com:attachments.template.filter.attachments'),
+        ));
+
+        parent::_initialize($config);
+    }
+
     public function render()
     {
-        //Unable to put this inside the layout because of shorttags conflict
-        echo '<?xml version="1.0" encoding="utf-8" ?>';
-
         //Get the parameters
         $this->params = $this->getObject('application')->getParams();
 
