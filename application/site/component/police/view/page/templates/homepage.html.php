@@ -43,18 +43,29 @@
     </div>
     <div class="span4">
         <div class="contact">
-            <h3><?= translate('Contacteer ons') ?></h3>
+            <h3><?= translate('Contact us') ?></h3>
             <div  class="well well--small">
-                <div><span class="text--strong"><a tabindex="-1" href="tel:101">101</a></span> <span class="text--small">dringende politiehulp</span></div>
-                <div><span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_emergency) ?>"><?= $zone->phone_emergency ?></a></span> <span class="text--small">geen spoed</span></div>
-                <div><span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_information) ?>"><?= $zone->phone_information ?></a></span> <span class="text--small">algemene info</span></div>
+                <div>
+                    <span class="text--strong"><a tabindex="-1" href="tel:101">101</a></span>
+                    <span class="text--small"><?= translate('Urgent police assistance') ?></span>
+                </div>
+                <div>
+                    <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_emergency) ?>"><?= $zone->phone_emergency ?></a></span>
+                    <span class="text--small">geen spoed</span>
+                </div>
+                <? if($zone->phone_information) : ?>
+                <div>
+                    <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_information) ?>"><?= $zone->phone_information ?></a></span>
+                    <span class="text--small">algemene info</span>
+                </div>
+                <? endif ?>
             </div>
 
             <ul class="nav nav-tabs nav-stacked">
-                <li><a href="/<?= $site ?>/contact/je-wijkinspecteur">Je wijkinspecteur</a></li>
-                <li><a href="/<?= $site ?>/contact/commissariaten">Commissariaten</a></li>
-                <li><a href="/<?= $site ?>/contact/diensten">Diensten</a></li>
-                <li><a href="/<?= $site ?>/contact/noodnummers">Noodnummers</a></li>
+                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Your district officer') ?></a></li>
+                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Stations')) ?>"><?= translate('Stations') ?></a></li>
+                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Services')) ?>"><?= translate('Services') ?></a></li>
+                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Emergency numbers')) ?>"><?= translate('Emergency numbers') ?></a></li>
             </ul>
         </div>
     </div>
