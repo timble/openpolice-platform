@@ -47,7 +47,9 @@
             <div  class="well well--small">
                 <div><span class="text--strong"><a tabindex="-1" href="tel:101">101</a></span> <span class="text--small">dringende politiehulp</span></div>
                 <div><span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_emergency) ?>"><?= $zone->phone_emergency ?></a></span> <span class="text--small">geen spoed</span></div>
+                <? if($zone->phone_information) : ?>
                 <div><span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_information) ?>"><?= $zone->phone_information ?></a></span> <span class="text--small">algemene info</span></div>
+                <? endif ?>
             </div>
 
             <ul class="nav nav-tabs nav-stacked">
