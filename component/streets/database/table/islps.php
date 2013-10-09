@@ -10,17 +10,14 @@
 namespace Nooku\Component\Streets;
 use Nooku\Library;
 
-class DatabaseTableStreets extends Library\DatabaseTableAbstract
-{    
+class DatabaseTableIslps extends Library\DatabaseTableAbstract
+{
     public function  _initialize(Library\ObjectConfig $config)
-    {        
+    {
         $config->append(array(
-            'name'      => 'data.streets',
-            'behaviors' =>  array(
-                'lockable', 'creatable', 'modifiable', 'sluggable'
-            )
+            'name'      => 'data.streets_islps'
         ));
-     
+
         parent::_initialize($config);
-     }
+    }
 }

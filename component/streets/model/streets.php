@@ -32,8 +32,8 @@ class ModelStreets extends Library\ModelTable
 
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
-        $query->join(array('city' => 'streets_cities'), 'city.streets_city_id = tbl.streets_city_id')
-              ->join(array('islp' => 'streets_islps'), 'islp.streets_street_id = tbl.streets_street_id');
+        $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id')
+              ->join(array('islp' => 'data.streets_islps'), 'islp.streets_street_id = tbl.streets_street_id');
     }
 	
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
