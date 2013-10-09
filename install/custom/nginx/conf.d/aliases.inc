@@ -498,8 +498,8 @@ location ~ "^/(diepenbeek|hasselt|hazodi|zonhoven)(?:/.*)?$" {
 	rewrite ^ /5370 permanent;
 }
 
-location ~ "^/(5460|diksmuide|houthulst|koekelare|kortemark|polder|politiezonepolder)(?:/.*)?$" {
-	rewrite ^ http://www.politiezonepolder.be/ permanent;
+location ~ "^/(diksmuide|houthulst|koekelare|kortemark|polder|politiezonepolder)(?:/.*)?$" {
+	rewrite ^ /5460 permanent;
 }
 
 location ~ "^/dilbeek(?:/.*)?$" {
