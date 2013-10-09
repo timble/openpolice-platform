@@ -31,9 +31,6 @@
                     <? endif ?>
                 </small>
             </td>
-            <td nowrap>
-
-            </td>
         </tr>
     <? endforeach; ?>
     </tbody>
