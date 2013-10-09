@@ -21,7 +21,7 @@
 <form action="" method="post" class="-koowa-form">
 	<div class="main">
 		<div class="title">
-		    <input class="required" type="text" name="title" maxlength="255" value="<?= $street->title ?>" placeholder="<?= translate('Title') ?>" />
+		    <input disabled class="required" type="text" name="title" maxlength="255" value="<?= $street->title ?>" placeholder="<?= translate('Title') ?>" />
 		</div>
 	
 		<div class="scrollable">
@@ -32,7 +32,7 @@
                         <?= translate( 'CRAB' ); ?>
                     </label>
                     <div>
-                        <input class="required" type="text" name="streets_street_id" value="<?= $street->id ?>" />
+                        <input disabled class="required" type="text" name="streets_street_id" value="<?= $street->id ?>" />
                     </div>
                 </div>
                 <div>
@@ -43,14 +43,6 @@
                         <input type="text" name="islp" value="<?= $street->islp ?>" />
                     </div>
                 </div>
-                <div>
-				    <label for="name">
-				    	<?= translate( 'Municipality' ); ?>
-				    </label>
-				    <div>
-				        <?= helper('com:streets.listbox.cities', array('deselect' => false)) ?>
-				    </div>
-				</div>
 			</fieldset>
 		</div>
 	</div>
