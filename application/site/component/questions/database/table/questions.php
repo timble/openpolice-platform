@@ -15,8 +15,7 @@ class QuestionsDatabaseTableQuestions extends Questions\DatabaseTableQuestions
     public function  _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
-            'name'         => 'questions_view',
-            'base'         => 'questions',
+            'name'         => 'questions'
         ));
 
         parent::_initialize($config);
