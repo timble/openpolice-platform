@@ -78,7 +78,7 @@ class Backup
 
         foreach($databases as $key => $database)
         {
-            if(substr($database, 0, strlen('v2_')) != 'v2_') {
+            if(substr($database, 0, strlen('v2_')) != 'v2_' && $database != 'data') {
                 unset($databases[$key]);
             }
         }
