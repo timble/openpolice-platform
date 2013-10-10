@@ -17,5 +17,8 @@ class TrafficBootstrapper extends Library\BootstrapperAbstract
 
         $manager->registerAlias('com:traffic.model.categories', 'com:categories.model.categories');
         $manager->registerAlias('com:traffic.controller.attachment', 'com:attachments.controller.attachment');
+
+        // DatabaseBehaviorCascadable in Categories is looking for a database table that matches the package name
+        $manager->registerAlias('com:traffic.database.table.traffic', 'com:traffic.database.table.articles');
     }
 }
