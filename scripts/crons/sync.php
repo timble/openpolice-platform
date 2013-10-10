@@ -44,7 +44,7 @@ exec('tar -xvf ' . $filename);
 
 // Now loop over all the databases and import
 echo "-- Importing all databases".PHP_EOL;
-foreach(glob("v2_*.sql") as $file)
+foreach(glob("*.sql") as $file)
 {
     $database = substr($file, 0, -4);
 
