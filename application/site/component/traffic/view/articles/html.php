@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class TrafficViewArticlesHtml extends Library\ViewHtml
+class TrafficViewArticlesHtml extends TrafficViewHtml
 {
     public function render()
     {
@@ -29,7 +29,7 @@ class TrafficViewArticlesHtml extends Library\ViewHtml
         //Get the category
         $category = $this->getObject('com:categories.model.categories')
             ->table('traffic')
-            ->id($this->getModel()->getState()->category)
+            ->slug($this->getModel()->getState()->category)
             ->getRow();
 
         return $category;

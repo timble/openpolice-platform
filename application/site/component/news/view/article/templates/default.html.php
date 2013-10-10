@@ -8,6 +8,8 @@
  */
 ?>
 
+<meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
+
 <ktml:module position="left">
     <?= import('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
 </ktml:module>
