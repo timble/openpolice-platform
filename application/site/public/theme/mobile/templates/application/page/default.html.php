@@ -7,7 +7,12 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
-<? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
+<?
+$zone = object('com:police.model.zone')->id($site)->getRow();
+$language_short = explode("-", $language);
+$language_short = $language_short[0];
+?>
+
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
@@ -94,12 +99,12 @@
     <div class="container-copyright">
     <div class="row-fluid">
         <div class="span6 alpha">
-            <a href="http://www.twitter.com/politieleuven"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/politieleuven"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
+            <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
         <div class="span6 copyright">
             © 2013 <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
-            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/nl/disclaimer.html">Disclaimer</a> -
-            <a target="_blank" href="http://www.lokalepolitie.be/portal/nl/privacy.html">Privacy</a> -
+            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/disclaimer.html">Disclaimer</a> -
+            <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/privacy.html">Privacy</a> -
             <a href="http://www.belgium.be">Belgium.be</a>
         </div>
     </div>

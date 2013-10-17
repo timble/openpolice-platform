@@ -12,5 +12,5 @@
 <? $email = str_replace(".", "&#46;", $email) ?>
 
 <div class="well well--small text-center">
-    <?= translate('Je vraag blijft onbeantwoord? Contacteer ons via') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('of') ?> <span class="nowrap"><?= $zone->phone_information ?></span>.
+    <?= translate('Your question remains unanswered? Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ?></span>.
 </div>

@@ -17,38 +17,20 @@
     </div>
 </fieldset>
 
-<div class="tabs tabs-horizontal">
-    <div class="tab">
-        <input type="radio" id="tab-1" name="tab-group-1" checked="">
-        <label for="tab-1"><?= translate('Classifications') ?></label>
-        <div class="content">
-            <fieldset>
-                <legend><?= translate('Category') ?></legend>
-                <?= helper('com:categories.radiolist.categories', array('row' => $article)) ?>
-            </fieldset>
-            <? if($article->isTaggable()) : ?>
-                <fieldset>
-                    <legend><?= translate('Tags') ?></legend>
-                    <?= helper('com:tags.listbox.tags', array('name' => 'tags[]', 'selected' => $article->getTags()->tags_tag_id, 'filter' => array('table' => 'articles'), 'attribs' => array('class' => 'select-tags', 'multiple' => 'multiple', 'style' => 'width:220px'))) ?>
-                </fieldset>
-            <? endif ?>
-        </div>
-    </div>
-    <? if($article->isAttachable()) : ?>
-        <div class="tab">
-            <input type="radio" id="tab-3" name="tab-group-1">
-            <label for="tab-3"><?= translate('Attachments') ?></label>
-            <div class="content">
-                <fieldset>
-                    <? if (!$article->isNew()) : ?>
-                        <?= import('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
-                    <? endif ?>
-                    <?= import('com:attachments.view.attachments.upload.html') ?>
-                </fieldset>
-            </div>
-        </div>
-    <? endif ?>
-</div>
+<fieldset>
+    <legend><?= translate('Category') ?></legend>
+    <?= helper('com:categories.radiolist.categories', array('row' => $article)) ?>
+</fieldset>
+
+<? if($article->isAttachable()) : ?>
+    <fieldset>
+        <legend><?= translate('Attachments') ?></legend>
+        <? if (!$article->isNew()) : ?>
+            <?= import('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
+        <? endif ?>
+        <?= import('com:attachments.view.attachments.upload.html') ?>
+    </fieldset>
+<? endif ?>
 
 <? if($article->isTranslatable()) : ?>
     <fieldset>
