@@ -16,7 +16,10 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
     {
         $config->append(array(
             'name'         => 'about',
-            'behaviors'    =>  array('lockable', 'creatable', 'modifiable', 'sluggable'),
+            'behaviors'    =>  array(
+                'lockable', 'creatable', 'modifiable', 'sluggable',
+                'com:attachments.database.behavior.attachable',
+            ),
             'orderable' => array(
                 'strategy' => 'flat'
             ),

@@ -13,21 +13,30 @@
 </ktml:module>
 
 <? foreach ($articles as $article) : ?>
-<div class="article">
+<article class="article">
+    <? $link = helper('route.article', array('row' => $article)); ?>
     <h1 class="article__header">
         <? if($article->fulltext) : ?>
-        <a href="<?= helper('route.article', array('row' => $article)) ?>">
+        <a href="<?= $link ?>">
             <?= $article->title ?>
         </a>
         <? else : ?>
             <?= $article->title ?>
         <? endif; ?>
     </h1>
-    <?= $article->introtext ?>
-    <? if($article->fulltext) : ?>
-    <a class="article__readmore" href="<?= helper('route.article', array('row' => $article)) ?>">
-        <?= translate('Read more') ?>
-    </a>
+
+    <? if($article->attachments_attachment_id): ?>
+        <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+            <?= helper('com:attachments.image.thumbnail', array(
+                'attachment' => $article->attachments_attachment_id,
+                'attribs' => array('width' => '200', 'align' => 'right'))) ?>
+        </a>
     <? endif; ?>
-</div>
+
+    <?= $article->introtext ?>
+
+    <? if ($article->fulltext) : ?>
+        <a href="<?= $link ?>"><?= translate('Read more') ?></a>
+    <? endif; ?>
+</article>
 <? endforeach; ?>
