@@ -41,22 +41,6 @@
 				        <?= helper('listbox.language', array('deselect' => false)) ?>
 				    </div>
 				</div>
-                <div>
-				    <label for="chief_name">
-				    	<?= translate( 'Chief name' ); ?>
-				    </label>
-				    <div>
-				        <input class="required" type="text" name="chief_name" value="<?= $zone->chief_name; ?>" />
-				    </div>
-				</div>
-                <div>
-				    <label for="chief_email">
-				    	<?= translate( 'Chief email' ); ?>
-				    </label>
-				    <div>
-				        <input class="required" type="text" name="chief_email" value="<?= $zone->chief_email; ?>" />
-				    </div>
-				</div>
 			</fieldset>
 		</div>
 	</div>

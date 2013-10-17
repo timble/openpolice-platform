@@ -34,12 +34,6 @@
 			<th>
 				<?= helper('grid.sort', array('column' => 'language')) ?>
 			</th>
-            <th>
-				<?= helper('grid.sort', array('column' => 'chief_name', 'title' => 'Chief name')) ?>
-			</th>
-                        <th>
-				<?= helper('grid.sort', array('column' => 'chief_email', 'title' => 'Chief email')) ?>
-			</th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -63,12 +57,6 @@
 			</td>
 			<td>
 				<?= helper('com:police.grid.language', array('language' => $zone->language)) ?>
-			</td>
-            <td>
-				<?= $zone->chief_name ?>
-			</td>
-            <td>
-				<?= $zone->chief_email ?>
 			</td>
 		</tr>
 		<? endforeach; ?>
