@@ -20,17 +20,18 @@ set :copy_exclude, [".git"]
 set :keep_releases, 3
 
 # Repository settings.
-set :repository, "git@github.com:belgianpolice/internet-platform.git"
+set :repository, "git@git.assembla.com:timble-police.2.git"
 set :scm, :git
 set :scm_username, "deploy@timble.net"
 
 namespace :deploy do
     # Overwrite :finalize_update to prevent unrelevant command executions.
+    desc "Finalize update"
     task :finalize_update, :roles => :app, :except => { :no_release => true } do
         run "chmod -R g+w #{release_path}" if fetch(:group_writable, true)
     end
     
-    # Create symbolic links for shared directories.
+    desc "Create symbolic links for shared directories."
     task :symlink_shared, :roles => :app do
         if app_symlinks
             app_symlinks.each do |link|
@@ -52,6 +53,28 @@ namespace :deploy do
     desc "Restart the application."
     task :restart do
         run "curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
+    end
+
+    desc "Push local changes to Github remote"
+    task :mirror do
+        # Check for any local changes that haven't been committed
+        status = %x(git status --porcelain).chomp
+        if status != ""
+            if status !~ %r{^[M ][M ] config/deploy.rb$}
+                raise Capistrano::Error, "Local git repository has uncommitted changes"
+            end
+        end
+
+        # Check we are on the master branch
+        branch = %x(git branch --no-color 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \\(.*\\)/\\1/').chomp
+        if branch != "master"
+            raise Capistrano::Error, "Not on master branch!"
+        end
+
+        # Push the changes
+        if ! system "git push github master"
+            raise Capistrano::Error, "Failed to push changes to github!"
+        end
     end
     
     # Do nothing in these tasks.
