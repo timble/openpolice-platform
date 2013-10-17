@@ -33,7 +33,7 @@ class ModelRelations extends Library\ModelTable
 
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
-		$query->join(array('street' => 'streets'), 'street.streets_street_id = tbl.streets_street_id')
+		$query->join(array('street' => 'data.streets'), 'street.streets_street_id = tbl.streets_street_id')
               ->join(array('district'   => 'districts'), 'district.districts_district_id = tbl.districts_district_id');
 	}
 

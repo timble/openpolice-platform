@@ -16,5 +16,8 @@ class AboutBootstrapper extends Library\BootstrapperAbstract
         $manager = $this->getObjectManager();
 
         $manager->registerAlias('com:about.model.categories', 'com:categories.model.categories');
+
+        // DatabaseBehaviorCascadable in Categories is looking for a database table that matches the package name
+        $manager->registerAlias('com:about.database.table.about', 'com:about.database.table.articles');
     }
 }

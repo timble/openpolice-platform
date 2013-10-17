@@ -19,7 +19,9 @@ use Nooku\Library;
  */
 class DatabaseRowAttachment extends Library\DatabaseRowTable
 {
-	public function save()
+    public static $image_extensions = array('jpg', 'jpeg', 'gif', 'png', 'tiff', 'tif', 'xbm', 'bmp');
+
+    public function save()
 	{
 		$return = parent::save();
 
@@ -35,29 +37,32 @@ class DatabaseRowAttachment extends Library\DatabaseRowTable
 			}
 		}
 
-        // Save the thumbnail
-        $thumbnail = $this->getObject('com:files.database.row.thumbnail');
-        $thumbnail->source = $this->file;
-
-        if (!file_exists($this->thumbnail_fullpath))
+        if($this->isImage($this->thumbnail_fullpath))
         {
-            $thumbnail->setThumbnailSize(4/3)
-                ->generateThumbnail()
-                ->save($this->thumbnail_fullpath);
-        }
+            // Save the thumbnail
+            $thumbnail = $this->getObject('com:files.database.row.thumbnail');
+            $thumbnail->source = $this->file;
 
-        if (isset($this->x1) && isset($this->x2))
-        {
-            // Cropping existing thumbnail
-            $thumbnail->setData(array(
+            if (!file_exists($this->thumbnail_fullpath))
+            {
+                $thumbnail->setThumbnailSize(4/3)
+                    ->generateThumbnail()
+                    ->save($this->thumbnail_fullpath);
+            }
+
+            if (isset($this->x1) && isset($this->x2))
+            {
+                // Cropping existing thumbnail
+                $thumbnail->setData(array(
                     'source' => $this->file,
                     'x1' => $this->x1,
                     'x2' => $this->x2,
                     'y1' => $this->y1,
                     'y2' => $this->y2
                 ))
-                ->cropThumbnail()
-                ->save($this->thumbnail_fullpath);
+                    ->cropThumbnail()
+                    ->save($this->thumbnail_fullpath);
+            }
         }
 
         return $return;
@@ -134,5 +139,10 @@ class DatabaseRowAttachment extends Library\DatabaseRowTable
         $data['thumbnail'] = $this->thumbnail;
 
         return $data;
+    }
+
+    public function isImage($file)
+    {
+        return in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), self::$image_extensions);
     }
 }

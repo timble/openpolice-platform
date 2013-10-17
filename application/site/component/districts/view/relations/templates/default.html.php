@@ -27,7 +27,7 @@
         <? $email = str_replace(".", "&#46;", $email) ?>
 
         <div class="well well--small text-center">
-            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('of') ?> <span class="nowrap"><?= $zone->phone_information ?></span>.
+            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ?></span>.
         </div>
     <? endif ?>
 

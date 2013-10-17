@@ -54,7 +54,7 @@
 	</thead>
 	<tfoot>
 		<tr>
-			<td colspan="7">
+			<td colspan="8">
 				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
