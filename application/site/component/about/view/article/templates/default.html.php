@@ -17,7 +17,13 @@
 <article <?= !$article->published ? 'class="article-unpublished"' : '' ?>>
     <h1><?= $article->title ?></h1>
 
-    <?= helper('com:attachments.image.thumbnail', array('row' => $article)) ?>
+    <? if($article->attachments_attachment_id) : ?>
+        <figure class="article__thumbnail">
+            <?= helper('com:attachments.image.thumbnail', array(
+                'attachment' => $article->attachments_attachment_id,
+                'attribs' => array('width' => '200', 'align' => 'right'))) ?>
+        </figure>
+    <? endif ?>
 
     <? if($article->fulltext) : ?>
         <div class="article__introtext">
@@ -29,5 +35,7 @@
 
     <?= $article->fulltext ?>
 
-    <? // import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
+    <div class="entry-content-asset">
+        <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
+    </div>
 </article>

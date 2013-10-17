@@ -51,12 +51,12 @@
                 </div>
                 <div>
                     <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_emergency) ?>"><?= $zone->phone_emergency ?></a></span>
-                    <span class="text--small">geen spoed</span>
+                    <span class="text--small"><?= translate('no emergency') ?></span>
                 </div>
                 <? if($zone->phone_information) : ?>
                 <div>
                     <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_information) ?>"><?= $zone->phone_information ?></a></span>
-                    <span class="text--small">algemene info</span>
+                    <span class="text--small"><?= translate('general information') ?></span>
                 </div>
                 <? endif ?>
             </div>
