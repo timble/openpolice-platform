@@ -71,6 +71,12 @@ namespace :deploy do
             raise Capistrano::Error, "Not on master branch!"
         end
 
+        # Make sure the github remote has been set up
+        remotes = %x(git remote show | sed 'N;s/\\n/ /;').chomp
+        if ! remotes.split(' ').include? 'github'
+            raise Capistrano::Error, "Github remote not found! Add it by executing: git remote add github git@github.com:belgianpolice/internet-platform.git"
+        end
+
         # Push the changes
         if ! system "git push github master"
             raise Capistrano::Error, "Failed to push changes to github!"
