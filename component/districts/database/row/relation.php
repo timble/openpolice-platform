@@ -11,6 +11,11 @@ namespace Nooku\Component\Districts;
 use Nooku\Library;
 
 class DatabaseRowRelation extends Library\DatabaseRowTable
-{   
+{
+    public function save()
+    {
+        $this->id = sha1($this->districts_district_id.$this->streets_street_id.$this->range_start.$this->range_end.$this->range_parity);
 
+        return parent::save();
+    }
 }
