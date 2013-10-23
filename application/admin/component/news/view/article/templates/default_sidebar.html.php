@@ -25,7 +25,7 @@
     <div>
         <label for="created_on"><?= translate('Created on') ?></label>
         <div class="controls">
-            <? // helper('com:articles.date.datetime', array('row' => $article, 'name' => 'created_on')) ?>
+            <input type="datetime-local" name="created_on" value="<?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'Y-m-d\TH:i:s')) ?>" />
         </div>
     </div>
 </fieldset>
