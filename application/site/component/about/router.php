@@ -57,6 +57,7 @@ class AboutRouter extends Library\DispatcherRouter
         unset($query['category']);
         unset($query['id']);
         unset($query['view']);
+        unset($query['sort']);
 
         unset($query['published']);
         unset($query['limit']);
