@@ -22,11 +22,6 @@ class AboutViewArticleHtml extends AboutViewHtml
         $this->getObject('application')->getPathway()->addItem($category->title, $this->getTemplate()->getHelper('route')->category(array('row' => $category)));
         $this->getObject('application')->getPathway()->addItem($article->title, '');
 
-        //Get the attachments
-        if ($article->id && $article->isAttachable()) {
-            $this->attachments($article->getAttachments());
-        }
-
         return parent::render();
     }
 

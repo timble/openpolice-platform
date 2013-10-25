@@ -8,35 +8,46 @@
  */
 ?>
 
-<ktml:module position="left">
-    <?= import('com:categories.view.categories.list.html') ?>
-</ktml:module>
-
 <? foreach ($articles as $article) : ?>
-<article class="article">
-    <? $link = helper('route.article', array('row' => $article)); ?>
-    <h1 class="article__header">
-        <? if($article->fulltext) : ?>
-        <a href="<?= $link ?>">
-            <?= $article->title ?>
-        </a>
-        <? else : ?>
-            <?= $article->title ?>
+    <? if(count($articles) == '1') : ?>
+        <?= import('com:about.view.article.default.html', array('article' => $article)) ?>
+    <? else : ?>
+        <ktml:module position="left">
+            <?= import('com:categories.view.categories.list.html') ?>
+        </ktml:module>
+
+        <article class="article">
+        <? $link = helper('route.article', array('row' => $article)); ?>
+        <h1 class="article__header">
+            <? if($article->fulltext) : ?>
+                <a href="<?= $link ?>">
+                    <?= $article->title ?>
+                </a>
+            <? else : ?>
+                <?= $article->title ?>
+            <? endif; ?>
+        </h1>
+
+        <? if($article->attachments_attachment_id): ?>
+            <? if($article->fulltext) : ?>
+                <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+                    <?= helper('com:attachments.image.thumbnail', array(
+                        'attachment' => $article->attachments_attachment_id,
+                        'attribs' => array('width' => '200', 'align' => 'right'))) ?>
+                </a>
+            <? else : ?>
+                <?= helper('com:attachments.image.thumbnail', array(
+                    'attachment' => $article->attachments_attachment_id,
+                    'attribs' => array('class' => 'article__thumbnail', 'width' => '200', 'align' => 'right'))) ?>
+            <? endif; ?>
+
         <? endif; ?>
-    </h1>
 
-    <? if($article->attachments_attachment_id): ?>
-        <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-            <?= helper('com:attachments.image.thumbnail', array(
-                'attachment' => $article->attachments_attachment_id,
-                'attribs' => array('width' => '200', 'align' => 'right'))) ?>
-        </a>
-    <? endif; ?>
+        <?= $article->introtext ?>
 
-    <?= $article->introtext ?>
-
-    <? if ($article->fulltext) : ?>
-        <a href="<?= $link ?>"><?= translate('Read more') ?></a>
-    <? endif; ?>
-</article>
-<? endforeach; ?>
+        <? if ($article->fulltext) : ?>
+            <a href="<?= $link ?>"><?= translate('Read more') ?></a>
+        <? endif; ?>
+    </article>
+    <? endif ?>
+ <? endforeach; ?>
