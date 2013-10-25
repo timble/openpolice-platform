@@ -23,17 +23,19 @@
     </header>
 
     <? if($article->isStreetable()) : ?>
-        <? if($article->text) : ?>
-        <div class="well" style="float: right; margin-left: 30px">
-            <strong><?= translate('Streets') ?></strong>
-        <? endif ?>
-            <ul>
-            <? foreach ($article->getStreets() as $street) : ?>
-                <li><?= $street->street ?></li>
-            <? endforeach; ?>
-            </ul>
-        <? if($article->text) : ?>
-        </div>
+        <? if(count($streets = $article->getStreets())) : ?>
+            <? if($article->text) : ?>
+            <div class="well" style="float: right; margin-left: 30px">
+                <strong><?= translate('Streets') ?>:</strong>
+            <? endif ?>
+                <ul>
+                <? foreach ($streets as $street) : ?>
+                    <li><?= $street->street ?></li>
+                <? endforeach; ?>
+                </ul>
+            <? if($article->text) : ?>
+            </div>
+            <? endif ?>
         <? endif ?>
     <? endif ?>
 
