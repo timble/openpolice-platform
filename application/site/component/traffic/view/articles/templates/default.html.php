@@ -27,7 +27,7 @@
                     <? if($streets = $this->getObject('com:traffic.model.streets')->article($article->id)->getRowset()->street) : ?>
                         <?= implode(", ", $streets) ?>
                     <? else : ?>
-                        <?= translate('Grondgebied van Politie').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
+                        <?= translate('Territory Police').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
                     <? endif ?>
                 </small>
             </td>

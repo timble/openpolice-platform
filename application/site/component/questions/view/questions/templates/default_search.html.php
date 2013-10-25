@@ -11,7 +11,7 @@
 <div class="well">
     <form action="<?=route('option=com_questions&view=questions&Itemid=36')?>" method="get">
         <div class="form__right">
-            <button type="submit" class="btn btn-primary btn-block" tabindex="2"><?= translate('Zoeken') ?></button>
+            <button type="submit" class="btn btn-primary btn-block" tabindex="2"><?= translate('Search') ?></button>
         </div>
         <div class="form__left">
             <input name="searchword" type="search" value="<?=escape($state->searchword)?>" placeholder="<?=translate('Search')?> ..." tabindex="1"/>

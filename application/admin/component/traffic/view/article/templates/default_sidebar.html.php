@@ -14,7 +14,7 @@
             <?= translate('Start on') ?>
         </label>
         <div>
-            <?= helper('com:articles.date.datetime', array('row' => $article, 'name' => 'start_on', 'type' => 'date')) ?>
+            <input type="date" name="start_on" value="<?= helper('date.format', array('date'=> $article->start_on, 'format' => 'Y-m-d')) ?>" />
         </div>
     </div>
     <div>
@@ -22,7 +22,7 @@
             <?= translate('End on') ?>
         </label>
         <div>
-            <?= helper('com:articles.date.datetime', array('row' => $article, 'name' => 'end_on', 'type' => 'date')) ?>
+            <input type="date" name="end_on" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'Y-m-d')) ?>" />
         </div>
     </div>
 </fieldset>

@@ -23,8 +23,8 @@
 		<div class="scrollable">
 			<fieldset>
 				<legend><?= translate( 'Relation' ); ?></legend>
-				<div>
-				    <label for="">
+				<div style="height: 50px">
+				    <label for="districts_district_id">
 				    	<?= translate( 'District' ); ?>
 				    </label>
 				    <div>
@@ -33,7 +33,7 @@
 				    </div>
 				</div>
 				<div>
-				    <label for="">
+				    <label for="streets_street_id">
 				    	<?= translate( 'Street' ); ?>
 				    </label>
 				    <div>

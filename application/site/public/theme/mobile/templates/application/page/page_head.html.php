@@ -13,7 +13,7 @@
     <title><?= title() ?></title>
 
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name=”mobile-web-app-capable” content=”yes”>
 
@@ -45,6 +45,8 @@
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
     <script type="text/javascript">
         var _gaq = _gaq || [];
+        var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+        _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
         _gaq.push(['_setAccount', '<?= $analytics ?>']);
         _gaq.push(['_setCookiePath', '/<?= $site ?>/']);
         _gaq.push(['_trackPageview']);
