@@ -668,77 +668,6 @@ address {
   line-height: 22px;
 }
 
-/* line 9, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnails {
-  margin-left: -30px;
-  list-style: none;
-  *zoom: 1;
-}
-/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.thumbnails:before, .thumbnails:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.thumbnails:after {
-  clear: both;
-}
-
-/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.row-fluid .thumbnails {
-  margin-left: 0;
-}
-
-/* line 20, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnails > li {
-  float: left;
-  margin-bottom: 22px;
-  margin-left: 30px;
-}
-
-/* line 27, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail, .article__thumbnail {
-  display: block;
-  padding: 4px;
-  line-height: 22px;
-  border: 1px solid #ddd;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-/* line 38, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-a.thumbnail:hover, a.article__thumbnail:hover,
-a.thumbnail:focus,
-a.article__thumbnail:focus {
-  border-color: #004fa3;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-  -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-}
-
-/* line 44, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail > img, .article__thumbnail > img {
-  display: block;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 50, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_thumbnails.scss */
-.thumbnail .caption, .article__thumbnail .caption {
-  padding: 9px;
-  color: #555555;
-}
-
 /* line 11, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
 .media,
 .media-body {
@@ -2473,6 +2402,78 @@ ul.column--double, ul.column--triple, ul.column--quad {
   .table thead tr th,
   .table thead tr td {
     border-top: 0;
+  }
+}
+/* line 6, molecules/_thumbnails.scss */
+.thumbnails {
+  margin-left: -30px;
+  list-style: none;
+  *zoom: 1;
+}
+/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
+.thumbnails:before, .thumbnails:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
+.thumbnails:after {
+  clear: both;
+}
+
+/* line 13, molecules/_thumbnails.scss */
+.thumbnails > li {
+  float: left;
+  margin-bottom: 22px;
+  margin-left: 30px;
+}
+
+/* line 20, molecules/_thumbnails.scss */
+.thumbnail, .article__thumbnail {
+  display: block;
+  padding: 4px;
+  line-height: 22px;
+  border: 1px solid #ddd !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+/* line 32, molecules/_thumbnails.scss */
+a.thumbnail:hover, a.article__thumbnail:hover,
+a.thumbnail:focus,
+a.article__thumbnail:focus {
+  border-color: #004fa3 !important;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+  -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+}
+
+/* line 38, molecules/_thumbnails.scss */
+.thumbnail > img, .article__thumbnail > img {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 44, molecules/_thumbnails.scss */
+.thumbnail .caption, .article__thumbnail .caption {
+  padding: 9px;
+  color: #555555;
+}
+
+@media screen and (min-width: 767px) {
+  /* line 51, molecules/_thumbnails.scss */
+  .row-fluid .thumbnails {
+    margin-left: 0;
   }
 }
 /* line 1, molecules/_typography.scss */

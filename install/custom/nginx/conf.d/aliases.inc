@@ -338,8 +338,8 @@ location ~ "^/(beernem|houtsche|oostkamp|zedelgem)(?:/.*)?$" {
 	rewrite ^ /5447 permanent;
 }
 
-location ~ "^/(5373|beringen|ham|tessenderlo)(?:/.*)?$" {
-	rewrite ^ http://www.politie-bht.be permanent;
+location ~ "^/(beringen|ham|tessenderlo)(?:/.*)?$" {
+	rewrite ^ /5373 permanent;
 }
 
 location ~ "^/(5286|berloz|crisnee|donceel|faimes|fexhe-le-haut-clocher|geer|hesbaye|oreye|remicourt|waremme)(?:/.*)?$" {
