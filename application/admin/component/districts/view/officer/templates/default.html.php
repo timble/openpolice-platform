@@ -19,7 +19,6 @@
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form">
-	<input type="hidden" name="params[show_avatar]" value="0" />
 	<div class="main">
 		<div class="scrollable">
 				<fieldset>
@@ -80,7 +79,7 @@
 					    	<?= translate( 'E-mail' ); ?>
 					    </label>
 					    <div>
-					        <input type="text" name="email" size="32" maxlength="250" value="<?= $officer->email; ?>" />
+					        <input type="email" name="email" size="32" maxlength="250" value="<?= $officer->email; ?>" />
 					    </div>
 					</div>
 				</fieldset>
