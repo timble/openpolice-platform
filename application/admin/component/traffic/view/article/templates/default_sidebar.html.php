@@ -14,7 +14,7 @@
             <?= translate('Start on') ?>
         </label>
         <div>
-            <input type="date" name="start_on" value="<?= helper('date.format', array('date'=> $article->start_on, 'format' => 'Y-m-d')) ?>" />
+            <input type="date" name="start_on" id="start_on" class="required validate-before-date beforeElement:'end_on'" value="<?= helper('date.format', array('date'=> $article->start_on, 'format' => 'Y-m-d')) ?>" />
         </div>
     </div>
     <div>
@@ -22,7 +22,7 @@
             <?= translate('End on') ?>
         </label>
         <div>
-            <input type="date" name="end_on" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'Y-m-d')) ?>" />
+            <input type="date" name="end_on" id="end_on" class="required validate-after-date afterElement:'start_on'" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'Y-m-d')) ?>" />
         </div>
     </div>
 </fieldset>
@@ -33,7 +33,7 @@
 <? if($article->isStreetable()) : ?>
     <fieldset>
         <legend><?= translate('Streets') ?></legend>
-        <?= helper('com:streets.listbox.streets', array('selected' => $article->getStreets()->streets_street_id, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
+        <?= helper('com:streets.listbox.streets', array('selected' => $article->getStreets()->streets_street_id, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'required select-streets', 'style' => 'width:100%;'))); ?>
         <script data-inline> $jQuery(".select-streets").select2(); </script>
     </fieldset>
 <? endif ?>
