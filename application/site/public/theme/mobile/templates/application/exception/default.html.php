@@ -14,14 +14,15 @@
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 <head>
     <base href="<?= url(); ?>" />
-    <title><?= translate('Error').': '.$code; ?></title>
+    <title><?= $code; ?> - <?= translate('Page not found') ?></title>
 
+    <ktml:title>
     <ktml:style>
     <ktml:script>
 
     <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-        <style src="assets://application/css/default.css" />
+    <style src="assets://application/css/default.css" />
 
     <script>
         function toggleBacktrace() {
@@ -35,6 +36,21 @@
             }
         }
     </script>
+
+    <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', '<?= $analytics ?>']);
+        _gaq.push(['_setCookiePath', '/<?= $site ?>/']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <?php endif; ?>
 </head>
 
 <body>
@@ -77,10 +93,13 @@
                 <img class="thumbnail" src="assets://application/images/error.jpg" />
             </div>
         </div>
+        <div class="row-fluid text-center">
+            <a class="btn btn-large" href="/<?= $site ?>" title="<?= translate('Home Page'); ?>"><?= translate('Home Page'); ?></a>
+        </div>
         <div class="row-fluid">
             <div class="span12">
                 <div class="backtrace">
-                    <button id="backtrace__button" class="btn" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>">More</button>
+                    <button id="backtrace__button" class="btn btn-small btn-link" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>">More</button>
                 </div>
                 <div id="backtrace__info" class="is-hidden">
                     <? if(count($trace)) : ?>
