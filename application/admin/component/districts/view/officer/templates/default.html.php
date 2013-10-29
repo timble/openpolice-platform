@@ -28,7 +28,7 @@
 					    	<?= translate( 'Firstname' ); ?>
 					    </label>
 					    <div>
-					        <input class="required" type="text" name="firstname" size="32" maxlength="250" value="<?= $officer->firstname; ?>" />
+					        <input type="text" name="firstname" maxlength="250" class="required validate-alpha" value="<?= $officer->firstname; ?>" />
 					    </div>
 					</div>
 					<div>
@@ -36,7 +36,7 @@
 					    	<?= translate( 'Lastname' ); ?>
 					    </label>
 					    <div>
-					        <input class="required" type="text" name="lastname" size="32" maxlength="250" value="<?= $officer->lastname; ?>" />
+					        <input type="text" name="lastname" maxlength="250" class="required validate-alpha" value="<?= $officer->lastname; ?>" />
 					    </div>
 					</div>
                     <div>
@@ -44,7 +44,7 @@
                             <?= translate( 'Number' ); ?>
                         </label>
                         <div>
-                            <input class="required" type="text" name="id" size="32" maxlength="250" value="<?= $officer->id; ?>" />
+                            <input type="text" name="id" maxlength="250" class="required validate-integer" value="<?= $officer->id; ?>" />
                         </div>
                     </div>
 					<div>
@@ -52,7 +52,7 @@
 					    	<?= translate( 'Position' ); ?>
 					    </label>
 					    <div>
-					        <input type="text" name="position" size="32" maxlength="250" value="<?= $officer->position; ?>" />
+					        <input type="text" name="position" maxlength="250" class="required validate-alpha" value="<?= $officer->position; ?>" />
 					    </div>
 					</div>
 				</fieldset>
@@ -63,7 +63,7 @@
 					    	<?= translate( 'Phone' ); ?>
 					    </label>
 					    <div>
-					        <input type="text" name="phone" size="32" maxlength="250" value="<?= $officer->phone; ?>" />
+					        <input type="text" name="phone" maxlength="250" class="validate-digits" value="<?= $officer->phone; ?>" />
 					    </div>
 					</div>
 					<div>
@@ -71,7 +71,7 @@
 					    	<?= translate( 'Mobile' ); ?>
 					    </label>
 					    <div>
-					        <input type="text" name="mobile" size="32" maxlength="250" value="<?= $officer->mobile; ?>" />
+					        <input type="text" name="mobile" maxlength="250" class="validate-digits" value="<?= $officer->mobile; ?>" />
 					    </div>
 					</div>
 					<div>
@@ -79,7 +79,7 @@
 					    	<?= translate( 'E-mail' ); ?>
 					    </label>
 					    <div>
-					        <input type="email" name="email" size="32" maxlength="250" value="<?= $officer->email; ?>" />
+					        <input type="email" name="email" maxlength="250" class="validate-email" value="<?= $officer->email; ?>" />
 					    </div>
 					</div>
 				</fieldset>

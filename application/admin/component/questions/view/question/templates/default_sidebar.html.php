@@ -1,3 +1,12 @@
+<script>
+    // Set default value for categories radiolist
+    $jQuery(document).ready(
+        function(){
+            $jQuery('fieldset[name=categories_category_id] label:first-of-type input:radio').prop('checked', true);
+        }
+    );
+</script>
+
 <fieldset>
     <legend><?= translate('Publish') ?></legend>
     <div>
