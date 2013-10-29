@@ -7,7 +7,6 @@
     );
 </script>
 
-
 <fieldset>
     <legend><?= translate('Publish') ?></legend>
     <div>
