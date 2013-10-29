@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="Form layout">
+        <message>
+            <![CDATA[TOPIC FORM LAYOUT DESC]]>
+        </message>
+    </layout>
+    <state>
+        <name>Form layout</name>
+        <description>TOPICS FORM LAYOUT DESC</description>
+        <params>
+        </params>
+    </state>
+</metadata>
