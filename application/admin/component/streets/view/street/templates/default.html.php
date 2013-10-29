@@ -28,7 +28,7 @@
 			<fieldset>
 				<legend><?= translate( 'Information' ); ?>:</legend>
                 <div>
-                    <label for="name">
+                    <label for="streets_street_id">
                         <?= translate( 'CRAB' ); ?>
                     </label>
                     <div>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div>
-                    <label for="name">
+                    <label for="islp">
                         <?= translate( 'ISLP' ); ?>
                     </label>
                     <div>
