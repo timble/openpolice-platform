@@ -33,7 +33,7 @@
                         <?= translate( 'ID' ); ?>
                     </label>
                     <div>
-                        <input class="required" type="text" name="id" size="32" maxlength="250" value="<?= $district->id; ?>" />
+                        <input type="text" name="id" maxlength="250" class="required" value="<?= $district->id; ?>" />
                     </div>
                 </div>
                 <div>
@@ -49,7 +49,7 @@
 				    	<?= translate( 'Officers' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers', 'style' => 'width:100%;'))); ?>
+				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers required', 'style' => 'width:100%;'))); ?>
                         <script data-inline> $jQuery(".select-officers").select2(); </script>
                     </div>
 				</div>

@@ -40,7 +40,7 @@
                         <?= translate( 'ISLP' ); ?>
                     </label>
                     <div>
-                        <input type="text" name="islp" value="<?= $street->islp ?>" />
+                        <input type="text" name="islp" class="required validate-integer" value="<?= $street->islp ?>" />
                     </div>
                 </div>
 			</fieldset>
