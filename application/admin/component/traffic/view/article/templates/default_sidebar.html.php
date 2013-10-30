@@ -32,7 +32,7 @@
             <?= translate('End on') ?>
         </label>
         <div>
-            <input type="date" name="end_on" id="end_on" class="required validate-after-date afterElement:'start_on'" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'Y-m-d')) ?>" />
+            <input type="date" name="end_on" class="required validate-after-date afterElement:'start_on'" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'Y-m-d')) ?>" />
         </div>
     </div>
 </fieldset>

@@ -8,15 +8,18 @@
  */
 ?>
 
+<? if(count($articles) > '1') : ?>
+<ktml:module position="left">
+    <?= import('com:categories.view.categories.list.html') ?>
+</ktml:module>
+<? endif ?>
+
 <? foreach ($articles as $article) : ?>
     <? if(count($articles) == '1') : ?>
         <?= import('com:about.view.article.default.html', array('article' => $article)) ?>
     <? else : ?>
-        <ktml:module position="left">
-            <?= import('com:categories.view.categories.list.html') ?>
-        </ktml:module>
 
-        <article class="article">
+    <article class="article">
         <? $link = helper('route.article', array('row' => $article)); ?>
         <h1 class="article__header">
             <? if($article->fulltext) : ?>
