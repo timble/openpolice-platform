@@ -52,7 +52,7 @@
 					    	<?= translate( 'Position' ); ?>
 					    </label>
 					    <div>
-					        <input type="text" name="position" maxlength="250" class="required validate-alpha" value="<?= $officer->position; ?>" />
+					        <input type="text" name="position" maxlength="250" class="validate-alpha" value="<?= $officer->position; ?>" />
 					    </div>
 					</div>
 				</fieldset>
