@@ -35,8 +35,8 @@ if(date('j') == date('t'))
 
 // Step 4 - clean-up backups
 $backup->cleanup('databases'.DS.'daily', 7); // remove dumps older than 7 days
-$backup->cleanup('databases'.DS.'weekly', 62); // remove weekly rotations older than 2 months
-$backup->cleanup('databases'.DS.'monthly', 365); // remove monthly rotations older than 1 year
+$backup->cleanup('databases'.DS.'weekly', 31); // remove weekly rotations older than 1 month
+$backup->cleanup('databases'.DS.'monthly', 62); // remove monthly rotations older than 2 months
 
 /**
  * Backup class
@@ -146,7 +146,7 @@ class Backup
         $source = $this->_getPath($source);
         $filename = $this->_getPath($filename);
 
-        $cmd = 'cd '.$source.' && tar -cvzf '.$filename.' `ls *.'.$src_extension.'`';
+        $cmd = 'cd '.$source.' && tar -cvzf '.$filename.' `ls platform.*.'.$src_extension.'`';
 
         return exec($cmd);
     }
@@ -172,7 +172,7 @@ class Backup
         {
             while(($file = readdir($handle)) !== false)
             {
-                if($file == '.' || $file == '..') {
+                if($file == '.' || $file == '..' || substr($file, 0, 8) != 'platform') {
                     continue;
                 }
 
