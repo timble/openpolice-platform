@@ -146,7 +146,7 @@ class Backup
         $source = $this->_getPath($source);
         $filename = $this->_getPath($filename);
 
-        $cmd = 'cd '.$source.' && tar -cvzf '.$filename.' `ls platform.*.'.$src_extension.'`';
+        $cmd = 'cd '.$source.' && tar -cvzf '.$filename.' `ls platform*.'.$src_extension.'`';
 
         return exec($cmd);
     }
