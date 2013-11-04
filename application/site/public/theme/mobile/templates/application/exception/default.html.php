@@ -14,14 +14,15 @@
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 <head>
     <base href="<?= url(); ?>" />
-    <title><?= translate('Error').': '.$code; ?></title>
+    <title><?= $code; ?> - <?= translate('Page not found') ?></title>
 
+    <ktml:title>
     <ktml:style>
     <ktml:script>
 
     <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-        <style src="assets://application/css/default.css" />
+    <style src="assets://application/css/default.css" />
 
     <script>
         function toggleBacktrace() {
@@ -77,10 +78,13 @@
                 <img class="thumbnail" src="assets://application/images/error.jpg" />
             </div>
         </div>
+        <div class="row-fluid text-center">
+            <a class="btn btn-large" href="/<?= $site ?>" title="<?= translate('Home Page'); ?>"><?= translate('Home Page'); ?></a>
+        </div>
         <div class="row-fluid">
             <div class="span12">
                 <div class="backtrace">
-                    <button id="backtrace__button" class="btn" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>">More</button>
+                    <button id="backtrace__button" class="btn btn-small btn-link" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>">More</button>
                 </div>
                 <div id="backtrace__info" class="is-hidden">
                     <? if(count($trace)) : ?>
