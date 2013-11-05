@@ -14,16 +14,6 @@
 <!--
 <script src="assets://js/koowa.js" />
 -->
-<script>
-    if(Form && Form.Validator) {
-        Form.Validator.add('validate-unsigned', {
-            errorMsg: Form.Validator.getMsg("required"),
-            test: function(field){
-                return field.get('value').toInt() >= 0;
-            }
-        });
-    }
-</script>
 
 <script>
     window.addEvent('domready', (function(){
@@ -44,7 +34,6 @@
 <? endif ?>
 
 <form action="" method="post" id="article-form" class="-koowa-form">
-    <input type="hidden" name="access" value="0" />
     <input type="hidden" name="published" value="0" />
 
     <div class="main">
@@ -61,5 +50,3 @@
         <?= import('default_sidebar.html'); ?>
     </div>
 </form>
-
-<script data-inline> $jQuery(".select-tags").select2(); </script>

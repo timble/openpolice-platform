@@ -18,8 +18,7 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
-<form action="" method="post" id="question-form" class="-koowa-form" enctype="multipart/form-data">
-	<input type="hidden" name="access" value="0" />
+<form action="" method="post" class="-koowa-form" enctype="multipart/form-data">
 	<input type="hidden" name="published" value="0" />
 	
 	<div class="main">
