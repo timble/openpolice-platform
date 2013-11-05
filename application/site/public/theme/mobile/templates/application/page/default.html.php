@@ -99,7 +99,7 @@ $language_short = $language_short[0];
     <div class="container-copyright">
     <div class="row-fluid">
         <div class="span6 alpha">
-            <a onclick="_gaq.push(['_trackEvent', 'Outbound Link', 'Click', 'Twitter']);" href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> | <a onclick="_gaq.push(['_trackEvent', 'Outbound Link', 'Click', 'Facebook']);" href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
+            <a onclick="_gaq.push(['_trackEvent', 'Outbound Link', 'Social', 'Twitter link in footer']);" href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> | <a onclick="_gaq.push(['_trackEvent', 'Outbound Link', 'Social', 'Facebook link in footer']);" href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
         <div class="span6 copyright">
             © 2013 <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
