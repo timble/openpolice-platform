@@ -35,7 +35,7 @@
                     <?= $article->introtext ?>
 
                     <? if ($article->fulltext) : ?>
-                        <a class="ga-sticky-link" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= translate('Read more') ?></a>
+                        <a class="ga-sticky-readmore" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= translate('Read more') ?></a>
                     <? endif; ?>
                 </div>
             </article>
