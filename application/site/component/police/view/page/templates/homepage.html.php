@@ -15,7 +15,7 @@
         <? foreach (object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
             <article>
                 <header class="article__header">
-                    <h1><a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a></h1>
+                    <h1><a id="ga-sticky-title" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= $article->title ?></a></h1>
                     <span class="timestamp">
                         <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'))) ?>
                     </span>
@@ -23,7 +23,7 @@
 
                 <div class="clearfix">
                     <? if($article->attachments_attachment_id) : ?>
-                    <a class="article__thumbnail" tabindex="-1" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
+                    <a id="ga-sticky-image" class="article__thumbnail" tabindex="-1" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
                         <figure>
                             <?= helper('com:attachments.image.thumbnail', array(
                                 'attachment' => $article->attachments_attachment_id,
@@ -35,7 +35,7 @@
                     <?= $article->introtext ?>
 
                     <? if ($article->fulltext) : ?>
-                        <a href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= translate('Read more') ?></a>
+                        <a class="ga-sticky-link" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>"><?= translate('Read more') ?></a>
                     <? endif; ?>
                 </div>
             </article>
