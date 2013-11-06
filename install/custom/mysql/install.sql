@@ -1,3 +1,14 @@
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
 # Dump of table about
 # ------------------------------------------------------------
 
@@ -60,6 +71,7 @@ CREATE TABLE `activities` (
   KEY `row` (`row`(255)),
   KEY `ip` (`ip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 
 # Dump of table articles
@@ -1174,7 +1186,7 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`users_user_id`, `name`, `email`, `enabled`, `send_email`, `users_role_id`, `last_visited_on`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `activation`, `params`, `uuid`)
 VALUES
-	(1,'Administrator','admin@localhost.home',1,1,25,'2013-11-06 09:42:40',NULL,NULL,1,'2013-11-06 09:42:40',NULL,NULL,'','timezone=\n\n','3b8abc10-b038-11e2-9296-102175e93138');
+	(1,'Administrator','admin@localhost.home',1,1,25,'2013-11-05 14:23:08',NULL,NULL,1,'2013-11-05 14:23:08',NULL,NULL,'','timezone=\n\n','3b8abc10-b038-11e2-9296-102175e93138');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1303,13 +1315,23 @@ CREATE TABLE `users_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
 # Create data database
 # ------------------------------------------------------------
 
 CREATE DATABASE `data`;
 
 -- Create syntax for TABLE 'police_municipalities'
-CREATE TABLE `data`.police_municipalities` (
+CREATE TABLE `data`.`police_municipalities` (
   `police_municipality_id` int(20) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   `police_zone_id` int(11) NOT NULL DEFAULT '0',
