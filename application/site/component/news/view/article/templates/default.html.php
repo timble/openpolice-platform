@@ -11,7 +11,14 @@
 <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
 
 <ktml:module position="left">
-    <?= import('com:police.view.page.homepage_shortcuts.html', array('class' => 'sidebar__element')) ?>
+    <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
+
+    <? foreach($modules as $module) : ?>
+        <div class="sidebar__element">
+            <h3><?= $module->title ?></h3>
+            <?= $module->content ?>
+        </div>
+    <? endforeach ?>
 </ktml:module>
 
 <script type="text/javascript">var switchTo5x=true;</script>
