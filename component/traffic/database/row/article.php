@@ -17,13 +17,13 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         // If created_on is modified then convert it to GMT/UTC
         if ($this->isModified('start_on'))
         {
-            $this->start_on = gmdate('Y-m-d H:i:s', strtotime($this->start_on));
+            $this->start_on = gmdate('Y-m-d', strtotime($this->start_on));
         }
 
         // If created_on is modified then convert it to GMT/UTC
         if ($this->isModified('end_on'))
         {
-            $this->end_on = gmdate('Y-m-d H:i:s', strtotime($this->end_on));
+            $this->end_on = gmdate('Y-m-d', strtotime($this->end_on));
         }
 
         $result = parent::save();
