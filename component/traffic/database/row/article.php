@@ -24,7 +24,7 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
             $date = new \DateTime($this->start_on);
             $date->modify($offset.' hours');
 
-            $this->start_on = $date->format('Y-m-d H:i:s');
+            $this->start_on = $date->format('Y-m-d');
         }
 
         // If created_on is modified then convert it to GMT/UTC
@@ -37,7 +37,7 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
             $date = new \DateTime($this->end_on);
             $date->modify($offset.' hours');
 
-            $this->end_on = $date->format('Y-m-d H:i:s');
+            $this->end_on = $date->format('Y-m-d');
         }
 
         $result = parent::save();
