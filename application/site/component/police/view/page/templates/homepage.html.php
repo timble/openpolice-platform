@@ -71,6 +71,10 @@
     </div>
 </div>
 
-<div class="row-fluid">
-    <?= import('homepage_shortcuts.html', array('class' => 'span3')) ?>
-</div>
+<ktml:modules position="quicklinks">
+    <div class="container-quicklinks">
+        <div class="row-fluid">
+            <ktml:modules:content>
+        </div>
+    </div>
+</ktml:modules>
