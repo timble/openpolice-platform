@@ -30,14 +30,7 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         // If created_on is modified then convert it to GMT/UTC
         if ($this->isModified('created_on'))
         {
-            $timezone = new \DateTimeZone(date_default_timezone_get());
-            $offset = $timezone->getOffset(new \DateTime("now")); // Offset in seconds
-            $offset = ($offset < 0 ? '-' : '+').round($offset/3600); // prints "+11"
-
-            $date = new \DateTime($this->created_on);
-            $date->modify($offset.' hours');
-
-            $this->created_on = $date->format('Y-m-d H:i:s');
+            $this->created_on = gmdate('Y-m-d H:i:s', strtotime($this->created_on));
         }
 
         if(preg_match($pattern, $text))
