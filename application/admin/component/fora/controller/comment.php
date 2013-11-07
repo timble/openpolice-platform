@@ -8,7 +8,7 @@
  */
 
 use Nooku\Library;
-use Nooku\Component\Comments;
+
 
 /**
  * Category Controller Class
@@ -17,7 +17,7 @@ use Nooku\Component\Comments;
  * @package     Nooku_Server
  * @subpackage  Fora
  */
-class ForaControllerComment extends Comments\ControllerComment
+class ForaControllerComment extends CommentsControllerComment
 {
     protected function _initialize(Library\ObjectConfig $config)
     {
