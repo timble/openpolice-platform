@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Nooku Framework - http://www.nooku.org
  *
@@ -8,72 +8,44 @@
  */
 ?>
 
-<!--
-<script src="assets://js/koowa.js" />
-<style src="assets://css/koowa.css" />
--->
+<div id="fora-topics-default">
+    <div class="well well-small">
+        <form action="" method="get" name="search">
+            <input name="search" type="text" placeholder="<?= translate('Search the forums ..') ?>" value="<?= $state->search ? escape($state->search) : null ?>" autofocus="autofocus" />
+            <input class="btn primary" type="submit" value="Search" disabled="disabled" />
+        </form>
+    </div>
 
-<ktml:module position="actionbar">
-    <ktml:toolbar type="actionbar">
-</ktml:module>
+    <div class="well well-small">
+        <div class="well__content">
 
-<ktml:module position="sidebar">
-    <?= import('default_sidebar.html'); ?>
-</ktml:module>
+            <div class="media__items">
+                <? foreach($topics as $topic) : ?>
+                    <?= import('default_items.html', array('topic' => $topic)); ?>
+                <? endforeach ?>
+            </div>
 
-<form action="" method="get" class="-koowa-grid">
-    <?= import('default_scopebar.html'); ?>
-    <table>
-        <thead>
-        <tr>
-            <th width="1">
-                <?= helper('grid.checkall'); ?>
-            </th>
-            <th width="1">
+            <? if(!$total) : ?>
+                <? if(!$state->search) : ?>
+                    <p><?= translate('This forum does not contain any topics yet') ?>.</p>
 
-            </th>
-            <th>
-                <?= helper('grid.sort', array('column' => 'title')); ?>
-            </th>
-            <th>
-                <?= helper('grid.sort', array('column' => 'forum_title', 'title' => 'Forum')); ?>
-            </th>
-            <th>
-                <?= helper('grid.sort', array('column' => 'last_activity_on', 'title' => 'Last modified')); ?>
-            </th>
-        </tr>
-        </thead>
+                        <a class="btn btn-primary btn-small" href="<?= route('view=topic&layout=form&forum='.$forum->id) ?>">
+                            <?= translate('Start a new').' '.translate($forum->type) ?>
+                        </a>
 
-        <tfoot>
-        <tr>
-            <td colspan="20">
-                <?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
-            </td>
-        </tr>
-        </tfoot>
+                <?else: ?>
+                    <p><?= translate('Your search') ?> - <strong><?= $state->search ?></strong> - <?= translate('did not match anything inside our forums') ?>.</p>
 
-        <tbody>
-        <? foreach ($topics as $topic) : ?>
-            <tr>
-                <td align="center">
-                    <?= helper('grid.checkbox', array('row' => $topic))?>
-                </td>
-                <td align="center">
-                    <?= helper('grid.enable', array('row' => $topic, 'field' => 'published')) ?>
-                </td>
-                <td>
-                    <a href="<?= route('view=topic&id='.$topic->id); ?>">
-                        <?= escape($topic->title); ?>
-                    </a>
-                </td>
-                <td>
-                    <?= $topic->forum_title; ?>
-                </td>
-                <td>
-                    <?= helper('date.humanize', array('date' => $topic->last_activity_on)) ?> <?= translate('by') ?> <?= $topic->last_activity_by_name; ?>
-                </td>
-            </tr>
-        <? endforeach; ?>
-        </tbody>
-    </table>
-</form>
+                    <p><?= translate('Suggestions') ?>:</p>
+                    <ul>
+                        <li><?= translate('Make sure all words are spelled correctly') ?>;</li>
+                        <li><?= translate('Try different keywords') ?>;</li>
+                        <li><?= translate('Try more generic keywords') ?>.</li>
+                    </ul>
+                <? endif; ?>
+            <? endif; ?>
+
+        </div>
+
+    </div>
+</div>

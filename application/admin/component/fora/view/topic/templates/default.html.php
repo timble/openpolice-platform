@@ -1,44 +1,99 @@
-<?php
-/**
- * Nooku Framework - http://www.nooku.org
- *
- * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
- * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
- */
-?>
+<script src="media://lib_koowa/js/koowa.js" />
+<script src="media://com_fora/js/subscribe.js" />
 
-<?= helper('behavior.keepalive') ?>
-<?= helper('behavior.validator') ?>
 
-<!--
-<script src="assets://js/koowa.js" />
--->
+<script>
+    window.addEvent('domready', function() {
 
-<ktml:module position="actionbar">
-    <ktml:toolbar type="actionbar">
-</ktml:module>
+        SyntaxHighlighter.autoloader(
+            'bash shell             media://com_fora/syntaxhighlighter/js/shBrushBash.js',
+            'css                    media://com_fora/syntaxhighlighter/js/shBrushCss.js',
+            'js jscript javascript  media://com_fora/syntaxhighlighter/js/shBrushJScript.js',
+            'php                    media://com_fora/syntaxhighlighter/js/shBrushPhp.js',
+            'text plain             media://com_fora/syntaxhighlighter/js/shBrushPlain.js',
+            'sql                    media://com_fora/syntaxhighlighter/js/shBrushSql.js',
+            'xml xhtml xslt html    media://com_fora/syntaxhighlighter/js/shBrushXml.js'
+        );
 
-<form action="" method="post" id="fora-topic-form" class="-koowa-form">
-    <input type="hidden" name="id" value="<?= $topic->id; ?>" />
-    <input type="hidden" name="published" value="0" />
-    <input type="hidden" name="commentable" value="0" />
+        SyntaxHighlighter.defaults['class-name'] = 'highlight';
+        SyntaxHighlighter.all();
 
-    <div class="main">
-        <div class="title">
-            <input class="required" type="text" name="title" maxlength="255" value="<?= $topic->title ?>" placeholder="<?= translate('Title') ?>" />
-            <div class="slug">
-                <span class="add-on"><?= translate('Slug'); ?></span>
-                <input type="text" name="slug" maxlength="255" value="<?= $topic->slug ?>" />
+        <? if($topic->discussible): ?>
+        new Fora.Subscribe({
+            holder: 'fora-topic-default',
+            url: '<?= html_entity_decode(route('view=subscription&type=topic&row='.$topic->id.'&user_id='.JFactory::getUser()->id)) ?>',
+            data: {
+                action: '<?= $subscribed ? 'delete' : 'add' ?>',
+                type: 'topic',
+                row: '<?= $topic->id ?>',
+                user_id: '<?= $this->getUser()->getId() ?>',
+                _token: '<?= JUtility::getToken() ?>'
+            }
+        });
+        <? endif; ?>
+    });
+</script>
+
+<div id="fora-topic-default" class="span9">
+    <div class="well well-small">
+        <div class="well__frame">
+            <h1 class="well__heading well__heading--left"><?= escape($topic->title) ?></h1>
+            <div class="well__toolbar">
+                <div class="btn-group">
+                    <? if($topic->created_by == $this->getObject('user')->getId()) : ?>
+                        <a class="btn btn-small" href="<?= route('layout=form&id='.$topic->id) ?>">Edit</a>
+                    <? endif ?>
+
+                        <button type="button" class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="modal" href="<?=  route('view=categories&topic='.$topic->id.'&layout=select&tmpl=component') ?>" rel="{size: {x:600, y:450}}"><?= translate('Move') ?></a></li>
+                            <li><a onclick="javascript: var form = $('form-delete'); if(form.onsubmit()) { form.submit(); }"><?= translate('Delete') ?></a></li>
+                        </ul>
+                        <form action="" method="POST" class="-koowa-form" id="form-delete" onsubmit="return confirm('<?= addslashes(translate('Are you sure you want to delete this topic?')) ?>');">
+                            <input type="hidden" name="action" value="delete" />
+                        </form>
+
+                </div>
+                <? if($topic->discussible) : ?>
+                    <button type="button" class="btn btn-small subscribe <?= $subscribed ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription">
+                        <i class="icon-star"></i>
+                    </button>
+                <? endif ?>
             </div>
         </div>
+        <div class="well__content">
+            <?= $topic->text ?>
+            <hr />
+            <div class="row-fluid">
+                <div class="muted pull-right" style="line-height: 46px;">
+                    <?//= import('default_vote'); ?>
+                </div>
+            </div>
 
-        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $topic->text, 'toolbar' => 'basic')) ?>
+        </div>
     </div>
+    <form action="<?= route('&view=comment&row='.$topic->id.'&table=fora') ?>" method="post">
+        <input type="hidden" name="row" value="<?= $topic->id ?>" />
+        <input type="hidden" name="table" value="fora" />
 
-    <div class="sidebar">
-        <?= import('default_sidebar.html'); ?>
-    </div>
-</form>
+        <textarea type="text" name="text" placeholder="<?= translate('Add new comment here ...') ?>" id="new-comment-text"></textarea>
+        <br />
+        <input class="button" type="submit" value="<?= translate('Submit') ?>"/>
+    </form>
+    <? //if($forum->type == 'issue'): ?>
+        <?//= @template('default_note') ?>
+    <? //endif; ?>
+    <? foreach($comments as $comment) :?>
+        <div class="comment">
+            <div class="comment-header">
+                <?= $comment->created_by == object('user')->id ? translate('You') : $comment->created_by_name ?>&nbsp;<?= translate('wrote') ?>
+                <time datetime="<?= $comment->created_on ?>" pubdate><?= helper('date.humanize', array('date' => $comment->created_on)) ?></time>
+            </div>
+            <p><?= escape($comment->text) ?></p>
+        </div>
+    <? endforeach ?>
 
-<script data-inline> $jQuery(".select-forums").select2(); </script>
+</div>
+

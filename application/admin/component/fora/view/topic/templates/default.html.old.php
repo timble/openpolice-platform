@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Nooku Framework - http://www.nooku.org
  *
@@ -8,33 +8,37 @@
  */
 ?>
 
+<?= helper('behavior.keepalive') ?>
 <?= helper('behavior.validator') ?>
 
 <!--
 <script src="assets://js/koowa.js" />
-<style src="assets://css/koowa.css" />
 -->
 
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
-<form action="" method="post" id="fora-forum-form" class="-koowa-form">
-    <input type="hidden" name="id" value="<?= $forum->id; ?>" />
+<form action="" method="post" id="fora-topic-form" class="-koowa-form">
+    <input type="hidden" name="id" value="<?= $topic->id; ?>" />
     <input type="hidden" name="published" value="0" />
+    <input type="hidden" name="commentable" value="0" />
 
     <div class="main">
         <div class="title">
-            <input class="required" type="text" name="title" maxlength="255" value="<?= $forum->title ?>" placeholder="<?= translate('Title') ?>" />
+            <input class="required" type="text" name="title" maxlength="255" value="<?= $topic->title ?>" placeholder="<?= translate('Title') ?>" />
             <div class="slug">
                 <span class="add-on"><?= translate('Slug'); ?></span>
-                <input type="text" name="slug" maxlength="255" value="<?= $forum->slug ?>" />
+                <input type="text" name="slug" maxlength="255" value="<?= $topic->slug ?>" />
             </div>
         </div>
-        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $forum->text, 'toolbar' => 'basic')) ?>
+
+        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $topic->text, 'toolbar' => 'basic')) ?>
     </div>
 
     <div class="sidebar">
         <?= import('default_sidebar.html'); ?>
     </div>
 </form>
+
+<script data-inline> $jQuery(".select-forums").select2(); </script>
