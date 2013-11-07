@@ -17,8 +17,9 @@ class ModelArticles extends Library\ModelTable
         parent::__construct($config);
 
         $this->getState()
-            ->insert('published' , 'int')
-            ->insert('category' , 'string');
+            ->insert('published', 'int')
+            ->insert('category' , 'string')
+            ->insert('sort'     , 'cmd', 'ordering');
     }
 
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
