@@ -15,8 +15,11 @@ use Nooku\Library;
  * @author  Terry Visser <http://nooku.assembla.com/profile/terryvisser>
  * @package Component\Fora
  */
-class ForaControllerCategory extends CategoriesControllerCategory
+class ForaControllerCategory extends Library\ControllerModel
 {
+    /**
+     * @return Library\ControllerRequestInterface
+     */
     public function getRequest()
     {
         $request = parent::getRequest();
