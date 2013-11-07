@@ -7,39 +7,32 @@
  * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
  */
 ?>
-
-    <title content="replace"><?= translate('Fora');?></title>
-
-    <div class="page-header">
-        <h1>Fora</h1>
-    </div>
-<div class="container">
-    <div class="row">
-        <form action="<?= route('view=topics&layout=search'); ?>" method="get" class="form-search well">
-            <input type="hidden" name="forum" value="<?= $state->forum; ?>"/>
-            <div class="input-append">
-                <input id="searchword" name="searchword" class="input-xxlarge search-query" type="text"
-                       value="<?= escape($state->searchword) ?>" placeholder="<?= translate('Search all forums') ?>"/>
-                <button type="submit" class="btn btn-primary"><i class="icon-search icon-white"></i></button>
-            </div>
+<div id="fora-categories-default">
+    <div class="well well-small">
+        <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">
+            <input name="search" type="text" placeholder="<?= translate('Search all categories...') ?>" autofocus="autofocus" />
+            <input class="btn primary" type="submit" value="Search" disabled="disabled" />
         </form>
     </div>
 
-    <? foreach($categories as $category): ?>
-        <div class="row">
-            <div class="span12">
-                <h2><?= $category->title ?></h2>
-                <div class="row">
-                    <? foreach(object('com:fora.model.forums')->category($category->id)->getRowset() as $forum): ?>
-                        <div class="span4" >
-                            <a href="<?= route('view=topics&layout=view&slug='.$forum->getSlug()) ?>">
-                                <?= escape($forum->title);?>
-                            </a><br />
-                            <?= object('com:fora.model.topics')->forum($forum->id)->getTotal(); ?> <?= translate('Articles'); ?>
-                        </div>
-                    <?endforeach;?>
-                </div>
+    <? foreach($categories as $category) : ?>
+        <div class="well well-small">
+            <div class="well__frame">
+                <h1 class="well__heading well__heading--left">
+                    <a href="<?= route('view=category&id='.$category->id.'&slug='.$category->slug) ?>">
+                        <?= escape($category->title) ?>
+                    </a>
+                </h1>
+            </div>
+            <div class="well__content">
+                <?= import('default_items.html',
+                    array('category' => $category, 'forums' => $forums, 'topics' => $topics, 'topics_count' => $topics_count)); ?>
             </div>
         </div>
-    <? endforeach; ?>
+    <? endforeach ?>
+
+    <? if(!count($categories)): ?>
+        <?//= @template('com://site/subscriptions.view.user.nosubscription') ?>
+    <? endif; ?>
+
 </div>
