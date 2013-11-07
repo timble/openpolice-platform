@@ -10,7 +10,7 @@
     </div>
     <div class="media-body">
         <h3>
-            <a href="<?= route('view=topic&layout=topic&id='.$topic->id.'&slug='.$topic->slug) ?>">
+            <a href="<?= route('view=topic&&id='.$topic->id.'&slug='.$topic->slug) ?>">
                 <?= escape($topic->title) ?>
             </a>
         </h3>
@@ -18,10 +18,6 @@
         <div class="pull-right">
             <? if(in_array($topic->forum_type, array('issue', 'idea')) && !empty($topic->status)): ?>
                 <span class="label label-<?= $topic->status ?>"><?= $topic->status ?></span>
-            <? endif; ?>
-
-            <? if(!empty($topic->product_version) && $topic->product_version != 'n/a'): ?>
-                <span class="label"><?= $topic->product_version ?></span>
             <? endif; ?>
         </div>
 
