@@ -18,9 +18,6 @@ class AboutControllerArticle extends Library\ControllerModel
         //Display only published items
         $request->query->published = 1;
 
-        // Set the ordering
-        $request->query->sort = 'title';
-
         return $request;
     }
 }
