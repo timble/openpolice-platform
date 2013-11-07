@@ -17,13 +17,27 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         // If created_on is modified then convert it to GMT/UTC
         if ($this->isModified('start_on'))
         {
-            $this->start_on = gmdate('Y-m-d', strtotime($this->start_on));
+            $timezone = new \DateTimeZone(date_default_timezone_get());
+            $offset = $timezone->getOffset(new \DateTime("now")); // Offset in seconds
+            $offset = ($offset < 0 ? '-' : '+').round($offset/3600); // prints "+11"
+
+            $date = new \DateTime($this->start_on);
+            $date->modify($offset.' hours');
+
+            $this->start_on = $date->format('Y-m-d H:i:s');
         }
 
         // If created_on is modified then convert it to GMT/UTC
         if ($this->isModified('end_on'))
         {
-            $this->end_on = gmdate('Y-m-d', strtotime($this->end_on));
+            $timezone = new \DateTimeZone(date_default_timezone_get());
+            $offset = $timezone->getOffset(new \DateTime("now")); // Offset in seconds
+            $offset = ($offset < 0 ? '-' : '+').round($offset/3600); // prints "+11"
+
+            $date = new \DateTime($this->end_on);
+            $date->modify($offset.' hours');
+
+            $this->end_on = $date->format('Y-m-d H:i:s');
         }
 
         $result = parent::save();
