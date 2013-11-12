@@ -3,7 +3,8 @@
     border-bottom: 1px solid darken($grayLighter, 7%);
   }
 
-  .navbar__handlebar {
+  .navbar__handlebar,
+  .visible-phone {
     display: none;
   }
 
@@ -14,7 +15,8 @@
   .container-footer,
   .container-quicklinks,
   .container-content .sidebar,
-  .container-copyright .copyright {
+  .container-copyright .copyright,
+  .hidden-phone {
     display: block;
   }
 

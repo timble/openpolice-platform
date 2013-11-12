@@ -934,7 +934,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   box-sizing: border-box;
 }
 
-/* line 9, organisms/_containers.scss */
+/* line 10, organisms/_containers.scss */
 .container-header .row-fluid .span3,
 .container-header .slogan,
 .container-breadcrumb,
@@ -943,23 +943,24 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .container-quicklinks,
 .container-content .sidebar,
 .container-copyright .copyright,
-.is-hidden {
+.is-hidden,
+.hidden-phone {
   display: none;
 }
 
-/* line 13, organisms/_containers.scss */
+/* line 14, organisms/_containers.scss */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 18, organisms/_containers.scss */
+/* line 19, organisms/_containers.scss */
 .container-content {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 23, organisms/_containers.scss */
+/* line 24, organisms/_containers.scss */
 .container-header {
   margin-bottom: 0;
   padding-left: 0;
@@ -967,24 +968,24 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   width: 100%;
 }
 
-/* line 30, organisms/_containers.scss */
+/* line 31, organisms/_containers.scss */
 .container-content {
   padding-top: 30px;
   margin-bottom: 30px;
 }
-/* line 35, organisms/_containers.scss */
+/* line 36, organisms/_containers.scss */
 .container-content.police .contact__inner {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 42, organisms/_containers.scss */
+/* line 43, organisms/_containers.scss */
 .container-content.police article {
   border: 0 none !important;
   padding-bottom: 0 !important;
 }
 
-/* line 49, organisms/_containers.scss */
+/* line 50, organisms/_containers.scss */
 .container-copyright {
   padding: 3px 20px;
   text-align: center;
@@ -992,16 +993,16 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   font-size: 11.9px;
 }
 
-/* line 57, organisms/_containers.scss */
+/* line 58, organisms/_containers.scss */
 .container-footer .media {
   margin-top: 0;
   margin-bottom: 20px;
 }
-/* line 62, organisms/_containers.scss */
+/* line 63, organisms/_containers.scss */
 .container-footer img {
   width: 64px;
 }
-/* line 66, organisms/_containers.scss */
+/* line 67, organisms/_containers.scss */
 .container-footer .media--imageless .media-body {
   margin-left: 97px;
 }
@@ -1016,12 +1017,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   border-bottom: 1px solid gainsboro;
 }
 
-/* line 6, utilities/_desktop.scss */
-.navbar__handlebar {
+/* line 7, utilities/_desktop.scss */
+.navbar__handlebar,
+.visible-phone {
   display: none;
 }
 
-/* line 17, utilities/_desktop.scss */
+/* line 19, utilities/_desktop.scss */
 .container-header .row-fluid .span3,
 .container-header .is-hidden,
 .container-breadcrumb,
@@ -1029,11 +1031,12 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .container-footer,
 .container-quicklinks,
 .container-content .sidebar,
-.container-copyright .copyright {
+.container-copyright .copyright,
+.hidden-phone {
   display: block;
 }
 
-/* line 25, utilities/_desktop.scss */
+/* line 27, utilities/_desktop.scss */
 .container-header,
 .container-banner,
 .container-breadcrumb,
@@ -1043,25 +1046,25 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   padding-right: 20px;
 }
 
-/* line 30, utilities/_desktop.scss */
+/* line 32, utilities/_desktop.scss */
 .container {
   width: 762px;
 }
 
-/* line 35, utilities/_desktop.scss */
+/* line 37, utilities/_desktop.scss */
 .container-header .row-fluid .span3 {
   float: none;
   width: 100%;
   text-align: center;
 }
-/* line 41, utilities/_desktop.scss */
+/* line 43, utilities/_desktop.scss */
 .container-header .row-fluid .span9 {
   float: none;
   width: 100%;
   margin: 20px 0 0 0;
 }
 
-/* line 49, utilities/_desktop.scss */
+/* line 51, utilities/_desktop.scss */
 .container-content.police .contact__inner {
   border-left: 1px solid #eeeeee;
   padding-left: 18px;
@@ -1070,50 +1073,50 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 56, utilities/_desktop.scss */
+/* line 58, utilities/_desktop.scss */
 .container-content.police .contact__inner ul {
   margin-bottom: 0;
 }
-/* line 60, utilities/_desktop.scss */
+/* line 62, utilities/_desktop.scss */
 .container-content.police .contact__inner .well {
   margin-bottom: 10px;
 }
-/* line 65, utilities/_desktop.scss */
+/* line 67, utilities/_desktop.scss */
 .container-content.police .span3 {
   width: 47.87234%;
   min-height: 125px;
 }
-/* line 70, utilities/_desktop.scss */
+/* line 72, utilities/_desktop.scss */
 .container-content.police .span3:nth-child(3) {
   margin-left: 0;
 }
-/* line 74, utilities/_desktop.scss */
+/* line 76, utilities/_desktop.scss */
 .container-content.police .contact {
   float: right !important;
 }
 
-/* line 79, utilities/_desktop.scss */
+/* line 81, utilities/_desktop.scss */
 .container-header {
   width: auto;
 }
 
-/* line 84, utilities/_desktop.scss */
+/* line 86, utilities/_desktop.scss */
 .container-content .sidebar {
   margin-top: 20px;
 }
-/* line 87, utilities/_desktop.scss */
+/* line 89, utilities/_desktop.scss */
 .container-content .sidebar .sidebar__element {
   margin-bottom: 40px;
 }
 
-/* line 93, utilities/_desktop.scss */
+/* line 95, utilities/_desktop.scss */
 .container-quicklinks {
   border-top: 1px solid #eeeeee;
   padding-top: 14px;
   margin-top: 30px;
 }
 
-/* line 99, utilities/_desktop.scss */
+/* line 101, utilities/_desktop.scss */
 .container-footer {
   padding-top: 10px;
   background-color: whitesmoke;
@@ -1123,23 +1126,23 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 108, utilities/_desktop.scss */
+/* line 110, utilities/_desktop.scss */
 .container-copyright {
   text-align: left;
   border-top: 0 none;
 }
-/* line 111, utilities/_desktop.scss */
+/* line 113, utilities/_desktop.scss */
 .container-copyright .copyright {
   text-align: right;
 }
 
-/* line 118, utilities/_desktop.scss */
+/* line 120, utilities/_desktop.scss */
 .container-fluid {
   width: 940px;
   margin: 0 auto;
 }
 
-/* line 123, utilities/_desktop.scss */
+/* line 125, utilities/_desktop.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -1148,13 +1151,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 130, utilities/_desktop.scss */
+/* line 132, utilities/_desktop.scss */
 .container-header .row-fluid .span3 {
   float: left;
   width: 22.34043%;
   text-align: left;
 }
-/* line 136, utilities/_desktop.scss */
+/* line 138, utilities/_desktop.scss */
 .container-header .row-fluid .span9 {
   float: left;
   width: 73.40426%;
@@ -1162,11 +1165,11 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   margin-top: 0;
 }
 
-/* line 145, utilities/_desktop.scss */
+/* line 147, utilities/_desktop.scss */
 .container-content.police .span3 {
   width: 22.34043%;
 }
-/* line 148, utilities/_desktop.scss */
+/* line 150, utilities/_desktop.scss */
 .container-content.police .span3:nth-child(3) {
   margin-left: 3.19149%;
 }
@@ -1275,128 +1278,6 @@ you can use the generic selector below, but it's slower:
 .backtrace {
   text-align: center;
   margin: 30px 0;
-}
-
-@-ms-viewport {
-  width: device-width;
-}
-
-/* line 15, utilities/_responsive.scss */
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-/* line 23, utilities/_responsive.scss */
-.visible-phone {
-  display: none !important;
-}
-
-/* line 24, utilities/_responsive.scss */
-.visible-tablet {
-  display: none !important;
-}
-
-/* line 27, utilities/_responsive.scss */
-.hidden-desktop {
-  display: none !important;
-}
-
-/* line 28, utilities/_responsive.scss */
-.visible-desktop {
-  display: inherit !important;
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-  /* line 33, utilities/_responsive.scss */
-  .hidden-desktop {
-    display: inherit !important;
-  }
-
-  /* line 34, utilities/_responsive.scss */
-  .visible-desktop {
-    display: none !important;
-  }
-
-  /* line 36, utilities/_responsive.scss */
-  .visible-tablet {
-    display: inherit !important;
-  }
-
-  /* line 38, utilities/_responsive.scss */
-  .hidden-tablet {
-    display: none !important;
-  }
-}
-@media (max-width: 767px) {
-  /* line 44, utilities/_responsive.scss */
-  .hidden-desktop {
-    display: inherit !important;
-  }
-
-  /* line 45, utilities/_responsive.scss */
-  .visible-desktop {
-    display: none !important;
-  }
-
-  /* line 47, utilities/_responsive.scss */
-  .visible-phone {
-    display: inherit !important;
-  }
-
-  /* line 49, utilities/_responsive.scss */
-  .hidden-phone {
-    display: none !important;
-  }
-}
-/* line 53, utilities/_responsive.scss */
-.visible-print {
-  display: none !important;
-}
-
-@media print {
-  /* line 57, utilities/_responsive.scss */
-  .visible-print {
-    display: inherit !important;
-  }
-
-  /* line 58, utilities/_responsive.scss */
-  .hidden-print {
-    display: none !important;
-  }
-}
-/* line 62, utilities/_responsive.scss */
-.clearfix, .article, form, .navbar__handlebar {
-  *zoom: 1;
-}
-/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.clearfix:before, .article:before, form:before, .navbar__handlebar:before, .clearfix:after, .article:after, form:after, .navbar__handlebar:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.clearfix:after, .article:after, form:after, .navbar__handlebar:after {
-  clear: both;
-}
-
-/* line 67, utilities/_responsive.scss */
-.hide-text {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
-
-/* line 72, utilities/_responsive.scss */
-.input-block-level {
-  display: block;
-  width: 100%;
-  min-height: 30px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /* line 1, atoms/_body.scss */
