@@ -940,8 +940,8 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .container-breadcrumb,
 .container-banner,
 .container-footer,
+.container-quicklinks,
 .container-content .sidebar,
-.container-content.police .sticky,
 .container-copyright .copyright,
 .is-hidden {
   display: none;
@@ -973,18 +973,18 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   margin-bottom: 30px;
 }
 /* line 35, organisms/_containers.scss */
-.container-content.police .contact {
+.container-content.police .contact__inner {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 40, organisms/_containers.scss */
+/* line 42, organisms/_containers.scss */
 .container-content.police article {
   border: 0 none !important;
   padding-bottom: 0 !important;
 }
 
-/* line 47, organisms/_containers.scss */
+/* line 49, organisms/_containers.scss */
 .container-copyright {
   padding: 3px 20px;
   text-align: center;
@@ -992,16 +992,16 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   font-size: 11.9px;
 }
 
-/* line 55, organisms/_containers.scss */
+/* line 57, organisms/_containers.scss */
 .container-footer .media {
   margin-top: 0;
   margin-bottom: 20px;
 }
-/* line 60, organisms/_containers.scss */
+/* line 62, organisms/_containers.scss */
 .container-footer img {
   width: 64px;
 }
-/* line 64, organisms/_containers.scss */
+/* line 66, organisms/_containers.scss */
 .container-footer .media--imageless .media-body {
   margin-left: 97px;
 }
@@ -1028,8 +1028,8 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   .container-breadcrumb,
   .container-banner,
   .container-footer,
+  .container-quicklinks,
   .container-content .sidebar,
-  .container-content.police .sticky,
   .container-copyright .copyright {
     display: block;
   }
@@ -1063,7 +1063,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   }
 
   /* line 49, utilities/_desktop.scss */
-  .container-content.police .contact {
+  .container-content.police .contact__inner {
     border-left: 1px solid #eeeeee;
     padding-left: 18px;
     margin-top: 20px;
@@ -1072,44 +1072,49 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     border-radius: 5px;
   }
   /* line 56, utilities/_desktop.scss */
-  .container-content.police .contact ul {
+  .container-content.police .contact__inner ul {
     margin-bottom: 0;
   }
   /* line 60, utilities/_desktop.scss */
-  .container-content.police .contact .well {
+  .container-content.police .contact__inner .well {
     margin-bottom: 10px;
   }
   /* line 65, utilities/_desktop.scss */
-  .container-content.police .separator--below {
-    border-bottom: 1px solid #eeeeee;
-    padding-bottom: 30px;
-    margin-bottom: 14px;
-  }
-  /* line 71, utilities/_desktop.scss */
   .container-content.police .span3 {
     width: 47.87234%;
     min-height: 125px;
   }
-  /* line 76, utilities/_desktop.scss */
+  /* line 70, utilities/_desktop.scss */
   .container-content.police .span3:nth-child(3) {
     margin-left: 0;
   }
+  /* line 74, utilities/_desktop.scss */
+  .container-content.police .contact {
+    float: right !important;
+  }
 
-  /* line 81, utilities/_desktop.scss */
+  /* line 79, utilities/_desktop.scss */
   .container-header {
     width: auto;
   }
 
-  /* line 86, utilities/_desktop.scss */
+  /* line 84, utilities/_desktop.scss */
   .container-content .sidebar {
     margin-top: 20px;
   }
-  /* line 89, utilities/_desktop.scss */
+  /* line 87, utilities/_desktop.scss */
   .container-content .sidebar .sidebar__element {
     margin-bottom: 40px;
   }
 
-  /* line 95, utilities/_desktop.scss */
+  /* line 93, utilities/_desktop.scss */
+  .container-quicklinks {
+    border-top: 1px solid #eeeeee;
+    padding-top: 14px;
+    margin-top: 30px;
+  }
+
+  /* line 99, utilities/_desktop.scss */
   .container-footer {
     padding-top: 10px;
     background-color: whitesmoke;
@@ -1119,24 +1124,24 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 104, utilities/_desktop.scss */
+  /* line 108, utilities/_desktop.scss */
   .container-copyright {
     text-align: left;
     border-top: 0 none;
   }
-  /* line 107, utilities/_desktop.scss */
+  /* line 111, utilities/_desktop.scss */
   .container-copyright .copyright {
     text-align: right;
   }
 }
 @media screen and (min-width: 998px) {
-  /* line 114, utilities/_desktop.scss */
+  /* line 118, utilities/_desktop.scss */
   .container-fluid {
     width: 940px;
     margin: 0 auto;
   }
 
-  /* line 119, utilities/_desktop.scss */
+  /* line 123, utilities/_desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -1145,13 +1150,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 126, utilities/_desktop.scss */
+  /* line 130, utilities/_desktop.scss */
   .container-header .row-fluid .span3 {
     float: left;
     width: 22.34043%;
     text-align: left;
   }
-  /* line 132, utilities/_desktop.scss */
+  /* line 136, utilities/_desktop.scss */
   .container-header .row-fluid .span9 {
     float: left;
     width: 73.40426%;
@@ -1159,11 +1164,11 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     margin-top: 0;
   }
 
-  /* line 141, utilities/_desktop.scss */
+  /* line 145, utilities/_desktop.scss */
   .container-content.police .span3 {
     width: 22.34043%;
   }
-  /* line 144, utilities/_desktop.scss */
+  /* line 148, utilities/_desktop.scss */
   .container-content.police .span3:nth-child(3) {
     margin-left: 3.19149%;
   }
@@ -1257,13 +1262,6 @@ you can use the generic selector below, but it's slower:
   content: "\f128";
 }
 
-/* line 1, utilities/_mixins.scss */
-.separator--below {
-  border-bottom: 1px solid #eeeeee;
-  padding-bottom: 30px;
-  margin-bottom: 14px;
-}
-
 /* line 1, utilities/_select2.scss */
 .bigdrop {
   width: 100%;
@@ -1279,6 +1277,128 @@ you can use the generic selector below, but it's slower:
 .backtrace {
   text-align: center;
   margin: 30px 0;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+/* line 15, utilities/_responsive.scss */
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 23, utilities/_responsive.scss */
+.visible-phone {
+  display: none !important;
+}
+
+/* line 24, utilities/_responsive.scss */
+.visible-tablet {
+  display: none !important;
+}
+
+/* line 27, utilities/_responsive.scss */
+.hidden-desktop {
+  display: none !important;
+}
+
+/* line 28, utilities/_responsive.scss */
+.visible-desktop {
+  display: inherit !important;
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 33, utilities/_responsive.scss */
+  .hidden-desktop {
+    display: inherit !important;
+  }
+
+  /* line 34, utilities/_responsive.scss */
+  .visible-desktop {
+    display: none !important;
+  }
+
+  /* line 36, utilities/_responsive.scss */
+  .visible-tablet {
+    display: inherit !important;
+  }
+
+  /* line 38, utilities/_responsive.scss */
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  /* line 44, utilities/_responsive.scss */
+  .hidden-desktop {
+    display: inherit !important;
+  }
+
+  /* line 45, utilities/_responsive.scss */
+  .visible-desktop {
+    display: none !important;
+  }
+
+  /* line 47, utilities/_responsive.scss */
+  .visible-phone {
+    display: inherit !important;
+  }
+
+  /* line 49, utilities/_responsive.scss */
+  .hidden-phone {
+    display: none !important;
+  }
+}
+/* line 53, utilities/_responsive.scss */
+.visible-print {
+  display: none !important;
+}
+
+@media print {
+  /* line 57, utilities/_responsive.scss */
+  .visible-print {
+    display: inherit !important;
+  }
+
+  /* line 58, utilities/_responsive.scss */
+  .hidden-print {
+    display: none !important;
+  }
+}
+/* line 62, utilities/_responsive.scss */
+.clearfix, .article, form, .navbar__handlebar {
+  *zoom: 1;
+}
+/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
+.clearfix:before, .article:before, form:before, .navbar__handlebar:before, .clearfix:after, .article:after, form:after, .navbar__handlebar:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
+.clearfix:after, .article:after, form:after, .navbar__handlebar:after {
+  clear: both;
+}
+
+/* line 67, utilities/_responsive.scss */
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+/* line 72, utilities/_responsive.scss */
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* line 1, atoms/_body.scss */

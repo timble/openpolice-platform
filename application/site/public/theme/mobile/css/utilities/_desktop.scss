@@ -12,8 +12,8 @@
   .container-breadcrumb,
   .container-banner,
   .container-footer,
+  .container-quicklinks,
   .container-content .sidebar,
-  .container-content.police .sticky,
   .container-copyright .copyright {
     display: block;
   }
@@ -46,7 +46,7 @@
   }
 
   .container-content.police {
-    .contact {
+    .contact__inner {
       border-left: 1px solid $grayLighter;
 
       padding-left: 18px;
@@ -62,12 +62,6 @@
       }
     }
 
-    .separator--below {
-      border-bottom: 1px solid $grayLighter;
-      padding-bottom: $gridGutterWidth;
-      margin-bottom: 14px;
-    }
-
     .span3 {
       width: ($fluidGridColumnWidth * 6) + ($fluidGridGutterWidth * 5);
       min-height: 125px;
@@ -76,6 +70,10 @@
     .span3:nth-child(3) {
       margin-left: 0;
     }
+
+      .contact {
+          float: right !important;
+      }
   }
 
   .container-header {
@@ -90,6 +88,12 @@
         margin-bottom: 40px;
       }
     }
+  }
+
+  .container-quicklinks {
+      border-top: 1px solid $grayLighter;
+      padding-top: 14px;
+      margin-top: $gridGutterWidth;
   }
 
   .container-footer {
