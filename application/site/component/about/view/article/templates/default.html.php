@@ -14,7 +14,7 @@
 
 <title content="replace"><?= $article->title ?></title>
 
-<article <?= !$article->published ? 'class="article-unpublished"' : '' ?>>
+<article class="article">
     <h1><?= $article->title ?></h1>
 
     <? if($article->attachments_attachment_id) : ?>

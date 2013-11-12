@@ -19,9 +19,9 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
             'behaviors'    =>  array(
                 'lockable', 'creatable', 'modifiable', 'sluggable',
                 'com:attachments.database.behavior.attachable',
-            ),
-            'orderable' => array(
-                'strategy' => 'flat'
+                'orderable' => array(
+                    'strategy' => 'flat'
+                ),
             ),
             'filters' => array(
                 'introtext'   => array('html', 'tidy'),

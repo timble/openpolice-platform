@@ -1339,29 +1339,33 @@ html {
   border-bottom: 1px solid #005580;
   text-decoration: none;
 }
+/* line 19, molecules/_article.scss */
+.article p img[align="right"] {
+  margin: 0 0 20px 20px;
+}
 
-/* line 20, molecules/_article.scss */
+/* line 24, molecules/_article.scss */
 .article__header {
   margin-bottom: 15px;
 }
-/* line 23, molecules/_article.scss */
+/* line 27, molecules/_article.scss */
 .article__header h1 {
   margin-bottom: 0;
 }
-/* line 27, molecules/_article.scss */
+/* line 31, molecules/_article.scss */
 .article__header .timestamp {
   padding-top: 4px;
   font-size: 11.9px;
 }
 
-/* line 35, molecules/_article.scss */
+/* line 39, molecules/_article.scss */
 .article__introtext,
 .entry-summary {
   font-weight: bold;
   margin-bottom: 22px;
 }
 
-/* line 40, molecules/_article.scss */
+/* line 44, molecules/_article.scss */
 .article__thumbnail {
   float: right;
   max-width: 40%;
