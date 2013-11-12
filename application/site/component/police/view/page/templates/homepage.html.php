@@ -78,7 +78,7 @@
         <? endforeach; ?>
         <div class="visible-phone">
             <h3><?= translate('Latest news') ?></h3>
-            <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
+            <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('3')->getRowset())) ?>
         </div>
     </div>
 </div>
