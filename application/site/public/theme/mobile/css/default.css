@@ -969,7 +969,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 
 /* line 30, organisms/_containers.scss */
 .container-content {
-  padding-top: 30px;
+  padding-top: 74px;
   margin-bottom: 30px;
 }
 /* line 35, organisms/_containers.scss */
@@ -2063,34 +2063,39 @@ select:focus:invalid:focus {
   margin-left: 0 !important;
 }
 
+/* line 1, molecules/_header.scss */
+.container-header {
+  position: fixed;
+}
+
 @media screen and (min-width: 767px) {
-  /* line 2, molecules/_header.scss */
+  /* line 6, molecules/_header.scss */
   .container-header {
     margin-bottom: 20px;
   }
-  /* line 5, molecules/_header.scss */
+  /* line 9, molecules/_header.scss */
   .container-header .text--strong {
     font-size: 17.5px;
   }
-  /* line 10, molecules/_header.scss */
+  /* line 14, molecules/_header.scss */
   .container-header .span3 .logo {
     padding-top: 26px;
     display: block;
     text-decoration: none;
     color: #004fa3;
   }
-  /* line 16, molecules/_header.scss */
+  /* line 20, molecules/_header.scss */
   .container-header .span3 .logo img {
     width: 160px;
     vertical-align: bottom;
     margin-left: 10px;
   }
-  /* line 22, molecules/_header.scss */
+  /* line 26, molecules/_header.scss */
   .container-header .span3 .logo div {
     margin-left: 57px;
     margin-top: 3px;
   }
-  /* line 29, molecules/_header.scss */
+  /* line 33, molecules/_header.scss */
   .container-header .slogan {
     margin: 25px 0 10px;
     display: block;

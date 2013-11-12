@@ -1,3 +1,7 @@
+.container-header {
+    position:fixed;
+}
+
 @include respond-min($navbarCollapseWidth) {
   .container-header  {
     margin-bottom: 20px;
