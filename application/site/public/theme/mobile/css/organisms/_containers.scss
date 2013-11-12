@@ -3,8 +3,8 @@
 .container-breadcrumb,
 .container-banner,
 .container-footer,
+.container-quicklinks,
 .container-content .sidebar,
-.container-content.police .sticky,
 .container-copyright .copyright,
 .is-hidden {
   display: none;
@@ -32,10 +32,12 @@
   margin-bottom: $gridGutterWidth;
 
   &.police {
-    .contact {
+    .contact__inner {
       margin-left: 0;
       border: 0 none;
       padding: 0;
+
+
     }
     article {
       border: 0 none !important;
