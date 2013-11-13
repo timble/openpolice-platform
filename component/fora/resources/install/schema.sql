@@ -18,7 +18,7 @@ PRIMARY KEY (`fora_forum_id`),
 KEY `idx_enabled` (`published`),
 KEY `idx_category_id` (`categories_category_id`),
 CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`categories_category_id`) REFERENCES `categories` (`categories_category_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_topics'
 CREATE TABLE `fora_topics` (
@@ -41,4 +41,4 @@ KEY `idx_forum_id` (`fora_forum_id`),
 KEY `idx_enabled` (`published`),
 KEY `created_on` (`created_on`),
 CONSTRAINT `fora_topics_ibfk_1` FOREIGN KEY (`fora_forum_id`) REFERENCES `fora_forums` (`fora_forum_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
