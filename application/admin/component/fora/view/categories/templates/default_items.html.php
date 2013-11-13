@@ -8,9 +8,9 @@
                 </a>
             </h3>
             <? if(count($topics_count->find(array('fora_forum_id' => $forum->id))) && ($count = (int) $topics_count->find(array('fora_forum_id' => $forum->id))->top()->count) >= 1) : ?>
-                <small class="muted"><?= sprintf(translate('%d '.Nooku\Library\StringInflector::pluralize($forum->type)), $count) ?></small>
+                <small class="muted"><? // sprintf(translate('%d '.Nooku\Library\StringInflector::pluralize($forum->type)), $count) ?></small>
             <? else : ?>
-                <small class="muted"><?= sprintf(@ranslate('%d '.Nooku\Library\StringInflector::pluralize($forum->type)), '0') ?></small>
+                <small class="muted"><? // sprintf(@ranslate('%d '.Nooku\Library\StringInflector::pluralize($forum->type)), '0') ?></small>
             <? endif ?>
         </div>
     <? endforeach ?>
