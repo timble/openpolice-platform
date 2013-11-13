@@ -27,3 +27,8 @@ form {
 * html .navbar__logo {
   padding-top: 10px;
 }
+
+/* line 29, ie7.scss */
+.media .media-object {
+  width: 64px;
+}
