@@ -1923,13 +1923,12 @@ select:focus:invalid:focus {
 }
 
 @media (max-width: 766px) {
-  /* line 41, molecules/_header.scss */
-  .container-header {
+  /* line 44, molecules/_header.scss */
+  .js-enabled .container-header {
     position: fixed;
   }
-
-  /* line 45, molecules/_header.scss */
-  .container-content {
+  /* line 48, molecules/_header.scss */
+  .js-enabled .container-content {
     padding-top: 74px;
   }
 }

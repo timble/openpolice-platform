@@ -37,13 +37,17 @@
 }
 
 // Apply sticky header only in modern browsers (they understand media queries)
-@media (max-width: $navbarCollapseWidth - 1) {
-    .container-header {
-        position: fixed;
-    }
+@media (max-width: $navbarCollapseWidth - 1)
+{
+    // Only when JS is enabled
+    .js-enabled {
+        .container-header {
+            position: fixed;
+        }
 
-    .container-content {
-        // Increase padding between sticky header and content
-        padding-top: ($gridGutterWidth / 1.25) + 50px;
+        .container-content {
+            // Increase padding between sticky header and content
+            padding-top: ($gridGutterWidth / 1.25) + 50px;
+        }
     }
 }
