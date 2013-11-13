@@ -1,6 +1,6 @@
 <script src="media://lib_koowa/js/koowa.js" />
 <script src="media://com_fora/js/subscribe.js" />
-
+<style src="assets://fora/css/default.css" />
 
 <script>
     window.addEvent('domready', function() {
@@ -34,6 +34,7 @@
     });
 </script>
 
+<div id="com_fora">
 <div id="fora-topic-default" class="span9">
     <div class="well well-small">
         <div class="well__frame">
@@ -95,5 +96,6 @@
         </div>
     <? endforeach ?>
 
+</div>
 </div>
 

@@ -7,6 +7,10 @@
  * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
  */
 ?>
+
+<style src="assets://fora/css/default.css" />
+
+<div id="com_fora">
 <div id="fora-categories-default">
     <div class="well well-small">
         <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">
@@ -35,4 +39,5 @@
         <?//= @template('com://site/subscriptions.view.user.nosubscription') ?>
     <? endif; ?>
 
+</div>
 </div>

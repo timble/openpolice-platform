@@ -8,6 +8,9 @@
  */
 ?>
 
+<style src="assets://fora/css/default.css" />
+
+<div id="com_fora">
 <div id="fora-topics-default">
     <div class="well well-small">
         <form action="" method="get" name="search">
@@ -29,8 +32,9 @@
                 <? if(!$state->search) : ?>
                     <p><?= translate('This forum does not contain any topics yet') ?>.</p>
 
-                        <a class="btn btn-primary btn-small" href="<?= route('view=topic&layout=form&forum='.$forum->id) ?>">
-                            <?= translate('Start a new').' '.translate($forum->type) ?>
+                        <a class="btn btn-primary btn-small" href="<?= route('view=topic&layout=form&forum='.$state->forum) ?>">
+                            <?= translate('Start a new') ?>
+                            <? // translate('Start a new').' '.translate($forum->type) ?>
                         </a>
 
                 <?else: ?>
@@ -48,4 +52,5 @@
         </div>
 
     </div>
+</div>
 </div>
