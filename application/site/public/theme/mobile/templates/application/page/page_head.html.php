@@ -19,6 +19,8 @@
 
     <link rel="apple-touch-icon" href="assets://application/images/apple-touch-icon.png"/>
 
+    <script>(function(H){H.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement)</script>
+
     <ktml:title>
     <ktml:meta>
     <ktml:link>

@@ -14,7 +14,7 @@ $language_short = $language_short[0];
 ?>
 
 <!DOCTYPE HTML>
-<html lang="<?= $language; ?>" dir="<?= $direction; ?>">
+<html class="js-disabled" lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
 <?= import('page_head.html') ?>
 <body>
