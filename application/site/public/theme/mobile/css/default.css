@@ -2374,47 +2374,54 @@ ul.column--double, ul.column--triple, ul.column--quad {
     display: inline;
   }
 }
+/* line 1, molecules/_table.scss */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #eeeeee;
+  width: 100% !important;
+}
+/* line 7, molecules/_table.scss */
+table th, table td {
+  padding: 8px;
+}
+
 /* Force table to not be like tables anymore */
-/* line 4, molecules/_table.scss */
+/* line 15, molecules/_table.scss */
 .table {
   max-width: 100%;
   width: 100%;
   /* Hide table headers (but not display: none;, for accessibility) */
 }
-/* line 8, molecules/_table.scss */
-.table th, .table td {
-  padding: 8px;
-}
-/* line 12, molecules/_table.scss */
+/* line 19, molecules/_table.scss */
 .table td {
   /* Behave  like a "row" */
   clear: left;
   float: left;
   border: none;
 }
-/* line 19, molecules/_table.scss */
+/* line 26, molecules/_table.scss */
 .table td:nth-child(n+2) {
   display: none;
 }
-/* line 24, molecules/_table.scss */
+/* line 31, molecules/_table.scss */
 .table thead tr {
   display: none;
 }
 
-/* line 36, molecules/_table.scss */
+/* line 43, molecules/_table.scss */
 .table-striped tbody > tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
 @media screen and (min-width: 767px) {
-  /* line 50, molecules/_table.scss */
+  /* line 57, molecules/_table.scss */
   .table {
     background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0;
     margin-bottom: 22px;
+    border: 0 none;
   }
-  /* line 57, molecules/_table.scss */
+  /* line 63, molecules/_table.scss */
   .table th,
   .table td {
     display: table-cell !important;
@@ -2422,28 +2429,28 @@ ul.column--double, ul.column--triple, ul.column--quad {
     text-align: left;
     vertical-align: top;
   }
-  /* line 63, molecules/_table.scss */
+  /* line 69, molecules/_table.scss */
   .table td {
     clear: none;
     float: none;
   }
-  /* line 67, molecules/_table.scss */
+  /* line 73, molecules/_table.scss */
   .table tbody tr {
     border-top: 1px solid #dddddd;
   }
-  /* line 70, molecules/_table.scss */
+  /* line 76, molecules/_table.scss */
   .table th {
     font-weight: bold;
   }
-  /* line 74, molecules/_table.scss */
+  /* line 80, molecules/_table.scss */
   .table thead tr {
     display: table-row;
   }
-  /* line 78, molecules/_table.scss */
+  /* line 84, molecules/_table.scss */
   .table thead th {
     vertical-align: bottom;
   }
-  /* line 83, molecules/_table.scss */
+  /* line 89, molecules/_table.scss */
   .table thead tr th,
   .table thead tr td {
     border-top: 0;
