@@ -1,6 +1,9 @@
 pagespeed on;
 
 pagespeed FileCachePath /var/cache/pagespeed;
+pagespeed XHeaderValue "ngx_pagespeed";
+
+pagespeed SupportNoScriptEnabled false;
 
 # Authorize all available domains
 pagespeed Domain *.pol-nl.be;
