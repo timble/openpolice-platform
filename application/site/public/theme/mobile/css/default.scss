@@ -30,7 +30,7 @@
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/tooltip";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/popovers";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/thumbnails";
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/media";
+//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/media";
 @import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/labels-badges";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/progress-bars";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/accordion";
@@ -61,6 +61,7 @@
 @import "molecules/header";
 @import "molecules/header__navbar";
 @import "molecules/lists";
+@import "molecules/media";
 @import "molecules/navs";
 @import "molecules/pagination";
 @import "molecules/table";

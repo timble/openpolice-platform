@@ -1,5 +1,5 @@
 var site = '5388'
-var host = 'http://police:police@s.pol-nl.be/'+site+'/';
+var host = 'http://www.lokalepolitie.be/'+site+'/';
 
 casper.test.begin('Testing the Questions search', 4, function suite(test) {
     casper.start(host+'vragen', function() {

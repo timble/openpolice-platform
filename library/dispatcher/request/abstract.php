@@ -750,13 +750,18 @@ class DispatcherRequestAbstract extends ControllerRequest implements DispatcherR
         {
             if(!$this->query->has('format'))
             {
-                if(!$this->getUrl()->getFormat())
+                if($this->_headers->has('Accept'))
                 {
-                    if($this->_headers->has('Accept'))
-                    {
-                        $accept  = $this->_headers->get('Accept');
-                        $formats = $this->_parseAccept($accept);
+                    $accept  = $this->_headers->get('Accept');
+                    $formats = $this->_parseAccept($accept);
 
+                    /**
+                     * If the browser is requested text/html serve it at all times
+                     *
+                     * @hotfix #409 : Android 2.3 requesting application/xml
+                     */
+                    if(!isset($formats['text/html']))
+                    {
                         //Get the highest quality format
                         $mime_type = key($formats);
 
@@ -769,8 +774,8 @@ class DispatcherRequestAbstract extends ControllerRequest implements DispatcherR
                             }
                         }
                     }
+                    else $format = 'html';
                 }
-                else $format = $this->getUrl()->getFormat();
             }
             else $format = $this->query->get('format', 'word');
 

@@ -668,51 +668,6 @@ address {
   line-height: 22px;
 }
 
-/* line 11, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
-.media,
-.media-body {
-  overflow: hidden;
-  *overflow: visible;
-  zoom: 1;
-}
-
-/* line 19, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
-.media,
-.media .media {
-  margin-top: 15px;
-}
-
-/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
-.media:first-child {
-  margin-top: 0;
-}
-
-/* line 27, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
-.media-object {
-  display: block;
-}
-
-/* line 32, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
-.media-heading {
-  margin: 0 0 5px;
-}
-
-/* line 40, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
-.media > .pull-left {
-  margin-right: 10px;
-}
-
-/* line 43, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
-.media > .pull-right {
-  margin-left: 10px;
-}
-
-/* line 52, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_media.scss */
-.media-list {
-  margin-left: 0;
-  list-style: none;
-}
-
 /* line 8, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_labels-badges.scss */
 .label,
 .badge {
@@ -934,32 +889,33 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   box-sizing: border-box;
 }
 
-/* line 9, organisms/_containers.scss */
+/* line 10, organisms/_containers.scss */
 .container-header .row-fluid .span3,
 .container-header .slogan,
 .container-breadcrumb,
 .container-banner,
 .container-footer,
+.container-quicklinks,
 .container-content .sidebar,
-.container-content.police .sticky,
 .container-copyright .copyright,
-.is-hidden {
+.is-hidden,
+.hidden-phone {
   display: none;
 }
 
-/* line 13, organisms/_containers.scss */
+/* line 14, organisms/_containers.scss */
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 18, organisms/_containers.scss */
+/* line 19, organisms/_containers.scss */
 .container-content {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 23, organisms/_containers.scss */
+/* line 24, organisms/_containers.scss */
 .container-header {
   margin-bottom: 0;
   padding-left: 0;
@@ -967,24 +923,24 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   width: 100%;
 }
 
-/* line 30, organisms/_containers.scss */
+/* line 31, organisms/_containers.scss */
 .container-content {
   padding-top: 30px;
   margin-bottom: 30px;
 }
-/* line 35, organisms/_containers.scss */
-.container-content.police .contact {
+/* line 36, organisms/_containers.scss */
+.container-content.police .contact__inner {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 40, organisms/_containers.scss */
+/* line 43, organisms/_containers.scss */
 .container-content.police article {
   border: 0 none !important;
   padding-bottom: 0 !important;
 }
 
-/* line 47, organisms/_containers.scss */
+/* line 50, organisms/_containers.scss */
 .container-copyright {
   padding: 3px 20px;
   text-align: center;
@@ -992,18 +948,10 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   font-size: 11.9px;
 }
 
-/* line 55, organisms/_containers.scss */
+/* line 58, organisms/_containers.scss */
 .container-footer .media {
   margin-top: 0;
   margin-bottom: 20px;
-}
-/* line 60, organisms/_containers.scss */
-.container-footer img {
-  width: 64px;
-}
-/* line 64, organisms/_containers.scss */
-.container-footer .media--imageless .media-body {
-  margin-left: 97px;
 }
 
 /* line 1, organisms/_wrap.scss */
@@ -1016,24 +964,26 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   border-bottom: 1px solid gainsboro;
 }
 
-/* line 6, utilities/_desktop.scss */
-.navbar__handlebar {
+/* line 7, utilities/_desktop.scss */
+.navbar__handlebar,
+.visible-phone {
   display: none;
 }
 
-/* line 17, utilities/_desktop.scss */
+/* line 19, utilities/_desktop.scss */
 .container-header .row-fluid .span3,
 .container-header .is-hidden,
 .container-breadcrumb,
 .container-banner,
 .container-footer,
+.container-quicklinks,
 .container-content .sidebar,
-.container-content.police .sticky,
-.container-copyright .copyright {
+.container-copyright .copyright,
+.hidden-phone {
   display: block;
 }
 
-/* line 25, utilities/_desktop.scss */
+/* line 27, utilities/_desktop.scss */
 .container-header,
 .container-banner,
 .container-breadcrumb,
@@ -1043,26 +993,26 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   padding-right: 20px;
 }
 
-/* line 30, utilities/_desktop.scss */
+/* line 32, utilities/_desktop.scss */
 .container {
   width: 762px;
 }
 
-/* line 35, utilities/_desktop.scss */
+/* line 37, utilities/_desktop.scss */
 .container-header .row-fluid .span3 {
   float: none;
   width: 100%;
   text-align: center;
 }
-/* line 41, utilities/_desktop.scss */
+/* line 43, utilities/_desktop.scss */
 .container-header .row-fluid .span9 {
   float: none;
   width: 100%;
   margin: 20px 0 0 0;
 }
 
-/* line 49, utilities/_desktop.scss */
-.container-content.police .contact {
+/* line 51, utilities/_desktop.scss */
+.container-content.police .contact__inner {
   border-left: 1px solid #eeeeee;
   padding-left: 18px;
   margin-top: 20px;
@@ -1070,28 +1020,26 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 56, utilities/_desktop.scss */
-.container-content.police .contact ul {
+/* line 58, utilities/_desktop.scss */
+.container-content.police .contact__inner ul {
   margin-bottom: 0;
 }
-/* line 60, utilities/_desktop.scss */
-.container-content.police .contact .well {
+/* line 62, utilities/_desktop.scss */
+.container-content.police .contact__inner .well {
   margin-bottom: 10px;
 }
-/* line 65, utilities/_desktop.scss */
-.container-content.police .separator--below {
-  border-bottom: 1px solid #eeeeee;
-  padding-bottom: 30px;
-  margin-bottom: 14px;
-}
-/* line 71, utilities/_desktop.scss */
+/* line 67, utilities/_desktop.scss */
 .container-content.police .span3 {
   width: 47.87234%;
   min-height: 125px;
 }
-/* line 76, utilities/_desktop.scss */
+/* line 72, utilities/_desktop.scss */
 .container-content.police .span3:nth-child(3) {
   margin-left: 0;
+}
+/* line 76, utilities/_desktop.scss */
+.container-content.police .contact {
+  float: right !important;
 }
 
 /* line 81, utilities/_desktop.scss */
@@ -1109,6 +1057,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 }
 
 /* line 95, utilities/_desktop.scss */
+.container-quicklinks {
+  border-top: 1px solid #eeeeee;
+  padding-top: 14px;
+  margin-top: 30px;
+}
+
+/* line 101, utilities/_desktop.scss */
 .container-footer {
   padding-top: 10px;
   background-color: whitesmoke;
@@ -1118,23 +1073,23 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 104, utilities/_desktop.scss */
+/* line 110, utilities/_desktop.scss */
 .container-copyright {
   text-align: left;
   border-top: 0 none;
 }
-/* line 107, utilities/_desktop.scss */
+/* line 113, utilities/_desktop.scss */
 .container-copyright .copyright {
   text-align: right;
 }
 
-/* line 114, utilities/_desktop.scss */
+/* line 120, utilities/_desktop.scss */
 .container-fluid {
   width: 940px;
   margin: 0 auto;
 }
 
-/* line 119, utilities/_desktop.scss */
+/* line 125, utilities/_desktop.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -1143,13 +1098,13 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 126, utilities/_desktop.scss */
+/* line 132, utilities/_desktop.scss */
 .container-header .row-fluid .span3 {
   float: left;
   width: 22.34043%;
   text-align: left;
 }
-/* line 132, utilities/_desktop.scss */
+/* line 138, utilities/_desktop.scss */
 .container-header .row-fluid .span9 {
   float: left;
   width: 73.40426%;
@@ -1157,11 +1112,11 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   margin-top: 0;
 }
 
-/* line 141, utilities/_desktop.scss */
+/* line 147, utilities/_desktop.scss */
 .container-content.police .span3 {
   width: 22.34043%;
 }
-/* line 144, utilities/_desktop.scss */
+/* line 150, utilities/_desktop.scss */
 .container-content.police .span3:nth-child(3) {
   margin-left: 3.19149%;
 }
@@ -1255,13 +1210,6 @@ you can use the generic selector below, but it's slower:
   content: "\f128";
 }
 
-/* line 1, utilities/_mixins.scss */
-.separator--below {
-  border-bottom: 1px solid #eeeeee;
-  padding-bottom: 30px;
-  margin-bottom: 14px;
-}
-
 /* line 1, utilities/_select2.scss */
 .bigdrop {
   width: 100%;
@@ -1337,29 +1285,33 @@ html {
   border-bottom: 1px solid #005580;
   text-decoration: none;
 }
+/* line 19, molecules/_article.scss */
+.article p img[align="right"] {
+  margin: 0 0 20px 20px;
+}
 
-/* line 20, molecules/_article.scss */
+/* line 24, molecules/_article.scss */
 .article__header {
   margin-bottom: 15px;
 }
-/* line 23, molecules/_article.scss */
+/* line 27, molecules/_article.scss */
 .article__header h1 {
   margin-bottom: 0;
 }
-/* line 27, molecules/_article.scss */
+/* line 31, molecules/_article.scss */
 .article__header .timestamp {
   padding-top: 4px;
   font-size: 11.9px;
 }
 
-/* line 35, molecules/_article.scss */
+/* line 39, molecules/_article.scss */
 .article__introtext,
 .entry-summary {
   font-weight: bold;
   margin-bottom: 22px;
 }
 
-/* line 40, molecules/_article.scss */
+/* line 44, molecules/_article.scss */
 .article__thumbnail {
   float: right;
   max-width: 40%;
@@ -1938,37 +1890,48 @@ select:focus:invalid:focus {
 
 /* line 2, molecules/_header.scss */
 .container-header {
+  position: relative;
   margin-bottom: 20px;
 }
-/* line 5, molecules/_header.scss */
+/* line 7, molecules/_header.scss */
 .container-header .text--strong {
   font-size: 17.5px;
 }
-/* line 10, molecules/_header.scss */
+/* line 12, molecules/_header.scss */
 .container-header .span3 .logo {
   padding-top: 26px;
   display: block;
   text-decoration: none;
   color: #004fa3;
 }
-/* line 16, molecules/_header.scss */
+/* line 18, molecules/_header.scss */
 .container-header .span3 .logo img {
   width: 160px;
   vertical-align: bottom;
   margin-left: 10px;
 }
-/* line 22, molecules/_header.scss */
+/* line 24, molecules/_header.scss */
 .container-header .span3 .logo div {
   margin-left: 57px;
   margin-top: 3px;
 }
-/* line 29, molecules/_header.scss */
+/* line 31, molecules/_header.scss */
 .container-header .slogan {
   margin: 25px 0 10px;
   display: block;
   text-align: center;
 }
 
+@media (max-width: 766px) {
+  /* line 44, molecules/_header.scss */
+  .js-enabled .container-header {
+    position: fixed;
+  }
+  /* line 48, molecules/_header.scss */
+  .js-enabled .container-content {
+    padding-top: 74px;
+  }
+}
 /* line 5, molecules/_header__navbar.scss */
 .navbar {
   min-height: 32px;
@@ -2126,6 +2089,43 @@ ul.column--quad {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
+}
+
+/* line 11, molecules/_media.scss */
+.media,
+.media__body {
+  overflow: hidden;
+  *overflow: visible;
+  zoom: 1;
+}
+
+/* line 19, molecules/_media.scss */
+.media,
+.media .media {
+  margin-top: 15px;
+}
+
+/* line 22, molecules/_media.scss */
+.media:first-child {
+  margin-top: 0;
+}
+
+/* line 27, molecules/_media.scss */
+.media__heading {
+  margin: 0 0 5px;
+}
+
+/* line 34, molecules/_media.scss */
+.media__object {
+  margin-right: 10px;
+  float: left;
+  display: block;
+  width: 64px;
+}
+
+/* line 42, molecules/_media.scss */
+.media--imageless .media-body {
+  margin-left: 97px;
 }
 
 /* line 9, molecules/_navs.scss */
@@ -2367,46 +2367,53 @@ ul.column--quad {
   display: inline;
 }
 
+/* line 1, molecules/_table.scss */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #eeeeee;
+  width: 100% !important;
+}
+/* line 7, molecules/_table.scss */
+table th, table td {
+  padding: 8px;
+}
+
 /* Force table to not be like tables anymore */
-/* line 4, molecules/_table.scss */
+/* line 15, molecules/_table.scss */
 .table {
   max-width: 100%;
   width: 100%;
   /* Hide table headers (but not display: none;, for accessibility) */
 }
-/* line 8, molecules/_table.scss */
-.table th, .table td {
-  padding: 8px;
-}
-/* line 12, molecules/_table.scss */
+/* line 19, molecules/_table.scss */
 .table td {
   /* Behave  like a "row" */
   clear: left;
   float: left;
   border: none;
 }
-/* line 19, molecules/_table.scss */
+/* line 26, molecules/_table.scss */
 .table td:nth-child(n+2) {
   display: none;
 }
-/* line 24, molecules/_table.scss */
+/* line 31, molecules/_table.scss */
 .table thead tr {
   display: none;
 }
 
-/* line 36, molecules/_table.scss */
+/* line 43, molecules/_table.scss */
 .table-striped tbody > tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
-/* line 50, molecules/_table.scss */
+/* line 57, molecules/_table.scss */
 .table {
   background-color: transparent;
-  border-collapse: collapse;
-  border-spacing: 0;
   margin-bottom: 22px;
+  border: 0 none;
 }
-/* line 57, molecules/_table.scss */
+/* line 63, molecules/_table.scss */
 .table th,
 .table td {
   display: table-cell !important;
@@ -2414,28 +2421,28 @@ ul.column--quad {
   text-align: left;
   vertical-align: top;
 }
-/* line 63, molecules/_table.scss */
+/* line 69, molecules/_table.scss */
 .table td {
   clear: none;
   float: none;
 }
-/* line 67, molecules/_table.scss */
+/* line 73, molecules/_table.scss */
 .table tbody tr {
   border-top: 1px solid #dddddd;
 }
-/* line 70, molecules/_table.scss */
+/* line 76, molecules/_table.scss */
 .table th {
   font-weight: bold;
 }
-/* line 74, molecules/_table.scss */
+/* line 80, molecules/_table.scss */
 .table thead tr {
   display: table-row;
 }
-/* line 78, molecules/_table.scss */
+/* line 84, molecules/_table.scss */
 .table thead th {
   vertical-align: bottom;
 }
-/* line 83, molecules/_table.scss */
+/* line 89, molecules/_table.scss */
 .table thead tr th,
 .table thead tr td {
   border-top: 0;
