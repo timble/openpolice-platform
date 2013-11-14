@@ -1,6 +1,8 @@
 @include respond-min($navbarCollapseWidth) {
   .container-header  {
-    margin-bottom: 20px;
+    position: relative;
+
+      margin-bottom: 20px;
 
     .text--strong {
       font-size: $fontSizeLarge;
@@ -32,4 +34,20 @@
       text-align: center;
     }
   }
+}
+
+// Apply sticky header only in modern browsers (they understand media queries)
+@media (max-width: $navbarCollapseWidth - 1)
+{
+    // Only when JS is enabled
+    .js-enabled {
+        .container-header {
+            position: fixed;
+        }
+
+        .container-content {
+            // Increase padding between sticky header and content
+            padding-top: ($gridGutterWidth / 1.25) + 50px;
+        }
+    }
 }

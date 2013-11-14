@@ -25,3 +25,7 @@ form {
 * html .navbar__logo {
   padding-top: 10px; // IE6
 }
+
+.media .media-object {
+    width: 64px; // IE7, otherwise the media object gets a 100% width
+}

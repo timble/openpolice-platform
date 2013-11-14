@@ -8,7 +8,7 @@
 
 var casper = require("casper").create();
 
-var screenshotUrl = 'http://police:police@s.pol-nl.be/5388',
+var screenshotUrl = 'http://www.lokalepolitie.be/5388',
     screenshotNow = new Date(),
     screenshotDateTime = screenshotNow.getFullYear() + pad(screenshotNow.getMonth() + 1) + pad(screenshotNow.getDate()) + '-' + pad(screenshotNow.getHours()) + pad(screenshotNow.getMinutes()) + pad(screenshotNow.getSeconds()),
     viewports = [

@@ -23,6 +23,8 @@
     <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style src="assets://application/css/default.css" />
+    <style src="assets://application/css/ie.css" condition="if IE 8" />
+    <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
 
     <script>
         function toggleBacktrace() {
@@ -78,7 +80,7 @@
                 <img class="thumbnail" src="assets://application/images/error.jpg" />
             </div>
         </div>
-        <div class="row-fluid text-center">
+        <div class="row-fluid text-center" style="margin-top: 30px">
             <a class="btn btn-large" href="/<?= $site ?>" title="<?= translate('Home Page'); ?>"><?= translate('Home Page'); ?></a>
         </div>
         <div class="row-fluid">
