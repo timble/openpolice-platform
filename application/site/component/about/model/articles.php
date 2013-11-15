@@ -7,10 +7,10 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
-namespace Nooku\Component\About;
 use Nooku\Library;
+use Nooku\Component\About;
 
-class ModelArticles extends Library\ModelTable
+class AboutModelArticles extends About\ModelArticles
 {
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
     {
