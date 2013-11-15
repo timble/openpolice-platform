@@ -14,20 +14,11 @@
 <script src="assets://js/koowa.js" />
 -->
 
-<script>
-    window.addEvent('domready', (function(){
-        <? if (!$article->id) : ?>
-        new Attachments.Upload({container: 'article-form'});
-        <? endif ?>
-    }));
-</script>
-
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
-<form action="" method="post" id="article-form" class="-koowa-form" enctype="multipart/form-data">
-	<input type="hidden" name="access" value="0" />
+<form action="" method="post" id="article-form" class="-koowa-form">
 	<input type="hidden" name="published" value="0" />
     <input type="hidden" name="sticky" value="0" />
 
