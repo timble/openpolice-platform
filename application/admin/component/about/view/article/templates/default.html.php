@@ -15,14 +15,6 @@
 <script src="assets://js/koowa.js" />
 -->
 
-<script>
-    window.addEvent('domready', (function(){
-        <? if (!$article->id) : ?>
-        new Attachments.Upload({container: 'article-form'});
-        <? endif ?>
-    }));
-</script>
-
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
