@@ -1,11 +1,11 @@
 <script>
     $jQuery(document).ready(function() {
         function format(item) { return item.title; };
-        $jQuery("#autocomplete__streets--footer").select2({
-            placeholder: "<?= translate('Search your street') ?> ...",
+        $jQuery("#municipality").select2({
+            placeholder: "<?= translate('Zoek uw woonplaats') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>?view=streets&format=json",
+                url: "?view=municipalities&format=json",
                 dataType: 'json',
                 data: function (term) {
                     return {
@@ -43,11 +43,33 @@
     });
 </script>
 
-<form action="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>" method="get" class="-koowa-form">
-    <div class="control-group">
-        <div class="controls">
-            <input type="text" class="bigdrop" id="autocomplete__streets--footer" placeholder="<?= translate('Search your street') ?> ..." name="street" value="<?= @$_COOKIE ['district_street'] ?>">
+<div id="wrap" class="container">
+    <div class="row-fluid">
+        <div class="span10 offset1">
+            <div class="splash">
+                <div class="logo"><img src="assets://application/images/splash-nl.jpg" /></div>
+                <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
+                    <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Zoek uw woonplaats') ?> ..." name="id" style="width: 100%">
+                    <br />
+                    <button class="btn">Go to site</button>
+                </form>
+                <div class="splash-language">
+                    <a href="#">Nederlands</a>
+                    <a href="#">Français</a>
+                    <a href="#">Deutsch</a>
+                </div>
+            </div>
         </div>
     </div>
-    <button class="btn btn-small btn-primary pull-right"><?= translate('Search') ?></button>
-</form>
+
+    <div id="push"></div>
+</div>
+<div id="footer">
+    <div class="container">
+        <ul class="nav nav-pills">
+            <li><a href="#">Federale Politie</a></li>
+            <li><a href="#">Opsporingen</a></li>
+            <li><a href="#">Police On Web</a></li>
+        </ul>
+    </div>
+</div>
