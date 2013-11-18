@@ -15,6 +15,7 @@ class DatabaseTableMunicipalities extends Library\DatabaseTableAbstract
     public function  _initialize(Library\ObjectConfig $config)
     {        
         $config->append(array(
+            'name'      => 'data.police_municipalities',
             'behaviors'    =>  array('lockable', 'creatable', 'modifiable')
         ));
      

@@ -34,8 +34,8 @@ class ModelMunicipalities extends Library\ModelTable
 	
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
-		$query->join(array('municipality' => 'police_municipalities'), 'tbl.parent_id = municipality.police_municipality_id');
-        $query->join(array('zone' => 'police_zones'), 'tbl.police_zone_id = zone.police_zone_id');
+		$query->join(array('municipality' => 'data.police_municipalities'), 'tbl.parent_id = municipality.police_municipality_id');
+        $query->join(array('zone' => 'data.police_zones'), 'tbl.police_zone_id = zone.police_zone_id');
 	}
 	
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
