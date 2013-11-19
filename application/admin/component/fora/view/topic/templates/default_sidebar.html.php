@@ -26,5 +26,5 @@
 
 <fieldset>
     <legend><?= translate('Forum') ?></legend>
-    <?= helper('listbox.forums', array('name' => 'fora_forum_id', 'selected' => $topic->fora_forum_id, 'attribs' => array('class' => 'select-forums required',  'style' => 'width:220px'))) ?>
+    <?= helper('listbox.forums', array('name' => 'fora_forum_id', 'selected' => $topic->fora_forum_id ? $topic->fora_forum_id : $state->forum, 'attribs' => array('class' => 'select-forums required',  'style' => 'width:220px'))) ?>
 </fieldset>

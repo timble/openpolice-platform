@@ -9,6 +9,9 @@
 ?>
 
 <style src="assets://fora/css/default.css" />
+<ktml:module position="actionbar">
+    <ktml:toolbar type="actionbar">
+</ktml:module>
 
 <div id="com_fora">
 <div id="fora-topics-default">
@@ -31,12 +34,6 @@
             <? if(!$total) : ?>
                 <? if(!$state->search) : ?>
                     <p><?= translate('This forum does not contain any topics yet') ?>.</p>
-
-                        <a class="btn btn-primary btn-small" href="<?= route('view=topic&layout=form&forum='.$state->forum) ?>">
-                            <?= translate('Start a new') ?>
-                            <? // translate('Start a new').' '.translate($forum->type) ?>
-                        </a>
-
                 <?else: ?>
                     <p><?= translate('Your search') ?> - <strong><?= $state->search ?></strong> - <?= translate('did not match anything inside our forums') ?>.</p>
 
