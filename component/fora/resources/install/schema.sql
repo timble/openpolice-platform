@@ -42,3 +42,14 @@ KEY `idx_enabled` (`published`),
 KEY `created_on` (`created_on`),
 CONSTRAINT `fora_topics_ibfk_1` FOREIGN KEY (`fora_forum_id`) REFERENCES `fora_forums` (`fora_forum_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `fora_subscriptions` (
+  `type` enum('topic','forum') NOT NULL DEFAULT 'topic',
+  `row` int(10) unsigned NOT NULL,
+  `site` varchar(30) DEFAULT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `last_viewed_on` datetime DEFAULT NULL,
+  `notification_sent_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`type`,`row`,`user_id`),
+  KEY `idx_type_row` (`type`,`row`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
