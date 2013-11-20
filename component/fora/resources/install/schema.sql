@@ -53,3 +53,11 @@ CREATE TABLE `fora_subscriptions` (
   PRIMARY KEY (`type`,`row`,`user_id`),
   KEY `idx_type_row` (`type`,`row`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `fora_votes` (
+  `fora_topic_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL,
+  `site` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`fora_topic_id`,`user_id`),
+  CONSTRAINT `fora_votes_ibfk_1` FOREIGN KEY (`fora_topic_id`) REFERENCES `fora_topics` (`fora_topic_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -26,6 +26,9 @@ class ForaViewTopicHtml extends Library\ViewHtml
             $this->subscription = true;
         } else $this->subscription = false;
 
+        $vote = $this->getObject('com:fora.database.table.votes')
+            ->select(array('fora_topic_id' => $this->getModel()->getRow()->id, 'user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
+        $this->voted = !$vote->isNew();
         return parent::render();
     }
 }

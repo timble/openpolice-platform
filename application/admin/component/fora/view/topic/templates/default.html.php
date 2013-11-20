@@ -40,7 +40,7 @@
                 <hr />
                 <div class="row-fluid">
                     <div class="muted pull-right" style="line-height: 46px;">
-                        <?//= import('default_vote'); ?>
+                        <?= import('default_vote.html'); ?>
                     </div>
                 </div>
 
