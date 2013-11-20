@@ -36,7 +36,9 @@
             </div>
             <div class="well__content">
                 <?= $topic->text ?>
-                <?//= @template('com://site/fora.view.attachments.default') ?>
+                <? if($topic->isAttachable()):?>
+                    <?= import('default_attachments.html', array('attachments' => $topic->getAttachments())) ?>
+                <?endif;?>
                 <hr />
                 <div class="row-fluid">
                     <div class="muted pull-right" style="line-height: 46px;">

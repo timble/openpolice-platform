@@ -19,7 +19,10 @@ class ForaViewTopicHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $this->comments = $this->getObject('com:comments.model.comments')->row($this->getModel()->getRow()->id)->table('fora')->getRowset();
+
+        $topic = $this->getModel()->getData();
+
+        $this->comments = $this->getObject('com:comments.model.comments')->row($topic->id)->table('fora')->getRowset();
 
         if($this->getObject('com:fora.model.subscriptions')->type('forum')->user_id($this->getObject('user')->getId())->row($this->getModel()->getState()->forum)->getRow()->row)
         {
@@ -27,11 +30,11 @@ class ForaViewTopicHtml extends Library\ViewHtml
         } else $this->subscription = false;
 
         $vote = $this->getObject('com:fora.database.table.votes')
-            ->select(array('fora_topic_id' => $this->getModel()->getRow()->id, 'user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
+            ->select(array('fora_topic_id' => $topic->id, 'user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
         $this->voted = !$vote->isNew();
 
 
-        $this->forums = $this->getObject('com:fora.model.forums')->id($this->getModel()->getRow()->fora_forum_id)->getRow();
+        $this->forums = $this->getObject('com:fora.model.forums')->id($topic->fora_forum_id)->getRow();
 
         return parent::render();
     }

@@ -28,3 +28,17 @@
     <legend><?= translate('Forum') ?></legend>
     <?= helper('listbox.forums', array('name' => 'fora_forum_id', 'selected' => $topic->fora_forum_id ? $topic->fora_forum_id : $state->forum, 'attribs' => array('class' => 'select-forums required',  'style' => 'width:220px'))) ?>
 </fieldset>
+<? if($topic->isAttachable()) : ?>
+    <div class="tab">
+        <input type="radio" id="tab-3" name="tab-group-1">
+        <label for="tab-3"><?= translate('Attachments') ?></label>
+        <div class="content">
+            <fieldset>
+                <? if (!$topic->isNew()) : ?>
+                    <?= import('com:attachments.view.attachments.list.html', array('attachments' => $topic->getAttachments(), 'attachments_attachment_id' => $topic->attachments_attachment_id)) ?>
+                <? endif ?>
+                <?= import('com:attachments.view.attachments.upload.html') ?>
+            </fieldset>
+        </div>
+    </div>
+<? endif ?>

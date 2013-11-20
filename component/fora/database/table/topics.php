@@ -24,7 +24,8 @@ class DatabaseTableTopics extends Library\DatabaseTableAbstract
             'name'       => 'fora_topics',
             'behaviors'  => array(
                 'creatable', 'modifiable', 'lockable', 'sluggable',
-                'com:comments.database.behavior.discussible'
+                'com:comments.database.behavior.discussible',
+                'com:attachments.database.behavior.attachable',
             ),
             'filters' => array(
                 'text'   => array('html', 'tidy'),
