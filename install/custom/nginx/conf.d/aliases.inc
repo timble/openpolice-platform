@@ -454,8 +454,8 @@ location ~ "^/(collines|ellezelles|flobecq|frasnes-lez-envaing|lessines)(?:/.*)?
 	rewrite ^ /5323 permanent;
 }
 
-location ~ "^/(5318|comines|comines-warneton|warneton)(?:/.*)?$" {
-	rewrite ^ http://www.policedecomines-warneton.be permanent;
+location ~ "^/(comines|comines-warneton|warneton)(?:/.*)?$" {
+	rewrite ^ /5318 permanent;
 }
 
 location ~ "^/(courcelles|fontaine-leveque|trieux|zone-des-trieux|zonedestrieux)(?:/.*)?$" {
