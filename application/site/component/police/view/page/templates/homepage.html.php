@@ -36,7 +36,7 @@
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Questions')) ?>"><?= translate('Frequently asked questions') ?></a></li>
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Traffic')) ?>"><?= translate('Traffic information') ?></a></li>
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('About us')) ?>"><?= translate('About us') ?></a></li>
-                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Contact')) ?>"><?= translate('Contacteer ons') ?></a></li>
+                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Contact')) ?>"><?= translate('Contact us') ?></a></li>
             </ul>
 
             <ul class="nav nav-tabs nav-stacked hidden-phone">
