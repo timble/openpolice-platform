@@ -9,6 +9,7 @@
 ?>
 
 <style src="assets://fora/css/default.css" />
+<script src="assets://fora/js/subscribe.js" />
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
@@ -24,13 +25,13 @@
         </div>
 
         <div class="well well-small">
-            <div class="well__heading--left">
-                <h3><?=$forums->title;?></h3>
-            </div>
-            <div class="well__heading--right">
-                <button id="subscription" class="btn-mini <?=$subscription->row? 'btn-unsubscribed':'btn-subscribed';?>">
-                    <?=$subscription->row ? translate('Unsubscrib'): translate('Subscribe');?>
-                </button>
+            <div class="well__frame">
+                <h1 class="well__heading well__heading--left"><?= escape($forums->title) ?></h1>
+                <div class="well__toolbar">
+                    <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription">
+                        <i class="icon-star"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="well__content">
@@ -64,28 +65,17 @@
 
 <script data-inline>
     jQuery( document ).ready(function($) {
-        $('#subscription').click(function(e){
-            e.preventDefault();
-            var data = {};
-
-            // Need to do this because we don't know what field there is being edited....
-            data['type']   ='forum';
-            data['row']    = '<?=$state->forum;?>';
-            data['user_id'] = '<?=object('user')->getId();?>';
-            data['site']    = '<?=object('application')->getSite();?>';
-            data['_token'] = '<?=$this->getObject('user')->getSession()->getToken()?>';
-            if($('#subscription').hasClass('btn-unsubscribed')){
-                data['_method'] = 'delete';
+        new Fora.Subscribe({
+            holder: 'fora-topics-default',
+            url: '<?= html_entity_decode(route('view=subscription&type=forum&row='.$topic->id.'&user_id='.object('user')->getId())) ?>',
+            data: {
+                action: '<?= $subscription ? 'delete' : 'add' ?>',
+                type: 'topic',
+                row: '<?= $topic->id ?>',
+                user_id: '<?= object('user')->getId() ?>',
+                _token: '<?= object('user')->getSession()->getToken() ?>',
+                site: '<?=object('application')->getSite();?>'
             }
-
-            var request =jQuery.post('index.php?option=com_fora&view=subscription', data);
-            request.done(function(res){
-                $('#subscription').toggleClass('btn-unsubscribed').toggleClass('btn-subscribed');
-                $('#subscription').html($('#subscription').hasClass('btn-unsubscribed') ? 'Unsubscribe' : 'Subscribe');
-
-            });
-
-        })
-
+        });
     });
 </script>

@@ -22,7 +22,10 @@ class ForaViewTopicsHtml extends Library\ViewHtml
 
         $this->forums = $this->getObject('com:fora.model.forums')->id($this->getModel()->getState()->forum)->getRow();
 
-        $this->subscription = $this->getObject('com:fora.model.subscriptions')->type('forum')->user_id($this->getObject('user')->getId())->row($this->getModel()->getState()->forum)->getRow();
+        if($this->getObject('com:fora.model.subscriptions')->type('forum')->user_id($this->getObject('user')->getId())->row($this->getModel()->getState()->forum)->getRow()->row)
+        {
+            $this->subscription = true;
+        } else $this->subscription = false;
 
         return parent::render();
     }
