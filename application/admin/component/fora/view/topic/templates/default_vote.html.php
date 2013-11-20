@@ -25,39 +25,37 @@
 
 <div>
     <?
-    /* TODO: Make this translatable. Note: Translation not only means adding @text() to strings.
-       Due the language differences, sentence can't be built from parts. The whole sentence should be used as translation key. */
+    if($topic->votes == 0) {
+        echo 'Nobody voted yet.';
+    } else {
+        $votes = $topic->votes;
 
-//    if($topic->votes == 0) {
-//        echo 'Nobody voted yet.';
-//    } else {
-//        $votes = $topic->votes;
-//
-//        if($voted) {
-//            echo 'You'.' '.(--$votes ? 'and'.' ' : '');
-//        }
-//
-//        if($votes) {
-//            echo $votes.' '.($votes > 1 ? 'people' : 'person').' ';
-//        }
-//
-//        switch($forum->type) {
-//            case 'article':
-//                echo 'found this helpful.';
-//                break;
-//
-//            case 'idea':
-//                echo 'like this.';
-//                break;
-//
-//            case 'question':
-//                echo 'would like this answered.';
-//                break;
-//        }
-//    }
+        if($voted) {
+            echo 'You'.' '.(-- $votes ? 'and'.' ' : '');
+        }
+
+        if($votes) {
+
+            echo $votes.' '.( $votes > 1 ? 'people' : 'person').' ';
+        }
+
+        switch($forums->type) {
+            case 'article':
+                echo 'found this helpful.';
+                break;
+
+            case 'idea':
+                echo 'like this.';
+                break;
+
+            case 'question':
+                echo 'would like this answered.';
+                break;
+        }
+    }
     ?>
 
     <? if(!$voted) : ?>
-        <a class="vote btn btn-small"><?= $topic->votes ? translate('Me too!') : translate('Vote now!') ?></a>
+        <a class="vote btn btn-small"><?= $topic->votes ? translate('Me too!') : translate('Vote now!') ?><i class="icon-thumbs-up"></i></a>
     <? endif ?>
 </div>
