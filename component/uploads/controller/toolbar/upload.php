@@ -28,6 +28,7 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         $this->addRelations();
         $this->addStreets();
         $this->addNews();
+        $this->addContacts();
     }
 
     protected function _commandDistricts(Library\ControllerToolbarCommand $command)
@@ -52,5 +53,11 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     {
         $command->label = 'News';
         $command->href = 'option=com_uploads&view=upload&table=news';
+    }
+
+    protected function _commandContacts(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'Contacts';
+        $command->href = 'option=com_uploads&view=upload&table=contacts';
     }
 }
