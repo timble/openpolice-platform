@@ -27,6 +27,7 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         $this->addDistricts();
         $this->addRelations();
         $this->addStreets();
+        $this->addNews();
     }
 
     protected function _commandDistricts(Library\ControllerToolbarCommand $command)
@@ -45,5 +46,11 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     {
         $command->label = 'Local Streets';
         $command->href = 'option=com_uploads&view=upload&table=agiv_streets';
+    }
+
+    protected function _commandNews(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'News';
+        $command->href = 'option=com_uploads&view=upload&table=news';
     }
 }
