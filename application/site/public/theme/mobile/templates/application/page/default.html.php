@@ -99,7 +99,13 @@ $language_short = $language_short[0];
     <div class="container-copyright">
     <div class="row-fluid">
         <div class="span6 alpha">
-            <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
+            <? if($zone->twitter) : ?>
+            <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> |
+            <? endif ?>
+            <? if($zone->facebook) : ?>
+            <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a> |
+            <? endif ?>
+            <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
         <div class="span6 copyright">
             © 2013 <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
