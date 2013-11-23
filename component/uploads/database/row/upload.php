@@ -50,6 +50,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $this->_importStreets($data);
                 }
 
+                if($table == 'news'){
+                    $this->_importNews($data);
+                }
+
                 fclose($handle);
             }
         }
@@ -140,6 +144,32 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $islp->id = $street->id;
                     $islp->islp = $item['islp'];
                     $islp->save();
+                }
+            }
+        }
+    }
+
+    public function _importNews($data)
+    {
+        foreach($data as $item)
+        {
+            if($item['catid'] == $this->catid && $item['state'] == '1')
+            {
+                $row = $this->getObject('com:news.database.row.article');
+                $row->id = $item['id'];
+
+                if(!$row->load())
+                {
+                    $row->title = $item['title'];
+                    $row->slug = $item['alias'];
+                    $row->introtext = $item['introtext'];
+                    $row->fulltext = $item['fulltext'];
+                    $row->created_on = $item['created'];
+                    $row->created_by = $item['created_by'];
+                    $row->modified_on = $item['modified'];
+                    $row->modified_by = $item['modified_by'];
+                    $row->published = $item['state'];
+                    $row->save();
                 }
             }
         }
