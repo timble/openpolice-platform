@@ -28,6 +28,7 @@ CREATE TABLE `fora_topics` (
   `slug` varchar(255) DEFAULT NULL,
   `text` text NOT NULL,
   `votes` smallint(6) DEFAULT NULL,
+  `hits` int(11) DEFAULT '0',
   `comments_comment_id` int(11) unsigned NOT NULL,
   `commentable` tinyint(1) NOT NULL DEFAULT '1',
   `published` tinyint(1) NOT NULL DEFAULT '1',
@@ -48,7 +49,7 @@ CREATE TABLE `fora_topics` (
   KEY `idx_enabled` (`published`),
   KEY `created_on` (`created_on`),
   CONSTRAINT `fora_topics_ibfk_1` FOREIGN KEY (`fora_forum_id`) REFERENCES `fora_forums` (`fora_forum_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `fora_subscriptions` (
   `type` enum('topic','forum') NOT NULL DEFAULT 'topic',

@@ -10,6 +10,8 @@
 namespace Nooku\Component\Fora;
 
 use Nooku\Library;
+use Nooku\Library\CommandContext;
+
 
 /**
  * Topic Controller
@@ -32,5 +34,17 @@ class ControllerTopic extends Library\ControllerModel
         ));
 
         parent::_initialize($config);
+    }
+
+    protected function _actionRead(CommandContext $context)
+    {
+
+        $topic = $this->getModel()->getRow();
+
+        if($topic->isHittable()) {
+            $topic->hit();
+        }
+
+        return parent::_actionRead($context);
     }
 }
