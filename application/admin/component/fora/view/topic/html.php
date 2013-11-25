@@ -34,7 +34,7 @@ class ForaViewTopicHtml extends Library\ViewHtml
         $this->voted = !$vote->isNew();
 
 
-        $this->forums = $this->getObject('com:fora.model.forums')->id($topic->fora_forum_id)->getRow();
+        $this->forum = $this->getObject('com:fora.model.forums')->id($topic->fora_forum_id)->getRow();
 
         return parent::render();
     }

@@ -39,7 +39,7 @@
             echo $votes.' '.( $votes > 1 ? 'people' : 'person').' ';
         }
 
-        switch($forums->type) {
+        switch($forum->type) {
             case 'article':
                 echo 'found this helpful.';
                 break;

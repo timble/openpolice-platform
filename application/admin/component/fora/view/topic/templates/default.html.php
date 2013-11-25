@@ -4,6 +4,7 @@
 <style src="assets://fora/css/default.css" />
 
 <script src="assets://fora/js/subscribe.js" />
+
 <div id="com_fora">
     <div id="fora-topic-default" class="span9">
         <div class="well well-small">
@@ -60,10 +61,23 @@
             <?//= @template('default_note') ?>
         <? //endif; ?>
         <? foreach($comments as $comment) :?>
-            <div class="comment">
+            <div class="comment well">
                 <div class="comment-header">
                     <?= $comment->created_by == object('user')->id ? translate('You') : $comment->created_by_name ?>&nbsp;<?= translate('wrote') ?>
                     <time datetime="<?= $comment->created_on ?>" pubdate><?= helper('date.humanize', array('date' => $comment->created_on)) ?></time>
+                </div>
+                <div class="btn-group" style="float: right">
+                    <? if($forum->type != 'article') : ?>
+                        <button title="<?=translate($comment->responded ? 'Unmark as' : 'Mark as') ?> <?//= strtolower(@helper('topic.response', array('type' => $forum->type))) ?>"
+                                class="btn btn-small respond"
+                                data-topic="<?=$topic->id;?>"
+                                data-id="<?= $comment->id ?>" data-action="<?= $comment->responded ? 'delete' : 'post' ?>">
+                            <i class="<?= $comment->responded ? 'icon-remove' : 'icon-ok' ?>"></i>
+                        </button>
+                    <? endif ?>
+<!--                    --><?// if ($agent) : ?>
+<!--                        <button title="--><?//= @text('Delete comment') ?><!--" class="btn btn-small delete" data-id="--><?//= $comment->id ?><!--"><i class="icon-trash"></i></button>-->
+<!--                    --><?// endif ?>
                 </div>
                 <p><?= escape($comment->text) ?></p>
             </div>
@@ -84,6 +98,28 @@
                 _token: '<?= object('user')->getSession()->getToken() ?>',
                 site: '<?=object('application')->getSite();?>'
             }
+        });
+
+        $('.respond').click(function(event){
+            event.preventDefault();
+            alert($(this).data('id'));
+            var request = new Request({
+                method: 'post',
+                url: '<?= html_entity_decode(route('view=respond&type=topic&id='.$topic->id)) ?>',
+                data: {
+                    _token: '<?= object('user')->getSession()->getToken() ?>',
+                    comments_comment_id: $(this).data('id'),
+                    id: $(this).data('topic')
+                },
+
+                onSuccess: function() {
+                    //this.complete();
+                }.bind(this),
+
+                onFailure: function() {
+                    //this.failure();
+                }.bind(this)
+            }).send();
         });
     });
 </script>
