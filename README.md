@@ -55,3 +55,7 @@ Check our [contributing](CONTRIBUTING.md) guide.
 ## License
 
 The files in this archive are released under the GPLv3 license. You can find a copy of this license in [LICENSE](LICENSE.md).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/belgianpolice/internet-platform/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
