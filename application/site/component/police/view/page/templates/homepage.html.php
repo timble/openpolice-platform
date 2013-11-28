@@ -48,7 +48,8 @@
         </div>
     </div>
     <div class="span8 sticky alpha">
-        <? foreach (object('com:news.model.articles')->sticky(true)->getRowset() as $article) : ?>
+        <? $articles = object('com:news.controller.article')->sticky(true)->browse()->count() ? object('com:news.controller.article')->sticky(true)->browse() : object('com:news.controller.article')->limit('1')->browse(); ?>
+        <? foreach ($articles as $article) : ?>
             <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
             <article class="hidden-phone">
                 <header class="article__header">
