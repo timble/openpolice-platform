@@ -13,7 +13,7 @@ Developed by <a href="http://www.timble.net">Timble</a>.
 * Install [Vagrant](http://downloads.vagrantup.com/)
 * Clone this repository
     ```$ git clone https://github.com/belgianpolice/internet-platform.git```
-* Download the 'Police Box' from [https://docs.google.com/file/d/0B8ge8rYDyzFhSy1WMjdmSXRkSTQ/edit?usp=sharing](https://docs.google.com/file/d/0B8ge8rYDyzFhSy1WMjdmSXRkSTQ/edit?usp=sharing)
+* Download the 'Police Box' from [http://4b79b5d29bda1ea3808e-c0244351096da2f99013ff9619ea0386.r14.cf2.rackcdn.com/police.box](http://4b79b5d29bda1ea3808e-c0244351096da2f99013ff9619ea0386.r14.cf2.rackcdn.com/police.box)
 * Setup the server
     ```vagrant box add police local-path-to-police.box```
 * Go to the repository folder and bootup the server
