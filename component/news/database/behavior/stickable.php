@@ -15,14 +15,17 @@ class DatabaseBehaviorStickable extends Library\DatabaseBehaviorAbstract
 {
     protected function _beforeTableUpdate(Library\CommandContext $context)
     {
-        // Set home.
-        if($this->isModified('sticky') && $this->sticky == 1)
+        // Check if the row is setting the sticky field
+        if($this->isModified('sticky') && $this->sticky == true)
         {
-            $article = $this->getObject('com:news.database.table.articles')
-                ->select(array('sticky' => 1), Library\Database::FETCH_ROW);
+            // Find the existing article that is stickified
+            $article = $this->getObject('com:news.database.row.article')->set('sticky', true);
 
-            $article->sticky = 0;
-            $article->save();
+            // Remove the sticky value
+            if($article->load()) {
+                $article->sticky = false;
+                $article->save();
+            }
         }
     }
 }
