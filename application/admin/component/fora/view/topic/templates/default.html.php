@@ -49,6 +49,11 @@
 
             </div>
         </div>
+        <? if($forum->type != 'article') : ?>
+            <div class="well well-small">
+
+            </div>
+        <?endif;?>
         <form action="<?= route('&view=comment&row='.$topic->id.'&table=fora') ?>" method="post">
             <input type="hidden" name="row" value="<?= $topic->id ?>" />
             <input type="hidden" name="table" value="fora" />

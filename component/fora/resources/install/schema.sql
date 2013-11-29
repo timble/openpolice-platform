@@ -69,3 +69,9 @@ CREATE TABLE `fora_votes` (
   PRIMARY KEY (`fora_topic_id`,`user_id`),
   CONSTRAINT `fora_votes_ibfk_1` FOREIGN KEY (`fora_topic_id`) REFERENCES `fora_topics` (`fora_topic_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `fora_responds` (
+  `fora_topic_id` int(11) unsigned NOT NULL,
+  `comments_comment_id` int(11) NOT NULL,
+  PRIMARY KEY (`fora_topic_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

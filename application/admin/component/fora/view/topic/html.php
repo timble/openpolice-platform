@@ -36,6 +36,18 @@ class ForaViewTopicHtml extends Library\ViewHtml
 
         $this->forum = $this->getObject('com:fora.model.forums')->id($topic->fora_forum_id)->getRow();
 
+        if($this->forum->type != 'article')
+        {
+            $responds = $this->getObject('com:fora.database.table.responds')
+                ->select(array('fora_topic_id' => $topic->id), Library\Database::FETCH_ROW);
+
+            $this->awnser =$this->getObject('com:comments.model.comments')
+                ->id($responds->comments_comment_id)
+                ->getRow();
+        }
+
+
+
         return parent::render();
     }
 }
