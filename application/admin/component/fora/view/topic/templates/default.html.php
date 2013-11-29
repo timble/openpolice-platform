@@ -51,7 +51,26 @@
         </div>
         <? if($forum->type != 'article') : ?>
             <div class="well well-small">
-
+                <div class="comment well">
+                    <div class="comment-header">
+                        <?= $awnser->created_by == object('user')->id ? translate('You') : $awnser->created_by_name ?>&nbsp;<?= translate('wrote') ?>
+                        <time datetime="<?= $awnser->created_on ?>" pubdate><?= helper('date.humanize', array('date' => $awnser->created_on)) ?></time>
+                    </div>
+                    <div class="btn-group" style="float: right">
+                        <? if($forum->type != 'article') : ?>
+                            <button title="<?=translate('Unmark as') ?>"
+                                    class="btn btn-small respond"
+                                    data-topic="<?=$topic->id;?>"
+                                    data-id="<?= $awnser->id ?>" data-action="delete">
+                                <i class="icon-remove"></i>
+                            </button>
+                        <? endif ?>
+                        <!--                    --><?// if ($agent) : ?>
+                        <!--                        <button title="--><?//= @text('Delete comment') ?><!--" class="btn btn-small delete" data-id="--><?//= $comment->id ?><!--"><i class="icon-trash"></i></button>-->
+                        <!--                    --><?// endif ?>
+                    </div>
+                    <p><?= escape($awnser->text) ?></p>
+                </div>
             </div>
         <?endif;?>
         <form action="<?= route('&view=comment&row='.$topic->id.'&table=fora') ?>" method="post">
