@@ -3,7 +3,7 @@
 ## Police Internet Platform
 
 The Police Internet Platform is an open-source platform specifically built for the internet websites of the Belgian Police.
-It uses a component based architecture. Written in PHP 5.3, HTML5, CSS3 and Javascript, and made by passionate open source technologists.
+It uses a component based architecture. Written in PHP 5.3, HTML, CSS and Javascript, and made by passionate open source technologists.
 
 Developed by <a href="http://www.timble.net">Timble</a>.
 
@@ -46,6 +46,30 @@ More information about the Vagrant command-line interface can be found at [docs.
     email: admin@localhost.home
     password: admin
     ```
+
+## Built on Open Source software
+
+The Police Internet Platform is built on open source software and wouldn't be as productive without these open source projects around.
+We simply just want to say thank you to the following projects for helping us out:
+
+* [Bootstrap](http://getbootstrap.com)
+* [Capistrano](http://www.capistranorb.com)
+* [Composer](http://getcomposer.org)
+* [Git](http://git-scm.com)
+* [Imagine](https://github.com/avalanche123/Imagine)
+* [jQuery](http://jquery.com)
+* [Linux](http://linux.org)
+* [MooTools](http://mootools.net)
+* [nginx](http://nginx.org)
+* [Nooku](http://www.nooku.org)
+* [PageSpeed](http://developers.google.com/speed/pagespeed)
+* [PHP](http://php.net)
+* [PHP-JWT](http://github.com/firebase/php-jwt)
+* [Sass](http://sass-lang.com)
+* [Select2](http://ivaynberg.github.io/select2)
+* [Vagrant](http://www.vagrantup.com)
+* [VirtualBox](http://www.virtualbox.org)
+
 
 ## How to contribute?
 
