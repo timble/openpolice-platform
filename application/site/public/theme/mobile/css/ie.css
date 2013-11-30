@@ -238,7 +238,7 @@ body {
 
 /* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_scaffolding.scss */
 a {
-  color: #004fa3;
+  color: #004d9f;
   text-decoration: none;
 }
 
@@ -1070,7 +1070,7 @@ html {
 }
 /* line 9, molecules/_article.scss */
 .article p a, .article li a {
-  border-bottom: 1px dotted #004fa3;
+  border-bottom: 1px dotted #004d9f;
 }
 /* line 12, molecules/_article.scss */
 .article p a:hover, .article li a:hover {
@@ -1163,17 +1163,17 @@ html {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 1px solid #002f61;
+  border: 1px solid #002d5d;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #0056b2;
+  background-color: #0054ae;
   color: white;
 }
 /* line 19, molecules/_buttons.scss */
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
   color: white;
-  background-color: #006de0;
+  background-color: #006bdc;
 }
 /* line 27, molecules/_buttons.scss */
 .btn:hover, .btn:focus, .btn:active {
@@ -1264,7 +1264,7 @@ input[type="submit"].btn.btn-small {
 .btn-link {
   border-color: transparent;
   cursor: pointer;
-  color: #004fa3;
+  color: #004d9f;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -1694,7 +1694,7 @@ select:focus:invalid:focus {
   padding-top: 26px;
   display: block;
   text-decoration: none;
-  color: #004fa3;
+  color: #004d9f;
 }
 /* line 18, molecules/_header.scss */
 .container-header .span3 .logo img {
@@ -1728,9 +1728,10 @@ select:focus:invalid:focus {
 .navbar {
   min-height: 32px;
   width: 100%;
-  background-color: #0056b2;
-  border-bottom: 1px solid #004fa3;
+  background-color: #0054ae;
+  border-bottom: 1px solid #004d9f;
   *zoom: 1;
+  color: white;
 }
 /* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
 .navbar:before, .navbar:after {
@@ -1743,46 +1744,46 @@ select:focus:invalid:focus {
   clear: both;
 }
 
-/* line 15, molecules/_header__navbar.scss */
+/* line 17, molecules/_header__navbar.scss */
 .navbar .nav {
   margin: 0;
   text-align: left;
-  border-top: 1px solid #004fa3;
+  border-top: 1px solid #004d9f;
   width: 100%;
 }
 
-/* line 23, molecules/_header__navbar.scss */
+/* line 25, molecules/_header__navbar.scss */
 .navbar .nav li a {
   color: white;
   text-decoration: none;
   display: block;
-  border-bottom: 1px solid #004fa3;
+  border-bottom: 1px solid #004d9f;
   padding: 13px 20px;
   font-weight: bold;
   color: white;
 }
 
-/* line 35, molecules/_header__navbar.scss */
+/* line 37, molecules/_header__navbar.scss */
 .navbar .nav li a:focus,
 .navbar .nav li a:hover {
-  background-color: #006de0;
+  background-color: #006bdc;
   color: white;
   text-decoration: none;
 }
 
-/* line 44, molecules/_header__navbar.scss */
+/* line 46, molecules/_header__navbar.scss */
 .navbar .nav .active a,
 .navbar .nav .active a:hover,
 .navbar .nav .active a:focus {
   color: white;
   text-decoration: none;
-  background-color: #004389;
+  background-color: #004185;
   -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
 }
 
-/* line 54, molecules/_header__navbar.scss */
+/* line 56, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo {
   float: right;
   padding-right: 20px;
@@ -1790,15 +1791,15 @@ select:focus:invalid:focus {
   color: white;
   zoom: 1;
 }
-/* line 61, molecules/_header__navbar.scss */
+/* line 63, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo:hover {
   color: white;
 }
-/* line 65, molecules/_header__navbar.scss */
+/* line 67, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo img {
   margin-right: 6px;
 }
-/* line 70, molecules/_header__navbar.scss */
+/* line 72, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__handle {
   cursor: pointer;
   float: left;
@@ -1808,48 +1809,48 @@ select:focus:invalid:focus {
   font-size: 30px;
   color: white;
   text-align: center;
-  border-right: 1px solid #004fa3;
+  border-right: 1px solid #004d9f;
 }
 
-/* line 84, molecules/_header__navbar.scss */
+/* line 86, molecules/_header__navbar.scss */
 .navbar {
   border-bottom: 0 none;
-  border: 1px solid #002f61;
+  border: 1px solid #002d5d;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
 
-/* line 91, molecules/_header__navbar.scss */
+/* line 93, molecules/_header__navbar.scss */
 .navbar {
   /* Customize the navbar links to be fill the entire space of the .navbar */
 }
-/* line 93, molecules/_header__navbar.scss */
+/* line 95, molecules/_header__navbar.scss */
 .navbar .nav {
   margin: 0;
   display: table;
   border: 0 none;
 }
-/* line 98, molecules/_header__navbar.scss */
+/* line 100, molecules/_header__navbar.scss */
 .navbar .nav li {
   display: table-cell;
   width: 1%;
 }
-/* line 102, molecules/_header__navbar.scss */
+/* line 104, molecules/_header__navbar.scss */
 .navbar .nav li a {
   text-align: center;
   padding: 5px 15px 5px;
   border: 0 none;
   font-weight: normal;
 }
-/* line 108, molecules/_header__navbar.scss */
+/* line 110, molecules/_header__navbar.scss */
 .navbar .nav li:first-child a {
   border-left: 0;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
 }
-/* line 112, molecules/_header__navbar.scss */
+/* line 114, molecules/_header__navbar.scss */
 .navbar .nav li:last-child a {
   border-right: 0;
   -webkit-border-radius: 0 4px 4px 0;
@@ -2004,7 +2005,7 @@ ul.column--quad {
 .nav-pills > .active > a:hover,
 .nav-pills > .active > a:focus {
   color: white;
-  background-color: #004fa3;
+  background-color: #004d9f;
 }
 
 /* line 89, molecules/_navs.scss */
@@ -2286,7 +2287,7 @@ table th, table td {
 a.thumbnail:hover, a.article__thumbnail:hover,
 a.thumbnail:focus,
 a.article__thumbnail:focus {
-  border-color: #004fa3 !important;
+  border-color: #004d9f !important;
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
@@ -2323,7 +2324,7 @@ a.article__thumbnail:focus {
 
 /* line 9, molecules/_typography.scss */
 .text--strong {
-  color: #004fa3;
+  color: #004d9f;
   font-weight: bold;
 }
 
