@@ -1735,7 +1735,6 @@ select:focus:invalid:focus {
   background-color: #0054ae;
   border-bottom: 1px solid #004d9f;
   *zoom: 1;
-  color: white;
 }
 /* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
 .navbar:before, .navbar:after {
@@ -1748,7 +1747,7 @@ select:focus:invalid:focus {
   clear: both;
 }
 
-/* line 17, molecules/_header__navbar.scss */
+/* line 15, molecules/_header__navbar.scss */
 .navbar .nav {
   margin: 0;
   text-align: left;
@@ -1756,7 +1755,7 @@ select:focus:invalid:focus {
   width: 100%;
 }
 
-/* line 25, molecules/_header__navbar.scss */
+/* line 23, molecules/_header__navbar.scss */
 .navbar .nav li a {
   color: white;
   text-decoration: none;
@@ -1767,7 +1766,7 @@ select:focus:invalid:focus {
   color: white;
 }
 
-/* line 37, molecules/_header__navbar.scss */
+/* line 35, molecules/_header__navbar.scss */
 .navbar .nav li a:focus,
 .navbar .nav li a:hover {
   background-color: #006bdc;
@@ -1775,7 +1774,7 @@ select:focus:invalid:focus {
   text-decoration: none;
 }
 
-/* line 46, molecules/_header__navbar.scss */
+/* line 44, molecules/_header__navbar.scss */
 .navbar .nav .active a,
 .navbar .nav .active a:hover,
 .navbar .nav .active a:focus {
@@ -1787,7 +1786,7 @@ select:focus:invalid:focus {
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
 }
 
-/* line 56, molecules/_header__navbar.scss */
+/* line 54, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo {
   float: right;
   padding-right: 20px;
@@ -1795,15 +1794,15 @@ select:focus:invalid:focus {
   color: white;
   zoom: 1;
 }
-/* line 63, molecules/_header__navbar.scss */
+/* line 61, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo:hover {
   color: white;
 }
-/* line 67, molecules/_header__navbar.scss */
+/* line 65, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo img {
   margin-right: 6px;
 }
-/* line 72, molecules/_header__navbar.scss */
+/* line 70, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__handle {
   cursor: pointer;
   float: left;
@@ -1817,7 +1816,7 @@ select:focus:invalid:focus {
 }
 
 @media screen and (min-width: 767px) {
-  /* line 86, molecules/_header__navbar.scss */
+  /* line 84, molecules/_header__navbar.scss */
   .navbar {
     border-bottom: 0 none;
     border: 1px solid #002d5d;
@@ -1826,36 +1825,36 @@ select:focus:invalid:focus {
     border-radius: 4px;
   }
 
-  /* line 93, molecules/_header__navbar.scss */
+  /* line 91, molecules/_header__navbar.scss */
   .navbar {
     /* Customize the navbar links to be fill the entire space of the .navbar */
   }
-  /* line 95, molecules/_header__navbar.scss */
+  /* line 93, molecules/_header__navbar.scss */
   .navbar .nav {
     margin: 0;
     display: table;
     border: 0 none;
   }
-  /* line 100, molecules/_header__navbar.scss */
+  /* line 98, molecules/_header__navbar.scss */
   .navbar .nav li {
     display: table-cell;
     width: 1%;
   }
-  /* line 104, molecules/_header__navbar.scss */
+  /* line 102, molecules/_header__navbar.scss */
   .navbar .nav li a {
     text-align: center;
     padding: 5px 15px 5px;
     border: 0 none;
     font-weight: normal;
   }
-  /* line 110, molecules/_header__navbar.scss */
+  /* line 108, molecules/_header__navbar.scss */
   .navbar .nav li:first-child a {
     border-left: 0;
     -webkit-border-radius: 4px 0 0 4px;
     -moz-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
   }
-  /* line 114, molecules/_header__navbar.scss */
+  /* line 112, molecules/_header__navbar.scss */
   .navbar .nav li:last-child a {
     border-right: 0;
     -webkit-border-radius: 0 4px 4px 0;
