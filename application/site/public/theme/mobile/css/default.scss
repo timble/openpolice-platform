@@ -9,7 +9,7 @@
 @import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/scaffolding";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/grid";
 @import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/layouts";
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/type";
+//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/type";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/code";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/forms";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/tables";
@@ -47,6 +47,7 @@
 @import "utilities/select2";
 @import "utilities/system";
 
+@import "atoms/type";
 @import "atoms/body";
 @import "atoms/figure";
 @import "atoms/headings";
