@@ -57,6 +57,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [Composer](http://getcomposer.org)
 * [Git](http://git-scm.com)
 * [Imagine](https://github.com/avalanche123/Imagine)
+* [Joomla](http://www.joomla.org)
 * [jQuery](http://jquery.com)
 * [Linux](http://linux.org)
 * [MooTools](http://mootools.net)
