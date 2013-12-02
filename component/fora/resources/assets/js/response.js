@@ -1,69 +1,76 @@
 if(!Fora) var Fora = {};
 
-Fora.Awnser = new Class({
+Fora.Response = new Class({
     Implements: Options,
 
     initialize: function(options) {
-        options.button = document.id(options.holder).getElement('button.awnser');
+        options.button = document.id(options.holder).getElements('button.response');
+        if( options.button.length)
+        {
+            options.button.each(function(button) {
+                button.addEvent('click', function(e) {
+                    e.stop();
+                    this.submit(button);
+                }.bind(this));
+            }.bind(this));
+        }
         this.setOptions(options);
 
-        this.options.button.addEvent('click', function(event) {
-            event.stop();
-
-            this.submit();
-        }.bind(this));
     },
 
-    submit: function() {
+    submit: function(button) {
+
         var request = new Request({
-            method: 'post',
+            method: button.get('data-action'),
             url: this.options.url,
-            data: this.options.data,
+            data: {
+                action: button.get('data-action'),
+                id: button.get('data-topic'),
+                comments_comment_id: button.get('data-id'),
+                _token: this.options.data._token
+            },
 
             onSuccess: function() {
-                this.complete();
+                this.complete(button);
             }.bind(this),
 
             onFailure: function() {
-                this.failure();
+                this.failure(button);
             }.bind(this)
         }).send();
 
-        this.toggleSpinner();
+        this.toggleSpinner(button);
     },
 
-    complete: function() {
-        var button = this.options.button;
+    complete: function(button) {
         var data = this.options.data;
 
         data.action = (data.action == 'delete' ? 'post' : 'delete');
-        button.toggleClass('btn-unawnser').toggleClass('btn-awnser');
+        button.toggleClass('btn-unrespond').toggleClass('btn-respond');
 
-        this.toggleSpinner();
+        this.toggleSpinner(button);
     },
 
-    failure: function()
+    failure: function(button)
     {
-        var button = this.options.button;
 
         this.toggleSpinner();
 
-        button.addClass('awnser-failure');
+        button.addClass('respond-failure');
 
         button.getElement('i')
             .addClass('icon-exclamation-sign')
             .removeClass('icon-star');
 
-        alert('Failed to subscribe. Please try again or contact support.');
+        alert('Failed to select the awnser. Please try again or contact support.');
     },
 
-    toggleSpinner: function()
+    toggleSpinner: function(button)
     {
-        var button = this.options.button;
 
         button.set('disabled', !button.get('disabled'));
 
-        button.getElement('i').toggleClass('icon-ok')
+        button.getElement('i').toggleClass('icon-star')
             .toggleClass('icon-spin')
             .toggleClass('icon-spinner');
     }

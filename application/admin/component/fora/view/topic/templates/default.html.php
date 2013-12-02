@@ -4,7 +4,7 @@
 <style src="assets://fora/css/default.css" />
 
 <script src="assets://fora/js/subscribe.js" />
-
+<script src="assets://fora/js/response.js" />
 <div id="com_fora">
     <div id="fora-topic-default" class="span9">
         <div class="well well-small">
@@ -49,7 +49,7 @@
 
             </div>
         </div>
-        <? if($forum->type != 'article') : ?>
+        <? if($forum->type != 'article' && $awnser->id) : ?>
             <div class="well well-small">
                 <div class="comment well">
                     <div class="comment-header">
@@ -57,17 +57,14 @@
                         <time datetime="<?= $awnser->created_on ?>" pubdate><?= helper('date.humanize', array('date' => $awnser->created_on)) ?></time>
                     </div>
                     <div class="btn-group" style="float: right">
-                        <? if($forum->type != 'article') : ?>
-                            <button title="<?=translate('Unmark as') ?>"
-                                    class="btn btn-small respond"
-                                    data-topic="<?=$topic->id;?>"
-                                    data-id="<?= $awnser->id ?>" data-action="delete">
-                                <i class="icon-remove"></i>
-                            </button>
-                        <? endif ?>
-                        <!--                    --><?// if ($agent) : ?>
-                        <!--                        <button title="--><?//= @text('Delete comment') ?><!--" class="btn btn-small delete" data-id="--><?//= $comment->id ?><!--"><i class="icon-trash"></i></button>-->
-                        <!--                    --><?// endif ?>
+                        <? if(object('user')->getRole() == 25 ):?>
+                        <button title="<?=translate('Unmark as') ?>"
+                                class="btn btn-small response"
+                                data-topic="<?=$topic->id;?>"
+                                data-id="<?= $awnser->id ?>" data-action="delete">
+                            <i class="icon-remove"></i>
+                        </button>
+                        <?endif;?>
                     </div>
                     <p><?= escape($awnser->text) ?></p>
                 </div>
@@ -81,9 +78,6 @@
             <br />
             <input class="button" type="submit" value="<?= translate('Submit') ?>"/>
         </form>
-        <? //if($forum->type == 'issue'): ?>
-            <?//= @template('default_note') ?>
-        <? //endif; ?>
         <? foreach($comments as $comment) :?>
             <div class="comment well">
                 <div class="comment-header">
@@ -93,15 +87,12 @@
                 <div class="btn-group" style="float: right">
                     <? if($forum->type != 'article') : ?>
                         <button title="<?=translate($comment->responded ? 'Unmark as' : 'Mark as') ?> <?//= strtolower(@helper('topic.response', array('type' => $forum->type))) ?>"
-                                class="btn btn-small respond"
+                                class="btn btn-small response"
                                 data-topic="<?=$topic->id;?>"
-                                data-id="<?= $comment->id ?>" data-action="<?= $comment->responded ? 'delete' : 'post' ?>">
-                            <i class="<?= $comment->responded ? 'icon-remove' : 'icon-ok' ?>"></i>
+                                data-id="<?= $comment->id ?>" data-action="<?= $comment->id == $awnser->id ? 'delete' : 'post' ?>">
+                            <i class="<?= $comment->id == $awnser->id ? 'icon-remove' : 'icon-ok'?> "></i>
                         </button>
                     <? endif ?>
-<!--                    --><?// if ($agent) : ?>
-<!--                        <button title="--><?//= @text('Delete comment') ?><!--" class="btn btn-small delete" data-id="--><?//= $comment->id ?><!--"><i class="icon-trash"></i></button>-->
-<!--                    --><?// endif ?>
                 </div>
                 <p><?= escape($comment->text) ?></p>
             </div>
@@ -109,7 +100,7 @@
 
     </div>
 </div>
-<script data-inline>
+<script>
     jQuery( document ).ready(function($) {
         new Fora.Subscribe({
             holder: 'fora-topic-default',
@@ -124,27 +115,14 @@
             }
         });
 
-        $('.respond').click(function(event){
-            event.preventDefault();
-            alert($(this).data('id'));
-            var request = new Request({
-                method: 'post',
-                url: '<?= html_entity_decode(route('view=respond&type=topic&id='.$topic->id)) ?>',
-                data: {
-                    _token: '<?= object('user')->getSession()->getToken() ?>',
-                    comments_comment_id: $(this).data('id'),
-                    id: $(this).data('topic')
-                },
-
-                onSuccess: function() {
-                    //this.complete();
-                }.bind(this),
-
-                onFailure: function() {
-                    //this.failure();
-                }.bind(this)
-            }).send();
+        new Fora.Response({
+            holder: 'fora-topic-default',
+            url: '<?= html_entity_decode(route('view=respond&type=topic')) ?>',
+            data: {
+                _token: '<?= object('user')->getSession()->getToken() ?>'
+            }
         });
+
     });
 </script>
 
