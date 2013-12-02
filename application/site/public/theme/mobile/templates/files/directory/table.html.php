@@ -36,7 +36,7 @@
                 <td>
                     <i class="icon-file"></i>
                     <a class="files-download" data-path="<?= escape($file->path); ?>"
-                       href="<?= route('&view=file&folder='.$state->folder.'&name='.$file->name);?>"
+                       download href="<?= route('&view=file&folder='.$state->folder.'&name='.$file->name);?>"
                        onClick="_gaq.push(['_trackEvent', 'Downloads', 'Download', '<?=escape($file->display_name)?>']);">
                         <?=escape($file->display_name)?>
                         <span class="text--small">(<?= $file->extension; ?>, <?= helper('com:files.filesize.humanize', array('size' => $file->size));?>)</span>
