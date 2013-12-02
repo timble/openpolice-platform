@@ -25,6 +25,7 @@ class ForaControllerCategory extends Library\ControllerModel
         $request = parent::getRequest();
 
         $request->query->table  = "fora_forums";
+        $request->query->published  = "1";
 
         return $request;
     }
