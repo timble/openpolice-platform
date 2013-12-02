@@ -34,10 +34,5 @@
             </div>
         </div>
     <? endforeach ?>
-
-    <? if(!count($categories)): ?>
-        <?//= @template('com://site/subscriptions.view.user.nosubscription') ?>
-    <? endif; ?>
-
 </div>
 </div>
