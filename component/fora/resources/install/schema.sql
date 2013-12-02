@@ -49,7 +49,7 @@ CREATE TABLE `fora_topics` (
   KEY `idx_enabled` (`published`),
   KEY `created_on` (`created_on`),
   CONSTRAINT `fora_topics_ibfk_1` FOREIGN KEY (`fora_forum_id`) REFERENCES `fora_forums` (`fora_forum_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `fora_subscriptions` (
   `type` enum('topic','forum') NOT NULL DEFAULT 'topic',
