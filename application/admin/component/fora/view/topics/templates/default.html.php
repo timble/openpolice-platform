@@ -26,7 +26,7 @@
 
         <div class="well well-small">
             <div class="well__frame">
-                <h1 class="well__heading well__heading--left"><?= escape($forums->title) ?></h1>
+                <h1 class="well__heading well__heading--left"><?= escape($forum->title) ?></h1>
                 <div class="well__toolbar">
                     <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription">
                         <i class="icon-star"></i>
@@ -67,11 +67,11 @@
     jQuery( document ).ready(function($) {
         new Fora.Subscribe({
             holder: 'fora-topics-default',
-            url: '<?= html_entity_decode(route('view=subscription&type=forum&row='.$topic->id.'&user_id='.object('user')->getId())) ?>',
+            url: '<?= html_entity_decode(route('view=subscription&type=forum&row='.$forum->id.'&user_id='.object('user')->getId())) ?>',
             data: {
                 action: '<?= $subscription ? 'delete' : 'add' ?>',
-                type: 'topic',
-                row: '<?= $topic->id ?>',
+                type: 'forum',
+                row: '<?= $forum->id ?>',
                 user_id: '<?= object('user')->getId() ?>',
                 _token: '<?= object('user')->getSession()->getToken() ?>',
                 site: '<?=object('application')->getSite();?>'

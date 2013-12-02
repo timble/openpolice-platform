@@ -20,7 +20,7 @@ class ForaViewTopicsHtml extends Library\ViewHtml
     public function render()
     {
 
-        $this->forums = $this->getObject('com:fora.model.forums')->id($this->getModel()->getState()->forum)->getRow();
+        $this->forum = $this->getObject('com:fora.model.forums')->id($this->getModel()->getState()->forum)->getRow();
 
         if($this->getObject('com:fora.model.subscriptions')->type('forum')->user_id($this->getObject('user')->getId())->row($this->getModel()->getState()->forum)->getRow()->row)
         {
