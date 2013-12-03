@@ -5,7 +5,7 @@
 
 <script src="assets://fora/js/subscribe.js" />
 <script src="assets://fora/js/response.js" />
-<div id="com_fora">
+<div id="com_fora" class="scrollable">
     <div id="fora-topic-default" class="span9">
         <div class="well well-small">
             <div class="well__frame">

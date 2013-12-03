@@ -10,7 +10,7 @@
 
 <style src="assets://fora/css/default.css" />
 
-<div id="com_fora">
+<div id="com_fora" class="scrollable">
 <div id="fora-categories-default">
     <div class="well well-small">
         <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">

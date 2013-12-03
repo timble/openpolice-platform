@@ -14,7 +14,7 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
-<div id="com_fora">
+<div id="com_fora" class="scrollable">
     <div id="fora-topics-default">
         <div class="well well-small">
             <form action="" method="get" name="search">
