@@ -1,6 +1,3 @@
-<ktml:module position="actionbar">
-    <ktml:toolbar type="actionbar">
-</ktml:module>
 <style src="assets://fora/css/default.css" />
 
 <script src="assets://fora/js/subscribe.js" />
