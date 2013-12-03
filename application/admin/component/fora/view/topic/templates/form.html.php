@@ -37,7 +37,7 @@
     </div>
 
     <div class="sidebar">
-        <?= import('default_sidebar.html'); ?>
+        <?= import('form_sidebar.html'); ?>
     </div>
 </form>
 
