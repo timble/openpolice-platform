@@ -55,7 +55,7 @@ CREATE TABLE `fora_subscriptions` (
   `type` enum('topic','forum') NOT NULL DEFAULT 'topic',
   `row` int(10) unsigned NOT NULL,
   `site` varchar(30) DEFAULT NULL,
-  `user_id` int(10) unsigned NOT NULL,
+  `users_user_id` int(10) unsigned NOT NULL,
   `last_viewed_on` datetime DEFAULT NULL,
   `notification_sent_on` datetime DEFAULT NULL,
   PRIMARY KEY (`type`,`row`,`user_id`),
@@ -64,7 +64,7 @@ CREATE TABLE `fora_subscriptions` (
 
 CREATE TABLE `fora_votes` (
   `fora_topic_id` int(10) unsigned NOT NULL,
-  `user_id` int(10) unsigned NOT NULL,
+  `users_user_id` int(10) unsigned NOT NULL,
   `site` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`fora_topic_id`,`user_id`),
   CONSTRAINT `fora_votes_ibfk_1` FOREIGN KEY (`fora_topic_id`) REFERENCES `fora_topics` (`fora_topic_id`) ON DELETE CASCADE

@@ -8,7 +8,7 @@
                 url: '<?= @route('view=vote') ?>',
                 data: {
                     fora_topic_id: '<?= $topic->id ?>',
-                    user_id: '<?= object('user')->getId() ?>',
+                    users_user_id: '<?= object('user')->getId() ?>',
                     _token: '<?= object('user')->getSession()->getToken() ?>',
                     site: '<?=object('application')->getSite();?>'
                 }

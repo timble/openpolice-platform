@@ -104,12 +104,12 @@
     jQuery( document ).ready(function($) {
         new Fora.Subscribe({
             holder: 'fora-topic-default',
-            url: '<?= html_entity_decode(route('view=subscription&type=topic&row='.$topic->id.'&user_id='.object('user')->getId())) ?>',
+            url: '<?= html_entity_decode(route('view=subscription&type=topic&row='.$topic->id))?>',
             data: {
                 action: '<?= $subscription ? 'delete' : 'add' ?>',
                 type: 'topic',
                 row: '<?= $topic->id ?>',
-                user_id: '<?= object('user')->getId() ?>',
+                users_user_id: '<?= object('user')->getId() ?>',
                 _token: '<?= object('user')->getSession()->getToken() ?>',
                 site: '<?=object('application')->getSite();?>'
             }

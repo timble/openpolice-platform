@@ -24,13 +24,13 @@ class ForaViewTopicHtml extends Library\ViewHtml
 
         $this->comments = $this->getObject('com:comments.model.comments')->row($topic->id)->table('fora')->getRowset();
 
-        if($this->getObject('com:fora.model.subscriptions')->type('forum')->user_id($this->getObject('user')->getId())->row($this->getModel()->getState()->forum)->getRow()->row)
+        if($this->getObject('com:fora.model.subscriptions')->type('forum')->users_user_id($this->getObject('user')->getId())->row($this->getModel()->getState()->forum)->getRow()->row)
         {
             $this->subscription = true;
         } else $this->subscription = false;
 
         $vote = $this->getObject('com:fora.database.table.votes')
-            ->select(array('fora_topic_id' => $topic->id, 'user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
+            ->select(array('fora_topic_id' => $topic->id, 'users_user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
         $this->voted = !$vote->isNew();
 
 
@@ -45,8 +45,6 @@ class ForaViewTopicHtml extends Library\ViewHtml
                 ->id($responds->comments_comment_id)
                 ->getRow();
         }
-
-
 
         return parent::render();
     }
