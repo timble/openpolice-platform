@@ -29,14 +29,16 @@ class ForaViewTopicHtml extends Library\ViewHtml
             $this->subscription = true;
         } else $this->subscription = false;
 
-        $vote = $this->getObject('com:fora.database.table.votes')
-            ->select(array('fora_topic_id' => $topic->id, 'users_user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
-        $this->voted = !$vote->isNew();
+        if(is_numeric($topic->id)){
+            $vote = $this->getObject('com:fora.database.table.votes')
+                ->select(array('fora_topic_id' => $topic->id, 'users_user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
+            $this->voted = !$vote->isNew();
+        }
 
 
         $this->forum = $this->getObject('com:fora.model.forums')->id($topic->fora_forum_id)->getRow();
 
-        if($this->forum->type != 'article' && (!$topic->isNew()))
+        if($this->forum->type != 'article' && is_numeric($topic->id))
         {
             $responds = $this->getObject('com:fora.database.table.responds')
                 ->select(array('fora_topic_id' => $topic->id), Library\Database::FETCH_ROW);
