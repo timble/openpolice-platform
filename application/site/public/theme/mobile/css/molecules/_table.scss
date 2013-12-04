@@ -9,85 +9,67 @@ table {
     }
 }
 
-// Responsive table
-// ------------------
-/* Force table to not be like tables anymore */
 .table {
-  max-width: 100%;
-  width: 100%;
+    max-width: 100%;
+    width: 100%;
+    border: 0 none;
 
-  td {
-    /* Behave  like a "row" */
-    clear: left;
-    float: left;
-    border: none;
-  }
+    td {
+        border: none;
+    }
 
-  td:nth-child(n+2) {
-    display: none;
-  }
+    td:nth-child(n+2) {
+        display: none;
+    }
 
-  /* Hide table headers (but not display: none;, for accessibility) */
-  thead tr {
-    display: none;
-  }
+    /* Hide table headers */
+    thead tr {
+        display: none;
+    }
 }
-
-
-// ZEBRA-STRIPING
-// --------------
 
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .table-striped {
-  tbody {
-    > tr:nth-child(odd) {
-      background-color: $tableBackgroundAccent;
+    tbody {
+        tr {
+            border-top: 1px solid $tableBorder;
+        }
+
+        > tr:nth-child(odd) {
+            background-color: $tableBackgroundAccent;
+        }
     }
-  }
 }
 
 @include respond-min($navbarCollapseWidth) {
-  //
-  // Tables
-  // --------------------------------------------------
+    .table {
+        background-color: $tableBackground;
+        margin-bottom: $baseLineHeight;
+        border: 0 none; // Override default style
+        // Cells
+        th,
+        td {
+            display: table-cell !important;
+            line-height: $baseLineHeight;
+            text-align: left;
+            vertical-align: top;
+        }
 
-  // BASELINE STYLES
-  // ---------------
-
-  .table {
-    background-color: $tableBackground;
-    margin-bottom: $baseLineHeight;
-    border: 0 none; // Override default style
-    // Cells
-    th,
-    td {
-      display: table-cell !important;
-      line-height: $baseLineHeight;
-      text-align: left;
-      vertical-align: top;
+        th {
+            font-weight: bold;
+        }
+        // Show thead
+        thead tr {
+            display: table-row;
+        }
+        // Bottom align for column headings
+        thead th {
+            vertical-align: bottom;
+        }
+        // Remove top border from thead by default
+        thead tr th,
+        thead tr td {
+            border-top: 0;
+        }
     }
-    td {
-      clear: none;
-      float: none;
-    }
-    tbody tr {
-      border-top: 1px solid $tableBorder;
-    }
-    th {
-      font-weight: bold;
-    }
-    // Show thead
-    thead tr {
-      display: table-row;
-    }
-    // Bottom align for column headings
-    thead th {
-      vertical-align: bottom;
-    }
-    // Remove top border from thead by default
-    thead tr th,
-    thead tr td {
-      border-top: 0;
-    }
-  }
 }
