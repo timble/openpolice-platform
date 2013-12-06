@@ -875,6 +875,11 @@ you can use the generic selector below, but it's slower:
   margin: 30px 0;
 }
 
+/* line 1, atoms/_address.scss */
+address {
+  font-style: normal;
+}
+
 /* line 9, atoms/_type.scss */
 p {
   margin: 0 0 11px;
