@@ -2059,7 +2059,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
 }
 
 /* line 117, molecules/_navs.scss */
-.nav--visited a {
+.nav--visited a:visited {
   color: #609;
 }
 

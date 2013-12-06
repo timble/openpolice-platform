@@ -114,6 +114,6 @@
   margin-bottom: 1px; // decrease margin to match sizing of stacked tabs
 }
 
-.nav--visited a {
+.nav--visited a:visited {
     color: #609;
 }
