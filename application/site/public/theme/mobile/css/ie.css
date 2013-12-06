@@ -2052,6 +2052,11 @@ ul.column--quad {
   margin-bottom: 1px;
 }
 
+/* line 117, molecules/_navs.scss */
+.nav--visited a {
+  color: #609;
+}
+
 /* line 6, molecules/_pagination.scss */
 .pagination {
   margin: 22px 0 0 0;
