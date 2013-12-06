@@ -875,6 +875,11 @@ you can use the generic selector below, but it's slower:
   margin: 30px 0;
 }
 
+/* line 1, atoms/_address.scss */
+address {
+  font-style: normal;
+}
+
 /* line 9, atoms/_type.scss */
 p {
   margin: 0 0 11px;
@@ -2056,6 +2061,11 @@ ul.column--double, ul.column--triple, ul.column--quad {
 /* line 113, molecules/_navs.scss */
 .nav-pills.nav-stacked > li:last-child > a {
   margin-bottom: 1px;
+}
+
+/* line 117, molecules/_navs.scss */
+.nav--visited a:visited {
+  color: #609;
 }
 
 /* line 6, molecules/_pagination.scss */

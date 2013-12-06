@@ -113,3 +113,7 @@
 .nav-pills.nav-stacked > li:last-child > a {
   margin-bottom: 1px; // decrease margin to match sizing of stacked tabs
 }
+
+.nav--visited a:visited {
+    color: #609;
+}
