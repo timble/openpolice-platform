@@ -24,7 +24,7 @@ $language_short = $language_short[0];
             <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img width="160" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
+                        <img width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
                         <div><?= escape($zone->title); ?></div>
                     </a>
                 </div>
