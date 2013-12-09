@@ -38,7 +38,7 @@ $language_short = $language_short[0];
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>
                         <a class="navbar__logo" href="/<?= $site ?>">
-                            <img src="assets://application/images/logo-flame.jpg" alt="<?= translate('Police') ?> logo" />
+                            <img width="27" height="27" src="assets://application/images/logo-flame.jpg" alt="<?= translate('Police') ?> logo" />
                             <?= escape($zone->title); ?>
                         </a>
                     </div>
@@ -53,7 +53,7 @@ $language_short = $language_short[0];
     <div class="container-banner">
         <div class="row-fluid">
             <div class="span12 alpha">
-                <img width="890" src="assets://application/images/banners/<?= $site ?>.jpg" alt="<?= translate('Police') ?> <?= escape($zone->title); ?> banner" />
+                <img width="890" height="110" src="assets://application/images/banners/<?= $site ?>.jpg" alt="<?= translate('Police') ?> <?= escape($zone->title); ?> banner" />
             </div>
         </div>
     </div>
