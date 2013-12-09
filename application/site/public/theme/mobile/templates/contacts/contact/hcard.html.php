@@ -19,7 +19,7 @@
     <? if($contact->isAttachable()) : ?>
         <? foreach($contact->getAttachments() as $item) : ?>
             <? if($item->file->isImage()) : ?>
-                <img width="200px" class="photo article__thumbnail" align="right" src="attachments://<?= $item->thumbnail ?>" />
+                <img width="200" height="150" class="photo article__thumbnail" align="right" src="attachments://<?= $item->thumbnail ?>" />
             <? endif ?>
         <? endforeach ?>
     <? endif ?>
