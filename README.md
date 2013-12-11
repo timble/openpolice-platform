@@ -9,10 +9,12 @@ Developed by <a href="http://www.timble.net">Timble</a>.
 
 ## Installation
 
+* Install [Composer](http://getcomposer.org/doc/00-intro.md)
 * Install [VirtualBox](http://www.virtualbox.org/)
 * Install [Vagrant](http://downloads.vagrantup.com/)
 * Clone this repository
-    ```$ git clone https://github.com/belgianpolice/internet-platform.git```
+    ```$ git clone https://github.com/belgianpolice/internet-platform.git```    
+* Install the dependencies by running Composer: ```$ composer install```
 * Download the 'Police Box' from [http://4b79b5d29bda1ea3808e-c0244351096da2f99013ff9619ea0386.r14.cf2.rackcdn.com/police.box](http://4b79b5d29bda1ea3808e-c0244351096da2f99013ff9619ea0386.r14.cf2.rackcdn.com/police.box)
 * Setup the server
     ```vagrant box add police local-path-to-police.box```
@@ -28,7 +30,7 @@ Note: Linux users need to install NFS (Network File System) manually, see [help.
 
 You can use the following commands to manage the server:
 
-* ```vangrant up``` to initially start the server
+* ```vagrant up``` to initially start the server
 * ```vagrant reload``` reboots the server
 * ```vagrant halt``` powers the server down
 * ```vagrant suspend``` & ```vagrant resume``` to make the server sleep/wake up
