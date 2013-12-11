@@ -114,7 +114,14 @@
             </div>
             <div class="span4">
                 <h3><?= translate('Your district officer') ?></h3>
-                <?= import('default_district.html') ?>
+                <form action="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>" method="get" class="-koowa-form">
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" class="bigdrop" id="autocomplete__streets--footer" placeholder="<?= translate('Search your street') ?> ..." name="street" value="<?= @$_COOKIE ['district_street'] ?>">
+                        </div>
+                    </div>
+                    <button class="btn btn-small btn-primary pull-right"><?= translate('Search') ?></button>
+                </form>
             </div>
         </div>
     </div>
