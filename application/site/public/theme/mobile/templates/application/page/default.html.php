@@ -19,8 +19,8 @@ $language_short = $language_short[0];
 <?= import('page_head.html') ?>
 <body>
 
-<? if($site = 'default') : ?>
-    <?= import('default_splash.html') ?>
+<? if($site == 'default') : ?>
+    <?= import('default_splash.html', array('zone' => $zone, 'language_short' => $language_short)) ?>
 <? else : ?>
     <?= import('default_site.html', array('zone' => $zone, 'language_short' => $language_short)) ?>
 <? endif ?>

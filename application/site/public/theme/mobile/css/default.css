@@ -599,6 +599,43 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   background-color: white;
 }
 
+/* line 1, organisms/_splash.scss */
+.splash {
+  padding-top: 125px;
+}
+
+/* line 5, organisms/_splash.scss */
+.splash__logo {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* line 10, organisms/_splash.scss */
+.splash__toolbar {
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* line 15, organisms/_splash.scss */
+.splash__languages {
+  text-align: center;
+  margin: 25px 0 75px 0;
+}
+/* line 19, organisms/_splash.scss */
+.splash__languages a {
+  margin: 0 10px;
+}
+
+/* line 24, organisms/_splash.scss */
+.splash__external {
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* line 28, organisms/_splash.scss */
+.splash__external a {
+  margin: 0 10px;
+}
+
 @media screen and (min-width: 767px) {
   /* line 2, utilities/_desktop.scss */
   #wrap {
