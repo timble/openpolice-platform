@@ -238,7 +238,7 @@ body {
 
 /* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_scaffolding.scss */
 a {
-  color: #004fa3;
+  color: #004d9f;
   text-decoration: none;
 }
 
@@ -306,366 +306,6 @@ a:focus {
 /* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
 .container-fluid:after {
   clear: both;
-}
-
-/* line 9, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-p {
-  margin: 0 0 11px;
-}
-
-/* line 12, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.lead {
-  margin-bottom: 22px;
-  font-size: 21px;
-  font-weight: 200;
-  line-height: 33px;
-}
-
-/* line 24, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-small {
-  font-size: 85%;
-}
-
-/* line 26, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-strong {
-  font-weight: bold;
-}
-
-/* line 27, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-em {
-  font-style: italic;
-}
-
-/* line 28, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-cite {
-  font-style: normal;
-}
-
-/* line 31, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.muted, .article__header .timestamp, .text--small {
-  color: #999999;
-}
-
-/* line 33, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-a.muted:hover, .article__header a.timestamp:hover, a.text--small:hover,
-a.muted:focus,
-.article__header a.timestamp:focus,
-a.text--small:focus {
-  color: gray;
-}
-
-/* line 35, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.text-warning {
-  color: #c09853;
-}
-
-/* line 37, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-a.text-warning:hover,
-a.text-warning:focus {
-  color: #a47e3c;
-}
-
-/* line 39, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.text-error {
-  color: #b94a48;
-}
-
-/* line 41, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-a.text-error:hover,
-a.text-error:focus {
-  color: #953b39;
-}
-
-/* line 43, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.text-info {
-  color: #3a87ad;
-}
-
-/* line 45, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-a.text-info:hover,
-a.text-info:focus {
-  color: #2d6987;
-}
-
-/* line 47, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.text-success {
-  color: #468847;
-}
-
-/* line 49, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-a.text-success:hover,
-a.text-success:focus {
-  color: #356635;
-}
-
-/* line 51, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.text-left {
-  text-align: left;
-}
-
-/* line 52, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.text-right {
-  text-align: right;
-}
-
-/* line 53, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.text-center {
-  text-align: center;
-}
-
-/* line 59, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h1, h2, h3, h4, h5, h6 {
-  margin: 11px 0;
-  font-family: inherit;
-  font-weight: bold;
-  line-height: 22px;
-  color: inherit;
-  text-rendering: optimizelegibility;
-}
-/* line 66, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  font-weight: normal;
-  line-height: 1;
-  color: #999999;
-}
-
-/* line 75, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h1,
-h2,
-h3 {
-  line-height: 44px;
-}
-
-/* line 77, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h1 {
-  font-size: 38.5px;
-}
-
-/* line 78, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h2 {
-  font-size: 31.5px;
-}
-
-/* line 79, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h3 {
-  font-size: 24.5px;
-}
-
-/* line 80, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h4 {
-  font-size: 17.5px;
-}
-
-/* line 81, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h5 {
-  font-size: 14px;
-}
-
-/* line 82, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h6 {
-  font-size: 11.9px;
-}
-
-/* line 84, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h1 small {
-  font-size: 24.5px;
-}
-
-/* line 85, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h2 small {
-  font-size: 17.5px;
-}
-
-/* line 86, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h3 small {
-  font-size: 14px;
-}
-
-/* line 87, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-h4 small {
-  font-size: 14px;
-}
-
-/* line 93, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.page-header {
-  padding-bottom: 10px;
-  margin: 22px 0 33px;
-  border-bottom: 1px solid #eeeeee;
-}
-
-/* line 105, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-ul, ol {
-  padding: 0;
-  margin: 0 0 11px 25px;
-}
-
-/* line 112, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-  margin-bottom: 0;
-}
-
-/* line 115, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-li {
-  line-height: 22px;
-}
-
-/* line 121, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-ul.unstyled,
-ol.unstyled {
-  margin-left: 0;
-  list-style: none;
-}
-
-/* line 128, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-ul.inline,
-ol.inline {
-  margin-left: 0;
-  list-style: none;
-}
-/* line 131, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-ul.inline > li,
-ol.inline > li {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-  *zoom: 1;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-/* line 140, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-dl {
-  margin-bottom: 22px;
-}
-
-/* line 144, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-dt,
-dd {
-  line-height: 22px;
-}
-
-/* line 147, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-dt {
-  font-weight: bold;
-}
-
-/* line 150, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-dd {
-  margin-left: 11px;
-}
-
-/* line 154, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.dl-horizontal {
-  *zoom: 1;
-}
-/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.dl-horizontal:before, .dl-horizontal:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.dl-horizontal:after {
-  clear: both;
-}
-/* line 156, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.dl-horizontal dt {
-  float: left;
-  width: 160px;
-  clear: left;
-  text-align: right;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-/* line 163, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-.dl-horizontal dd {
-  margin-left: 180px;
-}
-
-/* line 172, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-hr {
-  margin: 22px 0;
-  border: 0;
-  border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid white;
-}
-
-/* line 182, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-abbr[title],
-abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted #999999;
-}
-
-/* line 186, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-abbr.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
-}
-
-/* line 192, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 22px;
-  border-left: 5px solid #eeeeee;
-}
-/* line 196, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-blockquote p {
-  margin-bottom: 0;
-  font-size: 17.5px;
-  font-weight: 300;
-  line-height: 1.25;
-}
-/* line 202, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-blockquote small {
-  display: block;
-  line-height: 22px;
-  color: #999999;
-}
-/* line 206, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-blockquote small:before {
-  content: '\2014 \00A0';
-}
-/* line 212, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-blockquote.pull-right {
-  float: right;
-  padding-right: 15px;
-  padding-left: 0;
-  border-right: 5px solid #eeeeee;
-  border-left: 0;
-}
-/* line 219, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-blockquote.pull-right p,
-blockquote.pull-right small {
-  text-align: right;
-}
-/* line 223, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-blockquote.pull-right small:before {
-  content: '';
-}
-/* line 226, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-blockquote.pull-right small:after {
-  content: '\00A0 \2014';
-}
-
-/* line 237, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-q:before,
-q:after,
-blockquote:before,
-blockquote:after {
-  content: "";
-}
-
-/* line 242, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_type.scss */
-address {
-  display: block;
-  margin-bottom: 22px;
-  font-style: normal;
-  line-height: 22px;
 }
 
 /* line 8, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_labels-badges.scss */
@@ -1067,7 +707,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   /* line 101, utilities/_desktop.scss */
   .container-footer {
     padding-top: 10px;
-    background-color: whitesmoke;
+    background-color: #f8f8f8;
     border-top: 1px solid gainsboro;
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
@@ -1223,10 +863,172 @@ you can use the generic selector below, but it's slower:
   line-height: 30px !important;
 }
 
+/* line 10, utilities/_select2.scss */
+.select2-default {
+  color: #555555 !important;
+}
+
 /* line 1, utilities/_system.scss */
 .backtrace {
   text-align: center;
   margin: 30px 0;
+}
+
+/* line 1, atoms/_address.scss */
+address {
+  font-style: normal;
+}
+
+/* line 9, atoms/_type.scss */
+p {
+  margin: 0 0 11px;
+}
+
+/* line 18, atoms/_type.scss */
+small {
+  font-size: 85%;
+}
+
+/* line 20, atoms/_type.scss */
+strong {
+  font-weight: bold;
+}
+
+/* line 21, atoms/_type.scss */
+em {
+  font-style: italic;
+}
+
+/* line 22, atoms/_type.scss */
+cite {
+  font-style: normal;
+}
+
+/* line 25, atoms/_type.scss */
+.muted, .article__header .timestamp, .text--small {
+  color: #505050;
+}
+
+/* line 27, atoms/_type.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 28, atoms/_type.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 29, atoms/_type.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 35, atoms/_type.scss */
+h1, h2, h3, h4, h5, h6 {
+  margin: 11px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 22px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+/* line 42, atoms/_type.scss */
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+
+/* line 51, atoms/_type.scss */
+h1,
+h2,
+h3 {
+  line-height: 44px;
+}
+
+/* line 53, atoms/_type.scss */
+h1 {
+  font-size: 38.5px;
+}
+
+/* line 54, atoms/_type.scss */
+h2 {
+  font-size: 31.5px;
+}
+
+/* line 55, atoms/_type.scss */
+h3 {
+  font-size: 24.5px;
+}
+
+/* line 56, atoms/_type.scss */
+h4 {
+  font-size: 17.5px;
+}
+
+/* line 57, atoms/_type.scss */
+h5 {
+  font-size: 14px;
+}
+
+/* line 58, atoms/_type.scss */
+h6 {
+  font-size: 11.9px;
+}
+
+/* line 60, atoms/_type.scss */
+h1 small {
+  font-size: 24.5px;
+}
+
+/* line 61, atoms/_type.scss */
+h2 small {
+  font-size: 17.5px;
+}
+
+/* line 62, atoms/_type.scss */
+h3 small {
+  font-size: 14px;
+}
+
+/* line 63, atoms/_type.scss */
+h4 small {
+  font-size: 14px;
+}
+
+/* line 69, atoms/_type.scss */
+.page-header {
+  padding-bottom: 10px;
+  margin: 22px 0 33px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* line 81, atoms/_type.scss */
+ul, ol {
+  padding: 0;
+  margin: 0 0 11px 25px;
+}
+
+/* line 88, atoms/_type.scss */
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+
+/* line 91, atoms/_type.scss */
+li {
+  line-height: 22px;
+}
+
+/* line 99, atoms/_type.scss */
+hr {
+  margin: 22px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid white;
 }
 
 /* line 1, atoms/_body.scss */
@@ -1280,7 +1082,7 @@ html {
 }
 /* line 9, molecules/_article.scss */
 .article p a, .article li a {
-  border-bottom: 1px dotted #004fa3;
+  border-bottom: 1px dotted #004d9f;
 }
 /* line 12, molecules/_article.scss */
 .article p a:hover, .article li a:hover {
@@ -1322,7 +1124,7 @@ html {
 
 /* line 1, molecules/_banner.scss */
 .container-banner img {
-  border: 1px solid #555555;
+  border: 1px solid #505050;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -1337,7 +1139,7 @@ html {
   padding: 4px 15px;
   margin: 4px 0 0 0;
   list-style: none;
-  background-color: whitesmoke;
+  background-color: #f8f8f8;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1373,17 +1175,17 @@ html {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 1px solid #003b7a;
+  border: 1px solid #002d5d;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #0063cc;
+  background-color: #0054ae;
   color: white;
 }
 /* line 19, molecules/_buttons.scss */
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
   color: white;
-  background-color: #006de0;
+  background-color: #006bdc;
 }
 /* line 27, molecules/_buttons.scss */
 .btn:hover, .btn:focus, .btn:active {
@@ -1474,7 +1276,7 @@ input[type="submit"].btn.btn-small {
 .btn-link {
   border-color: transparent;
   cursor: pointer;
-  color: #004fa3;
+  color: #004d9f;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -1554,7 +1356,7 @@ input {
   padding: 0 6px;
   font-size: 14px;
   line-height: 32px;
-  color: #555555;
+  color: #505050;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1906,7 +1708,7 @@ select:focus:invalid:focus {
     padding-top: 26px;
     display: block;
     text-decoration: none;
-    color: #004fa3;
+    color: #004d9f;
   }
   /* line 18, molecules/_header.scss */
   .container-header .span3 .logo img {
@@ -1940,9 +1742,10 @@ select:focus:invalid:focus {
 .navbar {
   min-height: 32px;
   width: 100%;
-  background-color: #0063cc;
-  border-bottom: 1px solid #004fa3;
+  background-color: #0054ae;
+  border-bottom: 1px solid #004d9f;
   *zoom: 1;
+  color: white;
 }
 /* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
 .navbar:before, .navbar:after {
@@ -1955,46 +1758,47 @@ select:focus:invalid:focus {
   clear: both;
 }
 
-/* line 15, molecules/_header__navbar.scss */
+/* line 17, molecules/_header__navbar.scss */
 .navbar .nav {
   margin: 0;
   text-align: left;
-  border-top: 1px solid #004fa3;
+  border-top: 1px solid #004d9f;
   width: 100%;
 }
 
-/* line 23, molecules/_header__navbar.scss */
+/* line 25, molecules/_header__navbar.scss */
 .navbar .nav li a {
   color: white;
   text-decoration: none;
   display: block;
-  border-bottom: 1px solid #004fa3;
+  border-bottom: 1px solid #004d9f;
   padding: 13px 20px;
   font-weight: bold;
   color: white;
 }
 
-/* line 35, molecules/_header__navbar.scss */
+/* line 37, molecules/_header__navbar.scss */
 .navbar .nav li a:focus,
 .navbar .nav li a:hover {
-  background-color: #006de0;
+  background-color: #006bdc;
   color: white;
   text-decoration: none;
 }
 
-/* line 44, molecules/_header__navbar.scss */
+/* line 46, molecules/_header__navbar.scss */
 .navbar .nav .active a,
 .navbar .nav .active a:hover,
 .navbar .nav .active a:focus {
   color: white;
   text-decoration: none;
-  background-color: #004fa3;
+  background-color: #004185;
   -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+  font-weight: bold;
 }
 
-/* line 54, molecules/_header__navbar.scss */
+/* line 57, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo {
   float: right;
   padding-right: 20px;
@@ -2002,15 +1806,15 @@ select:focus:invalid:focus {
   color: white;
   zoom: 1;
 }
-/* line 61, molecules/_header__navbar.scss */
+/* line 64, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo:hover {
   color: white;
 }
-/* line 65, molecules/_header__navbar.scss */
+/* line 68, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo img {
   margin-right: 6px;
 }
-/* line 70, molecules/_header__navbar.scss */
+/* line 73, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__handle {
   cursor: pointer;
   float: left;
@@ -2020,49 +1824,49 @@ select:focus:invalid:focus {
   font-size: 30px;
   color: white;
   text-align: center;
-  border-right: 1px solid #004fa3;
+  border-right: 1px solid #004d9f;
 }
 
 @media screen and (min-width: 767px) {
-  /* line 84, molecules/_header__navbar.scss */
+  /* line 87, molecules/_header__navbar.scss */
   .navbar {
     border-bottom: 0 none;
-    border: 1px solid #003b7a;
+    border: 1px solid #002d5d;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
   }
 
-  /* line 91, molecules/_header__navbar.scss */
+  /* line 94, molecules/_header__navbar.scss */
   .navbar {
     /* Customize the navbar links to be fill the entire space of the .navbar */
   }
-  /* line 93, molecules/_header__navbar.scss */
+  /* line 96, molecules/_header__navbar.scss */
   .navbar .nav {
     margin: 0;
     display: table;
     border: 0 none;
   }
-  /* line 98, molecules/_header__navbar.scss */
+  /* line 101, molecules/_header__navbar.scss */
   .navbar .nav li {
     display: table-cell;
     width: 1%;
   }
-  /* line 102, molecules/_header__navbar.scss */
+  /* line 105, molecules/_header__navbar.scss */
   .navbar .nav li a {
     text-align: center;
     padding: 5px 15px 5px;
     border: 0 none;
     font-weight: normal;
   }
-  /* line 108, molecules/_header__navbar.scss */
+  /* line 111, molecules/_header__navbar.scss */
   .navbar .nav li:first-child a {
     border-left: 0;
     -webkit-border-radius: 4px 0 0 4px;
     -moz-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
   }
-  /* line 112, molecules/_header__navbar.scss */
+  /* line 115, molecules/_header__navbar.scss */
   .navbar .nav li:last-child a {
     border-right: 0;
     -webkit-border-radius: 0 4px 4px 0;
@@ -2198,11 +2002,12 @@ ul.column--double, ul.column--triple, ul.column--quad {
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
-  color: #555555;
+  color: #505050;
   background-color: #ebf3f4;
+  font-weight: bold;
 }
 
-/* line 67, molecules/_navs.scss */
+/* line 68, molecules/_navs.scss */
 .nav-pills > li > a {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -2213,48 +2018,53 @@ ul.column--double, ul.column--triple, ul.column--quad {
   border-radius: 5px;
 }
 
-/* line 78, molecules/_navs.scss */
+/* line 79, molecules/_navs.scss */
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover,
 .nav-pills > .active > a:focus {
   color: white;
-  background-color: #004fa3;
+  background-color: #004d9f;
 }
 
-/* line 89, molecules/_navs.scss */
+/* line 90, molecules/_navs.scss */
 .nav-stacked > li {
   float: none;
 }
 
-/* line 92, molecules/_navs.scss */
+/* line 93, molecules/_navs.scss */
 .nav-stacked > li > a {
   margin-right: 0;
 }
 
-/* line 97, molecules/_navs.scss */
+/* line 98, molecules/_navs.scss */
 .nav-tabs.nav-stacked > li > a {
   border-bottom: 1px solid #eeeeee;
 }
 
-/* line 100, molecules/_navs.scss */
+/* line 101, molecules/_navs.scss */
 .nav-tabs.nav-stacked > li:last-child > a {
   border-bottom: 0 none;
 }
 
-/* line 104, molecules/_navs.scss */
+/* line 105, molecules/_navs.scss */
 .nav-tabs.nav-stacked > li > a:hover,
 .nav-tabs.nav-stacked > li > a:focus {
   z-index: 2;
 }
 
-/* line 109, molecules/_navs.scss */
+/* line 110, molecules/_navs.scss */
 .nav-pills.nav-stacked > li > a {
   margin-bottom: 3px;
 }
 
-/* line 112, molecules/_navs.scss */
+/* line 113, molecules/_navs.scss */
 .nav-pills.nav-stacked > li:last-child > a {
   margin-bottom: 1px;
+}
+
+/* line 117, molecules/_navs.scss */
+.nav--visited a:visited {
+  color: #609;
 }
 
 /* line 6, molecules/_pagination.scss */
@@ -2386,42 +2196,43 @@ table th, table td {
   padding: 8px;
 }
 
-/* Force table to not be like tables anymore */
-/* line 15, molecules/_table.scss */
+/* line 12, molecules/_table.scss */
 .table {
   max-width: 100%;
   width: 100%;
-  /* Hide table headers (but not display: none;, for accessibility) */
+  border: 0 none;
+  /* Hide table headers */
 }
-/* line 19, molecules/_table.scss */
+/* line 17, molecules/_table.scss */
 .table td {
-  /* Behave  like a "row" */
-  clear: left;
-  float: left;
   border: none;
 }
-/* line 26, molecules/_table.scss */
+/* line 21, molecules/_table.scss */
 .table td:nth-child(n+2) {
   display: none;
 }
-/* line 31, molecules/_table.scss */
+/* line 26, molecules/_table.scss */
 .table thead tr {
   display: none;
 }
 
-/* line 43, molecules/_table.scss */
+/* line 34, molecules/_table.scss */
+.table-striped tbody tr {
+  border-top: 1px solid #dddddd;
+}
+/* line 38, molecules/_table.scss */
 .table-striped tbody > tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
 @media screen and (min-width: 767px) {
-  /* line 57, molecules/_table.scss */
+  /* line 45, molecules/_table.scss */
   .table {
     background-color: transparent;
     margin-bottom: 22px;
     border: 0 none;
   }
-  /* line 63, molecules/_table.scss */
+  /* line 51, molecules/_table.scss */
   .table th,
   .table td {
     display: table-cell !important;
@@ -2429,28 +2240,19 @@ table th, table td {
     text-align: left;
     vertical-align: top;
   }
-  /* line 69, molecules/_table.scss */
-  .table td {
-    clear: none;
-    float: none;
-  }
-  /* line 73, molecules/_table.scss */
-  .table tbody tr {
-    border-top: 1px solid #dddddd;
-  }
-  /* line 76, molecules/_table.scss */
+  /* line 58, molecules/_table.scss */
   .table th {
     font-weight: bold;
   }
-  /* line 80, molecules/_table.scss */
+  /* line 62, molecules/_table.scss */
   .table thead tr {
     display: table-row;
   }
-  /* line 84, molecules/_table.scss */
+  /* line 66, molecules/_table.scss */
   .table thead th {
     vertical-align: bottom;
   }
-  /* line 89, molecules/_table.scss */
+  /* line 71, molecules/_table.scss */
   .table thead tr th,
   .table thead tr td {
     border-top: 0;
@@ -2502,7 +2304,7 @@ table th, table td {
 a.thumbnail:hover, a.article__thumbnail:hover,
 a.thumbnail:focus,
 a.article__thumbnail:focus {
-  border-color: #004fa3 !important;
+  border-color: #004d9f !important;
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
@@ -2519,7 +2321,7 @@ a.article__thumbnail:focus {
 /* line 44, molecules/_thumbnails.scss */
 .thumbnail .caption, .article__thumbnail .caption {
   padding: 9px;
-  color: #555555;
+  color: #505050;
 }
 
 @media screen and (min-width: 767px) {
@@ -2540,7 +2342,7 @@ a.article__thumbnail:focus {
 
 /* line 9, molecules/_typography.scss */
 .text--strong {
-  color: #004fa3;
+  color: #004d9f;
   font-weight: bold;
 }
 
@@ -2554,8 +2356,8 @@ a.article__thumbnail:focus {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: whitesmoke;
-  border: 1px solid #e8e8e8;
+  background-color: #f8f8f8;
+  border: 1px solid #ebebeb;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;

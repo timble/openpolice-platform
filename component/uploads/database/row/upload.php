@@ -50,6 +50,14 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $this->_importStreets($data);
                 }
 
+                if($table == 'news'){
+                    $this->_importNews($data);
+                }
+
+                if($table == 'contacts'){
+                    $this->_importContacts($data);
+                }
+
                 fclose($handle);
             }
         }
@@ -142,6 +150,64 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $islp->save();
                 }
             }
+        }
+    }
+
+    public function _importNews($data)
+    {
+        foreach($data as $item)
+        {
+            if($item['catid'] == $this->catid && $item['state'] == '1')
+            {
+                $row = $this->getObject('com:news.database.row.article');
+                $row->id = $item['id'];
+
+                if(!$row->load())
+                {
+                    $row->title = $item['title'];
+                    $row->slug = $item['alias'];
+                    $row->introtext = $item['introtext'];
+                    $row->fulltext = $item['fulltext'];
+                    $row->created_on = $item['created'];
+                    $row->created_by = '1';
+                    $row->modified_on = $item['modified'];
+                    $row->modified_by = $item['modified_by'];
+                    $row->published = $item['state'];
+                    $row->save();
+                }
+            }
+        }
+    }
+
+    public function _importContacts($data)
+    {
+        foreach($data as $item)
+        {
+            $row = $this->getObject('com:contacts.database.row.contact');
+            $row->id = $item['id'];
+
+            if(!$row->load())
+            {
+                $row->name = $item['name'];
+                $row->slug = $item['alias'];
+                $row->position = $item['con_position'];
+                $row->address = $item['address'];
+                $row->suburb = $item['suburb'];
+                $row->state = $item['state'];
+                $row->country = $item['country'];
+                $row->postcode = $item['postcode'];
+                $row->telephone = $item['telephone'];
+                $row->fax = $item['fax'];
+                $row->mobile = $item['mobile'];
+                $row->email_to = $item['email_to'];
+                $row->misc = $item['misc'];
+                $row->created_on = gmdate('Y-m-d H:i:s');
+                $row->created_by = '1';
+                $row->published = $item['published'];
+                $row->ordering = '0';
+                $row->save();
+            }
+
         }
     }
 }

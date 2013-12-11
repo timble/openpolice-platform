@@ -17,7 +17,7 @@
             <a tabindex="-1" class="thumbnail media__object" href="<?= $link ?>">
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('width' => '64px'))) ?>
+                    'attribs' => array('width' => '64', 'height' => '48'))) ?>
             </a>
         <? endif; ?>
         <div class="media__body">
