@@ -1,5 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "police"
+  config.vm.box_url = 'http://4b79b5d29bda1ea3808e-c0244351096da2f99013ff9619ea0386.r14.cf2.rackcdn.com/police.box'
   config.vm.hostname = "police.dev"
 
   config.vm.network :private_network, ip: "192.168.52.10"
