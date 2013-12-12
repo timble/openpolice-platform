@@ -9,17 +9,16 @@ Developed by <a href="http://www.timble.net">Timble</a>.
 
 ## Installation
 
+You can run the project with the supplied Vagrantfile - make sure you understand what [Vagrant](http://downloads.vagrantup.com/) is.
+
 * Install [Composer](http://getcomposer.org/doc/00-intro.md)
 * Install [VirtualBox](http://www.virtualbox.org/)
 * Install [Vagrant](http://downloads.vagrantup.com/)
 * Clone this repository
     ```$ git clone https://github.com/belgianpolice/internet-platform.git```    
 * Install the dependencies by running Composer: ```$ composer install```
-* Download the 'Police Box' from [http://4b79b5d29bda1ea3808e-c0244351096da2f99013ff9619ea0386.r14.cf2.rackcdn.com/police.box](http://4b79b5d29bda1ea3808e-c0244351096da2f99013ff9619ea0386.r14.cf2.rackcdn.com/police.box)
-* Setup the server
-    ```vagrant box add police local-path-to-police.box```
-* Go to the repository folder and bootup the server
-    ```vagrant up```
+* Go to the repository folder where this README is located and bootup the server
+    ```$ vagrant up```
 * Add the following line to your hosts file
     ```192.168.52.10 police.dev phpmyadmin.police.dev```
 
