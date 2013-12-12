@@ -7,6 +7,10 @@ It uses a component based architecture. Written in PHP 5.3, HTML, CSS and Javasc
 
 Developed by <a href="http://www.timble.net">Timble</a>.
 
+![Screenshot](https://dl.dropboxusercontent.com/u/77404/timble/police/github/devices.jpg)
+
+Check this website at [www.lokalepolitie.be/leuven](http://www.lokalepolitie.be/leuven).
+
 ## Installation
 
 You can run the project with the supplied Vagrantfile - make sure you understand what [Vagrant](http://downloads.vagrantup.com/) is.
@@ -47,11 +51,6 @@ More information about the Vagrant command-line interface can be found at [docs.
     email: admin@localhost.home
     password: admin
     ```
-    
-## Example
-![Screenshot](https://dl.dropboxusercontent.com/u/77404/timble/police/github/devices.jpg)
-
-Check this website at [www.lokalepolitie.be/leuven](http://www.lokalepolitie.be/leuven).
 
 ## Built on Open Source software
 
