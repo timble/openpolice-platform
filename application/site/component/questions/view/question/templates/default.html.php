@@ -19,7 +19,7 @@
 
     <?= helper('com:attachments.image.thumbnail', array(
         'attachment' => $question->attachments_attachment_id,
-        'attribs' => array('width' => '200', 'height' => '150', 'align' => 'right', 'class' => 'article__thumbnail'))) ?>
+        'attribs' => array('width' => '200', 'height' => '150', 'class' => 'article__thumbnail'))) ?>
 
     <?= $question->text ?>
 </article>
