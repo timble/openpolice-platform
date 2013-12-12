@@ -29,7 +29,7 @@
     <ul>
         <? foreach($list as $item) : ?>
             <? if(!$item->file->isImage()) : ?>
-                <li><a download="<?= escape($item->name) ?>" onClick="_gaq.push(['_trackEvent', 'Attachments', 'Download', '<?=escape($item->name)?>']);" href="attachments://<?= $item->path; ?>"><?= escape($item->name) ?></a> (<?= helper('com:files.filesize.humanize', array('size' => $item->file->size));?>, <?= $item->file->extension ?>)</li>
+                <li><a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Download', '<?=escape($item->name)?>']);" href="attachments://<?= $item->path; ?>"><?= escape($item->name) ?></a> (<?= helper('com:files.filesize.humanize', array('size' => $item->file->size));?>, <?= $item->file->extension ?>)</li>
             <? endif ?>
         <? endforeach ?>
     </ul>
