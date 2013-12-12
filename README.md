@@ -47,6 +47,11 @@ More information about the Vagrant command-line interface can be found at [docs.
     email: admin@localhost.home
     password: admin
     ```
+    
+## Example
+![Screenshot](https://dl.dropboxusercontent.com/u/77404/timble/police/github/devices.jpg)
+
+Check this website at [www.lokalepolitie.be/leuven](http://www.lokalepolitie.be/leuven).
 
 ## Built on Open Source software
 
