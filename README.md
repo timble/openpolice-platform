@@ -19,10 +19,10 @@ You can run the project with the supplied Vagrantfile - make sure you understand
 * Install [VirtualBox](http://www.virtualbox.org/)
 * Install [Vagrant](http://downloads.vagrantup.com/)
 * Clone this repository
-    ```$ git clone https://github.com/belgianpolice/internet-platform.git```    
-* Install the dependencies by running Composer: ```$ composer install```
+    ```$ git clone https://github.com/belgianpolice/internet-platform.git```
 * Go to the repository folder where this README is located and bootup the server
     ```$ vagrant up```
+* Install the dependencies by running Composer: ```$ composer install```
 * Add the following line to your hosts file
     ```192.168.52.10 police.dev phpmyadmin.police.dev```
 
