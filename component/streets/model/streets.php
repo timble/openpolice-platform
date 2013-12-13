@@ -26,7 +26,8 @@ class ModelStreets extends Library\ModelTable
         parent::_buildQueryColumns($query);
 
         $query->columns(array(
-            'islp'    => 'islp.islp'
+            'title' => "CONCAT(tbl.title, ' (', city.title, ')')",
+            'islp'  => 'islp.islp'
         ));
     }
 
