@@ -83,11 +83,11 @@ $language_short = $language_short[0];
 
     <div class="container-footer">
         <div class="row-fluid">
-            <div class="span8 alpha">
+            <div class="span7 alpha">
                 <h3><?= translate('Latest news') ?></h3>
                 <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
             </div>
-            <div class="span4">
+            <div class="span5">
                 <h3><?= translate('Your district officer') ?></h3>
                 <?= import('default_district.html') ?>
             </div>
