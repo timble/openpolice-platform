@@ -13,11 +13,11 @@ Check this website at [www.lokalepolitie.be/leuven](http://www.lokalepolitie.be/
 
 ## Installation
 
-You can run the project with the supplied Vagrantfile - make sure you understand what [Vagrant](http://downloads.vagrantup.com/) is.
+You can run the project with the supplied Vagrantfile - make sure you understand what [Vagrant](http://vagrantup.com/) is.
 
 * Install [Composer](http://getcomposer.org/doc/00-intro.md)
 * Install [VirtualBox](http://www.virtualbox.org/)
-* Install [Vagrant](http://downloads.vagrantup.com/)
+* Install [Vagrant](http://www.vagrantup.com/downloads.html)
 * Clone this repository
     ```$ git clone https://github.com/belgianpolice/internet-platform.git```
 * Go to the repository folder where this README is located and bootup the server
