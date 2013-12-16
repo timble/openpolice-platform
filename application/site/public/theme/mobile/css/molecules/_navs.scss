@@ -15,6 +15,7 @@
 // Make links block level
 .nav > li > a {
   display: block;
+  text-decoration: none;
 }
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -57,6 +58,7 @@
 .nav-tabs > .active > a:focus {
   color: $gray;
   background-color: $cyanLighter;
+  font-weight: bold;
 }
 
 
@@ -111,4 +113,8 @@
 }
 .nav-pills.nav-stacked > li:last-child > a {
   margin-bottom: 1px; // decrease margin to match sizing of stacked tabs
+}
+
+.nav--visited a:visited {
+    color: #609;
 }

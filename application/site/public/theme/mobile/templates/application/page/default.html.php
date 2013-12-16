@@ -14,7 +14,7 @@ $language_short = $language_short[0];
 ?>
 
 <!DOCTYPE HTML>
-<html lang="<?= $language; ?>" dir="<?= $direction; ?>">
+<html class="js-disabled" lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
 <?= import('page_head.html') ?>
 <body>
@@ -24,7 +24,7 @@ $language_short = $language_short[0];
             <div class="span3 alpha">
                 <div class="logo" itemscope itemtype="http://schema.org/Organization">
                     <a itemprop="url" href="/<?= $site ?>">
-                        <img width="160" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
+                        <img width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
                         <div><?= escape($zone->title); ?></div>
                     </a>
                 </div>
@@ -38,7 +38,7 @@ $language_short = $language_short[0];
                     <div class="navbar__handlebar">
                         <div class="navbar__handle">&equiv;</div>
                         <a class="navbar__logo" href="/<?= $site ?>">
-                            <img src="assets://application/images/logo-flame.jpg" alt="<?= translate('Police') ?> logo" />
+                            <img width="27" height="27" src="assets://application/images/logo-flame.jpg" alt="<?= translate('Police') ?> logo" />
                             <?= escape($zone->title); ?>
                         </a>
                     </div>
@@ -53,7 +53,7 @@ $language_short = $language_short[0];
     <div class="container-banner">
         <div class="row-fluid">
             <div class="span12 alpha">
-                <img width="890" src="assets://application/images/banners/<?= $site ?>.jpg" alt="<?= translate('Police') ?> <?= escape($zone->title); ?> banner" />
+                <img width="890" height="110" src="assets://application/images/banners/<?= $site ?>.jpg" alt="<?= translate('Police') ?> <?= escape($zone->title); ?> banner" />
             </div>
         </div>
     </div>
@@ -83,11 +83,11 @@ $language_short = $language_short[0];
 
     <div class="container-footer">
         <div class="row-fluid">
-            <div class="span8 alpha">
+            <div class="span7 alpha">
                 <h3><?= translate('Latest news') ?></h3>
                 <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
             </div>
-            <div class="span4">
+            <div class="span5">
                 <h3><?= translate('Your district officer') ?></h3>
                 <?= import('default_district.html') ?>
             </div>
@@ -99,7 +99,13 @@ $language_short = $language_short[0];
     <div class="container-copyright">
     <div class="row-fluid">
         <div class="span6 alpha">
-            <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> | <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a> | <a href="/<?= $site ?>/downloads">Downloads</a>
+            <? if($zone->twitter) : ?>
+            <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> |
+            <? endif ?>
+            <? if($zone->facebook) : ?>
+            <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a> |
+            <? endif ?>
+            <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
         <div class="span6 copyright">
             © 2013 <?= translate('Local Police') ?> - <?= escape($zone->title); ?>

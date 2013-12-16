@@ -14,10 +14,14 @@
 
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name=”mobile-web-app-capable” content=”yes”>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name=”mobile-web-app-capable” content=”yes” />
 
-    <link rel="apple-touch-icon" href="assets://application/images/apple-touch-icon.png"/>
+    <link rel="shortcut icon" type="image/ico" href="assets://application/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="assets://application/images/touch-icon.png" />
+    <link rel="apple-touch-icon" type="image/png" href="assets://application/images/touch-icon.png" />
+
+    <script>(function(H){H.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement)</script>
 
     <ktml:title>
     <ktml:meta>
@@ -25,10 +29,8 @@
     <ktml:style>
     <ktml:script>
 
-    <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-    <style src="assets://application/css/default.css" />
     <style src="assets://application/components/select2/select2.css" />
+    <style src="assets://application/css/default.css" />
     <style src="assets://application/css/ie.css" condition="if IE 8" />
     <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
 

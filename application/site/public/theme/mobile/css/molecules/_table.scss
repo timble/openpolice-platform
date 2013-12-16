@@ -1,87 +1,75 @@
-// Responsive table
-// ------------------
-/* Force table to not be like tables anymore */
-.table {
-  max-width: 100%;
-  width: 100%;
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid $grayLighter;
+    width: 100% !important;
 
-  th, td {
-    padding: 8px;
-  }
-
-  td {
-    /* Behave  like a "row" */
-    clear: left;
-    float: left;
-    border: none;
-  }
-
-  td:nth-child(n+2) {
-    display: none;
-  }
-
-  /* Hide table headers (but not display: none;, for accessibility) */
-  thead tr {
-    display: none;
-  }
+    th, td {
+        padding: 8px;
+    }
 }
 
+.table {
+    max-width: 100%;
+    width: 100%;
+    border: 0 none;
 
-// ZEBRA-STRIPING
-// --------------
+    td {
+        border: none;
+    }
+
+    td:nth-child(n+2) {
+        display: none;
+    }
+
+    /* Hide table headers */
+    thead tr {
+        display: none;
+    }
+}
 
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .table-striped {
-  tbody {
-    > tr:nth-child(odd) {
-      background-color: $tableBackgroundAccent;
+    tbody {
+        tr {
+            border-top: 1px solid $tableBorder;
+        }
+
+        > tr:nth-child(odd) {
+            background-color: $tableBackgroundAccent;
+        }
     }
-  }
 }
 
 @include respond-min($navbarCollapseWidth) {
-  //
-  // Tables
-  // --------------------------------------------------
+    .table {
+        background-color: $tableBackground;
+        margin-bottom: $baseLineHeight;
+        border: 0 none; // Override default style
+        // Cells
+        th,
+        td {
+            display: table-cell !important;
+            line-height: $baseLineHeight;
+            text-align: left;
+            vertical-align: top;
+        }
 
-  // BASELINE STYLES
-  // ---------------
-
-  .table {
-    background-color: $tableBackground;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-bottom: $baseLineHeight;
-    // Cells
-    th,
-    td {
-      display: table-cell !important;
-      line-height: $baseLineHeight;
-      text-align: left;
-      vertical-align: top;
+        th {
+            font-weight: bold;
+        }
+        // Show thead
+        thead tr {
+            display: table-row;
+        }
+        // Bottom align for column headings
+        thead th {
+            vertical-align: bottom;
+        }
+        // Remove top border from thead by default
+        thead tr th,
+        thead tr td {
+            border-top: 0;
+        }
     }
-    td {
-      clear: none;
-      float: none;
-    }
-    tbody tr {
-      border-top: 1px solid $tableBorder;
-    }
-    th {
-      font-weight: bold;
-    }
-    // Show thead
-    thead tr {
-      display: table-row;
-    }
-    // Bottom align for column headings
-    thead th {
-      vertical-align: bottom;
-    }
-    // Remove top border from thead by default
-    thead tr th,
-    thead tr td {
-      border-top: 0;
-    }
-  }
 }

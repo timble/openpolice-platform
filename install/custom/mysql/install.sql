@@ -1328,7 +1328,12 @@ CREATE TABLE `users_sessions` (
 # Create data database
 # ------------------------------------------------------------
 
+DROP DATABASE IF EXISTS `data`;
+
 CREATE DATABASE `data`;
+
+
+DROP TABLE IF EXISTS `data`.`police_municipalities`;
 
 -- Create syntax for TABLE 'police_municipalities'
 CREATE TABLE `data`.`police_municipalities` (
@@ -1347,6 +1352,9 @@ CREATE TABLE `data`.`police_municipalities` (
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`police_municipality_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2775 DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `data`.`police_zones`;
 
 -- Create syntax for TABLE 'police_zones'
 CREATE TABLE `data`.`police_zones` (
@@ -1369,6 +1377,9 @@ CREATE TABLE `data`.`police_zones` (
   PRIMARY KEY (`police_zone_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+DROP TABLE IF EXISTS `data`.`streets`;
+
 -- Create syntax for TABLE 'streets'
 CREATE TABLE `data`.`streets` (
   `streets_street_id` int(11) unsigned NOT NULL,
@@ -1389,6 +1400,9 @@ CREATE TABLE `data`.`streets` (
   PRIMARY KEY (`streets_street_id`),
   KEY `title` (`title`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `data`.`streets_cities`;
 
 -- Create syntax for TABLE 'streets_cities'
 CREATE TABLE `data`.`streets_cities` (

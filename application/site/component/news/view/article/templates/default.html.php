@@ -40,7 +40,7 @@
     <figure class="article__thumbnail">
     <?= helper('com:attachments.image.thumbnail', array(
         'attachment' => $article->attachments_attachment_id,
-        'attribs' => array('width' => '200', 'align' => 'right'))) ?>
+        'attribs' => array('width' => '200', 'height' => '150'))) ?>
     </figure>
     <? endif ?>
 

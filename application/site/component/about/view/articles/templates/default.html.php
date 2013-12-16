@@ -36,12 +36,12 @@
                 <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
                     <?= helper('com:attachments.image.thumbnail', array(
                         'attachment' => $article->attachments_attachment_id,
-                        'attribs' => array('width' => '200', 'align' => 'right'))) ?>
+                        'attribs' => array('width' => '200', 'height' => '150'))) ?>
                 </a>
             <? else : ?>
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('class' => 'article__thumbnail', 'width' => '200', 'align' => 'right'))) ?>
+                    'attribs' => array('class' => 'article__thumbnail', 'width' => '200', 'height' => '150'))) ?>
             <? endif; ?>
 
         <? endif; ?>

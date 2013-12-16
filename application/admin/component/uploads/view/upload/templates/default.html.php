@@ -9,6 +9,7 @@
 ?>
 
 <script src="assets://js/koowa.js" />
+<?= helper('behavior.validator'); ?>
 
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
@@ -27,11 +28,8 @@
                     <strong>Filetype!</strong> We only accept a <a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV (wikipedia.com)</a> file.<br />
                     <strong>Columns!</strong> The first row must contain the column names as indicated below.
                 </div>
-                </fieldset>
-            <fieldset>
-                <legend>Example</legend>
-                <?// import('default_'.$state->table.'.html') ?>
             </fieldset>
+            <?= import('default_'.$state->table.'.html') ?>
         </div>
     </div>
 </form>
