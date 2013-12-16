@@ -1,19 +1,23 @@
+.container-header {
+    .logo {
+        display: none;
+    }
+}
+
 @include respond-min($navbarCollapseWidth) {
   .container-header  {
     position: relative;
-
-      margin-bottom: 20px;
+    margin-bottom: 20px;
 
     .text--strong {
       font-size: $fontSizeLarge;
     }
 
-    .span3 {
-      .logo {
+    .logo {
         padding-top: 26px;
-        display: block;
         text-decoration: none;
         color: $linkColor;
+        display: block;
 
           a {
               text-decoration: none;
@@ -33,8 +37,8 @@
           margin-left: 57px;
           margin-top: 3px;
         }
-      }
     }
+
 
     .slogan {
       margin: 25px 0 10px;
