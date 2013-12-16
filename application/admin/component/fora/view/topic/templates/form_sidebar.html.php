@@ -7,7 +7,7 @@
  * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
  */
 ?>
-
+<?if($this->getObject('user')->getRole() == 25):?>
 <fieldset>
     <legend><?= translate('Publish'); ?></legend>
     <div>
@@ -23,11 +23,15 @@
         </div>
     </div>
 </fieldset>
-
 <fieldset>
     <legend><?= translate('Forum') ?></legend>
     <?= helper('listbox.forums', array('name' => 'fora_forum_id', 'selected' => $topic->fora_forum_id ? $topic->fora_forum_id : $state->forum, 'attribs' => array('class' => 'select-forums required',  'style' => 'width:220px'))) ?>
 </fieldset>
+<?else:?>
+    <input type="hidden" name="published" value="1"/>
+    <input type="hidden" name="commentable" value="<?= $topic->commentable;?>"/>
+    <input type="hidden" name="fora_forum_id" value="<?=$topic->fora_forum_id ? $topic->fora_forum_id : $state->forum;?>"/>
+<?endif;?>
 <? if($topic->isAttachable()) : ?>
     <div class="tab">
         <input type="radio" id="tab-3" name="tab-group-1">
