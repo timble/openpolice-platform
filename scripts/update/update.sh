@@ -41,12 +41,14 @@ dirs=(
   "component/questions"
   "component/uploads"
   "install/custom"
+  "tests/casperjs"
   "vendor/jlong"
 )
 
 files=(
   ".gitignore"
   "README.md"
+  "Vagrantfile"
   "vendor/.gitignore"
   "config/config.php"
   "application/site/component/application/resources/language/nl-NL.ini"
