@@ -23,7 +23,7 @@ class DistrictsTemplateHelperString extends Library\TemplateHelperDefault
             $html .= '(';
         }
 
-        if($district->range_parity != 'odd-even') {
+        if($district->range_parity != 'odd-even' && $district->range_start != $district->range_end) {
             $html .= $this->translate($district->range_parity);
 
             if($district->range_start != '1' || $district->range_end < '999') {
