@@ -36,11 +36,12 @@
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/accordion";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/carousel";
 //@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/hero-unit";
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/utilities"; // Has to be last to override when necessary
+//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/utilities"; // Has to be last to override when necessary
 
 @import "organisms/containers";
 @import "organisms/wrap";
 
+@import "utilities/clearfix";
 @import "utilities/desktop";
 @import "utilities/icomoon";
 @import "utilities/mixins";

@@ -226,70 +226,6 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 7, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.pull-right {
-  float: right;
-}
-
-/* line 10, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.pull-left {
-  float: left;
-}
-
-/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.hide {
-  display: none;
-}
-
-/* line 18, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.show {
-  display: block;
-}
-
-/* line 23, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.invisible {
-  visibility: hidden;
-}
-
-/* line 28, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.affix {
-  position: fixed;
-}
-
-/* line 33, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.clearfix, .article, form, .navbar__handlebar {
-  *zoom: 1;
-}
-/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.clearfix:before, .article:before, form:before, .navbar__handlebar:before, .clearfix:after, .article:after, form:after, .navbar__handlebar:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
-.clearfix:after, .article:after, form:after, .navbar__handlebar:after {
-  clear: both;
-}
-
-/* line 38, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.hide-text {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
-
-/* line 43, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
-.input-block-level {
-  display: block;
-  width: 100%;
-  min-height: 30px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 /* line 10, organisms/_containers.scss */
 .container-header .row-fluid .span3,
 .container-header .slogan,
@@ -368,6 +304,21 @@ textarea {
 #copyright {
   max-width: 940px;
   margin: 0 auto;
+}
+
+/* line 2, utilities/_clearfix.scss */
+.clearfix, .article, form, .navbar__handlebar {
+  *zoom: 1;
+}
+/* line 15, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
+.clearfix:before, .article:before, form:before, .navbar__handlebar:before, .clearfix:after, .article:after, form:after, .navbar__handlebar:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_mixins.scss */
+.clearfix:after, .article:after, form:after, .navbar__handlebar:after {
+  clear: both;
 }
 
 /* line 2, utilities/_desktop.scss */
