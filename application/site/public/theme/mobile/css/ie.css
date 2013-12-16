@@ -226,54 +226,6 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 9, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_scaffolding.scss */
-body {
-  margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 22px;
-  color: #222222;
-  background-color: #eeeeee;
-}
-
-/* line 22, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_scaffolding.scss */
-a {
-  color: #004d9f;
-  text-decoration: none;
-}
-
-/* line 27, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_scaffolding.scss */
-a:hover,
-a:focus {
-  color: #005580;
-  text-decoration: underline;
-}
-
-/* line 37, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_scaffolding.scss */
-.img-rounded {
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-}
-
-/* line 42, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_scaffolding.scss */
-.img-polaroid {
-  padding: 4px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* line 51, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_scaffolding.scss */
-.img-circle {
-  -webkit-border-radius: 500px;
-  -moz-border-radius: 500px;
-  border-radius: 500px;
-}
-
 /* line 7, ../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/_utilities.scss */
 .pull-right {
   float: right;
@@ -799,6 +751,12 @@ hr {
 
 /* line 1, atoms/_body.scss */
 body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: #222222;
+  background-color: #eeeeee;
   padding-left: 0;
   padding-right: 0;
 }
@@ -840,11 +798,14 @@ html {
 
 /* line 1, atoms/_a.scss */
 a {
+  color: #004d9f;
   text-decoration: underline;
 }
 
-/* line 5, atoms/_a.scss */
-a:hover {
+/* line 6, atoms/_a.scss */
+a:hover,
+a:focus {
+  color: #005580;
   text-decoration: underline;
 }
 
