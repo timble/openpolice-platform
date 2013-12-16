@@ -1,6 +1,6 @@
 .article {
   @extend .clearfix;
-  margin-bottom: $gridGutterWidth;
+  margin-bottom: $gutter-width;
 
   h2 { margin-top: 30px; }
   h3 { margin-top: 20px; }
@@ -11,7 +11,7 @@
 }
 
 .article__header {
-  margin-bottom: $gridGutterWidth / 2;
+  margin-bottom: $gutter-width / 2;
 
   h1 {
     margin-bottom: 0;

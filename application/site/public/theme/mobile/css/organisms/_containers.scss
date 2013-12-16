@@ -24,8 +24,8 @@
 }
 
 .container-content {
-  padding-top: $gridGutterWidth;
-  margin-bottom: $gridGutterWidth;
+  padding-top: $gutter-width;
+  margin-bottom: $gutter-width;
 
   &.police {
     .contact__inner {
@@ -59,6 +59,6 @@
 .container-footer {
   .media {
     margin-top: 0;
-    margin-bottom: $gridGutterWidth / 1.5;
+    margin-bottom: $gutter-width / 1.5;
   }
 }

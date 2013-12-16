@@ -1,42 +1,7 @@
 @import "utilities/ie";
-
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/variables"; // Modify this for custom colors, font-sizes, etc
-
-@import "utilities/_variables";
-
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/mixins";
-@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/reset";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/scaffolding";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/grid";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/layouts";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/type";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/code";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/forms";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/tables";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/sprites";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/dropdowns";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/wells";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/component-animations";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/close";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/buttons";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/button-groups";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/alerts"; // Note: alerts share common CSS with buttons and thus have styles in buttons
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/navs";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/navbar";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/breadcrumbs";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/pagination";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/pager";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/modals";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/tooltip";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/popovers";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/thumbnails";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/media";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/labels-badges";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/progress-bars";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/accordion";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/carousel";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/hero-unit";
-//@import "../../../../../../vendor/jlong/sass-twitter-bootstrap/lib/utilities"; // Has to be last to override when necessary
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/reset";
 
 @import "organisms/containers";
 @import "organisms/wrap";
@@ -44,7 +9,6 @@
 @import "utilities/clearfix";
 @import "utilities/desktop";
 @import "utilities/icomoon";
-@import "utilities/mixins";
 @import "utilities/select2";
 @import "utilities/system";
 

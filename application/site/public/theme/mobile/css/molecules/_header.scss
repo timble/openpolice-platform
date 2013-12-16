@@ -63,7 +63,7 @@
 
         .container-content {
             // Increase padding between sticky header and content
-            padding-top: ($gridGutterWidth / 1.25) + 50px;
+            padding-top: ($gutter-width / 1.25) + 2em;
         }
     }
 }

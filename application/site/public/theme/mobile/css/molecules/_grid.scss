@@ -1,8 +1,5 @@
 @import "susy";
 
-$gutter-width   : 3em;            // 1em gutters between columns
-$grid-padding: 25px;
-
 @include respond-min($navbarCollapseWidth) {
     .container {
         // page acts as a container for our grid.

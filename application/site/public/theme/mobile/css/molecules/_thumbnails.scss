@@ -4,7 +4,7 @@
 
 // Make wrapper ul behave like the grid
 .thumbnails {
-    margin-left: -$gridGutterWidth;
+    margin-left: -$gutter-width;
     list-style: none;
     @include clearfix();
 }
@@ -13,7 +13,7 @@
 .thumbnails > li {
     float: left; // Explicity set the float since we don't require .span* classes
     margin-bottom: $baseLineHeight;
-    margin-left: $gridGutterWidth;
+    margin-left: $gutter-width;
 }
 
 // The actual thumbnail (can be `a` or `div`)
