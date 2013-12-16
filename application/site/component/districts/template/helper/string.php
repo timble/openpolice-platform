@@ -35,7 +35,7 @@ class DistrictsTemplateHelperString extends Library\TemplateHelperDefault
             if($district->range_start == $district->range_end){
                 $html .= $district->range_start;
             } else {
-                $html .= $this->translate('van').' '.$district->range_start.' '.$this->translate('tot en met').' '.$district->range_end;
+                $html .= $this->translate('from').' '.$district->range_start.' '.JText::sprintf('to', $district->range_end);
             }
         }
 
