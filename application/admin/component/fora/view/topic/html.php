@@ -47,7 +47,10 @@ class ForaViewTopicHtml extends Library\ViewHtml
                 ->id($responds->comments_comment_id)
                 ->getRow();
         }
-        $this->pathways =  $this->getPathway();
+        if($this->getLayout() !== 'form')
+        {
+            $this->pathways =  $this->getPathway();
+        }
 
 
         return parent::render();
