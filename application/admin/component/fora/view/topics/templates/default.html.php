@@ -10,9 +10,6 @@
 
 <style src="assets://fora/css/default.css" />
 <script src="assets://fora/js/subscribe.js" />
-<ktml:module position="actionbar">
-    <ktml:toolbar type="actionbar">
-</ktml:module>
 
 <div id="com_fora" class="scrollable">
     <div id="fora-topics-default">
@@ -30,6 +27,7 @@
             <div class="well__frame">
                 <h1 class="well__heading well__heading--left"><?= escape($forum->title) ?></h1>
                 <div class="well__toolbar">
+                    <a href="<?=route('view=topic&layout=form&forum='.$forum->id)?>" class="btn btn-small"><?=translate('new');?></a>
                     <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription"
                             data-row="<?=$forum->id;?>"
                             data-user="<?= object('user')->getId() ?>"
