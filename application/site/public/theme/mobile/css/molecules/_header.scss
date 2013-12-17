@@ -5,56 +5,54 @@
 }
 
 @include respond-min($navbarCollapseWidth) {
-  .container-header  {
-    position: relative;
-    margin-bottom: 20px;
+    .container-header {
+        position: relative;
+        margin-bottom: 20px;
 
-    .text--strong {
-      font-size: $fontSizeLarge;
-    }
-
-    .logo {
-        padding-top: 26px;
-        text-decoration: none;
-        color: $linkColor;
-        display: block;
-
-          a {
-              text-decoration: none;
-          }
-
-          a:hover {
-              text-decoration: underline;
-          }
-
-        img {
-          width: 160px;
-          vertical-align: bottom;
-          margin-left: 10px;
+        .text--strong {
+            font-size: $fontSizeLarge;
         }
 
-        div {
-          margin-left: 57px;
-          margin-top: 3px;
-        }
-    }
-
-
-    .slogan {
-      margin: 25px 0 10px;
-      display: block;
-      text-align: center;
-
-        a {
+        .logo {
+            padding-top: 26px;
             text-decoration: none;
+            color: $linkColor;
+            display: block;
+
+            a {
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            img {
+                width: 160px;
+                vertical-align: bottom;
+                margin-left: 10px;
+            }
+
+            div {
+                margin-left: 57px;
+                margin-top: 3px;
+            }
+        }
+
+        .slogan {
+            margin: 25px 0 10px;
+            display: block;
+            text-align: center;
+
+            a {
+                text-decoration: none;
+            }
         }
     }
-  }
 }
 
 // Apply sticky header only in modern browsers (they understand media queries)
-@media (max-width: $navbarCollapseWidth - 1)
-{
+@media (max-width: $navbarCollapseWidth - 1) {
     // Only when JS is enabled
     .js-enabled {
         .container-header {

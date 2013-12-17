@@ -1,13 +1,21 @@
 ul {
-  &.column--double,
-  &.column--triple,
-  &.column--quad   { @include column-count(2); }
+    &.column--double,
+    &.column--triple,
+    &.column--quad {
+        @include column-count(2);
+    }
 }
 
 @include respond-min($navbarCollapseWidth) {
-  ul {
-    &.column--double { @include column-count(2); }
-    &.column--triple { @include column-count(3); }
-    &.column--quad   { @include column-count(4); }
-  }
+    ul {
+        &.column--double {
+            @include column-count(2);
+        }
+        &.column--triple {
+            @include column-count(3);
+        }
+        &.column--quad {
+            @include column-count(4);
+        }
+    }
 }

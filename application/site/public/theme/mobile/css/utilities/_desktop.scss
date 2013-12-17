@@ -1,101 +1,101 @@
 @include respond-min($navbarCollapseWidth) {
-  #wrap {
-    border-bottom: 1px solid darken($grayLighter, 7%);
-  }
-
-  .navbar__handlebar,
-  .visible-phone {
-    display: none;
-  }
-
-  .container-header .is-hidden,
-  .container-breadcrumb,
-  .container-banner,
-  .container-footer,
-  .container-quicklinks,
-  .container-content .sidebar,
-  .container-copyright .copyright,
-  .hidden-phone {
-    display: block;
-  }
-
-  .container-header,
-  .container-banner,
-  .container-breadcrumb,
-  .container-content,
-  .container-footer {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-
-  .container-header {
-    .logo {
-      text-align: center;
+    #wrap {
+        border-bottom: 1px solid darken($grayLighter, 7%);
     }
-  }
 
-  .container-content.police {
-    .contact__inner {
-      border-left: 1px solid $grayLighter;
-
-      padding-left: 18px;
-      margin-top: 20px;
-      @include border-radius(5px);
-
-      ul {
-        margin-bottom: 0;
-      }
-
-      .well {
-        margin-bottom: 10px
-      }
+    .navbar__handlebar,
+    .visible-phone {
+        display: none;
     }
-  }
 
-  .container-header {
-    width: auto;
-  }
-
-  .container-content {
-    .sidebar {
-      margin-top: 20px;
-
-      .sidebar__element {
-        margin-bottom: 40px;
-      }
+    .container-header .is-hidden,
+    .container-breadcrumb,
+    .container-banner,
+    .container-footer,
+    .container-quicklinks,
+    .container-content .sidebar,
+    .container-copyright .copyright,
+    .hidden-phone {
+        display: block;
     }
-  }
 
-  .container-quicklinks {
-      border-top: 1px solid $grayLighter;
-      padding-top: 14px;
-      margin-top: $gutter-width;
-  }
-
-  .container-footer {
-    padding-top: $gutter-width / 3;
-
-    background-color: $wellBackground;
-    border-top: 1px solid darken($grayLighter, 7%);
-
-    @include border-radius(0 0 5px 5px);
-  }
-
-  .container-copyright {
-    text-align: left;
-    border-top: 0 none;
-    .copyright--right {
-      text-align: right;
+    .container-header,
+    .container-banner,
+    .container-breadcrumb,
+    .container-content,
+    .container-footer {
+        padding-left: 0px;
+        padding-right: 0px;
     }
-  }
+
+    .container-header {
+        .logo {
+            text-align: center;
+        }
+    }
+
+    .container-content.police {
+        .contact__inner {
+            border-left: 1px solid $grayLighter;
+
+            padding-left: 18px;
+            margin-top: 20px;
+            @include border-radius(5px);
+
+            ul {
+                margin-bottom: 0;
+            }
+
+            .well {
+                margin-bottom: 10px
+            }
+        }
+    }
+
+    .container-header {
+        width: auto;
+    }
+
+    .container-content {
+        .sidebar {
+            margin-top: 20px;
+
+            .sidebar__element {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .container-quicklinks {
+        border-top: 1px solid $grayLighter;
+        padding-top: 14px;
+        margin-top: $gutter-width;
+    }
+
+    .container-footer {
+        padding-top: $gutter-width / 3;
+
+        background-color: $wellBackground;
+        border-top: 1px solid darken($grayLighter, 7%);
+
+        @include border-radius(0 0 5px 5px);
+    }
+
+    .container-copyright {
+        text-align: left;
+        border-top: 0 none;
+        .copyright--right {
+            text-align: right;
+        }
+    }
 }
 
 @include respond-min(998px) {
-  #wrap {
-    border-left: 1px solid darken($grayLighter, 7%);
-    border-right: 1px solid darken($grayLighter, 7%);
-    @include border-radius(0 0 5px 5px);
-  }
+    #wrap {
+        border-left: 1px solid darken($grayLighter, 7%);
+        border-right: 1px solid darken($grayLighter, 7%);
+        @include border-radius(0 0 5px 5px);
+    }
 
     .container-header {
         .logo {
