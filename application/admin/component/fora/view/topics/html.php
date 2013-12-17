@@ -27,6 +27,27 @@ class ForaViewTopicsHtml extends Library\ViewHtml
             $this->subscription = true;
         } else $this->subscription = false;
 
+
+        $this->pathways = $this->getPathway();
+
         return parent::render();
+    }
+
+    /**
+     * Return a reference to the application pathway object
+     *
+     * @return object ApplicationConfigPathway
+     */
+    public function getPathway()
+    {
+        if(!isset($this->_pathway))
+        {
+            $pathway = new ForaConfigPathway();
+            $pathway->addItem("Home", "categories");
+            $pathway->addItem($this->forum->category_title, "category?id=".$this->forum->categories_category_id);
+            $pathway->addItem($this->forum->title, "topics?forum=".$this->forum->id);
+        }
+
+        return (array) $pathway->items;
     }
 }

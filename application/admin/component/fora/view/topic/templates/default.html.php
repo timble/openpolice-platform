@@ -5,6 +5,23 @@
 <div id="com_fora" class="scrollable">
     <div id="fora-topic-default" class="span9">
         <div class="well well-small">
+            <ul class="breadcrumb">
+                <? foreach($pathways as $item) : ?>
+                    <? // If not the last item in the breadcrumbs add the separator ?>
+                    <? if($item !== end($pathways)) : ?>
+                        <? if(!empty($item->link)) : ?>
+                            <li><a href="<?= $item->link ?>" class="pathway"><?= escape($item->name) ?></a></li>
+                        <? else : ?>
+                            <li><?= escape($item->name) ?></li>
+                        <? endif ?>
+                        <span class="divider">&rsaquo;</span>
+                    <? else : ?>
+                        <li><?= escape($item->name) ?></li>
+                    <? endif ?>
+                <? endforeach ?>
+            </ul>
+        </div>
+        <div class="well well-small">
             <div class="well__frame">
                 <h1 class="well__heading well__heading--left"><?= escape($topic->title) ?></h1>
                 <div class="well__toolbar">
