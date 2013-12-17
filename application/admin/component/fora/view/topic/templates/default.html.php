@@ -30,23 +30,21 @@
                             <a class="btn btn-small" href="<?= route('layout=form&id='.$topic->id) ?>">Edit</a>
                         <? endif ?>
 
-                            <button type="button" class="btn btn-small dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="modal" href="<?=  route('view=categories&topic='.$topic->id.'&layout=select&tmpl=component') ?>" rel="{size: {x:600, y:450}}"><?= translate('Move') ?></a></li>
-                                <li><a onclick="javascript: var form = $('form-delete'); if(form.onsubmit()) { form.submit(); }"><?= translate('Delete') ?></a></li>
-                            </ul>
-                            <form action="" method="POST" class="-koowa-form" id="form-delete" onsubmit="return confirm('<?= addslashes(translate('Are you sure you want to delete this topic?')) ?>');">
-                                <input type="hidden" name="action" value="delete" />
-                            </form>
-
+                        <button type="button" class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="modal" href="<?=  route('view=categories&topic='.$topic->id.'&layout=select&tmpl=component') ?>" rel="{size: {x:600, y:450}}"><?= translate('Move') ?></a></li>
+                            <li><a onclick="javascript: var form = $('form-delete'); if(form.onsubmit()) { form.submit(); }"><?= translate('Delete') ?></a></li>
+                        </ul>
+                        <form action="" method="POST" class="-koowa-form" id="form-delete" onsubmit="return confirm('<?= addslashes(translate('Are you sure you want to delete this topic?')) ?>');">
+                            <input type="hidden" name="action" value="delete" />
+                        </form>
                     </div>
 
-                        <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription">
-                            <i class="icon-star"></i>
-                        </button>
-
+                    <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription">
+                        <i class="icon-star"></i>
+                    </button>
                 </div>
             </div>
             <div class="well__content">
@@ -60,7 +58,6 @@
                         <?= import('default_vote.html'); ?>
                     </div>
                 </div>
-
             </div>
         </div>
         <? if($forum->type != 'article' && $awnser->id) : ?>
