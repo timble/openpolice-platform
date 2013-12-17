@@ -81,14 +81,16 @@
                 </div>
             </div>
         <?endif;?>
-        <form action="<?= route('&view=comment&row='.$topic->id.'&table=fora') ?>" method="post">
-            <input type="hidden" name="row" value="<?= $topic->id ?>" />
-            <input type="hidden" name="table" value="fora" />
+        <? if($topic->commentable == 1):?>
+            <form action="<?= route('&view=comment&row='.$topic->id.'&table=fora') ?>" method="post">
+                <input type="hidden" name="row" value="<?= $topic->id ?>" />
+                <input type="hidden" name="table" value="fora" />
 
-            <textarea type="text" name="text" placeholder="<?= translate('Add new comment here ...') ?>" id="new-comment-text"></textarea>
-            <br />
-            <input class="button" type="submit" value="<?= translate('Submit') ?>"/>
-        </form>
+                <textarea type="text" name="text" placeholder="<?= translate('Add new comment here ...') ?>" id="new-comment-text"></textarea>
+                <br />
+                <input class="button" type="submit" value="<?= translate('Submit') ?>"/>
+            </form>
+        <?endif;?>
         <? foreach($comments as $comment) :?>
             <div class="comment well">
                 <div class="comment-header">
