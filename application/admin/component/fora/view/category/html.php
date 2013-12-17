@@ -51,7 +51,7 @@ class ForaViewCategoryHtml extends Library\ViewHtml
         if(!isset($this->_pathway))
         {
             $pathway = new ForaConfigPathway();
-            $pathway->addItem("Home", "categories");
+            $pathway->addItem("Support", "categories");
             $pathway->addItem($this->getModel()->getData()->title, "category?id=".$this->getModel()->getData()->id);
         }
 

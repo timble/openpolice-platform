@@ -2,24 +2,13 @@
 
 <script src="assets://fora/js/subscribe.js" />
 <script src="assets://fora/js/response.js" />
+
+
+
 <div id="com_fora" class="scrollable">
     <div id="fora-topic-default" class="span9">
         <div class="well well-small">
-            <ul class="breadcrumb">
-                <? foreach($pathways as $item) : ?>
-                    <? // If not the last item in the breadcrumbs add the separator ?>
-                    <? if($item !== end($pathways)) : ?>
-                        <? if(!empty($item->link)) : ?>
-                            <li><a href="<?= $item->link ?>" class="pathway"><?= escape($item->name) ?></a></li>
-                        <? else : ?>
-                            <li><?= escape($item->name) ?></li>
-                        <? endif ?>
-                        <span class="divider">&rsaquo;</span>
-                    <? else : ?>
-                        <li><?= escape($item->name) ?></li>
-                    <? endif ?>
-                <? endforeach ?>
-            </ul>
+            <?= import('com:fora.module.breadcrumbs.default.html', array('list' => $pathways)) ?>
         </div>
         <div class="well well-small">
             <div class="well__frame">
