@@ -24,7 +24,7 @@ class ForaViewTopicHtml extends Library\ViewHtml
 
         $this->comments = $this->getObject('com:comments.model.comments')->row($topic->id)->table('fora')->getRowset();
 
-        if($this->getObject('com:fora.model.subscriptions')->type('forum')->users_user_id($this->getObject('user')->getId())->row($this->getModel()->getState()->forum)->getRow()->row)
+        if($this->getObject('com:fora.model.subscriptions')->site($this->getObject('application')->getSite())->type('topic')->users_user_id($this->getObject('user')->getId())->row($topic->id)->getData()->row)
         {
             $this->subscription = true;
         } else $this->subscription = false;

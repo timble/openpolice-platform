@@ -22,11 +22,10 @@ class ForaViewTopicsHtml extends Library\ViewHtml
 
         $this->forum = $this->getObject('com:fora.model.forums')->id($this->getModel()->getState()->forum)->getRow();
 
-        if($this->getObject('com:fora.model.subscriptions')->type('forum')->users_user_id($this->getObject('user')->getId())->row($this->getModel()->getState()->forum)->getRow()->row)
+        if($this->getObject('com:fora.model.subscriptions')->site($this->getObject('application')->getSite())->type('forum')->users_user_id($this->getObject('user')->getId())->row($this->forum->id)->getData()->row)
         {
             $this->subscription = true;
         } else $this->subscription = false;
-
 
         $this->pathways = $this->getPathway();
 

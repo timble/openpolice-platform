@@ -43,7 +43,12 @@
 
                     </div>
 
-                        <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription">
+                        <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription"
+                            data-row="<?=$topic->id;?>"
+                            data-user="<?= object('user')->getId() ?>"
+                            data-site="<?=object('application')->getSite();?>"
+                            data-action="<?= $subscription ? 'delete' : 'post' ?>"
+                            data-type="topic">
                             <i class="icon-star"></i>
                         </button>
 
@@ -120,14 +125,9 @@
     jQuery( document ).ready(function($) {
         new Fora.Subscribe({
             holder: 'fora-topic-default',
-            url: '<?= html_entity_decode(route('view=subscription&type=topic&row='.$topic->id))?>',
+            url: '<?= html_entity_decode(route('view=subscription'))?>',
             data: {
-                action: '<?= $subscription ? 'delete' : 'add' ?>',
-                type: 'topic',
-                row: '<?= $topic->id ?>',
-                users_user_id: '<?= object('user')->getId() ?>',
-                _token: '<?= object('user')->getSession()->getToken() ?>',
-                site: '<?=object('application')->getSite();?>'
+                _token: '<?= object('user')->getSession()->getToken() ?>'
             }
         });
 

@@ -44,7 +44,12 @@
             <div class="well__frame">
                 <h1 class="well__heading well__heading--left"><?= escape($forum->title) ?></h1>
                 <div class="well__toolbar">
-                    <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription">
+                    <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription"
+                            data-row="<?=$forum->id;?>"
+                            data-user="<?= object('user')->getId() ?>"
+                            data-site="<?=object('application')->getSite();?>"
+                            data-action="<?= $subscription ? 'delete' : 'post' ?>"
+                            data-type="forum">
                         <i class="icon-star"></i>
                     </button>
                 </div>
@@ -83,14 +88,9 @@
     jQuery( document ).ready(function($) {
         new Fora.Subscribe({
             holder: 'fora-topics-default',
-            url: '<?= html_entity_decode(route('view=subscription&type=forum&row='.$forum->id))?>',
+            url: '<?= html_entity_decode(route('view=subscription'))?>',
             data: {
-                action: '<?= $subscription ? 'delete' : 'add' ?>',
-                type: 'forum',
-                row: '<?= $forum->id ?>',
-                users_user_id: '<?= object('user')->getId() ?>',
-                _token: '<?= object('user')->getSession()->getToken() ?>',
-                site: '<?=object('application')->getSite();?>'
+                _token: '<?= object('user')->getSession()->getToken() ?>'
             }
         });
     });

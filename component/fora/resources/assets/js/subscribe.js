@@ -15,10 +15,19 @@ Fora.Subscribe = new Class({
     },
 
     submit: function() {
+
+        var button = this.options.button;
         var request = new Request({
-            method: 'post',
+            method: button.get('data-action'),
             url: this.options.url,
-            data: this.options.data,
+            data: {
+                action: button.get('data-action'),
+                row: button.get('data-row'),
+                users_user_id: button.get('data-user'),
+                site: button.get('data-site'),
+                type: button.get('data-type'),
+                _token: this.options.data._token
+            },
 
             onSuccess: function() {
                 this.complete();
@@ -34,9 +43,8 @@ Fora.Subscribe = new Class({
 
     complete: function() {
         var button = this.options.button;
-        var data = this.options.data;
 
-        data.action = (data.action == 'delete' ? 'post' : 'delete');
+        button.set('data-action',button.get('data-action') == 'delete' ? 'post' : 'delete');
         button.toggleClass('btn-unsubscribed').toggleClass('btn-subscribed');
 
         this.toggleSpinner();

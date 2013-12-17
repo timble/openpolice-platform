@@ -54,11 +54,11 @@ CREATE TABLE `fora_topics` (
 CREATE TABLE `fora_subscriptions` (
   `type` enum('topic','forum') NOT NULL DEFAULT 'topic',
   `row` int(10) unsigned NOT NULL,
-  `site` varchar(30) DEFAULT NULL,
+  `site` varchar(30) NOT NULL DEFAULT '',
   `users_user_id` int(10) unsigned NOT NULL,
   `last_viewed_on` datetime DEFAULT NULL,
   `notification_sent_on` datetime DEFAULT NULL,
-  PRIMARY KEY (`type`,`row`,`user_id`),
+  PRIMARY KEY (`type`,`row`,`site`,`users_user_id`),
   KEY `idx_type_row` (`type`,`row`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
