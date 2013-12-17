@@ -84,7 +84,7 @@
                 </div>
             </div>
         <?endif;?>
-        <? if($topic->commentable === 1):?>
+        <? if($topic->commentable == 1):?>
             <form action="<?= route('&view=comment&row='.$topic->id.'&table=fora') ?>" method="post">
                 <input type="hidden" name="row" value="<?= $topic->id ?>" />
                 <input type="hidden" name="table" value="fora" />
