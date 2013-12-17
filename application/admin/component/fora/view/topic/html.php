@@ -67,7 +67,7 @@ class ForaViewTopicHtml extends Library\ViewHtml
         {
             $pathway = new ForaConfigPathway();
 
-            $pathway->addItem("Home", "categories");
+            $pathway->addItem("Support", "categories");
             $pathway->addItem($this->forum->category_title, "category?id=".$this->forum->categories_category_id);
             $pathway->addItem($this->forum->title, 'topics?forum='.$this->forum->id.'&slug='.$this->forum->getSlug());
             $pathway->addItem($this->getModel()->getData()->title, "topic?slug=".$this->getModel()->getData()->getSlug());

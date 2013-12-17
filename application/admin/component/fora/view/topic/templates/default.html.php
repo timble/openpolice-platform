@@ -2,24 +2,13 @@
 
 <script src="assets://fora/js/subscribe.js" />
 <script src="assets://fora/js/response.js" />
+
+
+
 <div id="com_fora" class="scrollable">
     <div id="fora-topic-default" class="span9">
         <div class="well well-small">
-            <ul class="breadcrumb">
-                <? foreach($pathways as $item) : ?>
-                    <? // If not the last item in the breadcrumbs add the separator ?>
-                    <? if($item !== end($pathways)) : ?>
-                        <? if(!empty($item->link)) : ?>
-                            <li><a href="<?= $item->link ?>" class="pathway"><?= escape($item->name) ?></a></li>
-                        <? else : ?>
-                            <li><?= escape($item->name) ?></li>
-                        <? endif ?>
-                        <span class="divider">&rsaquo;</span>
-                    <? else : ?>
-                        <li><?= escape($item->name) ?></li>
-                    <? endif ?>
-                <? endforeach ?>
-            </ul>
+            <?= import('com:fora.module.breadcrumbs.default.html', array('list' => $pathways)) ?>
         </div>
         <div class="well well-small">
             <div class="well__frame">
@@ -29,29 +18,25 @@
                         <? if($topic->created_by == $this->getObject('user')->getId()) : ?>
                             <a class="btn btn-small" href="<?= route('layout=form&id='.$topic->id) ?>">Edit</a>
                         <? endif ?>
-
-                            <button type="button" class="btn btn-small dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="modal" href="<?=  route('view=categories&topic='.$topic->id.'&layout=select&tmpl=component') ?>" rel="{size: {x:600, y:450}}"><?= translate('Move') ?></a></li>
-                                <li><a onclick="javascript: var form = $('form-delete'); if(form.onsubmit()) { form.submit(); }"><?= translate('Delete') ?></a></li>
-                            </ul>
-                            <form action="" method="POST" class="-koowa-form" id="form-delete" onsubmit="return confirm('<?= addslashes(translate('Are you sure you want to delete this topic?')) ?>');">
-                                <input type="hidden" name="action" value="delete" />
-                            </form>
-
-                    </div>
-
-                        <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription"
-                            data-row="<?=$topic->id;?>"
-                            data-user="<?= object('user')->getId() ?>"
-                            data-site="<?=object('application')->getSite();?>"
-                            data-action="<?= $subscription ? 'delete' : 'post' ?>"
-                            data-type="topic">
-                            <i class="icon-star"></i>
+                        <button type="button" class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
                         </button>
-
+                        <ul class="dropdown-menu">
+                            <li><a class="modal" href="<?=  route('view=categories&topic='.$topic->id.'&layout=select&tmpl=component') ?>" rel="{size: {x:600, y:450}}"><?= translate('Move') ?></a></li>
+                            <li><a onclick="javascript: var form = $('form-delete'); if(form.onsubmit()) { form.submit(); }"><?= translate('Delete') ?></a></li>
+                        </ul>
+                        <form action="" method="POST" class="-koowa-form" id="form-delete" onsubmit="return confirm('<?= addslashes(translate('Are you sure you want to delete this topic?')) ?>');">
+                            <input type="hidden" name="action" value="delete" />
+                        </form>
+                    </div>
+                    <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription"
+                        data-row="<?=$topic->id;?>"
+                        data-user="<?= object('user')->getId() ?>"
+                        data-site="<?=object('application')->getSite();?>"
+                        data-action="<?= $subscription ? 'delete' : 'post' ?>"
+                        data-type="topic">
+                        <i class="icon-star"></i>
+                    </button>
                 </div>
             </div>
             <div class="well__content">
@@ -65,7 +50,6 @@
                         <?= import('default_vote.html'); ?>
                     </div>
                 </div>
-
             </div>
         </div>
         <? if($forum->type != 'article' && $awnser->id) : ?>
