@@ -1,31 +1,31 @@
-.container-header .row-fluid .span3,
-.container-header .slogan,
-.container-breadcrumb,
-.container-banner,
-.container-footer,
-.container-quicklinks,
-.container-content .sidebar,
-.container-copyright .copyright,
+.container__header .row-fluid .span3,
+.container__header .slogan,
+.container__breadcrumb,
+.container__banner,
+.container__footer,
+.container__quicklinks,
+.container__content .sidebar,
+.container__copyright .copyright,
 .is-hidden,
 .hidden-phone {
     display: none;
 }
 
-.container-content {
+.container__content {
     padding-left: 20px;
     padding-right: 20px;
 }
 
-.container-header {
+.container__header {
     margin-bottom: 0;
     padding-left: 0;
     padding-right: 0;
     width: 100%;
 }
 
-.container-content {
-    padding-top: $gutter-width;
-    margin-bottom: $gutter-width;
+.container__content {
+    padding-top: $grid-padding;
+    padding-bottom: $grid-padding;
 
     &.police {
         .contact__inner {
@@ -45,7 +45,7 @@
     }
 }
 
-.container-copyright {
+.container__copyright {
     padding: 3px 20px;
     text-align: center;
     border-top: 1px solid darken($grayLighter, 7%);
@@ -56,9 +56,13 @@
     }
 }
 
-.container-footer {
+.container__footer {
     .media {
         margin-top: 0;
         margin-bottom: $gutter-width / 1.5;
+    }
+
+    .btn {
+        float: right;
     }
 }

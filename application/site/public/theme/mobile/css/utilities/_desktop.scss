@@ -8,33 +8,33 @@
         display: none;
     }
 
-    .container-header .is-hidden,
-    .container-breadcrumb,
-    .container-banner,
-    .container-footer,
-    .container-quicklinks,
-    .container-content .sidebar,
-    .container-copyright .copyright,
+    .container__header .is-hidden,
+    .container__breadcrumb,
+    .container__banner,
+    .container__footer,
+    .container__quicklinks,
+    .container__content .sidebar,
+    .container__copyright .copyright,
     .hidden-phone {
         display: block;
     }
 
-    .container-header,
-    .container-banner,
-    .container-breadcrumb,
-    .container-content,
-    .container-footer {
+    .container__header,
+    .container__banner,
+    .container__breadcrumb,
+    .container__content,
+    .container__footer {
         padding-left: 0px;
         padding-right: 0px;
     }
 
-    .container-header {
+    .container__header {
         .logo {
             text-align: center;
         }
     }
 
-    .container-content.police {
+    .container__content.police {
         .contact__inner {
             border-left: 1px solid $grayLighter;
 
@@ -52,11 +52,11 @@
         }
     }
 
-    .container-header {
+    .container__header {
         width: auto;
     }
 
-    .container-content {
+    .container__content {
         .sidebar {
             margin-top: 20px;
 
@@ -66,13 +66,13 @@
         }
     }
 
-    .container-quicklinks {
+    .container__quicklinks {
         border-top: 1px solid $grayLighter;
         padding-top: 14px;
         margin-top: $gutter-width;
     }
 
-    .container-footer {
+    .container__footer {
         padding-top: $gutter-width / 3;
 
         background-color: $wellBackground;
@@ -81,7 +81,7 @@
         @include border-radius(0 0 5px 5px);
     }
 
-    .container-copyright {
+    .container__copyright {
         text-align: left;
         border-top: 0 none;
         .copyright--right {
@@ -97,7 +97,7 @@
         @include border-radius(0 0 5px 5px);
     }
 
-    .container-header {
+    .container__header {
         .logo {
             text-align: left;
         }

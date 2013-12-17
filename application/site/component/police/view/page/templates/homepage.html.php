@@ -86,7 +86,7 @@
 </div>
 
 <ktml:modules position="quicklinks">
-<div class="container-quicklinks">
+<div class="container__quicklinks">
     <ktml:modules:content>
 </div>
 </ktml:modules>

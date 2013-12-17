@@ -1,13 +1,13 @@
 /* Print stub */
 @media only print {
-    .container-header .navbar,
-    .container-copyright,
+    .container__header .navbar,
+    .container__copyright,
     .pagination,
     .st_sharethis {
         display: none;
     }
 
-    .container-header .row-fluid .span3 {
+    .container__header .row-fluid .span3 {
         display: block;
         padding-left: 20px;
         padding-top: 20px;

@@ -1,11 +1,11 @@
-.container-header {
+.container__header {
     .logo {
         display: none;
     }
 }
 
 @include respond-min($navbarCollapseWidth) {
-    .container-header {
+    .container__header {
         position: relative;
         margin-bottom: 20px;
 
@@ -55,11 +55,11 @@
 @media (max-width: $navbarCollapseWidth - 1) {
     // Only when JS is enabled
     .js-enabled {
-        .container-header {
+        .container__header {
             position: fixed;
         }
 
-        .container-content {
+        .container__content {
             // Increase padding between sticky header and content
             padding-top: ($gutter-width / 1.25) + 2em;
         }

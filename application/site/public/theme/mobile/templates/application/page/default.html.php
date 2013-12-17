@@ -19,7 +19,7 @@ $language_short = $language_short[0];
 <?= import('page_head.html') ?>
 <body>
 <div id="wrap">
-    <div class="container container-header">
+    <div class="container container__header">
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
             <a itemprop="url" href="/<?= $site ?>">
                 <img width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
@@ -47,29 +47,29 @@ $language_short = $language_short[0];
         </div>
     </div>
 
-    <div class="container container-banner">
+    <div class="container container__banner">
         <img width="890" height="110" src="assets://application/images/banners/<?= $site ?>.jpg" alt="<?= translate('Police') ?> <?= escape($zone->title); ?> banner" />
     </div>
 
     <ktml:modules position="breadcrumbs">
-    <div class="container container-breadcrumb">
+    <div class="container container__breadcrumb">
         <ktml:modules:content>
     </div>
     </ktml:modules>
 
-    <div class="container container-content <?= $extension ?>">
+    <div class="container container__content <?= $extension ?>">
         <ktml:modules position="left">
         <aside class="sidebar">
             <ktml:modules:content>
         </aside>
         </ktml:modules>
 
-        <div class="<?= $extension == 'police' ? 'homepage' : 'component' ?>">
+        <div class="<?= ($extension == 'police' OR $extension == 'files') ? 'homepage' : 'component' ?>">
             <ktml:content>
         </div>
     </div>
 
-    <div class="container container-footer">
+    <div class="container container__footer">
         <div class="row">
             <div class="footer__news">
                 <h3><?= translate('Latest news') ?></h3>
@@ -84,7 +84,7 @@ $language_short = $language_short[0];
 </div>
 
 <div id="copyright">
-    <div class="container container-copyright">
+    <div class="container container__copyright">
         <div class="copyright--left">
             <? if($zone->twitter) : ?>
                 <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> |
