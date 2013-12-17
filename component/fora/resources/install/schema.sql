@@ -58,7 +58,7 @@ CREATE TABLE `fora_subscriptions` (
   `users_user_id` int(10) unsigned NOT NULL,
   `last_viewed_on` datetime DEFAULT NULL,
   `notification_sent_on` datetime DEFAULT NULL,
-  PRIMARY KEY (`type`,`row`,`user_id`),
+  PRIMARY KEY (`type`,`row`,`users_user_id`),
   KEY `idx_type_row` (`type`,`row`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -66,7 +66,7 @@ CREATE TABLE `fora_votes` (
   `fora_topic_id` int(10) unsigned NOT NULL,
   `users_user_id` int(10) unsigned NOT NULL,
   `site` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`fora_topic_id`,`user_id`),
+  PRIMARY KEY (`fora_topic_id`,`users_user_id`),
   CONSTRAINT `fora_votes_ibfk_1` FOREIGN KEY (`fora_topic_id`) REFERENCES `fora_topics` (`fora_topic_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
