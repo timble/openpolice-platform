@@ -1,0 +1,7 @@
+.js-enabled .container__header .nav {
+    display: none;
+}
+
+.container__header .is-visible {
+    display: block !important;
+}
