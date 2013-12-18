@@ -1,0 +1,152 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "312d8e467e81e22d7667f9c1523414f8",
+    "packages": [
+        {
+            "name": "imagine/imagine",
+            "version": "v0.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/avalanche123/Imagine.git",
+                "reference": "9d644b6940a7b30a4c9de1873b625e6a686533be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/9d644b6940a7b30a4c9de1873b625e6a686533be",
+                "reference": "9d644b6940a7b30a4c9de1873b625e6a686533be",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "sami/sami": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Imagine": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                }
+            ],
+            "description": "Image processing for PHP 5.3",
+            "homepage": "http://imagine.readthedocs.org/",
+            "keywords": [
+                "drawing",
+                "graphics",
+                "image manipulation",
+                "image processing"
+            ],
+            "time": "2012-12-13 18:31:18"
+        },
+        {
+            "name": "jlong/sass-bootstrap",
+            "version": "v2.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jlong/sass-bootstrap.git",
+                "reference": "c4d7cbce669f4f6e5838e75e847a443c9f59bb37"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jlong/sass-bootstrap/zipball/c4d7cbce669f4f6e5838e75e847a443c9f59bb37",
+                "reference": "c4d7cbce669f4f6e5838e75e847a443c9f59bb37",
+                "shasum": ""
+            },
+            "type": "library",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "A sass port of the sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+            "homepage": "http://github.com/jlong/sass-twitter-bootstrap/",
+            "keywords": [
+                "bootstrap",
+                "css",
+                "sass"
+            ],
+            "support": {
+                "source": "https://github.com/jlong/sass-bootstrap/tree/v2.3.2",
+                "issues": "https://github.com/jlong/sass-bootstrap/issues"
+            },
+            "time": "2013-05-25 10:55:13"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
+                "reference": "32edc3b0de0fdc1b10f5c4912e8677b3f411a230",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Chris Corbyn"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "http://swiftmailer.org",
+            "keywords": [
+                "mail",
+                "mailer"
+            ],
+            "time": "2013-12-03 13:33:24"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
