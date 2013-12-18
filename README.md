@@ -22,6 +22,7 @@ You can run the project with the supplied Vagrantfile - make sure you understand
     ```$ git clone https://github.com/belgianpolice/internet-platform.git```
 * Go to the repository folder where this README is located and bootup the server
     ```$ vagrant up```
+* Go to the following folder ```$ cd install/custom```
 * Install the dependencies by running Composer: ```$ composer install```
 * Add the following line to your hosts file
     ```192.168.52.10 police.dev phpmyadmin.police.dev```
