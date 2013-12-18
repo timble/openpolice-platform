@@ -2,7 +2,7 @@ $old-ie: true;
 $fix-mqs: 998px;
 @import 'default';
 
-.container-header {
+.container__header {
   .nav li {
     display: block;
     float: left;
@@ -10,7 +10,7 @@ $fix-mqs: 998px;
   }
 }
 
-.container-footer {
+.container__footer {
   input {
     width: 188px;
   }
@@ -27,4 +27,4 @@ $fix-mqs: 998px;
 .span9,
 .span10,
 .span11,
-.span12 { float:left; margin-left: $gridGutterWidth; display:inline; }
+.span12 { float:left; margin-left: $gutter-width; display:inline; }

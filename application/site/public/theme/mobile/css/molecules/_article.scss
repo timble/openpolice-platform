@@ -1,38 +1,42 @@
 .article {
-  @extend .clearfix;
-  margin-bottom: $gridGutterWidth;
+    @extend .clearfix;
+    margin-bottom: $gutter-width;
 
-  h2 { margin-top: 30px; }
-  h3 { margin-top: 20px; }
+    h2 {
+        margin-top: 30px;
+    }
+    h3 {
+        margin-top: 20px;
+    }
 
-  p img[align="right"] {
-      margin: 0 0 20px 20px;
-  }
+    p img[align="right"] {
+        margin: 0 0 20px 20px;
+    }
 }
 
 .article__header {
-  margin-bottom: $gridGutterWidth / 2;
+    margin-bottom: 15px;
 
-  h1 {
-    margin-bottom: 0;
-  }
+    h1 {
+        margin-bottom: 0;
+    }
 
-  .timestamp {
-    padding-top: 4px;
-    @extend .muted;
-    font-size: $fontSizeSmall;
-  }
+    .timestamp {
+        padding-top: 4px;
+        @extend .muted;
+        font-size: $fontSizeSmall;
+    }
 }
 
 .article__introtext,
 .entry-summary {
-  font-weight: bold;
-  margin-bottom: $baseLineHeight;
+    font-weight: bold;
+    margin-bottom: $baseLineHeight;
 }
 
 .article__thumbnail {
-  float: right;
-  max-width: 40%;
-  margin: 0 0 20px 20px;
-  @extend .thumbnail;
+    float: right;
+    max-width: 40%;
+    margin: 0 0 20px 20px;
+    @extend .thumbnail;
 }

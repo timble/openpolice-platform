@@ -23,54 +23,118 @@ $color805: #F8AAA8;
 $color5425: #6E96A7;
 $color5455: #D6E2DF;
 
-$gray:      #505050;
-
+// Grays
+// -------------------------
+$black: #000 !default;
+$grayDarker: #222 !default;
+$grayDark: #333 !default;
+$gray: #505050 !default;
+$grayLight: #999 !default;
+$grayLighter: #eee !default;
+$white: #fff !default;
 
 /*
  * Bootstrap variables
  */
 
-$bodyBackground:        $grayLighter;
+$bodyBackground: $grayLighter;
 
-$textColor: 			$grayDarker;
+$textColor: $grayDarker;
 
-$sansFontFamily:        Helvetica, sans-serif;
-$serifFontFamily:       Georgia, "Times New Roman", Times, serif;
-$monoFontFamily:        Monaco, Menlo, Consolas, "Courier New", monospace;
+$sansFontFamily: Helvetica, sans-serif;
+$serifFontFamily: Georgia, "Times New Roman", Times, serif;
+$monoFontFamily: Monaco, Menlo, Consolas, "Courier New", monospace;
 
-$baseFontSize:          14px;
-$baseLineHeight:        22px;
+$baseFontSize: 14px;
+$baseFontFamily: $sansFontFamily !default;
+$baseLineHeight: 22px;
 
-$linkColor:             $blue;
+$linkColor: $blue;
+$linkColorHover: darken($linkColor, 15%) !default;
 
-$iconSpritePath:          "../img/glyphicons-halflings.png";
-$iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
+$iconSpritePath: "../img/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
+
+$fontSizeLarge: $baseFontSize * 1.25 !default;
+// ~18px
+$fontSizeSmall: $baseFontSize * 0.85 !default;
+// ~12px
+
+$headingsFontFamily: inherit !default;
+// empty to use BS default, $baseFontFamily
+$headingsFontWeight: bold !default;
+// instead of browser default, bold
+$headingsColor: inherit !default;
+// empty to use BS default, $textColor
+
+$baseBorderRadius: 4px !default;
+$borderRadiusLarge: 6px !default;
+$borderRadiusSmall: 3px !default;
+
+$paddingLarge: 11px 19px !default;
+// 44px
+$paddingSmall: 2px 10px !default;
+// 26px
+
+// Forms
+// -------------------------
+$inputBackground: $white !default;
+$inputBorder: #ccc !default;
+$inputBorderRadius: $baseBorderRadius !default;
+$inputDisabledBackground: $grayLighter !default;
+$formActionsBackground: #f5f5f5 !default;
+$inputHeight: $baseLineHeight + 10px;
+// base line-height + 8px vertical padding + 2px top/bottom border
+
+// Input placeholder text color
+// -------------------------
+$placeholderText: $grayLight !default;
+
+// Hr border color
+// -------------------------
+$hrBorder: $grayLighter !default;
+
+// Pagination
+// -------------------------
+$paginationBackground: #fff !default;
+$paginationBorder: #ddd !default;
+$paginationActiveBackground: #f5f5f5 !default;
+
+// Tables
+// -------------------------
+$tableBackground: transparent !default;
+// overall background-color
+$tableBackgroundAccent: #f9f9f9 !default;
+// for striping
+$tableBackgroundHover: #f5f5f5 !default;
+// for hover
+$tableBorder: #ddd !default;
+// table and cell border
 
 // Navbar
 // -------------------------
-$navbarCollapseWidth:             767px;
-$navbarCollapseDesktopWidth:      $navbarCollapseWidth + 1;
+$navbarCollapseWidth: 767px;
+$navbarCollapseDesktopWidth: $navbarCollapseWidth + 1;
 
-$navbarHeight:                    32px;
-$navbarBackgroundHighlight:       lighten($blue, 12%);
-$navbarBackground:                lighten($blue, 3%);
-$navbarBorder:                    darken($navbarBackground, 16%);
+$navbarHeight: 32px;
+$navbarBackgroundHighlight: lighten($blue, 12%);
+$navbarBackground: lighten($blue, 3%);
+$navbarBorder: darken($navbarBackground, 16%);
 
-$navbarText:                      $white;
-$navbarLinkColor:                 $white;
-$navbarLinkColorHover:            $white;
-$navbarLinkColorActive:           $white;
-$navbarLinkBackgroundHover:       lighten($blue, 12%);
-$navbarLinkBackgroundActive:      darken($navbarBackground, 8%);
+$navbarText: $white;
+$navbarLinkColor: $white;
+$navbarLinkColorHover: $white;
+$navbarLinkColorActive: $white;
+$navbarLinkBackgroundHover: lighten($blue, 12%);
+$navbarLinkBackgroundActive: darken($navbarBackground, 8%);
 
-$navbarBrandColor:                $navbarLinkColor;
-
-$gridColumnWidth:         50px;
-$gridGutterWidth:         30px;
-
-$fluidGridColumnWidth:    percentage($gridColumnWidth/$gridRowWidth);
-$fluidGridGutterWidth:    percentage($gridGutterWidth/$gridRowWidth);
+$navbarBrandColor: $navbarLinkColor;
 
 // Wells
 // -------------------------
-$wellBackground:    #F8F8F8;
+$wellBackground: #F8F8F8;
+
+// Susy
+$gutter-width: 3em;
+// 1em gutters between columns
+$grid-padding: 25px;

@@ -1,65 +1,77 @@
+.js-enabled {
+    .container__header .nav {
+        display: none;
+    }
+}
+
+.container__header .is-visible {
+    display: block !important;
+}
+
+.container__header {
+    .logo {
+        display: none;
+    }
+}
+
 @include respond-min($navbarCollapseWidth) {
-  .container-header  {
-    position: relative;
+    .container__header {
+        position: relative;
+        margin-bottom: 20px;
 
-      margin-bottom: 20px;
-
-    .text--strong {
-      font-size: $fontSizeLarge;
-    }
-
-    .span3 {
-      .logo {
-        padding-top: 26px;
-        display: block;
-        text-decoration: none;
-        color: $linkColor;
-
-          a {
-              text-decoration: none;
-          }
-
-          a:hover {
-              text-decoration: underline;
-          }
-
-        img {
-          width: 160px;
-          vertical-align: bottom;
-          margin-left: 10px;
+        .text--strong {
+            font-size: $fontSizeLarge;
         }
 
-        div {
-          margin-left: 57px;
-          margin-top: 3px;
-        }
-      }
-    }
-
-    .slogan {
-      margin: 25px 0 10px;
-      display: block;
-      text-align: center;
-
-        a {
+        .logo {
+            padding-top: 26px;
             text-decoration: none;
+            color: $linkColor;
+            display: block;
+
+            a {
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            img {
+                width: 160px;
+                vertical-align: bottom;
+                margin-left: 10px;
+            }
+
+            div {
+                margin-left: 57px;
+                margin-top: 3px;
+            }
+        }
+
+        .slogan {
+            margin: 25px 0 10px;
+            display: block;
+            text-align: center;
+
+            a {
+                text-decoration: none;
+            }
         }
     }
-  }
 }
 
 // Apply sticky header only in modern browsers (they understand media queries)
-@media (max-width: $navbarCollapseWidth - 1)
-{
+@media (max-width: $navbarCollapseWidth - 1) {
     // Only when JS is enabled
     .js-enabled {
-        .container-header {
+        .container__header {
             position: fixed;
         }
 
-        .container-content {
+        .container__content {
             // Increase padding between sticky header and content
-            padding-top: ($gridGutterWidth / 1.25) + 50px;
+            padding-top: ($gutter-width / 1.25) + 2em;
         }
     }
 }

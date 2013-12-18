@@ -1,7 +1,10 @@
 a {
-   text-decoration: underline;
+    color: $linkColor;
+    text-decoration: underline;
 }
 
-a:hover {
+a:hover,
+a:focus {
+    color: $linkColorHover;
     text-decoration: underline;
 }
