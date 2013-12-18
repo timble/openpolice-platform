@@ -27,6 +27,7 @@
     <ktml:style>
     <ktml:script>
 
+    <style src="assets://application/css/initialize.css" />
     <style src="assets://application/components/select2/select2.css" />
     <style src="assets://application/css/default.css" />
     <style src="assets://application/css/ie.css" condition="if IE 8" />

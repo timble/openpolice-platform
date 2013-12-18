@@ -1136,72 +1136,62 @@ select:focus:invalid:focus {
 }
 
 /* line 2, molecules/_header.scss */
-.js-enabled .container__header .nav {
-  display: none;
-}
-
-/* line 7, molecules/_header.scss */
-.container__header .is-visible {
-  display: block !important;
-}
-
-/* line 12, molecules/_header.scss */
 .container__header .logo {
   display: none;
 }
 
-/* line 18, molecules/_header.scss */
+/* line 8, molecules/_header.scss */
 .container__header {
   position: relative;
   margin-bottom: 20px;
 }
-/* line 22, molecules/_header.scss */
+/* line 12, molecules/_header.scss */
 .container__header .text--strong {
   font-size: 17.5px;
 }
-/* line 26, molecules/_header.scss */
+/* line 16, molecules/_header.scss */
 .container__header .logo {
   padding-top: 26px;
   text-decoration: none;
   color: #004d9f;
   display: block;
 }
-/* line 32, molecules/_header.scss */
+/* line 22, molecules/_header.scss */
 .container__header .logo a {
   text-decoration: none;
 }
-/* line 36, molecules/_header.scss */
+/* line 26, molecules/_header.scss */
 .container__header .logo a:hover {
   text-decoration: underline;
 }
-/* line 40, molecules/_header.scss */
+/* line 30, molecules/_header.scss */
 .container__header .logo img {
   width: 160px;
   vertical-align: bottom;
   margin-left: 10px;
 }
-/* line 46, molecules/_header.scss */
+/* line 36, molecules/_header.scss */
 .container__header .logo div {
   margin-left: 57px;
   margin-top: 3px;
 }
-/* line 52, molecules/_header.scss */
+/* line 42, molecules/_header.scss */
 .container__header .slogan {
   margin: 25px 0 10px;
   display: block;
   text-align: center;
 }
-/* line 57, molecules/_header.scss */
+/* line 47, molecules/_header.scss */
 .container__header .slogan a {
   text-decoration: none;
 }
 
 @media (max-width: 766px) {
-  /* line 68, molecules/_header.scss */
+  /* line 58, molecules/_header.scss */
   .js-enabled .container__header {
     position: fixed;
   }
-  /* line 72, molecules/_header.scss */
+  /* line 62, molecules/_header.scss */
   .js-enabled .container__content {
     padding-top: 4.4em;
   }
