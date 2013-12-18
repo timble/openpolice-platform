@@ -338,7 +338,7 @@ textarea {
   }
 
   /* line 18, utilities/_desktop.scss */
-  .container__header .nav,
+  .container__header .is-hidden,
   .container__breadcrumb,
   .container__banner,
   .container__footer,

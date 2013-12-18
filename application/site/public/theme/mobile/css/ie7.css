@@ -1,34 +1,34 @@
 /*
  * Bootstrap variables
  */
-/* line 3, ie7.scss */
+/* line 4, ie7.scss */
 body {
   width: 600px;
   margin: 0 auto;
 }
 
-/* line 8, ie7.scss */
+/* line 9, ie7.scss */
 form {
   margin: 0;
 }
 
-/* line 12, ie7.scss */
+/* line 13, ie7.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
 }
 
-/* line 18, ie7.scss */
+/* line 19, ie7.scss */
 .form__left input {
   width: 95%;
 }
 
-/* line 24, ie7.scss */
+/* line 25, ie7.scss */
 * html .navbar__logo {
   padding-top: 10px;
 }
 
-/* line 28, ie7.scss */
+/* line 29, ie7.scss */
 .media .media-object {
   width: 64px;
 }
