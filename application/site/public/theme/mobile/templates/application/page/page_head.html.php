@@ -27,7 +27,16 @@
     <ktml:style>
     <ktml:script>
 
-    <style src="assets://application/css/initialize.css" />
+        <style>
+            .js-enabled .container__header .nav {
+                display: none;
+            }
+
+            .container__header .is-visible {
+                display: block !important;
+            }
+        </style>
+
     <style src="assets://application/components/select2/select2.css" />
     <style src="assets://application/css/default.css" />
     <style src="assets://application/css/ie.css" condition="if IE 8" />
