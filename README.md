@@ -63,6 +63,23 @@ First use the Vagrant command-line interface to access the Secure Shell, see abo
     password: admin
     ```
 
+## Benefits
+
+### Accessibility
+
+* Conforms to [WCAG 2.0](http://www.w3.org/TR/WCAG20/) level AAA
+* Leverages [WAI-ARIA](http://www.w3.org/TR/wai-aria/) & [HTML5](http://www.w3.org/TR/html5/) to further enhance accessibility
+
+### Interoperability
+
+* Support for HTML data ([Microformats.org](http://www.microformats.org/), [Schema.org](http://www.schema.org/))
+
+### Mobile-First Responsive Web Design
+
+* Following a Progressive Enhancement strategy
+* Optimized for performance
+
+
 ## Built on Open Source software
 
 The Police Internet Platform is built on open source software and wouldn't be as productive without these open source projects around.
