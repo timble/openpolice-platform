@@ -17,5 +17,63 @@ use Nooku\Library;
  */
 class ForaControllerPermissionForum extends ApplicationControllerPermissionAbstract
 {
+    /**
+     * Authorize handler for read actions
+     *
+     * @return  boolean Return TRUE if action is permitted. FALSE otherwise.
+     */
+    public function canRead()
+    {
+        if($this->getView()->getLayout() == 'form')
+        {
+            if(parent::canRead() && $this->getUser()->getRole() == 25) {
+                return true;
+            }
+            return false;
+        }
 
+        return true;
+    }
+
+    /**
+     * Authorize handler for add actions
+     *
+     * @return  boolean  Return TRUE if action is permitted. FALSE otherwise.
+     */
+    public function canAdd()
+    {
+        if(parent::canAdd() && $this->getUser()->getRole() == 25) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Authorize handler for edit actions
+     *
+     * @return  boolean  Return TRUE if action is permitted. FALSE otherwise.
+     */
+    public function canEdit()
+    {
+        if(parent::canEdit() && $this->getUser()->getRole() == 25) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Authorize handler for delete actions
+     *
+     * @return  boolean  Return TRUE if action is permitted. FALSE otherwise.
+     */
+    public function canDelete()
+    {
+        if(parent::canDelete() && $this->getUser()->getRole() == 25) {
+            return true;
+        }
+
+        return false;
+    }
 }
