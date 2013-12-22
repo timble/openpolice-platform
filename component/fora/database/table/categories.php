@@ -23,7 +23,7 @@ class DatabaseTableCategories extends Library\DatabaseTableAbstract
     {
 
         $config->append(array(
-            'name'       => 'data.categories',
+            'name'       => 'data.fora_categories',
             'behaviors'  => array(
                 'creatable', 'modifiable', 'lockable', 'sluggable', 'com:categories.database.behavior.cascadable',
                 'com:categories.database.behavior.nestable',

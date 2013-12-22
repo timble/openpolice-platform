@@ -8,31 +8,36 @@
  */
 ?>
 
+<?if($this->getObject('user')->getRole() == 25):?>
+    <ktml:module position="actionbar">
+        <ktml:toolbar type="actionbar">
+    </ktml:module>
+<?endif;?>
 <style src="assets://fora/css/default.css" />
 
 <div id="com_fora" class="scrollable">
-<div id="fora-categories-default">
-    <div class="well well-small">
-        <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">
-            <input name="search" type="text" placeholder="<?= translate('Search all categories...') ?>" autofocus="autofocus" />
-            <input class="btn primary" type="submit" value="Search" disabled="disabled" />
-        </form>
-    </div>
-
-    <? foreach($categories as $category) : ?>
+    <div id="fora-categories-default">
         <div class="well well-small">
-            <div class="well__frame">
-                <h1 class="well__heading well__heading--left">
-                    <a href="<?= route('view=category&id='.$category->id.'&slug='.$category->slug) ?>">
-                        <?= escape($category->title) ?>
-                    </a>
-                </h1>
-            </div>
-            <div class="well__content">
-                <?= import('default_items.html',
-                    array('category' => $category, 'forums' => $forums, 'topics' => $topics, 'topics_count' => $topics_count)); ?>
-            </div>
+            <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">
+                <input name="search" type="text" placeholder="<?= translate('Search all categories...') ?>" autofocus="autofocus" />
+                <input class="btn primary" type="submit" value="Search" disabled="disabled" />
+            </form>
         </div>
-    <? endforeach ?>
-</div>
+
+        <? foreach($categories as $category) : ?>
+            <div class="well well-small">
+                <div class="well__frame">
+                    <h1 class="well__heading well__heading--left">
+                        <a href="<?= route('view=category&id='.$category->id.'&slug='.$category->slug) ?>">
+                            <?= escape($category->title) ?>
+                        </a>
+                    </h1>
+                </div>
+                <div class="well__content">
+                    <?= import('default_items.html',
+                        array('category' => $category, 'forums' => $forums, 'topics' => $topics, 'topics_count' => $topics_count)); ?>
+                </div>
+            </div>
+        <? endforeach ?>
+    </div>
 </div>

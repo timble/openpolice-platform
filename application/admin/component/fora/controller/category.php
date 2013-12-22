@@ -17,16 +17,21 @@ use Nooku\Library;
  */
 class ForaControllerCategory extends Library\ControllerModel
 {
-    /**
-     * @return Library\ControllerRequestInterface
-     */
-    public function getRequest()
+
+    protected function _initialize(Library\ObjectConfig $config)
     {
-        $request = parent::getRequest();
+        $config->append(array(
+            'behaviors' => array(
+                'editable',
+                'com:activities.controller.behavior.loggable',
+                'com:attachments.controller.behavior.attachable',
+            ),
+        ));
 
-        $request->query->table  = "fora_forums";
-        $request->query->published  = "1";
+        parent::_initialize($config);
 
-        return $request;
+        //Force the toolbars
+        $config->toolbars = array('menubar', 'com:fora.controller.toolbar.category');
     }
+
 }

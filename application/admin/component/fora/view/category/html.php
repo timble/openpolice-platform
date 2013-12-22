@@ -36,7 +36,10 @@ class ForaViewCategoryHtml extends Library\ViewHtml
 
         $this->topics_count = $this->getObject('com:fora.database.table.topics')->select($query);
 
-        $this->pathways =  $this->getPathway();
+        if($this->getLayout() !== 'form')
+        {
+            $this->pathways =  $this->getPathway();
+        }
 
         return parent::render();
     }
