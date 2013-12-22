@@ -12,7 +12,7 @@ namespace Nooku\Component\Fora;
 use Nooku\Library;
 
 /**
- * Forums Model
+ * Responds Model
  *
  * @author  Terry Visser <http://nooku.assembla.com/profile/terryvisser>
  * @package Nooku\Component\Fora

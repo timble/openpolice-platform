@@ -10,7 +10,6 @@
 namespace Nooku\Component\Fora;
 
 use Nooku\Library;
-use Nooku\Library\DatabaseQuerySelect;
 
 /**
  * Forums Model

@@ -17,12 +17,17 @@ use Nooku\Library;
  */
 class ForaControllerToolbarCategory extends Library\ControllerToolbarActionbar
 {
+    /**
+     * @param Library\CommandContext $context
+     */
     protected function _afterControllerRead(\Nooku\Library\CommandContext $context)
     {
         parent::_afterControllerRead($context);
     }
 
-
+    /**
+     * @param Library\CommandContext $context
+     */
     protected function _afterControllerBrowse(\Nooku\Library\CommandContext $context)
     {
         $controller = $this->getController();

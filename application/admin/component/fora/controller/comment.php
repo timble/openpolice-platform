@@ -11,11 +11,10 @@ use Nooku\Library;
 
 
 /**
- * Category Controller Class
+ * Comment Controller
  *
- * @author    	Terry Visser <http://nooku.assembla.com/profile/terryvisser>
- * @package     Nooku_Server
- * @subpackage  Fora
+ * @author  Terry Visser <http://nooku.assembla.com/profile/terryvisser>
+ * @package Component\Fora
  */
 class ForaControllerComment extends CommentsControllerComment
 {

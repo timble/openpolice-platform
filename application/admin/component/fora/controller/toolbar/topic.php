@@ -18,6 +18,9 @@ use Nooku\Library;
 class ForaControllerToolbarTopic extends Library\ControllerToolbarActionbar
 {
 
+    /**
+     * @param Library\CommandContext $context
+     */
     protected function _afterControllerBrowse(\Nooku\Library\CommandContext $context)
     {
         $controller = $this->getController();

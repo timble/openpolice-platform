@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Category Controller Permission
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Terry Visser <http://nooku.assembla.com/profile/terryvisser>
  * @package Component\Fora
  */
 class ForaControllerPermissionCategory extends ApplicationControllerPermissionAbstract
