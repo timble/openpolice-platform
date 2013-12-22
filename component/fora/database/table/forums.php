@@ -21,7 +21,7 @@ class DatabaseTableForums extends Library\DatabaseTableAbstract
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
-            'name'       => 'fora_forums',
+            'name'       => 'data.fora_forums',
             'behaviors'  => array(
                 'creatable', 'modifiable', 'lockable', 'sluggable',
             ),

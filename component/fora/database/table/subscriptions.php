@@ -11,25 +11,17 @@ namespace Nooku\Component\Fora;
 use Nooku\Library;
 
 /**
- *  Topics Database Topics
+ *  Subscriptions Database Table
  *
  * @author  Terry Visser <http://nooku.assembla.com/profile/terryvisser
  * @package Nooku\Component\Fora
  */
-class DatabaseTableTopics extends Library\DatabaseTableAbstract
+class DatabaseTableSubscriptions extends Library\DatabaseTableAbstract
 {
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
-            'name'       => 'data.fora_topics',
-            'behaviors'  => array(
-                'creatable', 'modifiable', 'lockable', 'sluggable','hittable',
-                'com:comments.database.behavior.discussible',
-                'com:attachments.database.behavior.attachable',
-            ),
-            'filters' => array(
-                'text'   => array('html', 'tidy'),
-            )
+            'name'       => 'data.fora_subscriptions',
         ));
 
         parent::_initialize($config);

@@ -25,8 +25,6 @@ class ForaBootstrapper extends Library\BootstrapperAbstract
     public function bootstrap()
     {
         $manager = $this->getObjectManager();
-
-        $manager->registerAlias('com:fora.model.categories', 'com:categories.model.categories');
         $manager->registerAlias('com:fora.model.comments', 'com:comments.model.comments');
         $manager->registerAlias('com:fora.controller.attachment', 'com:attachments.controller.attachment');
     }

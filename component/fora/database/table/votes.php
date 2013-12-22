@@ -21,6 +21,7 @@ class DatabaseTableVotes extends Library\DatabaseTableAbstract
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
+            'name'       => 'data.fora_votes',
             'behaviors'  => array(
                 'voteable',
             ),
