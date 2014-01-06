@@ -1,4 +1,107 @@
+.com_fora {
+  #panel-toolbar {
+    display: none;
+  }
+}
+
 #com_fora {
+
+  .fora-search {
+    padding: 4px 0 2px;
+    background: #f9f9f9 linear-gradient(#f9f9f9, #ececec);
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .well {
+    min-height: 20px;
+    padding: 10px;
+    background-color: whitesmoke;
+  }
+
+  .well__content {
+    padding: 20px;
+    border: 1px solid #e4e4e4;
+    background: #FFF;
+
+    &.well__content--categories {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  .well__frame {
+    margin: 0;
+  }
+  .well__frame .well__heading {
+    margin: 0;
+    color: #555555;
+    font-size: 18px;
+  }
+  .well__frame .well__heading a {
+    color: #555555;
+  }
+  .well__frame .well__heading--left {
+    float: left;
+  }
+  .well__frame .well__heading--center {
+    text-align: center;
+  }
+  .well__frame .well__toolbar {
+    float: right;
+    margin-top: 6px;
+  }
+
+  h3.media__heading {
+    line-height: 0;
+    font-size: 16px;
+
+    a {
+      display: table;
+      width: 100%;
+      padding: 10px;
+      margin: -10px 0;
+      transition: all .1s ease-in-out;
+      line-height: 16px;
+
+      span:after {
+        color: #888;
+        padding: 2px 20px;
+        content: attr(data-title);
+        font-size: 12px;
+        line-height: 16px;
+        vertical-align: middle;
+        visibility: hidden;
+      }
+
+      &:after{
+        display: table;
+        content: " ";
+        clear: both;
+      }
+      &:hover {
+        background: #eee;
+        color: #000;
+        text-decoration: none;
+
+        span:after {
+          visibility: visible;
+        }
+      }
+
+
+
+      &>* {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      i {
+        font-size: 24px;
+        float: none;
+        width: 40px;
+      }
+    }
+  }
 
 article,
 aside,
@@ -988,7 +1091,7 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
     display: inline-block;
-    height: 20px;
+    height: 30px;
     padding: 4px 6px;
     margin-bottom: 10px;
     font-size: 15px;
@@ -6527,7 +6630,6 @@ ul.attachments {
 .media__item {
     padding-top: 10px;
     margin-top: 10px;
-    border-top: 1px solid #eeeeee;
 }
 .media__item:nth-child(1) {
     border-top: 0 none;
@@ -6561,8 +6663,6 @@ ul.attachments {
 
 .media__item.span6 {
     margin-left: 0 !important;
-    padding-top: 20px;
-    margin-top: 20px;
 }
 .media__item.span6:nth-child(1), .media__item.span6:nth-child(2) {
     padding-top: 0;
@@ -6644,12 +6744,8 @@ ul.unstyled {
 
 .well {
     min-height: 20px;
-    padding: 9px;
-    margin-bottom: 20px;
+    padding: 10px;
     background-color: whitesmoke;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
 }
 .well > blockquote {
     border-color: #ddd;
@@ -6661,36 +6757,9 @@ ul.unstyled {
     margin-bottom: 0;
 }
 
-.well__frame {
-    margin: 0 0 0 10px;
-}
-.well__frame .well__heading {
-    margin: 0;
-    color: #555555;
-    font-size: 18px;
-}
-.well__frame .well__heading a {
-    color: #555555;
-}
-.well__frame .well__heading--left {
-    float: left;
-}
-.well__frame .well__heading--center {
-    text-align: center;
-}
-.well__frame .well__toolbar {
-    float: right;
-    margin-top: 6px;
-}
 
-.well__content {
-    padding: 20px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    border: 1px solid #e4e4e4;
-    background: #FFF;
-}
+
+
 .well__content .dl-horizontal {
     margin: 4px 0;
 }
@@ -6865,8 +6934,6 @@ ul.unstyled {
 input[name="search"] {
     width: 400px;
     margin: 10px 5px 10px 10px;
-    padding-left: 35px;
-    background: url(../images/search.png) white no-repeat 5px 0;
 }
 
 .tabs-outer {

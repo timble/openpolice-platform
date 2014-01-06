@@ -22,7 +22,6 @@ class ForaViewTopicHtml extends Library\ViewHtml
 
         $topic = $this->getModel()->getData();
 
-        $this->comments = $this->getObject('com:comments.model.comments')->row($topic->id)->table('fora')->getRowset();
 
         if($this->getObject('com:fora.model.subscriptions')->site($this->getObject('application')->getSite())->type('topic')->users_user_id($this->getObject('user')->getId())->row($topic->id)->getData()->row)
         {
@@ -38,17 +37,21 @@ class ForaViewTopicHtml extends Library\ViewHtml
 
         $this->forum = $this->getObject('com:fora.model.forums')->id($topic->fora_forum_id)->getRow();
 
-        if($this->forum->type != 'article' && is_numeric($topic->id))
-        {
-            $responds = $this->getObject('com:fora.database.table.responds')
-                ->select(array('fora_topic_id' => $topic->id), Library\Database::FETCH_ROW);
 
-            $this->awnser =$this->getObject('com:comments.model.comments')
-                ->id($responds->comments_comment_id)
-                ->getRow();
-        }
         if($this->getLayout() !== 'form')
         {
+            $this->comments = $this->getObject('com:comments.model.comments')->row($topic->id)->table('fora')->getRowset();
+
+            if($this->forum->type != 'article' && is_numeric($topic->id))
+            {
+                $responds = $this->getObject('com:fora.database.table.responds')
+                    ->select(array('fora_topic_id' => $topic->id), Library\Database::FETCH_ROW);
+
+                $this->awnser =$this->getObject('com:comments.model.comments')
+                    ->id($responds->comments_comment_id)
+                    ->getRow();
+            }
+
             $this->pathways =  $this->getPathway();
         }
 
