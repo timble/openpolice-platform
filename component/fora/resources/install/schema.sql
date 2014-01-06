@@ -27,7 +27,7 @@ CREATE TABLE `fora_categories` (
 -- Create syntax for TABLE 'fora_forums'
 CREATE TABLE `fora_forums` (
   `fora_forum_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `categories_category_id` int(11) NOT NULL,
+  `fora_category_id` int(11) NOT NULL,
   `type` enum('article','issue','question','idea') DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `slug` varchar(255) DEFAULT NULL,
@@ -42,8 +42,8 @@ CREATE TABLE `fora_forums` (
   `locked_by` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`fora_forum_id`),
   KEY `idx_enabled` (`published`),
-  KEY `idx_category_id` (`categories_category_id`),
-  CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`categories_category_id`) REFERENCES `fora_categories` (`fora_category_id`) ON DELETE CASCADE
+  KEY `idx_category_id` (`fora_category_id`),
+  CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`fora_category_id`) REFERENCES `fora_categories` (`fora_category_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_responds'

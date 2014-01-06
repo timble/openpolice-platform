@@ -82,6 +82,6 @@ class ModelCategories  extends Library\ModelTable
             $query->distinct();
             $query->group($state->distinct);
         }
-        else $query->group('tbl.categories_category_id');
+        else $query->group('tbl.fora_category_id');
     }
 }

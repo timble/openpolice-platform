@@ -43,7 +43,7 @@ class ForaViewTopicsHtml extends Library\ViewHtml
         {
             $pathway = new ForaConfigPathway();
             $pathway->addItem("Support", "categories");
-            $pathway->addItem($this->forum->category_title, "category?id=".$this->forum->categories_category_id);
+            $pathway->addItem($this->forum->category_title, "category?id=".$this->forum->fora_category_id);
             $pathway->addItem($this->forum->title, "topics?forum=".$this->forum->id);
         }
 

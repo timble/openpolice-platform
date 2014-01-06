@@ -45,7 +45,7 @@ class ModelForums extends Library\ModelTable
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('categories' => 'categories'), 'categories.categories_category_id = tbl.categories_category_id')
+        $query->join(array('categories' => 'data.fora_categories'), 'categories.fora_category_id = tbl.fora_category_id')
               ->join(array('creator' => 'users'), 'creator.users_user_id = tbl.created_by')
               ->join(array('modifier' => 'users'), 'modifier.users_user_id = tbl.modified_by');
     }
@@ -68,7 +68,7 @@ class ModelForums extends Library\ModelTable
         }
 
         if(is_numeric($state->category)) {
-            $query->where('tbl.categories_category_id = :category')->bind(array('category' => $state->category));
+            $query->where('tbl.fora_category_id = :category')->bind(array('category' => $state->category));
         }
     }
 }

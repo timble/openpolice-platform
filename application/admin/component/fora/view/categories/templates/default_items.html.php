@@ -1,5 +1,5 @@
 <div class="row-fluid">
-    <? foreach($forums->find(array('categories_category_id' => $category->id)) as $forum) : ?>
+    <? foreach($forums->find(array('fora_category_id' => $category->id)) as $forum) : ?>
         <div class="media__item span6">
             <i class="media__icon icon-<?= $forum->type ?> icon-2x" style="margin-top: 6px"></i>
             <h3 class="media__heading">

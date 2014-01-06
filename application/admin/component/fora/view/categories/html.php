@@ -30,7 +30,7 @@ class ForaViewCategoriesHtml extends Library\ViewHtml
                 'fora_forum_id'         => 'fora_forum_id',
                 'count'       => 'COUNT(*)',
             ))
-            ->table('fora_topics')
+            ->table('data.fora_topics')
             ->group('fora_forum_id');
         $this->topics_count = $this->getObject('com:fora.database.table.topics')->select($query);
 

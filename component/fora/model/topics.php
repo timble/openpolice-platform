@@ -37,7 +37,7 @@ class ModelTopics extends Library\ModelTable
         $query->columns(array(
             'forum_title'               => 'forums.title',
             'created_by_name'           => 'creator.name',
-            'categories_category_id'    => 'forums.categories_category_id',
+            'fora_category_id'          => 'forums.fora_category_id',
             'last_activity_on'          => 'IF(tbl.modified_on, tbl.modified_on, tbl.created_on)',
             'last_activity_by_name'     => 'IF(tbl.modified_on, modifier.name, creator.name)',
         ));
@@ -47,7 +47,7 @@ class ModelTopics extends Library\ModelTable
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('forums' => 'fora_forums'), 'forums.fora_forum_id = tbl.fora_forum_id')
+        $query->join(array('forums' => 'data.fora_forums'), 'forums.fora_forum_id = tbl.fora_forum_id')
               ->join(array('creator' => 'users'), 'creator.users_user_id = tbl.created_by')
               ->join(array('modifier' => 'users'), 'modifier.users_user_id = tbl.modified_by');
     }
