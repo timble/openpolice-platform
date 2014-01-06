@@ -43,7 +43,7 @@ CREATE TABLE `fora_forums` (
   PRIMARY KEY (`fora_forum_id`),
   KEY `idx_enabled` (`published`),
   KEY `idx_category_id` (`categories_category_id`),
-  CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`categories_category_id`) REFERENCES `categories` (`categories_category_id`) ON DELETE CASCADE
+  CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`categories_category_id`) REFERENCES `fora_categories` (`categories_category_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_responds'
