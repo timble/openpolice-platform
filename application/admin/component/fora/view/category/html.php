@@ -24,14 +24,13 @@ class ForaViewCategoryHtml extends Library\ViewHtml
 
         $this->topics = $this->getObject('com:fora.model.topics')->getRowset();
 
-
         $query = $this->getObject('lib:database.query.select')
             ->columns(array(
                 'fora_topic_id'         => 'fora_forum_id',
                 'fora_forum_id'         => 'fora_forum_id',
                 'count'       => 'COUNT(*)',
             ))
-            ->table('fora_topics')
+            ->table('data.fora_topics')
             ->group('fora_forum_id');
 
         $this->topics_count = $this->getObject('com:fora.database.table.topics')->select($query);
