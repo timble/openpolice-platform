@@ -1,6 +1,6 @@
 -- Create syntax for TABLE 'categories'
 CREATE TABLE `fora_categories` (
-  `categories_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fora_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
   `title` varchar(255) NOT NULL DEFAULT '',
@@ -18,7 +18,7 @@ CREATE TABLE `fora_categories` (
   `ordering` int(11) NOT NULL DEFAULT '0',
   `access` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `params` text NOT NULL,
-  PRIMARY KEY (`categories_category_id`),
+  PRIMARY KEY (`fora_category_id`),
   UNIQUE KEY `slug` (`slug`,`table`),
   KEY `cat_idx` (`table`,`published`,`access`),
   KEY `idx_access` (`access`)
@@ -43,7 +43,7 @@ CREATE TABLE `fora_forums` (
   PRIMARY KEY (`fora_forum_id`),
   KEY `idx_enabled` (`published`),
   KEY `idx_category_id` (`categories_category_id`),
-  CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`categories_category_id`) REFERENCES `fora_categories` (`categories_category_id`) ON DELETE CASCADE
+  CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`categories_category_id`) REFERENCES `fora_categories` (`fora_category_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_responds'
