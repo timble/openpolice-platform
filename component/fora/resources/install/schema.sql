@@ -1,5 +1,5 @@
 -- Create syntax for TABLE 'categories'
-CREATE TABLE `categories` (
+CREATE TABLE `fora_categories` (
   `categories_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
