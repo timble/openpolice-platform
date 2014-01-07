@@ -13,14 +13,14 @@
 
 <div id="com_fora" class="scrollable">
     <div id="fora-topics-default">
-        <div class="well well-small">
+        <div class="fora-search">
             <form action="" method="get" name="search">
                 <input type="hidden" name="forum" value="<?=$state->forum;?>"/>
-                <input name="search" type="text" placeholder="<?= translate('Search the forums ..') ?>" value="<?= $state->search ? escape($state->search) : null ?>" autofocus="autofocus" />
+                <input name="search" type="text" placeholder="<?= translate('Search the forums ..') ?>" value="<?= $state->search ? escape($state->search) : null ?>" />
                 <input class="btn primary" type="submit" value="Search" disabled="disabled" />
             </form>
         </div>
-        <div class="well well-small">
+        <div class="fora-breadcrumbs">
             <?= import('com:fora.module.breadcrumbs.default.html', array('list' => $pathways)) ?>
         </div>
         <div class="well well-small">

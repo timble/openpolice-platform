@@ -24,7 +24,6 @@ class ForaViewCategoryHtml extends Library\ViewHtml
 
         $this->topics = $this->getObject('com:fora.model.topics')->getRowset();
 
-
         $query = $this->getObject('lib:database.query.select')
             ->columns(array(
                 'fora_topic_id'         => 'fora_forum_id',
