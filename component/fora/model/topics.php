@@ -48,8 +48,8 @@ class ModelTopics extends Library\ModelTable
         parent::_buildQueryJoins($query);
 
         $query->join(array('forums' => 'data.fora_forums'), 'forums.fora_forum_id = tbl.fora_forum_id')
-              ->join(array('creator' => 'users'), 'creator.users_user_id = tbl.created_by')
-              ->join(array('modifier' => 'users'), 'modifier.users_user_id = tbl.modified_by');
+              ->join(array('creator' => 'data.fora_users'), 'creator.users_user_id = tbl.created_by')
+              ->join(array('modifier' => 'data.fora_users'), 'modifier.users_user_id = tbl.modified_by');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

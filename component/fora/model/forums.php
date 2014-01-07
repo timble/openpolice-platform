@@ -36,8 +36,6 @@ class ModelForums extends Library\ModelTable
 
         $query->columns(array(
             'category_title'         => 'categories.title',
-            'last_activity_on'       => 'IF(tbl.modified_on, tbl.modified_on, tbl.created_on)',
-            'last_activity_by_name'  => 'IF(tbl.modified_on, modifier.name, creator.name)',
         ));
     }
 
@@ -45,9 +43,7 @@ class ModelForums extends Library\ModelTable
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('categories' => 'data.fora_categories'), 'categories.fora_category_id = tbl.fora_category_id')
-              ->join(array('creator' => 'users'), 'creator.users_user_id = tbl.created_by')
-              ->join(array('modifier' => 'users'), 'modifier.users_user_id = tbl.modified_by');
+        $query->join(array('categories' => 'data.fora_categories'), 'categories.fora_category_id = tbl.fora_category_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
