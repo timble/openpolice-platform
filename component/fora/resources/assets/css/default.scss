@@ -6,10 +6,36 @@
 
 #com_fora {
 
+  .fora-breadcrumbs {
+    ul.breadcrumb {
+      margin-bottom: 0;
+      background: #dddddd;
+      border-radius: 0;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      font-size: 13px;
+      color: #000;
+
+      a {
+        color: #333;
+      }
+
+      .divider {
+        color: #000;
+        padding: 0 5px;
+      }
+    }
+  }
+
   .fora-search {
-    padding: 4px 0 2px;
+    padding: 0;
     background: #f9f9f9 linear-gradient(#f9f9f9, #ececec);
     border-bottom: 1px solid #dddddd;
+
+    input[name="search"] {
+      color: #444;
+      font-size: 14px;
+    }
   }
 
   .well {

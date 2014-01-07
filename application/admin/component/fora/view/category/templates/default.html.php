@@ -13,9 +13,9 @@
 <div id="com_fora" class="scrollable">
 
     <div id="fora-categories-default">
-        <div class="well well-small">
+        <div class="fora-search">
             <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">
-                <input name="search" type="text" placeholder="<?= translate('Search all categories...') ?>" autofocus="autofocus" />
+                <input name="search" type="text" placeholder="<?= translate('Search all categories...') ?>" />
                 <input class="btn primary" type="submit" value="Search" disabled="disabled" />
             </form>
         </div>
