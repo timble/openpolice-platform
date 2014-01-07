@@ -23,7 +23,7 @@ class DatabaseTableForums extends Library\DatabaseTableAbstract
         $config->append(array(
             'name'       => 'data.fora_forums',
             'behaviors'  => array(
-                'creatable', 'modifiable', 'lockable', 'sluggable',
+                 'sluggable'
             ),
             'filters' => array(
                 'text'   => array('html', 'tidy'),
