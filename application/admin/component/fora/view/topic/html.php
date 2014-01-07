@@ -21,17 +21,18 @@ class ForaViewTopicHtml extends Library\ViewHtml
     {
 
         $topic = $this->getModel()->getData();
+        $this->fora_user = $this->getObject('com:fora.model.users')->users_user_id($this->getObject('user')->getId())->site($this->getObject('application')->getSite())->getRow();
 
-        $this->comments = $this->getObject('com:comments.model.comments')->row($topic->id)->table('fora')->getRowset();
+        $this->comments = $this->getObject('com:fora.model.comments')->topic($topic->id)->getRowset();
 
-        if($this->getObject('com:fora.model.subscriptions')->site($this->getObject('application')->getSite())->type('topic')->users_user_id($this->getObject('user')->getId())->row($topic->id)->getData()->row)
+        if($this->getObject('com:fora.model.subscriptions')->type('topic')->fora_user_id($this->fora_user->id)->row($topic->id)->getData()->row)
         {
             $this->subscription = true;
         } else $this->subscription = false;
 
         if(is_numeric($topic->id)){
             $vote = $this->getObject('com:fora.database.table.votes')
-                ->select(array('fora_topic_id' => $topic->id, 'users_user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
+                ->select(array('fora_topic_id' => $topic->id, 'fora_user_id' => $this->getObject('user')->getId()), Library\Database::FETCH_ROW);
             $this->voted = !$vote->isNew();
         }
 
@@ -51,6 +52,7 @@ class ForaViewTopicHtml extends Library\ViewHtml
         {
             $this->pathways =  $this->getPathway();
         }
+
 
 
         return parent::render();

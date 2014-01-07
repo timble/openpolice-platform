@@ -21,8 +21,9 @@ class ForaViewTopicsHtml extends Library\ViewHtml
     {
 
         $this->forum = $this->getObject('com:fora.model.forums')->id($this->getModel()->getState()->forum)->getRow();
+        $this->fora_user = $this->getObject('com:fora.model.users')->users_user_id($this->getObject('user')->getId())->site($this->getObject('application')->getSite())->getRow();
 
-        if($this->getObject('com:fora.model.subscriptions')->site($this->getObject('application')->getSite())->type('forum')->users_user_id($this->getObject('user')->getId())->row($this->forum->id)->getData()->row)
+        if($this->getObject('com:fora.model.subscriptions')->type('forum')->fora_user_id($this->fora_user->id)->row($this->forum->id)->getData()->row)
         {
             $this->subscription = true;
         } else $this->subscription = false;
