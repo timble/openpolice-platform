@@ -190,8 +190,8 @@ location ~ "^/(aaltert|denderleeuw|haaltert)(?:/.*)?$" {
 	rewrite ^ /5439 permanent;
 }
 
-location ~ "^/(5442)(?:/.*)?$" {
-	rewrite ^ http://users.skynet.be/politieninove permanent;
+location ~ "^/(5442|ninove)(?:/.*)?$" {
+	rewrite ^ http://www.politieninove.be/ permanent;
 }
 
 location ~ "^/brugge(?:/.*)?$" {

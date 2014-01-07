@@ -35,12 +35,22 @@ Note: Linux users need to install NFS (Network File System) manually, see [help.
 You can use the following commands to manage the server:
 
 * ```vagrant up``` to initially start the server
+* ```vagrant ssh``` to SSH into the running Vagrant machine
 * ```vagrant reload``` reboots the server
 * ```vagrant halt``` powers the server down
 * ```vagrant suspend``` & ```vagrant resume``` to make the server sleep/wake up
 * ```vangrant destroy``` to stop and destroy all resources of the server
 
 More information about the Vagrant command-line interface can be found at [docs.vagrantup.com](http://docs.vagrantup.com/v2/cli/index.html).
+
+
+## Secure Shell
+
+You can use the following commands to manage the platform:
+
+* ```police reinstall``` to re-create the database
+
+First use the Vagrant command-line interface to access the Secure Shell, see above.
 
 
 ## Access
@@ -52,6 +62,23 @@ More information about the Vagrant command-line interface can be found at [docs.
     email: admin@localhost.home
     password: admin
     ```
+
+## Benefits
+
+### Accessibility
+
+* Conforms to [WCAG 2.0](http://www.w3.org/TR/WCAG20/) level AAA
+* Leverages [WAI-ARIA](http://www.w3.org/TR/wai-aria/) & [HTML5](http://www.w3.org/TR/html5/) to further enhance accessibility
+
+### Interoperability
+
+* Support for HTML data ([Microformats.org](http://www.microformats.org/), [Schema.org](http://www.schema.org/))
+
+### Mobile-First Responsive Web Design
+
+* Following a Progressive Enhancement strategy
+* Optimized for performance
+
 
 ## Built on Open Source software
 
