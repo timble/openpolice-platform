@@ -22,8 +22,6 @@ class ForaControllerCategory extends Library\ControllerModel
     {
         $config->append(array(
             'behaviors' => array(
-                'editable',
-                'com:activities.controller.behavior.loggable',
                 'com:attachments.controller.behavior.attachable',
             ),
         ));

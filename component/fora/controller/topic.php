@@ -26,10 +26,6 @@ class ControllerTopic extends Library\ControllerModel
         $config->append(array(
             'behaviors' => array(
                 'editable',
-                'com:activities.controller.behavior.loggable',
-                'com:revisions.controller.behavior.revisable',
-                'com:languages.controller.behavior.translatable',
-                'com:attachments.controller.behavior.attachable',
             ),
         ));
 
