@@ -1,11 +1,80 @@
+// Hiding the toolbar for now until Terry removed it from the code
 .com_fora {
   #panel-toolbar {
     display: none;
   }
 }
 
+// Com_fora namespacing
 #com_fora {
 
+  // Everything box-sized
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  form {
+    margin-bottom: 0;
+  }
+
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input {
+    display: inline-block;
+    height: 30px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 20px;
+    color: #555555;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    vertical-align: middle;
+  }
+
+  // Grid container
+  #fora-categories-default .well__content--categories,
+  #fora-category-default .well__content--categories {
+    &:before,
+    &:after {
+      display: table;
+      content: " ";
+    }
+    &:after {
+      clear: both;
+    }
+
+    // Items 50%
+    .media__item {
+      float: left;
+      width: 50%;
+      padding: 10px 0;
+
+      &:nth-child(even) {
+        margin-left: 0;
+      }
+    }
+  }
+
+
+  // Breadcrumbs
   .fora-breadcrumbs {
     ul.breadcrumb {
       margin-bottom: 0;
@@ -27,17 +96,31 @@
     }
   }
 
+  // Search
   .fora-search {
     padding: 0;
     background: #f9f9f9 linear-gradient(#f9f9f9, #ececec);
     border-bottom: 1px solid #dddddd;
 
     input[name="search"] {
+      width: 400px;
+      margin: 10px 5px 10px 10px;
       color: #444;
       font-size: 14px;
+
+      background-color: white;
+      border: 1px solid #cccccc;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+      transition: border linear 0.2s, box-shadow linear 0.2s;
     }
   }
 
+  // Wells
   .well {
     min-height: 20px;
     padding: 10px;
@@ -45,14 +128,9 @@
   }
 
   .well__content {
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #e4e4e4;
     background: #FFF;
-
-    &.well__content--categories {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
   }
 
   .well__frame {
@@ -77,6 +155,7 @@
     margin-top: 6px;
   }
 
+  // Headings
   h3.media__heading {
     line-height: 0;
     font-size: 16px;
@@ -114,8 +193,6 @@
         }
       }
 
-
-
       &>* {
         display: table-cell;
         vertical-align: middle;
@@ -128,222 +205,6 @@
       }
     }
   }
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section {
-    display: block;
-}
-
-audio,
-canvas,
-video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-}
-
-audio:not([controls]) {
-    display: none;
-}
-
-html {
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
-a:focus {
-    outline: thin dotted #333;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px;
-}
-
-a:hover,
-a:active {
-    outline: 0;
-}
-
-
-sub,
-sup {
-    position: relative;
-    font-size: 75%;
-    line-height: 0;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-img {
-    /* Responsive images (ensure images don't scale beyond their parents) */
-    max-width: 100%;
-    /* Part 1: Set a maxium relative to the parent */
-    width: auto\9;
-    /* IE7-8 need help adjusting responsive images */
-    height: auto;
-    /* Part 2: Scale the height according to the width, otherwise you get stretching */
-    vertical-align: middle;
-    border: 0;
-    -ms-interpolation-mode: bicubic;
-}
-
-#map_canvas img,
-.google-maps img {
-    max-width: none;
-}
-
-button,
-input,
-select,
-textarea {
-    margin: 0;
-    font-size: 100%;
-    vertical-align: middle;
-}
-
-button,
-input {
-    *overflow: visible;
-    line-height: normal;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
-
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer;
-}
-
-label,
-select,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-input[type="radio"],
-input[type="checkbox"] {
-    cursor: pointer;
-}
-
-input[type="search"] {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-appearance: textfield;
-}
-
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-}
-
-textarea {
-    overflow: auto;
-    vertical-align: top;
-}
-
-@media print {
-    * {
-        text-shadow: none !important;
-        color: #000 !important;
-        background: transparent !important;
-        box-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
-body {
-    margin: 0;
-    font-family: "proxima-nova", "proxima-nova-alt", sans-serif;
-    font-size: 15px;
-    line-height: 20px;
-    color: #45423d;
-    background-color: #009bd5;
-}
-
-a {
-    color: #00aeef;
-    text-decoration: none;
-}
-
-a:hover,
-a:focus {
-    color: #005580;
-    text-decoration: underline;
-}
 
 .img-rounded {
     -webkit-border-radius: 6px;
@@ -6653,15 +6514,6 @@ ul.attachments {
     box-sizing: border-box;
 }
 
-.media__item {
-    padding-top: 10px;
-    margin-top: 10px;
-}
-.media__item:nth-child(1) {
-    border-top: 0 none;
-    margin-top: 0;
-    padding-top: 0;
-}
 
 .media__heading {
     margin: 0;
@@ -6685,18 +6537,6 @@ ul.attachments {
     -moz-border-radius: 4px;
     border-radius: 4px;
     line-height: 14px;
-}
-
-.media__item.span6 {
-    margin-left: 0 !important;
-}
-.media__item.span6:nth-child(1), .media__item.span6:nth-child(2) {
-    padding-top: 0;
-    margin-top: 0;
-    border-top: 0 none;
-}
-.media__item.span6:nth-child(even) {
-    margin-left: 2.12766% !important;
 }
 
 .pagination {

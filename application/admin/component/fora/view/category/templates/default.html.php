@@ -11,15 +11,14 @@
 <style src="assets://fora/css/default.css" />
 
 <div id="com_fora" class="scrollable">
-
-    <div id="fora-categories-default">
+    <div id="fora-category-default">
         <div class="fora-search">
             <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">
                 <input name="search" type="text" placeholder="<?= translate('Search all categories...') ?>" />
                 <input class="btn primary" type="submit" value="Search" disabled="disabled" />
             </form>
         </div>
-        <div class="well well-small">
+        <div class="fora-breadcrumbs">
             <?= import('com:fora.module.breadcrumbs.default.html', array('list' => $pathways)) ?>
         </div>
 
@@ -31,7 +30,7 @@
                     </a>
                 </h1>
             </div>
-            <div class="well__content">
+            <div class="well__content well__content--categories">
                 <?= import('default_items.html',
                     array('category' => $category, 'forums' => $forums, 'topics' => $topics, 'topics_count' => $topics_count)); ?>
             </div>

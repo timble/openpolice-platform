@@ -6,11 +6,11 @@
 
 
 <div id="com_fora" class="scrollable">
-    <div id="fora-topic-default" class="span9">
-        <div class="well well-small">
+    <div id="fora-topic-default">
+        <div class="fora-breadcrumbs">
             <?= import('com:fora.module.breadcrumbs.default.html', array('list' => $pathways)) ?>
         </div>
-        <div class="well well-small">
+        <div class="well">
             <div class="well__frame">
                 <h1 class="well__heading well__heading--left"><?= escape($topic->title) ?></h1>
                 <div class="well__toolbar">

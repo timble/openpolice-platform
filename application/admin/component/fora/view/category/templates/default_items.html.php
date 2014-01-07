@@ -1,10 +1,10 @@
 <div class="row-fluid">
     <? foreach($forums->find(array('fora_category_id' => $category->id)) as $forum) : ?>
-        <div class="media__item span6">
-            <i class="media__icon icon-<?= $forum->type ?> icon-2x" style="margin-top: 6px"></i>
+        <div class="media__item">
             <h3 class="media__heading">
                 <a href="<?= route('view=topics&forum='.$forum->id.'&slug='.$forum->getSlug()) ?>">
-                    <?= escape($forum->title) ?>
+                    <i class="media__icon icon-<?= $forum->type ?> icon-2x" style="margin-top: 6px"></i>
+                    <span data-title="6 new articles"><?= escape($forum->title) ?></span>
                 </a>
             </h3>
             <? if(count($topics_count->find(array('fora_forum_id' => $forum->id))) && ($count = (int) $topics_count->find(array('fora_forum_id' => $forum->id))->top()->count) >= 1) : ?>

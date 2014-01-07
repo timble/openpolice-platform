@@ -17,6 +17,7 @@
 
 <div id="com_fora" class="scrollable">
     <div id="fora-categories-default">
+
         <div class="fora-search">
             <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">
                 <input name="search" type="text" placeholder="<?= translate('Search all categories...') ?>" />
@@ -25,7 +26,7 @@
         </div>
 
         <? foreach($categories as $category) : ?>
-            <div class="well well-small">
+            <div class="well">
                 <div class="well__frame">
                     <h1 class="well__heading well__heading--left">
                         <a href="<?= route('view=category&id='.$category->id.'&slug='.$category->slug) ?>">
@@ -39,5 +40,6 @@
                 </div>
             </div>
         <? endforeach ?>
+
     </div>
 </div>
