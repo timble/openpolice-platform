@@ -59,7 +59,7 @@
 <div class="well">
     <form action="" method="get" class="-koowa-form">
         <div class="form__right">
-            <button class="btn btn-primary btn-block" tabindex="2"><?= translate('Search') ?></button>
+            <button type="submit" class="btn btn-primary btn-block" tabindex="2"><?= translate('Search') ?></button>
         </div>
         <div class="form__left">
             <input type="text" class="bigdrop" id="autocomplete__streets" placeholder="<?= @translate('Search your street') ?> ..." tabindex="1" name="street" value="<?= $state->street ?>">
