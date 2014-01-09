@@ -16,17 +16,15 @@
 
 <? $officers = object('com:districts.model.districts_officers')->district($district->id)->getRowset(); ?>
 
-<div class="row-fluid">
-    <? if(count($officers)) : ?>
-    <div class="span5">
-        <? foreach ($officers as $officer) : ?>
-            <?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
-        <? endforeach ?>
-    </div>
-    <? else : ?>
-    <h2><?= translate('No neighbourhood officer found') ?></h2>
-    <? endif ?>
-    <div class="span7">
-        <?= import('default_contact.html', array('contact' => object('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow())); ?>
-    </div>
+<? if(count($officers)) : ?>
+<div class="districts__officer">
+    <? foreach ($officers as $officer) : ?>
+        <?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
+    <? endforeach ?>
+</div>
+<? else : ?>
+<h2><?= translate('No neighbourhood officer found') ?></h2>
+<? endif ?>
+<div class="districts__contact">
+    <?= import('default_contact.html', array('contact' => object('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow())); ?>
 </div>

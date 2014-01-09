@@ -1101,7 +1101,24 @@ select:focus:invalid:focus {
   display: inline;
 }
 
-/* line 44, molecules/_grid.scss */
+/* line 42, molecules/_grid.scss */
+.districts__officer {
+  width: 39.50617%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+/* line 46, molecules/_grid.scss */
+.districts__contact {
+  width: 56.79012%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -3em;
+  display: inline;
+}
+
+/* line 53, molecules/_grid.scss */
 .logo {
   width: 22.22222%;
   float: left;
@@ -1109,7 +1126,7 @@ select:focus:invalid:focus {
   display: inline;
 }
 
-/* line 47, molecules/_grid.scss */
+/* line 56, molecules/_grid.scss */
 .navigation {
   width: 74.07407%;
   float: right;
@@ -1118,7 +1135,7 @@ select:focus:invalid:focus {
   display: inline;
 }
 
-/* line 51, molecules/_grid.scss */
+/* line 60, molecules/_grid.scss */
 .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
   width: 22.22222%;
   float: left;
@@ -1126,7 +1143,7 @@ select:focus:invalid:focus {
   display: inline;
 }
 
-/* line 54, molecules/_grid.scss */
+/* line 63, molecules/_grid.scss */
 .quicklink__item_4 {
   width: 22.22222%;
   float: right;
@@ -1269,8 +1286,8 @@ select:focus:invalid:focus {
   float: left;
   height: 50px;
   width: 56px;
-  line-height: 50px;
-  font-size: 30px;
+  line-height: 45px;
+  font-size: 40px;
   color: white;
   text-align: center;
   border-right: 1px solid #004d9f;
