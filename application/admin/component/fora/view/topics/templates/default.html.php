@@ -30,8 +30,6 @@
                     <a href="<?=route('view=topic&layout=form&forum='.$forum->id)?>" class="btn btn-small"><?=translate('new');?></a>
                     <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription"
                             data-row="<?=$forum->id;?>"
-                            data-user="<?= object('user')->getId() ?>"
-                            data-site="<?=object('application')->getSite();?>"
                             data-action="<?= $subscription ? 'delete' : 'post' ?>"
                             data-type="forum">
                         <i class="icon-star"></i>

@@ -23,8 +23,6 @@ Fora.Subscribe = new Class({
             data: {
                 action: button.get('data-action'),
                 row: button.get('data-row'),
-                users_user_id: button.get('data-user'),
-                site: button.get('data-site'),
                 type: button.get('data-type'),
                 _token: this.options.data._token
             },

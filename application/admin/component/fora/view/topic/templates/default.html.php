@@ -31,8 +31,6 @@
                     </div>
                     <button type="button" class="btn btn-small subscribe <?= $subscription ? 'btn-subscribed' : 'btn-unsubscribed' ?>" title="Click to manage your subscription"
                         data-row="<?=$topic->id;?>"
-                        data-user="<?= object('user')->getId() ?>"
-                        data-site="<?=object('application')->getSite();?>"
                         data-action="<?= $subscription ? 'delete' : 'post' ?>"
                         data-type="topic">
                         <i class="icon-star"></i>

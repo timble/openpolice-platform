@@ -22,6 +22,9 @@ class DatabaseTableSubscriptions extends Library\DatabaseTableAbstract
     {
         $config->append(array(
             'name'       => 'data.fora_subscriptions',
+            'behaviors'  => array(
+                'multiuserable'
+            ),
         ));
 
         parent::_initialize($config);

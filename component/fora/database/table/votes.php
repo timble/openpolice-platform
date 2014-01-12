@@ -23,7 +23,7 @@ class DatabaseTableVotes extends Library\DatabaseTableAbstract
         $config->append(array(
             'name'       => 'data.fora_votes',
             'behaviors'  => array(
-                'voteable',
+                'multiuserable','voteable',
             ),
         ));
 
