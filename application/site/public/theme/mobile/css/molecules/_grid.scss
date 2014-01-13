@@ -38,6 +38,15 @@
     .homepage__contact {
         @include span-columns(4 omega, 12);
     }
+
+    .districts__officer {
+        @include span-columns(5, 12);
+    }
+
+    .districts__contact {
+        @include span-columns(7 omega, 12);
+
+    }
 }
 
 @include respond-min(998px) {
