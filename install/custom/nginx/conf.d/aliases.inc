@@ -730,8 +730,8 @@ location ~ "^/(5404|politiebeersel)(?:/.*)?$" {
 	rewrite ^ http://www.politiebeersel.be permanent;
 }
 
-location ~ "^/(pzzara|ranst|zandhoven|zara)(?:/.*)?$" {
-	rewrite ^ /5354 permanent;
+location ~ "^/(5354/pzzara|ranst|zandhoven|zara)(?:/.*)?$" {
+	rewrite ^ http://www.politiezara.be permanent;
 }
 
 location ~ "^/(5427|ronse)(?:/.*)?$" {
