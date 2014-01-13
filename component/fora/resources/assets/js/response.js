@@ -22,11 +22,11 @@ Fora.Response = new Class({
 
         var request = new Request({
             method: button.get('data-action'),
-            url: this.options.url,
+            url: this.options.url+"&id="+button.get('data-topic'),
             data: {
                 action: button.get('data-action'),
                 id: button.get('data-topic'),
-                comments_comment_id: button.get('data-id'),
+                comments_comment_id: button.get('data-comment'),
                 _token: this.options.data._token
             },
 

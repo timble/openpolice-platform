@@ -91,7 +91,7 @@
                         <button title="<?=translate($comment->responded ? 'Unmark as' : 'Mark as') ?>"
                                 class="btn btn-small response"
                                 data-topic="<?=$topic->id;?>"
-                                data-id="<?= $comment->id ?>" data-action="<?= $comment->id == $awnser->id ? 'delete' : 'post' ?>">
+                                data-comment="<?= $comment->id ?>" data-action="<?= $comment->id == $awnser->id ? 'delete' : 'post' ?>">
                             <i class="<?= $comment->id == $awnser->id ? 'icon-remove' : 'icon-ok'?> "></i>
                         </button>
                     <? endif ?>
@@ -114,7 +114,7 @@
 
         new Fora.Response({
             holder: 'fora-topic-default',
-            url: '<?= html_entity_decode(route('view=respond&type=topic')) ?>',
+            url: 'index.php?option=com_fora&view=respond',
             data: {
                 _token: '<?= object('user')->getSession()->getToken() ?>'
             }

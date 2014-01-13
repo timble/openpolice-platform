@@ -44,7 +44,7 @@ class ForaViewTopicHtml extends Library\ViewHtml
             $responds = $this->getObject('com:fora.database.table.responds')
                 ->select(array('fora_topic_id' => $topic->id), Library\Database::FETCH_ROW);
 
-            $this->awnser =$this->getObject('com:comments.model.comments')
+            $this->awnser =$this->getObject('com:fora.model.comments')
                 ->id($responds->comments_comment_id)
                 ->getRow();
         }
