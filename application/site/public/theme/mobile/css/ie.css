@@ -1851,19 +1851,24 @@ a.article__thumbnail:focus {
     border-bottom: 0 none !important;
   }
 }
-/* line 6, ie.scss */
+/* line 5, ie.scss */
+#wrap {
+  min-width: 800px;
+}
+
+/* line 10, ie.scss */
 .container__header .nav li {
   display: block;
   float: left;
   width: 130px;
 }
 
-/* line 14, ie.scss */
+/* line 18, ie.scss */
 .container__footer input {
   width: 188px;
 }
 
-/* line 30, ie.scss */
+/* line 34, ie.scss */
 .span1,
 .span2,
 .span3,
