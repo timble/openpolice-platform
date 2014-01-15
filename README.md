@@ -101,6 +101,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [PHP-JWT](http://github.com/firebase/php-jwt)
 * [Sass](http://sass-lang.com)
 * [Select2](http://ivaynberg.github.io/select2)
+* [Susy](http://susy.oddbird.net/)
 * [Vagrant](http://www.vagrantup.com)
 * [VirtualBox](http://www.virtualbox.org)
 
