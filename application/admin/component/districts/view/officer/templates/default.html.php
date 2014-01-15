@@ -28,7 +28,7 @@
 					    	<?= translate( 'Firstname' ); ?>
 					    </label>
 					    <div>
-					        <input type="text" name="firstname" maxlength="250" class="required validate-alpha" value="<?= $officer->firstname; ?>" />
+					        <input type="text" name="firstname" maxlength="250" class="required" value="<?= $officer->firstname; ?>" />
 					    </div>
 					</div>
 					<div>
@@ -36,7 +36,7 @@
 					    	<?= translate( 'Lastname' ); ?>
 					    </label>
 					    <div>
-					        <input type="text" name="lastname" maxlength="250" class="required validate-alpha" value="<?= $officer->lastname; ?>" />
+					        <input type="text" name="lastname" maxlength="250" class="required" value="<?= $officer->lastname; ?>" />
 					    </div>
 					</div>
                     <div>
@@ -52,7 +52,7 @@
 					    	<?= translate( 'Position' ); ?>
 					    </label>
 					    <div>
-					        <input type="text" name="position" maxlength="250" class="validate-alpha" value="<?= $officer->position; ?>" />
+					        <input type="text" name="position" maxlength="250" value="<?= $officer->position; ?>" />
 					    </div>
 					</div>
 				</fieldset>

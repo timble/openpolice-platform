@@ -101,6 +101,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [PHP-JWT](http://github.com/firebase/php-jwt)
 * [Sass](http://sass-lang.com)
 * [Select2](http://ivaynberg.github.io/select2)
+* [Susy](http://susy.oddbird.net/)
 * [Vagrant](http://www.vagrantup.com)
 * [VirtualBox](http://www.virtualbox.org)
 
@@ -113,7 +114,3 @@ Check our [contributing](CONTRIBUTING.md) guide.
 ## License
 
 The files in this archive are released under the GPLv3 license. You can find a copy of this license in [LICENSE](LICENSE.md).
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/belgianpolice/internet-platform/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
