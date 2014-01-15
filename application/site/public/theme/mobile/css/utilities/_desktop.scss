@@ -1,154 +1,105 @@
 @include respond-min($navbarCollapseWidth) {
-  #wrap {
-    border-bottom: 1px solid darken($grayLighter, 7%);
-  }
-
-  .navbar__handlebar,
-  .visible-phone {
-    display: none;
-  }
-
-  .container-header .row-fluid .span3,
-  .container-header .is-hidden,
-  .container-breadcrumb,
-  .container-banner,
-  .container-footer,
-  .container-quicklinks,
-  .container-content .sidebar,
-  .container-copyright .copyright,
-  .hidden-phone {
-    display: block;
-  }
-
-  .container-header,
-  .container-banner,
-  .container-breadcrumb,
-  .container-content,
-  .container-footer {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .container {
-    width: $gridRowWidth768 + 38px;
-  }
-
-  .container-header .row-fluid {
-    .span3 {
-      float: none;
-      width: 100%;
-      text-align: center;
+    #wrap {
+        border-bottom: 1px solid darken($grayLighter, 7%);
     }
 
-    .span9 {
-      float: none;
-      width: 100%;
-      margin: 20px 0 0 0;
-    }
-  }
-
-  .container-content.police {
-    .contact__inner {
-      border-left: 1px solid $grayLighter;
-
-      padding-left: 18px;
-      margin-top: 20px;
-      @include border-radius(5px);
-
-      ul {
-        margin-bottom: 0;
-      }
-
-      .well {
-        margin-bottom: 10px
-      }
+    .navbar__handlebar,
+    .visible-phone {
+        display: none;
     }
 
-    .span3 {
-      width: ($fluidGridColumnWidth * 6) + ($fluidGridGutterWidth * 5);
-      min-height: 125px;
+    .container__header .is-hidden,
+    .container__breadcrumb,
+    .container__banner,
+    .container__footer,
+    .container__quicklinks,
+    .container__content .sidebar,
+    .container__copyright .copyright,
+    .hidden-phone {
+        display: block;
     }
 
-    .span3:nth-child(3) {
-      margin-left: 0;
+    .container__header,
+    .container__banner,
+    .container__breadcrumb,
+    .container__content,
+    .container__footer {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
-      .contact {
-          float: right !important;
-      }
-  }
-
-  .container-header {
-    width: auto;
-  }
-
-  .container-content {
-    .sidebar {
-      margin-top: 20px;
-
-      .sidebar__element {
-        margin-bottom: 40px;
-      }
+    .container__header {
+        .logo {
+            text-align: center;
+        }
     }
-  }
 
-  .container-quicklinks {
-      border-top: 1px solid $grayLighter;
-      padding-top: 14px;
-      margin-top: $gridGutterWidth;
-  }
+    .container__content.police {
+        .contact__inner {
+            border-left: 1px solid $grayLighter;
 
-  .container-footer {
-    padding-top: $gridGutterWidth / 3;
+            padding-left: 18px;
+            margin-top: 20px;
+            @include border-radius(5px);
 
-    background-color: $wellBackground;
-    border-top: 1px solid darken($grayLighter, 7%);
+            ul {
+                margin-bottom: 0;
+            }
 
-    @include border-radius(0 0 5px 5px);
-  }
-
-  .container-copyright {
-    text-align: left;
-    border-top: 0 none;
-    .copyright {
-      text-align: right;
+            .well {
+                margin-bottom: 10px
+            }
+        }
     }
-  }
+
+    .container__header {
+        width: auto;
+    }
+
+    .container__content {
+        .sidebar {
+            margin-top: 20px;
+
+            .sidebar__element {
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .container__quicklinks {
+        border-top: 1px solid $grayLighter;
+        padding-top: 14px;
+        margin-top: $gutter-width;
+    }
+
+    .container__footer {
+        padding-top: $gutter-width / 3;
+
+        background-color: $wellBackground;
+        border-top: 1px solid darken($grayLighter, 7%);
+
+        @include border-radius(0 0 5px 5px);
+    }
+
+    .container__copyright {
+        text-align: left;
+        border-top: 0 none;
+        .copyright--right {
+            text-align: right;
+        }
+    }
 }
 
 @include respond-min(998px) {
-  .container-fluid {
-    width: $gridRowWidth;
-    margin: 0 auto;
-  }
-
-  #wrap {
-    border-left: 1px solid darken($grayLighter, 7%);
-    border-right: 1px solid darken($grayLighter, 7%);
-    @include border-radius(0 0 5px 5px);
-  }
-
-  .container-header .row-fluid {
-    .span3 {
-      float: left;
-      width: ($fluidGridColumnWidth * 3) + ($fluidGridGutterWidth * 2);
-      text-align: left;
+    #wrap {
+        border-left: 1px solid darken($grayLighter, 7%);
+        border-right: 1px solid darken($grayLighter, 7%);
+        @include border-radius(0 0 5px 5px);
     }
 
-    .span9 {
-      float: left;
-      width: ($fluidGridColumnWidth * 9) + ($fluidGridGutterWidth * 8);
-      margin-left: $fluidGridGutterWidth;
-      margin-top: 0;
+    .container__header {
+        .logo {
+            text-align: left;
+        }
     }
-  }
-
-  .container-content.police {
-    .span3 {
-      width: ($fluidGridColumnWidth * 3) + ($fluidGridGutterWidth * 2);
-    }
-    .span3:nth-child(3) {
-      margin-left: $fluidGridGutterWidth;
-    }
-  }
 }
