@@ -16,7 +16,7 @@
             <td>K42</td>
             <td>1</td>
             <td>9999</td>
-            <td>odd+even</td>
+            <td>odd-even</td>
         </tr>
         <tr>
             <td>974981</td>
