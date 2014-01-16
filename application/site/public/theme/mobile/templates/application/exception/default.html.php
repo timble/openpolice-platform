@@ -50,7 +50,10 @@
             </a>
         </div>
         <div class="navigation">
-            <span class="slogan">Bel <a class="text--strong" href="tel:101">101</a> voor dringende politiehulp. Geen spoed, wél politie? Bel <a class="text--strong" href="tel:<?= escape($zone->phone_emergency); ?>"><?= escape($zone->phone_emergency); ?></a></span>
+            <span class="slogan">
+                <?= JText::sprintf('Call for urgent police assistance', '101', '101') ?>.
+                <?= JText::sprintf('No emergency, just police', escape(str_replace(' ', '', $zone->phone_emergency)), escape($zone->phone_emergency)) ?>.
+            </span>
         </div>
     </div>
 
