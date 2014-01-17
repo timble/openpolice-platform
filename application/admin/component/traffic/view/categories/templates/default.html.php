@@ -13,9 +13,11 @@
 <style src="assets://css/koowa.css" />
 -->
 
+<? if($this->getObject('user')->getRole() == 25) : ?>
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
+<? endif ?>
 
 <? if($state->table == 'articles') : ?>
     <ktml:module position="sidebar">
