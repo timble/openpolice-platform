@@ -9,7 +9,31 @@
 
 use Nooku\Library;
 
-class TrafficControllerCategory extends CategoriesControllerCategory
+class TrafficControllerCategory extends Library\ControllerModel
 {
+    protected function _initialize(Library\ObjectConfig $config)
+    {
+        $config->append(array(
+            'behaviors' => array(
+                'editable',
+                'com:activities.controller.behavior.loggable',
+                'com:attachments.controller.behavior.attachable',
+            ),
+            'model' => 'com:categories.model.categories'
+        ));
 
+        parent::_initialize($config);
+
+        //Force the toolbars
+        $config->toolbars = array('menubar', 'com:categories.controller.toolbar.category');
+    }
+
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        $request->query->table  = $this->getIdentifier()->package;
+
+        return $request;
+    }
 }
