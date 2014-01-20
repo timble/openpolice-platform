@@ -3,10 +3,10 @@
 
 // Core
 .btn {
-    padding: 4px 12px;
+    @include rem(padding, 4px 12px);
     margin-bottom: 0; // For input.btn
-    font-size: $baseFontSize;
-    line-height: $baseLineHeight;
+    @include rem(font-size, $base-font-size);
+    @include rem(line-height, $base-line-height);
     text-align: center;
     vertical-align: middle;
     cursor: pointer;

@@ -16,7 +16,7 @@
 // Proper spacing between instances of .media
 .media,
 .media .media {
-    margin-top: 15px;
+    @include rem(margin-top, 15px);
 }
 
 .media:first-child {
@@ -25,19 +25,19 @@
 
 // Reset margins on headings for tighter default spacing
 .media__heading {
-    margin: 0 0 5px;
+    @include rem(margin, 0 0 5px);
 }
 
 // Media image alignment
 // -------------------------
 .media__object {
-    margin-right: 10px;
+    @include rem(margin-right, 10px);
     float: left;
     display: block;
-    width: 64px; // IE7
+    @include rem(width, 64px); // IE7
 }
 
 // No media image
 .media--imageless .media-body {
-    margin-left: 97px;
+    @include rem(margin-left, 97px);
 }

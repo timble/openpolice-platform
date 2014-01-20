@@ -88,7 +88,7 @@
     filter: alpha(opacity=$opacity);
 }
 
-@mixin font-shorthand($size: $baseFontSize, $weight: normal, $lineHeight: $baseLineHeight) {
+@mixin font-shorthand($size: $base-font-size, $weight: normal, $lineHeight: $base-line-height) {
     font-size: $size;
     font-weight: $weight;
     line-height: $lineHeight;

@@ -45,9 +45,9 @@ $sansFontFamily: Helvetica, sans-serif;
 $serifFontFamily: Georgia, "Times New Roman", Times, serif;
 $monoFontFamily: Monaco, Menlo, Consolas, "Courier New", monospace;
 
-$baseFontSize: 14px;
+$base-font-size: 14px;
+$base-line-height: $base-font-size * 1.5;
 $baseFontFamily: $sansFontFamily !default;
-$baseLineHeight: 22px;
 
 $linkColor: $blue;
 $linkColorHover: darken($linkColor, 15%) !default;
@@ -55,9 +55,9 @@ $linkColorHover: darken($linkColor, 15%) !default;
 $iconSpritePath: "../img/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
 
-$fontSizeLarge: $baseFontSize * 1.25 !default;
+$fontSizeLarge: $base-font-size * 1.25 !default;
 // ~18px
-$fontSizeSmall: $baseFontSize * 0.85 !default;
+$fontSizeSmall: $base-font-size * 0.85 !default;
 // ~12px
 
 $headingsFontFamily: inherit !default;
@@ -83,7 +83,7 @@ $inputBorder: #ccc !default;
 $inputBorderRadius: $baseBorderRadius !default;
 $inputDisabledBackground: $grayLighter !default;
 $formActionsBackground: #f5f5f5 !default;
-$inputHeight: $baseLineHeight + 10px;
+$inputHeight: $base-line-height + 10px;
 // base line-height + 8px vertical padding + 2px top/bottom border
 
 // Input placeholder text color

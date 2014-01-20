@@ -4,7 +4,7 @@
 
 // Make wrapper ul behave like the grid
 .thumbnails {
-    margin-left: -$gutter-width;
+    @include rem(margin-left, -$gutter-width);
     list-style: none;
     @include clearfix();
 }
@@ -12,15 +12,15 @@
 // Float li to make thumbnails appear in a row
 .thumbnails > li {
     float: left; // Explicity set the float since we don't require .span* classes
-    margin-bottom: $baseLineHeight;
-    margin-left: $gutter-width;
+    @include rem(margin-bottom, $base-line-height);
+    @include rem(margin-left, $gutter-width);
 }
 
 // The actual thumbnail (can be `a` or `div`)
 .thumbnail {
     display: block;
     padding: 4px;
-    line-height: $baseLineHeight;
+    @include rem(line-height, $base-line-height);
     border: 1px solid #ddd !important;
     @include border-radius($baseBorderRadius);
     @include box-shadow(0 1px 3px rgba(0, 0, 0, .055));

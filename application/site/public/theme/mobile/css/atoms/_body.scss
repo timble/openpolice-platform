@@ -1,7 +1,7 @@
 body {
     font-family: $baseFontFamily;
-    font-size: $baseFontSize;
-    line-height: $baseLineHeight;
+    @include rem(font-size, 1);
+    @include rem(line-height, $base-line-height);
     color: $textColor;
     background-color: $bodyBackground;
     margin: 0;

@@ -6,7 +6,7 @@
 // -------------------------
 
 p {
-    margin: 0 0 $baseLineHeight / 2;
+    @include rem(margin-bottom, 1.5);
 }
 
 // Emphasis & misc
@@ -15,6 +15,7 @@ p {
 // Ex: 14px base font * 85% = about 12px
 small {
     font-size: 85%;
+    @include rem(font-size, 0.85);
 }
 
 strong {
@@ -44,7 +45,7 @@ cite {
 // Unordered and Ordered lists
 ul, ol {
     padding: 0;
-    margin: 0 0 $baseLineHeight / 2 25px;
+    @include rem(margin, 0 0 $base-line-height 2em);
 }
 
 ul ul,
@@ -54,16 +55,12 @@ ol ul {
     margin-bottom: 0;
 }
 
-li {
-    line-height: $baseLineHeight;
-}
-
 // MISC
 // ----
 
 // Horizontal rules
 hr {
-    margin: $baseLineHeight 0;
+    @include rem(margin, $base-line-height 0);
     border: 0;
     border-top: 1px solid $hrBorder;
     border-bottom: 1px solid $white;

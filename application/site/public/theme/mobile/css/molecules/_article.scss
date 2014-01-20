@@ -1,21 +1,14 @@
 .article {
     @extend .clearfix;
-    margin-bottom: $gutter-width;
-
-    h2 {
-        margin-top: 30px;
-    }
-    h3 {
-        margin-top: 20px;
-    }
+    @include rem(margin-bottom, $gutter-width);
 
     p img[align="right"] {
-        margin: 0 0 20px 20px;
+        @include rem(margin, 0 0 $base-line-height $base-line-height);
     }
 }
 
 .article__header {
-    margin-bottom: 15px;
+    @include rem(margin-bottom, 1);
 
     h1 {
         margin-bottom: 0;
@@ -24,19 +17,19 @@
     .timestamp {
         padding-top: 4px;
         @extend .muted;
-        font-size: $fontSizeSmall;
+        @include rem(font-size, $fontSizeSmall);
     }
 }
 
 .article__introtext,
 .entry-summary {
     font-weight: bold;
-    margin-bottom: $baseLineHeight;
+    @include rem(margin-bottom, $base-line-height);
 }
 
 .article__thumbnail {
     float: right;
     max-width: 40%;
-    margin: 0 0 20px 20px;
+    @include rem(margin, 0 0 $base-line-height $base-line-height);
     @extend .thumbnail;
 }
