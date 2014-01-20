@@ -3,7 +3,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th>streets_street_id</th>
+            <th>islp</th>
             <th>districts_district_id</th>
             <th>range_start</th>
             <th>range_end</th>
@@ -16,7 +16,7 @@
             <td>K42</td>
             <td>1</td>
             <td>9999</td>
-            <td>odd+even</td>
+            <td>odd-even</td>
         </tr>
         <tr>
             <td>974981</td>

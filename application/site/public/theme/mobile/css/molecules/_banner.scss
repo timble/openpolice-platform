@@ -1,5 +1,5 @@
-.container-banner img {
-  border: 1px solid $gray;
-  @include border-radius(5px);
-  @include box-sizing(border-box);
+.container__banner img {
+    border: 1px solid $gray;
+    @include border-radius(5px);
+    @include box-sizing(border-box);
 }

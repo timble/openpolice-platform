@@ -38,7 +38,7 @@
             dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
             formatInputTooShort: false,
             formatSearching: function () { return "<?= translate('Please wait') ?> ..."; },
-            formatNoMatches: function () { return "<?= translate('No matches found') ?>"; }
+            formatNoMatches: function () { return "<?= translate('Your street was not found') ?>"; }
         });
     });
 </script>
@@ -49,5 +49,5 @@
             <input type="text" class="bigdrop" id="autocomplete__streets--footer" placeholder="<?= translate('Search your street') ?> ..." name="street" value="<?= @$_COOKIE ['district_street'] ?>">
         </div>
     </div>
-    <button type="submit" class="btn btn-small btn-primary pull-right"><?= translate('Search') ?></button>
+    <button type="submit" class="btn btn-primary"><?= translate('Search') ?></button>
 </form>

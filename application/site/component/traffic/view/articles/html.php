@@ -14,12 +14,17 @@ class TrafficViewArticlesHtml extends TrafficViewHtml
     public function render()
     {
         //Get the parameters
-        $params = $this->getObject('application')->getParams();
+        $this->params = $this->getObject('application')->getParams();
 
-        $this->params = $params;
+        //Set the pathway
+        if($this->getModel()->getState()->category) {
+            $category = $this->getCategory();
+            $this->category = $category;
 
-        //Get the category
-        $this->category = $this->getCategory();
+            $this->params->set('page_title', $category->title);
+
+            $this->getObject('application')->getPathway()->addItem($category->title, '');
+        }
 
         return parent::render();
     }

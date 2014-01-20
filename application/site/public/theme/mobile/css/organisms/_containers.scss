@@ -1,69 +1,68 @@
-.container-header .row-fluid .span3,
-.container-header .slogan,
-.container-breadcrumb,
-.container-banner,
-.container-footer,
-.container-quicklinks,
-.container-content .sidebar,
-.container-copyright .copyright,
+.container__header .row-fluid .span3,
+.container__header .slogan,
+.container__breadcrumb,
+.container__banner,
+.container__footer,
+.container__quicklinks,
+.container__content .sidebar,
+.container__copyright .copyright,
 .is-hidden,
 .hidden-phone {
-  display: none;
+    display: none;
 }
 
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
+.container__content {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-.container-content {
-  padding-left: 20px;
-  padding-right: 20px;
+.container__header {
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
 }
 
-.container-header {
-  margin-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  width: 100%;
-}
+.container__content {
+    padding-top: $grid-padding;
+    padding-bottom: $grid-padding;
 
-.container-content {
-  padding-top: $gridGutterWidth;
-  margin-bottom: $gridGutterWidth;
+    &.police {
+        .contact__inner {
+            margin-left: 0;
+            border: 0 none;
+            padding: 0;
 
-  &.police {
-    .contact__inner {
-      margin-left: 0;
-      border: 0 none;
-      padding: 0;
+            a {
+                text-decoration: none;
+            }
+        }
 
-     a {
-         text-decoration: none;
-     }
+        article {
+            border: 0 none !important;
+            padding-bottom: 0 !important;
+        }
     }
-
-    article {
-      border: 0 none !important;
-      padding-bottom: 0 !important;
-    }
-  }
 }
 
-.container-copyright {
-  padding: 3px 20px;
-  text-align: center;
-  border-top: 1px solid darken($grayLighter, 7%);
-  font-size: $fontSizeSmall;
+.container__copyright {
+    padding: 3px 20px;
+    text-align: center;
+    border-top: 1px solid darken($grayLighter, 7%);
+    font-size: $fontSizeSmall;
 
     a {
-      text-decoration: none;
+        text-decoration: none;
     }
 }
 
-.container-footer {
-  .media {
-    margin-top: 0;
-    margin-bottom: $gridGutterWidth / 1.5;
-  }
+.container__footer {
+    .media {
+        margin-top: 0;
+        margin-bottom: $gutter-width / 1.5;
+    }
+
+    .btn {
+        float: right;
+    }
 }
