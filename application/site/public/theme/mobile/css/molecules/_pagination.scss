@@ -4,7 +4,7 @@
 
 // Space out pagination from surrounding content
 .pagination {
-    @include rem(margin, $base-line-height 0 0 0);
+    margin: $baseLineHeight 0 0 0;
 }
 
 .pagination ul {
@@ -24,8 +24,8 @@
 .pagination ul > li > a,
 .pagination ul > li > span {
     float: left; // Collapse white-space
-    @include rem(padding, 0.3rem 1rem);
-    @include rem(line-height, $base-line-height);
+    padding: 4px 12px;
+    line-height: $baseLineHeight;
     text-decoration: none;
     border: 1px solid $paginationBorder;
     @include border-radius(5px);

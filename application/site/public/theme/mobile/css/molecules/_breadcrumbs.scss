@@ -1,7 +1,7 @@
 .breadcrumb {
     font-size: 0.9em;
-    @include rem(padding, 4px 15px);
-    @include rem(margin, 4px 0 0 0);
+    padding: 4px 15px;
+    margin: 4px 0 0 0;
     list-style: none;
     background-color: $wellBackground;
     @include border-radius($baseBorderRadius);
@@ -10,7 +10,7 @@
         @include ie7-inline-block();
         text-shadow: 0 1px 0 $white;
         > .divider {
-            @include rem(padding, 0 5px);
+            padding: 0 5px;
             color: #ccc;
         }
     }

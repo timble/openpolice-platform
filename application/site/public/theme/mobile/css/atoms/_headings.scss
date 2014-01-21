@@ -2,10 +2,10 @@
 // -------------------------
 
 h1, h2, h3, h4, h5, h6 {
-    @include rem(margin, ($base-line-height / 2) 0);
-    line-height: 1.25em;
+    margin: ($baseLineHeight / 2) 0;
     font-family: $headingsFontFamily;
     font-weight: normal;
+    line-height: 24px;
     color: $headingsColor;
     text-rendering: optimizelegibility; // Fix the character spacing for headings
     small {
@@ -19,13 +19,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include rem(font-size, 1.8rem);
+    font-size: 24px;
 }
 
 h2 {
-    @include rem(font-size, 1.5rem);
+    font-size: 20px;
 }
 
 h3 {
-    @include rem(font-size, 1.25rem);
+    font-size: 18px;
 }
