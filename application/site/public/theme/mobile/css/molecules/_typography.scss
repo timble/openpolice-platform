@@ -12,6 +12,6 @@
 }
 
 .text--small {
-    font-size: 0.9em;
+    @include rem(font-size, 0.9);
     @extend .muted;
 }

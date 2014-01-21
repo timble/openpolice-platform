@@ -1,0 +1,44 @@
+@function px-to-em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
+
+@mixin rem($property, $values) {
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+
+    @for $i from 1 through $max {
+        $value: nth($values, $i);
+
+        @if unit($value) == 'px' {
+            $value: px-to-em($value);
+        }
+
+        $pxValues: #{$pxValues + strip-unit($value)*strip-unit($base-font-size)}px;
+
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+
+    @for $i from 1 through $max {
+        $value: nth($values, $i);
+
+        @if unit($value) == 'px' {
+            $value: px-to-em($value);
+        }
+
+        $remValues: #{$remValues + strip-unit($value)}rem;
+
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+
+    #{$property}: $pxValues;
+    #{$property}: $remValues;
+}
