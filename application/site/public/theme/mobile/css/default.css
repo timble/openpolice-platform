@@ -290,7 +290,8 @@ textarea {
 /* line 60, organisms/_containers.scss */
 .container__footer .media {
   margin-top: 0;
-  margin-bottom: 2em;
+  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 /* line 65, organisms/_containers.scss */
 .container__footer .btn {

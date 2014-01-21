@@ -59,7 +59,7 @@
 .container__footer {
     .media {
         margin-top: 0;
-        margin-bottom: $gutter-width / 1.5;
+        @include rem(margin-bottom, 1rem);
     }
 
     .btn {
