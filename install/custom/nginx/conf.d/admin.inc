@@ -31,6 +31,13 @@ location ~* /(plugins|media|administrator|includes)/.* {
 	expires		max;
 }
 
+# Fix: provides the correct path for com_jce
+location ~* /components/com_jce/* {
+    root		/var/www/lokalepolitie.be/public;
+    access_log	off;
+    expires		max;
+}
+
 # Sets maximum expires for admin icons etc.
 location ~* ^.+.(jpg|jpeg|gif|png|ico|css|zip|tgz|gz|rar|bz2|doc|xls|exe|pdf|ppt|txt|tar|mid|midi|wav|bmp|rtf|js)$ {
 	access_log off;
