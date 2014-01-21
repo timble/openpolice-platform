@@ -1970,24 +1970,19 @@ a.article__thumbnail:focus {
     border-bottom: 0 none !important;
   }
 }
-/* line 5, ie.scss */
-#wrap {
-  min-width: 942px;
-}
-
-/* line 10, ie.scss */
+/* line 6, ie.scss */
 .container__header .nav li {
   display: block;
   float: left;
   width: 130px;
 }
 
-/* line 18, ie.scss */
+/* line 14, ie.scss */
 .container__footer input {
   width: 188px;
 }
 
-/* line 34, ie.scss */
+/* line 30, ie.scss */
 .span1,
 .span2,
 .span3,
