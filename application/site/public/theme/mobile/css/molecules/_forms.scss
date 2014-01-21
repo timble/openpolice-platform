@@ -21,16 +21,16 @@ legend {
     display: block;
     width: 100%;
     padding: 0;
-    margin-bottom: $baseLineHeight;
-    font-size: $baseFontSize * 1.5;
-    line-height: $baseLineHeight * 2;
+    @include rem(margin-bottom, $base-line-height);
+    @include rem(font-size, $base-font-size * 1.5);
+    @include rem(line-height, $base-line-height * 2);
     color: $grayDark;
     border: 0;
     border-bottom: 1px solid #e5e5e5;
 
     // Small
     small {
-        font-size: $baseLineHeight * .75;
+        @include rem(font-size, $base-line-height * 0.75);
         color: $grayLight;
     }
 }
@@ -41,7 +41,7 @@ input,
 button,
 select,
 textarea {
-    @include font-shorthand($baseFontSize, normal, $baseLineHeight); // Set size, weight, line-height here
+    @include font-shorthand($base-font-size, normal, $base-line-height); // Set size, weight, line-height here
 }
 
 input,
@@ -65,10 +65,10 @@ select,
 textarea,
 input {
     display: inline-block;
-    height: $baseLineHeight + 10px;
-    padding: 0 6px;
-    font-size: $baseFontSize;
-    line-height: $baseLineHeight + 10px;
+    @include rem(height, $base-line-height + 10px);
+    @include rem(padding, 0 6px);
+    @include rem(font-size, $base-font-size);
+    @include rem(line-height, $base-line-height + 10px);
     color: $gray;
     @include border-radius($inputBorderRadius);
     vertical-align: middle;
@@ -142,14 +142,17 @@ select:focus:invalid {
 // -----------------
 // Margin to space out fieldsets
 .control-group {
-    margin-bottom: $baseLineHeight / 2;
+    @include rem(margin-bottom, $base-line-height / 2);
 }
 
 .form__left {
-    margin-right: 110px;
+    @include rem(margin-right, 8rem);
 }
 
 .form__right {
-    width: 100px;
+    @include rem(width, 7rem);
     float: right;
+    .btn {
+        width: 100%;
+    }
 }

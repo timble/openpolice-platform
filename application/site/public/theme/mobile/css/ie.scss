@@ -2,10 +2,6 @@ $old-ie: true;
 $fix-mqs: 998px;
 @import 'default';
 
-#wrap {
-    min-width: 960px;
-}
-
 .container__header {
   .nav li {
     display: block;

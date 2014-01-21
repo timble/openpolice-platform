@@ -5,7 +5,7 @@ table {
     width: 100% !important;
 
     th, td {
-        padding: 8px;
+        @include rem(padding, 0.5rem);
     }
 }
 
@@ -44,13 +44,13 @@ table {
 @include respond-min($navbarCollapseWidth) {
     .table {
         background-color: $tableBackground;
-        margin-bottom: $baseLineHeight;
+        margin-bottom: $base-line-height;
         border: 0 none; // Override default style
         // Cells
         th,
         td {
             display: table-cell !important;
-            line-height: $baseLineHeight;
+            line-height: $base-line-height;
             text-align: left;
             vertical-align: top;
         }
