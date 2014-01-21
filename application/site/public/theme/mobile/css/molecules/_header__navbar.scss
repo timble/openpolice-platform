@@ -27,7 +27,7 @@
     text-decoration: none;
     display: block;
     border-bottom: 1px solid $blue;
-    @include rem(padding, 13px 20px);
+    padding: 13px 20px;
     font-weight: bold;
     color: $navbarLinkColor;
 }
@@ -56,8 +56,8 @@
 
     .navbar__logo {
         float: right;
-        @include rem(padding-right, 20px);
-        @include rem(line-height, 50px);
+        padding-right: 20px;
+        line-height: 50px;
         color: $white;
         zoom: 1;
 
@@ -73,10 +73,10 @@
     .navbar__handle {
         cursor: pointer;
         float: left;
-        @include rem(padding, 0 1rem);
-        @include rem(height, 50px);
-        @include rem(line-height, 50px);
-        @include rem(font-size, 2.5rem);
+        padding: 0 15px;
+        height: 50px;
+        line-height: 1.25em;
+        font-size: 2.5em;
         color: $white;
         text-align: center;
         border-right: 1px solid $blue;
