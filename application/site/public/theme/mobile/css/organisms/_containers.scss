@@ -57,11 +57,6 @@
 }
 
 .container__footer {
-    .media {
-        margin-top: 0;
-        @include rem(margin-bottom, 1rem);
-    }
-
     .btn {
         float: right;
     }

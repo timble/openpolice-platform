@@ -2,7 +2,7 @@
 // -------------------------
 
 h1, h2, h3, h4, h5, h6 {
-    @include rem(margin, ($base-line-height / 2) 0);
+    margin: ($baseLineHeight / 2) 0;
     line-height: 1.25em;
     font-family: $headingsFontFamily;
     font-weight: normal;
@@ -19,13 +19,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include rem(font-size, 1.8rem);
+    font-size: 1.8em;
 }
 
 h2 {
-    @include rem(font-size, 1.5rem);
+    font-size: 1.5rem;
 }
 
 h3 {
-    @include rem(font-size, 1.25rem);
+    font-size: 1.25rem;
 }

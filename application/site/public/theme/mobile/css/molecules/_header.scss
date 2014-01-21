@@ -7,14 +7,14 @@
 @include respond-min($navbarCollapseWidth) {
     .container__header {
         position: relative;
-        @include rem(margin-bottom, 20px);
+        margin-bottom: 20px;
 
         .text--strong {
-            @include rem(font-size, $fontSizeLarge);
+            font-size: $fontSizeLarge;
         }
 
         .logo {
-            @include rem(padding-top, 26px);
+            padding-top: 26px;
             text-decoration: none;
             color: $linkColor;
             display: block;
@@ -28,19 +28,19 @@
             }
 
             img {
-                @include rem(width, 160px);
+                width: 160px;
                 vertical-align: bottom;
-                @include rem(margin-left, 10px);
+                margin-left: 10px;
             }
 
             div {
-                @include rem(margin-left, 57px);
-                @include rem(margin-top, 3px);
+                margin-left: 57px;
+                margin-top: 3px;
             }
         }
 
         .slogan {
-            @include rem(margin, 25px 0 10px);
+            margin: 25px 0 10px;
             display: block;
             text-align: center;
 
@@ -61,7 +61,7 @@
 
         .container__content {
             // Increase padding between sticky header and content
-            @include rem(padding-top, $navbarHeight + ($gutter-width / 1.5));
+            padding-top: $navbarHeight + ($gutter-width / 1.5);
         }
     }
 }
