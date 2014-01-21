@@ -45,7 +45,7 @@ $sansFontFamily: Helvetica, sans-serif;
 $serifFontFamily: Georgia, "Times New Roman", Times, serif;
 $monoFontFamily: Monaco, Menlo, Consolas, "Courier New", monospace;
 
-$base-font-size: 14px;
+$base-font-size: 15px;
 $base-line-height: $base-font-size * 1.5;
 $baseFontFamily: $sansFontFamily !default;
 
@@ -116,7 +116,7 @@ $tableBorder: #ddd !default;
 $navbarCollapseWidth: 767px;
 $navbarCollapseDesktopWidth: $navbarCollapseWidth + 1;
 
-$navbarHeight: 32px;
+$navbarHeight: 2.5;
 $navbarBackgroundHighlight: lighten($blue, 12%);
 $navbarBackground: lighten($blue, 3%);
 $navbarBorder: darken($navbarBackground, 16%);

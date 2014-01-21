@@ -12,8 +12,8 @@
 // Float li to make thumbnails appear in a row
 .thumbnails > li {
     float: left; // Explicity set the float since we don't require .span* classes
-    @include rem(margin-bottom, $base-line-height);
-    @include rem(margin-left, $gutter-width);
+    margin-bottom: $base-line-height;
+    margin-left: $base-line-height;
 }
 
 // The actual thumbnail (can be `a` or `div`)

@@ -31,13 +31,13 @@
 // Media image alignment
 // -------------------------
 .media__object {
-    @include rem(margin-right, 10px);
+    @include rem(margin-right, 1rem);
     float: left;
     display: block;
-    @include rem(width, 64px); // IE7
+    width: 64px; // IE7
 }
 
 // No media image
 .media--imageless .media-body {
-    @include rem(margin-left, 97px);
+    margin-left: 97px;
 }

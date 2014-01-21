@@ -19,13 +19,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include rem(font-size, 1.8);
+    @include rem(font-size, 1.8rem);
 }
 
 h2 {
-    @include rem(font-size, 1.5);
+    @include rem(font-size, 1.5rem);
 }
 
 h3 {
-    @include rem(font-size, 1.25);
+    @include rem(font-size, 1.25rem);
 }

@@ -146,10 +146,13 @@ select:focus:invalid {
 }
 
 .form__left {
-    @include rem(margin-right, 110px);
+    @include rem(margin-right, 8rem);
 }
 
 .form__right {
-    @include rem(width, 100px);
+    @include rem(width, 7rem);
     float: right;
+    .btn {
+        width: 100%;
+    }
 }
