@@ -1311,13 +1311,13 @@ select:focus:invalid:focus {
   }
   /* line 62, molecules/_header.scss */
   .js-enabled .container__content {
-    padding-top: 5.5em;
-    padding-top: 5.5em;
+    padding-top: 4.5em;
+    padding-top: 4.5em;
   }
 }
 /* line 5, molecules/_header__navbar.scss */
 .navbar {
-  min-height: 1.25;
+  min-height: 1.25em;
   width: 100%;
   background-color: #0054ae;
   border-bottom: 1px solid #004d9f;
