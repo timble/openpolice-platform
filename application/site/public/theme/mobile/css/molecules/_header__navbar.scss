@@ -75,8 +75,8 @@
         float: left;
         @include rem(padding, 0 1rem);
         @include rem(height, 50px);
-        @include rem(line-height, 45px);
-        @include rem(font-size, 3rem);
+        @include rem(line-height, 50px);
+        @include rem(font-size, 2.5rem);
         color: $white;
         text-align: center;
         border-right: 1px solid $blue;
