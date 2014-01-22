@@ -13,14 +13,13 @@
 .thumbnails > li {
     float: left; // Explicity set the float since we don't require .span* classes
     margin-bottom: $baseLineHeight;
-    margin-left: $gutter-width;
+    margin-left: $baseLineHeight;
 }
 
 // The actual thumbnail (can be `a` or `div`)
 .thumbnail {
     display: block;
     padding: 4px;
-    line-height: $baseLineHeight;
     border: 1px solid #ddd !important;
     @include border-radius($baseBorderRadius);
     @include box-shadow(0 1px 3px rgba(0, 0, 0, .055));

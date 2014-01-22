@@ -3,7 +3,7 @@
 // Inner for background effects
 // Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
 .navbar {
-    min-height: $navbarHeight;
+    min-height: $navbarHeight / 2;
     width: 100%;
     background-color: $navbarBackground;
     border-bottom: 1px solid $blue;
@@ -66,17 +66,17 @@
         }
 
         img {
-            margin-right: 6px;
+            @include rem(margin-right, 6px);
         }
     }
 
     .navbar__handle {
         cursor: pointer;
         float: left;
+        padding: 0 15px;
         height: 50px;
-        width: 56px;
-        line-height: 50px;
-        font-size: 30px;
+        line-height: 1.25em;
+        font-size: 2.5em;
         color: $white;
         text-align: center;
         border-right: 1px solid $blue;
@@ -104,7 +104,7 @@
         }
         .nav li a {
             text-align: center;
-            padding: (($navbarHeight - $baseLineHeight) / 2) 15px (($navbarHeight - $baseLineHeight) / 2);
+            padding: 5px 15px 5px;
             border: 0 none;
             font-weight: normal;
         }

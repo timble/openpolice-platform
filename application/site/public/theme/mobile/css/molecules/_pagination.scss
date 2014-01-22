@@ -24,8 +24,7 @@
 .pagination ul > li > a,
 .pagination ul > li > span {
     float: left; // Collapse white-space
-    padding: 4px 12px;
-    line-height: $baseLineHeight;
+    padding: 0.3em 1em;
     text-decoration: none;
     border: 1px solid $paginationBorder;
     @include border-radius(5px);
