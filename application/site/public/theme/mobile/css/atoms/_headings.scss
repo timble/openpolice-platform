@@ -2,7 +2,7 @@
 // -------------------------
 
 h1, h2, h3, h4, h5, h6 {
-    margin: ($baseLineHeight / 2) 0;
+    margin: 0 0 ($baseLineHeight / 2) 0;
     line-height: 1.25em;
     font-family: $headingsFontFamily;
     font-weight: normal;
@@ -19,13 +19,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 1.75em;
+    font-size: 1.666666667em;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.25em;
 }

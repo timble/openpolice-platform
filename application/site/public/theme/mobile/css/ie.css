@@ -256,7 +256,7 @@ textarea {
 
 /* line 26, organisms/_containers.scss */
 .container__content {
-  padding-top: 25px;
+  padding-top: 37.5px;
   padding-bottom: 25px;
 }
 /* line 31, organisms/_containers.scss */
@@ -621,7 +621,7 @@ figure {
 
 /* line 4, atoms/_headings.scss */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.75em 0;
+  margin: 0 0 0.75em 0;
   line-height: 1.25em;
   font-family: inherit;
   font-weight: normal;
@@ -641,17 +641,17 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 /* line 21, atoms/_headings.scss */
 h1 {
-  font-size: 1.75em;
+  font-size: 1.666666667em;
 }
 
 /* line 25, atoms/_headings.scss */
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 
 /* line 29, atoms/_headings.scss */
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.25em;
 }
 
 /* line 1, atoms/_html.scss */
@@ -683,7 +683,7 @@ a:focus {
 
 /* line 10, molecules/_article.scss */
 .article__header {
-  margin-bottom: 1em;
+  margin-bottom: 0.65em;
 }
 /* line 13, molecules/_article.scss */
 .article__header h1 {
