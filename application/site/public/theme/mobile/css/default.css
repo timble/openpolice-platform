@@ -394,8 +394,8 @@ textarea {
   /* line 69, utilities/_desktop.scss */
   .container__quicklinks {
     border-top: 1px solid #eeeeee;
-    padding-top: 14px;
-    margin-top: 3em;
+    padding-top: 1.5em;
+    margin-top: 1.5em;
   }
 
   /* line 75, utilities/_desktop.scss */

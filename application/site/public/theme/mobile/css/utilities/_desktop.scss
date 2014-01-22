@@ -68,8 +68,8 @@
 
     .container__quicklinks {
         border-top: 1px solid $grayLighter;
-        padding-top: 14px;
-        margin-top: $gutter-width;
+        padding-top: $gutter-width / 2;
+        margin-top: $gutter-width / 2;
     }
 
     .container__footer {
