@@ -399,7 +399,7 @@ textarea {
 
 /* line 75, utilities/_desktop.scss */
 .container__footer {
-  padding-top: 1em;
+  padding-top: 1.5em;
   background-color: #f8f8f8;
   border-top: 1px solid gainsboro;
   -webkit-border-radius: 0 0 5px 5px;
