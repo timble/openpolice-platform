@@ -24,7 +24,7 @@
 }
 
 .container__content {
-    padding-top: $grid-padding;
+    padding-top: $grid-padding * 1.5;
     padding-bottom: $grid-padding;
 
     &.police {
