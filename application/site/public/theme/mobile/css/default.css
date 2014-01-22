@@ -280,7 +280,7 @@ textarea {
   padding: 3px 20px;
   text-align: center;
   border-top: 1px solid gainsboro;
-  font-size: 12.75px;
+  font-size: 11.9px;
 }
 /* line 54, organisms/_containers.scss */
 .container__copyright a {
@@ -288,6 +288,11 @@ textarea {
 }
 
 /* line 60, organisms/_containers.scss */
+.container__footer .media {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+/* line 65, organisms/_containers.scss */
 .container__footer .btn {
   float: right;
 }
@@ -551,46 +556,46 @@ address {
 
 /* line 8, atoms/_type.scss */
 p {
-  margin: 0 0 1.5em 0;
+  margin: 0 0 11px;
 }
 
-/* line 15, atoms/_type.scss */
+/* line 16, atoms/_type.scss */
 small {
-  font-size: 12.75px;
+  font-size: 85%;
 }
 
-/* line 19, atoms/_type.scss */
+/* line 20, atoms/_type.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 23, atoms/_type.scss */
+/* line 24, atoms/_type.scss */
 em {
   font-style: italic;
 }
 
-/* line 27, atoms/_type.scss */
+/* line 28, atoms/_type.scss */
 cite {
   font-style: normal;
 }
 
-/* line 32, atoms/_type.scss */
+/* line 33, atoms/_type.scss */
 .muted, .article__header .timestamp, .text--small {
   color: #505050;
 }
 
-/* line 36, atoms/_type.scss */
+/* line 37, atoms/_type.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 44, atoms/_type.scss */
+/* line 45, atoms/_type.scss */
 ul, ol {
   padding: 0;
-  margin: 0 0 1.5em 2em;
+  margin: 0 0 11px 25px;
 }
 
-/* line 52, atoms/_type.scss */
+/* line 53, atoms/_type.scss */
 ul ul,
 ul ol,
 ol ol,
@@ -598,9 +603,14 @@ ol ul {
   margin-bottom: 0;
 }
 
-/* line 60, atoms/_type.scss */
+/* line 57, atoms/_type.scss */
+li {
+  line-height: 22px;
+}
+
+/* line 65, atoms/_type.scss */
 hr {
-  margin: 1.5em 0;
+  margin: 22px 0;
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid white;
@@ -609,8 +619,8 @@ hr {
 /* line 1, atoms/_body.scss */
 body {
   font-family: Helvetica, sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 14px;
+  line-height: 22px;
   color: #222222;
   background-color: #eeeeee;
   margin: 0;
@@ -623,10 +633,10 @@ figure {
 
 /* line 4, atoms/_headings.scss */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.75em 0;
-  line-height: 1.25em;
+  margin: 11px 0;
   font-family: inherit;
   font-weight: normal;
+  line-height: 24px;
   color: inherit;
   text-rendering: optimizelegibility;
 }
@@ -643,22 +653,22 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 /* line 21, atoms/_headings.scss */
 h1 {
-  font-size: 1.8em;
+  font-size: 24px;
 }
 
 /* line 25, atoms/_headings.scss */
 h2 {
-  font-size: 1.5rem;
+  font-size: 20px;
 }
 
 /* line 29, atoms/_headings.scss */
 h3 {
-  font-size: 1.25rem;
+  font-size: 18px;
 }
 
 /* line 1, atoms/_html.scss */
 html {
-  font-size: 15px;
+  font-size: 100.01%;
 }
 
 /* line 1, atoms/_a.scss */
@@ -679,36 +689,44 @@ a:focus {
   margin-bottom: 3em;
 }
 /* line 5, molecules/_article.scss */
+.article h2 {
+  margin-top: 30px;
+}
+/* line 8, molecules/_article.scss */
+.article h3 {
+  margin-top: 20px;
+}
+/* line 12, molecules/_article.scss */
 .article p img[align="right"] {
-  margin: 0 0 1.5em 1.5em;
+  margin: 0 0 20px 20px;
 }
 
-/* line 10, molecules/_article.scss */
+/* line 17, molecules/_article.scss */
 .article__header {
-  margin-bottom: 1em;
+  margin-bottom: 15px;
 }
-/* line 13, molecules/_article.scss */
+/* line 20, molecules/_article.scss */
 .article__header h1 {
   margin-bottom: 0;
 }
-/* line 17, molecules/_article.scss */
+/* line 24, molecules/_article.scss */
 .article__header .timestamp {
   padding-top: 4px;
-  font-size: 12.75px;
+  font-size: 11.9px;
 }
 
-/* line 25, molecules/_article.scss */
+/* line 32, molecules/_article.scss */
 .article__introtext,
 .entry-summary {
   font-weight: bold;
-  margin-bottom: 1.5em;
+  margin-bottom: 22px;
 }
 
-/* line 30, molecules/_article.scss */
+/* line 37, molecules/_article.scss */
 .article__thumbnail {
   float: right;
   max-width: 40%;
-  margin: 0 0 1.5em 1.5em;
+  margin: 0 0 20px 20px;
 }
 
 /* line 1, molecules/_banner.scss */
@@ -724,17 +742,16 @@ a:focus {
 
 /* line 1, molecules/_breadcrumbs.scss */
 .breadcrumb {
-  font-size: 0.85em;
-  line-height: 2.5em;
-  padding: 0 1em;
-  margin: 0.25em 0 0 0;
+  font-size: 0.9em;
+  padding: 4px 15px;
+  margin: 4px 0 0 0;
   list-style: none;
   background-color: #f8f8f8;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 9, molecules/_breadcrumbs.scss */
+/* line 8, molecules/_breadcrumbs.scss */
 .breadcrumb > li {
   display: inline-block;
   *display: inline;
@@ -742,8 +759,9 @@ a:focus {
   *zoom: 1;
   text-shadow: 0 1px 0 white;
 }
-/* line 13, molecules/_breadcrumbs.scss */
+/* line 12, molecules/_breadcrumbs.scss */
 .breadcrumb > li > .divider {
+  padding: 0 5px;
   color: #ccc;
 }
 /* line 17, molecules/_breadcrumbs.scss */
@@ -759,6 +777,8 @@ a:focus {
 .btn {
   padding: 4px 12px;
   margin-bottom: 0;
+  font-size: 14px;
+  line-height: 22px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -769,12 +789,12 @@ a:focus {
   background-color: #0054ae;
   color: white;
 }
-/* line 17, molecules/_buttons.scss */
+/* line 19, molecules/_buttons.scss */
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
   color: white;
   background-color: #006bdc;
 }
-/* line 25, molecules/_buttons.scss */
+/* line 27, molecules/_buttons.scss */
 .btn:hover, .btn:focus, .btn:active {
   text-decoration: none;
   background-position: 0 -15px;
@@ -783,13 +803,13 @@ a:focus {
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
 }
-/* line 35, molecules/_buttons.scss */
+/* line 37, molecules/_buttons.scss */
 .btn:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-/* line 41, molecules/_buttons.scss */
+/* line 43, molecules/_buttons.scss */
 .btn.disabled, .btn[disabled] {
   cursor: default;
   background-image: none;
@@ -800,35 +820,35 @@ a:focus {
   box-shadow: none;
 }
 
-/* line 50, molecules/_buttons.scss */
+/* line 52, molecules/_buttons.scss */
 .btn-large {
   padding: 11px 19px;
-  font-size: 18.75px;
+  font-size: 17.5px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
 
-/* line 60, molecules/_buttons.scss */
+/* line 62, molecules/_buttons.scss */
 button.btn,
 input[type="submit"].btn {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
-/* line 63, molecules/_buttons.scss */
+/* line 65, molecules/_buttons.scss */
 button.btn::-moz-focus-inner,
 input[type="submit"].btn::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
-/* line 72, molecules/_buttons.scss */
+/* line 74, molecules/_buttons.scss */
 button.btn.btn-small,
 input[type="submit"].btn.btn-small {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
 
-/* line 84, molecules/_buttons.scss */
+/* line 86, molecules/_buttons.scss */
 .btn-link,
 .btn-link:active,
 .btn-link[disabled] {
@@ -839,7 +859,7 @@ input[type="submit"].btn.btn-small {
   box-shadow: none;
 }
 
-/* line 89, molecules/_buttons.scss */
+/* line 91, molecules/_buttons.scss */
 .btn-link {
   border-color: transparent;
   cursor: pointer;
@@ -849,7 +869,7 @@ input[type="submit"].btn.btn-small {
   border-radius: 0;
 }
 
-/* line 96, molecules/_buttons.scss */
+/* line 98, molecules/_buttons.scss */
 .btn-link:hover,
 .btn-link:focus {
   color: #002852;
@@ -857,7 +877,7 @@ input[type="submit"].btn.btn-small {
   background-color: transparent;
 }
 
-/* line 102, molecules/_buttons.scss */
+/* line 104, molecules/_buttons.scss */
 .btn-link[disabled]:hover,
 .btn-link[disabled]:focus {
   color: #333333;
@@ -876,16 +896,16 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 1.5em;
-  font-size: 1.5em;
-  line-height: 3em;
+  margin-bottom: 22px;
+  font-size: 21px;
+  line-height: 44px;
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
 /* line 32, molecules/_forms.scss */
 legend small {
-  font-size: 11.25px;
+  font-size: 16.5px;
   color: #999999;
 }
 
@@ -895,9 +915,9 @@ input,
 button,
 select,
 textarea {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
-  line-height: 1.5em;
+  line-height: 22px;
 }
 
 /* line 50, molecules/_forms.scss */
@@ -919,9 +939,10 @@ select,
 textarea,
 input {
   display: inline-block;
-  height: 2.25em;
+  height: 32px;
   padding: 0 6px;
-  line-height: 2.25em;
+  font-size: 14px;
+  line-height: 32px;
   color: #505050;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -932,18 +953,18 @@ input {
   box-sizing: border-box !important;
 }
 
-/* line 80, molecules/_forms.scss */
+/* line 81, molecules/_forms.scss */
 input,
 textarea {
   width: 100%;
 }
 
-/* line 85, molecules/_forms.scss */
+/* line 86, molecules/_forms.scss */
 textarea {
   height: auto;
 }
 
-/* line 92, molecules/_forms.scss */
+/* line 93, molecules/_forms.scss */
 textarea,
 input[type="text"],
 input[type="search"] {
@@ -958,7 +979,7 @@ input[type="search"] {
   transition: border linear 0.2s, box-shadow linear 0.2s;
   -webkit-appearance: none;
 }
-/* line 100, molecules/_forms.scss */
+/* line 101, molecules/_forms.scss */
 textarea:focus,
 input[type="text"]:focus,
 input[type="search"]:focus {
@@ -987,19 +1008,19 @@ textarea::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 117, molecules/_forms.scss */
+/* line 118, molecules/_forms.scss */
 .placeholder {
   color: #999999;
 }
 
-/* line 128, molecules/_forms.scss */
+/* line 129, molecules/_forms.scss */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
 }
-/* line 131, molecules/_forms.scss */
+/* line 132, molecules/_forms.scss */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
@@ -1009,24 +1030,20 @@ select:focus:invalid:focus {
   box-shadow: 0 0 6px #f8b9b7;
 }
 
-/* line 143, molecules/_forms.scss */
+/* line 144, molecules/_forms.scss */
 .control-group {
-  margin-bottom: 0.75em;
+  margin-bottom: 11px;
 }
 
-/* line 147, molecules/_forms.scss */
+/* line 148, molecules/_forms.scss */
 .form__left {
-  margin-right: 8em;
+  margin-right: 110px;
 }
 
-/* line 151, molecules/_forms.scss */
+/* line 152, molecules/_forms.scss */
 .form__right {
-  width: 7em;
+  width: 100px;
   float: right;
-}
-/* line 154, molecules/_forms.scss */
-.form__right .btn {
-  width: 100%;
 }
 
 @media screen and (min-width: 767px) {
@@ -1214,7 +1231,7 @@ select:focus:invalid:focus {
   }
   /* line 12, molecules/_header.scss */
   .container__header .text--strong {
-    font-size: 18.75px;
+    font-size: 17.5px;
   }
   /* line 16, molecules/_header.scss */
   .container__header .logo {
@@ -1260,12 +1277,12 @@ select:focus:invalid:focus {
   }
   /* line 62, molecules/_header.scss */
   .js-enabled .container__content {
-    padding-top: 4.5em;
+    padding-top: 4.4em;
   }
 }
 /* line 5, molecules/_header__navbar.scss */
 .navbar {
-  min-height: 1.25em;
+  min-height: 32px;
   width: 100%;
   background-color: #0054ae;
   border-bottom: 1px solid #004d9f;
@@ -1329,16 +1346,15 @@ select:focus:invalid:focus {
 /* line 68, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo img {
   margin-right: 6px;
-  margin-right: 0.4rem;
 }
 /* line 73, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__handle {
   cursor: pointer;
   float: left;
-  padding: 0 15px;
   height: 50px;
-  line-height: 1.25em;
-  font-size: 2.5em;
+  width: 56px;
+  line-height: 50px;
+  font-size: 30px;
   color: white;
   text-align: center;
   border-right: 1px solid #004d9f;
@@ -1429,23 +1445,28 @@ ul.column--double, ul.column--triple, ul.column--quad {
 /* line 18, molecules/_media.scss */
 .media,
 .media .media {
-  margin-bottom: 1em;
+  margin-top: 15px;
 }
 
-/* line 23, molecules/_media.scss */
+/* line 22, molecules/_media.scss */
+.media:first-child {
+  margin-top: 0;
+}
+
+/* line 27, molecules/_media.scss */
 .media__heading {
   margin: 0 0 5px;
 }
 
-/* line 29, molecules/_media.scss */
+/* line 33, molecules/_media.scss */
 .media__object {
-  margin-right: 1em;
+  margin-right: 10px;
   float: left;
   display: block;
   width: 64px;
 }
 
-/* line 37, molecules/_media.scss */
+/* line 41, molecules/_media.scss */
 .media--imageless .media-body {
   margin-left: 97px;
 }
@@ -1453,7 +1474,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
 /* line 8, molecules/_navs.scss */
 .nav {
   margin-left: 0;
-  margin-bottom: 1.5em;
+  margin-bottom: 22px;
   list-style: none;
 }
 
@@ -1489,15 +1510,17 @@ ul.column--double, ul.column--triple, ul.column--quad {
   padding-right: 12px;
   padding-left: 12px;
   margin-right: 2px;
+  line-height: 14px;
 }
 
-/* line 51, molecules/_navs.scss */
+/* line 52, molecules/_navs.scss */
 .nav-tabs > li > a {
   padding-top: 8px;
   padding-bottom: 8px;
+  line-height: 22px;
 }
 
-/* line 59, molecules/_navs.scss */
+/* line 61, molecules/_navs.scss */
 .nav-tabs > .active > a,
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
@@ -1506,7 +1529,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
   font-weight: bold;
 }
 
-/* line 69, molecules/_navs.scss */
+/* line 71, molecules/_navs.scss */
 .nav-pills > li > a {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -1517,7 +1540,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
   border-radius: 5px;
 }
 
-/* line 80, molecules/_navs.scss */
+/* line 82, molecules/_navs.scss */
 .nav-pills > .active > a,
 .nav-pills > .active > a:hover,
 .nav-pills > .active > a:focus {
@@ -1525,50 +1548,50 @@ ul.column--double, ul.column--triple, ul.column--quad {
   background-color: #004d9f;
 }
 
-/* line 89, molecules/_navs.scss */
+/* line 91, molecules/_navs.scss */
 .nav-stacked > li {
   float: none;
 }
 
-/* line 93, molecules/_navs.scss */
+/* line 95, molecules/_navs.scss */
 .nav-stacked > li > a {
   margin-right: 0;
 }
 
-/* line 98, molecules/_navs.scss */
+/* line 100, molecules/_navs.scss */
 .nav-tabs.nav-stacked > li > a {
   border-bottom: 1px solid #eeeeee;
 }
 
-/* line 102, molecules/_navs.scss */
+/* line 104, molecules/_navs.scss */
 .nav-tabs.nav-stacked > li:last-child > a {
   border-bottom: 0 none;
 }
 
-/* line 107, molecules/_navs.scss */
+/* line 109, molecules/_navs.scss */
 .nav-tabs.nav-stacked > li > a:hover,
 .nav-tabs.nav-stacked > li > a:focus {
   z-index: 2;
 }
 
-/* line 112, molecules/_navs.scss */
+/* line 114, molecules/_navs.scss */
 .nav-pills.nav-stacked > li > a {
   margin-bottom: 3px;
 }
 
-/* line 116, molecules/_navs.scss */
+/* line 118, molecules/_navs.scss */
 .nav-pills.nav-stacked > li:last-child > a {
   margin-bottom: 1px;
 }
 
-/* line 120, molecules/_navs.scss */
+/* line 122, molecules/_navs.scss */
 .nav--visited a:visited {
   color: #609;
 }
 
 /* line 6, molecules/_pagination.scss */
 .pagination {
-  margin: 1.5em 0 0 0;
+  margin: 22px 0 0 0;
 }
 
 /* line 10, molecules/_pagination.scss */
@@ -1591,7 +1614,8 @@ ul.column--double, ul.column--triple, ul.column--quad {
 .pagination ul > li > a,
 .pagination ul > li > span {
   float: left;
-  padding: 0.3em 1em;
+  padding: 4px 12px;
+  line-height: 22px;
   text-decoration: none;
   border: 1px solid #dddddd;
   -webkit-border-radius: 5px;
@@ -1599,13 +1623,13 @@ ul.column--double, ul.column--triple, ul.column--quad {
   border-radius: 5px;
 }
 
-/* line 34, molecules/_pagination.scss */
+/* line 35, molecules/_pagination.scss */
 .pagination ul > li > a:hover,
 .pagination ul > li > a:focus {
   background-color: #ebf3f4;
 }
 
-/* line 41, molecules/_pagination.scss */
+/* line 42, molecules/_pagination.scss */
 .pagination ul > .active > a,
 .pagination ul > .active > span,
 .pagination ul > .active > a:hover,
@@ -1615,7 +1639,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
   background-color: white;
 }
 
-/* line 50, molecules/_pagination.scss */
+/* line 51, molecules/_pagination.scss */
 .pagination ul > .disabled > span,
 .pagination ul > .disabled > a,
 .pagination ul > .disabled > a:hover,
@@ -1625,25 +1649,25 @@ ul.column--double, ul.column--triple, ul.column--quad {
   cursor: default;
 }
 
-/* line 57, molecules/_pagination.scss */
+/* line 58, molecules/_pagination.scss */
 .pagination .pagination__previous {
   float: left;
 }
-/* line 61, molecules/_pagination.scss */
+/* line 62, molecules/_pagination.scss */
 .pagination .pagination__next {
   float: right;
 }
-/* line 65, molecules/_pagination.scss */
+/* line 66, molecules/_pagination.scss */
 .pagination .pagination__offset {
   display: none;
 }
 
 @media screen and (min-width: 767px) {
-  /* line 71, molecules/_pagination.scss */
+  /* line 72, molecules/_pagination.scss */
   .pagination {
     text-align: center;
   }
-  /* line 74, molecules/_pagination.scss */
+  /* line 75, molecules/_pagination.scss */
   .pagination ul {
     width: auto;
     border: 1px solid #dddddd;
@@ -1651,7 +1675,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
     -moz-border-radius: 5px;
     border-radius: 5px;
   }
-  /* line 80, molecules/_pagination.scss */
+  /* line 81, molecules/_pagination.scss */
   .pagination ul > li > a {
     border: 0 none;
     -webkit-border-radius: 0;
@@ -1659,25 +1683,25 @@ ul.column--double, ul.column--triple, ul.column--quad {
     border-radius: 0;
     border-right: 1px solid #dddddd;
   }
-  /* line 86, molecules/_pagination.scss */
+  /* line 87, molecules/_pagination.scss */
   .pagination ul > li:first-child a {
     -webkit-border-radius: 5px 0 0 5px;
     -moz-border-radius: 5px 0 0 5px;
     border-radius: 5px 0 0 5px;
   }
-  /* line 90, molecules/_pagination.scss */
+  /* line 91, molecules/_pagination.scss */
   .pagination ul > li:last-child a {
     border-right: 0 none;
     -webkit-border-radius: 0 5px 5px 0;
     -moz-border-radius: 0 5px 5px 0;
     border-radius: 0 5px 5px 0;
   }
-  /* line 96, molecules/_pagination.scss */
+  /* line 97, molecules/_pagination.scss */
   .pagination .pagination__next,
   .pagination .pagination__previous {
     float: none;
   }
-  /* line 100, molecules/_pagination.scss */
+  /* line 101, molecules/_pagination.scss */
   .pagination .pagination__offset {
     display: inline;
   }
@@ -1691,7 +1715,7 @@ table {
 }
 /* line 7, molecules/_table.scss */
 table th, table td {
-  padding: 0.75em;
+  padding: 8px;
 }
 
 /* line 12, molecules/_table.scss */
@@ -1727,14 +1751,14 @@ table th, table td {
   /* line 45, molecules/_table.scss */
   .table {
     background-color: transparent;
-    margin-bottom: 1.5em;
+    margin-bottom: 22px;
     border: 0 none;
   }
   /* line 51, molecules/_table.scss */
   .table th,
   .table td {
     display: table-cell !important;
-    line-height: 1.5em;
+    line-height: 22px;
     text-align: left;
     vertical-align: top;
   }
@@ -1767,14 +1791,15 @@ table th, table td {
 /* line 13, molecules/_thumbnails.scss */
 .thumbnails > li {
   float: left;
-  margin-bottom: 1.5em;
-  margin-left: 1.5em;
+  margin-bottom: 22px;
+  margin-left: 3em;
 }
 
 /* line 20, molecules/_thumbnails.scss */
 .thumbnail, .article__thumbnail {
   display: block;
   padding: 4px;
+  line-height: 22px;
   border: 1px solid #ddd !important;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1788,7 +1813,7 @@ table th, table td {
   transition: all 0.2s ease-in-out;
 }
 
-/* line 31, molecules/_thumbnails.scss */
+/* line 32, molecules/_thumbnails.scss */
 a.thumbnail:hover, a.article__thumbnail:hover,
 a.thumbnail:focus,
 a.article__thumbnail:focus {
@@ -1798,7 +1823,7 @@ a.article__thumbnail:focus {
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
 }
 
-/* line 37, molecules/_thumbnails.scss */
+/* line 38, molecules/_thumbnails.scss */
 .thumbnail > img, .article__thumbnail > img {
   display: block;
   max-width: 100%;
@@ -1806,14 +1831,14 @@ a.article__thumbnail:focus {
   margin-right: auto;
 }
 
-/* line 44, molecules/_thumbnails.scss */
+/* line 45, molecules/_thumbnails.scss */
 .thumbnail .caption, .article__thumbnail .caption {
   padding: 9px;
   color: #505050;
 }
 
 @media screen and (min-width: 767px) {
-  /* line 51, molecules/_thumbnails.scss */
+  /* line 52, molecules/_thumbnails.scss */
   .row-fluid .thumbnails {
     margin-left: 0;
   }
@@ -1836,27 +1861,28 @@ a.article__thumbnail:focus {
 
 /* line 14, molecules/_typography.scss */
 .text--small {
-  font-size: 12.75px;
+  font-size: 0.9em;
 }
 
 /* line 6, molecules/_wells.scss */
 .well {
-  padding: 1.5em;
-  margin-bottom: 1.5em;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
   background-color: #f8f8f8;
   border: 1px solid #ebebeb;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 13, molecules/_wells.scss */
+/* line 14, molecules/_wells.scss */
 .well ul {
   margin-bottom: 0;
 }
 
-/* line 18, molecules/_wells.scss */
+/* line 19, molecules/_wells.scss */
 .well--small {
-  padding: 0.75em 1em;
+  padding: 8px 12px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;

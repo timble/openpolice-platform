@@ -2,13 +2,20 @@
     @extend .clearfix;
     margin-bottom: $gutter-width;
 
+    h2 {
+        margin-top: 30px;
+    }
+    h3 {
+        margin-top: 20px;
+    }
+
     p img[align="right"] {
-        margin: 0 0 $baseLineHeight $baseLineHeight;
+        margin: 0 0 20px 20px;
     }
 }
 
 .article__header {
-    margin-bottom: 1em;
+    margin-bottom: 15px;
 
     h1 {
         margin-bottom: 0;
@@ -30,6 +37,6 @@
 .article__thumbnail {
     float: right;
     max-width: 40%;
-    margin: 0 0 $baseLineHeight $baseLineHeight;
+    margin: 0 0 20px 20px;
     @extend .thumbnail;
 }

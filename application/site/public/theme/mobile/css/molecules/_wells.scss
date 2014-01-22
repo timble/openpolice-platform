@@ -4,8 +4,9 @@
 
 // Base class
 .well {
-    padding: $baseLineHeight;
-    margin-bottom: $baseLineHeight;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
     background-color: $wellBackground;
     border: 1px solid darken($wellBackground, 5%);
     @include border-radius($baseBorderRadius);
@@ -16,6 +17,6 @@
 }
 
 .well--small {
-    padding: 0.75em 1em;
+    padding: 8px 12px;
     @include border-radius($borderRadiusSmall);
 }

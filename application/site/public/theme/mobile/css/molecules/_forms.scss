@@ -22,7 +22,7 @@ legend {
     width: 100%;
     padding: 0;
     margin-bottom: $baseLineHeight;
-    font-size: 1.5em;
+    font-size: $baseFontSize * 1.5;
     line-height: $baseLineHeight * 2;
     color: $grayDark;
     border: 0;
@@ -30,7 +30,7 @@ legend {
 
     // Small
     small {
-        font-size: $base-font-size * 0.75;
+        font-size: $baseLineHeight * .75;
         color: $grayLight;
     }
 }
@@ -41,7 +41,7 @@ input,
 button,
 select,
 textarea {
-    @include font-shorthand($base-font-size, normal, $baseLineHeight); // Set size, weight, line-height here
+    @include font-shorthand($baseFontSize, normal, $baseLineHeight); // Set size, weight, line-height here
 }
 
 input,
@@ -65,9 +65,10 @@ select,
 textarea,
 input {
     display: inline-block;
-    height: $baseLineHeight * 1.5;
+    height: $baseLineHeight + 10px;
     padding: 0 6px;
-    line-height: $baseLineHeight * 1.5;
+    font-size: $baseFontSize;
+    line-height: $baseLineHeight + 10px;
     color: $gray;
     @include border-radius($inputBorderRadius);
     vertical-align: middle;
@@ -145,13 +146,10 @@ select:focus:invalid {
 }
 
 .form__left {
-    margin-right: 8em;
+    margin-right: 110px;
 }
 
 .form__right {
-    width: 7em;
+    width: 100px;
     float: right;
-    .btn {
-        width: 100%;
-    }
 }
