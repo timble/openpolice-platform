@@ -6,15 +6,14 @@
 // -------------------------
 
 p {
-    margin: 0 0 $baseLineHeight / 2;
+    margin: 0 0 $baseLineHeight 0;
 }
 
 // Emphasis & misc
 // -------------------------
 
-// Ex: 14px base font * 85% = about 12px
 small {
-    font-size: 85%;
+    font-size: $fontSizeSmall;
 }
 
 strong {
@@ -44,7 +43,7 @@ cite {
 // Unordered and Ordered lists
 ul, ol {
     padding: 0;
-    margin: 0 0 $baseLineHeight / 2 25px;
+    margin: 0 0 $baseLineHeight 2em;
 }
 
 ul ul,
@@ -52,10 +51,6 @@ ul ol,
 ol ol,
 ol ul {
     margin-bottom: 0;
-}
-
-li {
-    line-height: $baseLineHeight;
 }
 
 // MISC
