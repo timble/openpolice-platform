@@ -14,11 +14,11 @@ $language_short = $language_short[0];
 ?>
 
 <!DOCTYPE HTML>
-<html class="js-disabled" lang="<?= $language; ?>" dir="<?= $direction; ?>">
+<html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
 <?= import('page_head.html') ?>
-<body>
-<script data-inline type="text/javascript">(function(H){H.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement)</script>
+<body id="page" class="no-js">
+<script data-inline type="text/javascript">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.getElementById("page");var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg,"js-enabled")}</script>
 
 <div id="wrap">
     <div class="container container__header">
