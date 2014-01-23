@@ -25,7 +25,8 @@
     <div>
         <label for="created_on"><?= translate('Created on') ?></label>
         <div class="controls">
-            <input type="datetime-local" name="created_on" value="<?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'Y-m-d\TH:i:s')) ?>" />
+            <input id="created_on" type="text" name="created_on" value="<?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'd-m-Y H:i')) ?>" />
+            <script data-inline> $jQuery("#created_on").datetimepicker({format:'d-m-Y H:i'}); </script>
         </div>
     </div>
 </fieldset>

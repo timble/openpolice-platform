@@ -36,7 +36,7 @@ $language_short = $language_short[0];
                 <div class="navbar__handlebar">
                     <div class="navbar__handle">&equiv;</div>
                     <a class="navbar__logo" href="/<?= $site ?>">
-                        <img width="27" height="27" src="assets://application/images/logo-flame.jpg" alt="<?= translate('Police') ?> logo" />
+                        <?= translate('Police') ?>
                         <?= escape($zone->title); ?>
                     </a>
                 </div>
