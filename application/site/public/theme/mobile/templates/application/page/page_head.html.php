@@ -21,6 +21,8 @@
     <link rel="shortcut icon" type="image/png" href="assets://application/images/touch-icon.png" />
     <link rel="apple-touch-icon" type="image/png" href="assets://application/images/touch-icon.png" />
 
+    <script>(function(H){H.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement)</script>
+
     <ktml:title>
     <ktml:meta>
     <ktml:link>
@@ -32,7 +34,6 @@
     <style src="assets://application/css/ie.css" condition="if IE 8" />
     <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
 
-    <script src="assets://application/js/bootup.js" />
     <script src="assets://application/js/jquery.js" />
     <script type="text/javascript">
         var $jQuery = jQuery.noConflict();
