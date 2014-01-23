@@ -83,6 +83,19 @@
     }
 }
 
+// JS dependencies
+.js-enabled {
+    // Hide the navbar
+    .navbar .nav {
+        display: none;
+    }
+
+    // Show the navbar when the handle is clicked
+    .navbar .nav.is-shown {
+        display: block;
+    }
+}
+
 @include respond-min($navbarCollapseWidth) {
     .navbar {
         border-bottom: 0 none;
