@@ -18,6 +18,8 @@ $language_short = $language_short[0];
 
 <?= import('page_head.html') ?>
 <body>
+<script data-inline type="text/javascript">(function(H){H.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement)</script>
+
 <div id="wrap">
     <div class="container container__header">
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
