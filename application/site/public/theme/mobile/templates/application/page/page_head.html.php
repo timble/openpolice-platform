@@ -32,7 +32,6 @@
     <style src="assets://application/css/ie.css" condition="if IE 8" />
     <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
 
-    <script src="assets://application/js/bootup.js" />
     <script src="assets://application/js/jquery.js" />
     <script type="text/javascript">
         var $jQuery = jQuery.noConflict();
