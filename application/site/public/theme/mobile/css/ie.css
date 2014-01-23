@@ -1361,7 +1361,7 @@ select:focus:invalid:focus {
 .js-enabled .navbar .nav.is-shown {
   position: static;
   overflow: auto;
-  clip: none;
+  clip: auto;
   height: auto;
   width: auto;
   margin: 0;
@@ -1383,7 +1383,7 @@ select:focus:invalid:focus {
 .js-enabled .navbar .nav {
   position: static;
   overflow: auto;
-  clip: none;
+  clip: auto;
   height: auto;
   width: auto;
   margin: 0;
@@ -1397,30 +1397,28 @@ select:focus:invalid:focus {
 }
 /* line 128, molecules/_header__navbar.scss */
 .navbar .nav {
-  margin: 0;
   display: table;
-  border: 0 none;
 }
-/* line 133, molecules/_header__navbar.scss */
+/* line 131, molecules/_header__navbar.scss */
 .navbar .nav li {
   display: table-cell;
   width: 1%;
 }
-/* line 137, molecules/_header__navbar.scss */
+/* line 135, molecules/_header__navbar.scss */
 .navbar .nav li a {
   text-align: center;
   padding: 5px 15px 5px;
   border: 0 none;
   font-weight: normal;
 }
-/* line 143, molecules/_header__navbar.scss */
+/* line 141, molecules/_header__navbar.scss */
 .navbar .nav li:first-child a {
   border-left: 0;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
 }
-/* line 147, molecules/_header__navbar.scss */
+/* line 145, molecules/_header__navbar.scss */
 .navbar .nav li:last-child a {
   border-right: 0;
   -webkit-border-radius: 0 4px 4px 0;
