@@ -53,11 +53,12 @@
 
 .navbar__handlebar {
     @extend .clearfix;
+    line-height: 50px;
 
     .navbar__logo {
         float: right;
         padding-right: 20px;
-        line-height: 50px;
+
         color: $white;
         zoom: 1;
 
@@ -75,8 +76,7 @@
         float: left;
         padding: 0 15px;
         height: 50px;
-        line-height: 1.25em;
-        font-size: 2.5em;
+        font-size: 2em;
         color: $white;
         text-align: center;
         border-right: 1px solid $blue;

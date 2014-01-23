@@ -61,7 +61,7 @@
 
         .container__content {
             // Increase padding between sticky header and content
-            padding-top: $navbarHeight + ($gutter-width / 1.5);
+            padding-top: $navbarHeight + $gutter-width;
         }
     }
 }
