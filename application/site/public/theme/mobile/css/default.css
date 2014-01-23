@@ -1260,7 +1260,7 @@ select:focus:invalid:focus {
   }
   /* line 62, molecules/_header.scss */
   .js-enabled .container__content {
-    padding-top: 4.5em;
+    padding-top: 5.5em;
   }
 }
 /* line 5, molecules/_header__navbar.scss */
@@ -1314,31 +1314,33 @@ select:focus:invalid:focus {
   font-weight: bold;
 }
 
-/* line 57, molecules/_header__navbar.scss */
+/* line 54, molecules/_header__navbar.scss */
+.navbar__handlebar {
+  line-height: 50px;
+}
+/* line 58, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo {
   float: right;
   padding-right: 20px;
-  line-height: 50px;
   color: white;
   zoom: 1;
 }
-/* line 64, molecules/_header__navbar.scss */
+/* line 65, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo:hover {
   color: white;
 }
-/* line 68, molecules/_header__navbar.scss */
+/* line 69, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo img {
   margin-right: 6px;
   margin-right: 0.4rem;
 }
-/* line 73, molecules/_header__navbar.scss */
+/* line 74, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__handle {
   cursor: pointer;
   float: left;
   padding: 0 15px;
   height: 50px;
-  line-height: 1.25em;
-  font-size: 2.5em;
+  font-size: 2em;
   color: white;
   text-align: center;
   border-right: 1px solid #004d9f;
