@@ -26,6 +26,8 @@ class NewsViewArticleHtml extends Library\ViewHtml
 
         $this->url = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
 
+        $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getSite())->getRow();
+
         //Get the attachments
         if ($article->id && $article->isAttachable()) {
             $this->attachments($article->getAttachments());

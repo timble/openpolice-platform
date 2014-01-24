@@ -8,8 +8,13 @@
  */
 ?>
 
+<meta content="summary" name="twitter:card" />
+<meta content="@<?= $zone->twitter ?>" name="twitter:site" />
+<meta content="<?= url(); ?>" property="og:url" />
+<meta content="<?= $article->title ?>" property="og:title" />
+<meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
 <? if($article->attachments_attachment_id) : ?>
-<meta property="og:image" content="http://<?= $url ?>attachments://<?= $thumbnail ?>" />
+<meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
 <? endif ?>
 
 <ktml:module position="left">
