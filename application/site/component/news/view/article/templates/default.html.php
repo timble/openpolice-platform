@@ -8,7 +8,9 @@
  */
 ?>
 
-<meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
+<? if($article->attachments_attachment_id) : ?>
+<meta property="og:image" content="http://<?= $url ?>attachments://<?= $thumbnail ?>" />
+<? endif ?>
 
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
