@@ -14,7 +14,7 @@ $language_short = $language_short[0];
 ?>
 
 <!DOCTYPE HTML>
-<html lang="<?= $language; ?>" dir="<?= $direction; ?>">
+<html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns#">
 
 <?= import('page_head.html') ?>
 <body id="page" class="no-js">
