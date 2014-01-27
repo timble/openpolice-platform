@@ -21,8 +21,6 @@
     <link rel="shortcut icon" type="image/png" href="assets://application/images/touch-icon.png" />
     <link rel="apple-touch-icon" type="image/png" href="assets://application/images/touch-icon.png" />
 
-    <script>(function(H){H.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement)</script>
-
     <ktml:title>
     <ktml:meta>
     <ktml:link>

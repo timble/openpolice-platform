@@ -8,7 +8,14 @@
  */
 ?>
 
+<meta content="summary" name="twitter:card" />
+<meta content="@<?= $zone->twitter ?>" name="twitter:site" />
+<meta content="<?= url(); ?>" property="og:url" />
+<meta content="<?= $article->title ?>" property="og:title" />
+<meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
+<? if($article->attachments_attachment_id) : ?>
 <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
+<? endif ?>
 
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
@@ -21,10 +28,6 @@
     <? endforeach ?>
 </ktml:module>
 
-<script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher:'91c73e48-a5e0-43ea-988f-57d099f878c7'});</script>
-
 <title content="replace"><?= $article->title ?></title>
 
 <article class="article hentry">
@@ -33,7 +36,6 @@
         <span class="timestamp">
             <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </span>
-        <span style="float:right" class='st_sharethis' displayText='ShareThis'></span>
     </header>
 
     <? if($article->attachments_attachment_id) : ?>
