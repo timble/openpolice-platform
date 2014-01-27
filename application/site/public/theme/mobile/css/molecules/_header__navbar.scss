@@ -6,7 +6,6 @@
     min-height: $navbarHeight / 2;
     width: 100%;
     background-color: $navbarBackground;
-    border-bottom: 1px solid $blue;
 
     // Prevent floats from breaking the navbar
     @include clearfix();
@@ -17,7 +16,6 @@
 .navbar .nav {
     margin: 0;
     text-align: left;
-    border-top: 1px solid $blue;
     width: 100%;
 }
 
@@ -54,6 +52,7 @@
 .navbar__handlebar {
     @extend .clearfix;
     line-height: 50px;
+    border-bottom: 1px solid $blue;
 
     .navbar__logo {
         float: right;
@@ -86,30 +85,46 @@
 // JS dependencies
 .js-enabled {
     // Hide the navbar
+    /* Don't use display: none to hide elements to keep thing accessible */
     .navbar .nav {
-        display: none;
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px; width: 1px;
+        margin: -1px; padding: 0; border: 0;
     }
 
     // Show the navbar when the handle is clicked
+    /* Don't use display: none to hide elements to keep thing accessible */
     .navbar .nav.is-shown {
-        display: block;
+        position: static;
+        overflow: auto;
+        clip: auto;
+        height: auto; width: auto;
+        margin: 0; padding: 0; border: none;
     }
 }
 
 @include respond-min($navbarCollapseWidth) {
     .navbar {
         border-bottom: 0 none;
-
         border: 1px solid $navbarBorder;
         @include border-radius($baseBorderRadius);
+    }
+
+    /* Don't use display: none to hide elements to keep thing accessible */
+    .js-enabled .navbar .nav {
+        position: static;
+        overflow: auto;
+        clip: auto;
+        height: auto; width: auto;
+        margin: 0; padding: 0; border: none;
     }
 
     .navbar {
         /* Customize the navbar links to be fill the entire space of the .navbar */
         .nav {
-            margin: 0;
             display: table;
-            border: 0 none;
         }
         .nav li {
             display: table-cell;

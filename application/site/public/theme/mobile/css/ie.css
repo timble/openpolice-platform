@@ -1263,21 +1263,19 @@ select:focus:invalid:focus {
   min-height: 1.25em;
   width: 100%;
   background-color: #0054ae;
-  border-bottom: 1px solid #004d9f;
   overflow: hidden;
   *zoom: 1;
   color: white;
 }
 
-/* line 17, molecules/_header__navbar.scss */
+/* line 16, molecules/_header__navbar.scss */
 .navbar .nav {
   margin: 0;
   text-align: left;
-  border-top: 1px solid #004d9f;
   width: 100%;
 }
 
-/* line 25, molecules/_header__navbar.scss */
+/* line 23, molecules/_header__navbar.scss */
 .navbar .nav li a {
   color: white;
   text-decoration: none;
@@ -1288,7 +1286,7 @@ select:focus:invalid:focus {
   color: white;
 }
 
-/* line 37, molecules/_header__navbar.scss */
+/* line 35, molecules/_header__navbar.scss */
 .navbar .nav li a:focus,
 .navbar .nav li a:hover {
   background-color: #006bdc;
@@ -1296,7 +1294,7 @@ select:focus:invalid:focus {
   text-decoration: none;
 }
 
-/* line 46, molecules/_header__navbar.scss */
+/* line 44, molecules/_header__navbar.scss */
 .navbar .nav .active a,
 .navbar .nav .active a:hover,
 .navbar .nav .active a:focus {
@@ -1309,27 +1307,28 @@ select:focus:invalid:focus {
   font-weight: bold;
 }
 
-/* line 54, molecules/_header__navbar.scss */
+/* line 52, molecules/_header__navbar.scss */
 .navbar__handlebar {
   line-height: 50px;
+  border-bottom: 1px solid #004d9f;
 }
-/* line 58, molecules/_header__navbar.scss */
+/* line 57, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo {
   float: right;
   padding-right: 20px;
   color: white;
   zoom: 1;
 }
-/* line 65, molecules/_header__navbar.scss */
+/* line 64, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo:hover {
   color: white;
 }
-/* line 69, molecules/_header__navbar.scss */
+/* line 68, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__logo img {
   margin-right: 6px;
   margin-right: 0.4rem;
 }
-/* line 74, molecules/_header__navbar.scss */
+/* line 73, molecules/_header__navbar.scss */
 .navbar__handlebar .navbar__handle {
   cursor: pointer;
   float: left;
@@ -1341,16 +1340,35 @@ select:focus:invalid:focus {
   border-right: 1px solid #004d9f;
 }
 
+/* line 86, molecules/_header__navbar.scss */
+.js-enabled {
+  /* Don't use display: none to hide elements to keep thing accessible */
+  /* Don't use display: none to hide elements to keep thing accessible */
+}
 /* line 89, molecules/_header__navbar.scss */
 .js-enabled .navbar .nav {
-  display: none;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
-/* line 94, molecules/_header__navbar.scss */
+/* line 99, molecules/_header__navbar.scss */
 .js-enabled .navbar .nav.is-shown {
-  display: block;
+  position: static;
+  overflow: auto;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
-/* line 100, molecules/_header__navbar.scss */
+/* line 109, molecules/_header__navbar.scss */
 .navbar {
   border-bottom: 0 none;
   border: 1px solid #002d5d;
@@ -1359,36 +1377,47 @@ select:focus:invalid:focus {
   border-radius: 4px;
 }
 
-/* line 107, molecules/_header__navbar.scss */
+/* Don't use display: none to hide elements to keep thing accessible */
+/* line 116, molecules/_header__navbar.scss */
+.js-enabled .navbar .nav {
+  position: static;
+  overflow: auto;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* line 124, molecules/_header__navbar.scss */
 .navbar {
   /* Customize the navbar links to be fill the entire space of the .navbar */
 }
-/* line 109, molecules/_header__navbar.scss */
+/* line 126, molecules/_header__navbar.scss */
 .navbar .nav {
-  margin: 0;
   display: table;
-  border: 0 none;
 }
-/* line 114, molecules/_header__navbar.scss */
+/* line 129, molecules/_header__navbar.scss */
 .navbar .nav li {
   display: table-cell;
   width: 1%;
 }
-/* line 118, molecules/_header__navbar.scss */
+/* line 133, molecules/_header__navbar.scss */
 .navbar .nav li a {
   text-align: center;
   padding: 5px 15px 5px;
   border: 0 none;
   font-weight: normal;
 }
-/* line 124, molecules/_header__navbar.scss */
+/* line 139, molecules/_header__navbar.scss */
 .navbar .nav li:first-child a {
   border-left: 0;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   border-radius: 4px 0 0 4px;
 }
-/* line 128, molecules/_header__navbar.scss */
+/* line 143, molecules/_header__navbar.scss */
 .navbar .nav li:last-child a {
   border-right: 0;
   -webkit-border-radius: 0 4px 4px 0;
