@@ -23,26 +23,26 @@
     <article class="article">
         <? $link = helper('route.article', array('row' => $article)); ?>
         <header class="article__header">
-            <h1><a id="ga-article<?= $article->id ?>-title" href="<?= $link ?>"><?= $article->title ?></a></h1>
+            <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
             <div class="timestamp">
                 <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
             </div>
         </header>
 
         <? if($article->attachments_attachment_id): ?>
-        <a id="ga-article<?= $article->id ?>-image" class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-            <figure>
-                <?= helper('com:attachments.image.thumbnail', array(
-                    'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('width' => '200', 'height' => '150'))) ?>
-            </figure>
-        </a>
+            <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+                <figure>
+                    <?= helper('com:attachments.image.thumbnail', array(
+                        'attachment' => $article->attachments_attachment_id,
+                        'attribs' => array('width' => '200', 'height' => '150'))) ?>
+                </figure>
+            </a>
         <? endif; ?>
 
         <?= $article->introtext ?>
 
         <? if ($article->fulltext) : ?>
-            <a id="ga-article<?= $article->id ?>-readmore" href="<?= $link ?>"><?= translate('Read more') ?></a>
+            <a href="<?= $link ?>"><?= translate('Read more') ?></a>
         <? endif; ?>
     </article>
 <? endforeach; ?>
