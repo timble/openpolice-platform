@@ -44,7 +44,7 @@ location ~* ^/components/com_jce/editor/* {
     expires         max;
 }
 
-location ~* ^/templates/site/* {
+location ~* ^/templates/(default-v0|site)/* {
     root            /var/www/lokalepolitie.be/public;
     access_log      off;
     expires         max;
