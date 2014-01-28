@@ -60,6 +60,10 @@ class Migration extends \Phpmig\Migration\Migration
         {
             $db = 'v2_'.$zone;
 
+            if(!$this->_databaseExists($db)) {
+                continue;
+            }
+
             $sql = 'USE ' . $db .';';
             $sql .= $this->_queries;
 
@@ -70,5 +74,21 @@ class Migration extends \Phpmig\Migration\Migration
 
         // Move back to the original database
         $adapter->exec('USE ' . $database);
+    }
+
+    protected function _databaseExists($database)
+    {
+        $container = $this->getContainer();
+        $adapter   = $container['db'];
+
+        $query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = " . $adapter->quote($database);
+
+        $result = $adapter->query($query);
+
+        if(!$result) {
+            return false;
+        }
+
+        return $result->rowCount();
     }
 }
