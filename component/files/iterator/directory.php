@@ -121,8 +121,7 @@ class IteratorDirectory extends \DirectoryIterator
 		if ($config->sort === 'modified_on') {
 			uasort($results, array('self', '_sortByDate'));
 		}
-
-        if ($config->sort === 'name') {
+        elseif ($config->sort === 'name') {
             uasort($results, array('self', '_sortByName'));
         }
 		
