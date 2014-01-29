@@ -608,16 +608,31 @@
     *margin-left: -3em;
     display: inline;
   }
+  /* line 58, utilities/_grid.scss */
+  .styleguide-element .thumbnails .thumbnails__item {
+    width: 22.22222%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 62, utilities/_grid.scss */
+  .styleguide-element .thumbnails .thumbnails__item:nth-child(3) {
+    width: 22.22222%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
 }
 @media screen and (min-width: 998px) {
-  /* line 60, utilities/_grid.scss */
+  /* line 68, utilities/_grid.scss */
   .styleguide-element .logo {
     width: 22.22222%;
     float: left;
     margin-right: 3.7037%;
     display: inline;
   }
-  /* line 63, utilities/_grid.scss */
+  /* line 71, utilities/_grid.scss */
   .styleguide-element .navigation {
     width: 74.07407%;
     float: right;
@@ -625,14 +640,14 @@
     *margin-left: -3em;
     display: inline;
   }
-  /* line 67, utilities/_grid.scss */
+  /* line 75, utilities/_grid.scss */
   .styleguide-element .quicklink__item_1, .styleguide-element .quicklink__item_2, .styleguide-element .quicklink__item_3 {
     width: 22.22222%;
     float: left;
     margin-right: 3.7037%;
     display: inline;
   }
-  /* line 70, utilities/_grid.scss */
+  /* line 78, utilities/_grid.scss */
   .styleguide-element .quicklink__item_4 {
     width: 22.22222%;
     float: right;
@@ -1558,11 +1573,11 @@
   display: none;
 }
 /* line 34, molecules/_table.scss */
-.styleguide-element .table-striped tbody tr {
+.styleguide-element .table--striped tbody tr {
   border-top: 1px solid #dddddd;
 }
 /* line 38, molecules/_table.scss */
-.styleguide-element .table-striped tbody > tr:nth-child(odd) {
+.styleguide-element .table--striped tbody > tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 @media screen and (min-width: 767px) {
@@ -1598,20 +1613,19 @@
     border-top: 0;
   }
 }
-/* line 6, molecules/_thumbnails.scss */
+/* line 5, molecules/_thumbnails.scss */
 .styleguide-element .thumbnails {
-  margin-left: -3em;
+  margin-left: 0;
   list-style: none;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 13, molecules/_thumbnails.scss */
+/* line 11, molecules/_thumbnails.scss */
 .styleguide-element .thumbnails > li {
-  float: left;
   margin-bottom: 1.5em;
-  margin-left: 1.5em;
+  margin-left: 0;
 }
-/* line 20, molecules/_thumbnails.scss */
+/* line 18, molecules/_thumbnails.scss */
 .styleguide-element .thumbnail, .styleguide-element .article__thumbnail {
   display: block;
   padding: 4px;
@@ -1627,7 +1641,19 @@
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 31, molecules/_thumbnails.scss */
+/* line 27, molecules/_thumbnails.scss */
+.styleguide-element .thumbnail > img, .styleguide-element .article__thumbnail > img {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 34, molecules/_thumbnails.scss */
+.styleguide-element .thumbnail .caption, .styleguide-element .article__thumbnail .caption {
+  padding: 9px;
+  color: #505050;
+}
+/* line 42, molecules/_thumbnails.scss */
 .styleguide-element a.thumbnail:hover, .styleguide-element a.article__thumbnail:hover,
 .styleguide-element a.thumbnail:focus,
 .styleguide-element a.article__thumbnail:focus {
@@ -1635,24 +1661,6 @@
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-}
-/* line 37, molecules/_thumbnails.scss */
-.styleguide-element .thumbnail > img, .styleguide-element .article__thumbnail > img {
-  display: block;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* line 44, molecules/_thumbnails.scss */
-.styleguide-element .thumbnail .caption, .styleguide-element .article__thumbnail .caption {
-  padding: 9px;
-  color: #505050;
-}
-@media screen and (min-width: 767px) {
-  /* line 51, molecules/_thumbnails.scss */
-  .styleguide-element .row-fluid .thumbnails {
-    margin-left: 0;
-  }
 }
 /* line 1, molecules/_typography.scss */
 .styleguide-element .nowrap {

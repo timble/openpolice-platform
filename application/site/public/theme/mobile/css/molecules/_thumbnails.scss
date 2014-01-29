@@ -2,18 +2,16 @@
 // Thumbnails
 // --------------------------------------------------
 
-// Make wrapper ul behave like the grid
 .thumbnails {
-    margin-left: -$gutter-width;
+    margin-left: 0;
     list-style: none;
     @include clearfix();
-}
 
-// Float li to make thumbnails appear in a row
-.thumbnails > li {
-    float: left; // Explicity set the float since we don't require .span* classes
-    margin-bottom: $baseLineHeight;
-    margin-left: $baseLineHeight;
+    // Float li to make thumbnails appear in a row
+    > li {
+        margin-bottom: $baseLineHeight;
+        margin-left: 0;
+    }
 }
 
 // The actual thumbnail (can be `a` or `div`)
@@ -24,6 +22,19 @@
     @include border-radius($baseBorderRadius);
     @include box-shadow(0 1px 3px rgba(0, 0, 0, .055));
     @include transition(all .2s ease-in-out);
+
+    // Images and captions
+    > img {
+        display: block;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .caption {
+        padding: 9px;
+        color: $gray;
+    }
 }
 
 // Add a hover/focus state for linked versions only
@@ -31,24 +42,4 @@ a.thumbnail:hover,
 a.thumbnail:focus {
     border-color: $linkColor !important;
     @include box-shadow(0 1px 4px rgba(0, 105, 214, .25));
-}
-
-// Images and captions
-.thumbnail > img {
-    display: block;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.thumbnail .caption {
-    padding: 9px;
-    color: $gray;
-}
-
-@include respond-min($navbarCollapseWidth) {
-    // Fluid rows have no left margin
-    .row-fluid .thumbnails {
-        margin-left: 0;
-    }
 }

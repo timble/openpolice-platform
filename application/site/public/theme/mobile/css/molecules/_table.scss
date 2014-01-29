@@ -29,7 +29,7 @@ table {
 }
 
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
-.table-striped {
+.table--striped {
     tbody {
         tr {
             border-top: 1px solid $tableBorder;

@@ -17,7 +17,7 @@
     <ul class="thumbnails">
         <? foreach($list as $item) : ?>
             <? if($item->file->isImage() && !in_array($item->id, Nooku\Library\ObjectConfig::unbox($exclude))) : ?>
-                <li class="span3">
+                <li class="thumbnails__item">
                     <a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Modalbox', 'Image']);" class="thumbnail modal" href="attachments://<?= $item->path; ?>" rel="{handler: 'image'}">
                         <img width="640px" src="attachments://<?= $item->thumbnail ?>" />
                     </a>

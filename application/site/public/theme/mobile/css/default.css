@@ -680,9 +680,26 @@ you can use the generic selector below, but it's slower:
     *margin-left: -3em;
     display: inline;
   }
+
+  /* line 58, utilities/_grid.scss */
+  .thumbnails .thumbnails__item {
+    width: 22.22222%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+
+  /* line 62, utilities/_grid.scss */
+  .thumbnails .thumbnails__item:nth-child(3) {
+    width: 22.22222%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
 }
 @media screen and (min-width: 998px) {
-  /* line 60, utilities/_grid.scss */
+  /* line 68, utilities/_grid.scss */
   .logo {
     width: 22.22222%;
     float: left;
@@ -690,7 +707,7 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 63, utilities/_grid.scss */
+  /* line 71, utilities/_grid.scss */
   .navigation {
     width: 74.07407%;
     float: right;
@@ -699,7 +716,7 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 67, utilities/_grid.scss */
+  /* line 75, utilities/_grid.scss */
   .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
     width: 22.22222%;
     float: left;
@@ -707,7 +724,7 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 70, utilities/_grid.scss */
+  /* line 78, utilities/_grid.scss */
   .quicklink__item_4 {
     width: 22.22222%;
     float: right;
@@ -1708,11 +1725,11 @@ table th, table td {
 }
 
 /* line 34, molecules/_table.scss */
-.table-striped tbody tr {
+.table--striped tbody tr {
   border-top: 1px solid #dddddd;
 }
 /* line 38, molecules/_table.scss */
-.table-striped tbody > tr:nth-child(odd) {
+.table--striped tbody > tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
@@ -1749,22 +1766,20 @@ table th, table td {
     border-top: 0;
   }
 }
-/* line 6, molecules/_thumbnails.scss */
+/* line 5, molecules/_thumbnails.scss */
 .thumbnails {
-  margin-left: -3em;
+  margin-left: 0;
   list-style: none;
   overflow: hidden;
   *zoom: 1;
 }
-
-/* line 13, molecules/_thumbnails.scss */
+/* line 11, molecules/_thumbnails.scss */
 .thumbnails > li {
-  float: left;
   margin-bottom: 1.5em;
-  margin-left: 1.5em;
+  margin-left: 0;
 }
 
-/* line 20, molecules/_thumbnails.scss */
+/* line 18, molecules/_thumbnails.scss */
 .thumbnail, .article__thumbnail {
   display: block;
   padding: 4px;
@@ -1780,8 +1795,20 @@ table th, table td {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
+/* line 27, molecules/_thumbnails.scss */
+.thumbnail > img, .article__thumbnail > img {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 34, molecules/_thumbnails.scss */
+.thumbnail .caption, .article__thumbnail .caption {
+  padding: 9px;
+  color: #505050;
+}
 
-/* line 31, molecules/_thumbnails.scss */
+/* line 42, molecules/_thumbnails.scss */
 a.thumbnail:hover, a.article__thumbnail:hover,
 a.thumbnail:focus,
 a.article__thumbnail:focus {
@@ -1791,26 +1818,6 @@ a.article__thumbnail:focus {
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
 }
 
-/* line 37, molecules/_thumbnails.scss */
-.thumbnail > img, .article__thumbnail > img {
-  display: block;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 44, molecules/_thumbnails.scss */
-.thumbnail .caption, .article__thumbnail .caption {
-  padding: 9px;
-  color: #505050;
-}
-
-@media screen and (min-width: 767px) {
-  /* line 51, molecules/_thumbnails.scss */
-  .row-fluid .thumbnails {
-    margin-left: 0;
-  }
-}
 /* line 1, molecules/_typography.scss */
 .nowrap {
   white-space: nowrap;
