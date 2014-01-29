@@ -32,9 +32,10 @@
 @import "molecules/forms";
 @import "molecules/header";
 @import "molecules/header__navbar";
-@import "molecules/lists";
 @import "molecules/media";
-@import "molecules/navs";
+@import "molecules/navs/nav";
+@import "molecules/navs/nav--list";
+@import "molecules/navs/nav--pills";
 @import "molecules/pagination";
 @import "molecules/table";
 @import "molecules/thumbnails";
