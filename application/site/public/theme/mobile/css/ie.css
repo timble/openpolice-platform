@@ -695,14 +695,13 @@ a:focus {
   font-size: 12.75px;
 }
 
-/* line 25, molecules/_article.scss */
-.article__introtext,
-.entry-summary {
+/* line 24, molecules/_article.scss */
+.article__introtext {
   font-weight: bold;
   margin-bottom: 1.5em;
 }
 
-/* line 30, molecules/_article.scss */
+/* line 29, molecules/_article.scss */
 .article__thumbnail {
   float: right;
   max-width: 40%;

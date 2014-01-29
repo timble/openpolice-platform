@@ -46,7 +46,7 @@
     </figure>
     <? endif ?>
 
-    <div class="entry-summary"><?= $article->introtext ?></div>
+    <div class="article__introtext entry-summary"><?= $article->introtext ?></div>
     <div class="entry-content"><?= $article->fulltext ?></div>
 
     <div class="entry-content-asset">
