@@ -49,5 +49,5 @@
             <input type="text" class="bigdrop" id="autocomplete__streets--footer" placeholder="<?= translate('Search your street') ?> ..." name="street" value="<?= @$_COOKIE ['district_street'] ?>">
         </div>
     </div>
-    <button type="submit" class="btn btn-primary"><?= translate('Search') ?></button>
+    <button type="submit" class="button button--primary"><?= translate('Search') ?></button>
 </form>

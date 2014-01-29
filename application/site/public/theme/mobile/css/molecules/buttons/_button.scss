@@ -1,0 +1,64 @@
+// Base styles
+// --------------------------------------------------
+
+// Core
+.button {
+    padding: 4px 12px;
+    margin-bottom: 0; // For input.button
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    @include border-radius($baseBorderRadius);
+    border: 1px solid $inputBorder;
+    background-color: $white;
+
+    // in these cases the gradient won't cover the background, so we override
+    &:hover, &:focus, &:active, &.active, &.disabled, &[disabled], &.pseudo-class-hover, &.pseudo-class-active {
+        background-color: $grayLighter;
+        border-color: darken($inputBorder, 10%);
+    }
+
+    // Hover/focus state
+    &:hover, &.pseudo-class-hover,
+    &:focus,
+    &:active, &.pseudo-class-active {
+        text-decoration: none;
+        background-position: 0 -15px;
+
+        // transition is only when going to hover/focus, otherwise the background
+        // behind the gradient (there for IE<=9 fallback) gets mismatched
+        @include transition(background-position .1s linear);
+    }
+
+    // Focus state for keyboard and accessibility
+    &:focus {
+        @include tab-focus();
+    }
+
+    // Disabled state
+    &.disabled,
+    &[disabled],
+    &.pseudo-class-disabled {
+        cursor: default;
+        background-image: none;
+        @include opacity(65);
+        @include box-shadow(none);
+    }
+}
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.button,
+input[type="submit"].button {
+
+    // Firefox 3.6 only I believe
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+
+    // IE7 has some default padding on button controls
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+}

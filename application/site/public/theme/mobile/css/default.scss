@@ -23,7 +23,10 @@
 @import "molecules/article";
 @import "molecules/banner";
 @import "molecules/breadcrumbs";
-@import "molecules/buttons";
+@import "molecules/buttons/button";
+@import "molecules/buttons/button--large";
+@import "molecules/buttons/button--link";
+@import "molecules/buttons/button--primary";
 @import "molecules/forms";
 @import "molecules/grid";
 @import "molecules/header";

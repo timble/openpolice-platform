@@ -288,7 +288,7 @@ textarea {
 }
 
 /* line 60, organisms/_containers.scss */
-.container__footer .btn {
+.container__footer .button {
   float: right;
 }
 
@@ -755,27 +755,26 @@ a:focus {
   text-transform: uppercase;
 }
 
-/* line 5, molecules/_buttons.scss */
-.btn {
+/* line 5, molecules/buttons/_button.scss */
+.button {
   padding: 4px 12px;
   margin-bottom: 0;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
-  border: 1px solid #002d5d;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  background-color: #0054ae;
-  color: white;
+  border: 1px solid #cccccc;
+  background-color: white;
 }
-/* line 17, molecules/_buttons.scss */
-.btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
-  color: white;
-  background-color: #006bdc;
+/* line 16, molecules/buttons/_button.scss */
+.button:hover, .button:focus, .button:active, .button.active, .button.disabled, .button[disabled], .button.pseudo-class-hover, .button.pseudo-class-active {
+  background-color: #eeeeee;
+  border-color: #b3b3b3;
 }
-/* line 25, molecules/_buttons.scss */
-.btn:hover, .btn:focus, .btn:active {
+/* line 24, molecules/buttons/_button.scss */
+.button:hover, .button.pseudo-class-hover, .button:focus, .button:active, .button.pseudo-class-active {
   text-decoration: none;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
@@ -783,14 +782,14 @@ a:focus {
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
 }
-/* line 35, molecules/_buttons.scss */
-.btn:focus {
+/* line 34, molecules/buttons/_button.scss */
+.button:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-/* line 41, molecules/_buttons.scss */
-.btn.disabled, .btn[disabled] {
+/* line 41, molecules/buttons/_button.scss */
+.button.disabled, .button[disabled], .button.pseudo-class-disabled {
   cursor: default;
   background-image: none;
   opacity: 0.65;
@@ -800,8 +799,21 @@ a:focus {
   box-shadow: none;
 }
 
-/* line 50, molecules/_buttons.scss */
-.btn-large {
+/* line 53, molecules/buttons/_button.scss */
+button.button,
+input[type="submit"].button {
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+}
+/* line 56, molecules/buttons/_button.scss */
+button.button::-moz-focus-inner,
+input[type="submit"].button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* line 2, molecules/buttons/_button--large.scss */
+.button--large {
   padding: 11px 19px;
   font-size: 18.75px;
   -webkit-border-radius: 6px;
@@ -809,29 +821,10 @@ a:focus {
   border-radius: 6px;
 }
 
-/* line 60, molecules/_buttons.scss */
-button.btn,
-input[type="submit"].btn {
-  *padding-top: 3px;
-  *padding-bottom: 3px;
-}
-/* line 63, molecules/_buttons.scss */
-button.btn::-moz-focus-inner,
-input[type="submit"].btn::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-/* line 72, molecules/_buttons.scss */
-button.btn.btn-small,
-input[type="submit"].btn.btn-small {
-  *padding-top: 3px;
-  *padding-bottom: 3px;
-}
-
-/* line 84, molecules/_buttons.scss */
-.btn-link,
-.btn-link:active,
-.btn-link[disabled] {
+/* line 7, molecules/buttons/_button--link.scss */
+.button--link,
+.button--link:active,
+.button--link[disabled] {
   background-color: transparent;
   background-image: none;
   -webkit-box-shadow: none;
@@ -839,8 +832,8 @@ input[type="submit"].btn.btn-small {
   box-shadow: none;
 }
 
-/* line 89, molecules/_buttons.scss */
-.btn-link {
+/* line 12, molecules/buttons/_button--link.scss */
+.button--link {
   border-color: transparent;
   cursor: pointer;
   color: #004d9f;
@@ -849,19 +842,32 @@ input[type="submit"].btn.btn-small {
   border-radius: 0;
 }
 
-/* line 96, molecules/_buttons.scss */
-.btn-link:hover,
-.btn-link:focus {
+/* line 19, molecules/buttons/_button--link.scss */
+.button--link:hover,
+.button--link:focus {
   color: #002852;
   text-decoration: underline;
   background-color: transparent;
 }
 
-/* line 102, molecules/_buttons.scss */
-.btn-link[disabled]:hover,
-.btn-link[disabled]:focus {
+/* line 25, molecules/buttons/_button--link.scss */
+.button--link[disabled]:hover,
+.button--link[disabled]:focus {
   color: #333333;
   text-decoration: none;
+}
+
+/* line 1, molecules/buttons/_button--primary.scss */
+.button--primary {
+  border: 1px solid #002d5d;
+  background-color: #0054ae;
+  color: white;
+}
+/* line 7, molecules/buttons/_button--primary.scss */
+.button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .button--primary.disabled, .button--primary[disabled], .button--primary.pseudo-class-hover, .button--primary.pseudo-class-active {
+  color: white;
+  background-color: #006bdc;
+  border-color: #002d5d;
 }
 
 /* line 13, molecules/_forms.scss */
@@ -1025,7 +1031,7 @@ select:focus:invalid:focus {
   float: right;
 }
 /* line 154, molecules/_forms.scss */
-.form__right .btn {
+.form__right .button {
   width: 100%;
 }
 
