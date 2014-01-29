@@ -1,39 +1,18 @@
 // Media objects
-// Source: http://stubbornella.org/content/?p=497
 // --------------------------------------------------
 
-// Common styles
-// -------------------------
-
-// Clear the floats
-.media,
-.media__body {
-    overflow: hidden;
-    *overflow: visible;
-    zoom: 1;
-}
-
-// Proper spacing between instances of .media
-.media,
-.media .media {
+.media {
+    @include clearfix();
     margin-bottom: 1em;
 }
 
-// Reset margins on headings for tighter default spacing
 .media__heading {
     margin: 0 0 5px;
 }
 
-// Media image alignment
-// -------------------------
 .media__object {
     margin-right: 1em;
     float: left;
     display: block;
     width: 64px; // IE7
-}
-
-// No media image
-.media--imageless .media-body {
-    margin-left: 97px;
 }

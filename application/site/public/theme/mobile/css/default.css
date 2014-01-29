@@ -1463,36 +1463,24 @@ select:focus:invalid:focus {
     border-radius: 0 4px 4px 0;
   }
 }
-/* line 10, molecules/_media.scss */
-.media,
-.media__body {
+/* line 4, molecules/_media.scss */
+.media {
   overflow: hidden;
-  *overflow: visible;
-  zoom: 1;
-}
-
-/* line 18, molecules/_media.scss */
-.media,
-.media .media {
+  *zoom: 1;
   margin-bottom: 1em;
 }
 
-/* line 23, molecules/_media.scss */
+/* line 9, molecules/_media.scss */
 .media__heading {
   margin: 0 0 5px;
 }
 
-/* line 29, molecules/_media.scss */
+/* line 13, molecules/_media.scss */
 .media__object {
   margin-right: 1em;
   float: left;
   display: block;
   width: 64px;
-}
-
-/* line 37, molecules/_media.scss */
-.media--imageless .media-body {
-  margin-left: 97px;
 }
 
 /* line 8, molecules/navs/_nav.scss */
