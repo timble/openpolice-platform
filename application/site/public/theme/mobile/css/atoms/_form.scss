@@ -1,7 +1,3 @@
-//
-// Forms
-// --------------------------------------------------
-
 // GENERAL STYLES
 // --------------
 
@@ -114,10 +110,6 @@ textarea {
     @include placeholder();
 }
 
-.placeholder {
-    color: $placeholderText;
-}
-
 // FORM FIELD FEEDBACK STATES
 // --------------------------
 
@@ -131,27 +123,5 @@ select:focus:invalid {
     &:focus {
         border-color: darken(#ee5f5b, 10%);
         @include box-shadow(0 0 6px lighten(#ee5f5b, 20%));
-    }
-}
-
-// HORIZONTAL & VERTICAL FORMS
-// ---------------------------
-
-// Common properties
-// -----------------
-// Margin to space out fieldsets
-.control-group {
-    margin-bottom: $baseLineHeight / 2;
-}
-
-.form__left {
-    margin-right: 8em;
-}
-
-.form__right {
-    width: 7em;
-    float: right;
-    .button {
-        width: 100%;
     }
 }

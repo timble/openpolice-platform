@@ -17,6 +17,7 @@
 @import "atoms/type";
 @import "atoms/body";
 @import "atoms/figure";
+@import "atoms/form";
 @import "atoms/headings";
 @import "atoms/html";
 @import "atoms/a";
@@ -24,12 +25,12 @@
 
 @import "molecules/article";
 @import "molecules/banner";
-@import "molecules/breadcrumbs";
+@import "molecules/breadcrumb";
 @import "molecules/button/button";
 @import "molecules/button/button--large";
 @import "molecules/button/button--link";
 @import "molecules/button/button--primary";
-@import "molecules/forms";
+@import "molecules/form";
 @import "molecules/gallery";
 @import "molecules/header";
 @import "molecules/header__navbar";
@@ -42,6 +43,7 @@
 @import "molecules/table/table--striped";
 @import "molecules/thumbnail";
 @import "molecules/typography";
-@import "molecules/wells";
+@import "molecules/well/well";
+@import "molecules/well/well--small";
 
 @import "utilities/print";
