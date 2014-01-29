@@ -1407,12 +1407,12 @@ input[type="submit"].button::-moz-focus-inner {
   border-right: 1px solid #004d9f;
 }
 
-/* line 86, molecules/_navbar.scss */
-.js-enabled {
+/* line 87, molecules/_navbar.scss */
+.js-enabled .navbar {
   /* Don't use display: none to hide elements to keep thing accessible */
   /* Don't use display: none to hide elements to keep thing accessible */
 }
-/* line 89, molecules/_navbar.scss */
+/* line 90, molecules/_navbar.scss */
 .js-enabled .navbar ul {
   position: absolute;
   overflow: hidden;
@@ -1423,7 +1423,7 @@ input[type="submit"].button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
-/* line 99, molecules/_navbar.scss */
+/* line 100, molecules/_navbar.scss */
 .js-enabled .navbar ul.is-shown {
   position: static;
   overflow: auto;
@@ -1436,17 +1436,48 @@ input[type="submit"].button::-moz-focus-inner {
 }
 
 @media screen and (min-width: 767px) {
-  /* line 109, molecules/_navbar.scss */
+  /* line 111, molecules/_navbar.scss */
   .navbar {
     border-bottom: 0 none;
     border: 1px solid #002d5d;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    /* Customize the navbar links to be fill the entire space of the .navbar */
+  }
+  /* line 117, molecules/_navbar.scss */
+  .navbar ul {
+    display: table;
+  }
+  /* line 120, molecules/_navbar.scss */
+  .navbar ul li {
+    display: table-cell;
+    width: 1%;
+  }
+  /* line 124, molecules/_navbar.scss */
+  .navbar ul li a {
+    text-align: center;
+    padding: 5px 15px 5px;
+    border: 0 none;
+    font-weight: normal;
+  }
+  /* line 130, molecules/_navbar.scss */
+  .navbar ul li:first-child a {
+    border-left: 0;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+  }
+  /* line 134, molecules/_navbar.scss */
+  .navbar ul li:last-child a {
+    border-right: 0;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
   }
 
   /* Don't use display: none to hide elements to keep thing accessible */
-  /* line 116, molecules/_navbar.scss */
+  /* line 141, molecules/_navbar.scss */
   .js-enabled .navbar ul {
     position: static;
     overflow: auto;
@@ -1456,41 +1487,6 @@ input[type="submit"].button::-moz-focus-inner {
     margin: 0;
     padding: 0;
     border: none;
-  }
-
-  /* line 124, molecules/_navbar.scss */
-  .navbar {
-    /* Customize the navbar links to be fill the entire space of the .navbar */
-  }
-  /* line 126, molecules/_navbar.scss */
-  .navbar ul {
-    display: table;
-  }
-  /* line 129, molecules/_navbar.scss */
-  .navbar ul li {
-    display: table-cell;
-    width: 1%;
-  }
-  /* line 133, molecules/_navbar.scss */
-  .navbar ul li a {
-    text-align: center;
-    padding: 5px 15px 5px;
-    border: 0 none;
-    font-weight: normal;
-  }
-  /* line 139, molecules/_navbar.scss */
-  .navbar ul li:first-child a {
-    border-left: 0;
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
-  }
-  /* line 143, molecules/_navbar.scss */
-  .navbar ul li:last-child a {
-    border-right: 0;
-    -webkit-border-radius: 0 4px 4px 0;
-    -moz-border-radius: 0 4px 4px 0;
-    border-radius: 0 4px 4px 0;
   }
 }
 /* line 8, molecules/nav/_nav.scss */

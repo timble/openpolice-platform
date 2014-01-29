@@ -84,24 +84,26 @@
 
 // JS dependencies
 .js-enabled {
-    // Hide the navbar
-    /* Don't use display: none to hide elements to keep thing accessible */
-    .navbar ul {
-        position: absolute;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        height: 1px; width: 1px;
-        margin: -1px; padding: 0; border: 0;
-    }
+    .navbar {
+        // Hide the navbar
+        /* Don't use display: none to hide elements to keep thing accessible */
+        ul {
+            position: absolute;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            height: 1px; width: 1px;
+            margin: -1px; padding: 0; border: 0;
+        }
 
-    // Show the navbar when the handle is clicked
-    /* Don't use display: none to hide elements to keep thing accessible */
-    .navbar ul.is-shown {
-        position: static;
-        overflow: auto;
-        clip: auto;
-        height: auto; width: auto;
-        margin: 0; padding: 0; border: none;
+        // Show the navbar when the handle is clicked
+        /* Don't use display: none to hide elements to keep thing accessible */
+        ul.is-shown {
+            position: static;
+            overflow: auto;
+            clip: auto;
+            height: auto; width: auto;
+            margin: 0; padding: 0; border: none;
+        }
     }
 }
 
@@ -110,18 +112,7 @@
         border-bottom: 0 none;
         border: 1px solid $navbarBorder;
         @include border-radius($baseBorderRadius);
-    }
 
-    /* Don't use display: none to hide elements to keep thing accessible */
-    .js-enabled .navbar ul {
-        position: static;
-        overflow: auto;
-        clip: auto;
-        height: auto; width: auto;
-        margin: 0; padding: 0; border: none;
-    }
-
-    .navbar {
         /* Customize the navbar links to be fill the entire space of the .navbar */
         ul {
             display: table;
@@ -144,5 +135,14 @@
             border-right: 0;
             @include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
         }
+    }
+
+    /* Don't use display: none to hide elements to keep thing accessible */
+    .js-enabled .navbar ul {
+        position: static;
+        overflow: auto;
+        clip: auto;
+        height: auto; width: auto;
+        margin: 0; padding: 0; border: none;
     }
 }
