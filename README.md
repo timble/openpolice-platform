@@ -55,8 +55,8 @@ First use the Vagrant command-line interface to access the Secure Shell, see abo
 
 ## Access
 
-* The site application is available at [http://police.dev/5388](http://police.dev/5388).
-* The admin application is available at [http://police.dev/administrator/5388](http://police.dev/administrator/5388).
+* The example site application is available at [http://police.dev/9999](http://police.dev/9999).
+* The example admin application is available at [http://police.dev/administrator/9999](http://police.dev/administrator/9999).
 
     ```
     email: admin@localhost.home
