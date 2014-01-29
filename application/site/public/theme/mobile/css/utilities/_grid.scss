@@ -55,11 +55,11 @@
         @include span-columns(5 omega, 12);
     }
 
-    .thumbnails .thumbnails__item {
+    .gallery .gallery__item {
         @include span-columns(3, 12);
     }
 
-    .thumbnails .thumbnails__item:nth-child(3) {
+    .gallery .gallery__item:nth-child(3) {
         @include span-columns(3 omega, 12);
     }
 }

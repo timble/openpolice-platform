@@ -679,7 +679,7 @@ you can use the generic selector below, but it's slower:
 }
 
 /* line 58, utilities/_grid.scss */
-.thumbnails .thumbnails__item {
+.gallery .gallery__item {
   width: 22.22222%;
   float: left;
   margin-right: 3.7037%;
@@ -687,7 +687,7 @@ you can use the generic selector below, but it's slower:
 }
 
 /* line 62, utilities/_grid.scss */
-.thumbnails .thumbnails__item:nth-child(3) {
+.gallery .gallery__item:nth-child(3) {
   width: 22.22222%;
   float: right;
   margin-right: 0;
@@ -965,7 +965,7 @@ ul.column--quad {
   text-transform: uppercase;
 }
 
-/* line 5, molecules/buttons/_button.scss */
+/* line 5, molecules/button/_button.scss */
 .button {
   padding: 4px 12px;
   margin-bottom: 0;
@@ -978,12 +978,12 @@ ul.column--quad {
   border: 1px solid #cccccc;
   background-color: white;
 }
-/* line 16, molecules/buttons/_button.scss */
+/* line 16, molecules/button/_button.scss */
 .button:hover, .button:focus, .button:active, .button.active, .button.disabled, .button[disabled], .button.pseudo-class-hover, .button.pseudo-class-active {
   background-color: #eeeeee;
   border-color: #b3b3b3;
 }
-/* line 24, molecules/buttons/_button.scss */
+/* line 24, molecules/button/_button.scss */
 .button:hover, .button.pseudo-class-hover, .button:focus, .button:active, .button.pseudo-class-active {
   text-decoration: none;
   background-position: 0 -15px;
@@ -992,13 +992,13 @@ ul.column--quad {
   -o-transition: background-position 0.1s linear;
   transition: background-position 0.1s linear;
 }
-/* line 34, molecules/buttons/_button.scss */
+/* line 34, molecules/button/_button.scss */
 .button:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-/* line 41, molecules/buttons/_button.scss */
+/* line 41, molecules/button/_button.scss */
 .button.disabled, .button[disabled], .button.pseudo-class-disabled {
   cursor: default;
   background-image: none;
@@ -1009,20 +1009,20 @@ ul.column--quad {
   box-shadow: none;
 }
 
-/* line 53, molecules/buttons/_button.scss */
+/* line 53, molecules/button/_button.scss */
 button.button,
 input[type="submit"].button {
   *padding-top: 3px;
   *padding-bottom: 3px;
 }
-/* line 56, molecules/buttons/_button.scss */
+/* line 56, molecules/button/_button.scss */
 button.button::-moz-focus-inner,
 input[type="submit"].button::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 
-/* line 2, molecules/buttons/_button--large.scss */
+/* line 2, molecules/button/_button--large.scss */
 .button--large {
   padding: 11px 19px;
   font-size: 18.75px;
@@ -1031,7 +1031,7 @@ input[type="submit"].button::-moz-focus-inner {
   border-radius: 6px;
 }
 
-/* line 7, molecules/buttons/_button--link.scss */
+/* line 7, molecules/button/_button--link.scss */
 .button--link,
 .button--link:active,
 .button--link[disabled] {
@@ -1042,7 +1042,7 @@ input[type="submit"].button::-moz-focus-inner {
   box-shadow: none;
 }
 
-/* line 12, molecules/buttons/_button--link.scss */
+/* line 12, molecules/button/_button--link.scss */
 .button--link {
   border-color: transparent;
   cursor: pointer;
@@ -1052,7 +1052,7 @@ input[type="submit"].button::-moz-focus-inner {
   border-radius: 0;
 }
 
-/* line 19, molecules/buttons/_button--link.scss */
+/* line 19, molecules/button/_button--link.scss */
 .button--link:hover,
 .button--link:focus {
   color: #002852;
@@ -1060,20 +1060,20 @@ input[type="submit"].button::-moz-focus-inner {
   background-color: transparent;
 }
 
-/* line 25, molecules/buttons/_button--link.scss */
+/* line 25, molecules/button/_button--link.scss */
 .button--link[disabled]:hover,
 .button--link[disabled]:focus {
   color: #333333;
   text-decoration: none;
 }
 
-/* line 1, molecules/buttons/_button--primary.scss */
+/* line 1, molecules/button/_button--primary.scss */
 .button--primary {
   border: 1px solid #002d5d;
   background-color: #0054ae;
   color: white;
 }
-/* line 7, molecules/buttons/_button--primary.scss */
+/* line 7, molecules/button/_button--primary.scss */
 .button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .button--primary.disabled, .button--primary[disabled], .button--primary.pseudo-class-hover, .button--primary.pseudo-class-active {
   color: white;
   background-color: #006bdc;
@@ -1243,6 +1243,19 @@ select:focus:invalid:focus {
 /* line 154, molecules/_forms.scss */
 .form__right .button {
   width: 100%;
+}
+
+/* line 5, molecules/_gallery.scss */
+.gallery {
+  margin-left: 0;
+  list-style: none;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 11, molecules/_gallery.scss */
+.gallery > li {
+  margin-bottom: 1.5em;
+  margin-left: 0;
 }
 
 /* line 2, molecules/_header.scss */
@@ -1493,36 +1506,36 @@ select:focus:invalid:focus {
   width: 64px;
 }
 
-/* line 8, molecules/navs/_nav.scss */
+/* line 8, molecules/nav/_nav.scss */
 .nav {
   margin-left: 0;
   margin-bottom: 1.5em;
   list-style: none;
 }
-/* line 14, molecules/navs/_nav.scss */
+/* line 14, molecules/nav/_nav.scss */
 .nav > li > a {
   display: block;
   text-decoration: none;
 }
-/* line 20, molecules/navs/_nav.scss */
+/* line 20, molecules/nav/_nav.scss */
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
   background-color: #ebf3f4;
 }
 
-/* line 26, molecules/navs/_nav.scss */
+/* line 26, molecules/nav/_nav.scss */
 .nav--visited a:visited {
   color: #609;
 }
 
-/* line 35, molecules/navs/_nav.scss */
+/* line 35, molecules/nav/_nav.scss */
 .nav--list,
 .nav--pills {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 39, molecules/navs/_nav.scss */
+/* line 39, molecules/nav/_nav.scss */
 .nav--list > li > a,
 .nav--list > li > a,
 .nav--pills > li > a,
@@ -1532,17 +1545,17 @@ select:focus:invalid:focus {
   margin-right: 2px;
 }
 
-/* line 5, molecules/navs/_nav--list.scss */
+/* line 5, molecules/nav/_nav--list.scss */
 .nav--list > li > a {
   padding-top: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 11, molecules/navs/_nav--list.scss */
+/* line 11, molecules/nav/_nav--list.scss */
 .nav--list > li:last-child > a {
   border-bottom: 0 none;
 }
-/* line 18, molecules/navs/_nav--list.scss */
+/* line 18, molecules/nav/_nav--list.scss */
 .nav--list > .active > a,
 .nav--list > .active > a:hover,
 .nav--list > .active > a:focus {
@@ -1551,7 +1564,7 @@ select:focus:invalid:focus {
   font-weight: bold;
 }
 
-/* line 6, molecules/navs/_nav--pills.scss */
+/* line 6, molecules/nav/_nav--pills.scss */
 .nav--pills > li > a {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -1561,7 +1574,7 @@ select:focus:invalid:focus {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 17, molecules/navs/_nav--pills.scss */
+/* line 17, molecules/nav/_nav--pills.scss */
 .nav--pills > .active > a,
 .nav--pills > .active > a:hover,
 .nav--pills > .active > a:focus {
@@ -1684,54 +1697,45 @@ select:focus:invalid:focus {
   display: inline;
 }
 
-/* line 1, molecules/_table.scss */
+/* line 1, molecules/table/_table.scss */
 table {
   border-spacing: 0;
   border-collapse: collapse;
   border: 1px solid #eeeeee;
   width: 100% !important;
 }
-/* line 7, molecules/_table.scss */
+/* line 7, molecules/table/_table.scss */
 table th, table td {
   padding: 0.75em;
 }
 
-/* line 12, molecules/_table.scss */
+/* line 12, molecules/table/_table.scss */
 .table {
   max-width: 100%;
   width: 100%;
   border: 0 none;
   /* Hide table headers */
 }
-/* line 17, molecules/_table.scss */
+/* line 17, molecules/table/_table.scss */
 .table td {
   border: none;
 }
-/* line 21, molecules/_table.scss */
+/* line 21, molecules/table/_table.scss */
 .table td:nth-child(n+2) {
   display: none;
 }
-/* line 26, molecules/_table.scss */
+/* line 26, molecules/table/_table.scss */
 .table thead tr {
   display: none;
 }
 
-/* line 34, molecules/_table.scss */
-.table--striped tbody tr {
-  border-top: 1px solid #dddddd;
-}
-/* line 38, molecules/_table.scss */
-.table--striped tbody > tr:nth-child(odd) {
-  background-color: #f9f9f9;
-}
-
-/* line 45, molecules/_table.scss */
+/* line 32, molecules/table/_table.scss */
 .table {
   background-color: transparent;
   margin-bottom: 1.5em;
   border: 0 none;
 }
-/* line 51, molecules/_table.scss */
+/* line 38, molecules/table/_table.scss */
 .table th,
 .table td {
   display: table-cell !important;
@@ -1739,38 +1743,34 @@ table th, table td {
   text-align: left;
   vertical-align: top;
 }
-/* line 58, molecules/_table.scss */
+/* line 45, molecules/table/_table.scss */
 .table th {
   font-weight: bold;
 }
-/* line 62, molecules/_table.scss */
+/* line 49, molecules/table/_table.scss */
 .table thead tr {
   display: table-row;
 }
-/* line 66, molecules/_table.scss */
+/* line 53, molecules/table/_table.scss */
 .table thead th {
   vertical-align: bottom;
 }
-/* line 71, molecules/_table.scss */
+/* line 58, molecules/table/_table.scss */
 .table thead tr th,
 .table thead tr td {
   border-top: 0;
 }
 
-/* line 5, molecules/_thumbnails.scss */
-.thumbnails {
-  margin-left: 0;
-  list-style: none;
-  overflow: hidden;
-  *zoom: 1;
+/* line 4, molecules/table/_table--striped.scss */
+.table--striped tbody tr {
+  border-top: 1px solid #dddddd;
 }
-/* line 11, molecules/_thumbnails.scss */
-.thumbnails > li {
-  margin-bottom: 1.5em;
-  margin-left: 0;
+/* line 8, molecules/table/_table--striped.scss */
+.table--striped tbody > tr:nth-child(odd) {
+  background-color: #f9f9f9;
 }
 
-/* line 18, molecules/_thumbnails.scss */
+/* line 2, molecules/_thumbnail.scss */
 .thumbnail, .article__thumbnail {
   display: block;
   padding: 4px;
@@ -1786,20 +1786,20 @@ table th, table td {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 27, molecules/_thumbnails.scss */
+/* line 11, molecules/_thumbnail.scss */
 .thumbnail > img, .article__thumbnail > img {
   display: block;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 34, molecules/_thumbnails.scss */
+/* line 18, molecules/_thumbnail.scss */
 .thumbnail .caption, .article__thumbnail .caption {
   padding: 9px;
   color: #505050;
 }
 
-/* line 42, molecules/_thumbnails.scss */
+/* line 26, molecules/_thumbnail.scss */
 a.thumbnail:hover, a.article__thumbnail:hover,
 a.thumbnail:focus,
 a.article__thumbnail:focus {

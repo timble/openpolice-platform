@@ -28,19 +28,6 @@ table {
     }
 }
 
-// Default zebra-stripe styles (alternating gray and transparent backgrounds)
-.table--striped {
-    tbody {
-        tr {
-            border-top: 1px solid $tableBorder;
-        }
-
-        > tr:nth-child(odd) {
-            background-color: $tableBackgroundAccent;
-        }
-    }
-}
-
 @include respond-min($navbarCollapseWidth) {
     .table {
         background-color: $tableBackground;
