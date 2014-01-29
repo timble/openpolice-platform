@@ -486,6 +486,161 @@
   text-align: center;
   margin: 3em 0;
 }
+@media screen and (min-width: 767px) {
+  /* line 4, utilities/_grid.scss */
+  .styleguide-element .container {
+    *zoom: 1;
+    max-width: 81em;
+    _width: 81em;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 38, ../../../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  .styleguide-element .container:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* line 9, utilities/_grid.scss */
+  .styleguide-element .sidebar {
+    width: 22.22222%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 12, utilities/_grid.scss */
+  .styleguide-element .component {
+    width: 74.07407%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+  /* line 15, utilities/_grid.scss */
+  .styleguide-element .footer__news {
+    width: 56.79012%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 18, utilities/_grid.scss */
+  .styleguide-element .footer__districts {
+    width: 39.50617%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+  /* line 21, utilities/_grid.scss */
+  .styleguide-element .copyright--left {
+    width: 48.14815%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 24, utilities/_grid.scss */
+  .styleguide-element .copyright--right {
+    width: 48.14815%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+  /* line 28, utilities/_grid.scss */
+  .styleguide-element .quicklink__item_1, .styleguide-element .quicklink__item_3 {
+    width: 48.14815%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 31, utilities/_grid.scss */
+  .styleguide-element .quicklink__item_2, .styleguide-element .quicklink__item_4 {
+    width: 48.14815%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+  /* line 35, utilities/_grid.scss */
+  .styleguide-element .homepage__sticky {
+    width: 65.4321%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 38, utilities/_grid.scss */
+  .styleguide-element .homepage__contact {
+    width: 30.8642%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+  /* line 42, utilities/_grid.scss */
+  .styleguide-element .districts__officer {
+    width: 39.50617%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 46, utilities/_grid.scss */
+  .styleguide-element .districts__contact {
+    width: 56.79012%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+  /* line 50, utilities/_grid.scss */
+  .styleguide-element .exception__message {
+    width: 56.79012%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 54, utilities/_grid.scss */
+  .styleguide-element .exception__image {
+    width: 39.50617%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+}
+@media screen and (min-width: 998px) {
+  /* line 60, utilities/_grid.scss */
+  .styleguide-element .logo {
+    width: 22.22222%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 63, utilities/_grid.scss */
+  .styleguide-element .navigation {
+    width: 74.07407%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+  /* line 67, utilities/_grid.scss */
+  .styleguide-element .quicklink__item_1, .styleguide-element .quicklink__item_2, .styleguide-element .quicklink__item_3 {
+    width: 22.22222%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+  /* line 70, utilities/_grid.scss */
+  .styleguide-element .quicklink__item_4 {
+    width: 22.22222%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+}
 /* line 1, atoms/_address.scss */
 .styleguide-element address {
   font-style: normal;
@@ -615,7 +770,7 @@
 /* line 17, molecules/_article.scss */
 .styleguide-element .article__header .timestamp {
   padding-top: 4px;
-  font-size: 12.75px;
+  font-size: 0.85em;
 }
 /* line 24, molecules/_article.scss */
 .styleguide-element .article__introtext {
@@ -926,161 +1081,6 @@
 /* line 154, molecules/_forms.scss */
 .styleguide-element .form__right .button {
   width: 100%;
-}
-@media screen and (min-width: 767px) {
-  /* line 4, molecules/_grid.scss */
-  .styleguide-element .container {
-    *zoom: 1;
-    max-width: 81em;
-    _width: 81em;
-    padding-left: 25px;
-    padding-right: 25px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
-  .styleguide-element .container:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  /* line 9, molecules/_grid.scss */
-  .styleguide-element .sidebar {
-    width: 22.22222%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 12, molecules/_grid.scss */
-  .styleguide-element .component {
-    width: 74.07407%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
-  /* line 15, molecules/_grid.scss */
-  .styleguide-element .footer__news {
-    width: 56.79012%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 18, molecules/_grid.scss */
-  .styleguide-element .footer__districts {
-    width: 39.50617%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
-  /* line 21, molecules/_grid.scss */
-  .styleguide-element .copyright--left {
-    width: 48.14815%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 24, molecules/_grid.scss */
-  .styleguide-element .copyright--right {
-    width: 48.14815%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
-  /* line 28, molecules/_grid.scss */
-  .styleguide-element .quicklink__item_1, .styleguide-element .quicklink__item_3 {
-    width: 48.14815%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 31, molecules/_grid.scss */
-  .styleguide-element .quicklink__item_2, .styleguide-element .quicklink__item_4 {
-    width: 48.14815%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
-  /* line 35, molecules/_grid.scss */
-  .styleguide-element .homepage__sticky {
-    width: 65.4321%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 38, molecules/_grid.scss */
-  .styleguide-element .homepage__contact {
-    width: 30.8642%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
-  /* line 42, molecules/_grid.scss */
-  .styleguide-element .districts__officer {
-    width: 39.50617%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 46, molecules/_grid.scss */
-  .styleguide-element .districts__contact {
-    width: 56.79012%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
-  /* line 50, molecules/_grid.scss */
-  .styleguide-element .exception__message {
-    width: 56.79012%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 54, molecules/_grid.scss */
-  .styleguide-element .exception__image {
-    width: 39.50617%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
-}
-@media screen and (min-width: 998px) {
-  /* line 60, molecules/_grid.scss */
-  .styleguide-element .logo {
-    width: 22.22222%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 63, molecules/_grid.scss */
-  .styleguide-element .navigation {
-    width: 74.07407%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
-  /* line 67, molecules/_grid.scss */
-  .styleguide-element .quicklink__item_1, .styleguide-element .quicklink__item_2, .styleguide-element .quicklink__item_3 {
-    width: 22.22222%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-  /* line 70, molecules/_grid.scss */
-  .styleguide-element .quicklink__item_4 {
-    width: 22.22222%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -3em;
-    display: inline;
-  }
 }
 /* line 2, molecules/_header.scss */
 .styleguide-element .container__header .logo {
