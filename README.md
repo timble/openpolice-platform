@@ -39,7 +39,7 @@ You can use the following commands to manage the server:
 * ```vagrant reload``` reboots the server
 * ```vagrant halt``` powers the server down
 * ```vagrant suspend``` & ```vagrant resume``` to make the server sleep/wake up
-* ```vangrant destroy``` to stop and destroy all resources of the server
+* ```vagrant destroy``` to stop and destroy all resources of the server
 
 More information about the Vagrant command-line interface can be found at [docs.vagrantup.com](http://docs.vagrantup.com/v2/cli/index.html).
 
@@ -51,6 +51,16 @@ You can use the following commands to manage the platform:
 * ```police reinstall``` to re-create the database
 
 First use the Vagrant command-line interface to access the Secure Shell, see above.
+
+## Database migrations
+
+Database migrations are being managed using [Phpmig](https://github.com/davedevelopment/phpmig). 
+
+The vagrant box will setup everything for you. To make sure you have applied the latest database changes, browse to ```cd <repo>/scripts/phpmig``` and execute ```bin/phpmig migrate```.
+
+To see a list of all migrations and their status, run ```bin/phpmig status```. Use the ```bin/phpmig up <migration ID>```and ```bin/phpmig down <migration ID>``` commands to apply or undo specific migrations.
+
+For more information, please refer to the [Phpmig GitHub page](https://github.com/davedevelopment/phpmig).
 
 
 ## Access
@@ -99,6 +109,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [PageSpeed](http://developers.google.com/speed/pagespeed)
 * [PHP](http://php.net)
 * [PHP-JWT](http://github.com/firebase/php-jwt)
+* [Phpmig](https://github.com/davedevelopment/phpmig)
 * [Sass](http://sass-lang.com)
 * [Select2](http://ivaynberg.github.io/select2)
 * [Susy](http://susy.oddbird.net/)
