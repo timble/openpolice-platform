@@ -1,12 +1,13 @@
-<?
-/**
- * Nooku Framework - http://www.nooku.org
- *
- * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
- * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
- */
-?>
+<? if(!$contact->categories_category_id) : ?>
+<script>
+    // Set default value for categories radiolist
+    $jQuery(document).ready(
+        function(){
+            $jQuery('fieldset[name=categories_category_id] label:first-of-type input:radio').prop('checked', true);
+        }
+    );
+</script>
+<? endif ?>
 
 <fieldset>
     <legend><?= translate('Publish'); ?></legend>
@@ -24,13 +25,13 @@
 </fieldset>
 
 <? if($contact->isAttachable()) : ?>
-    <fieldset>
-        <legend><?= translate('Attachments'); ?></legend>
-        <? if (!$contact->isNew()) : ?>
-            <?= import('com:attachments.view.attachments.list.html', array('attachments' => $contact->getAttachments(), 'assignable' => false)) ?>
-        <? endif ?>
-        <? if(!count($contact->getAttachments())) : ?>
-            <?= import('com:attachments.view.attachments.upload.html') ?>
-        <? endif ?>
-    </fieldset>
+<fieldset>
+    <legend><?= translate('Attachments'); ?></legend>
+    <? if (!$contact->isNew()) : ?>
+        <?= import('com:attachments.view.attachments.list.html', array('attachments' => $contact->getAttachments(), 'assignable' => false)) ?>
+    <? endif ?>
+    <? if(!count($contact->getAttachments())) : ?>
+        <?= import('com:attachments.view.attachments.upload.html') ?>
+    <? endif ?>
+</fieldset>
 <? endif ?>
