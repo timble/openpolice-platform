@@ -17,6 +17,7 @@
 <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
 <? endif ?>
 
+<meta content="<?= $published_on ?>" property="article:published_time" />
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
 
