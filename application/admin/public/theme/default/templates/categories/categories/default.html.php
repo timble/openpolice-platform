@@ -1,37 +1,33 @@
-<?
-/**
- * Nooku Framework - http://www.nooku.org
- *
- * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
- * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
- */
-?>
+<? $disabled = ($state->table == 'contacts' || $state->table == 'traffic') && $this->getObject('user')->getRole() < 25 ?>
 
 <!--
 <script src="assets://js/koowa.js" />
 <style src="assets://css/koowa.css" />
 -->
+<?= helper('behavior.sortable') ?>
 
-<? if($this->getObject('user')->getRole() == 25) : ?>
+<? if(!$disabled): ?>
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
-<? endif ?>
+<? endif; ?>
 
 <? if($state->table == 'articles') : ?>
     <ktml:module position="sidebar">
-        <?= import('com:categories.view.categories.default_sidebar.html'); ?>
+        <?= import('default_sidebar.html'); ?>
     </ktml:module>
 <? endif; ?>
 
 <form action="" method="get" class="-koowa-grid">
     <input type="hidden" name="type" value="<?= $state->type;?>" />
 
-    <?= import('com:categories.view.categories.default_scopebar.html'); ?>
+    <?= import('default_scopebar.html'); ?>
     <table>
         <thead>
         <tr>
+            <? if($state->sort == 'ordering' && $state->direction == 'asc') : ?>
+                <th class="handle"></th>
+            <? endif ?>
             <th width="1">
                 <?= helper('grid.checkall'); ?>
             </th>
@@ -53,9 +49,14 @@
         </tr>
         </tfoot>
 
-        <tbody>
+        <tbody<? if($state->sort == 'ordering' && $state->direction == 'asc') : ?> class="sortable"<? endif ?>>
         <? foreach( $categories as $category) :  ?>
             <tr>
+                <? if($state->sort == 'ordering' && $state->direction == 'asc') : ?>
+                    <td class="handle">
+                        <span class="text-small data-order"><?= $category->ordering ?></span>
+                    </td>
+                <? endif ?>
                 <td align="center">
                     <?= helper( 'grid.checkbox' , array('row' => $category)); ?>
                 </td>
