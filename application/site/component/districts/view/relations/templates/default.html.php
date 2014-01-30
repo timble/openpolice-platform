@@ -21,7 +21,7 @@
         <? endforeach; ?>
     </ul>
     <? if(!count($relations)) : ?>
-        <h2 style="text-align: center;margin: 60px 0"><?= translate('No neighbourhood officer found') ?>.</h2>
+        <h2 role="alert" style="text-align: center;margin: 60px 0"><?= translate('No neighbourhood officer found') ?>.</h2>
         <? $zone = object('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow() ?>
         <? $email = str_replace("@", "&#64;", $zone->email) ?>
         <? $email = str_replace(".", "&#46;", $email) ?>
