@@ -1,0 +1,11 @@
+{
+    "require": {
+        "php": ">=5.3.1",
+        "davedevelopment/phpmig": "*",
+	"pimple/pimple": "1.*"
+    },
+
+    "config": {
+        "bin-dir": "bin/"
+    }
+}

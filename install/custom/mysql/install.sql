@@ -1301,6 +1301,10 @@ CREATE TABLE `data`.`police_zones` (
   PRIMARY KEY (`police_zone_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `data`.`police_zones` (`police_zone_id`, `title`, `language`, `phone_emergency`, `phone_information`, `email`, `chief_name`, `chief_email`, `twitter`, `facebook`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`)
+VALUES
+  (9999, 'Example Zone', 1, NULL, NULL, '9999@zone.police', '', '', '', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
+
 
 DROP TABLE IF EXISTS `data`.`streets`;
 
