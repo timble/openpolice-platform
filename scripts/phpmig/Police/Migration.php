@@ -64,7 +64,7 @@ class Migration extends \Phpmig\Migration\Migration
                 continue;
             }
 
-            $sql = 'USE ' . $db .';';
+            $sql = 'USE `' . $db .'`;';
             $sql .= $this->_queries;
 
             $this->getOutput()->writeln('      => applying to zone <fg=cyan>'.$zone.'</fg=cyan> ('.$title.') ..');
@@ -73,7 +73,7 @@ class Migration extends \Phpmig\Migration\Migration
         }
 
         // Move back to the original database
-        $adapter->exec('USE ' . $database);
+        $adapter->exec('USE `' . $database . '`');
     }
 
     protected function _databaseExists($database)
