@@ -18,6 +18,7 @@
 <? endif ?>
 
 <meta content="<?= $published_on ?>" property="article:published_time" />
+
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
 
@@ -31,26 +32,25 @@
 
 <title content="replace"><?= $article->title ?></title>
 
-<article class="article hentry">
+<article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
-        <h1 class="entry-title"><?= $article->title ?></h1>
-        <span class="timestamp">
+        <h1 itemprop="name"><?= $article->title ?></h1>
+        <time class="timestamp" itemprop="datePublished" datetime="2014-01-29T12:48">
             <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
-        </span>
+        </time>
     </header>
 
     <? if($article->attachments_attachment_id) : ?>
     <figure class="article__thumbnail">
     <?= helper('com:attachments.image.thumbnail', array(
         'attachment' => $article->attachments_attachment_id,
-        'attribs' => array('width' => '200', 'height' => '150'))) ?>
+        'attribs' => array('width' => '200', 'height' => '150', 'itemprop'=> "image"))) ?>
     </figure>
     <? endif ?>
 
-    <div class="entry-summary"><?= $article->introtext ?></div>
-    <div class="entry-content"><?= $article->fulltext ?></div>
-
-    <div class="entry-content-asset">
+    <div itemprop="articleBody">
+        <?= $article->introtext ?>
+        <?= $article->fulltext ?>
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
 </article>
