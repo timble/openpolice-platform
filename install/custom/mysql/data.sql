@@ -96,14 +96,14 @@ VALUES
 	(32,2,0,'Questions','questions','option=com_questions&view=questions',NULL,'component',1,0,0,40,1,'2013-04-28 19:35:06',NULL,NULL,NULL,NULL,0,''),
 	(33,2,0,'Questions','questions','option=com_questions&view=questions',NULL,'component',1,0,0,40,1,'2013-04-28 19:35:47',NULL,NULL,NULL,NULL,0,''),
 	(34,2,0,'Categories','categories','option=com_questions&view=categories',NULL,'component',1,0,0,40,1,'2013-04-28 19:36:02',NULL,NULL,NULL,NULL,0,''),
-	(36,1,0,'Vragen','vragen','option=com_questions&view=questions',NULL,'component',1,0,0,40,1,'2013-04-28 19:37:58',NULL,NULL,NULL,NULL,0,'page_title=\"Veelgestelde vragen\"'),
-	(37,1,0,'Nieuws','nieuws','option=com_news&view=articles',NULL,'component',1,0,0,38,1,'2013-04-28 19:41:46',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
-	(39,1,0,'Verkeer','verkeer','option=com_traffic&view=categories',NULL,'component',1,0,0,37,1,'2013-04-28 19:44:21',NULL,NULL,NULL,NULL,0,'show_create_date=\"0\"\nshow_modify_date=\"0\"\npage_title=\"\"'),
-	(40,1,0,'Over ons','over-ons','option=com_about&view=categories',NULL,'component',1,0,0,43,1,'2013-04-28 19:50:18',NULL,NULL,NULL,NULL,0,'show_create_date=\"0\"\nshow_modify_date=\"0\"\npage_title=\"\"'),
+	(36,1,0,'Questions','questions','option=com_questions&view=questions',NULL,'component',1,0,0,40,1,'2013-04-28 19:37:58',NULL,NULL,NULL,NULL,0,'page_title=\"Veelgestelde vragen\"'),
+	(37,1,0,'News','news','option=com_news&view=articles',NULL,'component',1,0,0,38,1,'2013-04-28 19:41:46',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
+	(39,1,0,'Traffic','traffic','option=com_traffic&view=categories',NULL,'component',1,0,0,37,1,'2013-04-28 19:44:21',NULL,NULL,NULL,NULL,0,'show_create_date=\"0\"\nshow_modify_date=\"0\"\npage_title=\"\"'),
+	(40,1,0,'About us','about-us','option=com_about&view=categories',NULL,'component',1,0,0,43,1,'2013-04-28 19:50:18',NULL,NULL,NULL,NULL,0,'show_create_date=\"0\"\nshow_modify_date=\"0\"\npage_title=\"\"'),
 	(41,1,0,'Contact','contact','option=com_contacts&view=categories',NULL,'component',1,0,0,20,1,'2013-04-28 19:50:47',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
-	(42,1,0,'Commissariaten','commissariaten','option=com_contacts&view=contacts&category=1',NULL,'component',1,0,0,7,1,'2013-04-28 19:52:30',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
-	(43,1,0,'Je wijkinspecteur','je-wijkinspecteur','option=com_districts&view=relations',NULL,'component',1,0,0,36,1,'2013-04-28 19:52:41',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
-	(44,1,0,'Diensten','diensten','option=com_contacts&view=contacts&category=2',NULL,'component',1,0,0,7,1,'2013-04-28 19:52:53',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
+	(42,1,0,'Stations','stations','option=com_contacts&view=contacts&category=1',NULL,'component',1,0,0,7,1,'2013-04-28 19:52:30',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
+	(43,1,0,'Your district officer','your-district-officer','option=com_districts&view=relations',NULL,'component',1,0,0,36,1,'2013-04-28 19:52:41',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
+	(44,1,0,'Services','services','option=com_contacts&view=contacts&category=2',NULL,'component',1,0,0,7,1,'2013-04-28 19:52:53',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
 	(45,2,0,'News','news','option=com_news&view=articles',NULL,'component',1,0,0,38,1,'2013-04-28 20:05:02',NULL,NULL,NULL,NULL,0,''),
 	(47,2,0,'Traffic','traffic','option=com_traffic&view=articles',NULL,'component',1,0,0,37,1,'2013-05-11 15:29:00',NULL,NULL,NULL,NULL,0,'articles_per_page=\"10\"'),
 	(53,2,0,'Districts','districts','option=com_districts&view=districts',NULL,'component',1,0,0,36,1,'2013-05-12 14:37:42',NULL,NULL,NULL,NULL,0,''),
@@ -111,7 +111,7 @@ VALUES
 	(55,2,0,'Officers','officers','option=com_districts&view=officers',NULL,'component',1,0,0,36,1,'2013-05-12 14:38:01',NULL,NULL,NULL,NULL,0,''),
 	(56,2,0,'Relations','relations','option=com_districts&view=relations',NULL,'component',1,0,0,36,1,'2013-05-12 14:38:14',NULL,NULL,NULL,NULL,0,''),
 	(57,2,0,'Streets','streets','option=com_streets&view=streets',NULL,'component',1,0,0,39,1,'2013-05-12 14:38:41',NULL,NULL,NULL,NULL,0,''),
-	(66,1,0,'Noodnummers','noodnummers','option=com_contacts&view=contacts&category=18',NULL,'component',1,0,0,7,1,'2013-05-13 14:28:47',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
+	(66,1,0,'Emergency numbers','emergency-numbers','option=com_contacts&view=contacts&category=18',NULL,'component',1,0,0,7,1,'2013-05-13 14:28:47',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
 	(89,1,0,'Downloads','downloads','option=com_files&view=directory&folder=downloads&layout=table',NULL,'component',1,1,0,19,1,'2013-05-17 12:50:26',NULL,NULL,NULL,NULL,0,'show_folders=\"1\"\nhumanize_filenames=\"1\"\nlimit=\"-1\"\nsort=\"name\"\ndirection=\"asc\"\npage_title=\"\"'),
 	(92,2,0,'Support','support','option=com_zendesk&view=zendesks',NULL,'component',1,0,0,42,1,'2013-09-25 13:36:11',NULL,NULL,NULL,NULL,0,''),
 	(93,2,0,'About us','about-us','option=com_about&view=articles',NULL,'component',1,0,0,43,1,'2013-10-03 14:41:43',NULL,NULL,NULL,NULL,0,''),
@@ -389,7 +389,7 @@ VALUES
 
 INSERT INTO `data`.`police_zones` (`police_zone_id`, `title`, `language`, `phone_emergency`, `phone_information`, `email`, `chief_name`, `chief_email`, `twitter`, `facebook`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`)
 VALUES
-  (9999, 'Example Zone', 1, NULL, NULL, '9999@zone.police', '', '', '', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
+  (9999, 'Example Zone', 1, '123 456 789', NULL, '9999@examplezone.police', '', '', '', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
 
 
 
