@@ -23,8 +23,6 @@ class ForaViewTopicHtml extends Library\ViewHtml
         $topic = $this->getModel()->getData();
         $this->fora_user = $this->getObject('com:fora.model.users')->users_user_id($this->getObject('user')->getId())->site($this->getObject('application')->getSite())->getRow();
 
-        $this->comments = $this->getObject('com:fora.model.comments')->topic($topic->id)->getRowset();
-
         if($this->getObject('com:fora.model.subscriptions')->type('topic')->fora_user_id($this->fora_user->id)->row($topic->id)->getData()->row)
         {
             $this->subscription = true;
@@ -51,9 +49,8 @@ class ForaViewTopicHtml extends Library\ViewHtml
         if($this->getLayout() !== 'form')
         {
             $this->pathways =  $this->getPathway();
+            $this->comments = $this->getObject('com:fora.model.comments')->topic($topic->id)->getRowset();
         }
-
-
 
         return parent::render();
     }
