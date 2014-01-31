@@ -68,7 +68,7 @@ class Backup
         $password = $config->password;
 
         $filename = 'databases'.DS.'daily'.DS.'platform.'.date('Ymd').'.sql.tar';
-        //$filename = $this->_getPath($filename);
+        $filename = $this->_getPath($filename);
 
         // Get a list of all the databases
         $cmd = 'mysql -u'.escapeshellarg($username).' -p'.escapeshellarg($password);
