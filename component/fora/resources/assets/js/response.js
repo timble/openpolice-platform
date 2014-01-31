@@ -43,12 +43,15 @@ Fora.Response = new Class({
     },
 
     complete: function(button) {
-        var data = this.options.data;
-
-        data.action = (data.action == 'delete' ? 'post' : 'delete');
-        button.toggleClass('btn-unrespond').toggleClass('btn-respond');
-
         this.toggleSpinner(button);
+        button.getElement('i').toggleClass('icon-ok').toggleClass('icon-remove')
+        if(button.get('data-action') == 'delete'){
+            button.set('data-action','post');
+            $$('div.anwser').setHTML("");
+        }else{
+            button.set('data-action','delete');
+            $$('div.anwser').set('html',$$("div.comment_"+button.get('data-comment')).getHTML());
+        }
     },
 
     failure: function(button)
