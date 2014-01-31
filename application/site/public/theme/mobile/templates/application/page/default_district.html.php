@@ -38,7 +38,7 @@
             dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
             formatInputTooShort: false,
             formatSearching: function () { return "<?= translate('Please wait') ?> ..."; },
-            formatNoMatches: function () { return "<?= translate('No matches found') ?>"; }
+            formatNoMatches: function () { return "<?= translate('Your street was not found') ?>"; }
         });
     });
 </script>

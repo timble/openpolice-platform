@@ -15,9 +15,24 @@ class TrafficViewArticleHtml extends TrafficViewHtml
         //Get the article
         $article = $this->getModel()->getData();
 
+        //Get the category
+        $category = $this->getCategory();
+
         //Set the pathway
-		$this->getObject('application')->getPathway()->addItem($article->title, '');
+        $this->getObject('application')->getPathway()->addItem($category->title, $this->getTemplate()->getHelper('route')->category(array('row' => $category)));
+        $this->getObject('application')->getPathway()->addItem($article->title, '');
 
         return parent::render();
+    }
+
+    public function getCategory()
+    {
+        //Get the category
+        $category = $this->getObject('com:categories.model.categories')
+            ->table('traffic')
+            ->slug($this->getModel()->getState()->category)
+            ->getRow();
+
+        return $category;
     }
 }

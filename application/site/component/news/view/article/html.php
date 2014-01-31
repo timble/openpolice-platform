@@ -20,14 +20,21 @@ class NewsViewArticleHtml extends Library\ViewHtml
         $this->getObject('application')->getPathway()->addItem($article->title, '');
 
         //Get the thumbnail
-        $this->thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $article->attachments_attachment_id)->load()->thumbnail;
+        if ($article->attachments_attachment_id) {
+            $this->thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $article->attachments_attachment_id)->load()->thumbnail;
+        }
 
         $this->url = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
+
+        $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getSite())->getRow();
 
         //Get the attachments
         if ($article->id && $article->isAttachable()) {
             $this->attachments($article->getAttachments());
         }
+
+        $published_on = new DateTime($article->ordering_date);
+        $this->published_on = $published_on->format('c');
 
         return parent::render();
     }

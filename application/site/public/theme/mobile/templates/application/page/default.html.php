@@ -14,10 +14,12 @@ $language_short = $language_short[0];
 ?>
 
 <!DOCTYPE HTML>
-<html class="js-disabled" lang="<?= $language; ?>" dir="<?= $direction; ?>">
+<html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"">
 
 <?= import('page_head.html') ?>
-<body>
+<body id="page" class="no-js">
+<script data-inline type="text/javascript" pagespeed_no_defer="">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.getElementById("page");var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg,"js-enabled")}</script>
+
 <div id="wrap">
     <div class="container container__header">
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
@@ -36,7 +38,7 @@ $language_short = $language_short[0];
                 <div class="navbar__handlebar">
                     <div class="navbar__handle">&equiv;</div>
                     <a class="navbar__logo" href="/<?= $site ?>">
-                        <img width="27" height="27" src="assets://application/images/logo-flame.jpg" alt="<?= translate('Police') ?> logo" />
+                        <?= translate('Police') ?>
                         <?= escape($zone->title); ?>
                     </a>
                 </div>

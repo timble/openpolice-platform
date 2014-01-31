@@ -3,7 +3,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th>streets_street_id</th>
+            <th>islp</th>
             <th>districts_district_id</th>
             <th>range_start</th>
             <th>range_end</th>

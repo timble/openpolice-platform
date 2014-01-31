@@ -25,10 +25,29 @@ location ~* /sites/+[a-zA-Z0-9]+/images/.* {
 }
 
 # Provides the correct path for the plugins, media, administrator and includes folder
-location ~* /(plugins|media|administrator|includes)/.* {
+location ~* ^/(plugins|media|administrator|includes)/.* {
 	root		/var/www/lokalepolitie.be/public;
 	access_log	off;
 	expires		max;
+}
+
+# Fix: provides the correct paths for com_jce
+location ~* ^/components/com_jce/media/* {
+    root            /var/www/lokalepolitie.be/public/administrator;
+    access_log      off;
+    expires         max;
+}
+
+location ~* ^/components/com_jce/editor/* {
+    root            /var/www/lokalepolitie.be/public;
+    access_log      off;
+    expires         max;
+}
+
+location ~* ^/templates/(default-v0|site)/* {
+    root            /var/www/lokalepolitie.be/public;
+    access_log      off;
+    expires         max;
 }
 
 # Sets maximum expires for admin icons etc.

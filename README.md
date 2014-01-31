@@ -23,7 +23,7 @@ You can run the project with the supplied Vagrantfile - make sure you understand
 * Go to the repository folder where this README is located and bootup the server
     ```$ vagrant up```
 * Go to the following folder ```$ cd install/custom```
-* Install the dependencies by running Composer: ```$ composer install```
+* Install the dependencies by running Composer: ```$ composer install```)
 * Add the following line to your hosts file
     ```192.168.52.10 police.dev phpmyadmin.police.dev```
 
@@ -39,7 +39,7 @@ You can use the following commands to manage the server:
 * ```vagrant reload``` reboots the server
 * ```vagrant halt``` powers the server down
 * ```vagrant suspend``` & ```vagrant resume``` to make the server sleep/wake up
-* ```vangrant destroy``` to stop and destroy all resources of the server
+* ```vagrant destroy``` to stop and destroy all resources of the server
 
 More information about the Vagrant command-line interface can be found at [docs.vagrantup.com](http://docs.vagrantup.com/v2/cli/index.html).
 
@@ -52,11 +52,21 @@ You can use the following commands to manage the platform:
 
 First use the Vagrant command-line interface to access the Secure Shell, see above.
 
+## Database migrations
+
+Database migrations are being managed using [Phpmig](https://github.com/davedevelopment/phpmig). 
+
+The vagrant box will setup everything for you. To make sure you have applied the latest database changes, browse to ```cd <repo>/scripts/phpmig``` and execute ```bin/phpmig migrate```.
+
+To see a list of all migrations and their status, run ```bin/phpmig status```. Use the ```bin/phpmig up <migration ID>```and ```bin/phpmig down <migration ID>``` commands to apply or undo specific migrations.
+
+For more information, please refer to the [Phpmig GitHub page](https://github.com/davedevelopment/phpmig).
+
 
 ## Access
 
-* The site application is available at [http://police.dev/5388](http://police.dev/5388).
-* The admin application is available at [http://police.dev/administrator/5388](http://police.dev/administrator/5388).
+* The example site application is available at [http://police.dev/9999](http://police.dev/9999).
+* The example admin application is available at [http://police.dev/administrator/9999](http://police.dev/administrator/9999).
 
     ```
     email: admin@localhost.home
@@ -99,6 +109,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [PageSpeed](http://developers.google.com/speed/pagespeed)
 * [PHP](http://php.net)
 * [PHP-JWT](http://github.com/firebase/php-jwt)
+* [Phpmig](https://github.com/davedevelopment/phpmig)
 * [Sass](http://sass-lang.com)
 * [Select2](http://ivaynberg.github.io/select2)
 * [Susy](http://susy.oddbird.net/)
