@@ -58,7 +58,7 @@ class Migration extends \Phpmig\Migration\Migration
         // Execute the queries on the selected databases
         foreach($zones as $zone => $title)
         {
-            $db = 'v2_'.$zone;
+            $db = $zone;
 
             if(!$this->_databaseExists($db)) {
                 continue;
