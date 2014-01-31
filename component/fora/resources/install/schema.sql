@@ -108,7 +108,7 @@ CREATE TABLE `fora_users` (
   `check_date` datetime DEFAULT NULL,
   PRIMARY KEY (`fora_user_id`),
   UNIQUE KEY `users_user_id` (`users_user_id`,`site`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Create syntax for TABLE 'fora_votes'
 CREATE TABLE `fora_votes` (
