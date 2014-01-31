@@ -68,17 +68,17 @@ class Backup
         $password = $config->password;
 
         $filename = 'databases'.DS.'daily'.DS.'platform.'.date('Ymd').'.sql.tar';
-        $filename = $this->_getPath($filename);
+        //$filename = $this->_getPath($filename);
 
         // Get a list of all the databases
         $cmd = 'mysql -u'.escapeshellarg($username).' -p'.escapeshellarg($password);
-        $cmd .= ' --raw --skip-column-names -e "SHOW DATABASES;"';
+        $cmd .= ' --raw --skip-column-names -e "SHOW DATABASES LIKE \'____\';"';
 
         exec($cmd, $databases);
 
         foreach($databases as $key => $database)
         {
-            if(substr($database, 0, strlen('v2_')) != 'v2_' && $database != 'data') {
+            if(in_array($database, array('demo'))) {
                 unset($databases[$key]);
             }
         }
