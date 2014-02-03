@@ -11,7 +11,7 @@
 <? $site = object('application')->getCfg('site') ?>
 
 <? foreach ($articles as $article) : ?>
-    <div class="media<?= !$article->thumbnail ? ' media--imageless' : ''; ?>">
+    <div class="media">
         <? if($article->thumbnail): ?>
             <a tabindex="-1" class="media__object thumbnail" href="<?= '/'.$site.'/nieuws/'.$article->id.'-'.$article->slug ?>">
                 <img class="media__object" align="right" width="64" height="50" src="/files/<?= $site ?>/attachments/<?= $article->path; ?>" />

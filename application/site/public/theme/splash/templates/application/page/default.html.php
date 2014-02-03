@@ -71,7 +71,7 @@
 </div>
 <div id="footer">
     <div class="container">
-		<ul class="nav nav-pills">
+		<ul class="nav nav--pills">
 			<li><a href="#">Federale Politie</a></li>
 			<li><a href="#">Opsporingen</a></li>
 			<li><a href="#">Police On Web</a></li>

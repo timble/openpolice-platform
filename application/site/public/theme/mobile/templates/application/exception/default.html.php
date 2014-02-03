@@ -82,11 +82,11 @@
         </div>
 
         <div class="text-center" style="margin-top: 30px; clear: both">
-            <a class="btn btn-large" href="/<?= $site ?>" title="<?= translate('Home Page'); ?>"><?= translate('Home Page'); ?></a>
+            <a class="button button--primary button--large" href="/<?= $site ?>" title="<?= translate('Home Page'); ?>"><?= translate('Home Page'); ?></a>
         </div>
 
         <div class="backtrace">
-            <button id="backtrace__button" class="btn-link" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>">More</button>
+            <button id="backtrace__button" class="btn button--link" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>">More</button>
         </div>
         <div id="backtrace__info" class="is-hidden">
             <? if(count($trace)) : ?>

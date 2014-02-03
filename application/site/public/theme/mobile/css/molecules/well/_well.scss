@@ -1,8 +1,3 @@
-//
-// Wells
-// --------------------------------------------------
-
-// Base class
 .well {
     padding: $baseLineHeight;
     margin-bottom: $baseLineHeight;
@@ -13,9 +8,4 @@
     ul {
         margin-bottom: 0;
     }
-}
-
-.well--small {
-    padding: 0.75em 1em;
-    @include border-radius($borderRadiusSmall);
 }

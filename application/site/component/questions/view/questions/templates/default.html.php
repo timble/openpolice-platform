@@ -21,7 +21,7 @@
 <? endif ?>
 
 <? if($state->category OR $state->searchword) : ?>
-<ul class="nav nav-pills nav-stacked nav--visited">
+<ul class="nav nav--pills nav--visited">
 <? foreach ($questions as $question) : ?>
     <li>
         <a href="<?= helper('route.question', array('row' => $question)) ?>">
@@ -31,7 +31,7 @@
 <? endforeach; ?>
 </ul>
 <? else : ?>
-   <ul class="nav nav-pills nav-stacked column--double">
+   <ul class="nav nav--pills column--double">
         <? foreach ($categories as $category): ?>
             <li>
                 <a href="<?= helper('route.category', array('row' => $category)) ?>">

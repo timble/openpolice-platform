@@ -1,0 +1,15 @@
+//
+// Thumbnails
+// --------------------------------------------------
+
+.gallery {
+    margin-left: 0;
+    list-style: none;
+    @include clearfix();
+
+    // Float li to make thumbnails appear in a row
+    > li {
+        margin-bottom: $baseLineHeight;
+        margin-left: 0;
+    }
+}
