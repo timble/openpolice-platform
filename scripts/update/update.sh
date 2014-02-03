@@ -21,6 +21,7 @@ dirs=(
   "application/admin/component/questions"
   "application/admin/component/uploads"
   "application/admin/component/zendesk"
+  "application/admin/public/theme/default/templates"
   "application/site/component/about"
   "application/site/component/districts"
   "application/site/component/news"
@@ -41,12 +42,14 @@ dirs=(
   "component/questions"
   "component/uploads"
   "install/custom"
+  "tests/casperjs"
   "vendor/jlong"
 )
 
 files=(
   ".gitignore"
   "README.md"
+  "Vagrantfile"
   "vendor/.gitignore"
   "config/config.php"
   "application/site/component/application/resources/language/nl-NL.ini"

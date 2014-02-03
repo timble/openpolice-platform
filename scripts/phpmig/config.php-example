@@ -1,0 +1,18 @@
+<?php
+namespace MyPhpmig;
+
+require_once(realpath(dirname(__FILE__).'/../../config/config.php'));
+
+class PHPMigConfig
+{
+    public $host, $user, $password;
+
+    public function __construct()
+    {
+        $config = new \JConfig();
+
+        $this->host = $config->host;
+        $this->user = $config->user;
+        $this->password = $config->password;
+    }
+}

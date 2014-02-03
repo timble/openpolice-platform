@@ -28,7 +28,7 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         $pattern = '#<hr\s+id=("|\')system-readmore("|\')\s*\/*>#i';
 
         // If created_on is modified then convert it to GMT/UTC
-        if ($this->isModified('created_on'))
+        if ($this->isModified('created_on') && !$this->isNew())
         {
             $this->created_on = gmdate('Y-m-d H:i:s', strtotime($this->created_on));
         }

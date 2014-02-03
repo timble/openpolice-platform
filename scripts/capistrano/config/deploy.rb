@@ -43,6 +43,14 @@ namespace :deploy do
                 run "ln -fns #{shared_path}/#{link} #{release_path}/#{link}"
             end
         end
+
+        # Symlink the Phpmig configuration file back into the phpmig directory
+        run "ln -fns #{shared_path}/scripts/phpmig/config.php #{release_path}/scripts/phpmig/config.php"
+    end
+
+    desc "Migrate database."
+    task :migrate do
+        run "cd #{release_path}/scripts/phpmig && phpmig migrate"
     end
 
     desc "Run composer"
@@ -82,10 +90,8 @@ namespace :deploy do
             raise Capistrano::Error, "Failed to push changes to github!"
         end
     end
-    
+
     # Do nothing in these tasks.
-    task :migrate do; end
-    task :migrations do; end
     task :cold do; end
     task :start do; end
     task :stop do; end
@@ -95,3 +101,4 @@ end
 after "deploy:update_code", "deploy:symlink_shared"
 after "deploy:update_code", "deploy:composer"
 after "deploy:update", "deploy:cleanup"
+after "deploy:migrate", "deploy:cleanup"

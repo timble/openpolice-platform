@@ -1,7 +1,31 @@
-h1 { font-size: 24px; }
-h2 { font-size: 20px; }
-h3 { font-size: 18px; }
+// Headings
+// -------------------------
 
-h1, h2, h3 {
-  font-weight: normal; line-height: 24px;
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 ($baseLineHeight / 2) 0;
+    line-height: 1.25em;
+    font-family: $headingsFontFamily;
+    font-weight: normal;
+    color: $headingsColor;
+    text-rendering: optimizelegibility; // Fix the character spacing for headings
+    small {
+        font-weight: normal;
+        line-height: 1;
+        color: $grayLight;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+h1 {
+    font-size: 1.666666667em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
 }

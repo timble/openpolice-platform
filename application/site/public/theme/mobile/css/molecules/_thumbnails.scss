@@ -4,7 +4,7 @@
 
 // Make wrapper ul behave like the grid
 .thumbnails {
-    margin-left: -$gridGutterWidth;
+    margin-left: -$gutter-width;
     list-style: none;
     @include clearfix();
 }
@@ -13,17 +13,16 @@
 .thumbnails > li {
     float: left; // Explicity set the float since we don't require .span* classes
     margin-bottom: $baseLineHeight;
-    margin-left: $gridGutterWidth;
+    margin-left: $baseLineHeight;
 }
 
 // The actual thumbnail (can be `a` or `div`)
 .thumbnail {
     display: block;
     padding: 4px;
-    line-height: $baseLineHeight;
     border: 1px solid #ddd !important;
     @include border-radius($baseBorderRadius);
-    @include box-shadow(0 1px 3px rgba(0,0,0,.055));
+    @include box-shadow(0 1px 3px rgba(0, 0, 0, .055));
     @include transition(all .2s ease-in-out);
 }
 
@@ -31,7 +30,7 @@
 a.thumbnail:hover,
 a.thumbnail:focus {
     border-color: $linkColor !important;
-    @include box-shadow(0 1px 4px rgba(0,105,214,.25));
+    @include box-shadow(0 1px 4px rgba(0, 105, 214, .25));
 }
 
 // Images and captions
@@ -41,6 +40,7 @@ a.thumbnail:focus {
     margin-left: auto;
     margin-right: auto;
 }
+
 .thumbnail .caption {
     padding: 9px;
     color: $gray;

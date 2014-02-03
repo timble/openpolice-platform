@@ -2,38 +2,37 @@
 // Forms
 // --------------------------------------------------
 
-
 // GENERAL STYLES
 // --------------
 
 // Make all forms have space below them
 form {
-  @extend .clearfix;
+    @extend .clearfix;
 }
 
 fieldset {
-  padding: 0;
-  margin: 0;
-  border: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
 // Groups of fields with labels on top (legends)
 legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: $baseLineHeight;
-  font-size: $baseFontSize * 1.5;
-  line-height: $baseLineHeight * 2;
-  color: $grayDark;
-  border: 0;
-  border-bottom: 1px solid #e5e5e5;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: $baseLineHeight;
+    font-size: 1.5em;
+    line-height: $baseLineHeight * 2;
+    color: $grayDark;
+    border: 0;
+    border-bottom: 1px solid #e5e5e5;
 
-  // Small
-  small {
-    font-size: $baseLineHeight * .75;
-    color: $grayLight;
-  }
+    // Small
+    small {
+        font-size: $base-font-size * 0.75;
+        color: $grayLight;
+    }
 }
 
 // Set font for forms
@@ -42,19 +41,20 @@ input,
 button,
 select,
 textarea {
-  @include font-shorthand($baseFontSize, normal, $baseLineHeight); // Set size, weight, line-height here
+    @include font-shorthand($base-font-size, normal, $baseLineHeight); // Set size, weight, line-height here
 }
+
 input,
 button,
 select,
 textarea {
-  font-family: $baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+    font-family: $baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
 }
 
 // Identify controls by their labels
 label {
-  display: block;
-  margin-bottom: 5px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 // Form controls
@@ -64,46 +64,46 @@ label {
 select,
 textarea,
 input {
-  display: inline-block;
-  height: $baseLineHeight + 10px;
-  padding: 0 6px;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight + 10px;
-  color: $gray;
-  @include border-radius($inputBorderRadius);
-  vertical-align: middle;
-  @include box-sizing(border-box !important);
+    display: inline-block;
+    height: $baseLineHeight * 1.5;
+    padding: 0 6px;
+    line-height: $baseLineHeight * 1.5;
+    color: $gray;
+    @include border-radius($inputBorderRadius);
+    vertical-align: middle;
+    @include box-sizing(border-box !important);
 }
 
 // Reset appearance properties for textual inputs and textarea
 // Declare width for legacy (can't be on input[type=*] selectors or it's too specific)
 input,
 textarea {
-  width: 100%;
+    width: 100%;
 }
+
 // Reset height since textareas have rows
 textarea {
-  height: auto;
+    height: auto;
 }
+
 // Everything else
 textarea,
 input[type="text"],
 input[type="search"] {
-  background-color: $inputBackground;
-  border: 1px solid $inputBorder;
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  @include transition(border linear .2s, box-shadow linear .2s);
-  -webkit-appearance: none;
+    background-color: $inputBackground;
+    border: 1px solid $inputBorder;
+    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
+    @include transition(border linear .2s, box-shadow linear .2s);
+    -webkit-appearance: none;
 
-  // Focus state
-  &:focus {
-    border-color: rgba(82,168,236,.8);
-    outline: 0;
-    outline: thin dotted \9; /* IE6-9 */
-    @include box-shadow(none);
-  }
+    // Focus state
+    &:focus {
+        border-color: rgba(82, 168, 236, .8);
+        outline: 0;
+        outline: thin dotted \9; /* IE6-9 */
+        @include box-shadow(none);
+    }
 }
-
 
 // Placeholder
 // -------------------------
@@ -111,14 +111,12 @@ input[type="search"] {
 // Placeholder text gets special styles because when browsers invalidate entire lines if it doesn't understand a selector
 input,
 textarea {
-  @include placeholder();
+    @include placeholder();
 }
 
 .placeholder {
-  color: $placeholderText;
+    color: $placeholderText;
 }
-
-
 
 // FORM FIELD FEEDBACK STATES
 // --------------------------
@@ -128,14 +126,13 @@ textarea {
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
-  color: #b94a48;
-  border-color: #ee5f5b;
-  &:focus {
-    border-color: darken(#ee5f5b, 10%);
-    @include box-shadow(0 0 6px lighten(#ee5f5b, 20%));
-  }
+    color: #b94a48;
+    border-color: #ee5f5b;
+    &:focus {
+        border-color: darken(#ee5f5b, 10%);
+        @include box-shadow(0 0 6px lighten(#ee5f5b, 20%));
+    }
 }
-
 
 // HORIZONTAL & VERTICAL FORMS
 // ---------------------------
@@ -144,14 +141,17 @@ select:focus:invalid {
 // -----------------
 // Margin to space out fieldsets
 .control-group {
-  margin-bottom: $baseLineHeight / 2;
+    margin-bottom: $baseLineHeight / 2;
 }
 
 .form__left {
-  margin-right: 110px;
+    margin-right: 8em;
 }
 
 .form__right {
-  width: 100px;
-  float: right;
+    width: 7em;
+    float: right;
+    .btn {
+        width: 100%;
+    }
 }

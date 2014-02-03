@@ -8,7 +8,16 @@
  */
 ?>
 
+<meta content="summary" name="twitter:card" />
+<meta content="@<?= $zone->twitter ?>" name="twitter:site" />
+<meta content="<?= url(); ?>" property="og:url" />
+<meta content="<?= $article->title ?>" property="og:title" />
+<meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
+<? if($article->attachments_attachment_id) : ?>
 <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
+<? endif ?>
+
+<meta content="<?= $published_on ?>" property="article:published_time" />
 
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
@@ -21,33 +30,27 @@
     <? endforeach ?>
 </ktml:module>
 
-<script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher:'91c73e48-a5e0-43ea-988f-57d099f878c7'});</script>
-
 <title content="replace"><?= $article->title ?></title>
 
-<article class="article hentry">
+<article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
-        <h1 class="entry-title"><?= $article->title ?></h1>
-        <span class="timestamp">
+        <h1 itemprop="name"><?= $article->title ?></h1>
+        <time class="timestamp" itemprop="datePublished" datetime="<?= $published_on ?>">
             <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
-        </span>
-        <span style="float:right" class='st_sharethis' displayText='ShareThis'></span>
+        </time>
     </header>
 
     <? if($article->attachments_attachment_id) : ?>
     <figure class="article__thumbnail">
     <?= helper('com:attachments.image.thumbnail', array(
         'attachment' => $article->attachments_attachment_id,
-        'attribs' => array('width' => '200', 'height' => '150', 'align' => 'right'))) ?>
+        'attribs' => array('width' => '200', 'height' => '150', 'itemprop'=> "image"))) ?>
     </figure>
     <? endif ?>
 
-    <div class="entry-summary"><?= $article->introtext ?></div>
-    <div class="entry-content"><?= $article->fulltext ?></div>
-
-    <div class="entry-content-asset">
+    <div itemprop="articleBody">
+        <?= $article->introtext ?>
+        <?= $article->fulltext ?>
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
 </article>

@@ -2,7 +2,6 @@
 // Source: http://stubbornella.org/content/?p=497
 // --------------------------------------------------
 
-
 // Common styles
 // -------------------------
 
@@ -17,10 +16,7 @@
 // Proper spacing between instances of .media
 .media,
 .media .media {
-    margin-top: 15px;
-}
-.media:first-child {
-    margin-top: 0;
+    margin-bottom: 1em;
 }
 
 // Reset margins on headings for tighter default spacing
@@ -28,11 +24,10 @@
     margin: 0 0 5px;
 }
 
-
 // Media image alignment
 // -------------------------
 .media__object {
-    margin-right: 10px;
+    margin-right: 1em;
     float: left;
     display: block;
     width: 64px; // IE7

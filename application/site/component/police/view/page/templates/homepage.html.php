@@ -10,8 +10,8 @@
 <? $site = object('application')->getCfg('site') ?>
 <? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
 
-<div class="row-fluid">
-    <div class="span4 contact">
+<div class="clearfix">
+    <div class="homepage__contact">
         <div class="contact__inner">
             <h3 class="hidden-phone"><?= translate('Contact us') ?></h3>
             <div  class="well well--small">
@@ -47,7 +47,7 @@
             </ul>
         </div>
     </div>
-    <div class="span8 sticky alpha">
+    <div class="homepage__sticky">
         <? $articles = object('com:news.controller.article')->sticky(true)->browse()->count() ? object('com:news.controller.article')->sticky(true)->browse() : object('com:news.controller.article')->limit('1')->browse(); ?>
         <? foreach ($articles as $article) : ?>
             <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
@@ -65,7 +65,7 @@
                         <figure>
                             <?= helper('com:attachments.image.thumbnail', array(
                                 'attachment' => $article->attachments_attachment_id,
-                                'attribs' => array('width' => '200', 'height' => '150', 'align' => 'right'))) ?>
+                                'attribs' => array('width' => '200', 'height' => '150'))) ?>
                         </figure>
                     </a>
                     <? endif ?>
@@ -86,9 +86,7 @@
 </div>
 
 <ktml:modules position="quicklinks">
-    <div class="container-quicklinks">
-        <div class="row-fluid">
-            <ktml:modules:content>
-        </div>
-    </div>
+<div class="container__quicklinks">
+    <ktml:modules:content>
+</div>
 </ktml:modules>

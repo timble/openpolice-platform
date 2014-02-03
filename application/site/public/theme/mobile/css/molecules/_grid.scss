@@ -1,17 +1,73 @@
+@import "susy";
+
 @include respond-min($navbarCollapseWidth) {
-  // Fluid (940px)
-  @include grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth);
+    .container {
+        // page acts as a container for our grid.
+        @include container;
+    }
 
-  // Reset utility classes due to specificity
-  [class*="span"].hide,
-  .row-fluid [class*="span"].hide {
-    display: none;
-  }
+    .sidebar {
+        @include span-columns(3, 12);
+    }
+    .component {
+        @include span-columns(9 omega, 12);
+    }
+    .footer__news {
+        @include span-columns(7, 12);
+    }
+    .footer__districts {
+        @include span-columns(5 omega, 12);
+    }
+    .copyright--left {
+        @include span-columns(6, 12);
+    }
+    .copyright--right {
+        @include span-columns(6 omega, 12);
+    }
 
-  [class*="span"].pull-right,
-  .row-fluid [class*="span"].pull-right {
-    float: right;
-  }
+    .quicklink__item_1, .quicklink__item_3 {
+        @include span-columns(6, 12);
+    }
+    .quicklink__item_2, .quicklink__item_4 {
+        @include span-columns(6 omega, 12);
+    }
+
+    .homepage__sticky {
+        @include span-columns(8, 12);
+    }
+    .homepage__contact {
+        @include span-columns(4 omega, 12);
+    }
+
+    .districts__officer {
+        @include span-columns(5, 12);
+    }
+
+    .districts__contact {
+        @include span-columns(7 omega, 12);
+    }
+
+    .exception__message {
+        @include span-columns(7, 12);
+    }
+
+    .exception__image {
+        @include span-columns(5 omega, 12);
+    }
 }
 
-.alpha { margin-left:0 !important; }
+@include respond-min(998px) {
+    .logo {
+        @include span-columns(3, 12);
+    }
+    .navigation {
+        @include span-columns(9 omega, 12);
+    }
+
+    .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
+        @include span-columns(3, 12);
+    }
+    .quicklink__item_4 {
+        @include span-columns(3 omega, 12);
+    }
+}

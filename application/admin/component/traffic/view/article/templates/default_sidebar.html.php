@@ -26,15 +26,37 @@
             <?= translate('Start on') ?>
         </label>
         <div>
-            <input type="date" name="start_on" id="start_on" class="required" value="<?= helper('date.format', array('date'=> $article->start_on, 'format' => 'Y-m-d')) ?>" />
+            <input type="text" name="start_on" id="start_on" class="required" value="<?= helper('date.format', array('date'=> $article->start_on, 'format' => 'd-m-Y')) ?>" />
         </div>
+        <script date-inline>
+            $jQuery(function(){
+                $jQuery('#start_on').datetimepicker({
+                    format:'d-m-Y',
+                    timepicker:false
+                });
+            });
+        </script>
     </div>
     <div>
         <label for="date">
             <?= translate('End on') ?>
         </label>
         <div>
-            <input type="date" name="end_on" class="required validate-after-date afterElement:'start_on'" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'Y-m-d')) ?>" />
+            <input type="text" name="end_on" id="end_on" class="required" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'd-m-Y')) ?>" />
+            <script date-inline>
+                $jQuery(function(){
+                    $jQuery('#end_on').datetimepicker({
+                        format:'d-m-Y',
+                        onShow:function( ct ){
+                            this.setOptions({
+                                minDate:$jQuery('#start_on').val()?$jQuery('#start_on').val():false,
+                                formatDate: 'd-m-Y'
+                            })
+                        },
+                        timepicker:false
+                    });
+                });
+            </script>
         </div>
     </div>
 </fieldset>

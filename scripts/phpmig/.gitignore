@@ -1,0 +1,7 @@
+# Ignore phpmig configuration file
+config.php
+
+# Ignore composer files:
+vendor/
+bin/
+composer.lock

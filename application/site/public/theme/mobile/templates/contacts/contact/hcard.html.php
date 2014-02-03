@@ -13,9 +13,6 @@
 
 <address class="vcard">
     <h1 class="article__header fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
-    <?if ($contact->con_position) : ?>
-        <h2 class="title"><?= $contact->con_position?></h2>
-    <? endif;?>
     <? if($contact->isAttachable()) : ?>
         <? foreach($contact->getAttachments() as $item) : ?>
             <? if($item->file->isImage()) : ?>
@@ -32,9 +29,6 @@
         <? endif; ?>
         <? if ( $contact->suburb) : ?>
             <span class="locality"><?= $contact->suburb?></span>
-        <? endif; ?>
-        <? if ($contact->country) : ?>
-            <div class="country-name"><?= $contact->country?></div>
         <? endif; ?>
     </div>
     <ul>
@@ -56,7 +50,7 @@
                 <span class="value"><?= $contact->mobile?></span>
             </li>
         <? endif; ?>
-        <?if ($contact->email_to && $contact->params->get('show_email', false)) :?>
+        <?if ($contact->email_to) :?>
             <li>
                 <span><?= translate('Email') ?></span>:
                 <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>

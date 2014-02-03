@@ -1,16 +1,17 @@
 .nowrap {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .highlight {
-  background-color: yellow;
+    background-color: yellow;
 }
 
 .text--strong {
-  color: $blue;
-  font-weight: bold;
+    color: $blue;
+    font-weight: bold;
 }
+
 .text--small {
-  font-size: 0.9em;
-  @extend .muted;
+    font-size: $fontSizeSmall;
+    @extend .muted;
 }

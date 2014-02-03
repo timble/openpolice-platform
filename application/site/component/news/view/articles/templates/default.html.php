@@ -30,13 +30,13 @@
         </header>
 
         <? if($article->attachments_attachment_id): ?>
-        <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-            <figure>
-                <?= helper('com:attachments.image.thumbnail', array(
-                    'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('width' => '200', 'height' => '150', 'align' => 'right'))) ?>
-            </figure>
-        </a>
+            <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+                <figure>
+                    <?= helper('com:attachments.image.thumbnail', array(
+                        'attachment' => $article->attachments_attachment_id,
+                        'attribs' => array('width' => '200', 'height' => '150'))) ?>
+                </figure>
+            </a>
         <? endif; ?>
 
         <?= $article->introtext ?>

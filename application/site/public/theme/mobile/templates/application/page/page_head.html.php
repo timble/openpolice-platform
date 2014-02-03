@@ -14,20 +14,18 @@
 
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name=”mobile-web-app-capable” content=”yes”>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name=”mobile-web-app-capable” content=”yes” />
 
-    <link rel="apple-touch-icon" href="assets://application/images/apple-touch-icon.png"/>
-
-    <script>(function(H){H.className=H.className.replace(/\bjs-disabled\b/,'js-enabled')})(document.documentElement)</script>
+    <link rel="shortcut icon" type="image/ico" href="assets://application/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="assets://application/images/touch-icon.png" />
+    <link rel="apple-touch-icon" type="image/png" href="assets://application/images/touch-icon.png" />
 
     <ktml:title>
     <ktml:meta>
     <ktml:link>
     <ktml:style>
     <ktml:script>
-
-    <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style src="assets://application/components/select2/select2.css" />
     <style src="assets://application/css/default.css" />
@@ -45,17 +43,17 @@
     <script src="assets://application/js/navbar.js" />
 
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '<?= $analytics ?>']);
-        _gaq.push(['_setCookiePath', '/<?= $site ?>/']);
-        _gaq.push(['_trackPageview']);
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '<?= $analytics ?>']);
+            _gaq.push(['_setCookiePath', '/<?= $site ?>/']);
+            _gaq.push(['_trackPageview']);
 
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
     <?php endif; ?>
 </head>
