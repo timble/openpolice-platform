@@ -43,30 +43,28 @@
     });
 </script>
 
-<div id="wrap" class="container-fluid">
-    <div class="row-fluid">
-        <div class="span10 offset1">
-            <div class="splash">
-                <div class="splash__logo"><img src="assets://application/images/logo-<?= $language_short ?>.jpg" /></div>
-                <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
-                    <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Zoek uw woonplaats') ?> ..." name="id" style="width: 100%">
-                    <div class="splash__toolbar">
-                        <button class="btn">Go to site</button>
-                    </div>
-
-                    <div class="splash__languages">
-                        <a href="#">Nederlands</a>
-                        <a href="#">Français</a>
-                        <a href="#">Deutsch</a>
-                        <a href="#">English</a>
-                    </div>
-                </form>
-                <div class="splash__external">
-                    <a href="#">Federale Politie</a>
-                    <a href="#">Opsporingen</a>
-                    <a href="#">Police On Web</a>
-                    <a href="#">eCops</a>
+<div id="wrap">
+    <div class="container">
+        <div class="splash">
+            <div class="splash__logo"><img src="assets://application/images/logo-<?= $language_short ?>.jpg" /></div>
+            <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
+                <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Zoek uw woonplaats') ?> ..." name="id" style="width: 100%">
+                <div class="splash__toolbar">
+                    <button class="btn">Go to site</button>
                 </div>
+
+                <div class="splash__languages">
+                    <a href="#">Nederlands</a>
+                    <a href="#">Français</a>
+                    <a href="#">Deutsch</a>
+                    <a href="#">English</a>
+                </div>
+            </form>
+            <div class="splash__external">
+                <a href="#">Federale Politie</a>
+                <a href="#">Opsporingen</a>
+                <a href="#">Police On Web</a>
+                <a href="#">eCops</a>
             </div>
         </div>
     </div>
