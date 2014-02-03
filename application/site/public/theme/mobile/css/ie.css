@@ -1109,7 +1109,7 @@ ul.column--quad {
   background-color: white;
 }
 /* line 16, molecules/button/_button.scss */
-.button:hover, .button:focus, .button:active, .button.active, .button.disabled, .button[disabled], .button.pseudo-class-hover, .button.pseudo-class-active {
+.button:hover, .button:focus, .button:active, .button.active, .button.disabled, .button[disabled], .button.pseudo-class-hover, .button.pseudo-class-active, .button.pseudo-class-disabled {
   background-color: #eeeeee;
   border-color: #b3b3b3;
 }
@@ -1188,9 +1188,10 @@ input[type="submit"].button::-moz-focus-inner {
   color: #002852;
   text-decoration: underline;
   background-color: transparent;
+  border-color: transparent;
 }
 
-/* line 25, molecules/button/_button--link.scss */
+/* line 26, molecules/button/_button--link.scss */
 .button--link[disabled]:hover,
 .button--link[disabled]:focus {
   color: #333333;
@@ -1204,7 +1205,7 @@ input[type="submit"].button::-moz-focus-inner {
   color: white;
 }
 /* line 7, molecules/button/_button--primary.scss */
-.button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .button--primary.disabled, .button--primary[disabled], .button--primary.pseudo-class-hover, .button--primary.pseudo-class-active {
+.button--primary:hover, .button--primary:focus, .button--primary:active, .button--primary.active, .button--primary.disabled, .button--primary[disabled], .button--primary.pseudo-class-hover, .button--primary.pseudo-class-active, .button--primary.pseudo-class-disabled {
   color: white;
   background-color: #006bdc;
   border-color: #002d5d;

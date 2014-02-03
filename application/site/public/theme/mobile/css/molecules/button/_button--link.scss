@@ -20,6 +20,7 @@
     color: $linkColorHover;
     text-decoration: underline;
     background-color: transparent;
+    border-color: transparent;
 }
 .button--link[disabled]:hover,
 .button--link[disabled]:focus {
