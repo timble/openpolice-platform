@@ -25,8 +25,8 @@ class ControllerTopic extends Library\ControllerModel
     {
         $config->append(array(
             'behaviors' => array(
-                'editable',
-            ),
+                'editable'
+            )
         ));
 
         parent::_initialize($config);
@@ -34,7 +34,6 @@ class ControllerTopic extends Library\ControllerModel
 
     protected function _actionRead(CommandContext $context)
     {
-
         $topic = $this->getModel()->getRow();
 
         if($topic->isHittable()) {

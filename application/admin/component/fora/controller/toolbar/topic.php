@@ -38,6 +38,7 @@ class ForaControllerToolbarTopic extends Library\ControllerToolbarActionbar
             $this->addBack();
             $this->addEdit();
             $this->addSeparator();
+            $this->addSubscribe();
         } else parent::_afterControllerRead($command);
     }
 
@@ -65,5 +66,11 @@ class ForaControllerToolbarTopic extends Library\ControllerToolbarActionbar
     {
         $command->label = \JText::_('New Idea');
         $command->href = 'option=com_fora&view=topic&forum=3&layout=form';
+    }
+
+    protected function _commandSubscribe(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = \JText::_('Subscribe');
+        $command->href = '#';
     }
 }

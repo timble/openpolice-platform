@@ -18,11 +18,9 @@ use Nooku\Library;
  * @package Nooku\Component\Fora
  */
 class DatabaseBehaviorVoteable extends Library\DatabaseBehaviorAbstract
-
 {
     protected function _beforeTableInsert(Library\CommandContext $context)
     {
-
         if($action = $context->data->action)
         {
             $row = $this->getObject('com:fora.model.topics')->id($context->data->fora_topic_id)->getRow();

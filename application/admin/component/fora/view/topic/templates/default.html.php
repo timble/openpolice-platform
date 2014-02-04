@@ -9,7 +9,7 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
-<div class="scrollable">
+<div id="fora-topic-default" class="scrollable">
     <div class="well">
         <div class="well__content" style="margin-bottom: 20px">
             <h1 class="well__heading"><?= escape($topic->title) ?></h1>
@@ -26,7 +26,7 @@
             <?endif;?>
         </div>
 
-        <?if($forum->type != 'article' && $awnser->id):?>
+        <?if($forum->type != 'article' && $answer->id):?>
             <div class="well__content anwser">
                 <div class="comment">
                     <div class="comment-header">
@@ -43,7 +43,7 @@
                         </button>
                         <?endif;?>
                     </div>
-                    <p><?= escape($awnser->text) ?></p>
+                    <p><?= escape($answer->text) ?></p>
                 </div>
             </div>
         <?endif;?>
@@ -59,8 +59,8 @@
                         <button title="<?=translate($comment->responded ? 'Unmark as' : 'Mark as') ?>"
                                 class="btn btn-small response"
                                 data-topic="<?=$topic->id;?>"
-                                data-comment="<?= $comment->id ?>" data-action="<?= $comment->id == $awnser->id ? 'delete' : 'post' ?>">
-                            <i class="<?= $comment->id == $awnser->id ? 'icon-remove' : 'icon-ok'?> "></i>
+                                data-comment="<?= $comment->id ?>" data-action="<?= $comment->id == $answer->id ? 'delete' : 'post' ?>">
+                            <i class="<?= $comment->id == $answer->id ? 'icon-remove' : 'icon-ok'?> "></i>
                         </button>
                     <? endif ?>
                 </div>

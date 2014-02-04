@@ -61,5 +61,4 @@ class DatabaseBehaviorMultiuserable extends Library\DatabaseBehaviorAbstract
 
         return $fora_user->id;
     }
-
 }

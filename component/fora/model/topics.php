@@ -71,7 +71,7 @@ class ModelTopics extends Library\ModelTable
         }
 
         if($state->search) {
-            $query->where('(tbl.title LIKE :search)')->bind(array('search' => '%'.$state->search.'%'));
+            $query->where('(tbl.title LIKE :search OR tbl.text LIKE :search)')->bind(array('search' => '%'.$state->search.'%'));
         }
     }
 }

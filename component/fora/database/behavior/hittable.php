@@ -28,7 +28,7 @@ class DatabaseBehaviorHittable extends Library\DatabaseBehaviorAbstract
             $this->save();
             return true;
         }
-        return false;
 
+        return false;
     }
 }
