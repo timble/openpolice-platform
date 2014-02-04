@@ -1,5 +1,10 @@
--- Create syntax for TABLE 'fora_categories'
-CREATE TABLE `fora_categories` (
+--
+-- Table structure data for table `data`.`fora_categories`
+--
+
+DROP TABLE IF EXISTS `data`.`fora_categories`;
+
+CREATE TABLE `data`.`fora_categories` (
   `fora_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) NOT NULL DEFAULT '0',
   `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
@@ -18,8 +23,14 @@ CREATE TABLE `fora_categories` (
   KEY `idx_access` (`access`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'fora_comments'
-CREATE TABLE `fora_comments` (
+
+--
+-- Table structure data for table `data`.`fora_comments`
+--
+
+DROP TABLE IF EXISTS `data`.`fora_comments`;
+
+CREATE TABLE `data`.`fora_comments` (
   `fora_comment_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `fora_topic_id` int(10) unsigned NOT NULL,
   `text` text,
@@ -31,8 +42,14 @@ CREATE TABLE `fora_comments` (
   KEY `fora_topic_id` (`fora_topic_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'fora_forums'
-CREATE TABLE `fora_forums` (
+
+--
+-- Table structure data for table `data`.`fora_forums`
+--
+
+DROP TABLE IF EXISTS `data`.`fora_forums`;
+
+CREATE TABLE `data`.`fora_forums` (
   `fora_forum_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
   `fora_category_id` int(11) NOT NULL,
   `type` enum('article','issue','question','idea') DEFAULT NULL,
@@ -47,15 +64,27 @@ CREATE TABLE `fora_forums` (
   CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`fora_category_id`) REFERENCES `fora_categories` (`fora_category_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'fora_responds'
-CREATE TABLE `fora_responds` (
+
+--
+-- Table structure data for table `data`.`fora_responds`
+--
+
+DROP TABLE IF EXISTS `data`.`fora_responds`;
+
+CREATE TABLE `data`.`fora_responds` (
   `fora_topic_id` int(11) unsigned NOT NULL,
   `comments_comment_id` int(11) NOT NULL,
   PRIMARY KEY (`fora_topic_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'fora_subscriptions'
-CREATE TABLE `fora_subscriptions` (
+
+--
+-- Table structure data for table `data`.`fora_subscriptions`
+--
+
+DROP TABLE IF EXISTS `data`.`fora_subscriptions`;
+
+CREATE TABLE `data`.`fora_subscriptions` (
   `type` enum('topic','forum') NOT NULL DEFAULT 'topic',
   `row` int(10) unsigned NOT NULL,
   `fora_user_id` int(10) unsigned NOT NULL,
@@ -65,8 +94,14 @@ CREATE TABLE `fora_subscriptions` (
   KEY `idx_type_row` (`type`,`row`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'fora_topics'
-CREATE TABLE `fora_topics` (
+
+--
+-- Table structure data for table `data`.`fora_topics`
+--
+
+DROP TABLE IF EXISTS `data`.`fora_topics`;
+
+CREATE TABLE `data`.`fora_topics` (
   `fora_topic_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `fora_forum_id` smallint(5) unsigned NOT NULL,
   `title` varchar(255) NOT NULL,
@@ -98,8 +133,14 @@ CREATE TABLE `fora_topics` (
   CONSTRAINT `fora_topics_ibfk_1` FOREIGN KEY (`fora_forum_id`) REFERENCES `fora_forums` (`fora_forum_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'fora_users'
-CREATE TABLE `fora_users` (
+
+--
+-- Table structure data for table `data`.`fora_users`
+--
+
+DROP TABLE IF EXISTS `data`.`fora_users`;
+
+CREATE TABLE `data`.`fora_users` (
   `fora_user_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `users_user_id` int(11) DEFAULT NULL,
   `site` varchar(50) DEFAULT NULL,
@@ -110,8 +151,14 @@ CREATE TABLE `fora_users` (
   UNIQUE KEY `users_user_id` (`users_user_id`,`site`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Create syntax for TABLE 'fora_votes'
-CREATE TABLE `fora_votes` (
+
+--
+-- Table structure data for table `data`.`fora_votes`
+--
+
+DROP TABLE IF EXISTS `data`.`fora_votes`;
+
+CREATE TABLE `data`.`fora_votes` (
   `fora_topic_id` int(10) unsigned NOT NULL,
   `fora_user_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`fora_topic_id`,`fora_user_id`),

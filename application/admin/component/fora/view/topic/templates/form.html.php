@@ -11,9 +11,7 @@
 <?= helper('behavior.keepalive') ?>
 <?= helper('behavior.validator') ?>
 
-<!--
 <script src="assets://js/koowa.js" />
--->
 
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
@@ -27,10 +25,6 @@
     <div class="main">
         <div class="title">
             <input class="required" type="text" name="title" maxlength="255" value="<?= $topic->title ?>" placeholder="<?= translate('Title') ?>" />
-            <div class="slug">
-                <span class="add-on"><?= translate('Slug'); ?></span>
-                <input type="text" name="slug" maxlength="255" value="<?= $topic->slug ?>" />
-            </div>
         </div>
 
         <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $topic->text, 'toolbar' => 'basic')) ?>

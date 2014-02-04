@@ -56,6 +56,6 @@
     ?>
 
     <? if(!$voted) : ?>
-        <a class="vote btn btn-small"><?= $topic->votes ? translate('Me too!') : translate('Vote now!') ?><i class="icon-thumbs-up"></i></a>
+        <a class="vote btn"><?= $topic->votes ? translate('Me too!') : translate('Vote now!') ?><i class="icon-thumbs-up"></i></a>
     <? endif ?>
 </div>

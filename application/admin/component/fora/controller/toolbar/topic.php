@@ -17,22 +17,53 @@ use Nooku\Library;
  */
 class ForaControllerToolbarTopic extends Library\ControllerToolbarActionbar
 {
-
     /**
      * @param Library\CommandContext $context
      */
-    protected function _afterControllerBrowse(\Nooku\Library\CommandContext $context)
+    protected function _afterControllerBrowse(\Nooku\Library\CommandContext $command)
     {
-        $controller = $this->getController();
-        ;
-
         if($this->getController()->canAdd())
         {
-            $identifier = $controller->getIdentifier();
-            $config     = array('href' => 'option=com_'.$identifier->package.'&view='.$identifier->name."&forum=".$controller->getModel()->getState()->forum."&layout=form");
-
-            $this->addCommand('new', $config);
+            $this->addIssue();
+            $this->addIdea();
+            $this->addSeparator();
+            $this->addDelete();
         }
     }
 
+    protected function _afterControllerRead(\Nooku\Library\CommandContext $command)
+    {
+        if($this->getController()->getView()->getLayout() == 'default')
+        {
+            $this->addBack();
+            $this->addEdit();
+            $this->addSeparator();
+        } else parent::_afterControllerRead($command);
+    }
+
+    protected function _commandBack(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = \JText::_('Back');
+        $command->href = 'option=com_fora&view=topics';
+    }
+
+    protected function _commandEdit(Library\ControllerToolbarCommand $command)
+    {
+        $id = $this->getController()->getModel()->getRow()->id;
+
+        $command->label = \JText::_('Edit');
+        $command->href = 'option=com_fora&view=topic&layout=form&id='.$id;
+    }
+
+    protected function _commandIssue(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = \JText::_('New Ticket');
+        $command->href = 'option=com_fora&view=topic&forum=2&layout=form';
+    }
+
+    protected function _commandIdea(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = \JText::_('New Idea');
+        $command->href = 'option=com_fora&view=topic&forum=3&layout=form';
+    }
 }

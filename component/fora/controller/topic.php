@@ -43,4 +43,14 @@ class ControllerTopic extends Library\ControllerModel
 
         return parent::_actionRead($context);
     }
+
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        $request->query->sort           = 'last_activity_on';
+        $request->query->direction      = 'DESC';
+
+        return $request;
+    }
 }

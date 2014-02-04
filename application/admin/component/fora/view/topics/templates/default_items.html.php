@@ -1,3 +1,7 @@
+<table>
+
+</table>
+
 <div class="media__item">
     <div class="media__icon" style="margin-top: 10px">
         <? if($topic->forum_type != 'article' && ($topic->responded || $topic->status == 'done')) : ?>
