@@ -15,31 +15,28 @@
 <?endif;?>
 <style src="assets://fora/css/default.css" />
 
-<div id="com_fora" class="scrollable">
+<div id="com_fora">
     <div id="fora-categories-default">
-
         <div class="fora-search">
             <form action="<?= route('view=topics&layout=search') ?>" method="get" name="search">
                 <input name="search" type="text" placeholder="<?= translate('Search all categories...') ?>" />
                 <input class="btn primary" type="submit" value="Search" disabled="disabled" />
             </form>
         </div>
-
-        <? foreach($categories as $category) : ?>
-            <div class="well">
-                <div class="well__frame">
-                    <h1 class="well__heading well__heading--left">
-                        <a href="<?= route('view=category&id='.$category->id.'&slug='.$category->slug) ?>">
-                            <?= escape($category->title) ?>
-                        </a>
-                    </h1>
-                </div>
-                <div class="well__content well__content--categories">
-                    <?= import('default_items.html',
-                        array('category' => $category, 'forums' => $forums, 'topics' => $topics, 'topics_count' => $topics_count)); ?>
-                </div>
+        <div class="well">
+            <? foreach($categories as $category) : ?>
+            <div class="well__frame">
+                <h1 class="well__heading well__heading--left">
+                    <a href="<?= route('view=category&id='.$category->id.'&slug='.$category->slug) ?>">
+                        <?= escape($category->title) ?>
+                    </a>
+                </h1>
             </div>
-        <? endforeach ?>
-
+            <div class="well__content well__content--categories">
+                <?= import('default_items.html',
+                    array('category' => $category, 'forums' => $forums, 'topics' => $topics, 'topics_count' => $topics_count)); ?>
+            </div>
+            <? endforeach ?>
+        </div>
     </div>
 </div>

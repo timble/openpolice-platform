@@ -11,7 +11,7 @@
 <style src="assets://fora/css/default.css" />
 <script src="assets://fora/js/subscribe.js" />
 
-<div id="com_fora" class="scrollable">
+<div id="com_fora">
     <div id="fora-topics-default">
         <div class="fora-search">
             <form action="" method="get" name="search">
