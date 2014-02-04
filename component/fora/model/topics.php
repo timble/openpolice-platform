@@ -26,6 +26,7 @@ class ModelTopics extends Library\ModelTable
 
         $this->getState()
             ->insert('forum'    , 'slug')
+            ->insert('created_by', 'int')
             ->insert('published', 'int');
 
         $this->getState()->remove('sort')->insert('sort', 'cmd', 'ordering');
@@ -63,6 +64,10 @@ class ModelTopics extends Library\ModelTable
 
         if(is_numeric($state->forum)) {
             $query->where('tbl.fora_forum_id = :forum')->bind(array('forum' => $state->forum));
+        }
+
+        if(is_numeric($state->created_by)) {
+            $query->where('tbl.created_by = :created_by')->bind(array('created_by' => (int) $state->created_by));
         }
 
         if($state->search) {
