@@ -13,7 +13,7 @@
     <? endif ?>
 
     <? if($article->fulltext) : ?>
-        <div class="entry-summary">
+        <div class="article__introtext entry-summary">
             <?= $article->introtext ?>
         </div>
     <? else : ?>

@@ -1,0 +1,21 @@
+// HORIZONTAL & VERTICAL FORMS
+// ---------------------------
+
+// Common properties
+// -----------------
+// Margin to space out fieldsets
+.control-group {
+    margin-bottom: $baseLineHeight / 2;
+}
+
+.form__left {
+    margin-right: 8em;
+}
+
+.form__right {
+    width: 7em;
+    float: right;
+    .button {
+        width: 100%;
+    }
+}

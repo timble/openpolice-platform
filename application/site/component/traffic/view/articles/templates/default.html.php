@@ -16,7 +16,7 @@
 
 <?= $category->description ?>
 
-<table class="table table-striped">
+<table class="table table--striped">
     <tbody>
     <? foreach ($articles as $article) : ?>
         <tr>

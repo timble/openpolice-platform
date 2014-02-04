@@ -28,31 +28,6 @@ cite {
     font-style: normal;
 }
 
-// Utility classes
-.muted {
-    color: $gray;
-}
-
-.text-center {
-    text-align: center;
-}
-
-// Lists
-// --------------------------------------------------
-
-// Unordered and Ordered lists
-ul, ol {
-    padding: 0;
-    margin: 0 0 $baseLineHeight 2em;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-    margin-bottom: 0;
-}
-
 // MISC
 // ----
 
