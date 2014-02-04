@@ -1,27 +1,24 @@
-/* line 4, default.scss */
 body.com_fora #panel-content {
   background-color: whitesmoke;
 }
 
-/* line 10, default.scss */
 .well {
   min-height: 20px;
   padding: 10px;
 }
-/* line 14, default.scss */
+
 .well .well__content {
   padding: 10px;
   border: 1px solid #e4e4e4;
   background: #FFF;
 }
 
-/* line 22, default.scss */
 .comments .comment {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
-/* line 28, default.scss */
+
 .comments .comment__header {
   color: gray;
 }
