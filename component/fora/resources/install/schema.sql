@@ -16,7 +16,7 @@ CREATE TABLE `fora_categories` (
   UNIQUE KEY `slug` (`slug`,`table`),
   KEY `cat_idx` (`table`,`published`,`access`),
   KEY `idx_access` (`access`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_comments'
 CREATE TABLE `fora_comments` (
@@ -29,7 +29,7 @@ CREATE TABLE `fora_comments` (
   `modified_by` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`fora_comment_id`),
   KEY `fora_topic_id` (`fora_topic_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_forums'
 CREATE TABLE `fora_forums` (
@@ -45,7 +45,7 @@ CREATE TABLE `fora_forums` (
   KEY `idx_enabled` (`published`),
   KEY `idx_category_id` (`fora_category_id`),
   CONSTRAINT `fora_forums_ibfk_1` FOREIGN KEY (`fora_category_id`) REFERENCES `fora_categories` (`fora_category_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_responds'
 CREATE TABLE `fora_responds` (
@@ -96,7 +96,7 @@ CREATE TABLE `fora_topics` (
   KEY `created_on` (`created_on`),
   KEY `fora_comment_id` (`fora_comment_id`),
   CONSTRAINT `fora_topics_ibfk_1` FOREIGN KEY (`fora_forum_id`) REFERENCES `fora_forums` (`fora_forum_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_users'
 CREATE TABLE `fora_users` (
@@ -108,7 +108,7 @@ CREATE TABLE `fora_users` (
   `check_date` datetime DEFAULT NULL,
   PRIMARY KEY (`fora_user_id`),
   UNIQUE KEY `users_user_id` (`users_user_id`,`site`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'fora_votes'
 CREATE TABLE `fora_votes` (
