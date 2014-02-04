@@ -1024,19 +1024,6 @@ CREATE TABLE `data`.`fora_forums` (
 
 
 --
--- Table structure data for table `data`.`fora_responds`
---
-
-DROP TABLE IF EXISTS `data`.`fora_responds`;
-
-CREATE TABLE `data`.`fora_responds` (
-  `fora_topic_id` int(11) unsigned NOT NULL,
-  `comments_comment_id` int(11) NOT NULL,
-  PRIMARY KEY (`fora_topic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
---
 -- Table structure data for table `data`.`fora_subscriptions`
 --
 

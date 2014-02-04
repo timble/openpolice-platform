@@ -20,6 +20,8 @@ class ForaViewTopicHtml extends Library\ViewHtml
     public function render()
     {
         $topic = $this->getModel()->getData();
+
+        $this->forum = $this->getObject('com:fora.model.forums')->id($topic->fora_forum_id)->getRow();
         $this->fora_user = $this->getObject('com:fora.model.users')->users_user_id($this->getObject('user')->getId())->site($this->getObject('application')->getSite())->getRow();
 
         if($this->getObject('com:fora.model.subscriptions')->type('topic')->fora_user_id($this->fora_user->id)->row($topic->id)->getData()->row)
@@ -34,19 +36,7 @@ class ForaViewTopicHtml extends Library\ViewHtml
             $this->voted = !$vote->isNew();
         }
 
-        $this->forum = $this->getObject('com:fora.model.forums')->id($topic->fora_forum_id)->getRow();
-
-        if($this->forum->type != 'article' && is_numeric($topic->id))
-        {
-            $responds = $this->getObject('com:fora.database.table.responds')
-                ->select(array('fora_topic_id' => $topic->id), Library\Database::FETCH_ROW);
-
-            $this->answer =$this->getObject('com:fora.model.comments')
-                ->id($responds->comments_comment_id)
-                ->getRow();
-        }
-
-        if($this->getLayout() !== 'form')
+        if($this->getLayout() == 'default')
         {
             $this->comments = $this->getObject('com:fora.model.comments')->topic($topic->id)->getRowset();
         }
