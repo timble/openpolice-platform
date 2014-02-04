@@ -50,27 +50,25 @@
                 </div>
             </div>
         </div>
-        <?if($forum->type != 'article'):?>
+        <?if($forum->type != 'article' && $awnser->id):?>
             <div class="well well-small anwser">
-                <? if($awnser->id) : ?>
-                    <div class="comment well">
-                        <div class="comment-header">
-                            <?= $awnser->created_by == $fora_user->id ? translate('You') : $awnser->created_by_name ?>&nbsp;<?= translate('wrote') ?>
-                            <time datetime="<?= $awnser->created_on ?>" pubdate><?= helper('date.humanize', array('date' => $awnser->created_on)) ?></time>
-                        </div>
-                        <div class="btn-group" style="float: right">
-                            <? if(object('user')->getRole() == 25 ):?>
-                            <button title="<?=translate('Unmark as') ?>"
-                                    class="btn btn-small response"
-                                    data-topic="<?=$topic->id;?>"
-                                    data-comment="<?= $awnser->id ?>" data-action="delete">
-                                <i class="icon-remove"></i>
-                            </button>
-                            <?endif;?>
-                        </div>
-                        <p><?= escape($awnser->text) ?></p>
+                <div class="comment well">
+                    <div class="comment-header">
+                        <?= $awnser->created_by == $fora_user->id ? translate('You') : $awnser->created_by_name ?>&nbsp;<?= translate('wrote') ?>
+                        <time datetime="<?= $awnser->created_on ?>" pubdate><?= helper('date.humanize', array('date' => $awnser->created_on)) ?></time>
                     </div>
-                <?endif;?>
+                    <div class="btn-group" style="float: right">
+                        <? if(object('user')->getRole() == 25 ):?>
+                        <button title="<?=translate('Unmark as') ?>"
+                                class="btn btn-small response"
+                                data-topic="<?=$topic->id;?>"
+                                data-comment="<?= $awnser->id ?>" data-action="delete">
+                            <i class="icon-remove"></i>
+                        </button>
+                        <?endif;?>
+                    </div>
+                    <p><?= escape($awnser->text) ?></p>
+                </div>
             </div>
         <?endif;?>
         <? if($topic->commentable == 1):?>
