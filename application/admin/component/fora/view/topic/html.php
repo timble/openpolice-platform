@@ -48,31 +48,9 @@ class ForaViewTopicHtml extends Library\ViewHtml
         }
         if($this->getLayout() !== 'form')
         {
-            $this->pathways =  $this->getPathway();
             $this->comments = $this->getObject('com:fora.model.comments')->topic($topic->id)->getRowset();
         }
 
         return parent::render();
-    }
-
-    /**
-     * Return a reference to the application pathway object
-     *
-     * @return object ApplicationConfigPathway
-     */
-    public function getPathway()
-    {
-        if(!isset($this->pathway))
-        {
-            $pathway = new ForaConfigPathway();
-
-            $pathway->addItem("Support", "categories");
-            $pathway->addItem($this->forum->category_title, "category?id=".$this->forum->fora_category_id);
-            $pathway->addItem($this->forum->title, 'topics?forum='.$this->forum->id.'&slug='.$this->forum->getSlug());
-            $pathway->addItem($this->getModel()->getData()->title, "topic?slug=".$this->getModel()->getData()->getSlug());
-
-        }
-
-        return (array) $pathway->items;
     }
 }
