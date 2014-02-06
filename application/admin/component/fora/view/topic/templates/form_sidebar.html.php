@@ -7,7 +7,7 @@
  * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
  */
 ?>
-<?if($this->getObject('user')->getRole() == 25):?>
+<? if($this->getObject('user')->getRole() == 25) : ?>
 <fieldset>
     <legend><?= translate('Publish'); ?></legend>
     <div>
@@ -27,16 +27,20 @@
     <legend><?= translate('Forum') ?></legend>
     <?= helper('listbox.forums', array('name' => 'fora_forum_id', 'selected' => $topic->fora_forum_id ? $topic->fora_forum_id : $state->forum, 'attribs' => array('class' => 'select-forums required',  'style' => 'width:220px'))) ?>
 </fieldset>
+<? if($forum->type == 'issue' || $forum->type == 'idea') : ?>
 <fieldset>
     <legend><?= translate('Status') ?></legend>
     <?= helper('listbox.statuses', array('name' => 'status', 'selected' => $topic->status ? $topic->status : 'new', 'filter' => array('type' => $forum->type),)) ?>
 </fieldset>
-<?else:?>
+<? endif ?>
+<? else : ?>
     <input type="hidden" name="published" value="1"/>
     <input type="hidden" name="commentable" value="<?= $topic->commentable; ?>"/>
     <input type="hidden" name="fora_forum_id" value="<?= $topic->fora_forum_id ? $topic->fora_forum_id : $state->forum; ?>"/>
+    <? if($forum->type == 'issue' || $forum->type == 'idea') : ?>
     <input type="hidden" name="status" value="<?= $topic->status ? $topic->status : 'new'; ?>"/>
-<?endif;?>
+    <? endif ?>
+<? endif ?>
 
 <? if($topic->isAttachable()) : ?>
 <fieldset>

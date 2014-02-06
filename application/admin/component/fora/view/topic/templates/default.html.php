@@ -10,7 +10,14 @@
 <div id="fora-topic-default" class="scrollable">
     <div class="well">
         <div class="well__content" style="margin-bottom: 20px">
-            <h1><?= escape($topic->title) ?></h1>
+            <h1>
+                <?= escape($topic->title) ?>
+                <? if($topic->status) : ?>
+                    <span class="label label-<?= $topic->status ?>"><?= translate($topic->status) ?></span>
+                <? endif; ?>
+            </h1>
+            <?= $topic->created_by_name ?><br />
+            <?= translate('Posted this on') ?> <?= $topic->created_on ?>
             <?= $topic->text ?>
             <? if($topic->isAttachable()) : ?>
                 <?= import('default_attachments.html', array('attachments' => $topic->getAttachments())) ?>

@@ -51,6 +51,9 @@
                     <a href="<?= route( 'view=topic&task=edit&id='.$topic->id ); ?>">
                         <?= escape($topic->title) ?>
                     </a>
+                    <? if($topic->status) : ?>
+                    <span class="label label-<?= $topic->status ?>"><?= translate($topic->status) ?></span>
+                    <? endif; ?>
                 </td>
                 <td>
                     <?= helper('date.humanize', array('date' => $topic->last_activity_on)) ?> by <?= $topic->last_activity_by_name ?>
