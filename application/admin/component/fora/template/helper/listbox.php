@@ -29,6 +29,21 @@ class ForaTemplateHelperListbox extends Library\TemplateHelperListbox
 
         return parent::_render($config);
     }
+
+    public function statuses($config = array())
+    {
+        $config = new Library\ObjectConfig($config);
+        $config->append(array(
+            'model' => 'statuses',
+            'value'	=> 'text',
+            'label'	=> 'text',
+            'filter'    => array(),
+            'deselect'  => false
+        ));
+
+        return parent::_render($config);
+    }
+
     /**
      * @param array $config
      * @return string

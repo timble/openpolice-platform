@@ -27,10 +27,15 @@
     <legend><?= translate('Forum') ?></legend>
     <?= helper('listbox.forums', array('name' => 'fora_forum_id', 'selected' => $topic->fora_forum_id ? $topic->fora_forum_id : $state->forum, 'attribs' => array('class' => 'select-forums required',  'style' => 'width:220px'))) ?>
 </fieldset>
+<fieldset>
+    <legend><?= translate('Status') ?></legend>
+    <?= helper('listbox.statuses', array('name' => 'status', 'selected' => $topic->status ? $topic->status : 'new', 'filter' => array('type' => $forum->type),)) ?>
+</fieldset>
 <?else:?>
     <input type="hidden" name="published" value="1"/>
-    <input type="hidden" name="commentable" value="<?= $topic->commentable;?>"/>
-    <input type="hidden" name="fora_forum_id" value="<?=$topic->fora_forum_id ? $topic->fora_forum_id : $state->forum;?>"/>
+    <input type="hidden" name="commentable" value="<?= $topic->commentable; ?>"/>
+    <input type="hidden" name="fora_forum_id" value="<?= $topic->fora_forum_id ? $topic->fora_forum_id : $state->forum; ?>"/>
+    <input type="hidden" name="status" value="<?= $topic->status ? $topic->status : 'new'; ?>"/>
 <?endif;?>
 
 <? if($topic->isAttachable()) : ?>
