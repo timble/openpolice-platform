@@ -9,7 +9,6 @@
 ?>
 
 <style src="assets://fora/css/default.css" />
-<script src="assets://fora/js/subscribe.js" />
 
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
@@ -61,15 +60,3 @@
         </tbody>
     </table>
 </form>
-
-<script data-inline>
-    jQuery( document ).ready(function($) {
-        new Fora.Subscribe({
-            holder: 'fora-topics-default',
-            url: '<?= html_entity_decode(route('view=subscription'))?>',
-            data: {
-                _token: '<?= object('user')->getSession()->getToken() ?>'
-            }
-        });
-    });
-</script>
