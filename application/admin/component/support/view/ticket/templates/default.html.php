@@ -1,8 +1,18 @@
-<style src="assets://support/css/default.css" />
+<?php
+/**
+ * Belgian Police Web Platform - Support Component
+ *
+ * @copyright	Copyright (C) 2012 - 2014 Timble CVBA. (http://www.timble.net)
+ * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @link		https://github.com/belgianpolice/internet-platform
+ */
+?>
 
 <script src="assets://js/koowa.js" />
 <script src="assets://support/js/comment.js" />
 <script src="assets://files/js/uri.js" />
+
+<style src="assets://support/css/default.css" />
 
 <script>
     window.addEvent('domready', function() {
@@ -27,7 +37,7 @@
         <span class="label label-<?= $ticket->status ?>"><?= translate($ticket->status) ?></span>
     </div>
 
-    <form id="comment" action="<?= route('&view=comment&row='.$ticket->id.'&table=support_tickets') ?>" method="post">
+    <form id="comment" class="group" action="<?= route('&view=comment&row='.$ticket->id.'&table=support_tickets') ?>" method="post">
         <input type="hidden" name="row" value="<?= $ticket->id ?>" />
         <input type="hidden" name="table" value="support_tickets" />
         <input type="hidden" name="status" value="" />

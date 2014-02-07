@@ -1,3 +1,13 @@
+<?php
+/**
+ * Belgian Police Web Platform - Support Component
+ *
+ * @copyright	Copyright (C) 2012 - 2014 Timble CVBA. (http://www.timble.net)
+ * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @link		https://github.com/belgianpolice/internet-platform
+ */
+?>
+
 <div class="scopebar">
     <div class="scopebar__group">
         <a class="<?= is_null($state->search) && is_null($state->created_by) && is_null($state->status) ? 'active' : ''; ?>" href="<?= route('search=&created_by=&status' ) ?>">

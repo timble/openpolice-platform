@@ -1,20 +1,14 @@
 <?php
 /**
- * Nooku Framework - http://www.nooku.org
+ * Belgian Police Web Platform - Support Component
  *
- * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
+ * @copyright	Copyright (C) 2012 - 2014 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 
 use Nooku\Library;
 
-/**
- * Bootstrapper
- *
- * @author  Terry Visser <http://nooku.assembla.com/profile/terryvisser>
- * @package Component\Support
- */
 class SupportBootstrapper extends Library\BootstrapperAbstract
 {
     /**
@@ -25,7 +19,6 @@ class SupportBootstrapper extends Library\BootstrapperAbstract
     public function bootstrap()
     {
         $manager = $this->getObjectManager();
-//        $manager->registerAlias('com:support.controller.attachment', 'com:attachments.controller.attachment');
         $manager->registerAlias('com:support.view.attachment.file', 'com:attachments.view.attachment.file');
     }
 }
