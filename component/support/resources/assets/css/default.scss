@@ -60,6 +60,12 @@ $border: #dddddd;
             border-radius: 5px;
         }
     }
+
+    .attachment {
+        background-color: lighten($border, 8%);
+        padding: 4px 6px;
+        border-radius: 4px;
+    }
 }
 
 // Colors
