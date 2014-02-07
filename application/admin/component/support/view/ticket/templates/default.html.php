@@ -45,7 +45,7 @@
             <?= translate('Submit as Solved') ?>
         </a>
         <div style="float: right">
-            <?// import('com:attachments.view.attachments.upload.html') ?>
+            <?= import('com:attachments.view.attachments.upload.html') ?>
         </div>
     </form>
 

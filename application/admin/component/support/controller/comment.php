@@ -11,6 +11,13 @@ use Nooku\Library;
 
 class SupportControllerComment extends Library\ControllerModel
 {
+    public function __construct(Library\ObjectConfig $config)
+    {
+        parent::__construct($config);
+
+        $this->registerCallback('after.add'  , array($this, 'forceRedirect'));
+    }
+
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
@@ -58,5 +65,13 @@ class SupportControllerComment extends Library\ControllerModel
         }
 
         return parent::_actionAdd($context);
+    }
+
+    public function forceRedirect(Library\CommandContext $context)
+    {
+        // @TODO: Find out why a form with enctype='multipart/form-data' (set in attachments.upload.js)
+        // never sets the redirect back to the referrer.
+        // For this reason, we force the redirect here:  
+        $context->response->setRedirect($context->request->getReferrer());
     }
 }
