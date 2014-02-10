@@ -1,0 +1,1 @@
+Ticket plain <?= $subject ?>

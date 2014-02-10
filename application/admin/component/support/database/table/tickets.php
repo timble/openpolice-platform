@@ -18,7 +18,7 @@ class SupportDatabaseTableTickets extends Library\DatabaseTableAbstract
                 'creatable', 'modifiable', 'lockable', 'sluggable',
                 'com:comments.database.behavior.discussible',
                 'com:attachments.database.behavior.attachable',
-
+                'notifiable'
             ),
             'filters' => array(
                 'text'   => array('html', 'tidy'),

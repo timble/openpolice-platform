@@ -53,7 +53,7 @@
                     <span class="label label-<?= $ticket->status ?>"><?= substr($ticket->status, 0, 1) ?></span>
                 </td>
                 <td style="white-space:nowrap;">
-                    <a href="<?= route( 'view=ticket&task=edit&id='.$ticket->id ); ?>">
+                    <a href="<?= route( 'view=ticket&id='.$ticket->id ); ?>">
                         <?= escape($ticket->title) ?>
                     </a>
                 </td>

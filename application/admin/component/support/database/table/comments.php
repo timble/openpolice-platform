@@ -16,7 +16,8 @@ class SupportDatabaseTableComments extends Comments\DatabaseTableComments
     {
         $config->append(array(
             'behaviors'  => array(
-                'com:attachments.database.behavior.attachable'
+                'com:attachments.database.behavior.attachable',
+                'notifiable'
             )
         ));
 
