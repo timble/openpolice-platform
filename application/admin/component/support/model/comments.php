@@ -12,5 +12,19 @@ use Nooku\Component\Comments;
 
 class SupportModelComments extends Comments\ModelComments
 {
+    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
+    {
+        parent::_buildQueryColumns($query);
 
+        $query->columns(array(
+            'created_by_name' => 'creator.name'
+        ));
+    }
+
+    protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
+    {
+        parent::_buildQueryJoins($query);
+
+        $query->join(array('creator' => 'users'), 'creator.users_user_id = tbl.created_by');
+    }
 }

@@ -22,6 +22,7 @@ class SupportModelTickets extends Library\ModelTable
 
         $this->getState()->remove('sort')->insert('sort', 'cmd', 'ordering');
     }
+
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
     {
         parent::_buildQueryColumns($query);

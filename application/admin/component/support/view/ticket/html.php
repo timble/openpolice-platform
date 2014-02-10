@@ -13,14 +13,7 @@ class SupportViewTicketHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $ticket = $this->getModel()->getData();
-
         $this->user = $this->getObject('user');
-
-        if($this->getLayout() == 'default')
-        {
-            $this->comments = $this->getObject('com:support.model.comments')->sort('created_on')->direction('desc')->table('support_tickets')->row($ticket->id)->getRowset();
-        }
 
         return parent::render();
     }

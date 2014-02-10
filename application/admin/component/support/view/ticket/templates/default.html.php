@@ -60,7 +60,7 @@
     </form>
 
     <div class="comments">
-        <? foreach($comments as $comment) : ?>
+        <? foreach($ticket->getComments() as $comment) : ?>
         <div class="comment comment_<?= $comment->id ?>">
             <strong><?= $comment->created_by == $user->getId() ? translate('You') : $comment->created_by_name ?></strong>
             <span class="muted">

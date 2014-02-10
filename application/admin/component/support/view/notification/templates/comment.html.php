@@ -39,24 +39,10 @@ body, #backgroundTable{
     /*@editable*/ border: 1px solid #DDDDDD;
 }
 
-/**
-* @tab Page
-* @section heading 1
-* @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
-* @style heading 1
-*/
-h1, .h1{
-    /*@editable*/ color:#202020;
-    display:block;
-    /*@editable*/ font-family:Arial;
-    /*@editable*/ font-size:34px;
-    /*@editable*/ font-weight:bold;
-    /*@editable*/ line-height:100%;
-    margin-top:0;
-    margin-right:0;
-    margin-bottom:10px;
-    margin-left:0;
-    /*@editable*/ text-align:left;
+.comment {
+   border-top: 1px dotted #d3d3d3;
+    padding-top: 20px;
+    margin-top: 10px;
 }
 
 /**
@@ -77,82 +63,6 @@ h2, .h2{
     margin-bottom:10px;
     margin-left:0;
     /*@editable*/ text-align:left;
-}
-
-/**
-* @tab Page
-* @section heading 3
-* @tip Set the styling for all third-level headings in your emails.
-* @style heading 3
-*/
-h3, .h3{
-    /*@editable*/ color:#202020;
-    display:block;
-    /*@editable*/ font-family:Arial;
-    /*@editable*/ font-size:26px;
-    /*@editable*/ font-weight:bold;
-    /*@editable*/ line-height:100%;
-    margin-top:0;
-    margin-right:0;
-    margin-bottom:10px;
-    margin-left:0;
-    /*@editable*/ text-align:left;
-}
-
-/**
-* @tab Page
-* @section heading 4
-* @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
-* @style heading 4
-*/
-h4, .h4{
-    /*@editable*/ color:#202020;
-    display:block;
-    /*@editable*/ font-family:Arial;
-    /*@editable*/ font-size:22px;
-    /*@editable*/ font-weight:bold;
-    /*@editable*/ line-height:100%;
-    margin-top:0;
-    margin-right:0;
-    margin-bottom:10px;
-    margin-left:0;
-    /*@editable*/ text-align:left;
-}
-
-/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: PREHEADER /\/\/\/\/\/\/\/\/\/\ */
-
-/**
-* @tab Header
-* @section preheader style
-* @tip Set the background color for your email's preheader area.
-* @theme page
-*/
-#templatePreheader{
-    /*@editable*/ background-color:#FAFAFA;
-}
-
-/**
-* @tab Header
-* @section preheader text
-* @tip Set the styling for your email's preheader text. Choose a size and color that is easy to read.
-*/
-.preheaderContent div{
-    /*@editable*/ color:#505050;
-    /*@editable*/ font-family:Arial;
-    /*@editable*/ font-size:10px;
-    /*@editable*/ line-height:100%;
-    /*@editable*/ text-align:left;
-}
-
-/**
-* @tab Header
-* @section preheader link
-* @tip Set the styling for your email's preheader links. Choose a color that helps them stand out from your text.
-*/
-.preheaderContent div a:link, .preheaderContent div a:visited, /* Yahoo! Mail Override */ .preheaderContent div a .yshortcuts /* Yahoo! Mail Override */{
-    /*@editable*/ color:#336699;
-    /*@editable*/ font-weight:normal;
-    /*@editable*/ text-decoration:underline;
 }
 
 /* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: HEADER /\/\/\/\/\/\/\/\/\/\ */
@@ -235,97 +145,6 @@ h4, .h4{
     /*@editable*/ font-weight:normal;
     /*@editable*/ text-decoration:underline;
 }
-
-.bodyContent img{
-    display:inline;
-    height:auto;
-}
-
-/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: FOOTER /\/\/\/\/\/\/\/\/\/\ */
-
-/**
-* @tab Footer
-* @section footer style
-* @tip Set the background color and top border for your email's footer area.
-* @theme footer
-*/
-#templateFooter{
-    /*@editable*/ background-color:#FFFFFF;
-    /*@editable*/ border-top:0;
-}
-
-/**
-* @tab Footer
-* @section footer text
-* @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
-* @theme footer
-*/
-.footerContent div{
-    /*@editable*/ color:#707070;
-    /*@editable*/ font-family:Arial;
-    /*@editable*/ font-size:12px;
-    /*@editable*/ line-height:125%;
-    /*@editable*/ text-align:left;
-}
-
-/**
-* @tab Footer
-* @section footer link
-* @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
-*/
-.footerContent div a:link, .footerContent div a:visited, /* Yahoo! Mail Override */ .footerContent div a .yshortcuts /* Yahoo! Mail Override */{
-    /*@editable*/ color:#336699;
-    /*@editable*/ font-weight:normal;
-    /*@editable*/ text-decoration:underline;
-}
-
-.footerContent img{
-    display:inline;
-}
-
-/**
-* @tab Footer
-* @section social bar style
-* @tip Set the background color and border for your email's footer social bar.
-* @theme footer
-*/
-#social{
-    /*@editable*/ background-color:#FAFAFA;
-    /*@editable*/ border:0;
-}
-
-/**
-* @tab Footer
-* @section social bar style
-* @tip Set the background color and border for your email's footer social bar.
-*/
-#social div{
-    /*@editable*/ text-align:center;
-}
-
-/**
-* @tab Footer
-* @section utility bar style
-* @tip Set the background color and border for your email's footer utility bar.
-* @theme footer
-*/
-#utility{
-    /*@editable*/ background-color:#FFFFFF;
-    /*@editable*/ border:0;
-}
-
-/**
-* @tab Footer
-* @section utility bar style
-* @tip Set the background color and border for your email's footer utility bar.
-*/
-#utility div{
-    /*@editable*/ text-align:center;
-}
-
-#monkeyRewards img{
-    max-width:190px;
-}
 </style>
 </head>
 <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
@@ -365,7 +184,25 @@ h4, .h4{
                                                     <div mc:edit="std_content00">
                                                         <h2 class="h2"><?= $subject ?></h2>
 
-                                                        <p><?= $author->getName() ?> has posted a new reply to the ticket <a href="<?= $url ?>"><?= $ticket->title ?></a></p>
+                                                        <p><?= $author->getName() ?> has posted a new reply to the ticket <a href="<?= $url ?>"><?= $ticket->title ?></a>.</p>
+
+                                                        <? foreach($ticket->getComments() as $comment) : ?>
+                                                            <div class="comment">
+                                                                <strong>
+                                                                    <?= $comment->created_by_name ?> - <?= helper('date.format', array('date'=> $comment->created_on, 'format' => 'd F Y H:i')) ?>
+                                                                </strong>
+                                                                <br />
+                                                                <?= $comment->text ?>
+                                                            </div>
+                                                        <? endforeach; ?>
+
+                                                        <div class="comment">
+                                                            <strong>
+                                                                <?= $ticket->created_by_name ?> - <?= helper('date.format', array('date'=> $ticket->created_on, 'format' => 'd F Y H:i')) ?>
+                                                            </strong>
+                                                            <br />
+                                                            <?= $ticket->text ?>
+                                                        </div>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -376,31 +213,6 @@ h4, .h4{
                                 </tr>
                             </table>
                             <!-- // End Template Body \\ -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="center" valign="top">
-                            <!-- // Begin Template Footer \\ -->
-                            <table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
-                                <tr>
-                                    <td valign="top" class="footerContent">
-
-                                        <!-- // Begin Module: Standard Footer \\ -->
-                                        <table border="0" cellpadding="10" cellspacing="0" width="100%">
-                                            <tr>
-                                                <td valign="top" width="350">
-                                                    <div mc:edit="std_footer">
-                                                        Please don't reply to this mail. You are receiving this notification because you are subscribed to the topic.
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                        <!-- // End Module: Standard Footer \\ -->
-
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- // End Template Footer \\ -->
                         </td>
                     </tr>
                 </table>
