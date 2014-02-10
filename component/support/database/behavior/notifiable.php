@@ -25,8 +25,6 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
 
     protected function _sendNotification(Library\CommandContext $context)
     {
-        $path = JPATH_ROOT.DS.'application'.DS.'admin'.DS.'component'.DS.'support'.DS.'view'.DS.'notification'.DS.'templates'.DS;
-
         $name = $this->getMixer()->getIdentifier()->name;
         $data = $context->data;
 
@@ -90,26 +88,21 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
 
     protected function _sendMail($recipients, $subject, $html, $plain)
     {
-        require_once(JPATH_VENDOR . DS . 'swiftmailer' . DS . 'swiftmailer' .DS . 'lib' . DS . 'swift_required.php');
-
         $application = $this->getObject('application');
 
-        // $transport = \Swift_MailTransport::newInstance();
-
-        $transport = \Swift_SmtpTransport::newInstance('localhost',1025);
-        $mailer    = \Swift_Mailer::newInstance($transport);
-
-
-        $message = \Swift_Message::newInstance()
-                    ->setSubject($subject)
-                    ->setFrom(array($application->getCfg('mailfrom') => $application->getCfg('fromname')))
-                    ->setBody($html, 'text/html')
-                    ->addPart($plain, 'text/plain');
+        $controller = $this->getObject('com:swiftmailer.controller.mail');
+        $data = array(
+            'subject' => $subject,
+            'html'    => $html,
+            'plain'   => $plain,
+            'from'    => array($application->getCfg('mailfrom') => $application->getCfg('fromname'))
+        );
 
         foreach($recipients as $recipient)
         {
-            $message->setTo(array($recipient['email'] => $recipient['name']));
-            $mailer->send($message);
+            $data['recipient'] = array($recipient['email'] => $recipient['name']);
+
+            $controller->send($data);
         }
     }
 }
