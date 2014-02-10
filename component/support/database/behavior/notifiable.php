@@ -28,6 +28,7 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         $name = $this->getMixer()->getIdentifier()->name;
         $data = $context->data;
 
+        // Get the templates, ticket row and recipients
         if($name == 'comment')
         {
             $templates  = array('plain' => 'comment.plain', 'html' => 'comment.html');
@@ -63,7 +64,7 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
                 ->toArray();
         }
 
-        // Add the link to the topic
+        // Create the route to the topic
         $parts = array(
             'view'   => 'ticket',
             'option' => 'com_support',
@@ -78,11 +79,13 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
 
         $url = $host.$path;
 
-        $data = array('ticket' => $ticket, 'subject' => $subject, 'url' => $url);
+        // Render the body of the mail
+        $data = array('ticket' => $ticket, 'author' => $this->getObject('user'), 'subject' => $subject, 'url' => $url);
 
         $html  = $this->getObject('com:support.view.ticket')->getTemplate()->loadFile('com:support.view.notification.'.$templates['html'], $data);
         $plain = $this->getObject('com:support.view.ticket')->getTemplate()->loadFile('com:support.view.notification.'.$templates['plain'], $data);
 
+        // Finally, send out the messages
         $this->_sendMail($recipients, $subject, $html, $plain);
     }
 
