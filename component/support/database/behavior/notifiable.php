@@ -32,15 +32,15 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         if($name == 'comment')
         {
             $templates  = array('plain' => 'comment.plain', 'html' => 'comment.html');
-            $ticket = $this->getObject('com:support.database.table.tickets')->select($data->row);
+            $ticket = $this->getObject('com:support.database.table.tickets')->select($data->row, Library\Database::FETCH_ROW);
 
             $subject = 'New comment notification';
 
             $user   = $this->getObject('user');
             if($user->getRole() == 25)
             {
-                $author = $this->getObject('com:users.database.table.users')->select($ticket->created_by);
-                $recipients = array($author);
+                $author = $this->getObject('com:users.database.table.users')->select($ticket->created_by, Library\Database::FETCH_ROW);
+                $recipients = array($author->toArray());
             }
             else
             {
