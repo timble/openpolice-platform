@@ -305,6 +305,42 @@ textarea {
   margin: 0 auto;
 }
 
+/* line 1, organisms/_splash.scss */
+.splash {
+  padding-top: 100px;
+  text-align: center;
+}
+
+/* line 6, organisms/_splash.scss */
+.splash__search {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* line 11, organisms/_splash.scss */
+.splash__logo {
+  margin-bottom: 50px;
+}
+
+/* line 15, organisms/_splash.scss */
+.splash__toolbar {
+  margin-top: 25px;
+}
+
+/* line 19, organisms/_splash.scss */
+.splash__languages {
+  margin: 50px 0 100px 0;
+}
+/* line 22, organisms/_splash.scss */
+.splash__languages a {
+  margin: 0 10px;
+}
+
+/* line 28, organisms/_splash.scss */
+.splash__external a {
+  margin: 0 10px;
+}
+
 /* line 2, utilities/_clearfix.scss */
 .clearfix, .article, form, .navbar__handlebar {
   *zoom: 1;
@@ -318,43 +354,6 @@ textarea {
 /* line 20, utilities/_mixins.scss */
 .clearfix:after, .article:after, form:after, .navbar__handlebar:after {
   clear: both;
-}
-
-/* line 1, organisms/_splash.scss */
-.splash {
-  padding-top: 125px;
-}
-
-/* line 5, organisms/_splash.scss */
-.splash__logo {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-/* line 10, organisms/_splash.scss */
-.splash__toolbar {
-  text-align: center;
-  margin-top: 25px;
-}
-
-/* line 15, organisms/_splash.scss */
-.splash__languages {
-  text-align: center;
-  margin: 25px 0 75px 0;
-}
-/* line 19, organisms/_splash.scss */
-.splash__languages a {
-  margin: 0 10px;
-}
-
-/* line 24, organisms/_splash.scss */
-.splash__external {
-  text-align: center;
-  margin-bottom: 10px;
-}
-/* line 28, organisms/_splash.scss */
-.splash__external a {
-  margin: 0 10px;
 }
 
 @media screen and (min-width: 767px) {

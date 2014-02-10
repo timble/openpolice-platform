@@ -1,20 +1,23 @@
 .splash {
-    padding-top: 125px;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.splash__search {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .splash__logo {
-    text-align: center;
     margin-bottom: 50px;
 }
 
 .splash__toolbar {
-    text-align: center;
     margin-top: 25px;
 }
 
 .splash__languages {
-    text-align: center;
-    margin: 25px 0 75px 0;
+    margin: 50px 0 100px 0;
 
     a {
         margin: 0 10px;
@@ -22,9 +25,6 @@
 }
 
 .splash__external {
-    text-align: center;
-    margin-bottom: 10px;
-
     a {
         margin: 0 10px;
     }
