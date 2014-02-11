@@ -2,7 +2,7 @@
     $jQuery(document).ready(function() {
         function format(item) { return item.title; };
         $jQuery("#municipality").select2({
-            placeholder: "<?= translate('Zoek uw woonplaats') ?> ...",
+            placeholder: "<?= translate('Search your city') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
                 url: "?view=municipalities&format=json",
@@ -49,11 +49,11 @@
             <div class="splash__logo"><img src="assets://application/images/logo-<?= $language_short ?>.jpg" /></div>
             <div class="splash__search">
                 <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
-                    <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Zoek uw woonplaats') ?> ..." name="id" style="width: 100%">
+                    <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Search your city') ?> ..." name="id" style="width: 100%">
+                    <div class="splash__toolbar">
+                        <button class="btn">Go to site</button>
+                    </div>
                 </form>
-                <div class="splash__toolbar">
-                    <button class="btn">Go to site</button>
-                </div>
             </div>
 
             <div class="splash__languages">
