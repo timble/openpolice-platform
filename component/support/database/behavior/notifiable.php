@@ -91,7 +91,7 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
     {
         $application = $this->getObject('application');
 
-        $controller = $this->getObject('com:swiftmailer.controller.mail');
+        $controller = $this->getObject('com:sendgrid.controller.mail');
         $data = array(
             'subject' => $subject,
             'html'    => $html,
@@ -99,11 +99,13 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
             'from'    => array($application->getCfg('mailfrom') => $application->getCfg('fromname'))
         );
 
-        foreach($recipients as $recipient)
-        {
-            $data['recipient'] = array($recipient['email'] => $recipient['name']);
-
-            $controller->send($data);
+        $to = array();
+        foreach($recipients as $recipient) {
+            $to[] = array($recipient['email'] => $recipient['name']);
         }
+
+        $data['to'] = $to;
+
+        $controller->send($data);
     }
 }
