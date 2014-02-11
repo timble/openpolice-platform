@@ -72,6 +72,7 @@ For more information, please refer to the [Phpmig GitHub page](https://github.co
     email: admin@localhost.home
     password: admin
     ```
+* MailCatcher is available at [http://police.dev:1080/](http://police.dev:1080/)
 
 ## Benefits
 
@@ -103,6 +104,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [Joomla](http://www.joomla.org)
 * [jQuery](http://jquery.com)
 * [Linux](http://linux.org)
+* [MailCatcher](https://github.com/sj26/mailcatcher)
 * [MooTools](http://mootools.net)
 * [nginx](http://nginx.org)
 * [Nooku](http://www.nooku.org)
