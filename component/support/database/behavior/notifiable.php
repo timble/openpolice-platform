@@ -34,8 +34,6 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
             $templates  = array('plain' => 'comment.plain', 'html' => 'comment.html');
             $ticket = $this->getObject('com:support.model.tickets')->id($data->row)->getRow();
 
-            $subject = 'New comment notification';
-
             $user   = $this->getObject('user');
             if($user->getRole() == 25)
             {
@@ -56,7 +54,6 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
             $templates  = array('plain' => 'ticket.plain', 'html' => 'ticket.html');
             $ticket     = $data;
 
-            $subject    = 'New ticket notification';
             $recipients = $this->getObject('com:users.model.users')
                 ->enabled(true)
                 ->role(25)
@@ -80,6 +77,7 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         $url = $host.$path;
 
         // Render the body of the mail
+        $subject = 'Support: ' . $ticket->title;
         $data = array('ticket' => $ticket, 'author' => $this->getObject('user'), 'subject' => $subject, 'url' => $url);
 
         $html  = $this->getObject('com:support.view.ticket')->getTemplate()->loadFile('com:support.view.notification.'.$templates['html'], $data);
