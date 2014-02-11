@@ -54,6 +54,14 @@
     .exception__image {
         @include span-columns(5 omega, 12);
     }
+
+    .gallery .gallery__item {
+        @include span-columns(3, 12);
+    }
+
+    .gallery .gallery__item:nth-child(3) {
+        @include span-columns(3 omega, 12);
+    }
 }
 
 @include respond-min(998px) {

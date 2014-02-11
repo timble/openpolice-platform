@@ -31,7 +31,7 @@
                 <? endif ?>
             </div>
 
-            <ul class="nav nav-tabs nav-stacked visible-phone">
+            <ul class="nav nav--list visible-phone">
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('News')) ?>"><?= translate('News') ?></a></li>
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Questions')) ?>"><?= translate('Frequently asked questions') ?></a></li>
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Traffic')) ?>"><?= translate('Traffic information') ?></a></li>
@@ -39,7 +39,7 @@
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Contact')) ?>"><?= translate('Contact us') ?></a></li>
             </ul>
 
-            <ul class="nav nav-tabs nav-stacked hidden-phone">
+            <ul class="nav nav--list hidden-phone">
                 <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Your district officer') ?></a></li>
                 <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Stations')) ?>"><?= translate('Stations') ?></a></li>
                 <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Services')) ?>"><?= translate('Services') ?></a></li>

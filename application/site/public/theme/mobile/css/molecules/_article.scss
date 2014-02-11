@@ -17,12 +17,11 @@
     .timestamp {
         padding-top: 4px;
         @extend .muted;
-        font-size: $fontSizeSmall;
+        font-size: 0.85em;
     }
 }
 
-.article__introtext,
-.entry-summary {
+.article__introtext {
     font-weight: bold;
     margin-bottom: $baseLineHeight;
 }

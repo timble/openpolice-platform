@@ -12,7 +12,7 @@
 
 <? foreach ($articles as $article) : ?>
     <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
-    <div class="media<?= !$article->attachments_attachment_id ? ' media--imageless' : ''; ?>">
+    <div class="media">
         <? if($article->attachments_attachment_id): ?>
             <a tabindex="-1" class="thumbnail media__object" href="<?= $link ?>">
                 <?= helper('com:attachments.image.thumbnail', array(

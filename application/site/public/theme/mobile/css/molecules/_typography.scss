@@ -15,3 +15,11 @@
     font-size: $fontSizeSmall;
     @extend .muted;
 }
+
+.muted {
+    color: $gray;
+}
+
+.text-center {
+    text-align: center;
+}

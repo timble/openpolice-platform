@@ -13,7 +13,7 @@
 <h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
 
 <form action="" method="get" class="-koowa-form">
-    <table class="table table-striped">
+    <table class="table table--striped">
         <thead>
         <tr>
             <th style="width: 70%"><?=translate('Name')?></th>

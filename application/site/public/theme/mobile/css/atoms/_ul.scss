@@ -1,3 +1,16 @@
+// Unordered and Ordered lists
+ul, ol {
+    padding: 0;
+    margin: 0 0 $baseLineHeight 2em;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin-bottom: 0;
+}
+
 ul {
     &.column--double,
     &.column--triple,
