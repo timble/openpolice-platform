@@ -23,7 +23,6 @@ class SupportControllerToolbarTicket extends Library\ControllerToolbarActionbar
 
         if($this->getController()->canDelete())
         {
-            $this->addSeparator();
             $this->addDelete();
         }
     }
@@ -33,8 +32,12 @@ class SupportControllerToolbarTicket extends Library\ControllerToolbarActionbar
         if($this->getController()->getView()->getLayout() == 'default')
         {
             $this->addBack();
-            $this->addEdit();
-            $this->addSeparator();
+
+            if($this->getController()->canEdit())
+            {
+                $this->addSeparator();
+                $this->addEdit();
+            }
         } else parent::_afterControllerRead($command);
     }
 
