@@ -862,6 +862,14 @@ DROP DATABASE IF EXISTS `data`;
 
 CREATE DATABASE `data`;
 
+--
+-- Table structure data for table `data`.`migrations`
+--
+
+CREATE TABLE `data`.`migrations` (
+  `version` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 --
 -- Table structure data for table `data`.`police_municipalities`
