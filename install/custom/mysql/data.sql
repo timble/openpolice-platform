@@ -249,8 +249,8 @@ VALUES
 
 INSERT INTO `pages_modules` (`pages_module_id`, `title`, `content`, `ordering`, `position`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `published`, `name`, `access`, `params`, `extensions_extension_id`, `application`)
 VALUES
-	(1,'Main Menu','',2,'navigation',1,NULL,1,'2013-04-28 19:51:32',NULL,NULL,1,'mod_menu',0,'menu_id=\"1\"\nshow_title=\"0\"\nstart_level=\"0\"\nend_level=\"1\"\nshow_children=\"never\"\nclass=\"nav\"\ncache=\"1\"',25,'site'),
-	(2,'Left Menu','',1,'left',NULL,NULL,62,'2013-04-18 17:05:29',1,'2013-08-02 19:37:11',1,'mod_menu',0,'menu_id=\"1\"\nshow_title=\"0\"\nstart_level=\"2\"\nend_level=\"0\"\nshow_children=\"active\"\nclass=\"nav nav-tabs nav-stacked\"\ncache=\"0\"',25,'site'),
+	(1,'Main Menu','',2,'navigation',1,NULL,1,'2013-04-28 19:51:32',NULL,NULL,1,'mod_menu',0,'menu_id=\"1\"\nshow_title=\"0\"\nstart_level=\"0\"\nend_level=\"1\"\nshow_children=\"never\"\nclass=\"\"\ncache=\"1\"',25,'site'),
+	(2,'Left Menu','',1,'left',NULL,NULL,62,'2013-04-18 17:05:29',1,'2013-08-02 19:37:11',1,'mod_menu',0,'menu_id=\"1\"\nshow_title=\"0\"\nstart_level=\"2\"\nend_level=\"0\"\nshow_children=\"active\"\nclass=\"nav nav--list\"\ncache=\"0\"',25,'site'),
 	(4,'Breadcrumbs','',1,'breadcrumbs',1,'2013-05-07 13:17:47',NULL,NULL,0,'0000-00-00 00:00:00',1,'mod_breadcrumbs',0,'showHome=1\nhomeText=Home\nshowLast=1',25,'site');
 
 
