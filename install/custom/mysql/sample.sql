@@ -37,11 +37,25 @@ VALUES
 
 
 --
+-- Dumping sample data for table `support_tickets`
+--
+
+INSERT INTO `support_tickets` (`support_ticket_id`, `title`, `slug`, `text`, `status`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`)
+VALUES
+	(1, 'Risus Ipsum', 'risus-ipsum', '<p>Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>\r\n', 'open', 1, '2014-02-06 12:13:20', 1, '2014-02-07 14:57:25', 1, '2014-02-07 15:26:00'),
+	(2, 'Sit Ligula', 'sit-ligula', '<p>Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>\r\n', 'solved', 1, '2014-02-06 12:13:20', NULL, NULL, 1, '2014-02-07 11:11:12'),
+	(3, 'Pharetra Euismod Magna', 'pharetra-euismod-magna', '<p>Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>\r\n', 'pending', 1, '2014-02-06 12:13:20', NULL, NULL, 1, '2014-02-07 08:27:09'),
+	(4, 'Nullam Vestibulum Pharetra', 'nullam-vestibulum-pharetra', '<p>Sed posuere consectetur est at lobortis. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>\r\n', 'new', 1, '2014-02-06 12:13:20', NULL, NULL, 1, '2014-02-07 14:19:57');
+
+
+--
 -- Update creation date to today (this very moment)
 --
 UPDATE `categories` SET `created_on` = now();
 UPDATE `news` SET `created_on` = now();
 UPDATE `questions` SET `created_on` = now();
+
+UPDATE `support_tickets` SET `created_on` = now();
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
