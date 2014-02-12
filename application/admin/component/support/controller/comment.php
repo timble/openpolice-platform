@@ -64,10 +64,22 @@ class SupportControllerComment extends Library\ControllerModel
             $ticket->setData(array('status' => $comment->get('status', 'string')))->save();
         }
 
-        $ticket->setData(array('last_commented_by' => (int) $this->getObject('user')->getId()));
-        $ticket->setData(array('last_commented_on' => gmdate('Y-m-d H:i:s')));
+        // Update the last_commented_ columns directly and bypass the modifiable behavior of the row
+        if($ticket->id)
+        {
+            $query = $this->getObject('lib:database.query.update')
+                ->table(array('tbl' => $ticket->getTable()->getBase()))
+                ->values(array('tbl.last_commented_by = :by', 'tbl.last_commented_on = :on'))
+                ->where('tbl.support_ticket_id = :id');
 
-        $ticket->save();
+            $query->bind(array(
+                'id' => $ticket->id,
+                'by' => (int) $this->getObject('user')->getId(),
+                'on' => gmdate('Y-m-d H:i:s')
+            ));
+
+            $ticket->getTable()->getAdapter()->update($query);
+        }
 
         return parent::_actionAdd($context);
     }
