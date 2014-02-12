@@ -48,6 +48,8 @@ class AddComSupportTables extends Migration
                           `modified_on` datetime DEFAULT NULL,
                           `locked_by` int(11) DEFAULT NULL,
                           `locked_on` datetime DEFAULT NULL,
+                          `last_commented_by` int(11) DEFAULT NULL,
+                          `last_commented_on` datetime DEFAULT NULL,
                           PRIMARY KEY (`support_ticket_id`),
                           KEY `created_on` (`created_on`)
                         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";

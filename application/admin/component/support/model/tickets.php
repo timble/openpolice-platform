@@ -29,8 +29,8 @@ class SupportModelTickets extends Library\ModelTable
 
         $query->columns(array(
             'created_by_name'           => 'creator.name',
-            'last_activity_on'          => 'IF(tbl.modified_on, tbl.modified_on, tbl.created_on)',
-            'last_activity_by_name'     => 'IF(tbl.modified_on, modifier.name, creator.name)',
+            'last_activity_on'          => 'IF(tbl.last_commented_on, tbl.last_commented_on, IF(tbl.modified_on, tbl.modified_on, tbl.created_on))',
+            'last_activity_by_name'     => 'IF(tbl.last_commented_on, commenter.name, IF(tbl.modified_on, modifier.name, creator.name))',
         ));
     }
 
@@ -39,7 +39,8 @@ class SupportModelTickets extends Library\ModelTable
         parent::_buildQueryJoins($query);
 
         $query->join(array('creator' => 'users'), 'creator.users_user_id = tbl.created_by')
-              ->join(array('modifier' => 'users'), 'modifier.users_user_id = tbl.modified_by');
+              ->join(array('modifier' => 'users'), 'modifier.users_user_id = tbl.modified_by')
+              ->join(array('commenter' => 'users'), 'commenter.users_user_id = tbl.last_commented_by');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

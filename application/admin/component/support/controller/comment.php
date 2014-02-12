@@ -64,6 +64,11 @@ class SupportControllerComment extends Library\ControllerModel
             $ticket->setData(array('status' => $comment->get('status', 'string')))->save();
         }
 
+        $ticket->setData(array('last_commented_by' => (int) $this->getObject('user')->getId()));
+        $ticket->setData(array('last_commented_on' => gmdate('Y-m-d H:i:s')));
+
+        $ticket->save();
+
         return parent::_actionAdd($context);
     }
 
