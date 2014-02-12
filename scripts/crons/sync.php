@@ -55,6 +55,10 @@ foreach(glob("*.sql") as $file)
     exec("mysql -u".escapeshellarg($config->user)." -p".escapeshellarg($config->password)." ".$database." < " . $file);
 }
 
+// Execute the migrations that might 've been enabled on staging already
+echo "-- Running phpmig migrate".PHP_EOL;
+exec('cd /var/www/v2.lokalepolitie.be/capistrano/current/scripts/phpmig/ && phpmig migrate');
+
 // Now rsync the source files
 echo "-- Syncing shared folders".PHP_EOL;
 exec('rsync --rsh "ssh -p 9999" deploy@172.18.150.10:/var/www/v2.lokalepolitie.be/capistrano/shared/ /var/www/v2.lokalepolitie.be/capistrano/shared/ --delete --update --perms --owner --group --recursive --times --links');
