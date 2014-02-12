@@ -8,7 +8,6 @@
  */
 ?>
 <?
-$zone = object('com:police.model.zone')->id($site)->getRow();
 $language_short = explode("-", $language);
 $language_short = $language_short[0];
 ?>
@@ -21,9 +20,9 @@ $language_short = $language_short[0];
 <script data-inline type="text/javascript" pagespeed_no_defer="">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.getElementById("page");var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg,"js-enabled")}</script>
 
 <? if($site == 'default') : ?>
-    <?= import('default_splash.html', array('zone' => $zone, 'language_short' => $language_short)) ?>
+    <?= import('default_splash.html', array('language_short' => $language_short)) ?>
 <? else : ?>
-    <?= import('default_site.html', array('zone' => $zone, 'language_short' => $language_short)) ?>
+    <?= import('default_site.html', array('language_short' => $language_short)) ?>
 <? endif ?>
 
 </body>

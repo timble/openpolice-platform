@@ -1,3 +1,7 @@
+<?
+    $zone = object('com:police.model.zone')->id($site)->getRow();
+?>
+
 <script>
     $jQuery(document).ready(function() {
         function format(item) { return item.title; };

@@ -51,7 +51,7 @@
                 <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
                     <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Search your city') ?> ..." name="id" style="width: 100%">
                     <div class="splash__toolbar">
-                        <button class="btn">Go to site</button>
+                        <button class="button button--primary">Go to site</button>
                     </div>
                 </form>
             </div>
