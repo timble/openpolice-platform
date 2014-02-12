@@ -36,3 +36,23 @@ CREATE TABLE `contacts` (
   PRIMARY KEY (`contacts_contact_id`),
   KEY `category` (`categories_category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for table `contacts_hours`
+--
+
+CREATE TABLE `contacts_hours` (
+  `contacts_hour_id` int(11) NOT NULL AUTO_INCREMENT,
+  `contacts_contact_id` int(11) NOT NULL DEFAULT '0',
+  `day_of_week` tinyint(4) DEFAULT NULL,
+  `opening_time` time,
+  `closing_time` time,
+  `created_by` int(11) unsigned,
+  `created_on` datetime,
+  `modified_by` int(11) unsigned,
+  `modified_on` datetime,
+  `locked_by` int(11) unsigned,
+  `locked_on` datetime,
+  PRIMARY KEY (`contacts_hour_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

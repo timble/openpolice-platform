@@ -53,10 +53,13 @@
         <?if ($contact->email_to) :?>
             <li>
                 <span><?= translate('Email') ?></span>:
-                <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>
+                <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a> <small>(<?= translate('no urgent reports by email') ?>)</small>
             </li>
         <? endif; ?>
     </ul>
+
+    <?= import('com:contacts.view.hours.default.html', array('hours' => object('com:contacts.model.hours')->contact($contact->id)->getRowset())); ?>
+
     <?if ($contact->misc) :?>
         <span class="note">
             <?= $contact->misc ?>
