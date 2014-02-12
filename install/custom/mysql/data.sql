@@ -26,7 +26,8 @@ VALUES
 	(41,'Police','com_police','',1),
 	(42,'Zendesk','com_zendesk','',1),
 	(43,'About','com_about','',1),
-	(44,'Uploads','com_uploads','',1);
+	(44,'Uploads','com_uploads','',1),
+	(45,'Support','com_support','',1);
 
 
 --
@@ -113,7 +114,7 @@ VALUES
 	(57,2,0,'Streets','streets','option=com_streets&view=streets',NULL,'component',1,0,0,39,1,'2013-05-12 14:38:41',NULL,NULL,NULL,NULL,0,''),
 	(66,1,0,'Emergency numbers','emergency-numbers','option=com_contacts&view=contacts&category=18',NULL,'component',1,0,0,7,1,'2013-05-13 14:28:47',NULL,NULL,NULL,NULL,0,'page_title=\"\"'),
 	(89,1,0,'Downloads','downloads','option=com_files&view=directory&folder=downloads&layout=table',NULL,'component',1,1,0,19,1,'2013-05-17 12:50:26',NULL,NULL,NULL,NULL,0,'show_folders=\"1\"\nhumanize_filenames=\"1\"\nlimit=\"-1\"\nsort=\"name\"\ndirection=\"asc\"\npage_title=\"\"'),
-	(92,2,0,'Support','support','option=com_zendesk&view=zendesks',NULL,'component',1,0,0,42,1,'2013-09-25 13:36:11',NULL,NULL,NULL,NULL,0,''),
+	(92,2,0,'Support','support','option=com_support&view=tickets',NULL,'component',1,0,0,45,1,'2013-09-25 13:36:11',NULL,NULL,NULL,NULL,0,''),
 	(93,2,0,'About us','about-us','option=com_about&view=articles',NULL,'component',1,0,0,43,1,'2013-10-03 14:41:43',NULL,NULL,NULL,NULL,0,''),
 	(94,2,0,'Articles','articles','option=com_about&view=articles',NULL,'component',1,0,0,43,1,'2013-10-03 14:42:47',NULL,NULL,NULL,NULL,0,''),
 	(95,2,0,'Categories','categories','option=com_about&view=categories',NULL,'component',1,0,0,43,1,'2013-10-03 14:42:55',NULL,NULL,NULL,NULL,0,'');
@@ -381,6 +382,17 @@ VALUES
 	(23,'Manager',''),
 	(24,'Administrator',''),
 	(25,'Super Administrator','');
+
+
+--
+-- Dumping data for table `data`.`migrations`
+--
+
+INSERT INTO `data`.`migrations` (`version`)
+VALUES
+  ('20140128171714'),
+  ('20140210180553'),
+  ('20140210182142');
 
 
 --

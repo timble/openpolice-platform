@@ -862,6 +862,14 @@ DROP DATABASE IF EXISTS `data`;
 
 CREATE DATABASE `data`;
 
+--
+-- Table structure data for table `data`.`migrations`
+--
+
+CREATE TABLE `data`.`migrations` (
+  `version` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 --
 -- Table structure data for table `data`.`police_municipalities`
@@ -955,6 +963,65 @@ CREATE TABLE `data`.`streets_cities` (
   PRIMARY KEY (`streets_city_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+--
+-- Table structure data for table `support_tickets`
+--
+
+DROP TABLE IF EXISTS `support_tickets`;
+
+CREATE TABLE `support_tickets` (
+  `support_ticket_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `text` text NOT NULL,
+  `status` varchar(25) DEFAULT 'new',
+  `created_by` int(10) unsigned DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `modified_by` int(10) unsigned DEFAULT NULL,
+  `modified_on` datetime DEFAULT NULL,
+  `locked_by` int(11) DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  `last_commented_by` int(11) DEFAULT NULL,
+  `last_commented_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`support_ticket_id`),
+  KEY `created_on` (`created_on`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure data for table `data`.`support_announcements`
+--
+
+DROP TABLE IF EXISTS `data`.`support_announcements`;
+
+CREATE TABLE `data`.`support_announcements` (
+  `support_announcement_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `text` text NOT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '1',
+  `created_by` int(10) unsigned DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `modified_by` int(10) unsigned DEFAULT NULL,
+  `modified_on` datetime DEFAULT NULL,
+  `locked_by` int(11) DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`support_announcement_id`),
+  KEY `idx_enabled` (`published`),
+  KEY `created_on` (`created_on`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure data for table `support_announcements`
+--
+
+DROP VIEW IF EXISTS `support_announcements`;
+
+CREATE VIEW `support_announcements` AS
+SELECT *
+FROM `data`.`support_announcements`;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

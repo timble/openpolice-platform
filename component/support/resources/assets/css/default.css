@@ -1,0 +1,84 @@
+.label,
+.badge {
+  padding: 1px 6px;
+  font-size: 10.2px;
+  border-radius: 3px;
+  background-color: #eaeaea;
+  color: #555555; }
+
+.label:empty,
+.badge:empty {
+  display: none; }
+
+.label-important {
+  background-color: #fdebeb;
+  color: #cf1010; }
+
+.label-warning {
+  background-color: #fef4e5;
+  color: #f89406; }
+
+.label-success {
+  background-color: #e3f6ec;
+  color: #297e52; }
+
+.label-info {
+  background-color: #e0f5fe;
+  color: #049cdb; }
+
+.muted {
+  color: gray;
+  margin-left: 6px; }
+
+#support__ticket {
+  border-top: 1px solid #dddddd; }
+  #support__ticket .header {
+    padding: 10px 20px;
+    border-top: 0 none;
+    border-bottom: 1px solid #dddddd;
+    background-color: whitesmoke; }
+    #support__ticket .header h1 {
+      margin: 0 0 5px 0;
+      font-size: 1.8em; }
+  #support__ticket .well {
+    min-height: 20px;
+    padding: 10px; }
+    #support__ticket .well .well__content {
+      padding: 10px;
+      border: 1px solid #e4e4e4;
+      background: #FFF; }
+  #support__ticket .comments .comment {
+    border-top: 1px dotted #dddddd;
+    padding: 20px 20px 10px; }
+  #support__ticket form {
+    padding: 10px 20px; }
+    #support__ticket form .cke_top {
+      background: white !important;
+      background-image: none !important;
+      border-bottom: 0 none !important;
+      padding-left: 0 !important; }
+    #support__ticket form .cke_bottom {
+      display: none !important; }
+    #support__ticket form .cke_contents {
+      border: 1px solid #dddddd !important;
+      border-radius: 5px; }
+  #support__ticket .attachment {
+    background-color: #f1f1f1;
+    padding: 4px 6px;
+    border-radius: 4px; }
+
+.label-new {
+  background-color: #e0f5fe;
+  color: #049cdb; }
+
+.label-open {
+  background-color: #fdebeb;
+  color: #cf1010; }
+
+.label-pending {
+  background-color: #fef4e5;
+  color: #f89406; }
+
+.label-solved {
+  background-color: #e3f6ec;
+  color: #297e52; }
