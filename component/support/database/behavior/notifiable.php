@@ -80,8 +80,8 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         $subject = 'Support: ' . $ticket->title;
         $data = array('ticket' => $ticket, 'author' => $this->getObject('user'), 'subject' => $subject, 'url' => $url);
 
-        $html  = $this->getObject('com:support.view.ticket')->getTemplate()->loadFile('com:support.view.notification.'.$templates['html'], $data);
-        $plain = $this->getObject('com:support.view.ticket')->getTemplate()->loadFile('com:support.view.notification.'.$templates['plain'], $data);
+        $html  = (string) $this->getObject('com:support.view.ticket')->getTemplate()->loadFile('com:support.view.notification.'.$templates['html'], $data);
+        $plain = (string) $this->getObject('com:support.view.ticket')->getTemplate()->loadFile('com:support.view.notification.'.$templates['plain'], $data);
 
         // Finally, send out the messages
         $this->_sendMail($recipients, $subject, $html, $plain);
@@ -91,7 +91,7 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
     {
         $application = $this->getObject('application');
 
-        $controller = $this->getObject('com:sendgrid.controller.mail');
+        $controller = $this->getObject('com:mailer.controller.mailer');
         $data = array(
             'subject' => $subject,
             'html'    => $html,
