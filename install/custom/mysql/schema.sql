@@ -249,6 +249,7 @@ CREATE TABLE `contacts_hours` (
   `modified_on` datetime,
   `locked_by` int(11) unsigned,
   `locked_on` datetime,
+  `params` text,
   PRIMARY KEY (`contacts_hour_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
