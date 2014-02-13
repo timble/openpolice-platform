@@ -9,26 +9,35 @@
 ?>
 
 <? if(count($hours)) : ?>
-<table class="table table--striped table--responsive">
-<? for ($day_of_week = 1; $day_of_week <= 7; $day_of_week++) : ?>
-	<? $list = $hours->find(array('day_of_week' => $day_of_week)) ?>
-	<tr>
-		<td><?= helper('date.weekday', array('day_of_week' => $day_of_week)) ?></td>
-		<td>
-		<? if($count = count($list)) : ?>
-        <? $i = '1' ?>
-		<? foreach ($list as $hour) : ?>
-            <?= helper('date.format', array('date'=> $hour->opening_time, 'format' => 'H:i')) ?>
-            <?= translate('till') ?>
-            <?= helper('date.format', array('date'=> $hour->closing_time, 'format' => 'H:i')) ?>
-			<?= $i < $count ? translate('and from') : '' ?>
-		    <? $i++ ?>
-        <? endforeach ?>
-		<? else : ?>
-			<?= translate('Closed') ?>
-		<? endif ?>
-		</td>
-	</tr>
-<? endfor ?>
+<table class="table table--striped table--openinghours">
+    <caption><?= translate('Opening hours') ?></caption>
+    <tbody>
+    <? for ($day_of_week = 1; $day_of_week <= 7; $day_of_week++) : ?>
+        <? $list = $hours->find(array('day_of_week' => $day_of_week)) ?>
+        <tr>
+            <td><?= helper('date.weekday', array('day_of_week' => $day_of_week)) ?>:</td>
+            <td>
+            <? if($count = count($list)) : ?>
+            <? $i = '1' ?>
+            <? foreach ($list as $hour) : ?>
+                <? $opening_time = helper('date.format', array('date'=> $hour->opening_time, 'format' => 'H:i')) ?>
+                <? $closing_time = helper('date.format', array('date'=> $hour->closing_time, 'format' => 'H:i')) ?>
+                <? $day = helper('date.weekday', array('day_of_week' => $day_of_week, 'translate' => false)) ?>
+
+                <time itemprop="openingHours" datetime="<?= substr($day, 0, 2).' '.$opening_time.'-'.$closing_time ?>">
+                <?= $opening_time ?>
+                <?= translate('till') ?>
+                <?= $closing_time ?>
+                </time>
+                <?= $i < $count ? translate('and from') : '' ?>
+                <? $i++ ?>
+            <? endforeach ?>
+            <? else : ?>
+                <?= translate('Closed') ?>
+            <? endif ?>
+            </td>
+        </tr>
+    <? endfor ?>
+    </tbody>
 </table>
 <? endif ?>

@@ -1722,55 +1722,74 @@ table {
 table th, table td {
   padding: 0.75em;
 }
+/* line 11, molecules/table/_table.scss */
+table caption {
+  font-size: 1.20em;
+  text-align: left;
+  margin-bottom: 1em;
+}
 
-/* line 12, molecules/table/_table.scss */
+/* line 18, molecules/table/_table.scss */
 .table {
   max-width: 100%;
   width: 100%;
   border: 0 none;
   /* Hide table headers */
 }
-/* line 17, molecules/table/_table.scss */
-.table td {
-  border: none;
+/* line 23, molecules/table/_table.scss */
+.table tr {
+  display: block;
+  padding: 0.75em 0.75em 0;
 }
-/* line 21, molecules/table/_table.scss */
+/* line 28, molecules/table/_table.scss */
+.table th, .table td {
+  display: block;
+  border: none;
+  padding: 0 0 0.75em 0;
+}
+/* line 34, molecules/table/_table.scss */
 .table td:nth-child(n+2) {
   display: none;
 }
-/* line 26, molecules/table/_table.scss */
+/* line 39, molecules/table/_table.scss */
 .table thead tr {
   display: none;
 }
 
 @media screen and (min-width: 767px) {
-  /* line 32, molecules/table/_table.scss */
+  /* line 45, molecules/table/_table.scss */
   .table {
     background-color: transparent;
     margin-bottom: 1.5em;
     border: 0 none;
   }
-  /* line 38, molecules/table/_table.scss */
+  /* line 50, molecules/table/_table.scss */
+  .table tr {
+    display: table-row;
+    padding: 0;
+  }
+  /* line 57, molecules/table/_table.scss */
   .table th,
   .table td {
     display: table-cell !important;
     line-height: 1.5em;
     text-align: left;
     vertical-align: top;
+    padding: 0.75em;
   }
-  /* line 45, molecules/table/_table.scss */
+  /* line 65, molecules/table/_table.scss */
   .table th {
     font-weight: bold;
   }
-  /* line 49, molecules/table/_table.scss */
+  /* line 69, molecules/table/_table.scss */
   .table thead tr {
     display: table-row;
   }
-  /* line 53, molecules/table/_table.scss */
+  /* line 73, molecules/table/_table.scss */
   .table thead th {
     vertical-align: bottom;
   }
-  /* line 58, molecules/table/_table.scss */
+  /* line 78, molecules/table/_table.scss */
   .table thead tr th,
   .table thead tr td {
     border-top: 0;
@@ -1785,52 +1804,32 @@ table th, table td {
   background-color: #f9f9f9;
 }
 
-/* line 1, molecules/table/_table--responsive.scss */
-.table--responsive {
-  /* Hide table headers */
+/* line 2, molecules/table/_table--openinghours.scss */
+.table--openinghours tr {
+  padding: 0.5em 0.75em 0;
 }
-/* line 2, molecules/table/_table--responsive.scss */
-.table--responsive tr {
-  padding: 0.75em 0.75em 0.25em;
-  display: block;
-}
-/* line 7, molecules/table/_table--responsive.scss */
-.table--responsive td {
-  display: block !important;
+/* line 6, molecules/table/_table--openinghours.scss */
+.table--openinghours td {
   padding: 0 0 0.5em 0;
 }
-/* line 12, molecules/table/_table--responsive.scss */
-.table--responsive td:nth-child(1) {
+/* line 10, molecules/table/_table--openinghours.scss */
+.table--openinghours td:nth-child(1) {
   font-weight: bold;
 }
-/* line 17, molecules/table/_table--responsive.scss */
-.table--responsive thead tr {
-  display: none;
+/* line 14, molecules/table/_table--openinghours.scss */
+.table--openinghours td:nth-child(n+2) {
+  display: block;
 }
 
 @media screen and (min-width: 767px) {
-  /* line 24, molecules/table/_table--responsive.scss */
-  .table--responsive tr {
-    display: table-row;
-    padding: 0;
+  /* line 22, molecules/table/_table--openinghours.scss */
+  .table--openinghours th,
+  .table--openinghours td {
+    padding: 0.5em;
   }
-  /* line 30, molecules/table/_table--responsive.scss */
-  .table--responsive th,
-  .table--responsive td {
-    display: table-cell !important;
-    padding: 0.75em;
-  }
-  /* line 35, molecules/table/_table--responsive.scss */
-  .table--responsive td:nth-child(1) {
-    font-weight: normal;
-  }
-  /* line 39, molecules/table/_table--responsive.scss */
-  .table--responsive th {
-    font-weight: bold;
-  }
-  /* line 43, molecules/table/_table--responsive.scss */
-  .table--responsive thead tr {
-    display: table-row;
+  /* line 26, molecules/table/_table--openinghours.scss */
+  .table--openinghours td:nth-child(1) {
+    text-align: right;
   }
 }
 /* line 2, molecules/_thumbnail.scss */

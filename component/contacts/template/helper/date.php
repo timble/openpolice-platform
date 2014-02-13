@@ -22,7 +22,16 @@ class TemplateHelperDate extends Library\TemplateHelperDate
     public function weekday($config = array())
     {
         $config = new Library\ObjectConfig($config);
+        $config->append(array(
+            'translate' => true
+        ));
+
+        $day = date('l', strtotime("Sunday +{$config->day_of_week} days"));
+
+        if($config->translate) {
+            $day = \JText::_($day);
+        }
     
-        return \JText::_(date('l', strtotime("Sunday +{$config->day_of_week} days")));
+        return $day;
     }
 }
