@@ -8,6 +8,7 @@
  */
 ?>
 
+<? if(count($hours)) : ?>
 <table class="table table--striped">
 <? for ($day_of_week = 1; $day_of_week <= 7; $day_of_week++) : ?>
 	<? $list = $hours->find(array('day_of_week' => $day_of_week)) ?>
@@ -28,3 +29,4 @@
 	</tr>
 <? endfor ?>
 </table>
+<? endif ?>
