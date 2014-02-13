@@ -9,18 +9,18 @@
 ?>
 
 <? if(count($hours)) : ?>
-<table class="table table--striped">
+<table class="table table--striped table--responsive">
 <? for ($day_of_week = 1; $day_of_week <= 7; $day_of_week++) : ?>
 	<? $list = $hours->find(array('day_of_week' => $day_of_week)) ?>
 	<tr>
 		<td><?= helper('date.weekday', array('day_of_week' => $day_of_week)) ?></td>
 		<td>
-		<? if(count($list)) : ?>
+		<? if($count = count($list)) : ?>
 		<? foreach ($list as $key => $hour) : ?>
             <?= helper('date.format', array('date'=> $hour->opening_time, 'format' => 'H:i')) ?>
             <?= translate('till') ?>
             <?= helper('date.format', array('date'=> $hour->closing_time, 'format' => 'H:i')) ?>
-			<?= $key > '1' ? translate('and from') : '' ?>
+			<?= $key < $count ? translate('and from') : '' ?>
 		<? endforeach ?>
 		<? else : ?>
 			<?= translate('Closed') ?>

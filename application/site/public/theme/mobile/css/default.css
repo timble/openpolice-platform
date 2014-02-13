@@ -1785,6 +1785,54 @@ table th, table td {
   background-color: #f9f9f9;
 }
 
+/* line 1, molecules/table/_table--responsive.scss */
+.table--responsive {
+  /* Hide table headers */
+}
+/* line 2, molecules/table/_table--responsive.scss */
+.table--responsive tr {
+  padding: 0.75em 0.75em 0.25em;
+  display: block;
+}
+/* line 7, molecules/table/_table--responsive.scss */
+.table--responsive td {
+  display: block !important;
+  padding: 0 0 0.5em 0;
+}
+/* line 12, molecules/table/_table--responsive.scss */
+.table--responsive td:nth-child(1) {
+  font-weight: bold;
+}
+/* line 17, molecules/table/_table--responsive.scss */
+.table--responsive thead tr {
+  display: none;
+}
+
+@media screen and (min-width: 767px) {
+  /* line 24, molecules/table/_table--responsive.scss */
+  .table--responsive tr {
+    display: table-row;
+    padding: 0;
+  }
+  /* line 30, molecules/table/_table--responsive.scss */
+  .table--responsive th,
+  .table--responsive td {
+    display: table-cell !important;
+    padding: 0.75em;
+  }
+  /* line 35, molecules/table/_table--responsive.scss */
+  .table--responsive td:nth-child(1) {
+    font-weight: normal;
+  }
+  /* line 39, molecules/table/_table--responsive.scss */
+  .table--responsive th {
+    font-weight: bold;
+  }
+  /* line 43, molecules/table/_table--responsive.scss */
+  .table--responsive thead tr {
+    display: table-row;
+  }
+}
 /* line 2, molecules/_thumbnail.scss */
 .thumbnail, .article__thumbnail {
   display: block;
