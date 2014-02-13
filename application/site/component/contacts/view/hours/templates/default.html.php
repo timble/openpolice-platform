@@ -16,12 +16,14 @@
 		<td><?= helper('date.weekday', array('day_of_week' => $day_of_week)) ?></td>
 		<td>
 		<? if($count = count($list)) : ?>
-		<? foreach ($list as $key => $hour) : ?>
+        <? $i = '1' ?>
+		<? foreach ($list as $hour) : ?>
             <?= helper('date.format', array('date'=> $hour->opening_time, 'format' => 'H:i')) ?>
             <?= translate('till') ?>
             <?= helper('date.format', array('date'=> $hour->closing_time, 'format' => 'H:i')) ?>
-			<?= $key < $count ? translate('and from') : '' ?>
-		<? endforeach ?>
+			<?= $i < $count ? translate('and from') : '' ?>
+		    <? $i++ ?>
+        <? endforeach ?>
 		<? else : ?>
 			<?= translate('Closed') ?>
 		<? endif ?>
