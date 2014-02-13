@@ -8,10 +8,6 @@
  */
 ?>
 
-<!--
-<script src="assets://js/koowa.js" />
--->
-
 <title content="replace"><?= $contact->name ?></title>
 
 <? if ($contact->params->get('allow_vcard', false)) : ?>
@@ -21,12 +17,12 @@
 <?= import('hcard.html') ?>
 
 <?if ($contact->params->get('allow_vcard', false)) :?>
-<p>
-    <?= translate( 'Download information as a' );?>
-    <a href="<?= route('id='.$contact->id.'&format=vcard') ?>">
-        <?= translate( 'VCard' );?>
-    </a>
-</p>
+    <p>
+        <?= translate( 'Download information as a' );?>
+        <a href="<?= route('id='.$contact->id.'&format=vcard') ?>">
+            <?= translate( 'VCard' );?>
+        </a>
+    </p>
 <? endif; ?>
 
 <? if ( $contact->params->get('show_email_form', false) && $contact->email_to) : ?>
