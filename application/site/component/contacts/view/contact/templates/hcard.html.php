@@ -64,5 +64,3 @@
         </span>
     <? endif; ?>
 </address>
-
-<?= import('com:contacts.view.hours.default.html', array('hours' => object('com:contacts.model.hours')->contact($contact->id)->getRowset())); ?>

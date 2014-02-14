@@ -8,8 +8,17 @@
  */
 ?>
 
+<? if ($contact->params->get('open_24_7', false)) : ?>
+    <h3><?= translate('Opening hours') ?></h3>
+    <p>
+        <time itemprop="openingHours" datetime="Mo-Su">
+            <?= translate('24 hours a day, 7 days a week') ?>
+        </time>
+    </p>
+<? else : ?>
+
 <? if(count($hours)) : ?>
-<table class="table table--striped table--openinghours">
+    <table class="table table--striped table--openinghours">
     <caption><?= translate('Opening hours') ?></caption>
     <tbody>
     <? for ($day_of_week = 1; $day_of_week <= 7; $day_of_week++) : ?>
@@ -40,4 +49,5 @@
     <? endfor ?>
     </tbody>
 </table>
+<? endif ?>
 <? endif ?>

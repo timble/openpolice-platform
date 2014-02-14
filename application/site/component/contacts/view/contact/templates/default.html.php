@@ -16,6 +16,8 @@
 
 <?= import('hcard.html') ?>
 
+<?= import('com:contacts.view.hours.default.html', array('hours' => object('com:contacts.model.hours')->contact($contact->id)->getRowset())); ?>
+
 <?if ($contact->params->get('allow_vcard', false)) :?>
     <p>
         <?= translate( 'Download information as a' );?>
