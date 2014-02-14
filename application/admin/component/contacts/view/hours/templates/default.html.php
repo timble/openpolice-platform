@@ -8,8 +8,8 @@
  */
 ?>
 
-<script src="media://js/koowa.js" />
-<style src="media://css/koowa.css" />
+<script src="assets://js/koowa.js" />
+<style src="assets://css/koowa.css" />
 
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
@@ -28,8 +28,14 @@
 				<?= helper( 'grid.checkall'); ?>
 			</th>
 			<th>
-				<?= helper('grid.sort', array('column' => 'title')) ?>
+				<?= helper('grid.sort', array('column' => 'title', 'title' => 'Day')) ?>
 			</th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'title', 'title' => 'Opening time')) ?>
+            </th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'title', 'title' => 'Closing time')) ?>
+            </th>
 			<th>
 				<?= helper('grid.sort', array('column' => 'contacts_contact_id', 'title' => 'Contact')) ?>
 			</th>
@@ -51,6 +57,12 @@
 			<td>
 				<a href="<?= @route( 'view=hour&id='. $hour->id ); ?>"><?= helper('date.weekday', array('day_of_week' => $hour->day_of_week)) ?> - <?= $hour->opening_time ?> <?= translate('till') ?> <?= $hour->closing_time ?></a>
 			</td>
+            <td>
+                <?= $hour->opening_time ?>
+            </td>
+            <td>
+                <?= $hour->closing_time ?>
+            </td>
 			<td>
 				<?= $hour->contact ?>
 			</td>
