@@ -17,7 +17,7 @@
     <? foreach ($contacts as $contact) : ?>
         <li>
             <a class="<?= $state->contact == $contact->id ? 'active' : ''; ?>" href="<?= route('contact='.$contact->id ) ?>">
-                <?= escape($contact->name) ?>
+                <span class="navigation__text"><?= escape($contact->name) ?></span>
             </a>
         </li>
     <? endforeach ?>
