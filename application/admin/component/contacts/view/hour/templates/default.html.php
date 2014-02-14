@@ -37,7 +37,7 @@
 				    	<?= translate( 'Day of Week' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('listbox.days', array('name' => 'day_of_week')) ?>
+				        <?= helper('listbox.days', array('name' => 'day_of_week', 'selected' => $hour->day_of_week)) ?>
 				    </div>
 				</div>
 				<div>

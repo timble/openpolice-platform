@@ -36,9 +36,6 @@
             <th>
                 <?= helper('grid.sort', array('column' => 'title', 'title' => 'Closing time')) ?>
             </th>
-			<th>
-				<?= helper('grid.sort', array('column' => 'contacts_contact_id', 'title' => 'Contact')) ?>
-			</th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -55,7 +52,7 @@
 				<?= helper('grid.checkbox', array('row' => $hour))?>
 			</td>
 			<td>
-				<a href="<?= @route( 'view=hour&id='. $hour->id ); ?>"><?= helper('date.weekday', array('day_of_week' => $hour->day_of_week)) ?> - <?= $hour->opening_time ?> <?= translate('till') ?> <?= $hour->closing_time ?></a>
+				<a href="<?= @route( 'view=hour&id='. $hour->id ); ?>"><?= helper('date.weekday', array('day_of_week' => $hour->day_of_week)) ?></a>
 			</td>
             <td>
                 <?= $hour->opening_time ?>
@@ -63,9 +60,6 @@
             <td>
                 <?= $hour->closing_time ?>
             </td>
-			<td>
-				<?= $hour->contact ?>
-			</td>
 		</tr>
 		<? endforeach; ?>
 	</tbody>

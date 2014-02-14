@@ -24,7 +24,7 @@
     <? for ($day_of_week = 1; $day_of_week <= 7; $day_of_week++) : ?>
         <? $list = $hours->find(array('day_of_week' => $day_of_week)) ?>
         <tr>
-            <td><?= helper('date.weekday', array('day_of_week' => $day_of_week)) ?>:</td>
+            <td width="25%"><?= helper('date.weekday', array('day_of_week' => $day_of_week)) ?>:</td>
             <td>
             <? if($count = count($list)) : ?>
             <? $i = '1' ?>
