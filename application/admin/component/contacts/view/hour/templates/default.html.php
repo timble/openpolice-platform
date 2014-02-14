@@ -28,8 +28,9 @@
 				    	<?= translate( 'Location' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('listbox.contacts', array('name' => 'contacts_contact_id', 'selected' => $hour->contacts_contact_id, 'attribs' => array('class' => 'required'))) ?>
-				    </div>
+				        <?= helper('listbox.contacts', array('name' => 'contacts_contact_id', 'selected' => $hour->contacts_contact_id, 'attribs' => array('id' => 'select-contact', 'class' => 'required', 'style' => 'width:100%'))) ?>
+                        <script data-inline> $jQuery("#select-contact").select2(); </script>
+                    </div>
 				</div>
 				<div>
 				    <label for="name">
