@@ -154,7 +154,8 @@ class AddContactsHours extends Migration
                                 (107, 18, 6, '10:00:00', '17:00:00', 1, '2014-02-14 15:44:32', NULL, NULL, NULL, NULL, NULL);
                             ";
 
-        $this->_queries .= "UPDATE `contacts` SET `misc` = '<p>Geen dringende meldingen via e-mail. Dit kanaal wordt niet opgevolgd na kantooruren en in het weekend.</p>\r\n' WHERE `contacts_contact_id` = '1';
+        $this->_queries .= "UPDATE `contacts` SET `params` = 'open_24_7=\"1\"' WHERE `contacts_contact_id` = '1';
+                            UPDATE `contacts` SET `misc` = '<p>Geen dringende meldingen via e-mail. Dit kanaal wordt niet opgevolgd na kantooruren en in het weekend.</p>\r\n' WHERE `contacts_contact_id` = '1';
                             UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '4';
                             UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '3';
                             UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '2';
@@ -191,7 +192,8 @@ class AddContactsHours extends Migration
 
         // Migrated opening hours for Leuven
         $this->getZones()->set(array('5388' => 'Leuven'));
-        $this->_queries = "UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>24u op 24u</li>\n</ul>\n<p>Geen dringende meldingen via e-mail. Dit kanaal wordt niet opgevolgd na kantooruren en in het weekend.</p>' WHERE `contacts_contact_id` = '1';
+        $this->_queries = "UPDATE `contacts` SET `params` = 'show_email=\"1\"\nshow_email_form=\"0\"\nallow_vcard=\"0\"' WHERE `contacts_contact_id` = '1';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>24u op 24u</li>\n</ul>\n<p>Geen dringende meldingen via e-mail. Dit kanaal wordt niet opgevolgd na kantooruren en in het weekend.</p>' WHERE `contacts_contact_id` = '1';
                             UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag tot vrijdag van 09.00 uur tot 19.00 uur</li>\n<li>Zaterdag van 10.00 uur tot 18.00 uur</li>\n<li>Zon- en feestdagen gesloten</li>\n</ul>\n' WHERE `contacts_contact_id` = '2';
                             UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag,dinsdag,vrijdag,zaterdag van 08.30 tot 12.30 uur</li>\n<li>Woensdag van 08.30 tot 12.30 uur en van 13.00 tot 17.00 uur</li>\n<li>Donderdag van 08.30 tot 12.30 uur en van 17.00 tot 21.00 uur</li>\n</ul>\n' WHERE `contacts_contact_id` = '3';
                             UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag,dinsdag,woensdag,vrijdag van 13.30 tot 16.30 uur</li>\n<li>Donderdag van 14.00 tot 20.00 uur</li>\n<li>Zaterdag van 08.30 tot 12.30 uur</li>\n</ul>\n' WHERE `contacts_contact_id` = '4';
