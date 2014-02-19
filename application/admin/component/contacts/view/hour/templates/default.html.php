@@ -61,4 +61,8 @@
 			</fieldset>
 		</div>
 	</div>
+
+    <div class="sidebar">
+        <?= import('default_sidebar.html'); ?>
+    </div>
 </form>
