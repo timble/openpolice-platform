@@ -154,6 +154,28 @@ class AddContactsHours extends Migration
                                 (107, 18, 6, '10:00:00', '17:00:00', 1, '2014-02-14 15:44:32', NULL, NULL, NULL, NULL, NULL);
                             ";
 
+        $this->_queries .= "UPDATE `contacts` SET `misc` = '<p>Geen dringende meldingen via e-mail. Dit kanaal wordt niet opgevolgd na kantooruren en in het weekend.</p>\r\n' WHERE `contacts_contact_id` = '1';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '4';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '3';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '2';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '5';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '6';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '7';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '8';
+                            UPDATE `contacts` SET `misc` = '<p>Graveren van fietsen enkel op woensdag van 13 tot 15.30 uur en op donderdag van 17 tot 19.30 uur.</p>\n<p>Voor het bewaren van je fiets rekent de stad 5 euro/gegraveerde fiets en 10 euro/niet-gegraveerde fiets. Je kan cash of met bancontact betalen.</p>\n' WHERE `contacts_contact_id` = '9';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '12';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '14';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '16';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '17';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '18';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '35';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '37';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '38';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '39';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '40';
+                            UPDATE `contacts` SET `misc` = '' WHERE `contacts_contact_id` = '41';
+                            ";
+
         parent::up();
     }
 
@@ -164,6 +186,32 @@ class AddContactsHours extends Migration
     {
         $this->_queries = "DROP TABLE IF EXISTS `contacts_hours`;";
         $this->_queries .= "DELETE FROM `pages` WHERE `pages_page_id` IN ('98');";
+
+        parent::down();
+
+        // Migrated opening hours for Leuven
+        $this->getZones()->set(array('5388' => 'Leuven'));
+        $this->_queries = "UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>24u op 24u</li>\n</ul>\n<p>Geen dringende meldingen via e-mail. Dit kanaal wordt niet opgevolgd na kantooruren en in het weekend.</p>' WHERE `contacts_contact_id` = '1';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag tot vrijdag van 09.00 uur tot 19.00 uur</li>\n<li>Zaterdag van 10.00 uur tot 18.00 uur</li>\n<li>Zon- en feestdagen gesloten</li>\n</ul>\n' WHERE `contacts_contact_id` = '2';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag,dinsdag,vrijdag,zaterdag van 08.30 tot 12.30 uur</li>\n<li>Woensdag van 08.30 tot 12.30 uur en van 13.00 tot 17.00 uur</li>\n<li>Donderdag van 08.30 tot 12.30 uur en van 17.00 tot 21.00 uur</li>\n</ul>\n' WHERE `contacts_contact_id` = '3';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag,dinsdag,woensdag,vrijdag van 13.30 tot 16.30 uur</li>\n<li>Donderdag van 14.00 tot 20.00 uur</li>\n<li>Zaterdag van 08.30 tot 12.30 uur</li>\n</ul>\n' WHERE `contacts_contact_id` = '4';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Woensdag van 13.00 tot 17.00 uur</li>\n<li>Donderdag van 16.00 tot 20.00 uur</li>\n<li>Zaterdag van 8.30 tot 12.30 uur</li>\n</ul>\n' WHERE `contacts_contact_id` = '5';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag tot vrijdag van 12.00 tot 14.00 uur (tijdens het academiejaar)</li>\n</ul>\n' WHERE `contacts_contact_id` = '6';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag tot vrijdag van 08 uur tot 12 uur en van 13 uur tot 16 uur</li>\n<li>Donderdag tot 19 uur (uitz. juli/augustus tot 16 uur)</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '7';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Maandag, dinsdag, woensdag en donderdag van 10.00u tot 12.00u en van 13.00u tot 15.00u.</li>\n<li>Vrijdag, zaterdag, zon- en feestdagen gesloten.</li>\n</ul>\n' WHERE `contacts_contact_id` = '8';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openeningsuren</strong></p>\n<ul>\n<li>maandag, dinsdag, woensdag van 13 tot 15.45 uur</li>\n<li>donderdag van 17 tot 20.45 uur</li>\n<li>vrijdag van 10 tot 15.00 uur</li>\n<li>zaterdag van 8 tot 11.45 uur</li>\n<li>Gesloten op zon- en feestdagen</li>\n</ul>\n<p>Graveren van fietsen enkel op woensdag van 13 tot 15.30 uur en op donderdag van 17 tot 19.30 uur.</p>\n<p>Voor het bewaren van je fiets rekent de stad 5 euro/gegraveerde fiets en 10 euro/niet-gegraveerde fiets. Je kan cash of met bancontact betalen.</p>\n' WHERE `contacts_contact_id` = '9';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '12';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '14';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '16';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '17';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 18 uur</li>\n<li>Zaterdag van 10 tot 17 uur</li>\n<li>Gesloten op zon- en feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '18';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '35';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '37';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '38';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '39';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '40';
+                            UPDATE `contacts` SET `misc` = '<p><strong>Openingsuren</strong></p>\n<ul>\n<li>Op weekdagen van 8 tot 16 uur</li>\n<li>Gesloten in het weekend en op feestdagen</li>\n</ul>\n' WHERE `contacts_contact_id` = '41';
+                            ";
 
         parent::down();
     }
