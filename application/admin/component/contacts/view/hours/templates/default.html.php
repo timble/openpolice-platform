@@ -27,6 +27,7 @@
 			<th width="10">
 				<?= helper( 'grid.checkall'); ?>
 			</th>
+            <th width="1"></th>
 			<th>
 				<?= helper('grid.sort', array('column' => 'title', 'title' => 'Day')) ?>
 			</th>
@@ -51,6 +52,9 @@
 			<td align="center">
 				<?= helper('grid.checkbox', array('row' => $hour))?>
 			</td>
+            <td align="center">
+                <?= helper('grid.enable', array('row' => $hour, 'field' => 'published')) ?>
+            </td>
 			<td>
 				<a href="<?= @route( 'view=hour&id='. $hour->id ); ?>"><?= helper('date.weekday', array('day_of_week' => $hour->day_of_week)) ?></a>
 			</td>

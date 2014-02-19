@@ -24,7 +24,8 @@ class ModelHours extends Library\ModelTable
 		parent::__construct($config);
 
 		$this->getState()
-		    ->insert('contact' , 'int');
+            ->insert('published', 'boolean')
+            ->insert('contact' , 'int');
 	}
 	
 	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
@@ -45,6 +46,10 @@ class ModelHours extends Library\ModelTable
 	{
 		parent::_buildQueryWhere($query);
 		$state = $this->getState();
+
+        if (is_bool($state->published)) {
+            $query->where('tbl.published = :published')->bind(array('published' => (int) $state->published));
+        }
 		
 		if ($state->contact) {
 			$query->where('tbl.contacts_contact_id = :contact')->bind(array('contact' => (int) $state->contact));

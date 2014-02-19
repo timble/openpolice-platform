@@ -16,7 +16,7 @@
 
 <?= import('hcard.html') ?>
 
-<?= import('com:contacts.view.hours.default.html', array('hours' => object('com:contacts.model.hours')->contact($contact->id)->getRowset())); ?>
+<?= object('com:contacts.controller.hour')->contact($contact->id)->render(array('contact' => $contact)); ?>
 
 <?if ($contact->params->get('allow_vcard', false)) :?>
     <p>
