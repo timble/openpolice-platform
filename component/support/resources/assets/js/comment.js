@@ -31,7 +31,10 @@ Comment = new Class({
         {
             this.action = action;
 
-            this[method].call(this, status);
+            // Abort the action when the editor is empty
+            if(CKEDITOR.instances.text.getData()) {
+                this[method].call(this, status);
+            }
         }
     },
 
