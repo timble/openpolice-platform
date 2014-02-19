@@ -32,7 +32,7 @@ class ViewEditorHtml extends Library\ViewHtml
 			'width'					 => '',
             'options'  => array(
                 'autoheight'  => true,
-                'toolbar'     => $this->toolbar ? $this->toolbar : 'standard',
+                'toolbar'     => $this->toolbar ? $this->toolbar : 'standard'
             )
 		)));
 
@@ -51,6 +51,7 @@ class ViewEditorHtml extends Library\ViewHtml
         $settings->options->toolbar = $this->toolbar ? $this->toolbar : 'standard';
 
 		$this->settings = $settings;
+        $this->class = $this->attribs['class'] ? $this->attribs['class'] : '';
 
 		return parent::render();
 	}
