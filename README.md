@@ -104,6 +104,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [Joomla](http://www.joomla.org)
 * [jQuery](http://jquery.com)
 * [Linux](http://linux.org)
+* [Magnific-Popup](https://github.com/dimsemenov/Magnific-Popup)
 * [MailCatcher](https://github.com/sj26/mailcatcher)
 * [MooTools](http://mootools.net)
 * [nginx](http://nginx.org)
