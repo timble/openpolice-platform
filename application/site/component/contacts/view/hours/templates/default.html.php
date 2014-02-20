@@ -29,14 +29,12 @@
             <? if($count = count($list)) : ?>
             <? $i = '1' ?>
             <? foreach ($list as $hour) : ?>
-                <? $opening_time = helper('date.format', array('date'=> $hour->opening_time, 'format' => 'H:i')) ?>
-                <? $closing_time = helper('date.format', array('date'=> $hour->closing_time, 'format' => 'H:i')) ?>
                 <? $day = helper('date.weekday', array('day_of_week' => $day_of_week, 'translate' => false)) ?>
 
-                <time itemprop="openingHours" datetime="<?= substr($day, 0, 2).' '.$opening_time.'-'.$closing_time ?>">
-                <?= $opening_time ?>
+                <time itemprop="openingHours" datetime="<?= substr($day, 0, 2).' '.$hour->opening_time.'-'.$hour->closing_time ?>">
+                <?= $hour->opening_time ?>
                 <?= translate('till') ?>
-                <?= $closing_time ?>
+                <?= $hour->closing_time ?>
                 </time>
                 <?= $i < $count ? translate('and from') : '' ?>
                 <? $i++ ?>

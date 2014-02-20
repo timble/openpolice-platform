@@ -140,7 +140,7 @@ class AddContactsHours extends Migration
                                 (91, 7, 3, '08:00:00', '12:00:00', 1, 1, '2014-02-14 15:41:52', NULL, NULL, NULL, NULL, NULL),
                                 (92, 7, 3, '13:00:00', '16:00:00', 1, 1, '2014-02-14 15:42:07', NULL, NULL, NULL, NULL, NULL),
                                 (93, 7, 4, '08:00:00', '12:00:00', 1, 1, '2014-02-14 15:42:26', NULL, NULL, NULL, NULL, NULL),
-                                (94, 7, 4, '13:00:00', '16:00:00', 1, 1, '2014-02-14 15:42:42', NULL, NULL, NULL, NULL, NULL),
+                                (94, 7, 4, '13:00:00', '19:00:00', 1, 1, '2014-02-14 15:42:42', NULL, NULL, NULL, NULL, NULL),
                                 (95, 7, 5, '08:00:00', '12:00:00', 1, 1, '2014-02-14 15:43:04', NULL, NULL, NULL, NULL, NULL),
                                 (96, 7, 5, '13:00:00', '16:00:00', 1, 1, '2014-02-14 15:43:16', NULL, NULL, NULL, NULL, NULL),
                                 (97, 17, 1, '08:00:00', '16:00:00', 1, 1, '2014-02-14 13:45:27', NULL, NULL, NULL, NULL, NULL),
@@ -153,7 +153,8 @@ class AddContactsHours extends Migration
                                 (104, 18, 3, '08:00:00', '18:00:00', 1, 1, '2014-02-14 13:45:27', NULL, NULL, NULL, NULL, NULL),
                                 (105, 18, 4, '08:00:00', '18:00:00', 1, 1, '2014-02-14 13:45:41', NULL, NULL, NULL, NULL, NULL),
                                 (106, 18, 5, '08:00:00', '18:00:00', 1, 1, '2014-02-14 13:45:56', NULL, NULL, NULL, NULL, NULL),
-                                (107, 18, 6, '10:00:00', '17:00:00', 1, 1, '2014-02-14 15:44:32', NULL, NULL, NULL, NULL, NULL);
+                                (107, 18, 6, '10:00:00', '17:00:00', 1, 1, '2014-02-14 15:44:32', NULL, NULL, NULL, NULL, NULL),
+                                (108, 9, 5, '10:00:00', '15:00:00', 1, 1, '2014-02-14 15:44:32', NULL, NULL, NULL, NULL, NULL);
                             ";
 
         $this->_queries .= "UPDATE `contacts` SET `params` = 'open_24_7=\"1\"' WHERE `contacts_contact_id` = '1';
