@@ -8,9 +8,6 @@
  */
 ?>
 
-<?= helper('behavior.mootools') ?>
-<?= helper('behavior.modal') ?>
-
 <? $list = (isset($row) && isset($table)) ? $attachments->find(array('row' => $row, 'table' => $table)) : $attachments ?>
 
 <? if(count($list)) : ?>
@@ -18,7 +15,7 @@
         <? foreach($list as $item) : ?>
             <? if($item->file->isImage() && !in_array($item->id, Nooku\Library\ObjectConfig::unbox($exclude))) : ?>
                 <li class="gallery__item">
-                    <a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Modalbox', 'Image']);" class="thumbnail modal" href="attachments://<?= $item->path; ?>" rel="{handler: 'image'}">
+                    <a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Modalbox', 'Image']);" class="thumbnail" data-gallery="enabled" href="attachments://<?= $item->path; ?>">
                         <img width="640px" src="attachments://<?= $item->thumbnail ?>" />
                     </a>
                 </li>
