@@ -37,10 +37,6 @@ Comment = new Class({
 
     _actionSubmit: function(status)
     {
-        if(!CKEDITOR.instances['text'].getData() && document.getElementById('text').classList.contains('ckeditor-required')) {
-            return false;
-        }
-
         document.getElementById("comment").status.value = status;
         document.getElementById("comment").submit();
     }
