@@ -41,7 +41,7 @@
     </header>
 
     <? if($article->attachments_attachment_id) : ?>
-    <a class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
+    <a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Modalbox', 'Image']);" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
         <?= helper('com:attachments.image.thumbnail', array(
         'attachment' => $article->attachments_attachment_id,
         'attribs' => array('width' => '200', 'height' => '150', 'itemprop'=> "image"))) ?>
