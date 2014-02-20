@@ -12,11 +12,11 @@
         padding-left: 20px;
         padding-top: 20px;
 
-        .logo a:after {
+        .organization a:after {
             content: "";
         }
 
-        .logo div {
+        .organization__name {
             padding-left: 50px;
         }
     }

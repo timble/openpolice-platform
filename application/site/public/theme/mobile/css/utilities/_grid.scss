@@ -65,7 +65,7 @@
 }
 
 @include respond-min(998px) {
-    .logo {
+    .organization {
         @include span-columns(3, 12);
     }
     .navigation {

@@ -1,5 +1,5 @@
 .container__header {
-    .logo {
+    .organization {
         display: none;
     }
 }
@@ -13,7 +13,7 @@
             font-size: $fontSizeLarge;
         }
 
-        .logo {
+        .organization {
             padding-top: 26px;
             text-decoration: none;
             color: $linkColor;
@@ -26,17 +26,18 @@
             a:hover {
                 text-decoration: underline;
             }
+        }
 
-            img {
-                width: 160px;
-                vertical-align: bottom;
-                margin-left: 10px;
-            }
+        .organization__logo {
+            width: 160px;
+            vertical-align: bottom;
+            margin-left: 10px;
+        }
 
-            div {
-                margin-left: 57px;
-                margin-top: 3px;
-            }
+        .organization__name {
+            margin-left: 57px;
+            margin-top: 3px;
+            font-size: 0.9em;
         }
 
         .slogan {

@@ -49,10 +49,10 @@
 
 <div id="wrap">
     <div class="container container__header">
-        <div class="logo" itemscope itemtype="http://schema.org/Organization">
+        <div class="organization" itemscope itemtype="http://schema.org/Organization">
             <a itemprop="url" href="/<?= $site ?>">
-                <img width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
-                <div><?= escape($zone->title); ?></div>
+                <img class="organization__logo" width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
+                <div class="organization__name"><?= escape($zone->title); ?></div>
             </a>
         </div>
 

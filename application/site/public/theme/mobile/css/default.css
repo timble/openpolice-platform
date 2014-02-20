@@ -391,7 +391,7 @@ textarea {
   }
 
   /* line 32, utilities/_desktop.scss */
-  .container__header .logo {
+  .container__header .organization {
     text-align: center;
   }
 
@@ -465,7 +465,7 @@ textarea {
   }
 
   /* line 101, utilities/_desktop.scss */
-  .container__header .logo {
+  .container__header .organization {
     text-align: left;
   }
 }
@@ -736,7 +736,7 @@ you can use the generic selector below, but it's slower:
 }
 @media screen and (min-width: 998px) {
   /* line 68, utilities/_grid.scss */
-  .logo {
+  .organization {
     width: 22.22222%;
     float: left;
     margin-right: 3.7037%;
@@ -1286,7 +1286,7 @@ input[type="submit"].button::-moz-focus-inner {
 }
 
 /* line 2, molecules/_header.scss */
-.container__header .logo {
+.container__header .organization {
   display: none;
 }
 
@@ -1301,48 +1301,49 @@ input[type="submit"].button::-moz-focus-inner {
     font-size: 18.75px;
   }
   /* line 16, molecules/_header.scss */
-  .container__header .logo {
+  .container__header .organization {
     padding-top: 26px;
     text-decoration: none;
     color: #004d9f;
     display: block;
   }
   /* line 22, molecules/_header.scss */
-  .container__header .logo a {
+  .container__header .organization a {
     text-decoration: none;
   }
   /* line 26, molecules/_header.scss */
-  .container__header .logo a:hover {
+  .container__header .organization a:hover {
     text-decoration: underline;
   }
-  /* line 30, molecules/_header.scss */
-  .container__header .logo img {
+  /* line 31, molecules/_header.scss */
+  .container__header .organization__logo {
     width: 160px;
     vertical-align: bottom;
     margin-left: 10px;
   }
-  /* line 36, molecules/_header.scss */
-  .container__header .logo div {
+  /* line 37, molecules/_header.scss */
+  .container__header .organization__name {
     margin-left: 57px;
     margin-top: 3px;
+    font-size: 0.9em;
   }
-  /* line 42, molecules/_header.scss */
+  /* line 43, molecules/_header.scss */
   .container__header .slogan {
     margin: 25px 0 10px;
     display: block;
     text-align: center;
   }
-  /* line 47, molecules/_header.scss */
+  /* line 48, molecules/_header.scss */
   .container__header .slogan a {
     text-decoration: none;
   }
 }
 @media (max-width: 766px) {
-  /* line 58, molecules/_header.scss */
+  /* line 59, molecules/_header.scss */
   .js-enabled .container__header {
     position: fixed;
   }
-  /* line 62, molecules/_header.scss */
+  /* line 63, molecules/_header.scss */
   .js-enabled .container__content {
     padding-top: 5.5em;
   }
@@ -1895,11 +1896,11 @@ a.article__thumbnail:focus {
     padding-top: 20px;
   }
   /* line 15, utilities/_print.scss */
-  .container__header .row-fluid .span3 .logo a:after {
+  .container__header .row-fluid .span3 .organization a:after {
     content: "";
   }
   /* line 19, utilities/_print.scss */
-  .container__header .row-fluid .span3 .logo div {
+  .container__header .row-fluid .span3 .organization__name {
     padding-left: 50px;
   }
 
