@@ -634,7 +634,7 @@ you can use the generic selector below, but it's slower:
 
   /* line 21, utilities/_grid.scss */
   .copyright--left {
-    width: 48.14815%;
+    width: 39.50617%;
     float: left;
     margin-right: 3.7037%;
     display: inline;
@@ -642,7 +642,7 @@ you can use the generic selector below, but it's slower:
 
   /* line 24, utilities/_grid.scss */
   .copyright--right {
-    width: 48.14815%;
+    width: 56.79012%;
     float: right;
     margin-right: 0;
     *margin-left: -3em;

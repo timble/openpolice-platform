@@ -19,10 +19,10 @@
         @include span-columns(5 omega, 12);
     }
     .copyright--left {
-        @include span-columns(6, 12);
+        @include span-columns(5, 12);
     }
     .copyright--right {
-        @include span-columns(6 omega, 12);
+        @include span-columns(7 omega, 12);
     }
 
     .quicklink__item_1, .quicklink__item_3 {
