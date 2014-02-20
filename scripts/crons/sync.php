@@ -48,7 +48,10 @@ foreach(glob("*.sql") as $file)
 {
     $database = substr($file, 0, -4);
 
-    echo "Creating database " . $database . PHP_EOL;
+    echo "Drop existing database " . $database . PHP_EOL;
+    exec("mysql -u".escapeshellarg($config->user)." -p".escapeshellarg($config->password)." -e 'DROP DATABASE IF EXISTS `".$database."`;'");
+
+    echo "Re-creating database " . $database . PHP_EOL;
     exec("mysql -u".escapeshellarg($config->user)." -p".escapeshellarg($config->password)." -e 'CREATE DATABASE IF NOT EXISTS `".$database."`;'");
 
     echo "Importing " . $file . PHP_EOL;
