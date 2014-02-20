@@ -18,6 +18,12 @@ class SupportBootstrapper extends Library\BootstrapperAbstract
      */
     public function bootstrap()
     {
+        $this->getClassLoader()
+            ->getLocator('psr')
+            ->registerNamespace('rcrowe\\Hippy', JPATH_VENDOR.'/rcrowe/hippy/src')
+            ->registerNamespace('Guzzle', JPATH_VENDOR.'/guzzle/guzzle/src')
+            ->registerNamespace('Symfony\\Component\\EventDispatcher\\', JPATH_VENDOR.'/symfony/event-dispatcher');
+
         $manager = $this->getObjectManager();
         $manager->registerAlias('com:support.view.attachment.file', 'com:attachments.view.attachment.file');
     }

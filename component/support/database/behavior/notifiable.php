@@ -1,4 +1,12 @@
 <?php
+/**
+ * Belgian Police Web Platform - Support Component
+ *
+ * @copyright	Copyright (C) 2012 - 2014 Timble CVBA. (http://www.timble.net)
+ * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @link		https://github.com/belgianpolice/internet-platform
+ */
+
 namespace Nooku\Component\Support;
 
 use Nooku\Library;
@@ -18,8 +26,10 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         }
 
         $name = $this->getMixer()->getIdentifier()->name;
-        if(in_array($name, array('comment', 'ticket'))) {
+        if(in_array($name, array('comment', 'ticket')))
+        {
             $this->_sendNotification($context);
+            $this->_alertHipchat($context);
         }
     }
 
@@ -107,5 +117,33 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         $data['to'] = $to;
 
         $controller->send($data);
+    }
+
+    protected function _alertHipchat($context)
+    {
+        $token = $this->getObject('application')->getCfg('hipchat_token');
+        if(empty($token)) {
+            return;
+        }
+
+        $user   = $this->getObject('user');
+        $body = $context->data->text;
+
+        if($this->getMixer()->getIdentifier()->name == 'comment')
+        {
+            $ticket = $this->getObject('com:support.model.tickets')->id($context->data->row)->getRow();
+            $heading = '<strong>New comment from ' . $user->getName().' to ticket "'.$ticket->title.'"</strong><br />';
+        }
+        else {
+            $heading = '<strong>New ticket from ' . $user->getName().'</strong><br />';
+        }
+
+        $transport = new \rcrowe\Hippy\Transport\Guzzle($token, 'Alerts', 'Builder');
+        $hippy = new \rcrowe\Hippy\Client($transport);
+
+        $message = new \rcrowe\Hippy\Message(true);
+        $message->setHtml($heading.$body);
+
+        $hippy->send($message);
     }
 }
