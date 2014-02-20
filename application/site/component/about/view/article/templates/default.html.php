@@ -16,13 +16,12 @@
 
 <article class="article">
     <h1><?= $article->title ?></h1>
-
     <? if($article->attachments_attachment_id) : ?>
-        <figure class="article__thumbnail">
+        <a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Modalbox', 'Image']);" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
             <?= helper('com:attachments.image.thumbnail', array(
                 'attachment' => $article->attachments_attachment_id,
                 'attribs' => array('width' => '200', 'height' => '150'))) ?>
-        </figure>
+        </a>
     <? endif ?>
 
     <? if($article->fulltext) : ?>

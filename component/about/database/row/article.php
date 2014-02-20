@@ -19,6 +19,10 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
             $this->_data['text'] = $this->fulltext ? $this->introtext.'<hr id="system-readmore" />'.$this->fulltext : $this->introtext;
         }
 
+        if($column == 'thumbnail' && !isset($this->_data['thumbnail'])) {
+            $this->_data['thumbnail'] = $this->getObject('com:attachments.database.row.attachment')->set('id', $this->attachments_attachment_id)->load()->thumbnail;
+        }
+
         return parent::__get($column);
     }
 
