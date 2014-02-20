@@ -138,7 +138,7 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
             $heading = '<strong>New ticket from ' . $user->getName().'</strong><br />';
         }
 
-        $transport = new \rcrowe\Hippy\Transport\Guzzle($token, 'Alerts', 'Builder');
+        $transport = new \rcrowe\Hippy\Transport\Guzzle($token, 'Alerts', 'Police Support');
         $hippy = new \rcrowe\Hippy\Client($transport);
 
         $message = new \rcrowe\Hippy\Message(true);
