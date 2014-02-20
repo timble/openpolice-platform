@@ -13,7 +13,7 @@ class AboutViewHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $this->categories = $this->getObject('com:questions.model.categories')->table('about')->published(true)->sort('title')->getRowset();
+        $this->categories = $this->getObject('com:questions.model.categories')->table('about')->published(true)->sort('ordering')->getRowset();
 
         return parent::render();
     }
