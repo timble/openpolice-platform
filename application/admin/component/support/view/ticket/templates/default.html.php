@@ -41,7 +41,7 @@
         <input type="hidden" name="row" value="<?= $ticket->id ?>" />
         <input type="hidden" name="table" value="support_tickets" />
         <input type="hidden" name="status" value="" />
-        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => '', 'toolbar' => 'basic')) ?>
+        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => '', 'toolbar' => 'basic', 'attribs' => array('class' => 'ckeditor-required'))) ?>
         <br />
         <a class="btn" href="#" data-action="submit" data-status="open">
             <?= translate('Submit') ?>
