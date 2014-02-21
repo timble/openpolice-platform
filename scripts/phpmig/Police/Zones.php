@@ -7,7 +7,7 @@ class Zones
                                 'email', 'chief_name', 'chief_email', 'twitter', 'facebook');
 
     protected $_adapter;
-    protected $_wheres;
+    protected $_wheres = array();
     protected $_list;
 
     public function __construct(array $options = array())
@@ -90,6 +90,17 @@ class Zones
         $this->get();
 
         $this->_list[$zone] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Reset the constraints currently set
+     */
+    public function reset()
+    {
+        $this->_wheres = array();
+        $this->_list   = null;
 
         return $this;
     }

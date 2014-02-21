@@ -50,11 +50,8 @@ class AddContactsHours extends Migration
 
         parent::up();
 
-        // Reset
-        $this->getZones()->set(array(''));
-
         // All the French speaking zones.
-        $this->getZones()->where('language', '=', 2);
+        $this->getZones()->reset()->where('language', '=', 2);
         $this->_queries = "UPDATE `pages` SET `title` = 'Heures d\'ouverture' WHERE `pages_page_id` = '98';";
 
         parent::up();
