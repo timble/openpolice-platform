@@ -121,12 +121,14 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
 
     protected function _alertHipchat($context)
     {
-        $token = $this->getObject('application')->getCfg('hipchat_token');
+        $application = $this->getObject('application');
+
+        $token = $application->getCfg('hipchat_token');
         if(empty($token)) {
             return;
         }
 
-        $user   = $this->getObject('user');
+        $user = $this->getObject('user');
         $body = $context->data->text;
 
         if($this->getMixer()->getIdentifier()->name == 'comment')
@@ -139,6 +141,11 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         }
 
         $transport = new \rcrowe\Hippy\Transport\Guzzle($token, 'Alerts', 'Police Support');
+
+        if($proxy = $application->getCfg('http_proxy')) {
+            $transport->getHttp()->getConfig()->set('curl.options/'.CURLOPT_PROXY, $proxy);
+        }
+
         $hippy = new \rcrowe\Hippy\Client($transport);
 
         $message = new \rcrowe\Hippy\Message(true);
