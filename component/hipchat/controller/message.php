@@ -49,8 +49,15 @@ class ControllerMessage extends Library\ControllerAbstract
 
         $transport = new \rcrowe\Hippy\Transport\Guzzle($this->_token, $this->_room, $this->_from);
 
-        if($proxy = $this->getObject('application')->getCfg('http_proxy')) {
-            $transport->getHttp()->getConfig()->set('curl.options/'.CURLOPT_PROXY, $proxy);
+        if($proxy = $this->getObject('application')->getCfg('http_proxy'))
+        {
+            $config  = $transport->getHttp()->getConfig();
+            $request = $config->get('request.options');
+
+            $request['proxy']  = $proxy;
+            $request['verify'] = false;
+
+            $config->set('request.options', $request);
         }
 
         $hippy   = new \rcrowe\Hippy\Client($transport);
