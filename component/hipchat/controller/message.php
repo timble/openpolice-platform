@@ -62,7 +62,9 @@ class ControllerMessage extends Library\ControllerAbstract
 
         // HipChat doesn't allow <p> tags so replace them with breaks:
         $content = preg_replace("/<p[^>]*?>/", "", $data->message);
-        $content = str_replace("</p>", "<br />", $content);
+        $content = str_replace("</p>", "<br /><br />", $content);
+        // Make sure to remove any trailing breaks
+        $content = preg_replace('/(<br ?\/?>\s*)+$/', '', $content);
 
         $message->setHtml($content);
         $hippy->send($message);
