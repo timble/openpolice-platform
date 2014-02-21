@@ -12,11 +12,10 @@ namespace Nooku\Component\Support;
 use Nooku\Library;
 use Nooku\Component\Hipchat;
 
-class ControllerBehaviorHipchattable extends Hipchat\ControllerBehaviorHipchattable
+class ControllerBehaviorBroadcastable extends Hipchat\ControllerBehaviorBroadcastable
 {
     protected function _getHeading(Library\DatabaseRowAbstract $entity)
     {
-        $heading = parent::_getHeading($entity);
         $name = $entity->getIdentifier()->name;
 
         $user = $this->getObject('user');

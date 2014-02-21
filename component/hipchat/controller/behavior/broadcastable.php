@@ -12,7 +12,7 @@ namespace Nooku\Component\Hipchat;
 use Nooku\Library;
 use Nooku\Component\Hipchat;
 
-class ControllerBehaviorHipchattable extends Library\ControllerBehaviorAbstract
+class ControllerBehaviorBroadcastable extends Library\ControllerBehaviorAbstract
 {
     protected $_body_column;
 
