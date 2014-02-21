@@ -27,7 +27,7 @@
             <input class="required" type="text" name="title" maxlength="255" value="<?= $ticket->title ?>" placeholder="<?= translate('Title') ?>" />
         </div>
 
-        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $ticket->text, 'toolbar' => 'basic')) ?>
+        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $ticket->text, 'toolbar' => 'basic', 'attribs' => array('class' => 'ckeditor-required'))) ?>
     </div>
 
     <div class="sidebar">

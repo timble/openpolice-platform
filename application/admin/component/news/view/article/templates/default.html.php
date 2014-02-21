@@ -31,7 +31,7 @@
 			</div>
 		</div>
 
-		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
+		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text, 'attribs' => array('class' => 'ckeditor-required'))) ?>
 	</div>
 	<div class="sidebar">
         <?= import('default_sidebar.html'); ?>
