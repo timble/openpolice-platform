@@ -22,7 +22,7 @@
 	<div class="main">
 		<div class="scrollable">
 				<fieldset>
-					<legend><?= translate( 'Basic Information' ); ?></legend>
+					<legend><?= translate( 'Information' ); ?></legend>
 					<div>
 					    <label for="">
 					    	<?= translate( 'Firstname' ); ?>
@@ -55,9 +55,6 @@
 					        <input type="text" name="position" maxlength="250" value="<?= $officer->position; ?>" />
 					    </div>
 					</div>
-				</fieldset>
-				<fieldset>
-					<legend><?= translate( 'Contact information' ); ?></legend>
 					<div>
 					    <label for="">
 					    	<?= translate( 'Phone' ); ?>

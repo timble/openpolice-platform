@@ -16,10 +16,10 @@
     </div>
     <div class="scopebar__group">
     	<a class="<?= $state->published === 1 ? 'active' : ''; ?>" href="<?= route($state->published === 1 ? 'published=' : 'published=1' ) ?>">
-    	    <?= 'Published' ?>
+    	    <?= translate('Published') ?>
     	</a>
     	<a class="<?= $state->published === 0 ? 'active' : ''; ?>" href="<?= route($state->published === 0 ? 'published=' : 'published=0' ) ?>">
-    	    <?= 'Unpublished' ?>
+    	    <?= translate('Unpublished') ?>
     	</a>
     </div>
     <div class="scopebar__search">

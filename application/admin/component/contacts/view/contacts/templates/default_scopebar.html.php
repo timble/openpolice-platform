@@ -24,7 +24,7 @@
     </div>
     <div class="scopebar__group">
     	<a class="<?= $state->access === 1 ? 'active' : ''; ?>" href="<?= route($state->access === 1 ? 'access=' : 'access=1' ) ?>">
-    	    <?= 'Registered' ?>
+    	    <?= translate('Registered') ?>
     	</a>
     </div>
     <div class="scopebar__search">

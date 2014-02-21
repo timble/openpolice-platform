@@ -55,8 +55,12 @@ files=(
   "Vagrantfile"
   "vendor/.gitignore"
   "config/config.php"
+  "application/admin/component/application/resources/language/nl-NL.ini"
+  "application/admin/component/application/resources/language/fr-FR.ini"
   "application/site/component/application/resources/language/nl-NL.ini"
+  "application/site/component/application/resources/language/fr-FR.ini"
   "application/site/component/files/resources/language/nl-NL.ini"
+  "application/site/component/files/resources/language/fr-FR.ini"
 )
 
 ## Function definitions
