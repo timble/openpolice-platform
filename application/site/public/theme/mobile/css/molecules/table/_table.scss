@@ -7,6 +7,12 @@ table {
     th, td {
         padding: 0.75em;
     }
+
+    caption {
+        font-size: 1.20em;
+        text-align: left;
+        margin-bottom: 1em;
+    }
 }
 
 .table {
@@ -14,8 +20,15 @@ table {
     width: 100%;
     border: 0 none;
 
-    td {
+    tr {
+        display: block;
+        padding: 0.75em 0.75em 0;
+    }
+
+    th, td {
+        display: block;
         border: none;
+        padding: 0 0 0.75em 0;
     }
 
     td:nth-child(n+2) {
@@ -33,6 +46,12 @@ table {
         background-color: $tableBackground;
         margin-bottom: $baseLineHeight;
         border: 0 none; // Override default style
+
+        tr {
+            display: table-row;
+            padding: 0;
+        }
+
         // Cells
         th,
         td {
@@ -40,6 +59,7 @@ table {
             line-height: $baseLineHeight;
             text-align: left;
             vertical-align: top;
+            padding: 0.75em;
         }
 
         th {

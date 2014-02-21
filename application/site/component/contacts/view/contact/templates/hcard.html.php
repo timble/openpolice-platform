@@ -8,68 +8,59 @@
  */
 ?>
 
+<? $email_to = str_replace("@", "&#64;", $contact->email_to) ?>
+<? $email_to = str_replace(".", "&#46;", $email_to) ?>
+
 <address class="vcard">
-    <div class="page-header">
-        <h1 class="fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
-    </div>
-    <?if ($contact->con_position) : ?>
-    <h2 class="title"><?= $contact->con_position?></h2>
-    <? endif;?>
+    <h1 class="article__header fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
     <? if($contact->isAttachable()) : ?>
         <? foreach($contact->getAttachments() as $item) : ?>
             <? if($item->file->isImage()) : ?>
-                <figure>
-                    <img width="200" align="right" class="photo" src="attachments://<?= $item->thumbnail ?>" />
-                </figure>
+                <img width="200" height="150" class="photo article__thumbnail" align="right" src="attachments://<?= $item->thumbnail ?>" />
             <? endif ?>
         <? endforeach ?>
     <? endif ?>
     <div class="adr">
         <? if ($contact->address) : ?>
-        <div class="street-address"><?= $contact->address?></div>
-        <? endif; ?>
-        <? if ( $contact->suburb) : ?>
-        <span class="locality"><?= $contact->suburb?></span>,
-        <? endif; ?>
-        <? if ($contact->state) : ?>
-        <span class="region"> <?= $contact->state?></span>
+            <div class="street-address"><?= $contact->address?></div>
         <? endif; ?>
         <?if ($contact->postcode) : ?>
-        <span class="postal-code"><?= $contact->postcode?></span>
+            <span class="postal-code"><?= $contact->postcode?></span>
         <? endif; ?>
-        <? if ($contact->country) : ?>
-        <div class="country-name"><?= $contact->country?></div>
+        <? if ( $contact->suburb) : ?>
+            <span class="locality"><?= $contact->suburb?></span>
         <? endif; ?>
     </div>
     <ul>
         <? if ($contact->telephone) :?>
-        <li class="tel">
-            <span class="type"><?= translate('Phone') ?></span>:
-            <span class="value"><?= $contact->telephone?></span>
-        </li>
+            <li class="tel">
+                <span class="type"><?= translate('Phone') ?></span>:
+                <span class="value"><?= $contact->telephone?></span>
+            </li>
         <? endif; ?>
         <? if ($contact->fax) :?>
-        <li class="tel">
-            <span class="type"><?= translate('Fax') ?></span>:
-            <span class="value"><?= $contact->fax?></span>
-        </li>
+            <li class="tel">
+                <span class="type"><?= translate('Fax') ?></span>:
+                <span class="value"><?= $contact->fax?></span>
+            </li>
         <? endif; ?>
         <?if ($contact->mobile) :?>
-        <li class="tel">
-            <span class="type"><?= translate('Mobile') ?></span>:
-            <span class="value"><?= $contact->mobile?></span>
-        </li>
+            <li class="tel">
+                <span class="type"><?= translate('Mobile') ?></span>:
+                <span class="value"><?= $contact->mobile?></span>
+            </li>
         <? endif; ?>
-        <?if ($contact->email_to && $contact->params->get('show_email', false)) :?>
-        <li>
-            <span><?= translate('Email') ?></span>:
-            <a class="email" href="mailto:<?= $contact->email_to?>"><?= $contact->email_to?></a>
-        </li>
+        <?if ($contact->email_to) :?>
+            <li>
+                <span><?= translate('Email') ?></span>:
+                <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>
+            </li>
         <? endif; ?>
     </ul>
+
     <?if ($contact->misc) :?>
-    <p class="note">
-        <?= $contact->misc ?>
-    </p>
+        <span class="note">
+            <?= $contact->misc ?>
+        </span>
     <? endif; ?>
 </address>
