@@ -243,7 +243,7 @@ CREATE TABLE `contacts_hours` (
   `day_of_week` tinyint(4) DEFAULT NULL,
   `opening_time` time DEFAULT NULL,
   `closing_time` time DEFAULT NULL,
-  `published` tinyint(1) DEFAULT NULL,
+  `published` tinyint(1) DEFAULT '0',
   `created_by` int(11) unsigned DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
   `modified_by` int(11) unsigned DEFAULT NULL,

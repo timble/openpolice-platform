@@ -15,7 +15,7 @@ class AddContactsHours extends Migration
                               `day_of_week` tinyint(4) DEFAULT NULL,
                               `opening_time` time DEFAULT NULL,
                               `closing_time` time DEFAULT NULL,
-                              `published` tinyint(1) DEFAULT NULL,
+                              `published` tinyint(1) DEFAULT '0',
                               `created_by` int(11) unsigned DEFAULT NULL,
                               `created_on` datetime DEFAULT NULL,
                               `modified_by` int(11) unsigned DEFAULT NULL,
@@ -45,10 +45,13 @@ class AddContactsHours extends Migration
 
         // All the Dutch and multilingual zones.
         $this->getZones()->where('language', '=', 1)
-                        ->where('language', '=', 3, 'AND');
+                        ->where('language', '=', 3, 'OR');
         $this->_queries = "UPDATE `pages` SET `title` = 'Openingsuren' WHERE `pages_page_id` = '98';";
 
         parent::up();
+
+        // Reset
+        $this->getZones()->set(array(''));
 
         // All the French speaking zones.
         $this->getZones()->where('language', '=', 2);

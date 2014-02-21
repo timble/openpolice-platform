@@ -9,12 +9,17 @@
 ?>
 
 <div class="scopebar">
-    <div class="scopebar-group">
-        <a class="<?= is_null($state->search) ? 'active' : ''; ?>" href="<?= @route('search=' ) ?>">
-            <?= @text('All') ?>
+    <div class="scopebar__group">
+        <a class="<?= is_null($state->published) ? 'active' : ''; ?>" href="<?= route('published=' ) ?>">
+            <?= translate('All') ?>
         </a>
     </div>
-    <div class="scopebar-search">
-        <?= @helper('grid.search') ?>
+    <div class="scopebar__group">
+        <a class="<?= $state->published === true ? 'active' : ''; ?>" href="<?= route($state->published === true ? 'published=' : 'published=1') ?>">
+            <?= translate('Published') ?>
+        </a>
+        <a class="<?= $state->published === false ? 'active' : ''; ?>" href="<?= route($state->published === false ? 'published=' : 'published=0' ) ?>">
+            <?= translate('Unpublished') ?>
+        </a>
     </div>
 </div>
