@@ -43,6 +43,19 @@ class AddContactsHours extends Migration
 
         parent::up();
 
+        // All the Dutch and multilingual zones.
+        $this->getZones()->where('language', '=', 1)
+                        ->where('language', '=', 3, 'AND');
+        $this->_queries = "UPDATE `pages` SET `title` = 'Openingsuren' WHERE `pages_page_id` = '98';";
+
+        parent::up();
+
+        // All the French speaking zones.
+        $this->getZones()->where('language', '=', 2);
+        $this->_queries = "UPDATE `pages` SET `title` = 'Heures d\'ouverture' WHERE `pages_page_id` = '98';";
+
+        parent::up();
+
         // Migrated opening hours for Leuven
         $this->getZones()->set(array('5388' => 'Leuven'));
         $this->_queries = "INSERT INTO `contacts_hours` (`contacts_hour_id`, `contacts_contact_id`, `day_of_week`, `opening_time`, `closing_time`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `params`)
