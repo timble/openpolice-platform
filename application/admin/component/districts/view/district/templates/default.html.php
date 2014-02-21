@@ -38,7 +38,7 @@
                 </div>
                 <div>
 				    <label for="contacts_contact_id">
-				    	<?= translate( 'Location' ); ?>
+				    	<?= translate( 'Contact' ); ?>
 				    </label>
 				    <div>
 				        <?= helper('com:contacts.listbox.contacts', array('autocomplete' => true, 'name' => 'contacts_contact_id', 'selected' => $district->contacts_contact_id)) ?>
