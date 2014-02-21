@@ -16,6 +16,7 @@ class SupportControllerTicket extends Library\ControllerModel
         $config->append(array(
             'behaviors' => array(
                 'editable',
+                'broadcastable',
                 'com:activities.controller.behavior.loggable',
                 'com:attachments.controller.behavior.attachable'
             )

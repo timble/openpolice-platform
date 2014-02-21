@@ -2,7 +2,8 @@
     "require": {
         "swiftmailer/swiftmailer": "5.0.*",
         "imagine/imagine": "0.4.*",
-        "firebase/php-jwt": "dev-master"
+        "firebase/php-jwt": "dev-master",
+        "rcrowe/hippy": "0.7.*"
     },
     "config": {
         "vendor-dir": "../../vendor"
