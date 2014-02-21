@@ -9,14 +9,14 @@
 
 namespace Nooku\Component\Support;
 
-use Nooku\Component\Hipchat;
 use Nooku\Library;
+use Nooku\Component\Hipchat;
 
 class ControllerBehaviorHipchattable extends Hipchat\ControllerBehaviorHipchattable
 {
-    protected function _getHeader(Library\DatabaseRowAbstract $entity)
+    protected function _getHeading(Library\DatabaseRowAbstract $entity)
     {
-        $heading = parent::_getHeader($entity);
+        $heading = parent::_getHeading($entity);
         $name = $entity->getIdentifier()->name;
 
         $user = $this->getObject('user');
@@ -38,12 +38,21 @@ class ControllerBehaviorHipchattable extends Hipchat\ControllerBehaviorHipchatta
         $url  = $host.$path;
         $link = '<a href="'.$url.'">' . $ticket->title . '</a>';
 
-        // Now build the heading string
-        if($name == 'comment') {
-            $heading = '<strong>New comment from ' . $user->getName().' to ticket '.$link.':</strong>';
-        }
-        else $heading = '<strong>New ticket '.$link.' by ' . $user->getName().':</strong>';
+        return '<strong>' . $user->getName() . ' - ' . $link . '</strong>';;
+    }
 
-        return $heading;
+    protected function _getBackgroundColor(Library\DatabaseRowAbstract $entity)
+    {
+        $request = $this->getMixer()->getRequest();
+        $name    = $entity->getIdentifier()->name;
+
+        if($name == 'ticket') {
+            return Hipchat\ControllerMessage::RED;
+        }
+        elseif($name == 'comment' && $request->data->status == 'solved') {
+            return Hipchat\ControllerMessage::GREEN;
+        }
+
+        return Hipchat\ControllerMessage::YELLOW;;
     }
 }

@@ -13,6 +13,13 @@ use Nooku\Library;
 
 class ControllerMessage extends Library\ControllerAbstract
 {
+    const YELLOW = 'yellow';
+    const RED    = 'red';
+    const PURPLE = 'purple';
+    const GRAY   = 'gray';
+    const GREEN  = 'green';
+    const RANDOM = 'random';
+
     protected $_token;
     protected $_room;
     protected $_from;

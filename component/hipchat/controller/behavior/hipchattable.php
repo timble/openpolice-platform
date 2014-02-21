@@ -10,6 +10,7 @@
 namespace Nooku\Component\Hipchat;
 
 use Nooku\Library;
+use Nooku\Component\Hipchat;
 
 class ControllerBehaviorHipchattable extends Library\ControllerBehaviorAbstract
 {
@@ -43,16 +44,14 @@ class ControllerBehaviorHipchattable extends Library\ControllerBehaviorAbstract
     protected function _alertHipchat(Library\DatabaseRowAbstract $entity)
     {
         // A HipChat message is just one big HTML text, but for ease of re-use we've split it up into a header and subject.
-        $message  = $this->_getHeader($entity);
+        $message  = $this->_getHeading($entity);
         $message .= '<br />';
         $message .= $this->_getBody($entity);
 
-        $color = $entity->getIdentifier()->name == 'ticket' ? 'yellow' : 'green';
-
-        return $this->getObject('com:hipchat.controller.message')->send(array('message' => $message, 'bgcolor' => $color));
+        return $this->getObject('com:hipchat.controller.message')->send(array('message' => $message, 'bgcolor' => $this->_getBackgroundColor($entity)));
     }
 
-    protected function _getHeader(Library\DatabaseRowAbstract $entity)
+    protected function _getHeading(Library\DatabaseRowAbstract $entity)
     {
         $name = $entity->getIdentifier()->name;
         $user = $this->getObject('user');
@@ -63,5 +62,10 @@ class ControllerBehaviorHipchattable extends Library\ControllerBehaviorAbstract
     protected function _getBody(Library\DatabaseRowAbstract $entity)
     {
         return $entity->get($this->_body_column);
+    }
+
+    protected function _getBackgroundColor(Library\DatabaseRowAbstract $entity)
+    {
+        return Hipchat\ControllerMessage::YELLOW;
     }
 }
