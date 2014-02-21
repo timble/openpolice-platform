@@ -12,6 +12,7 @@ temp="/tmp/police-$RANDOM"
 
 dirs=(
   "application/admin/component/about"
+  "application/admin/component/contacts"
   "application/admin/component/districts"
   "application/admin/component/news"
   "application/admin/component/police"
@@ -23,6 +24,7 @@ dirs=(
   "application/admin/component/zendesk"
   "application/admin/public/theme/default/templates"
   "application/site/component/about"
+  "application/site/component/contacts"
   "application/site/component/districts"
   "application/site/component/news"
   "application/site/component/police"
@@ -33,6 +35,7 @@ dirs=(
   "application/site/public/theme/mobile"
   "application/site/public/theme/splash"
   "component/about"
+  "component/contacts"
   "component/districts"
   "component/news"
   "component/police"
@@ -53,7 +56,6 @@ files=(
   "vendor/.gitignore"
   "config/config.php"
   "application/site/component/application/resources/language/nl-NL.ini"
-  "application/site/component/contacts/resources/language/nl-NL.ini"
   "application/site/component/files/resources/language/nl-NL.ini"
 )
 
