@@ -64,7 +64,7 @@
             <div class="navbar">
                 <div class="navbar__handlebar">
                     <div class="navbar__handle">&equiv;</div>
-                    <a class="navbar__logo" href="/<?= $site ?>">
+                    <a onClick="_gaq.push(['_trackEvent', 'Navigation', 'Handlebar', 'Hamburger']);" class="navbar__logo" href="/<?= $site ?>">
                         <?= translate('Police') ?>
                         <?= escape($zone->title); ?>
                     </a>
