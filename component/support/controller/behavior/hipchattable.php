@@ -53,6 +53,6 @@ class ControllerBehaviorHipchattable extends Hipchat\ControllerBehaviorHipchatta
             return Hipchat\ControllerMessage::GREEN;
         }
 
-        return Hipchat\ControllerMessage::YELLOW;;
+        return Hipchat\ControllerMessage::YELLOW;
     }
 }
