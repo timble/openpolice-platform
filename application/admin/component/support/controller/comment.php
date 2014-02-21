@@ -23,6 +23,7 @@ class SupportControllerComment extends Library\ControllerModel
         $config->append(array(
             'behaviors' => array(
                 'editable',
+                'chattable',
                 'com:activities.controller.behavior.loggable',
                 'com:attachments.controller.behavior.attachable'
             )

@@ -26,10 +26,8 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         }
 
         $name = $this->getMixer()->getIdentifier()->name;
-        if(in_array($name, array('comment', 'ticket')))
-        {
+        if(in_array($name, array('comment', 'ticket'))) {
             $this->_sendNotification($context);
-            $this->_alertHipchat($context);
         }
     }
 
@@ -117,40 +115,5 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         $data['to'] = $to;
 
         $controller->send($data);
-    }
-
-    protected function _alertHipchat($context)
-    {
-        $application = $this->getObject('application');
-
-        $token = $application->getCfg('hipchat_token');
-        if(empty($token)) {
-            return;
-        }
-
-        $user = $this->getObject('user');
-        $body = $context->data->text;
-
-        if($this->getMixer()->getIdentifier()->name == 'comment')
-        {
-            $ticket = $this->getObject('com:support.model.tickets')->id($context->data->row)->getRow();
-            $heading = '<strong>New comment from ' . $user->getName().' to ticket "'.$ticket->title.'"</strong><br />';
-        }
-        else {
-            $heading = '<strong>New ticket from ' . $user->getName().'</strong><br />';
-        }
-
-        $transport = new \rcrowe\Hippy\Transport\Guzzle($token, 'Alerts', 'Police Support');
-
-        if($proxy = $application->getCfg('http_proxy')) {
-            $transport->getHttp()->getConfig()->set('curl.options/'.CURLOPT_PROXY, $proxy);
-        }
-
-        $hippy = new \rcrowe\Hippy\Client($transport);
-
-        $message = new \rcrowe\Hippy\Message(true);
-        $message->setHtml($heading.$body);
-
-        $hippy->send($message);
     }
 }
