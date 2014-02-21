@@ -25,7 +25,7 @@
 				<legend><?= translate( 'Information' ); ?></legend>
 				<div>
 				    <label for="name">
-				    	<?= translate( 'Location' ); ?>
+				    	<?= translate( 'Contact' ); ?>
 				    </label>
 				    <div>
 				        <?= helper('listbox.contacts', array('name' => 'contacts_contact_id', 'selected' => $hour->contacts_contact_id, 'attribs' => array('id' => 'select-contact', 'class' => 'required', 'style' => 'width:100%'))) ?>
@@ -34,7 +34,7 @@
 				</div>
 				<div>
 				    <label for="name">
-				    	<?= translate( 'Day of Week' ); ?>
+				    	<?= translate( 'Day' ); ?>
 				    </label>
 				    <div>
 				        <?= helper('listbox.days', array('name' => 'day_of_week', 'selected' => $hour->day_of_week)) ?>
