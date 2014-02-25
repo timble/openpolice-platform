@@ -726,7 +726,7 @@ location ~ "^/(politie.opsporingen.kempen)(?:/.*)?$" {
 	rewrite ^ http://users.pandora.be/politie.opsporingen.kempen redirect;
 }
 
-location ~ "^/(5404|politiebeersel)(?:/.*)?$" {
+location ~ "^/(5404|politiebeersel|beersel)(?:/.*)?$" {
 	rewrite ^ http://www.politiebeersel.be permanent;
 }
 
