@@ -12,6 +12,12 @@ location  ~ "^/5318(?:/.*)?$"  {
     break;
 }
 
+# Damme/Knokke-Heist
+location  ~ "^/5446(?:/.*)?$"  {
+    include /etc/nginx/conf.d/proxy.inc;
+    break;
+}
+
 location  ~ "^/demo(?:/.*)?$"  {
     include /etc/nginx/conf.d/proxy.inc;
     break;
