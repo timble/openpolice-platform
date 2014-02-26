@@ -252,7 +252,9 @@ CREATE TABLE `contacts_hours` (
   `locked_on` datetime DEFAULT NULL,
   `params` text,
   PRIMARY KEY (`contacts_hour_id`),
-  KEY `published` (`published`)
+  KEY `published` (`published`),
+  KEY `contacts_hours__contacts_contact_id` (`contacts_contact_id`),
+  CONSTRAINT `contacts_hours__contacts_contact_id` FOREIGN KEY (`contacts_contact_id`) REFERENCES `contacts` (`contacts_contact_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
