@@ -27,8 +27,15 @@
 }
 
 .article__thumbnail {
-    float: right;
-    max-width: 40%;
-    margin: 0 0 $baseLineHeight $baseLineHeight;
     @extend .thumbnail;
+    margin-bottom: $baseLineHeight / 2;
+}
+
+@include respond-min(400px) {
+    .article__thumbnail {
+        float: right;
+        width: 40%;
+        max-width: 200px;
+        margin: 0 0 $baseLineHeight $baseLineHeight;
+    }
 }
