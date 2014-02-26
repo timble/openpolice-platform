@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="homepage__sticky">
-        <? $articles = object('com:news.controller.article')->sticky(true)->browse()->count() ? object('com:news.controller.article')->sticky(true)->browse() : object('com:news.controller.article')->limit('1')->browse(); ?>
+        <? $articles = object('com:news.controller.article')->sticky(true)->browse()->count() ? object('com:news.controller.article')->sticky(true)->limit('1')->browse() : object('com:news.controller.article')->limit('1')->browse(); ?>
         <? foreach ($articles as $article) : ?>
             <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
             <article class="hidden-phone">
