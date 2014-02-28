@@ -18,6 +18,10 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
             $this->_data['text'] = $this->fulltext ? $this->introtext.'<hr id="system-readmore" />'.$this->fulltext : $this->introtext;
         }
 
+        if($column == 'blocks' && !isset($this->_data['blocks'])) {
+            $this->_data['blocks'] = json_decode($this->fulltext);
+        }
+
         return parent::__get($column);
     }
 
@@ -33,15 +37,41 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
             $this->created_on = gmdate('Y-m-d H:i:s', strtotime($this->created_on));
         }
 
-        if(preg_match($pattern, $text))
-        {
-            list($introtext, $fulltext) = preg_split($pattern, $text, 2);
+        /*
+         *  Next Generation Editor
+         */
+        if($this->content) {
+            $blocks = $this->getObject('com:news.model.articles')->id($this->id)->getRow()->blocks;
 
-            $this->introtext = trim($introtext);
-            $this->fulltext = trim($fulltext);
-        } else {
-        	$this->introtext = trim($text);
-        	$this->fulltext = '';
+            $this->content = htmlspecialchars($this->content, ENT_QUOTES);
+
+            $data = array();
+
+            // Update existing blocks
+            if(count($blocks)) {
+                foreach($blocks as $key => $value)
+                {
+                    if($key == $this->block) {
+                        $data[$key]['text'] = $this->content;
+                        $data[$key]['heading'] = $this->heading;
+                    } else {
+                        $data[$key]['text'] = $value->text;
+                        $data[$key]['heading'] = $value->heading;
+                    }
+                }
+
+                // Add new block
+                if(max(array_keys((array) $blocks)) < $this->block) {
+                    $data[$this->block]['text'] = $this->content;
+                    $data[$this->block]['heading'] = $this->heading;
+                }
+            } else {
+                // Add new block when no blocks exist
+                $data[$this->block]['text'] = $this->content;
+                $data[$this->block]['heading'] = $this->heading;
+            }
+
+            $this->fulltext = json_encode($data);
         }
 
         //Add publish_on date if not set
