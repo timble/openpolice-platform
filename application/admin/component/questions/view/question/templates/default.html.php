@@ -10,9 +10,8 @@
 
 <?= helper('behavior.validator'); ?>
 
-<!--
 <script src="assets://js/koowa.js" />
--->
+<script src="assets://news/js/news.attachments.js" />
 
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">

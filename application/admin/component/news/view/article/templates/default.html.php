@@ -11,12 +11,15 @@
 <?= helper('behavior.validator'); ?>
 
 <script src="assets://js/koowa.js" />
+<script src="assets://news/js/news.attachments.js" />
 <script src="assets://news/js/jquery.datetimepicker.js" />
 <style src="assets://news/css/jquery.datetimepicker.css" />
 
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
+
+
 
 <form action="" method="post" id="article-form" class="-koowa-form">
 	<input type="hidden" name="published" value="0" />
