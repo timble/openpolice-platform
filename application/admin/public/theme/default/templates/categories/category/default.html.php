@@ -1,7 +1,6 @@
 <? $disabled = ($state->table == 'contacts' || $state->table == 'traffic') && $this->getObject('user')->getRole() < 25 ?>
 
 <?= helper('behavior.validator') ?>
-<script src="assets://news/js/news.attachments.js" />
 
 <!--
 <script src="assets://js/koowa.js" />

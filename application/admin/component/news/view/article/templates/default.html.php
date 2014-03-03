@@ -11,7 +11,6 @@
 <?= helper('behavior.validator'); ?>
 
 <script src="assets://js/koowa.js" />
-<script src="assets://news/js/news.attachments.js" />
 <script src="assets://news/js/jquery.datetimepicker.js" />
 <style src="assets://news/css/jquery.datetimepicker.css" />
 
