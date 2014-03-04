@@ -18,9 +18,12 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+
+
 <form action="" method="post" id="article-form" class="-koowa-form">
 	<input type="hidden" name="published" value="0" />
     <input type="hidden" name="sticky" value="0" />
+    <input type="hidden" name="attachments_attachment_id" value="0" />
 
 	<div class="main">
 		<div class="title">
