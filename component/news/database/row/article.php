@@ -7,6 +7,8 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
+
+
 namespace Nooku\Component\News;
 use Nooku\Library;
 
@@ -19,7 +21,7 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         }
 
         if($column == 'blocks' && !isset($this->_data['blocks'])) {
-            $this->_data['blocks'] = json_decode($this->fulltext);
+            $this->_data['blocks'] = json_decode($this->introtext);
         }
 
         return parent::__get($column);
@@ -40,38 +42,67 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         /*
          *  Next Generation Editor
          */
+//        if($this->content) {
+//            $blocks = $this->getObject('com:news.model.articles')->id($this->id)->getRow()->blocks;
+//
+//            $this->content = htmlspecialchars($this->content, ENT_QUOTES);
+//
+//            $data = array();
+//
+//            // Update existing blocks
+//            if(count($blocks)) {
+//                foreach($blocks as $key => $value)
+//                {
+//                    if($key == $this->block) {
+//                        $data[$key]['text'] = $this->content;
+//                        $data[$key]['heading'] = $this->heading;
+//                    } else {
+//                        $data[$key]['text'] = $value->text;
+//                        $data[$key]['heading'] = $value->heading;
+//                    }
+//                }
+//
+//                // Add new block
+//                if(max(array_keys((array) $blocks)) < $this->block) {
+//                    $data[$this->block]['text'] = $this->content;
+//                    $data[$this->block]['heading'] = $this->heading;
+//                }
+//            } else {
+//                // Add new block when no blocks exist
+//                $data[$this->block]['text'] = $this->content;
+//                $data[$this->block]['heading'] = $this->heading;
+//            }
+//
+//            $this->fulltext = json_encode($data);
+//        }
+
         if($this->content) {
-            $blocks = $this->getObject('com:news.model.articles')->id($this->id)->getRow()->blocks;
+            include('simple_html_dom.php');
 
-            $this->content = htmlspecialchars($this->content, ENT_QUOTES);
-
+            $html = str_get_html($this->content);
             $data = array();
+            $i = '0';
+            foreach($html->find('div.block') as $block) {
+                $i++;
 
-            // Update existing blocks
-            if(count($blocks)) {
-                foreach($blocks as $key => $value)
-                {
-                    if($key == $this->block) {
-                        $data[$key]['text'] = $this->content;
-                        $data[$key]['heading'] = $this->heading;
-                    } else {
-                        $data[$key]['text'] = $value->text;
-                        $data[$key]['heading'] = $value->heading;
+                foreach($block->find('h2') as $h2) {
+                    $data[$i]['heading'] = $h2->innertext;
+                }
+
+                foreach($block->find('p') as $p) {
+                    $data[$i]['text'] = $p->innertext;
+                }
+
+                if(count($block->find('img'))) {
+                    foreach($block->find('img') as $img) {
+                        $data[$i]['attachments_attachment_id'] = $img->getAttribute('data-id');
                     }
+                } else {
+                    $data[$i]['attachments_attachment_id'] = '0';
                 }
-
-                // Add new block
-                if(max(array_keys((array) $blocks)) < $this->block) {
-                    $data[$this->block]['text'] = $this->content;
-                    $data[$this->block]['heading'] = $this->heading;
-                }
-            } else {
-                // Add new block when no blocks exist
-                $data[$this->block]['text'] = $this->content;
-                $data[$this->block]['heading'] = $this->heading;
             }
 
-            $this->fulltext = json_encode($data);
+            $this->introtext = json_encode($data);
         }
 
         //Add publish_on date if not set

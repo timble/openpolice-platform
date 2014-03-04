@@ -9,6 +9,7 @@
 ?>
 
 <?= helper('behavior.validator'); ?>
+<?= helper('behavior.inline_editing'); ?>
 
 <script src="assets://js/koowa.js" />
 <script src="assets://news/js/jquery.datetimepicker.js" />
@@ -32,6 +33,8 @@
     });
 </script>
 
+
+
 <style>
     .is-hidden {
         display: none;
@@ -40,6 +43,12 @@
     .block {
         border: 1px solid red;
         margin-bottom: 20px;
+    }
+
+    .block .image {
+        width: 50px;
+        height: 50px;
+        border: 1px solid green;
     }
 </style>
 
@@ -56,32 +65,54 @@
             </div>
         </div>
 
-        <a id="new" class="btn" href="#" data-action="new" style="margin: 20px 20px 0">New</a>
-        <div id="blocks" style="padding: 20px">
+        <div id="blocks" style="padding: 20px; border: 1px solid blue">
             <? if(count($article->blocks)) : ?>
                 <? foreach($article->blocks as $key => $value) : ?>
                     <?= $key ?>
                     <div id="block-<?= $key ?>" class="block" data-block="<?= $key ?>">
-                        <h2 class="heading"><?= $value->heading ?></h2>
-                        <div class="text">
+                        <h2 class="heading" contenteditable="true">
+                            <?= $value->heading ?>
+                        </h2>
+                        <div class="text" contenteditable="true">
                             <?= htmlspecialchars_decode($value->text) ?>
                         </div>
-                        <div class="toolbar">
-                            <a href="#" data-action="load" data-block="<?= $key ?>">Edit</a>
+                        <div id="div<?= $key ?>" class="image" ondrop="drop(event)" ondragover="allowDrop(event)">
+                        <?
+                        if ($value->attachments_attachment_id) : ?>
+                            <?
+                            $thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $value->attachments_attachment_id)->load();
+                        ?>
+                            <img data-id="<?= $thumbnail->id ?>" src="files/<?= $this->getObject('application')->getSite() ?>/attachments/<?= $thumbnail->thumbnail ?>" />
+                            <? endif ?>
                         </div>
                     </div>
                 <? endforeach ?>
             <? endif ?>
         </div>
+        <a id="new" class="btn" href="#" data-action="new" style="margin: 20px 20px 0">New</a>
+        <a id="save" class="btn" href="#" data-action="save" style="margin: 20px 20px 0">Save</a>
     </div>
 
     <div id="sidebar" class="sidebar">
-        <div id="editor" class="is-hidden">
-            <input id="heading" type="text" name="heading" maxlength="255" placeholder="<?= translate('Heading') ?>" />
-            <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => '')) ?>
-            <input id="image" type="file" name="image" />
-        </div>
-        <a id="save" class="btn" href="#" data-action="save">Save</a>
+        <?= import('default_sidebar.html') ?>
     </div>
-
 </form>
+
+<script data-inline>
+    function allowDrop(ev)
+    {
+        ev.preventDefault();
+    }
+
+    function drag(ev)
+    {
+        ev.dataTransfer.setData("id", ev.target.id);
+    }
+
+    function drop(ev)
+    {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("id");
+        ev.target.appendChild(document.getElementById(data).clone());
+    }
+</script>

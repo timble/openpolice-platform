@@ -4613,31 +4613,6 @@ body {
   flex-grow: 1;
 }
 
-/* line 121, _flexbox.scss */
-.cke_chrome iframe {
-  min-height: 100px;
-}
-
-/* line 129, _flexbox.scss */
-.cke_chrome,
-.cke_chrome > .cke_inner,
-.cke_chrome > .cke_inner > .cke_contents,
-.cke_chrome > .cke_inner > .cke_contents iframe,
-.cke_chrome > .cke_inner > .cke_contents > .cke_source {
-  display: -webkit-flex !important;
-  display: -moz-flex !important;
-  display: flex !important;
-  -webkit-flex-grow: 1;
-  -moz-flex-grow: 1;
-  flex-grow: 1;
-  -webkit-flex-shrink: 0;
-  -moz-flex-shrink: 0;
-  flex-shrink: 0;
-  -webkit-flex-direction: column;
-  -moz-flex-direction: column;
-  flex-direction: column;
-}
-
 /* line 143, _flexbox.scss */
 .image_dialog .cke_dialog_contents_body {
   display: -webkit-flex;

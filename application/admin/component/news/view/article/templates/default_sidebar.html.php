@@ -35,7 +35,7 @@
     <fieldset>
         <legend><?= translate('Attachments') ?></legend>
         <? if (!$article->isNew()) : ?>
-            <?= import('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
+            <?= import('default_attachments.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
         <? endif ?>
         <?= import('com:attachments.view.attachments.upload.html') ?>
     </fieldset>

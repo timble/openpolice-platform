@@ -40,58 +40,20 @@ News.Block = new Class({
 
     _actionSave: function(action, block)
     {
-        var editor = CKEDITOR.instances['text'];
-
-        if(!block) {
-            block = this.nextBlock;
-        }
-
         var request = new Request({
             method: 'post',
             url: this.url,
             data: {
                 action: action,
                 id: this.id,
-                block: block,
-                content: editor.getData(),
-                heading: this.element.getElementById('heading').value,
+                content: this.element.getElementById('blocks').innerHTML,
                 _token: this.token
             }
         }).send();
-
-        // Update the block elements
-        this.element.getElement('#block-' + block + ' .heading').innerHTML = this.element.getElementById('heading').value;
-        this.element.getElement('#block-' + block + ' .text').innerHTML = editor.getData();
-
-        // Hide the editor
-        this.element.getElementById('editor').addClass('is-hidden');
-
-        // Clear the editor
-        editor.setData('');
-    },
-
-    _actionLoad: function(action, block)
-    {
-        // Push data into the editor
-        this.element.getElementById('heading').value = this.element.getElement('#block-' + block + ' .heading').innerHTML;
-        CKEDITOR.instances['text'].setData(this.element.getElement('#block-' + block + ' .text').innerHTML);
-
-        // Assign the block key
-        this.element.getElementById('save').setAttribute('data-block', block);
-
-        // Show the editor
-        this.element.getElementById('editor').removeClass('is-hidden');
     },
 
     _actionNew: function(action, block)
     {
-        // Show the editor
-        this.element.getElementById('editor').removeClass('is-hidden');
-
-        // Empty elements
-        this.element.getElementById('heading').value = '';
-        CKEDITOR.instances['text'].setData('');
-
         // Create outer block element
         var block = document.createElement('div');
         block.id = 'block-' + this.nextBlock;
@@ -100,17 +62,29 @@ News.Block = new Class({
         // Create inner heading element
         var heading = document.createElement('h2');
         heading.className = 'heading';
+        heading.createTextNode = 'heading';
+        heading.setAttribute('contenteditable', 'true');
+        heading.appendChild(document.createTextNode('Heading'));
+
         block.adopt(heading);
 
         // Create inner text element
         var text = document.createElement('div');
         text.className = 'text';
+        text.html = 'text';
+        text.setAttribute('contenteditable', 'true');
+
+        paragraph = document.createElement('p');
+        paragraph.appendChild(document.createTextNode('Placeholder'));
+        text.appendChild(paragraph);
+
         block.adopt(text);
 
         // Add elements to DOM
         this.element.getElementById('blocks').adopt(block);
 
-        // Save new block
-        this.element.getElementById('save').setAttribute('data-block', this.nextBlock);
+        // Add ckeditor to the newly created element
+        CKEDITOR.inline(heading);
+        CKEDITOR.inline(text);
     }
 });
