@@ -64,6 +64,7 @@
             <div class="navbar">
                 <div class="navbar__handlebar">
                     <a class="navbar__logo" href="/<?= $site ?>">
+                        <img class="navbar__avatar" width="37" height="37" alt="<?= translate('Police') ?> logo" src="assets://application/images/avatar.png" />
                         <?= translate('Police') ?>
                         <?= escape($zone->title); ?>
                     </a>

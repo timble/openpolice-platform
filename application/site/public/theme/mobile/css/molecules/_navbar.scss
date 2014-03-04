@@ -56,6 +56,7 @@
 
         .navbar__logo {
             line-height: 36px;
+            text-decoration: none;
 
             color: $white;
             zoom: 1;
@@ -67,6 +68,11 @@
             img {
                 @include rem(margin-right, 6px);
             }
+        }
+
+        .navbar__avatar {
+            width: 24px;
+            height: 24px;
         }
 
         .navbar__handle {
