@@ -6,6 +6,7 @@
     min-height: $navbarHeight / 2;
     width: 100%;
     background-color: $navbarBackground;
+    border-bottom: 1px solid darken($blue, 10%);
 
     // Prevent floats from breaking the navbar
     @include clearfix();
@@ -50,12 +51,11 @@
 
     .navbar__handlebar {
         @extend .clearfix;
-        line-height: 50px;
         border-bottom: 1px solid $blue;
+        padding: 10px 10px;
 
         .navbar__logo {
-            float: right;
-            padding-right: 20px;
+            line-height: 36px;
 
             color: $white;
             zoom: 1;
@@ -70,14 +70,15 @@
         }
 
         .navbar__handle {
-            cursor: pointer;
-            float: left;
-            padding: 0 15px;
-            height: 50px;
-            font-size: 2em;
+            float: right;
+            padding: 6px 12px;
+
             color: $white;
+            text-decoration: none;
             text-align: center;
-            border-right: 1px solid $blue;
+            border: 1px solid darken($white, 8%);
+            border-radius: 8px;
+            background-color: $navbarLinkBackgroundHover;
         }
     }
 }
