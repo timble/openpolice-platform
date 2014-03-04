@@ -86,23 +86,13 @@
 .js-enabled {
     .navbar {
         // Hide the navbar
-        /* Don't use display: none to hide elements to keep thing accessible */
-        ul {
-            position: absolute;
-            overflow: hidden;
-            clip: rect(0 0 0 0);
-            height: 1px; width: 1px;
-            margin: -1px; padding: 0; border: 0;
+        #navigation {
+            @include visually-hidden;
         }
 
         // Show the navbar when the handle is clicked
-        /* Don't use display: none to hide elements to keep thing accessible */
-        ul.is-shown {
-            position: static;
-            overflow: auto;
-            clip: auto;
-            height: auto; width: auto;
-            margin: 0; padding: 0; border: none;
+        #navigation.is-shown {
+            @include visually-shown;
         }
     }
 }
@@ -137,12 +127,8 @@
         }
     }
 
-    /* Don't use display: none to hide elements to keep thing accessible */
-    .js-enabled .navbar ul {
-        position: static;
-        overflow: auto;
-        clip: auto;
-        height: auto; width: auto;
-        margin: 0; padding: 0; border: none;
+    // Always show the navbar on non-small screen
+    .js-enabled .navbar #navigation {
+        @include visually-shown;
     }
 }

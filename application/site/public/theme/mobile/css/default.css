@@ -1453,36 +1453,30 @@ input[type="submit"].button::-moz-focus-inner {
   border-right: 1px solid #004d9f;
 }
 
-/* line 87, molecules/_navbar.scss */
-.js-enabled .navbar {
-  /* Don't use display: none to hide elements to keep thing accessible */
-  /* Don't use display: none to hide elements to keep thing accessible */
-}
-/* line 90, molecules/_navbar.scss */
-.js-enabled .navbar ul {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
+/* line 89, molecules/_navbar.scss */
+.js-enabled .navbar #navigation {
   margin: -1px;
   padding: 0;
-  border: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
 }
-/* line 100, molecules/_navbar.scss */
-.js-enabled .navbar ul.is-shown {
-  position: static;
-  overflow: auto;
-  clip: auto;
-  height: auto;
-  width: auto;
+/* line 94, molecules/_navbar.scss */
+.js-enabled .navbar #navigation.is-shown {
   margin: 0;
   padding: 0;
-  border: none;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  clip: auto;
+  position: static;
 }
 
 @media screen and (min-width: 767px) {
-  /* line 111, molecules/_navbar.scss */
+  /* line 101, molecules/_navbar.scss */
   .navbar {
     border-bottom: 0 none;
     border: 1px solid #002d5d;
@@ -1491,30 +1485,30 @@ input[type="submit"].button::-moz-focus-inner {
     border-radius: 4px;
     /* Customize the navbar links to be fill the entire space of the .navbar */
   }
-  /* line 117, molecules/_navbar.scss */
+  /* line 107, molecules/_navbar.scss */
   .navbar ul {
     display: table;
   }
-  /* line 120, molecules/_navbar.scss */
+  /* line 110, molecules/_navbar.scss */
   .navbar ul li {
     display: table-cell;
     width: 1%;
   }
-  /* line 124, molecules/_navbar.scss */
+  /* line 114, molecules/_navbar.scss */
   .navbar ul li a {
     text-align: center;
     padding: 5px 15px 5px;
     border: 0 none;
     font-weight: normal;
   }
-  /* line 130, molecules/_navbar.scss */
+  /* line 120, molecules/_navbar.scss */
   .navbar ul li:first-child a {
     border-left: 0;
     -webkit-border-radius: 4px 0 0 4px;
     -moz-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
   }
-  /* line 134, molecules/_navbar.scss */
+  /* line 124, molecules/_navbar.scss */
   .navbar ul li:last-child a {
     border-right: 0;
     -webkit-border-radius: 0 4px 4px 0;
@@ -1522,17 +1516,15 @@ input[type="submit"].button::-moz-focus-inner {
     border-radius: 0 4px 4px 0;
   }
 
-  /* Don't use display: none to hide elements to keep thing accessible */
-  /* line 141, molecules/_navbar.scss */
-  .js-enabled .navbar ul {
-    position: static;
-    overflow: auto;
-    clip: auto;
-    height: auto;
-    width: auto;
+  /* line 131, molecules/_navbar.scss */
+  .js-enabled .navbar #navigation {
     margin: 0;
     padding: 0;
-    border: none;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    clip: auto;
+    position: static;
   }
 }
 /* line 8, molecules/nav/_nav.scss */

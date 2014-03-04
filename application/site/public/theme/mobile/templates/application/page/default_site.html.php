@@ -63,15 +63,17 @@
             </span>
             <div class="navbar">
                 <div class="navbar__handlebar">
-                    <div class="navbar__handle">&equiv;</div>
+                    <div class="navbar__handle" onclick="Apollo.toggleClass(document.getElementById('navigation'), 'is-shown')">&equiv;</div>
                     <a onClick="_gaq.push(['_trackEvent', 'Navigation', 'Handlebar', 'Hamburger']);" class="navbar__logo" href="/<?= $site ?>">
                         <?= translate('Police') ?>
                         <?= escape($zone->title); ?>
                     </a>
                 </div>
-                <ktml:modules position="navigation">
-                    <ktml:modules:content>
-                </ktml:modules>
+                <div id="navigation">
+                    <ktml:modules position="navigation">
+                        <ktml:modules:content>
+                    </ktml:modules>
+                </div>
             </div>
         </div>
     </div>
