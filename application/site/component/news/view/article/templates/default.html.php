@@ -49,7 +49,9 @@
     </a>
 
     <div itemprop="articleBody">
-        <?= $article->introtext ?>
+        <span class="article__introtext">
+            <?= $article->introtext ?>
+        </span>
         <?= $article->fulltext ?>
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
