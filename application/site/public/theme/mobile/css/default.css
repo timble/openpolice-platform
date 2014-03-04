@@ -1373,6 +1373,7 @@ input[type="submit"].button::-moz-focus-inner {
   float: left;
   display: block;
   width: 64px;
+  height: 48px;
 }
 
 /* line 5, molecules/_navbar.scss */

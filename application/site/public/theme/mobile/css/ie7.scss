@@ -24,3 +24,25 @@ form {
 * html .navbar__logo {
   padding-top: 10px; // IE6
 }
+
+// Right alignment of the thumbnail, on mobile it is on top
+.article__thumbnail {
+    float: right;
+    width: 200px;
+    height: 150px;
+    margin: 0 0 $baseLineHeight $baseLineHeight;
+
+    img {
+        width: 100%; // IE6
+        height: 100%; // IE6
+    }
+}
+
+.homepage__sticky {
+    .media__object {
+        img {
+            width: 100%; // IE6
+            height: 100%; // IE6
+        }
+    }
+}
