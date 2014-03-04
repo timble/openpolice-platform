@@ -44,12 +44,14 @@
     <a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Modalbox', 'Image']);" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
         <?= helper('com:attachments.image.thumbnail', array(
         'attachment' => $article->attachments_attachment_id,
-        'attribs' => array('width' => '200', 'height' => '150', 'itemprop'=> "image"))) ?>
+        'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
     <? endif ?>
     </a>
 
     <div itemprop="articleBody">
-        <?= $article->introtext ?>
+        <span class="article__introtext">
+            <?= $article->introtext ?>
+        </span>
         <?= $article->fulltext ?>
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>

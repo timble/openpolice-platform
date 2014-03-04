@@ -1082,8 +1082,14 @@ ul.column--quad {
 
 /* line 29, molecules/_article.scss */
 .article__thumbnail {
+  margin-bottom: 0.75em;
+}
+
+/* line 35, molecules/_article.scss */
+.article__thumbnail {
   float: right;
-  max-width: 40%;
+  width: 40%;
+  max-width: 200px;
   margin: 0 0 1.5em 1.5em;
 }
 
@@ -1360,6 +1366,7 @@ input[type="submit"].button::-moz-focus-inner {
   float: left;
   display: block;
   width: 64px;
+  height: 48px;
 }
 
 /* line 5, molecules/_navbar.scss */
@@ -1826,7 +1833,7 @@ table caption {
 /* line 2, molecules/_thumbnail.scss */
 .thumbnail, .article__thumbnail {
   display: block;
-  padding: 4px;
+  padding: 1px;
   border: 1px solid #ddd !important;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1845,14 +1852,17 @@ table caption {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
 }
-/* line 18, molecules/_thumbnail.scss */
+/* line 19, molecules/_thumbnail.scss */
 .thumbnail .caption, .article__thumbnail .caption {
   padding: 9px;
   color: #505050;
 }
 
-/* line 26, molecules/_thumbnail.scss */
+/* line 27, molecules/_thumbnail.scss */
 a.thumbnail:hover, a.article__thumbnail:hover,
 a.thumbnail:focus,
 a.article__thumbnail:focus {
