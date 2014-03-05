@@ -18,7 +18,6 @@ class ModelArticles extends Library\ModelTable
 
 		$this->getState()
 		    ->insert('published' , 'int')
-            ->insert('category' , 'int')
             ->insert('sticky' , 'boolean', false);
 	}
     
@@ -28,7 +27,7 @@ class ModelArticles extends Library\ModelTable
 	
 		$query->columns(array(
 			'thumbnail'         => 'thumbnails.thumbnail',
-            'path'         => 'attachments.path',
+            'path'              => 'attachments.path',
             'ordering_date'     => 'IF(tbl.publish_on, tbl.created_on, tbl.created_on)',
             'created_by_name'   => 'creator.name'
 		));
@@ -58,21 +57,6 @@ class ModelArticles extends Library\ModelTable
 
         if($state->sticky === true) {
             $query->where('tbl.sticky = :sticky')->bind(array('sticky' => '1'));
-        }
-
-        if(is_numeric($state->category) || $state->category)
-        {
-            if($state->category)
-            {
-                $query->where('tbl.categories_category_id IN :categories_category_id' );
-
-                if($state->category_recurse === true) {
-                    $query->where('categories.parent_id IN :categories_category_id', 'OR');
-                }   
-
-                $query->bind(array('categories_category_id' => (array) $state->category));
-            }
-            else $query->where('tbl.categories_category_id IS NULL');
         }
 	}
 }
