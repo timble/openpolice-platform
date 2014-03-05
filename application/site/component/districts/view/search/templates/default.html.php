@@ -40,7 +40,7 @@
                 // using its formatResult renderer - that way the movie name is shown preselected
                 var id=$jQuery(element).val();
                 if (id!=="") {
-                    $jQuery.ajax("?view=street&format=json&street="+id, {
+                    $jQuery.ajax("?view=street&format=json&id="+id, {
                         dataType: "json"
                     }).done(function(data) { callback(data.item); });
                 }
