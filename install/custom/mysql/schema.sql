@@ -484,7 +484,7 @@ CREATE TABLE `news` (
   `params` text,
   PRIMARY KEY (`news_article_id`),
   KEY `idx_state` (`published`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 --
