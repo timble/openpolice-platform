@@ -287,11 +287,6 @@ textarea {
   text-decoration: none;
 }
 
-/* line 60, organisms/_containers.scss */
-.container__footer .button {
-  float: right;
-}
-
 /* line 1, organisms/_wrap.scss */
 #wrap {
   background-color: white;
@@ -897,9 +892,10 @@ textarea {
   height: auto;
 }
 
-/* line 88, atoms/_form.scss */
+/* line 89, atoms/_form.scss */
 textarea,
 input[type="text"],
+input[type="number"],
 input[type="search"] {
   background-color: white;
   border: 1px solid #cccccc;
@@ -912,9 +908,10 @@ input[type="search"] {
   transition: border linear 0.2s, box-shadow linear 0.2s;
   -webkit-appearance: none;
 }
-/* line 96, atoms/_form.scss */
+/* line 97, atoms/_form.scss */
 textarea:focus,
 input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="search"]:focus {
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
@@ -941,14 +938,14 @@ textarea::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 120, atoms/_form.scss */
+/* line 121, atoms/_form.scss */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
 }
-/* line 123, atoms/_form.scss */
+/* line 124, atoms/_form.scss */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
@@ -1254,23 +1251,48 @@ input[type="submit"].button::-moz-focus-inner {
 }
 
 /* line 7, molecules/_form.scss */
-.control-group {
+.form__group {
   margin-bottom: 0.75em;
 }
 
-/* line 11, molecules/_form.scss */
+/* line 12, molecules/_form.scss */
 .form__left {
   margin-right: 8em;
 }
 
-/* line 15, molecules/_form.scss */
+/* line 16, molecules/_form.scss */
 .form__right {
   width: 7em;
   float: right;
 }
-/* line 18, molecules/_form.scss */
+/* line 19, molecules/_form.scss */
 .form__right .button {
   width: 100%;
+}
+
+/* line 135, utilities/_mixins.scss */
+.has-error .form__label {
+  color: #a94442;
+}
+/* line 140, utilities/_mixins.scss */
+.has-error .form__input,
+.has-error .select2-default {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+/* line 143, utilities/_mixins.scss */
+.has-error .form__input:focus,
+.has-error .select2-default:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+/* line 150, utilities/_mixins.scss */
+.has-error .form__feedback {
+  color: #a94442;
 }
 
 /* line 5, molecules/_gallery.scss */
