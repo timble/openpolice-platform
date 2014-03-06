@@ -24,7 +24,9 @@
                 <input <?= $disabled ? 'disabled' : '' ?> type="text" name="slug" maxlength="255" value="<?= $category->slug ?>" />
             </div>
         </div>
+        <? if($state->table != 'questions') : ?>
         <?= object('com:ckeditor.controller.editor')->render(array('name' => 'description', 'text' => $category->description, 'toolbar' => 'basic')) ?>
+        <? endif ?>
     </div>
 
     <div class="sidebar">
