@@ -15,11 +15,12 @@
 <script src="assets://news/js/jquery.datetimepicker.js" />
 <style src="assets://news/css/jquery.datetimepicker.css" />
 
+<script src="assets://news/js/block.js" />
+<script src="assets://news/js/draggable.js" />
+
 <ktml:module position="actionbar">
     <ktml:toolbar type="actionbar">
 </ktml:module>
-
-<script src="assets://news/js/block.js" />
 
 <script>
     window.addEvent('domready', function() {
@@ -32,8 +33,6 @@
         });
     });
 </script>
-
-
 
 <style>
     .is-hidden {
@@ -97,22 +96,3 @@
         <?= import('default_sidebar.html') ?>
     </div>
 </form>
-
-<script data-inline>
-    function allowDrop(ev)
-    {
-        ev.preventDefault();
-    }
-
-    function drag(ev)
-    {
-        ev.dataTransfer.setData("id", ev.target.id);
-    }
-
-    function drop(ev)
-    {
-        ev.preventDefault();
-        var data = ev.dataTransfer.getData("id");
-        ev.target.appendChild(document.getElementById(data).clone());
-    }
-</script>
