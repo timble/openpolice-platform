@@ -32,15 +32,8 @@
     <style src="assets://application/css/ie.css" condition="if IE 8" />
     <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
 
-    <script src="assets://application/js/jquery.js" />
-    <script type="text/javascript">
-        var $jQuery = jQuery.noConflict();
-    </script>
     <script src="assets://application/js/apollo.min.js" />
-    <script src="assets://application/components/select2/select2.js" />
     <script src="assets://application/js/html5shiv.js" condition="if lte IE 8" />
-    <script src="assets://application/js/ie7.js" condition="if lte IE 7" />
-    <script src="assets://application/js/magnific-popup.js" />
     <script src="assets://application/js/placeholder.js" condition="if lte IE 9" />
 
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
@@ -57,16 +50,4 @@
             })();
         </script>
     <?php endif; ?>
-
-    <script>
-        $jQuery(document).ready(function() {
-            // This will create a single gallery from all elements that have class data-gallery="enabled"
-            $jQuery('[data-gallery="enabled"]').magnificPopup({
-                type: 'image',
-                gallery:{
-                    enabled:true
-                }
-            });
-        });
-    </script>
 </head>
