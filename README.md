@@ -113,6 +113,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [PHP](http://php.net)
 * [PHP-JWT](http://github.com/firebase/php-jwt)
 * [Phpmig](https://github.com/davedevelopment/phpmig)
+* [Placeholders.js](https://github.com/jamesallardice/Placeholders.js/)
 * [Sass](http://sass-lang.com)
 * [Select2](http://ivaynberg.github.io/select2)
 * [Susy](http://susy.oddbird.net/)
