@@ -39,3 +39,10 @@
         <?= import('default_sidebar.html') ?>
     </div>
 </form>
+
+<script data-inline>
+    CKEDITOR.replace( 'text', {
+        toolbar : 'standard',
+        removeButtons: 'readmore'
+    } );
+</script>
