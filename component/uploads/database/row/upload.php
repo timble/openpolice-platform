@@ -176,12 +176,11 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    $attachment = $this->_extractImages($item['id'], $row->introtext);
-                    if($attachment !== false && (int) $attachment > 0) {
-                        $row->attachments_attachment_id = $attachment;
-                    }
+                    // Remove <em> elements
+                    $row->introtext = preg_replace("/<em>/", "", $row->introtext);
+                    $row->introtext = preg_replace("/<\/em>/", "", $row->introtext);
 
-                    $this->_extractImages($item['id'], $row->fulltext);
+                    $this->_extractImages($row);
 
                     $row->save();
                 }
@@ -189,52 +188,67 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    protected function _extractImages($row, $html)
+    protected function _extractImages($row)
     {
-        $html = trim($html);
-        $html = stripslashes($html);
-
-        if(empty($html)) {
-            return;
-        }
-
-        $config = array(
-            'indent'         => true,
-            'output-xhtml'   => true,
-            'wrap'           => 200
-        );
-
-        $tidy = new \tidy;
-        $tidy->parseString($html, $config, 'utf8');
-        $tidy->cleanRepair();
-
-        $html = (string) $tidy;
-
-        $dom = new \DOMDocument();
-        $dom->loadHTML($html);
-
-        $images = $dom->getElementsByTagName('img');
-
-        $default_attachment = false;
-        foreach($images as $image)
+        foreach(array('introtext', 'fulltext') as $property)
         {
-            $link = $image->attributes->getNamedItem("src")->value;
-            $link = urldecode($link);
+            $html = trim($row->{$property});
+            $html = stripslashes($html);
 
-            if(substr($link, 0, strlen('sites/')) == 'sites/')
-            {
-               // $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
-               $fullpath = '/var/www/police.dev/' . $link;
-
-               $row = $this->_saveAttachment($row, $fullpath);
-
-               if(!$default_attachment) {
-                   $default_attachment = $row;
-               }
+            if(empty($html)) {
+                return;
             }
-        }
 
-        return $default_attachment;
+            $config = array(
+                'indent'         => true,
+                'output-xhtml'   => true,
+                'wrap'           => 200
+            );
+
+            $tidy = new \tidy;
+            $tidy->parseString($html, $config, 'utf8');
+            $tidy->cleanRepair();
+
+            $html = (string) $tidy;
+
+            $dom = new \DOMDocument();
+            $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+
+            $images = $dom->getElementsByTagName('img');
+
+            $attachment = false;
+            foreach($images as $image)
+            {
+                $link = $image->attributes->getNamedItem("src")->value;
+                $link = urldecode($link);
+
+                if(substr($link, 0, strlen('sites/')) == 'sites/')
+                {
+                    // $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
+                    $fullpath = '/var/www/police.dev/' . $link;
+
+                    $return = $this->_saveAttachment($row, $fullpath);
+
+                    if(!$attachment) {
+                        $attachment = $return;
+                    }
+
+                    $image->parentNode->removeChild($image);
+                }
+            }
+
+            foreach($dom->getElementsByTagName('p') as $paragraph)
+            {
+                $paragraph->removeAttribute('style');
+                $paragraph->removeAttribute('class');
+            }
+
+            $row->{$property} = $dom->saveHTML();
+
+            if($property == 'introtext' && $attachment) {
+                $row->attachments_attachment_id = $attachment;
+            }
+	    }
     }
 
     protected function _saveAttachment($row, $filepath)
@@ -266,7 +280,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 'path' => $name,
                 'container' => 'attachments-attachments',
                 'hash' => $hash,
-                'row' => $row,
+                'row' => $row->id,
                 'table' => 'news'
             ));
 
