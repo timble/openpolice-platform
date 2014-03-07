@@ -178,8 +178,8 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    $this->_replaceImages($item['id'], $row->introtext);
-                    // $this->_replaceImages($row->fulltext);
+                    $this->_extractImages($item['id'], $row->introtext);
+                    // $this->_extractImages($row->fulltext);
                     //echo htmlentities($this->_replaceImages($row->introtext));
                     //echo "<p>--------------------------------------------------------------</p>";
                     $row->save();
