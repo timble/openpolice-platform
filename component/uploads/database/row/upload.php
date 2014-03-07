@@ -10,7 +10,6 @@
 namespace Nooku\Component\Uploads;
 
 use Nooku\Library;
-use Sunra\PhpSimple\HtmlDomParser;
 
 class DatabaseRowUpload extends Library\DatabaseRowTable
 {
@@ -181,12 +180,16 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                         $row->attachments_attachment_id = $attachment;
                     }
 
-                    $this->_extractImages($item['id'], $row->fulltext);
+                    if(!empty($row->fulltext)) {
+                        $this->_extractImages($item['id'], $row->fulltext);
+                    }
 
                     $row->save();
                 }
             }
         }
+
+        exit('?');
     }
 
     protected function _extractImages($row, $html)
@@ -223,8 +226,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             if(substr($link, 0, strlen('sites/')) == 'sites/')
             {
-               // $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
-               $fullpath = '/var/www/police.dev/' . $link;
+               $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
 
                $row = $this->_saveAttachment($row, $fullpath);
 
@@ -248,44 +250,40 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         $request         = $this->getObject('lib:controller.request', array('query' => array('container' => 'attachments-attachments')));
         $file_controller = $this->getObject('com:files.controller.file', array('request' => $request));
         $attachment_controller = $this->getObject('com:attachments.controller.attachment', array('request' => clone $request));
-        
-        try
-        {
-            $extension  = pathinfo($filename, PATHINFO_EXTENSION);
-            $name       = md5(time().rand()).'.'.$extension;
-            $hash       = md5_file($filepath);
 
-            $file_controller->add(array(
-                'file' => $filepath,
-                'name' => $name,
-                'parent' => ''
-            ));
+        $extension  = pathinfo($filepath, PATHINFO_EXTENSION);
+        $name       = md5(time().rand()).'.'.$extension;
+        $hash       = md5_file($filepath);
 
-            $entity = $attachment_controller->add(array(
-                'name' => $filename,
-                'path' => $name,
-                'container' => 'attachments-attachments',
-                'hash' => $hash,
-                'row' => $row,
-                'table' => 'news'
-            ));
+        $file_controller->add(array(
+            'file' => $filepath,
+            'name' => $name,
+            'parent' => ''
+        ));
 
-            $model  = $file_controller->getModel();
-            $container = $model->getState()->container;
+        $entity = $attachment_controller->add(array(
+            'name' => $filename,
+            'path' => $name,
+            'container' => 'attachments-attachments',
+            'hash' => $hash,
+            'row' => $row,
+            'table' => 'news'
+        ));
 
-            $model->reset(false)->getState()->set('container', $container);
-            $attachment_controller->getModel()->reset(false);
+        $model  = $file_controller->getModel();
+        $container = $model->getState()->container;
 
-            $file_controller->getRequest()->data->clear();
-            $attachment_controller->getRequest()->data->clear();
+        $model->reset(false)->getState()->set('container', $container);
+        $attachment_controller->getModel()->reset(false);
 
-            return $entity->id;
-        }
-        catch (Library\ControllerException $e) {
+        $file_controller->getRequest()->data->clear();
+        $attachment_controller->getRequest()->data->clear();
+
+        if($entity->isNew()) {
             return false;
         }
 
-        return false;
+        return $entity->id;
     }
 
     public function _importContacts($data)
