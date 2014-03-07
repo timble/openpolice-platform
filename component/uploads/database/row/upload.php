@@ -258,6 +258,11 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
     protected function _extractImages(Library\DatabaseRowAbstract $row, \DOMDocument $dom)
     {
+        $root   = $this->getObject('application')->getCfg('old_codebase_root');
+        if(empty($root)) {
+            $root = '/var/www/police.dev';
+        }
+
         $images = $dom->getElementsByTagName('img');
 
         $attachment = false;
@@ -268,8 +273,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             if(substr($link, 0, strlen('sites/')) == 'sites/')
             {
-                // $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
-                $fullpath = '/var/www/police.dev/' . $link;
+                $fullpath = $root . '/' . $link;
 
                 $return = $this->_saveAttachment($row, $fullpath);
 
