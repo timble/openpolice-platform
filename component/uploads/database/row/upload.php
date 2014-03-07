@@ -320,6 +320,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $name       = md5(time().rand()).'.'.$extension;
             $hash       = md5_file($filepath);
 
+            // @TODO don't suppress errors
+            // DatabaseRowUrl in com:files will get called and try to open the file through fsockopen.
+            // Although fsockopen is suppressed using the @-notation, the error handler tries to throw it, resulting in a blank page.
+            // Since our files are not uploaded files (See: CommandValidatorFile), this error can be dismissed and should be ignored.
             $file_controller->add(array(
                 'file' => $filepath,
                 'name' => $name,
