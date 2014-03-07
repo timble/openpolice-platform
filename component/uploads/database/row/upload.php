@@ -157,8 +157,6 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
     public function _importNews($data)
     {
-
-        echo '<ol>';
         foreach($data as $item)
         {
             if($item['catid'] == $this->catid && $item['state'] == '1')
@@ -170,24 +168,25 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 {
                     $row->title = $item['title'];
                     $row->slug = $item['alias'];
-                    $row->introtext = $item['introtext'];
-                    $row->fulltext = $item['fulltext'];
+                    $row->introtext = stripslashes($item['introtext']);
+                    $row->fulltext = stripslashes($item['fulltext']);
                     $row->created_on = $item['created'];
                     $row->created_by = '1';
                     $row->modified_on = $item['modified'];
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    $this->_extractImages($item['id'], $row->introtext);
-                    // $this->_extractImages($row->fulltext);
-                    //echo htmlentities($this->_replaceImages($row->introtext));
-                    //echo "<p>--------------------------------------------------------------</p>";
+                    $attachment = $this->_extractImages($item['id'], $row->introtext);
+                    if($attachment !== false && (int) $attachment > 0) {
+                        $row->attachments_attachment_id = $attachment;
+                    }
+
+                    $this->_extractImages($item['id'], $row->fulltext);
+
                     $row->save();
                 }
             }
         }
-        echo '</ol>';
-        exit();
     }
 
     protected function _extractImages($row, $html)
@@ -216,6 +215,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
         $images = $dom->getElementsByTagName('img');
 
+        $default_attachment = false;
         foreach($images as $image)
         {
             $link = $image->attributes->getNamedItem("src")->value;
@@ -226,16 +226,15 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                // $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
                $fullpath = '/var/www/police.dev/' . $link;
 
-               $this->_saveAttachment($row, $fullpath);
+               $row = $this->_saveAttachment($row, $fullpath);
+
+               if(!$default_attachment) {
+                   $default_attachment = $row;
+               }
             }
         }
 
-        // Rebuild the HTML
-        $rootnode = $dom->getELementsByTagName('body')->item(0);
-        $html = '';
-        foreach($rootnode->childNodes as $node){
-            $html .= $dom->saveHTML($node);
-        }
+        return $default_attachment;
     }
 
     protected function _saveAttachment($row, $filepath)
@@ -244,18 +243,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             return false;
         }
 
-        echo "uploading " . $filepath . "<br />";
-
         $filename = basename($filepath);
 
-        $request = $this->getObject('lib:controller.request', array(
-            'query' => array(
-                'container' => 'attachments-attachments'
-            )
-        ));
-
+        $request         = $this->getObject('lib:controller.request', array('query' => array('container' => 'attachments-attachments')));
         $file_controller = $this->getObject('com:files.controller.file', array('request' => $request));
-
         $attachment_controller = $this->getObject('com:attachments.controller.attachment', array('request' => clone $request));
         
         try
@@ -264,15 +255,13 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $name       = md5(time().rand()).'.'.$extension;
             $hash       = md5_file($filepath);
 
-            // Save file
             $file_controller->add(array(
                 'file' => $filepath,
                 'name' => $name,
                 'parent' => ''
             ));
 
-            // Save attachment
-            $attachment_controller->add(array(
+            $entity = $attachment_controller->add(array(
                 'name' => $filename,
                 'path' => $name,
                 'container' => 'attachments-attachments',
@@ -281,23 +270,22 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 'table' => 'news'
             ));
 
-            // Reset models
             $model  = $file_controller->getModel();
             $container = $model->getState()->container;
 
             $model->reset(false)->getState()->set('container', $container);
-
             $attachment_controller->getModel()->reset(false);
 
-            // Clear the data in controllers for the next file
             $file_controller->getRequest()->data->clear();
             $attachment_controller->getRequest()->data->clear();
+
+            return $entity->id;
         }
         catch (Library\ControllerException $e) {
             return false;
         }
 
-        return true;
+        return false;
     }
 
     public function _importContacts($data)
@@ -328,7 +316,6 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row->ordering = '0';
                 $row->save();
             }
-
         }
     }
 }
