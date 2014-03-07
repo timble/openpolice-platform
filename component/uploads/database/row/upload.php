@@ -237,6 +237,12 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 }
             }
 
+            foreach($dom->getElementsByTagName("div") as $div)
+            {
+                $div->removeAttribute('style');
+                $div->removeAttribute('class');
+            }
+
             foreach($dom->getElementsByTagName('p') as $paragraph)
             {
                 $paragraph->removeAttribute('style');
