@@ -8,7 +8,9 @@
  */
 
 namespace Nooku\Component\Uploads;
+
 use Nooku\Library;
+use Sunra\PhpSimple\HtmlDomParser;
 
 class DatabaseRowUpload extends Library\DatabaseRowTable
 {
@@ -155,6 +157,8 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
     public function _importNews($data)
     {
+
+        echo '<ol>';
         foreach($data as $item)
         {
             if($item['catid'] == $this->catid && $item['state'] == '1')
@@ -173,10 +177,127 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_on = $item['modified'];
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
+
+                    $this->_replaceImages($item['id'], $row->introtext);
+                    // $this->_replaceImages($row->fulltext);
+                    //echo htmlentities($this->_replaceImages($row->introtext));
+                    //echo "<p>--------------------------------------------------------------</p>";
                     $row->save();
                 }
             }
         }
+        echo '</ol>';
+        exit();
+    }
+
+    protected function _extractImages($row, $html)
+    {
+        $html = trim($html);
+        $html = stripslashes($html);
+
+        if(empty($html)) {
+            return;
+        }
+
+        $config = array(
+            'indent'         => true,
+            'output-xhtml'   => true,
+            'wrap'           => 200
+        );
+
+        $tidy = new \tidy;
+        $tidy->parseString($html, $config, 'utf8');
+        $tidy->cleanRepair();
+
+        $html = (string) $tidy;
+
+        $dom = new \DOMDocument();
+        $dom->loadHTML($html);
+
+        $images = $dom->getElementsByTagName('img');
+
+        foreach($images as $image)
+        {
+            $link = $image->attributes->getNamedItem("src")->value;
+            $link = urldecode($link);
+
+            if(substr($link, 0, strlen('sites/')) == 'sites/')
+            {
+               // $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
+               $fullpath = '/var/www/police.dev/' . $link;
+
+               $this->_saveAttachment($row, $fullpath);
+            }
+        }
+
+        // Rebuild the HTML
+        $rootnode = $dom->getELementsByTagName('body')->item(0);
+        $html = '';
+        foreach($rootnode->childNodes as $node){
+            $html .= $dom->saveHTML($node);
+        }
+    }
+
+    protected function _saveAttachment($row, $filepath)
+    {
+        if(!file_exists($filepath)) {
+            return false;
+        }
+
+        echo "uploading " . $filepath . "<br />";
+
+        $filename = basename($filepath);
+
+        $request = $this->getObject('lib:controller.request', array(
+            'query' => array(
+                'container' => 'attachments-attachments'
+            )
+        ));
+
+        $file_controller = $this->getObject('com:files.controller.file', array('request' => $request));
+
+        $attachment_controller = $this->getObject('com:attachments.controller.attachment', array('request' => clone $request));
+        
+        try
+        {
+            $extension  = pathinfo($filename, PATHINFO_EXTENSION);
+            $name       = md5(time().rand()).'.'.$extension;
+            $hash       = md5_file($filepath);
+
+            // Save file
+            $file_controller->add(array(
+                'file' => $filepath,
+                'name' => $name,
+                'parent' => ''
+            ));
+
+            // Save attachment
+            $attachment_controller->add(array(
+                'name' => $filename,
+                'path' => $name,
+                'container' => 'attachments-attachments',
+                'hash' => $hash,
+                'row' => $row,
+                'table' => 'news'
+            ));
+
+            // Reset models
+            $model  = $file_controller->getModel();
+            $container = $model->getState()->container;
+
+            $model->reset(false)->getState()->set('container', $container);
+
+            $attachment_controller->getModel()->reset(false);
+
+            // Clear the data in controllers for the next file
+            $file_controller->getRequest()->data->clear();
+            $attachment_controller->getRequest()->data->clear();
+        }
+        catch (Library\ControllerException $e) {
+            return false;
+        }
+
+        return true;
     }
 
     public function _importContacts($data)
