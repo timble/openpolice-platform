@@ -184,7 +184,6 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-
     public function _importContacts($data)
     {
         foreach($data as $item)
