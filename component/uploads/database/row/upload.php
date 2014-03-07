@@ -176,11 +176,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    // Remove <em> elements
-                    $row->introtext = preg_replace("/<em>/", "", $row->introtext);
-                    $row->introtext = preg_replace("/<\/em>/", "", $row->introtext);
-
-                    $this->_extractImages($row);
+                    $this->_clean($row);
 
                     $row->save();
                 }
@@ -188,15 +184,50 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    protected function _extractImages($row)
+
+    public function _importContacts($data)
     {
+        foreach($data as $item)
+        {
+            $row = $this->getObject('com:contacts.database.row.contact');
+            $row->id = $item['id'];
+
+            if(!$row->load())
+            {
+                $row->name = $item['name'];
+                $row->slug = $item['alias'];
+                $row->position = $item['con_position'];
+                $row->address = $item['address'];
+                $row->suburb = $item['suburb'];
+                $row->state = $item['state'];
+                $row->country = $item['country'];
+                $row->postcode = $item['postcode'];
+                $row->telephone = $item['telephone'];
+                $row->fax = $item['fax'];
+                $row->mobile = $item['mobile'];
+                $row->email_to = $item['email_to'];
+                $row->misc = $item['misc'];
+                $row->created_on = gmdate('Y-m-d H:i:s');
+                $row->created_by = '1';
+                $row->published = $item['published'];
+                $row->ordering = '0';
+                $row->save();
+            }
+        }
+    }
+
+    protected function _clean(Library\DatabaseRowAbstract $row)
+    {
+        $row->introtext = preg_replace("/<em>/", "", $row->introtext);
+        $row->introtext = preg_replace("/<\/em>/", "", $row->introtext);
+
         foreach(array('introtext', 'fulltext') as $property)
         {
             $html = trim($row->{$property});
             $html = stripslashes($html);
 
             if(empty($html)) {
-                return;
+                continue;
             }
 
             $config = array(
@@ -214,50 +245,61 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $dom = new \DOMDocument();
             $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
 
-            $images = $dom->getElementsByTagName('img');
+            $this->_cleanAttributes($dom);
 
-            $attachment = false;
-            foreach($images as $image)
-            {
-                $link = $image->attributes->getNamedItem("src")->value;
-                $link = urldecode($link);
-
-                if(substr($link, 0, strlen('sites/')) == 'sites/')
-                {
-                    // $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
-                    $fullpath = '/var/www/police.dev/' . $link;
-
-                    $return = $this->_saveAttachment($row, $fullpath);
-
-                    if(!$attachment) {
-                        $attachment = $return;
-                    }
-
-                    $image->parentNode->removeChild($image);
-                }
-            }
-
-            foreach($dom->getElementsByTagName("div") as $div)
-            {
-                $div->removeAttribute('style');
-                $div->removeAttribute('class');
-            }
-
-            foreach($dom->getElementsByTagName('p') as $paragraph)
-            {
-                $paragraph->removeAttribute('style');
-                $paragraph->removeAttribute('class');
-            }
-
-            $row->{$property} = $dom->saveHTML();
-
+            $attachment = $this->_extractImages($row, $dom);
             if($property == 'introtext' && $attachment) {
                 $row->attachments_attachment_id = $attachment;
             }
-	    }
+
+            $row->{$property} = $dom->saveHTML();
+        }
     }
 
-    protected function _saveAttachment($row, $filepath)
+    protected function _extractImages(Library\DatabaseRowAbstract $row, \DOMDocument $dom)
+    {
+        $images = $dom->getElementsByTagName('img');
+
+        $attachment = false;
+        foreach($images as $image)
+        {
+            $link = $image->attributes->getNamedItem("src")->value;
+            $link = urldecode($link);
+
+            if(substr($link, 0, strlen('sites/')) == 'sites/')
+            {
+                // $fullpath = '/var/www/lokalepolitie.be/capistrano/shared/' . $link;
+                $fullpath = '/var/www/police.dev/' . $link;
+
+                $return = $this->_saveAttachment($row, $fullpath);
+
+                if(!$attachment) {
+                    $attachment = $return;
+                }
+
+                $image->parentNode->removeChild($image);
+            }
+        }
+
+        return $attachment;
+    }
+
+    protected function _cleanAttributes(\DOMDocument $dom)
+    {
+        foreach($dom->getElementsByTagName("div") as $div)
+        {
+            $div->removeAttribute('style');
+            $div->removeAttribute('class');
+        }
+
+        foreach($dom->getElementsByTagName('p') as $paragraph)
+        {
+            $paragraph->removeAttribute('style');
+            $paragraph->removeAttribute('class');
+        }
+    }
+
+    protected function _saveAttachment(Library\DatabaseRowAbstract $row, $filepath)
     {
         if(!file_exists($filepath)) {
             return false;
@@ -306,36 +348,5 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
 
         return false;
-    }
-
-    public function _importContacts($data)
-    {
-        foreach($data as $item)
-        {
-            $row = $this->getObject('com:contacts.database.row.contact');
-            $row->id = $item['id'];
-
-            if(!$row->load())
-            {
-                $row->name = $item['name'];
-                $row->slug = $item['alias'];
-                $row->position = $item['con_position'];
-                $row->address = $item['address'];
-                $row->suburb = $item['suburb'];
-                $row->state = $item['state'];
-                $row->country = $item['country'];
-                $row->postcode = $item['postcode'];
-                $row->telephone = $item['telephone'];
-                $row->fax = $item['fax'];
-                $row->mobile = $item['mobile'];
-                $row->email_to = $item['email_to'];
-                $row->misc = $item['misc'];
-                $row->created_on = gmdate('Y-m-d H:i:s');
-                $row->created_by = '1';
-                $row->published = $item['published'];
-                $row->ordering = '0';
-                $row->save();
-            }
-        }
     }
 }

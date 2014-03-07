@@ -11,6 +11,14 @@ use Nooku\Library;
 
 class UploadsControllerUpload extends Library\ControllerModel
 {
+    public function __construct(Library\ObjectConfig $config)
+    {
+        parent::__construct($config);
+
+        $this->registerCallback('after.add'  , array($this, 'forceRedirect'));
+        $this->registerCallback('after.edit'  , array($this, 'forceRedirect'));
+    }
+
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
@@ -18,5 +26,13 @@ class UploadsControllerUpload extends Library\ControllerModel
         ));
 
         parent::_initialize($config);
+    }
+
+    public function forceRedirect(Library\CommandContext $context)
+    {
+        // @TODO: Find out why a form with enctype='multipart/form-data'
+        // never sets the redirect back to the referrer.
+        // For this reason, we force the redirect here:
+        $context->response->setRedirect($context->request->getReferrer());
     }
 }
