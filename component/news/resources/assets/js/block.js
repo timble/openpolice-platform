@@ -20,13 +20,13 @@ News.Block = new Class({
             {
                 a.addEvent('click', function(e) {
                     e.stop();
-                    that.execute(this.get('data-action'), this.get('data-block'));
+                    that.execute(this.get('data-action'), this.get('data-block'), this.get('data-type'));
                 });
             }
         });
     },
 
-    execute: function(action, block)
+    execute: function(action, block, type)
     {
         var method = '_action' + action.capitalize();
 
@@ -34,11 +34,11 @@ News.Block = new Class({
         {
             this.action = action;
 
-            this[method].call(this, action, block);
+            this[method].call(this, action, block, type);
         }
     },
 
-    _actionSave: function(action, block)
+    _actionSave: function(action, block, type)
     {
         var request = new Request({
             method: 'post',
@@ -52,39 +52,49 @@ News.Block = new Class({
         }).send();
     },
 
-    _actionNew: function(action, block)
+    _actionNew: function(action, block, type)
     {
-        // Create outer block element
-        var block = document.createElement('div');
-        block.id = 'block-' + this.nextBlock;
-        block.className = 'block';
-
-        // Create inner heading element
-        var heading = document.createElement('h2');
-        heading.className = 'heading';
-        heading.createTextNode = 'heading';
-        heading.setAttribute('contenteditable', 'true');
-        heading.appendChild(document.createTextNode('Heading'));
-
-        block.adopt(heading);
-
-        // Create inner text element
-        var text = document.createElement('div');
-        text.className = 'text';
-        text.html = 'text';
-        text.setAttribute('contenteditable', 'true');
-
-        paragraph = document.createElement('p');
-        paragraph.appendChild(document.createTextNode('Placeholder'));
-        text.appendChild(paragraph);
-
-        block.adopt(text);
-
         // Add elements to DOM
-        this.element.getElementById('blocks').adopt(block);
+        $jQuery( "#blocks" ).append(this.block(type));
 
-        // Add ckeditor to the newly created element
-        CKEDITOR.inline(heading);
-        CKEDITOR.inline(text);
+        // Refresh all CKEDITOR instances
+        for (var instance in CKEDITOR.instances) {
+            CKEDITOR.instances[instance].destroy();
+        }
+        CKEDITOR.inlineAll();
+    },
+
+    block: function(type)
+    {
+        var html = '' +
+            '<div id="block-'+ this.nextBlock + '"class="block group">' +
+                '<div class="block__content">' +
+                    this[type]() +
+                '</div>' +
+                '<div class="block__toolbar">' +
+                    '<a class="handle">&#8597;</a>' +
+                    '<a class="delete" href="#" onclick="$jQuery(this).parent().parent().remove()">&#x2716;</a>' +
+                '</div>' +
+            '</div>';
+
+        return html;
+    },
+
+    paragraph: function()
+    {
+        var html = '' +
+                '<h2 contenteditable="true">heading</h2>' +
+                '<div contenteditable="true"><p>Placeholder</p></div> ';
+        return html;
+    },
+
+    paragraphImage: function()
+    {
+        var html = '' +
+                '<h2 contenteditable="true">heading</h2>' +
+                '<div contenteditable="true"><p>Placeholder</p></div> ' +
+                '<div id="image'+ this.nextBlock + '" class="image" ondrop="drop(event)" ondragover="allowDrop(event)"></div> ';
+
+        return html;
     }
 });

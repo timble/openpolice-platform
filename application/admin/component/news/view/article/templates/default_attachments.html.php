@@ -31,7 +31,7 @@
             <? if($item->file->isImage()) : ?>
                 <div class="thumbnail" data-id="<?= $item->id; ?>">
                     <a class="modal" href="files/<?= $this->getObject('application')->getSite() ?>/attachments/<?= $item->path ?>" rel="{handler: 'image'}">
-                        <img id="image-<?= $item->id; ?>" data-id="<?= $item->id; ?>" draggable="true" ondragstart="drag(event)" src="files/<?= $this->getObject('application')->getSite() ?>/attachments/<?= $item->thumbnail ?>" />
+                        <img id="image-<?= $item->id; ?>" data-id="<?= $item->id; ?>" draggable="true" ondragstart="dragImage(event)" src="files/<?= $this->getObject('application')->getSite() ?>/attachments/<?= $item->thumbnail ?>" />
                     </a>
                     <div class="thumbnail__caption">
                         <a class="btn btn-mini btn-danger" href="#" data-action="delete" data-id="<?= $item->id; ?>">

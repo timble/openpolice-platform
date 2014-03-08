@@ -7,8 +7,6 @@ body {
     font-size: $baseFontSize;
     background-color: #FFF;
 
-    // Disable content select (more app, less website)
-    @include user-select(none);
 }
 
 body, td, th {

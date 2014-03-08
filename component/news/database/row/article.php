@@ -42,40 +42,6 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         /*
          *  Next Generation Editor
          */
-//        if($this->content) {
-//            $blocks = $this->getObject('com:news.model.articles')->id($this->id)->getRow()->blocks;
-//
-//            $this->content = htmlspecialchars($this->content, ENT_QUOTES);
-//
-//            $data = array();
-//
-//            // Update existing blocks
-//            if(count($blocks)) {
-//                foreach($blocks as $key => $value)
-//                {
-//                    if($key == $this->block) {
-//                        $data[$key]['text'] = $this->content;
-//                        $data[$key]['heading'] = $this->heading;
-//                    } else {
-//                        $data[$key]['text'] = $value->text;
-//                        $data[$key]['heading'] = $value->heading;
-//                    }
-//                }
-//
-//                // Add new block
-//                if(max(array_keys((array) $blocks)) < $this->block) {
-//                    $data[$this->block]['text'] = $this->content;
-//                    $data[$this->block]['heading'] = $this->heading;
-//                }
-//            } else {
-//                // Add new block when no blocks exist
-//                $data[$this->block]['text'] = $this->content;
-//                $data[$this->block]['heading'] = $this->heading;
-//            }
-//
-//            $this->fulltext = json_encode($data);
-//        }
-
         if($this->content) {
             include('simple_html_dom.php');
 
