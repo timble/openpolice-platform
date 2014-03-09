@@ -970,19 +970,22 @@ body {
   padding: 0;
   font-size: 12px;
   background-color: #FFF;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-/* line 12, _general.scss */
+/* line 14, _general.scss */
 body, td, th {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 16, _general.scss */
+/* line 18, _general.scss */
 #tmpl-component {
   overflow: auto;
 }
 
-/* line 20, _general.scss */
+/* line 22, _general.scss */
 .group:after {
   content: ".";
   display: block;
@@ -992,23 +995,23 @@ body, td, th {
   height: 0;
 }
 
-/* line 29, _general.scss */
+/* line 31, _general.scss */
 a, img {
   padding: 0;
   margin: 0;
 }
 
-/* line 34, _general.scss */
+/* line 36, _general.scss */
 img {
   border: 0 none;
 }
 
-/* line 38, _general.scss */
+/* line 40, _general.scss */
 h3 {
   font-size: 13px;
 }
 
-/* line 43, _general.scss */
+/* line 45, _general.scss */
 hr {
   margin: 12px 0;
   border: 0;
@@ -1016,75 +1019,75 @@ hr {
   border-bottom: 1px solid white;
 }
 
-/* line 50, _general.scss */
+/* line 52, _general.scss */
 a {
   color: #0b55c4;
 }
 
-/* line 54, _general.scss */
+/* line 56, _general.scss */
 a:link {
   text-decoration: none;
 }
 
-/* line 58, _general.scss */
+/* line 60, _general.scss */
 a:visited {
   text-decoration: none;
 }
 
-/* line 62, _general.scss */
+/* line 64, _general.scss */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 66, _general.scss */
+/* line 68, _general.scss */
 ul {
   padding: 0;
 }
 
-/* line 70, _general.scss */
+/* line 72, _general.scss */
 .hide {
   display: none;
 }
 
-/* line 75, _general.scss */
+/* line 77, _general.scss */
 .radio input[type="radio"].level2, .checkbox input[type="checkbox"].level2 {
   margin-left: 0px;
   margin-right: 6px;
 }
-/* line 79, _general.scss */
+/* line 81, _general.scss */
 .radio input[type="radio"].level3, .checkbox input[type="checkbox"].level3 {
   margin-left: 36px;
   margin-right: 6px;
 }
-/* line 83, _general.scss */
+/* line 85, _general.scss */
 .radio input[type="radio"].level4, .checkbox input[type="checkbox"].level4 {
   margin-left: 54px;
   margin-right: 6px;
 }
-/* line 87, _general.scss */
+/* line 89, _general.scss */
 .radio input[type="radio"].level5, .checkbox input[type="checkbox"].level5 {
   margin-left: 72px;
   margin-right: 6px;
 }
 
-/* line 93, _general.scss */
+/* line 95, _general.scss */
 [data-action] {
   cursor: pointer;
 }
 
-/* line 97, _general.scss */
+/* line 99, _general.scss */
 ::-webkit-scrollbar {
   width: 8px;
   padding: 4px;
 }
 
-/* line 102, _general.scss */
+/* line 104, _general.scss */
 ::-webkit-scrollbar-track {
   border-left: 1px solid #dddddd;
   padding: 4px;
 }
 
-/* line 107, _general.scss */
+/* line 109, _general.scss */
 ::-webkit-scrollbar-thumb {
   background-color: #C3C3C3;
   margin: 4px;
@@ -1092,7 +1095,7 @@ ul {
 }
 
 /* -- overall styles ------------------------------ */
-/* line 114, _general.scss */
+/* line 116, _general.scss */
 #panel-header {
   background-color: #333;
   border-bottom: 1px solid #6e6e6e;
@@ -1101,28 +1104,28 @@ ul {
   position: relative;
 }
 
-/* line 123, _general.scss */
+/* line 125, _general.scss */
 #panel-tabbar {
   background: #3678ea linear-gradient(#6497ef, #3678ea);
   box-shadow: inset rgba(0, 0, 0, 0.1) 0px -2px 2px;
 }
 
-/* line 128, _general.scss */
+/* line 130, _general.scss */
 #panel-toolbar {
   padding: 8px 10px;
   background: #f9f9f9 linear-gradient(#f9f9f9, #ececec);
 }
-/* line 132, _general.scss */
+/* line 134, _general.scss */
 #panel-toolbar .btn-group {
   padding: 0;
   float: left;
 }
-/* line 136, _general.scss */
+/* line 138, _general.scss */
 #panel-toolbar .btn-group a {
   min-width: 50px;
   padding: 6px 12px;
 }
-/* line 143, _general.scss */
+/* line 145, _general.scss */
 #panel-toolbar .btn, #panel-toolbar .pagination a, .pagination #panel-toolbar a,
 #panel-toolbar a.btn,
 #panel-toolbar .pagination a,
@@ -1132,14 +1135,14 @@ ul {
   border: 1px solid #BBB;
   font-size: 11px;
 }
-/* line 150, _general.scss */
+/* line 152, _general.scss */
 #panel-toolbar .alert {
   line-height: 26px;
   font-weight: bold;
   color: #333;
 }
 
-/* line 157, _general.scss */
+/* line 159, _general.scss */
 #panel-pages {
   display: -webkit-flex;
   display: -moz-flex;
@@ -1155,12 +1158,12 @@ ul {
   border-right: 1px solid #dddddd;
   background-color: #cfd6de;
 }
-/* line 172, _general.scss */
+/* line 174, _general.scss */
 #panel-pages .navigation a {
   border-top-color: #cfd6de;
 }
 
-/* line 179, _general.scss */
+/* line 181, _general.scss */
 #panel-sidebar,
 #panel-inspector {
   -webkit-box-sizing: border-box;
@@ -1168,7 +1171,7 @@ ul {
   box-sizing: border-box;
   background-color: #f9f9f9;
 }
-/* line 184, _general.scss */
+/* line 186, _general.scss */
 #panel-sidebar h3,
 #panel-sidebar legend,
 #panel-inspector h3,
@@ -1186,17 +1189,17 @@ ul {
   border-bottom: 1px solid #dddddd;
   background: linear-gradient(#f2f2f2, #e9e9e9);
 }
-/* line 203, _general.scss */
+/* line 205, _general.scss */
 #panel-sidebar fieldset,
 #panel-inspector fieldset {
   margin: 0;
 }
 
-/* line 208, _general.scss */
+/* line 210, _general.scss */
 #panel-inspector {
   border-left: 1px solid #dddddd;
 }
-/* line 212, _general.scss */
+/* line 214, _general.scss */
 #panel-inspector #activities-list h4 {
   padding: 5px;
   margin: 0;
@@ -1204,77 +1207,77 @@ ul {
   color: #666;
   background: linear-gradient(#f1f2f4, #f9f9f9);
 }
-/* line 220, _general.scss */
+/* line 222, _general.scss */
 #panel-inspector #activities-list h4:first-of-type {
   border-top: none 0px;
 }
-/* line 224, _general.scss */
+/* line 226, _general.scss */
 #panel-inspector #activities-list .activities {
   margin: 0 10px 10px 10px;
 }
-/* line 227, _general.scss */
+/* line 229, _general.scss */
 #panel-inspector #activities-list .activities .activity {
   padding: 7px 0;
   border-bottom: 1px dotted #dddddd;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 232, _general.scss */
+/* line 234, _general.scss */
 #panel-inspector #activities-list .activities .activity > div {
   float: left;
 }
-/* line 236, _general.scss */
+/* line 238, _general.scss */
 #panel-inspector #activities-list .activities .activity a {
   line-height: 16px;
   width: 100%;
 }
-/* line 242, _general.scss */
+/* line 244, _general.scss */
 #panel-inspector #activities-list .activities .activity i {
   margin-right: 6px;
   margin-top: 1px;
   gradient-vertical-align: text-bottom;
   float: left;
 }
-/* line 249, _general.scss */
+/* line 251, _general.scss */
 #panel-inspector #activities-list .activities .activity .datetime {
   color: #555555;
 }
-/* line 253, _general.scss */
+/* line 255, _general.scss */
 #panel-inspector #activities-list .activities .activity:last-child {
   border-bottom: none 0px;
 }
-/* line 258, _general.scss */
+/* line 260, _general.scss */
 #panel-inspector #activities-list .btn-group {
   padding: 0 10px;
 }
 
-/* line 264, _general.scss */
+/* line 266, _general.scss */
 #panel-sidebar {
   border-right: 1px solid #dddddd;
 }
-/* line 267, _general.scss */
+/* line 269, _general.scss */
 #panel-sidebar h4 {
   padding: 4px 0 4px 10px;
   margin: 12px 0 0 0;
   color: #666;
   text-transform: uppercase;
 }
-/* line 274, _general.scss */
+/* line 276, _general.scss */
 #panel-sidebar h4:first-of-type {
   margin-top: 2px;
 }
-/* line 278, _general.scss */
+/* line 280, _general.scss */
 #panel-sidebar input[type=date] {
   width: 160px;
 }
 
-/* line 283, _general.scss */
+/* line 285, _general.scss */
 .-koowa-grid {
   margin: 0;
   /* bootstrap override */
   /** Table styles **/
 }
-/* line 287, _general.scss */
+/* line 289, _general.scss */
 .-koowa-grid table {
   width: 100%;
   border-spacing: 0px;
@@ -1283,16 +1286,16 @@ ul {
   table-layout: auto;
   white-space: nowrap;
 }
-/* line 298, _general.scss */
+/* line 300, _general.scss */
 .-koowa-grid table input[type="radio"],
 .-koowa-grid table input[type="checkbox"] {
   margin-top: 0;
 }
-/* line 302, _general.scss */
+/* line 304, _general.scss */
 .-koowa-grid table td {
   padding: 4px 4px;
 }
-/* line 307, _general.scss */
+/* line 309, _general.scss */
 .-koowa-grid table thead th {
   line-height: 18px;
   text-align: left;
@@ -1302,54 +1305,54 @@ ul {
   border-left: 1px solid #dddddd;
   font-size: 11px;
 }
-/* line 316, _general.scss */
+/* line 318, _general.scss */
 .-koowa-grid table thead th a {
   display: block;
   padding: 0px 4px;
   color: #666;
 }
-/* line 323, _general.scss */
+/* line 325, _general.scss */
 .-koowa-grid table thead th a.-koowa-desc, .-koowa-grid table thead th a.-koowa-asc {
   padding-right: 12px;
 }
-/* line 327, _general.scss */
+/* line 329, _general.scss */
 .-koowa-grid table thead th a:hover {
   text-decoration: none;
 }
-/* line 332, _general.scss */
+/* line 334, _general.scss */
 .-koowa-grid table thead th:first-child {
   border-left: none;
   padding-left: 2px;
 }
-/* line 338, _general.scss */
+/* line 340, _general.scss */
 .-koowa-grid table thead th:not(.void):active {
   background: linear-gradient(#e0e0e0, #e5e5e5);
 }
-/* line 344, _general.scss */
+/* line 346, _general.scss */
 .-koowa-grid table tbody th {
   font-weight: bold;
 }
-/* line 348, _general.scss */
+/* line 350, _general.scss */
 .-koowa-grid table tbody tr {
   background-color: #fff;
   text-align: left;
   border-top: 1px solid #FFF;
 }
-/* line 353, _general.scss */
+/* line 355, _general.scss */
 .-koowa-grid table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-/* line 358, _general.scss */
+/* line 360, _general.scss */
 .-koowa-grid table tbody tr:nth-child(even):not(.no-hover):hover td,
 .-koowa-grid table tbody tr:nth-child(odd):not(.no-hover):hover td {
   background-color: #EAF3FA;
 }
-/* line 362, _general.scss */
+/* line 364, _general.scss */
 .-koowa-grid table tbody tr td {
   height: 26px;
   border-top: 1px solid #FFF;
 }
-/* line 368, _general.scss */
+/* line 370, _general.scss */
 .-koowa-grid table tbody tr.selected td,
 .-koowa-grid table tbody tr.selected:hover td {
   background-color: #CDE7FD !important;
@@ -1358,7 +1361,7 @@ ul {
   -o-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
 }
-/* line 373, _general.scss */
+/* line 375, _general.scss */
 .-koowa-grid table tbody tr.separator td {
   height: auto;
   text-align: left;
@@ -1366,56 +1369,56 @@ ul {
   background-color: #ededed;
   border-bottom: 1px solid #dddddd;
 }
-/* line 381, _general.scss */
+/* line 383, _general.scss */
 .-koowa-grid table tbody tr td.ellipsis, .-koowa-grid table tbody tr .navigation__item td.navigation__text, .navigation__item .-koowa-grid table tbody tr td.navigation__text, .-koowa-grid table tbody tr .navigation a td.navigation__text, .navigation a .-koowa-grid table tbody tr td.navigation__text, .-koowa-grid table tbody tr #files-tree .mooTree_node td.navigation__text, #files-tree .mooTree_node .-koowa-grid table tbody tr td.navigation__text {
   max-width: 100px;
 }
-/* line 386, _general.scss */
+/* line 388, _general.scss */
 .-koowa-grid table tfoot {
   background-color: #F1F1F1;
 }
-/* line 389, _general.scss */
+/* line 391, _general.scss */
 .-koowa-grid table tfoot tr {
   text-align: center;
   color: #333;
 }
-/* line 393, _general.scss */
+/* line 395, _general.scss */
 .-koowa-grid table tfoot td {
   text-align: center;
 }
-/* line 400, _general.scss */
+/* line 402, _general.scss */
 .-koowa-grid .array-separator span:after {
   content: " &";
 }
-/* line 403, _general.scss */
+/* line 405, _general.scss */
 .-koowa-grid .array-separator span:last-of-type:after {
   content: "";
 }
-/* line 408, _general.scss */
+/* line 410, _general.scss */
 .-koowa-grid .icon-ok {
   color: #297e52;
 }
-/* line 411, _general.scss */
+/* line 413, _general.scss */
 .-koowa-grid .icon-remove {
   color: #cf1010;
 }
-/* line 414, _general.scss */
+/* line 416, _general.scss */
 .-koowa-grid .icon-star {
   color: #ffc40d;
 }
 
-/* line 419, _general.scss */
+/* line 421, _general.scss */
 .-koowa-form {
   background-color: #F9F9F9;
   margin: 0;
 }
-/* line 424, _general.scss */
+/* line 426, _general.scss */
 .-koowa-form .main .title {
   padding: 10px 10px 10px 10px;
   background: linear-gradient(#f0f0f0, #eaeaea);
   border-bottom: 1px solid #CCC;
 }
-/* line 429, _general.scss */
+/* line 431, _general.scss */
 .-koowa-form .main .title > input {
   font-size: 18px;
   padding: 4px 8px;
@@ -1424,17 +1427,17 @@ ul {
   height: 36px;
   line-height: 36px;
 }
-/* line 438, _general.scss */
+/* line 440, _general.scss */
 .-koowa-form .main .title .slug {
   clear: left;
   margin-top: 5px;
   margin-bottom: 0 !important;
 }
-/* line 446, _general.scss */
+/* line 448, _general.scss */
 .-koowa-form .main .scrollable, .-koowa-form .main #files-app #files-canvas #files-grid, #files-app #files-canvas .-koowa-form .main #files-grid, .-koowa-form .main #files-tree {
   background-color: white;
 }
-/* line 452, _general.scss */
+/* line 454, _general.scss */
 .-koowa-form .sidebar textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1443,23 +1446,23 @@ ul {
   resize: vertical;
   width: 100%;
 }
-/* line 459, _general.scss */
+/* line 461, _general.scss */
 .-koowa-form .sidebar input[type=date],
 .-koowa-form .sidebar input[type=datetime-local] {
   width: 160px;
 }
 
-/* line 465, _general.scss */
+/* line 467, _general.scss */
 .box-column {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 10px;
 }
 
 /* Sidebar */
-/* line 471, _general.scss */
+/* line 473, _general.scss */
 #panel-content .-koowa-form {
   border-top: 1px solid #dddddd;
 }
-/* line 474, _general.scss */
+/* line 476, _general.scss */
 #panel-content .-koowa-form .sidebar {
   width: 350px;
   border-left: 1px solid #E1E1E1;
