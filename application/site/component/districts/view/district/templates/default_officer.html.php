@@ -8,6 +8,8 @@
  */
 ?>
 
+<meta content="noimageindex" name="robots" />
+
 <h2 class="article__header"><?= $officer->title ?></h2>
 
 <? if($officer->phone || $officer->mobile || $officer->email) : ?>
