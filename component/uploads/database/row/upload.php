@@ -241,6 +241,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             $html = (string) $tidy;
 
+            // Deal with DOMDocument breaking UTF-8 characters
+            // See: http://stackoverflow.com/questions/11309194/php-domdocument-failing-to-handle-utf-8-characters
+            $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
+
             $dom = new \DOMDocument();
             $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
 
