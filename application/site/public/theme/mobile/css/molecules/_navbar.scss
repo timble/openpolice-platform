@@ -80,12 +80,20 @@
             float: right;
             padding: 6px 12px;
 
-            color: $white;
+            color: $navbarBackground;
             text-decoration: none;
             text-align: center;
-            border: 1px solid darken($white, 8%);
+            border: none;
             border-radius: 8px;
-            background-color: $navbarLinkBackgroundHover;
+            background-color: #fff;
+
+          &:after {
+            display: inline-block;
+            font-size: 30px;
+            content: "≡";
+            vertical-align: text-bottom;
+            padding-left: 6px;
+          }
         }
     }
 }
