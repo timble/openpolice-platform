@@ -131,6 +131,7 @@
     </div>
     <div class="container container__footer_menu">
             <ul class="nav nav--list">
+                <li><a href="/<?= $site ?>"><?= translate('Home') ?></a></li>
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('News')) ?>"><?= translate('News') ?></a></li>
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Questions')) ?>"><?= translate('Frequently asked questions') ?></a></li>
                 <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Traffic')) ?>"><?= translate('Traffic information') ?></a></li>
