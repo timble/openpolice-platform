@@ -12,11 +12,11 @@
     .component {
         @include span-columns(9 omega, 12);
     }
-    .footer__news {
-        @include span-columns(7, 12);
-    }
     .footer__districts {
         @include span-columns(5 omega, 12);
+    }
+    .footer__news {
+        @include span-columns(7, 12);
     }
     .copyright--left {
         @include span-columns(5, 12);
@@ -37,6 +37,12 @@
     }
     .homepage__contact {
         @include span-columns(4 omega, 12);
+    }
+    .homepage__sticky .media {
+        @include span-columns(6 omega, 12);
+        &:first-child {
+            @include span-columns(6, 12);
+        }
     }
 
     .districts__officer {

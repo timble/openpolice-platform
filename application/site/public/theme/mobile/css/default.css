@@ -226,13 +226,10 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 10, organisms/_containers.scss */
+/* line 7, organisms/_containers.scss */
 .container__header .row-fluid .span3,
 .container__header .slogan,
-.container__breadcrumb,
 .container__banner,
-.container__footer,
-.container__quicklinks,
 .container__content .sidebar,
 .container__copyright .copyright,
 .is-hidden,
@@ -240,13 +237,13 @@ textarea {
   display: none;
 }
 
-/* line 14, organisms/_containers.scss */
+/* line 11, organisms/_containers.scss */
 .container__content {
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* line 19, organisms/_containers.scss */
+/* line 16, organisms/_containers.scss */
 .container__header {
   margin-bottom: 0;
   padding-left: 0;
@@ -254,42 +251,63 @@ textarea {
   width: 100%;
 }
 
-/* line 26, organisms/_containers.scss */
+/* line 23, organisms/_containers.scss */
 .container__content {
-  padding-top: 37.5px;
+  padding-top: 25px;
   padding-bottom: 25px;
 }
-/* line 31, organisms/_containers.scss */
+/* line 28, organisms/_containers.scss */
 .container__content.police .contact__inner {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 36, organisms/_containers.scss */
+/* line 33, organisms/_containers.scss */
 .container__content.police .contact__inner a {
   text-decoration: none;
 }
-/* line 41, organisms/_containers.scss */
+/* line 38, organisms/_containers.scss */
 .container__content.police article {
   border: 0 none !important;
   padding-bottom: 0 !important;
 }
 
-/* line 48, organisms/_containers.scss */
+/* line 45, organisms/_containers.scss */
 .container__copyright {
-  padding: 3px 20px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   text-align: center;
   border-top: 1px solid gainsboro;
   font-size: 12.75px;
 }
-/* line 54, organisms/_containers.scss */
+/* line 52, organisms/_containers.scss */
 .container__copyright a {
   text-decoration: none;
 }
 
-/* line 60, organisms/_containers.scss */
+/* line 57, organisms/_containers.scss */
+.container__footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  padding-top: 1.5em;
+  background-color: #f8f8f8;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+}
+/* line 66, organisms/_containers.scss */
 .container__footer .button {
   float: right;
+}
+
+/* line 72, organisms/_containers.scss */
+.container__footer_menu ul {
+  margin: 0;
+}
+/* line 75, organisms/_containers.scss */
+.container__footer_menu ul li a {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* line 1, organisms/_wrap.scss */
@@ -341,18 +359,59 @@ textarea {
   margin: 0 10px;
 }
 
+/* line 1, organisms/_homepage.scss */
+.homepage__news {
+  margin: 20px 0 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 20px 0 0;
+}
+@media screen and (min-width: 767px) {
+  /* line 1, organisms/_homepage.scss */
+  .homepage__news {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+/* line 16, organisms/_homepage.scss */
+.homepage__news .thumbnail.media__object + .media__body, .homepage__news .media__object.article__thumbnail + .media__body {
+  padding-left: 86px;
+}
+
+/* line 20, organisms/_homepage.scss */
+.homepage__sticky {
+  padding-bottom: 25px;
+}
+@media screen and (min-width: 767px) {
+  /* line 20, organisms/_homepage.scss */
+  .homepage__sticky {
+    padding-bottom: 0;
+  }
+  /* line 26, organisms/_homepage.scss */
+  .homepage__sticky .media {
+    margin-bottom: 0;
+  }
+}
+
+/* line 32, organisms/_homepage.scss */
+.homepage__contact ul {
+  margin-bottom: 0;
+}
+
 /* line 2, utilities/_clearfix.scss */
-.clearfix, form, .article, .navbar .navbar__handlebar {
+.clearfix, .homepage__news, form, .article, .navbar .navbar__handlebar {
   *zoom: 1;
 }
 /* line 13, utilities/_mixins.scss */
-.clearfix:before, form:before, .article:before, .navbar .navbar__handlebar:before, .clearfix:after, form:after, .article:after, .navbar .navbar__handlebar:after {
+.clearfix:before, .homepage__news:before, form:before, .article:before, .navbar .navbar__handlebar:before, .clearfix:after, .homepage__news:after, form:after, .article:after, .navbar .navbar__handlebar:after {
   display: table;
   content: "";
   line-height: 0;
 }
 /* line 20, utilities/_mixins.scss */
-.clearfix:after, form:after, .article:after, .navbar .navbar__handlebar:after {
+.clearfix:after, .homepage__news:after, form:after, .article:after, .navbar .navbar__handlebar:after {
   clear: both;
 }
 
@@ -368,19 +427,17 @@ textarea {
     display: none;
   }
 
-  /* line 18, utilities/_desktop.scss */
+  /* line 16, utilities/_desktop.scss */
   .container__header .is-hidden,
   .container__breadcrumb,
   .container__banner,
-  .container__footer,
-  .container__quicklinks,
   .container__content .sidebar,
   .container__copyright .copyright,
   .hidden-phone {
     display: block;
   }
 
-  /* line 26, utilities/_desktop.scss */
+  /* line 24, utilities/_desktop.scss */
   .container__header,
   .container__banner,
   .container__breadcrumb,
@@ -390,12 +447,12 @@ textarea {
     padding-right: 0px;
   }
 
-  /* line 32, utilities/_desktop.scss */
+  /* line 30, utilities/_desktop.scss */
   .container__header .organization {
     text-align: center;
   }
 
-  /* line 38, utilities/_desktop.scss */
+  /* line 36, utilities/_desktop.scss */
   .container__content.police .contact__inner {
     border-left: 1px solid #eeeeee;
     padding-left: 18px;
@@ -404,58 +461,113 @@ textarea {
     -moz-border-radius: 5px;
     border-radius: 5px;
   }
-  /* line 45, utilities/_desktop.scss */
+  /* line 43, utilities/_desktop.scss */
   .container__content.police .contact__inner ul {
     margin-bottom: 0;
   }
-  /* line 49, utilities/_desktop.scss */
+  /* line 47, utilities/_desktop.scss */
   .container__content.police .contact__inner .well {
     margin-bottom: 10px;
   }
 
-  /* line 55, utilities/_desktop.scss */
+  /* line 53, utilities/_desktop.scss */
   .container__header {
     width: auto;
   }
 
-  /* line 60, utilities/_desktop.scss */
+  /* line 58, utilities/_desktop.scss */
   .container__content .sidebar {
     margin-top: 20px;
   }
-  /* line 63, utilities/_desktop.scss */
+  /* line 61, utilities/_desktop.scss */
   .container__content .sidebar .sidebar__element {
     margin-bottom: 40px;
   }
 
-  /* line 69, utilities/_desktop.scss */
-  .container__quicklinks {
-    border-top: 1px solid #eeeeee;
-    padding-top: 1.5em;
-    margin-top: 1.5em;
+  /* line 73, utilities/_desktop.scss */
+  .quicklink__item_1,
+  .quicklink__item_2,
+  .quicklink__item_3 {
+    margin-bottom: 12.5px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12.5px;
   }
-
-  /* line 75, utilities/_desktop.scss */
+  /* line 93, utilities/_desktop.scss */
   .container__footer {
     padding-top: 1.5em;
     background-color: #f8f8f8;
-    border-top: 1px solid gainsboro;
-    -webkit-border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
-    border-radius: 0 0 5px 5px;
+  }
+  /* line 99, utilities/_desktop.scss */
+  .container__footer .footer__news .media {
+    margin-bottom: 0;
+    margin-top: 12.5px;
+  }
+  /* line 105, utilities/_desktop.scss */
+  .container__footer .footer__districts {
+    margin-top: 25px;
+  }
+  /* line 114, utilities/_desktop.scss */
+  .container.container__footer_menu {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  /* line 118, utilities/_desktop.scss */
+  .container.container__footer_menu ul {
+    margin: 0;
+  }
+  /* line 122, utilities/_desktop.scss */
+  .container.container__footer_menu ul li {
+    display: block;
+    float: left;
+  }
+  /* line 126, utilities/_desktop.scss */
+  .container.container__footer_menu ul li a {
+    border: none;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
-  /* line 84, utilities/_desktop.scss */
+  /* line 136, utilities/_desktop.scss */
   .container__copyright {
     text-align: left;
     border-top: 0 none;
   }
-  /* line 87, utilities/_desktop.scss */
+  /* line 139, utilities/_desktop.scss */
   .container__copyright .copyright--right {
     text-align: right;
   }
 }
+@media screen and (min-width: 767px) and (min-width: 767px) {
+  /* line 79, utilities/_desktop.scss */
+  .quicklink__item_1.quicklink__item_3,
+  .quicklink__item_2.quicklink__item_3,
+  .quicklink__item_3.quicklink__item_3 {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 767px) and (min-width: 998px) {
+  /* line 73, utilities/_desktop.scss */
+  .quicklink__item_1,
+  .quicklink__item_2,
+  .quicklink__item_3 {
+    margin-bottom: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 767px) and (min-width: 767px) {
+  /* line 105, utilities/_desktop.scss */
+  .container__footer .footer__districts {
+    margin-top: 0;
+  }
+}
+
 @media screen and (min-width: 998px) {
-  /* line 94, utilities/_desktop.scss */
+  /* line 146, utilities/_desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -464,7 +576,7 @@ textarea {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 101, utilities/_desktop.scss */
+  /* line 153, utilities/_desktop.scss */
   .container__header .organization {
     text-align: left;
   }
@@ -591,7 +703,7 @@ you can use the generic selector below, but it's slower:
     margin-left: auto;
     margin-right: auto;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .container:after {
     content: "";
     display: table;
@@ -611,24 +723,24 @@ you can use the generic selector below, but it's slower:
     width: 74.07407%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 
   /* line 15, utilities/_grid.scss */
-  .footer__news {
-    width: 56.79012%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-
-  /* line 18, utilities/_grid.scss */
   .footer__districts {
     width: 39.50617%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
+    display: inline;
+  }
+
+  /* line 18, utilities/_grid.scss */
+  .footer__news {
+    width: 56.79012%;
+    float: left;
+    margin-right: 3.7037%;
     display: inline;
   }
 
@@ -645,7 +757,7 @@ you can use the generic selector below, but it's slower:
     width: 56.79012%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 
@@ -662,7 +774,7 @@ you can use the generic selector below, but it's slower:
     width: 48.14815%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 
@@ -679,11 +791,27 @@ you can use the generic selector below, but it's slower:
     width: 30.8642%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 
-  /* line 42, utilities/_grid.scss */
+  /* line 41, utilities/_grid.scss */
+  .homepage__sticky .media {
+    width: 48.14815%;
+    float: right;
+    margin-right: 0;
+    #margin-left: -3em;
+    display: inline;
+  }
+  /* line 43, utilities/_grid.scss */
+  .homepage__sticky .media:first-child {
+    width: 48.14815%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+
+  /* line 48, utilities/_grid.scss */
   .districts__officer {
     width: 39.50617%;
     float: left;
@@ -691,16 +819,16 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 46, utilities/_grid.scss */
+  /* line 52, utilities/_grid.scss */
   .districts__contact {
     width: 56.79012%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 
-  /* line 50, utilities/_grid.scss */
+  /* line 56, utilities/_grid.scss */
   .exception__message {
     width: 56.79012%;
     float: left;
@@ -708,16 +836,16 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 54, utilities/_grid.scss */
+  /* line 60, utilities/_grid.scss */
   .exception__image {
     width: 39.50617%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 
-  /* line 58, utilities/_grid.scss */
+  /* line 64, utilities/_grid.scss */
   .gallery .gallery__item {
     width: 22.22222%;
     float: left;
@@ -725,17 +853,17 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 62, utilities/_grid.scss */
+  /* line 68, utilities/_grid.scss */
   .gallery .gallery__item:nth-child(3) {
     width: 22.22222%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 }
 @media screen and (min-width: 998px) {
-  /* line 68, utilities/_grid.scss */
+  /* line 74, utilities/_grid.scss */
   .organization {
     width: 22.22222%;
     float: left;
@@ -743,16 +871,16 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 71, utilities/_grid.scss */
+  /* line 77, utilities/_grid.scss */
   .navigation {
     width: 74.07407%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 
-  /* line 75, utilities/_grid.scss */
+  /* line 81, utilities/_grid.scss */
   .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
     width: 22.22222%;
     float: left;
@@ -760,12 +888,12 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 78, utilities/_grid.scss */
+  /* line 84, utilities/_grid.scss */
   .quicklink__item_4 {
     width: 22.22222%;
     float: right;
     margin-right: 0;
-    *margin-left: -3em;
+    #margin-left: -3em;
     display: inline;
   }
 }
@@ -1102,27 +1230,40 @@ ul.column--double, ul.column--triple, ul.column--quad {
 /* line 1, molecules/_banner.scss */
 .container__banner img {
   border: 1px solid #505050;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 /* line 1, molecules/_breadcrumb.scss */
+.container__breadcrumb {
+  padding: 83px 20px 0;
+}
+@media screen and (min-width: 767px) {
+  /* line 1, molecules/_breadcrumb.scss */
+  .container__breadcrumb {
+    padding: 5px 25px 0;
+  }
+}
+
+/* line 9, molecules/_breadcrumb.scss */
 .breadcrumb {
   font-size: 0.85em;
   line-height: 2.5em;
   padding: 0 1em;
-  margin: 0.25em 0 0 0;
+  margin: 0;
+  clear: both;
   list-style: none;
   background-color: #f8f8f8;
+  border: 1px solid #eee;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 9, molecules/_breadcrumb.scss */
+/* line 19, molecules/_breadcrumb.scss */
 .breadcrumb > li {
   display: inline-block;
   *display: inline;
@@ -1130,15 +1271,15 @@ ul.column--double, ul.column--triple, ul.column--quad {
   *zoom: 1;
   text-shadow: 0 1px 0 white;
 }
-/* line 13, molecules/_breadcrumb.scss */
+/* line 23, molecules/_breadcrumb.scss */
 .breadcrumb > li > .divider {
   color: #ccc;
 }
-/* line 17, molecules/_breadcrumb.scss */
+/* line 27, molecules/_breadcrumb.scss */
 .breadcrumb .active {
   color: #999999;
 }
-/* line 21, molecules/_breadcrumb.scss */
+/* line 31, molecules/_breadcrumb.scss */
 .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
@@ -1349,10 +1490,7 @@ input[type="submit"].button::-moz-focus-inner {
   /* line 59, molecules/_header.scss */
   .js-enabled .container__header {
     position: fixed;
-  }
-  /* line 63, molecules/_header.scss */
-  .js-enabled .container__content {
-    padding-top: 5.5em;
+    top: 0;
   }
 }
 /* line 4, molecules/_media.scss */

@@ -1,10 +1,20 @@
+.container__breadcrumb {
+    padding: (58px + $grid-padding) 20px 0;
+
+    @include respond-min($navbarCollapseWidth) {
+        padding: 5px $grid-padding 0;
+    }
+}
+
 .breadcrumb {
     font-size: 0.85em;
     line-height: 2.5em;
     padding: 0 1em;
-    margin: 0.25em 0 0 0;
+    margin: 0;
+    clear: both;
     list-style: none;
     background-color: $wellBackground;
+    border: 1px solid #eee;
     @include border-radius($baseBorderRadius);
     > li {
         display: inline-block;

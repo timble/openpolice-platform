@@ -58,11 +58,7 @@
     .js-enabled {
         .container__header {
             position: fixed;
-        }
-
-        .container__content {
-            // Increase padding between sticky header and content
-            padding-top: $navbarHeight + $gutter-width;
+            top: 0;
         }
     }
 }

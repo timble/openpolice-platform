@@ -103,6 +103,7 @@
 
     <div class="container container__footer">
         <div class="row">
+            <? if($extension !== 'police') : ?>
             <div class="footer__news">
                 <h3><?= translate('Latest news') ?></h3>
                 <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
@@ -118,7 +119,24 @@
                     <button class="button button--primary"><?= translate('Search') ?></button>
                 </form>
             </div>
+            <?php endif; ?>
+
+            <ktml:modules position="quicklinks">
+                <div class="container__quicklinks">
+                    <ktml:modules:content>
+                </div>
+            </ktml:modules>
+
         </div>
+    </div>
+    <div class="container container__footer_menu">
+            <ul class="nav nav--list">
+                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('News')) ?>"><?= translate('News') ?></a></li>
+                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Questions')) ?>"><?= translate('Frequently asked questions') ?></a></li>
+                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Traffic')) ?>"><?= translate('Traffic information') ?></a></li>
+                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('About us')) ?>"><?= translate('About us') ?></a></li>
+                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Contact')) ?>"><?= translate('Contact us') ?></a></li>
+            </ul>
     </div>
 </div>
 
@@ -126,10 +144,10 @@
     <div class="container container__copyright">
         <div class="copyright--left">
             <? if($zone->twitter) : ?>
-                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a> |
+                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>&nbsp;&nbsp;|&nbsp;
             <? endif ?>
             <? if($zone->facebook) : ?>
-                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a> |
+                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>&nbsp;&nbsp;|&nbsp;
             <? endif ?>
             <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
