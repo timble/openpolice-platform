@@ -469,23 +469,29 @@ textarea {
   /* line 47, utilities/_desktop.scss */
   .container__content.police .contact__inner .well {
     margin-bottom: 10px;
+    padding-bottom: 0;
+  }
+  /* line 52, utilities/_desktop.scss */
+  .container__content.police .contact__inner .text--small {
+    display: block;
+    margin-bottom: 1em;
   }
 
-  /* line 53, utilities/_desktop.scss */
+  /* line 59, utilities/_desktop.scss */
   .container__header {
     width: auto;
   }
 
-  /* line 58, utilities/_desktop.scss */
+  /* line 64, utilities/_desktop.scss */
   .container__content .sidebar {
     margin-top: 20px;
   }
-  /* line 61, utilities/_desktop.scss */
+  /* line 67, utilities/_desktop.scss */
   .container__content .sidebar .sidebar__element {
     margin-bottom: 40px;
   }
 
-  /* line 73, utilities/_desktop.scss */
+  /* line 79, utilities/_desktop.scss */
   .quicklink__item_1,
   .quicklink__item_2,
   .quicklink__item_3 {
@@ -493,35 +499,35 @@ textarea {
     border-bottom: 1px solid #eee;
     padding-bottom: 12.5px;
   }
-  /* line 93, utilities/_desktop.scss */
+  /* line 99, utilities/_desktop.scss */
   .container__footer {
     padding-top: 1.5em;
     background-color: #f8f8f8;
   }
-  /* line 99, utilities/_desktop.scss */
+  /* line 105, utilities/_desktop.scss */
   .container__footer .footer__news .media {
     margin-bottom: 0;
     margin-top: 12.5px;
   }
-  /* line 105, utilities/_desktop.scss */
+  /* line 111, utilities/_desktop.scss */
   .container__footer .footer__districts {
     margin-top: 25px;
   }
-  /* line 114, utilities/_desktop.scss */
+  /* line 120, utilities/_desktop.scss */
   .container.container__footer_menu {
     padding-left: 14px;
     padding-right: 14px;
   }
-  /* line 118, utilities/_desktop.scss */
+  /* line 124, utilities/_desktop.scss */
   .container.container__footer_menu ul {
     margin: 0;
   }
-  /* line 122, utilities/_desktop.scss */
+  /* line 128, utilities/_desktop.scss */
   .container.container__footer_menu ul li {
     display: block;
     float: left;
   }
-  /* line 126, utilities/_desktop.scss */
+  /* line 132, utilities/_desktop.scss */
   .container.container__footer_menu ul li a {
     border: none;
     font-size: 14px;
@@ -529,18 +535,18 @@ textarea {
     padding-bottom: 10px;
   }
 
-  /* line 136, utilities/_desktop.scss */
+  /* line 142, utilities/_desktop.scss */
   .container__copyright {
     text-align: left;
     border-top: 0 none;
   }
-  /* line 139, utilities/_desktop.scss */
+  /* line 145, utilities/_desktop.scss */
   .container__copyright .copyright--right {
     text-align: right;
   }
 }
 @media screen and (min-width: 767px) and (min-width: 767px) {
-  /* line 79, utilities/_desktop.scss */
+  /* line 85, utilities/_desktop.scss */
   .quicklink__item_1.quicklink__item_3,
   .quicklink__item_2.quicklink__item_3,
   .quicklink__item_3.quicklink__item_3 {
@@ -550,7 +556,7 @@ textarea {
   }
 }
 @media screen and (min-width: 767px) and (min-width: 998px) {
-  /* line 73, utilities/_desktop.scss */
+  /* line 79, utilities/_desktop.scss */
   .quicklink__item_1,
   .quicklink__item_2,
   .quicklink__item_3 {
@@ -561,14 +567,14 @@ textarea {
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
-  /* line 105, utilities/_desktop.scss */
+  /* line 111, utilities/_desktop.scss */
   .container__footer .footer__districts {
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 998px) {
-  /* line 146, utilities/_desktop.scss */
+  /* line 152, utilities/_desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -577,7 +583,7 @@ textarea {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 153, utilities/_desktop.scss */
+  /* line 159, utilities/_desktop.scss */
   .container__header .organization {
     text-align: left;
   }
@@ -704,7 +710,7 @@ you can use the generic selector below, but it's slower:
     margin-left: auto;
     margin-right: auto;
   }
-  /* line 38, ../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .container:after {
     content: "";
     display: table;
@@ -724,7 +730,7 @@ you can use the generic selector below, but it's slower:
     width: 74.07407%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 
@@ -733,7 +739,7 @@ you can use the generic selector below, but it's slower:
     width: 39.50617%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 
@@ -758,7 +764,7 @@ you can use the generic selector below, but it's slower:
     width: 56.79012%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 
@@ -775,44 +781,28 @@ you can use the generic selector below, but it's slower:
     width: 48.14815%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 
   /* line 35, utilities/_grid.scss */
   .homepage__sticky {
-    width: 65.4321%;
+    width: 70.52632%;
     float: left;
-    margin-right: 3.7037%;
+    margin-right: 3.15789%;
     display: inline;
   }
 
   /* line 38, utilities/_grid.scss */
   .homepage__contact {
-    width: 30.8642%;
+    width: 26.31579%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 
-  /* line 41, utilities/_grid.scss */
-  .homepage__sticky .media {
-    width: 48.14815%;
-    float: right;
-    margin-right: 0;
-    #margin-left: -3em;
-    display: inline;
-  }
-  /* line 43, utilities/_grid.scss */
-  .homepage__sticky .media:first-child {
-    width: 48.14815%;
-    float: left;
-    margin-right: 3.7037%;
-    display: inline;
-  }
-
-  /* line 48, utilities/_grid.scss */
+  /* line 42, utilities/_grid.scss */
   .districts__officer {
     width: 39.50617%;
     float: left;
@@ -820,16 +810,16 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 52, utilities/_grid.scss */
+  /* line 46, utilities/_grid.scss */
   .districts__contact {
     width: 56.79012%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 
-  /* line 56, utilities/_grid.scss */
+  /* line 50, utilities/_grid.scss */
   .exception__message {
     width: 56.79012%;
     float: left;
@@ -837,16 +827,16 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 60, utilities/_grid.scss */
+  /* line 54, utilities/_grid.scss */
   .exception__image {
     width: 39.50617%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 
-  /* line 64, utilities/_grid.scss */
+  /* line 58, utilities/_grid.scss */
   .gallery .gallery__item {
     width: 22.22222%;
     float: left;
@@ -854,17 +844,33 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 68, utilities/_grid.scss */
+  /* line 62, utilities/_grid.scss */
   .gallery .gallery__item:nth-child(3) {
     width: 22.22222%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 }
 @media screen and (min-width: 998px) {
-  /* line 74, utilities/_grid.scss */
+  /* line 68, utilities/_grid.scss */
+  .homepage__sticky .media {
+    width: 48.14815%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -3em;
+    display: inline;
+  }
+  /* line 70, utilities/_grid.scss */
+  .homepage__sticky .media:first-child {
+    width: 48.14815%;
+    float: left;
+    margin-right: 3.7037%;
+    display: inline;
+  }
+
+  /* line 75, utilities/_grid.scss */
   .organization {
     width: 22.22222%;
     float: left;
@@ -872,16 +878,16 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 77, utilities/_grid.scss */
+  /* line 78, utilities/_grid.scss */
   .navigation {
     width: 74.07407%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 
-  /* line 81, utilities/_grid.scss */
+  /* line 82, utilities/_grid.scss */
   .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
     width: 22.22222%;
     float: left;
@@ -889,12 +895,12 @@ you can use the generic selector below, but it's slower:
     display: inline;
   }
 
-  /* line 84, utilities/_grid.scss */
+  /* line 85, utilities/_grid.scss */
   .quicklink__item_4 {
     width: 22.22222%;
     float: right;
     margin-right: 0;
-    #margin-left: -3em;
+    *margin-left: -3em;
     display: inline;
   }
 }
