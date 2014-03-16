@@ -68,7 +68,8 @@
                         <?= translate('Police') ?>
                         <?= escape($zone->title); ?>
                     </a>
-                    <a class="navbar__handle" href="#" onclick="Apollo.toggleClass(document.getElementById('navigation'), 'is-shown')">MENU</a>
+                    <a id="button" class="navbar__handle lines-button x" href="#" onclick="Apollo.toggleClass(document.getElementById('navigation'), 'is-shown');Apollo.toggleClass(document.getElementById('button'), 'close')">MENU <span class="lines"></span></a>
+
                 </div>
                 <div id="navigation">
                     <ktml:modules position="navigation">

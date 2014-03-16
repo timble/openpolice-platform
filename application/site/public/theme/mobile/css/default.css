@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
  * Bootstrap variables
  */
@@ -402,17 +401,17 @@ textarea {
 }
 
 /* line 2, utilities/_clearfix.scss */
-.clearfix, .homepage__news, form, .article, .navbar .navbar__handlebar {
+.clearfix, .homepage__news, form, .article, .navbar__handlebar {
   *zoom: 1;
 }
 /* line 13, utilities/_mixins.scss */
-.clearfix:before, .homepage__news:before, form:before, .article:before, .navbar .navbar__handlebar:before, .clearfix:after, .homepage__news:after, form:after, .article:after, .navbar .navbar__handlebar:after {
+.clearfix:before, .homepage__news:before, form:before, .article:before, .navbar__handlebar:before, .clearfix:after, .homepage__news:after, form:after, .article:after, .navbar__handlebar:after {
   display: table;
   content: "";
   line-height: 0;
 }
 /* line 20, utilities/_mixins.scss */
-.clearfix:after, .homepage__news:after, form:after, .article:after, .navbar .navbar__handlebar:after {
+.clearfix:after, .homepage__news:after, form:after, .article:after, .navbar__handlebar:after {
   clear: both;
 }
 
@@ -1574,35 +1573,39 @@ input[type="submit"].button::-moz-focus-inner {
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   font-weight: bold;
 }
-/* line 52, molecules/_navbar.scss */
-.navbar .navbar__handlebar {
+
+/* line 53, molecules/_navbar.scss */
+.navbar__handlebar {
   border-bottom: 1px solid #004d9f;
   padding: 10px 10px;
 }
-/* line 57, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__logo {
+
+/* line 59, molecules/_navbar.scss */
+.navbar__logo {
   line-height: 36px;
   text-decoration: none;
   float: left;
   color: white;
   zoom: 1;
 }
-/* line 65, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__logo:hover {
+/* line 67, molecules/_navbar.scss */
+.navbar__logo:hover {
   color: white;
 }
-/* line 69, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__logo img {
+/* line 71, molecules/_navbar.scss */
+.navbar__logo img {
   margin-right: 6px;
   margin-right: 0.4rem;
 }
-/* line 74, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__avatar {
+
+/* line 76, molecules/_navbar.scss */
+.navbar__avatar {
   width: 24px;
   height: 24px;
 }
-/* line 79, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__handle {
+
+/* line 81, molecules/_navbar.scss */
+.navbar__handle {
   float: right;
   padding: 6px 12px;
   color: #0054ae;
@@ -1612,16 +1615,16 @@ input[type="submit"].button::-moz-focus-inner {
   border-radius: 8px;
   background-color: #fff;
 }
-/* line 90, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__handle:after {
+/* line 91, molecules/_navbar.scss */
+.navbar__handle:after {
   display: inline-block;
   font-size: 30px;
-  content: "≡";
+  content: '\2630';
   vertical-align: text-bottom;
   padding-left: 6px;
 }
 
-/* line 105, molecules/_navbar.scss */
+/* line 104, molecules/_navbar.scss */
 .js-enabled .navbar #navigation {
   margin: -1px;
   padding: 0;
@@ -1632,7 +1635,7 @@ input[type="submit"].button::-moz-focus-inner {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
-/* line 110, molecules/_navbar.scss */
+/* line 109, molecules/_navbar.scss */
 .js-enabled .navbar #navigation.is-shown {
   margin: 0;
   padding: 0;
@@ -1644,7 +1647,7 @@ input[type="submit"].button::-moz-focus-inner {
 }
 
 @media screen and (min-width: 767px) {
-  /* line 117, molecules/_navbar.scss */
+  /* line 116, molecules/_navbar.scss */
   .navbar {
     border-bottom: 0 none;
     border: 1px solid #002d5d;
@@ -1653,30 +1656,30 @@ input[type="submit"].button::-moz-focus-inner {
     border-radius: 4px;
     /* Customize the navbar links to be fill the entire space of the .navbar */
   }
-  /* line 123, molecules/_navbar.scss */
+  /* line 122, molecules/_navbar.scss */
   .navbar ul {
     display: table;
   }
-  /* line 126, molecules/_navbar.scss */
+  /* line 125, molecules/_navbar.scss */
   .navbar ul li {
     display: table-cell;
     width: 1%;
   }
-  /* line 130, molecules/_navbar.scss */
+  /* line 129, molecules/_navbar.scss */
   .navbar ul li a {
     text-align: center;
     padding: 5px 15px 5px;
     border: 0 none;
     font-weight: normal;
   }
-  /* line 136, molecules/_navbar.scss */
+  /* line 135, molecules/_navbar.scss */
   .navbar ul li:first-child a {
     border-left: 0;
     -webkit-border-radius: 4px 0 0 4px;
     -moz-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
   }
-  /* line 140, molecules/_navbar.scss */
+  /* line 139, molecules/_navbar.scss */
   .navbar ul li:last-child a {
     border-right: 0;
     -webkit-border-radius: 0 4px 4px 0;
@@ -1684,7 +1687,7 @@ input[type="submit"].button::-moz-focus-inner {
     border-radius: 0 4px 4px 0;
   }
 
-  /* line 147, molecules/_navbar.scss */
+  /* line 146, molecules/_navbar.scss */
   .js-enabled .navbar #navigation {
     margin: 0;
     padding: 0;
@@ -2097,41 +2100,6 @@ a.article__thumbnail:focus {
   border-radius: 3px;
 }
 
-/* Print stub */
-@media only print {
-  /* line 6, utilities/_print.scss */
-  .container__header .navbar,
-  .container__copyright,
-  .pagination,
-  .st_sharethis {
-    display: none;
-  }
-
-  /* line 10, utilities/_print.scss */
-  .container__header .row-fluid .span3 {
-    display: block;
-    padding-left: 20px;
-    padding-top: 20px;
-  }
-  /* line 15, utilities/_print.scss */
-  .container__header .row-fluid .span3 .organization a:after {
-    content: "";
-  }
-  /* line 19, utilities/_print.scss */
-  .container__header .row-fluid .span3 .organization__name {
-    padding-left: 50px;
-  }
-
-  /* line 24, utilities/_print.scss */
-  .article__thumbnail:after {
-    content: "" !important;
-  }
-
-  /* line 28, utilities/_print.scss */
-  a {
-    border-bottom: 0 none !important;
-  }
-}
 /* Magnific Popup CSS v0.9.9 */
 /* line 78, utilities/_magnific-popup.scss */
 .mfp-bg {
@@ -2655,4 +2623,119 @@ img.mfp-img {
   top: 0;
   right: 0;
   padding-top: 0;
+}
+
+@media (max-width: 767px) {
+  /* line 3, utilities/_navicon.scss */
+  .navbar__handle:after {
+    content: "";
+    content: none;
+  }
+
+  /* ====================== lines button ==================================================*/
+  /* line 16, utilities/_navicon.scss */
+  .lines-button {
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+    /* */
+  }
+  /* line 21, utilities/_navicon.scss */
+  .lines-button:hover {
+    opacity: 1;
+  }
+  /* line 24, utilities/_navicon.scss */
+  .lines-button:active {
+    transition: 0;
+  }
+
+  /* line 38, utilities/_navicon.scss */
+  .lines {
+    display: inline-block;
+    width: 1em;
+    height: 0.14286em;
+    background: #004d9f;
+    border-radius: 0.07143em;
+    transition: 0.4s;
+    position: relative;
+    top: -4px;
+  }
+  /* line 43, utilities/_navicon.scss */
+  .lines:before, .lines:after {
+    display: inline-block;
+    width: 1em;
+    height: 0.14286em;
+    background: #004d9f;
+    border-radius: 0.07143em;
+    transition: 0.4s;
+    position: absolute;
+    left: 0;
+    content: '';
+    -webkit-transform-origin: 0.07143em center;
+    transform-origin: 0.07143em center;
+  }
+  /* line 51, utilities/_navicon.scss */
+  .lines:before {
+    top: 0.28571em;
+  }
+  /* line 54, utilities/_navicon.scss */
+  .lines:after {
+    top: -0.28571em;
+  }
+
+  /* line 63, utilities/_navicon.scss */
+  .lines-button.x.close .lines {
+    background: transparent;
+  }
+  /* line 65, utilities/_navicon.scss */
+  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    top: 0;
+  }
+  /* line 71, utilities/_navicon.scss */
+  .lines-button.x.close .lines:before {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+  /* line 75, utilities/_navicon.scss */
+  .lines-button.x.close .lines:after {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+}
+/* Print stub */
+@media only print {
+  /* line 6, utilities/_print.scss */
+  .container__header .navbar,
+  .container__copyright,
+  .pagination,
+  .st_sharethis {
+    display: none;
+  }
+
+  /* line 10, utilities/_print.scss */
+  .container__header .row-fluid .span3 {
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+  /* line 15, utilities/_print.scss */
+  .container__header .row-fluid .span3 .organization a:after {
+    content: "";
+  }
+  /* line 19, utilities/_print.scss */
+  .container__header .row-fluid .span3 .organization__name {
+    padding-left: 50px;
+  }
+
+  /* line 24, utilities/_print.scss */
+  .article__thumbnail:after {
+    content: "" !important;
+  }
+
+  /* line 28, utilities/_print.scss */
+  a {
+    border-bottom: 0 none !important;
+  }
 }
