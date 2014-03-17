@@ -1,6 +1,4 @@
 .container__breadcrumb {
-    padding: $navbarHeight 0 0;
-
     @include respond-min($navbarCollapseWidth) {
         padding: 5px $grid-padding 0;
     }
@@ -9,7 +7,7 @@
 .breadcrumb {
     font-size: 0.85em;
     line-height: 1.5em;
-    padding: 10px 24px 5px;
+    padding: 10px 10px 5px;
     margin: 0;
     clear: both;
     list-style: none;

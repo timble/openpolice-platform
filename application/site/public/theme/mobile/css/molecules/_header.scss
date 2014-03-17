@@ -52,13 +52,3 @@
     }
 }
 
-// Apply sticky header only in modern browsers (they understand media queries)
-@media (max-width: $navbarCollapseWidth - 1) {
-    // Only when JS is enabled
-    .js-enabled {
-        .container__header {
-            position: fixed;
-            top: 0;
-        }
-    }
-}

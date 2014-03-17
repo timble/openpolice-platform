@@ -278,7 +278,7 @@ textarea {
   padding-bottom: 13px;
   text-align: center;
   border-top: 1px solid gainsboro;
-  font-size: 12.75px;
+  font-size: 13.6px;
 }
 /* line 52, organisms/_containers.scss */
 .container__copyright a {
@@ -289,22 +289,25 @@ textarea {
 .container__footer {
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 25px;
   padding-top: 1.5em;
   background-color: #f8f8f8;
   border-top: 1px solid gainsboro;
   border-bottom: 1px solid gainsboro;
 }
 /* line 66, organisms/_containers.scss */
+.container__footer .container__quicklinks div {
+  margin-bottom: 25px;
+}
+/* line 71, organisms/_containers.scss */
 .container__footer .button {
   float: right;
 }
 
-/* line 72, organisms/_containers.scss */
+/* line 77, organisms/_containers.scss */
 .container__footer_menu ul {
   margin: 0;
 }
-/* line 75, organisms/_containers.scss */
+/* line 80, organisms/_containers.scss */
 .container__footer_menu ul li a {
   padding-left: 20px;
   padding-right: 20px;
@@ -406,17 +409,27 @@ textarea {
 }
 
 /* line 2, utilities/_desktop.scss */
+.contact__inner .well {
+  padding-bottom: 0;
+}
+/* line 6, utilities/_desktop.scss */
+.contact__inner .text--strong {
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+/* line 13, utilities/_desktop.scss */
 #wrap {
   border-bottom: 1px solid gainsboro;
 }
 
-/* line 7, utilities/_desktop.scss */
+/* line 18, utilities/_desktop.scss */
 .navbar__handlebar,
 .visible-phone {
   display: none;
 }
 
-/* line 16, utilities/_desktop.scss */
+/* line 27, utilities/_desktop.scss */
 .container__header .is-hidden,
 .container__breadcrumb,
 .container__banner,
@@ -426,7 +439,7 @@ textarea {
   display: block;
 }
 
-/* line 24, utilities/_desktop.scss */
+/* line 35, utilities/_desktop.scss */
 .container__header,
 .container__banner,
 .container__breadcrumb,
@@ -436,12 +449,12 @@ textarea {
   padding-right: 0px;
 }
 
-/* line 30, utilities/_desktop.scss */
+/* line 41, utilities/_desktop.scss */
 .container__header .organization {
   text-align: center;
 }
 
-/* line 36, utilities/_desktop.scss */
+/* line 47, utilities/_desktop.scss */
 .container__content.police .contact__inner {
   border-left: 1px solid #eeeeee;
   padding-left: 18px;
@@ -450,36 +463,30 @@ textarea {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 43, utilities/_desktop.scss */
+/* line 54, utilities/_desktop.scss */
 .container__content.police .contact__inner ul {
   margin-bottom: 0;
 }
-/* line 47, utilities/_desktop.scss */
+/* line 58, utilities/_desktop.scss */
 .container__content.police .contact__inner .well {
   margin-bottom: 10px;
-  padding-bottom: 0;
-}
-/* line 52, utilities/_desktop.scss */
-.container__content.police .contact__inner .text--small {
-  display: block;
-  margin-bottom: 1em;
 }
 
-/* line 59, utilities/_desktop.scss */
+/* line 64, utilities/_desktop.scss */
 .container__header {
   width: auto;
 }
 
-/* line 64, utilities/_desktop.scss */
+/* line 69, utilities/_desktop.scss */
 .container__content .sidebar {
   margin-top: 20px;
 }
-/* line 67, utilities/_desktop.scss */
+/* line 72, utilities/_desktop.scss */
 .container__content .sidebar .sidebar__element {
   margin-bottom: 40px;
 }
 
-/* line 79, utilities/_desktop.scss */
+/* line 84, utilities/_desktop.scss */
 .quicklink__item_1,
 .quicklink__item_2,
 .quicklink__item_3 {
@@ -490,7 +497,7 @@ textarea {
   border-bottom: none;
   padding-bottom: 0;
 }
-/* line 85, utilities/_desktop.scss */
+/* line 90, utilities/_desktop.scss */
 .quicklink__item_1.quicklink__item_3,
 .quicklink__item_2.quicklink__item_3,
 .quicklink__item_3.quicklink__item_3 {
@@ -499,37 +506,37 @@ textarea {
   padding-bottom: 0;
 }
 
-/* line 99, utilities/_desktop.scss */
+/* line 104, utilities/_desktop.scss */
 .container__footer {
   padding-top: 1.5em;
   background-color: #f8f8f8;
 }
-/* line 105, utilities/_desktop.scss */
+/* line 110, utilities/_desktop.scss */
 .container__footer .footer__news .media {
   margin-bottom: 0;
   margin-top: 12.5px;
 }
-/* line 111, utilities/_desktop.scss */
+/* line 116, utilities/_desktop.scss */
 .container__footer .footer__districts {
   margin-top: 25px;
   margin-top: 0;
 }
 
-/* line 120, utilities/_desktop.scss */
+/* line 125, utilities/_desktop.scss */
 .container.container__footer_menu {
   padding-left: 14px;
   padding-right: 14px;
 }
-/* line 124, utilities/_desktop.scss */
+/* line 129, utilities/_desktop.scss */
 .container.container__footer_menu ul {
   margin: 0;
 }
-/* line 128, utilities/_desktop.scss */
+/* line 133, utilities/_desktop.scss */
 .container.container__footer_menu ul li {
   display: block;
   float: left;
 }
-/* line 132, utilities/_desktop.scss */
+/* line 137, utilities/_desktop.scss */
 .container.container__footer_menu ul li a {
   border: none;
   font-size: 14px;
@@ -537,17 +544,17 @@ textarea {
   padding-bottom: 10px;
 }
 
-/* line 142, utilities/_desktop.scss */
+/* line 147, utilities/_desktop.scss */
 .container__copyright {
   text-align: left;
   border-top: 0 none;
 }
-/* line 145, utilities/_desktop.scss */
+/* line 150, utilities/_desktop.scss */
 .container__copyright .copyright--right {
   text-align: right;
 }
 
-/* line 152, utilities/_desktop.scss */
+/* line 157, utilities/_desktop.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -556,7 +563,7 @@ textarea {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 159, utilities/_desktop.scss */
+/* line 164, utilities/_desktop.scss */
 .container__header .organization {
   text-align: left;
 }
@@ -887,7 +894,7 @@ p {
 
 /* line 15, atoms/_type.scss */
 small {
-  font-size: 12.75px;
+  font-size: 13.6px;
 }
 
 /* line 19, atoms/_type.scss */
@@ -916,11 +923,15 @@ hr {
 /* line 1, atoms/_body.scss */
 body {
   font-family: Helvetica, sans-serif;
-  font-size: 1em;
   line-height: 1.5em;
   color: #222222;
   background-color: #eeeeee;
   margin: 0;
+}
+
+/* line 10, atoms/_body.scss */
+body {
+  font-size: 0.9375em;
 }
 
 /* line 1, atoms/_figure.scss */
@@ -949,7 +960,7 @@ legend {
 }
 /* line 28, atoms/_form.scss */
 legend small {
-  font-size: 11.25px;
+  font-size: 12px;
   color: #999999;
 }
 
@@ -959,7 +970,7 @@ input,
 button,
 select,
 textarea {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 1.5em;
 }
@@ -1105,7 +1116,7 @@ h3 {
 
 /* line 1, atoms/_html.scss */
 html {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* line 1, atoms/_a.scss */
@@ -1216,15 +1227,14 @@ ul.column--quad {
 
 /* line 1, molecules/_breadcrumb.scss */
 .container__breadcrumb {
-  padding: 58px 0 0;
   padding: 5px 25px 0;
 }
 
-/* line 9, molecules/_breadcrumb.scss */
+/* line 7, molecules/_breadcrumb.scss */
 .breadcrumb {
   font-size: 0.85em;
   line-height: 1.5em;
-  padding: 10px 24px 5px;
+  padding: 10px 10px 5px;
   margin: 0;
   clear: both;
   list-style: none;
@@ -1236,8 +1246,8 @@ ul.column--quad {
   border-radius: 4px;
   padding: 6px 1em 1px;
 }
-/* line 18, molecules/_breadcrumb.scss */
-.breadcrumb > li {
+/* line 17, molecules/_breadcrumb.scss */
+.breadcrumb li {
   display: inline-block;
   text-shadow: 0 1px 0 white;
   padding-bottom: 5px;
@@ -1245,15 +1255,15 @@ ul.column--quad {
   /* IE7 inline-block hack */
   *zoom: 1;
 }
-/* line 23, molecules/_breadcrumb.scss */
-.breadcrumb > li > .divider {
+/* line 22, molecules/_breadcrumb.scss */
+.breadcrumb li .divider {
   color: #ccc;
 }
-/* line 27, molecules/_breadcrumb.scss */
+/* line 26, molecules/_breadcrumb.scss */
 .breadcrumb .active {
   color: #999999;
 }
-/* line 31, molecules/_breadcrumb.scss */
+/* line 30, molecules/_breadcrumb.scss */
 .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
@@ -1318,7 +1328,7 @@ input[type="submit"].button::-moz-focus-inner {
 /* line 2, molecules/button/_button--large.scss */
 .button--large {
   padding: 11px 19px;
-  font-size: 18.75px;
+  font-size: 20px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -1419,7 +1429,7 @@ input[type="submit"].button::-moz-focus-inner {
 }
 /* line 12, molecules/_header.scss */
 .container__header .text--strong {
-  font-size: 18.75px;
+  font-size: 20px;
 }
 /* line 16, molecules/_header.scss */
 .container__header .organization {
@@ -1459,13 +1469,6 @@ input[type="submit"].button::-moz-focus-inner {
   text-decoration: none;
 }
 
-@media (max-width: 766px) {
-  /* line 59, molecules/_header.scss */
-  .js-enabled .container__header {
-    position: fixed;
-    top: 0;
-  }
-}
 /* line 4, molecules/_media.scss */
 .media {
   overflow: hidden;
@@ -1554,7 +1557,7 @@ input[type="submit"].button::-moz-focus-inner {
 /* line 71, molecules/_navbar.scss */
 .navbar__logo img {
   margin-right: 6px;
-  margin-right: 0.4rem;
+  margin-right: 0.375rem;
 }
 
 /* line 76, molecules/_navbar.scss */
@@ -1605,47 +1608,33 @@ input[type="submit"].button::-moz-focus-inner {
   position: static;
 }
 
-/* line 116, molecules/_navbar.scss */
+/* line 117, molecules/_navbar.scss */
+.navbar__handlebar #button {
+  display: none;
+}
+
+/* line 122, molecules/_navbar.scss */
 .navbar {
-  border-bottom: 0 none;
-  border: 1px solid #002d5d;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
   /* Customize the navbar links to be fill the entire space of the .navbar */
 }
-/* line 122, molecules/_navbar.scss */
+/* line 124, molecules/_navbar.scss */
 .navbar ul {
   display: table;
 }
-/* line 125, molecules/_navbar.scss */
+/* line 127, molecules/_navbar.scss */
 .navbar ul li {
   display: table-cell;
   width: 1%;
 }
-/* line 129, molecules/_navbar.scss */
+/* line 131, molecules/_navbar.scss */
 .navbar ul li a {
   text-align: center;
-  padding: 5px 15px 5px;
   border: 0 none;
   font-weight: normal;
-}
-/* line 135, molecules/_navbar.scss */
-.navbar ul li:first-child a {
-  border-left: 0;
-  -webkit-border-radius: 4px 0 0 4px;
-  -moz-border-radius: 4px 0 0 4px;
-  border-radius: 4px 0 0 4px;
-}
-/* line 139, molecules/_navbar.scss */
-.navbar ul li:last-child a {
-  border-right: 0;
-  -webkit-border-radius: 0 4px 4px 0;
-  -moz-border-radius: 0 4px 4px 0;
-  border-radius: 0 4px 4px 0;
+  padding: 10px 15px;
 }
 
-/* line 146, molecules/_navbar.scss */
+/* line 140, molecules/_navbar.scss */
 .js-enabled .navbar #navigation {
   margin: 0;
   padding: 0;
@@ -1656,6 +1645,34 @@ input[type="submit"].button::-moz-focus-inner {
   position: static;
 }
 
+/* line 146, molecules/_navbar.scss */
+.navbar {
+  border-bottom: 0 none;
+  border: 1px solid #002d5d;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  /* Customize the navbar links to be fill the entire space of the .navbar */
+}
+/* line 152, molecules/_navbar.scss */
+.navbar ul li a {
+  padding: 5px 15px;
+}
+/* line 155, molecules/_navbar.scss */
+.navbar ul li:first-child a {
+  border-left: 0;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+/* line 159, molecules/_navbar.scss */
+.navbar ul li:last-child a {
+  border-right: 0;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+}
+
 /* line 8, molecules/nav/_nav.scss */
 .nav {
   margin-left: 0;
@@ -1663,13 +1680,13 @@ input[type="submit"].button::-moz-focus-inner {
   list-style: none;
 }
 /* line 14, molecules/nav/_nav.scss */
-.nav > li > a {
+.nav li a {
   display: block;
   text-decoration: none;
 }
 /* line 20, molecules/nav/_nav.scss */
-.nav > li > a:hover,
-.nav > li > a:focus {
+.nav li a:hover,
+.nav li a:focus {
   text-decoration: none;
   background-color: #ebf3f4;
 }
@@ -1686,36 +1703,36 @@ input[type="submit"].button::-moz-focus-inner {
   *zoom: 1;
 }
 /* line 39, molecules/nav/_nav.scss */
-.nav--list > li > a,
-.nav--list > li > a,
-.nav--pills > li > a,
-.nav--pills > li > a {
+.nav--list li a,
+.nav--list li a,
+.nav--pills li a,
+.nav--pills li a {
   padding-right: 12px;
   padding-left: 12px;
   margin-right: 2px;
 }
 
 /* line 5, molecules/nav/_nav--list.scss */
-.nav--list > li > a {
+.nav--list li a {
   padding-top: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #eeeeee;
 }
 /* line 11, molecules/nav/_nav--list.scss */
-.nav--list > li:last-child > a {
+.nav--list li:last-child a {
   border-bottom: 0 none;
 }
 /* line 18, molecules/nav/_nav--list.scss */
-.nav--list > .active > a,
-.nav--list > .active > a:hover,
-.nav--list > .active > a:focus {
+.nav--list .active a,
+.nav--list .active a:hover,
+.nav--list .active a:focus {
   color: #505050;
   background-color: #ebf3f4;
   font-weight: bold;
 }
 
 /* line 6, molecules/nav/_nav--pills.scss */
-.nav--pills > li > a {
+.nav--pills li a {
   padding-top: 8px;
   padding-bottom: 8px;
   margin-top: 2px;
@@ -1725,9 +1742,9 @@ input[type="submit"].button::-moz-focus-inner {
   border-radius: 5px;
 }
 /* line 17, molecules/nav/_nav--pills.scss */
-.nav--pills > .active > a,
-.nav--pills > .active > a:hover,
-.nav--pills > .active > a:focus {
+.nav--pills .active a,
+.nav--pills .active a:hover,
+.nav--pills .active a:focus {
   color: white;
   background-color: #004d9f;
 }
@@ -2019,7 +2036,7 @@ a.article__thumbnail:focus {
 
 /* line 14, molecules/_typography.scss */
 .text--small {
-  font-size: 12.75px;
+  font-size: 13.6px;
 }
 
 /* line 19, molecules/_typography.scss */
@@ -2607,10 +2624,10 @@ img.mfp-img {
   /* line 38, utilities/_navicon.scss */
   .lines {
     display: inline-block;
-    width: 1em;
-    height: 0.14286em;
+    width: 0.9375em;
+    height: 0.13393em;
     background: #004d9f;
-    border-radius: 0.07143em;
+    border-radius: 0.06696em;
     transition: 0.4s;
     position: relative;
     top: -4px;
@@ -2618,24 +2635,24 @@ img.mfp-img {
   /* line 43, utilities/_navicon.scss */
   .lines:before, .lines:after {
     display: inline-block;
-    width: 1em;
-    height: 0.14286em;
+    width: 0.9375em;
+    height: 0.13393em;
     background: #004d9f;
-    border-radius: 0.07143em;
+    border-radius: 0.06696em;
     transition: 0.4s;
     position: absolute;
     left: 0;
     content: '';
-    -webkit-transform-origin: 0.07143em center;
-    transform-origin: 0.07143em center;
+    -webkit-transform-origin: 0.06696em center;
+    transform-origin: 0.06696em center;
   }
   /* line 51, utilities/_navicon.scss */
   .lines:before {
-    top: 0.28571em;
+    top: 0.26786em;
   }
   /* line 54, utilities/_navicon.scss */
   .lines:after {
-    top: -0.28571em;
+    top: -0.26786em;
   }
 
   /* line 63, utilities/_navicon.scss */

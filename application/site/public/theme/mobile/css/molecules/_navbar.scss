@@ -112,6 +112,36 @@
     }
 }
 
+@include respond-min(600px) {
+  .navbar__handlebar {
+    #button {
+      display: none;
+    }
+  }
+
+  .navbar {
+    /* Customize the navbar links to be fill the entire space of the .navbar */
+    ul {
+      display: table;
+    }
+    ul li {
+      display: table-cell;
+      width: 1%;
+    }
+    ul li a {
+      text-align: center;
+      border: 0 none;
+      font-weight: normal;
+      padding: 10px 15px;
+    }
+  }
+
+  // Always show the navbar on non-mobile screen
+  .js-enabled .navbar #navigation {
+    @include visually-shown;
+  }
+}
+
 @include respond-min($navbarCollapseWidth) {
     .navbar {
         border-bottom: 0 none;
@@ -119,18 +149,8 @@
         @include border-radius($baseBorderRadius);
 
         /* Customize the navbar links to be fill the entire space of the .navbar */
-        ul {
-            display: table;
-        }
-        ul li {
-            display: table-cell;
-            width: 1%;
-        }
         ul li a {
-            text-align: center;
-            padding: 5px 15px 5px;
-            border: 0 none;
-            font-weight: normal;
+            padding: 5px 15px;
         }
         ul li:first-child a {
             border-left: 0;
@@ -140,10 +160,5 @@
             border-right: 0;
             @include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
         }
-    }
-
-    // Always show the navbar on non-small screen
-    .js-enabled .navbar #navigation {
-        @include visually-shown;
     }
 }
