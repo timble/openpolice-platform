@@ -11,13 +11,13 @@
     list-style: none;
 
     // Make links block level
-    > li > a {
+    li a {
         display: block;
         text-decoration: none;
     }
 
-    > li > a:hover,
-    > li > a:focus {
+    li a:hover,
+    li a:focus {
         text-decoration: none;
         background-color: $cyanLighter;
     }
@@ -35,8 +35,8 @@
 .nav--pills {
     @include clearfix();
 
-    > li > a,
-    > li > a {
+    li a,
+    li a {
         padding-right: 12px;
         padding-left: 12px;
         margin-right: 2px;
