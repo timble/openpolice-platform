@@ -55,8 +55,8 @@ $linkColorHover: darken($linkColor, 15%) !default;
 $iconSpritePath: "../img/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
 
-$fontSizeLarge: $base-font-size * 1.25 !default;
-$fontSizeSmall: $base-font-size * 0.85 !default;
+$fontSizeLarge: 1.25em !default;
+$fontSizeSmall: 0.85em !default;
 
 $headingsFontFamily: inherit !default;
 // empty to use BS default, $baseFontFamily

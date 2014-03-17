@@ -278,7 +278,7 @@ textarea {
   padding-bottom: 13px;
   text-align: center;
   border-top: 1px solid gainsboro;
-  font-size: 13.6px;
+  font-size: 0.85em;
 }
 /* line 52, organisms/_containers.scss */
 .container__copyright a {
@@ -894,7 +894,7 @@ p {
 
 /* line 15, atoms/_type.scss */
 small {
-  font-size: 13.6px;
+  font-size: 0.85em;
 }
 
 /* line 19, atoms/_type.scss */
@@ -1189,24 +1189,19 @@ ul.column--quad {
 .article__header h1 {
   margin-bottom: 0;
 }
-/* line 17, molecules/_article.scss */
-.article__header .timestamp {
-  padding-top: 4px;
-  font-size: 0.85em;
-}
 
-/* line 24, molecules/_article.scss */
+/* line 18, molecules/_article.scss */
 .article__introtext {
   font-weight: bold;
   margin-bottom: 1.5em;
 }
 
-/* line 29, molecules/_article.scss */
+/* line 23, molecules/_article.scss */
 .article__thumbnail {
   margin-bottom: 0.75em;
 }
 
-/* line 35, molecules/_article.scss */
+/* line 29, molecules/_article.scss */
 .article__thumbnail {
   float: right;
   width: 40%;
@@ -1328,7 +1323,7 @@ input[type="submit"].button::-moz-focus-inner {
 /* line 2, molecules/button/_button--large.scss */
 .button--large {
   padding: 11px 19px;
-  font-size: 20px;
+  font-size: 1.25em;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -1429,7 +1424,7 @@ input[type="submit"].button::-moz-focus-inner {
 }
 /* line 12, molecules/_header.scss */
 .container__header .text--strong {
-  font-size: 20px;
+  font-size: 1.25em;
 }
 /* line 16, molecules/_header.scss */
 .container__header .organization {
@@ -2036,11 +2031,11 @@ a.article__thumbnail:focus {
 
 /* line 14, molecules/_typography.scss */
 .text--small {
-  font-size: 13.6px;
+  font-size: 0.85em;
 }
 
 /* line 19, molecules/_typography.scss */
-.muted, .article__header .timestamp, .text--small {
+.muted, .text--small {
   color: #505050;
 }
 

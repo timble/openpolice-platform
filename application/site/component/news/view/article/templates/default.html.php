@@ -35,7 +35,7 @@
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
         <h1 itemprop="name"><?= $article->title ?></h1>
-        <time class="timestamp" itemprop="datePublished" datetime="<?= $published_on ?>">
+        <time class="text--small" itemprop="datePublished" datetime="<?= $published_on ?>">
             <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
