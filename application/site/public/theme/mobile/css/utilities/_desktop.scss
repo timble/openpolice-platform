@@ -1,3 +1,14 @@
+.contact__inner {
+  .well {
+    padding-bottom: 0;
+  }
+
+  .text--strong {
+    display: block;
+    margin-bottom: $baseLineHeight / 2;
+  }
+}
+
 @include respond-min($navbarCollapseWidth) {
     #wrap {
         border-bottom: 1px solid darken($grayLighter, 7%);
@@ -46,13 +57,7 @@
 
             .well {
                 margin-bottom: 10px;
-                padding-bottom: 0;
             }
-
-          .text--small {
-            display: block;
-            margin-bottom: $gutter-width / 3;
-          }
         }
     }
 

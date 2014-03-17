@@ -49,17 +49,17 @@
             <h3><?= translate('Contact us') ?></h3>
             <div  class="well well--small">
                 <div>
-                    <span class="text--strong"><a tabindex="-1" href="tel:101">101</a></span><br />
-                    <span class="text--small"><?= translate('Urgent police assistance') ?></span>
+                    <span><?= translate('Urgent police assistance') ?></span><br />
+                    <span class="text--strong"><a tabindex="-1" href="tel:101">101</a></span>
                 </div>
                 <div>
-                    <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_emergency) ?>"><?= $zone->phone_emergency ?></a></span><br />
-                    <span class="text--small"><?= translate('no emergency') ?></span>
+                    <span><?= translate('No emergency') ?></span><br />
+                    <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_emergency) ?>"><?= $zone->phone_emergency ?></a></span>
                 </div>
                 <? if($zone->phone_information) : ?>
                     <div>
-                        <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_information) ?>"><?= $zone->phone_information ?></a></span><br />
-                        <span class="text--small"><?= translate('general information') ?></span>
+                        <span><?= translate('General information') ?></span><br />
+                        <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_information) ?>"><?= $zone->phone_information ?></a></span>
                     </div>
                 <? endif ?>
             </div>
