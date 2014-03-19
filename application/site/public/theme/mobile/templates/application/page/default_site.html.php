@@ -90,14 +90,14 @@
         </div>
     </ktml:modules>
 
-    <div class="container container__content <?= $extension ?>">
+    <div class="container container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
         <ktml:modules position="left">
             <aside class="sidebar">
                 <ktml:modules:content>
             </aside>
         </ktml:modules>
 
-        <div class="<?= ($extension == 'police' OR $extension == 'files') ? 'homepage' : 'component' ?>">
+        <div<?= ($extension == 'police' OR $extension == 'files') ? '' : ' class="component"' ?>>
             <ktml:content>
         </div>
     </div>

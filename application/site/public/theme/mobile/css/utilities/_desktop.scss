@@ -48,7 +48,9 @@
     }
 
     .container__content {
-      &.police {
+      padding-top: floor($grid-padding * 1.5);
+
+      &.homepage {
         padding-left: $grid-padding;
         padding-right: $grid-padding;
       }
