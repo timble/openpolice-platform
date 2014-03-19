@@ -41,7 +41,7 @@
             </article>
         <? endforeach; ?>
         <div class="homepage__news">
-            <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
+            <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->exclude($article->id)->getRowset())) ?>
         </div>
     </div>
     <div class="homepage__contact">
