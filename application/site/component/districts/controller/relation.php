@@ -28,6 +28,7 @@ class DistrictsControllerRelation extends Library\ControllerModel
                         $url->query['option'] = 'com_districts';
                         $url->query['id'] = $district->getSlug();
                         unset($url->query['street']);
+                        unset($url->query['number']);
 
                         $this->getObject('application')->getRouter()->build($url);
 
