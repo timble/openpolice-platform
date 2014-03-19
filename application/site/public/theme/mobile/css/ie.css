@@ -226,18 +226,16 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 7, organisms/_containers.scss */
-.container__header .row-fluid .span3,
+/* line 5, organisms/_containers.scss */
 .container__header .slogan,
 .container__banner,
 .container__content .sidebar,
-.container__copyright .copyright,
 .is-hidden,
 .hidden-phone {
   display: none;
 }
 
-/* line 11, organisms/_containers.scss */
+/* line 9, organisms/_containers.scss */
 .container__header {
   margin-bottom: 0;
   padding-left: 0;
@@ -245,21 +243,21 @@ textarea {
   width: 100%;
 }
 
-/* line 18, organisms/_containers.scss */
+/* line 16, organisms/_containers.scss */
 .container__content {
   padding-top: 25px;
   padding-bottom: 25px;
   padding-left: 20px;
   padding-right: 20px;
 }
-/* line 24, organisms/_containers.scss */
+/* line 22, organisms/_containers.scss */
 .container__content.homepage {
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
 }
 
-/* line 31, organisms/_containers.scss */
+/* line 29, organisms/_containers.scss */
 .container__copyright {
   padding-top: 13px;
   padding-bottom: 13px;
@@ -267,12 +265,12 @@ textarea {
   border-top: 1px solid gainsboro;
   font-size: 0.85em;
 }
-/* line 38, organisms/_containers.scss */
+/* line 36, organisms/_containers.scss */
 .container__copyright a {
   text-decoration: none;
 }
 
-/* line 43, organisms/_containers.scss */
+/* line 41, organisms/_containers.scss */
 .container__footer {
   padding-left: 20px;
   padding-right: 20px;
@@ -281,20 +279,20 @@ textarea {
   border-top: 1px solid gainsboro;
   border-bottom: 1px solid gainsboro;
 }
-/* line 52, organisms/_containers.scss */
+/* line 50, organisms/_containers.scss */
 .container__footer .container__quicklinks div {
   margin-bottom: 25px;
 }
-/* line 57, organisms/_containers.scss */
+/* line 55, organisms/_containers.scss */
 .container__footer .footer__districts {
   margin-bottom: 25px;
 }
 
-/* line 63, organisms/_containers.scss */
+/* line 61, organisms/_containers.scss */
 .container__footer_menu ul {
   margin: 0;
 }
-/* line 66, organisms/_containers.scss */
+/* line 64, organisms/_containers.scss */
 .container__footer_menu ul li a {
   padding-left: 20px;
   padding-right: 20px;
@@ -2760,17 +2758,17 @@ img.mfp-img {
   }
 
   /* line 10, utilities/_print.scss */
-  .container__header .row-fluid .span3 {
+  .container__header .organization {
     display: block;
     padding-left: 20px;
     padding-top: 20px;
   }
   /* line 15, utilities/_print.scss */
-  .container__header .row-fluid .span3 .organization a:after {
+  .container__header .organization a:after {
     content: "";
   }
   /* line 19, utilities/_print.scss */
-  .container__header .row-fluid .span3 .organization__name {
+  .container__header .organization .organization__name {
     padding-left: 50px;
   }
 
