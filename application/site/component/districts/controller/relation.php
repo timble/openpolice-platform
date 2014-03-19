@@ -39,15 +39,4 @@ class DistrictsControllerRelation extends Library\ControllerModel
 
         return $relations;
     }
-
-    public function getRequest()
-    {
-        $request = parent::getRequest();
-
-        if(!$request->query->street) {
-            $request->query->view = 'search';
-        }
-
-        return $request;
-    }
 }
