@@ -1746,8 +1746,14 @@ input[type="submit"].button::-moz-focus-inner {
     position: static;
   }
 }
+@media screen and (orientation: landscape), screen and (orientation: portrait) {
+  /* line 147, molecules/_navbar.scss */
+  .navbar__handle:hover {
+    text-decoration: none;
+  }
+}
 @media screen and (min-width: 767px) {
-  /* line 146, molecules/_navbar.scss */
+  /* line 153, molecules/_navbar.scss */
   .navbar {
     border-bottom: 0 none;
     border: 1px solid #002d5d;
@@ -1756,18 +1762,18 @@ input[type="submit"].button::-moz-focus-inner {
     border-radius: 4px;
     /* Customize the navbar links to be fill the entire space of the .navbar */
   }
-  /* line 152, molecules/_navbar.scss */
+  /* line 159, molecules/_navbar.scss */
   .navbar ul li a {
     padding: 5px 15px;
   }
-  /* line 155, molecules/_navbar.scss */
+  /* line 162, molecules/_navbar.scss */
   .navbar ul li:first-child a {
     border-left: 0;
     -webkit-border-radius: 4px 0 0 4px;
     -moz-border-radius: 4px 0 0 4px;
     border-radius: 4px 0 0 4px;
   }
-  /* line 159, molecules/_navbar.scss */
+  /* line 166, molecules/_navbar.scss */
   .navbar ul li:last-child a {
     border-right: 0;
     -webkit-border-radius: 0 4px 4px 0;

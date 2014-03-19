@@ -142,6 +142,13 @@
   }
 }
 
+// Prevent underline on touch devices
+@media screen and (orientation:landscape), screen and (orientation:portrait) {
+  .navbar__handle:hover {
+    text-decoration: none;
+  }
+}
+
 @include respond-min($navbarCollapseWidth) {
     .navbar {
         border-bottom: 0 none;
