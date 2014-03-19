@@ -80,11 +80,11 @@
 
 .navbar__handle {
   float: right;
-  padding: 6px 12px;
-  color: $navbarBackground;
+  padding: 5px 12px;
+  color: $linkColor;
   text-decoration: none;
   text-align: center;
-  border: none;
+  border: 1px solid darken($blue, 10%);
   border-radius: 8px;
   background-color: #fff;
 

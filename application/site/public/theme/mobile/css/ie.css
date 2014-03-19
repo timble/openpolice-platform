@@ -1616,11 +1616,11 @@ input[type="submit"].button::-moz-focus-inner {
 /* line 81, molecules/_navbar.scss */
 .navbar__handle {
   float: right;
-  padding: 6px 12px;
-  color: #0054ae;
+  padding: 5px 12px;
+  color: #004d9f;
   text-decoration: none;
   text-align: center;
-  border: none;
+  border: 1px solid #00346c;
   border-radius: 8px;
   background-color: #fff;
 }
@@ -2677,7 +2677,7 @@ img.mfp-img {
     border-radius: 0.06696em;
     transition: 0.4s;
     position: relative;
-    top: -4px;
+    top: -5px;
   }
   /* line 43, utilities/_navicon.scss */
   .lines:before, .lines:after {

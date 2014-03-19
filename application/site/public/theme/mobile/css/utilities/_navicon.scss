@@ -38,7 +38,7 @@
   .lines {
     @include line;
     position: relative;
-    top: -4px;
+    top: -5px;
 
     &:before, &:after {
       @include line;
