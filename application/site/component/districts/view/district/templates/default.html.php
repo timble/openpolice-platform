@@ -17,9 +17,11 @@
 <? $officers = object('com:districts.model.districts_officers')->district($district->id)->getRowset(); ?>
 
 <? if(count($officers)) : ?>
-<div class="districts__officer">
+<div class="districts__officers">
     <? foreach ($officers as $officer) : ?>
-        <?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
+        <div class="districts__officer">
+            <?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
+        </div>
     <? endforeach ?>
 </div>
 <? else : ?>
