@@ -16,6 +16,7 @@
     </fieldset>
 <? endif ?>
 
+<? if($state->table != 'questions') : ?>
 <? if($category->isAttachable()) : ?>
     <fieldset>
         <legend><?= translate('Image') ?></legend>
@@ -24,4 +25,5 @@
         <? endif ?>
         <?= import('com:attachments.view.attachments.upload.html') ?>
     </fieldset>
+<? endif ?>
 <? endif ?>

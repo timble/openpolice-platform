@@ -8,7 +8,9 @@
  */
 
 namespace Nooku\Component\Uploads;
+
 use Nooku\Library;
+use Sunra\PhpSimple\HtmlDomParser;
 
 class DatabaseRowUpload extends Library\DatabaseRowTable
 {
@@ -166,13 +168,16 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 {
                     $row->title = $item['title'];
                     $row->slug = $item['alias'];
-                    $row->introtext = $item['introtext'];
-                    $row->fulltext = $item['fulltext'];
+                    $row->introtext = stripslashes($item['introtext']);
+                    $row->fulltext = stripslashes($item['fulltext']);
                     $row->created_on = $item['created'];
                     $row->created_by = '1';
                     $row->modified_on = $item['modified'];
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
+
+                    $this->_clean($row);
+
                     $row->save();
                 }
             }
@@ -207,7 +212,152 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row->ordering = '0';
                 $row->save();
             }
-
         }
+    }
+
+    protected function _clean(Library\DatabaseRowAbstract $row)
+    {
+        $row->introtext = preg_replace("/<em>/", "", $row->introtext);
+        $row->introtext = preg_replace("/<\/em>/", "", $row->introtext);
+
+        foreach(array('introtext', 'fulltext') as $property)
+        {
+            $html = trim($row->{$property});
+            $html = stripslashes($html);
+
+            if(empty($html)) {
+                continue;
+            }
+
+            $config = array(
+                'indent'         => true,
+                'output-xhtml'   => true,
+                'wrap'           => 200
+            );
+
+            $tidy = new \tidy;
+            $tidy->parseString($html, $config, 'utf8');
+            $tidy->cleanRepair();
+
+            $html = (string) $tidy;
+
+            // Deal with DOMDocument breaking UTF-8 characters
+            // See: http://stackoverflow.com/questions/11309194/php-domdocument-failing-to-handle-utf-8-characters
+            $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
+
+            $dom = new \DOMDocument();
+            $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+
+            $this->_cleanAttributes($dom);
+
+            $attachment = $this->_extractImages($row, $dom);
+            if($property == 'introtext' && $attachment) {
+                $row->attachments_attachment_id = $attachment;
+            }
+
+            $row->{$property} = $dom->saveHTML();
+        }
+    }
+
+    protected function _extractImages(Library\DatabaseRowAbstract $row, \DOMDocument $dom)
+    {
+        $root   = $this->getObject('application')->getCfg('old_codebase_root');
+        if(empty($root)) {
+            $root = '/var/www/police.dev';
+        }
+
+        $images = $dom->getElementsByTagName('img');
+
+        $attachment = false;
+        foreach($images as $image)
+        {
+            $link = $image->attributes->getNamedItem("src")->value;
+            $link = urldecode($link);
+
+            if(substr($link, 0, strlen('sites/')) == 'sites/')
+            {
+                $fullpath = $root . '/' . $link;
+
+                $return = $this->_saveAttachment($row, $fullpath);
+
+                if(!$attachment) {
+                    $attachment = $return;
+                }
+
+                $image->parentNode->removeChild($image);
+            }
+        }
+
+        return $attachment;
+    }
+
+    protected function _cleanAttributes(\DOMDocument $dom)
+    {
+        foreach($dom->getElementsByTagName("div") as $div)
+        {
+            $div->removeAttribute('style');
+            $div->removeAttribute('class');
+        }
+
+        foreach($dom->getElementsByTagName('p') as $paragraph)
+        {
+            $paragraph->removeAttribute('style');
+            $paragraph->removeAttribute('class');
+        }
+    }
+
+    protected function _saveAttachment(Library\DatabaseRowAbstract $row, $filepath)
+    {
+        if(!file_exists($filepath)) {
+            return false;
+        }
+
+        $filename = basename($filepath);
+
+        $request         = $this->getObject('lib:controller.request', array('query' => array('container' => 'attachments-attachments')));
+        $file_controller = $this->getObject('com:files.controller.file', array('request' => $request));
+        $attachment_controller = $this->getObject('com:attachments.controller.attachment', array('request' => clone $request));
+        
+        try
+        {
+            $extension  = pathinfo($filename, PATHINFO_EXTENSION);
+            $name       = md5(time().rand()).'.'.$extension;
+            $hash       = md5_file($filepath);
+
+            // @TODO don't suppress errors
+            // DatabaseRowUrl in com:files will get called and try to open the file through fsockopen.
+            // Although fsockopen is suppressed using the @-notation, the error handler tries to throw it, resulting in a blank page.
+            // Since our files are not uploaded files (See: CommandValidatorFile), this error can be dismissed and should be ignored.
+            $file_controller->add(array(
+                'file' => $filepath,
+                'name' => $name,
+                'parent' => ''
+            ));
+
+            $entity = $attachment_controller->add(array(
+                'name' => $filename,
+                'path' => $name,
+                'container' => 'attachments-attachments',
+                'hash' => $hash,
+                'row' => $row->id,
+                'table' => 'news'
+            ));
+
+            $model  = $file_controller->getModel();
+            $container = $model->getState()->container;
+
+            $model->reset(false)->getState()->set('container', $container);
+            $attachment_controller->getModel()->reset(false);
+
+            $file_controller->getRequest()->data->clear();
+            $attachment_controller->getRequest()->data->clear();
+
+            return $entity->id;
+        }
+        catch (Library\ControllerException $e) {
+            return false;
+        }
+
+        return false;
     }
 }
