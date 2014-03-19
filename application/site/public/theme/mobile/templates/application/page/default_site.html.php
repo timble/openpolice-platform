@@ -71,7 +71,7 @@
             </div>
             <div class="footer__districts">
                 <h3><?= translate('Your district officer') ?></h3>
-                <p>Ken je de verantwoordelijke wijkinspecteur in je buurt? Hij of zij is je eerste contactpersoon bij de politie.</p>
+                <p><?= translate('You know the responsible district officer in your area? He or she is your first contact with the police.') ?></p>
                 <a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
             </div>
             <?php endif; ?>
