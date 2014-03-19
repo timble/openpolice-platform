@@ -285,12 +285,16 @@ textarea {
 .container__footer .container__quicklinks div {
   margin-bottom: 25px;
 }
+/* line 57, organisms/_containers.scss */
+.container__footer .footer__districts {
+  margin-bottom: 25px;
+}
 
-/* line 59, organisms/_containers.scss */
+/* line 63, organisms/_containers.scss */
 .container__footer_menu ul {
   margin: 0;
 }
-/* line 62, organisms/_containers.scss */
+/* line 66, organisms/_containers.scss */
 .container__footer_menu ul li a {
   padding-left: 20px;
   padding-right: 20px;
