@@ -1,5 +1,6 @@
 <?
     $zone = object('com:police.model.zone')->id($site)->getRow();
+    $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
 ?>
 
 <script>
@@ -97,9 +98,13 @@
             </aside>
         </ktml:modules>
 
-        <div<?= ($extension == 'police' OR $extension == 'files') ? '' : ' class="component"' ?>>
+        <? if(!$singleColumn) : ?>
+        <div class="component">
+        <? endif ?>
             <ktml:content>
+        <? if(!$singleColumn) : ?>
         </div>
+        <? endif ?>
     </div>
 
     <div class="container container__footer">
