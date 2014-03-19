@@ -31,7 +31,7 @@
     .container__header,
     .container__banner,
     .container__breadcrumb,
-    .container__content,
+    .container__content .homepage__sticky,
     .container__footer {
         padding-left: 0px;
         padding-right: 0px;
@@ -43,30 +43,17 @@
         }
     }
 
-    .container__content.police {
-        .contact__inner {
-            border-left: 1px solid $grayLighter;
-
-            padding-left: 18px;
-            margin-top: 20px;
-            @include border-radius(5px);
-
-            ul {
-                margin-bottom: 0;
-            }
-
-            .well {
-                margin-bottom: 10px;
-            }
-        }
-    }
-
     .container__header {
         width: auto;
     }
 
     .container__content {
-        .sidebar {
+      &.police {
+        padding-left: $grid-padding;
+        padding-right: $grid-padding;
+      }
+
+      .sidebar {
             margin-top: 20px;
 
             .sidebar__element {
@@ -77,6 +64,53 @@
 
     .container__quicklinks {
         @extend .clearfix;
+    }
+
+    .homepage__sticky {
+      padding-bottom: 0;
+    }
+
+    .homepage__contact {
+      padding: 0;
+      margin-bottom: $grid-padding;
+      background-color: transparent;
+      border-top: 0px none;
+      color: $textColor;
+
+      a,
+      a:hover {
+        color: $linkColor;
+      }
+
+      .nav--list li a {
+        border-bottom: 1px solid $grayLighter;
+
+        &:hover {
+          background-color: $cyanLighter;
+          color: $linkColor;
+        }
+      }
+
+      .muted {
+        color: $gray;
+      }
+
+      .contact__inner {
+        border-left: 1px solid $grayLighter;
+
+        padding-left: 18px;
+        margin-top: 20px;
+
+        ul {
+          margin-bottom: 0;
+        }
+
+        .well {
+          border: 1px solid darken($wellBackground, 5%);
+          background-color: $wellBackground;
+          margin-bottom: 10px;
+        }
+      }
     }
 
     .quicklink__item_1,

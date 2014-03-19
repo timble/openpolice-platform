@@ -238,12 +238,6 @@ textarea {
 }
 
 /* line 11, organisms/_containers.scss */
-.container__content {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* line 16, organisms/_containers.scss */
 .container__header {
   margin-bottom: 0;
   padding-left: 0;
@@ -251,28 +245,21 @@ textarea {
   width: 100%;
 }
 
-/* line 23, organisms/_containers.scss */
+/* line 18, organisms/_containers.scss */
 .container__content {
   padding-top: 25px;
   padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-/* line 28, organisms/_containers.scss */
-.container__content.police .contact__inner {
-  margin-left: 0;
-  border: 0 none;
-  padding: 0;
-}
-/* line 33, organisms/_containers.scss */
-.container__content.police .contact__inner a {
-  text-decoration: none;
-}
-/* line 38, organisms/_containers.scss */
-.container__content.police article {
-  border: 0 none !important;
-  padding-bottom: 0 !important;
+/* line 24, organisms/_containers.scss */
+.container__content.police {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
 }
 
-/* line 45, organisms/_containers.scss */
+/* line 31, organisms/_containers.scss */
 .container__copyright {
   padding-top: 13px;
   padding-bottom: 13px;
@@ -280,12 +267,12 @@ textarea {
   border-top: 1px solid gainsboro;
   font-size: 0.85em;
 }
-/* line 52, organisms/_containers.scss */
+/* line 38, organisms/_containers.scss */
 .container__copyright a {
   text-decoration: none;
 }
 
-/* line 57, organisms/_containers.scss */
+/* line 43, organisms/_containers.scss */
 .container__footer {
   padding-left: 20px;
   padding-right: 20px;
@@ -294,20 +281,20 @@ textarea {
   border-top: 1px solid gainsboro;
   border-bottom: 1px solid gainsboro;
 }
-/* line 66, organisms/_containers.scss */
+/* line 52, organisms/_containers.scss */
 .container__footer .container__quicklinks div {
   margin-bottom: 25px;
 }
-/* line 71, organisms/_containers.scss */
+/* line 57, organisms/_containers.scss */
 .container__footer .button {
   float: right;
 }
 
-/* line 77, organisms/_containers.scss */
+/* line 63, organisms/_containers.scss */
 .container__footer_menu ul {
   margin: 0;
 }
-/* line 80, organisms/_containers.scss */
+/* line 66, organisms/_containers.scss */
 .container__footer_menu ul li a {
   padding-left: 20px;
   padding-right: 20px;
@@ -363,32 +350,62 @@ textarea {
 }
 
 /* line 1, organisms/_homepage.scss */
+.homepage__sticky {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* line 6, organisms/_homepage.scss */
 .homepage__news {
   margin: 20px 0 0;
   border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
   padding: 20px 0 0;
-  margin-bottom: 0;
-  border-bottom: none;
-  padding-bottom: 0;
 }
-
-/* line 16, organisms/_homepage.scss */
+/* line 13, organisms/_homepage.scss */
 .homepage__news .thumbnail.media__object + .media__body, .homepage__news .media__object.article__thumbnail + .media__body {
   padding-left: 86px;
 }
 
-/* line 20, organisms/_homepage.scss */
-.homepage__sticky {
-  padding-bottom: 25px;
-  padding-bottom: 0;
+/* line 18, organisms/_homepage.scss */
+.homepage__contact {
+  background-color: #0054ae;
+  border-top: 1px solid gainsboro;
+  color: white;
+  padding: 20px;
 }
-/* line 26, organisms/_homepage.scss */
-.homepage__sticky .media {
-  margin-bottom: 0;
+/* line 24, organisms/_homepage.scss */
+.homepage__contact a {
+  color: white;
+  text-decoration: none;
 }
-
-/* line 32, organisms/_homepage.scss */
+/* line 28, organisms/_homepage.scss */
+.homepage__contact a:hover {
+  color: white;
+}
+/* line 33, organisms/_homepage.scss */
+.homepage__contact .contact__inner {
+  margin-left: 0;
+  border: 0 none;
+  padding: 0;
+}
+/* line 39, organisms/_homepage.scss */
+.homepage__contact .nav--list li a {
+  border-bottom: 1px solid #004d9f;
+}
+/* line 42, organisms/_homepage.scss */
+.homepage__contact .nav--list li a:hover {
+  background-color: #006bdc;
+}
+/* line 47, organisms/_homepage.scss */
+.homepage__contact .well {
+  background-color: #0061c8;
+  border: 1px solid #004d9f;
+}
+/* line 52, organisms/_homepage.scss */
+.homepage__contact .muted, .homepage__contact .text--small {
+  color: #e6e6e6;
+}
+/* line 56, organisms/_homepage.scss */
 .homepage__contact ul {
   margin-bottom: 0;
 }
@@ -443,7 +460,7 @@ textarea {
 .container__header,
 .container__banner,
 .container__breadcrumb,
-.container__content,
+.container__content .homepage__sticky,
 .container__footer {
   padding-left: 0px;
   padding-right: 0px;
@@ -454,39 +471,74 @@ textarea {
   text-align: center;
 }
 
-/* line 47, utilities/_desktop.scss */
-.container__content.police .contact__inner {
-  border-left: 1px solid #eeeeee;
-  padding-left: 18px;
-  margin-top: 20px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-/* line 54, utilities/_desktop.scss */
-.container__content.police .contact__inner ul {
-  margin-bottom: 0;
-}
-/* line 58, utilities/_desktop.scss */
-.container__content.police .contact__inner .well {
-  margin-bottom: 10px;
-}
-
-/* line 64, utilities/_desktop.scss */
+/* line 46, utilities/_desktop.scss */
 .container__header {
   width: auto;
 }
 
-/* line 69, utilities/_desktop.scss */
+/* line 51, utilities/_desktop.scss */
+.container__content.police {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+/* line 56, utilities/_desktop.scss */
 .container__content .sidebar {
   margin-top: 20px;
 }
-/* line 72, utilities/_desktop.scss */
+/* line 59, utilities/_desktop.scss */
 .container__content .sidebar .sidebar__element {
   margin-bottom: 40px;
 }
 
-/* line 84, utilities/_desktop.scss */
+/* line 69, utilities/_desktop.scss */
+.homepage__sticky {
+  padding-bottom: 0;
+}
+
+/* line 73, utilities/_desktop.scss */
+.homepage__contact {
+  padding: 0;
+  margin-bottom: 25px;
+  background-color: transparent;
+  border-top: 0px none;
+  color: #222222;
+}
+/* line 81, utilities/_desktop.scss */
+.homepage__contact a,
+.homepage__contact a:hover {
+  color: #004d9f;
+}
+/* line 85, utilities/_desktop.scss */
+.homepage__contact .nav--list li a {
+  border-bottom: 1px solid #eeeeee;
+}
+/* line 88, utilities/_desktop.scss */
+.homepage__contact .nav--list li a:hover {
+  background-color: #ebf3f4;
+  color: #004d9f;
+}
+/* line 94, utilities/_desktop.scss */
+.homepage__contact .muted, .homepage__contact .text--small {
+  color: #505050;
+}
+/* line 98, utilities/_desktop.scss */
+.homepage__contact .contact__inner {
+  border-left: 1px solid #eeeeee;
+  padding-left: 18px;
+  margin-top: 20px;
+}
+/* line 104, utilities/_desktop.scss */
+.homepage__contact .contact__inner ul {
+  margin-bottom: 0;
+}
+/* line 108, utilities/_desktop.scss */
+.homepage__contact .contact__inner .well {
+  border: 1px solid #ebebeb;
+  background-color: #f8f8f8;
+  margin-bottom: 10px;
+}
+
+/* line 118, utilities/_desktop.scss */
 .quicklink__item_1,
 .quicklink__item_2,
 .quicklink__item_3 {
@@ -497,7 +549,7 @@ textarea {
   border-bottom: none;
   padding-bottom: 0;
 }
-/* line 90, utilities/_desktop.scss */
+/* line 124, utilities/_desktop.scss */
 .quicklink__item_1.quicklink__item_3,
 .quicklink__item_2.quicklink__item_3,
 .quicklink__item_3.quicklink__item_3 {
@@ -506,37 +558,37 @@ textarea {
   padding-bottom: 0;
 }
 
-/* line 104, utilities/_desktop.scss */
+/* line 138, utilities/_desktop.scss */
 .container__footer {
   padding-top: 1.5em;
   background-color: #f8f8f8;
 }
-/* line 110, utilities/_desktop.scss */
+/* line 144, utilities/_desktop.scss */
 .container__footer .footer__news .media {
   margin-bottom: 0;
   margin-top: 12.5px;
 }
-/* line 116, utilities/_desktop.scss */
+/* line 150, utilities/_desktop.scss */
 .container__footer .footer__districts {
   margin-top: 25px;
   margin-top: 0;
 }
 
-/* line 125, utilities/_desktop.scss */
+/* line 159, utilities/_desktop.scss */
 .container.container__footer_menu {
   padding-left: 14px;
   padding-right: 14px;
 }
-/* line 129, utilities/_desktop.scss */
+/* line 163, utilities/_desktop.scss */
 .container.container__footer_menu ul {
   margin: 0;
 }
-/* line 133, utilities/_desktop.scss */
+/* line 167, utilities/_desktop.scss */
 .container.container__footer_menu ul li {
   display: block;
   float: left;
 }
-/* line 137, utilities/_desktop.scss */
+/* line 171, utilities/_desktop.scss */
 .container.container__footer_menu ul li a {
   border: none;
   font-size: 14px;
@@ -544,17 +596,17 @@ textarea {
   padding-bottom: 10px;
 }
 
-/* line 147, utilities/_desktop.scss */
+/* line 181, utilities/_desktop.scss */
 .container__copyright {
   text-align: left;
   border-top: 0 none;
 }
-/* line 150, utilities/_desktop.scss */
+/* line 184, utilities/_desktop.scss */
 .container__copyright .copyright--right {
   text-align: right;
 }
 
-/* line 157, utilities/_desktop.scss */
+/* line 191, utilities/_desktop.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -563,7 +615,7 @@ textarea {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 164, utilities/_desktop.scss */
+/* line 198, utilities/_desktop.scss */
 .container__header .organization {
   text-align: left;
 }
@@ -1468,7 +1520,7 @@ input[type="submit"].button::-moz-focus-inner {
 .media {
   overflow: hidden;
   *zoom: 1;
-  margin-bottom: 1em;
+  margin-bottom: 25px;
 }
 
 /* line 9, molecules/_media.scss */

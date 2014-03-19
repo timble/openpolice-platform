@@ -8,11 +8,6 @@
     display: none;
 }
 
-.container__content {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 .container__header {
     margin-bottom: 0;
     padding-left: 0;
@@ -23,22 +18,13 @@
 .container__content {
     padding-top: $grid-padding;
     padding-bottom: $grid-padding;
+    padding-left: 20px;
+    padding-right: 20px;
 
     &.police {
-        .contact__inner {
-            margin-left: 0;
-            border: 0 none;
-            padding: 0;
-
-            a {
-                text-decoration: none;
-            }
-        }
-
-        article {
-            border: 0 none !important;
-            padding-bottom: 0 !important;
-        }
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-bottom: 0px;
     }
 }
 
