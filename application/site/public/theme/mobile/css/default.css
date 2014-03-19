@@ -556,30 +556,25 @@ textarea {
     padding-top: 1.5em;
     background-color: #f8f8f8;
   }
-  /* line 146, utilities/_desktop.scss */
-  .container__footer .footer__news .media {
-    margin-bottom: 0;
-    margin-top: 12.5px;
-  }
-  /* line 152, utilities/_desktop.scss */
+  /* line 145, utilities/_desktop.scss */
   .container__footer .footer__districts {
     margin-top: 25px;
   }
-  /* line 161, utilities/_desktop.scss */
+  /* line 154, utilities/_desktop.scss */
   .container.container__footer_menu {
     padding-left: 14px;
     padding-right: 14px;
   }
-  /* line 165, utilities/_desktop.scss */
+  /* line 158, utilities/_desktop.scss */
   .container.container__footer_menu ul {
     margin: 0;
   }
-  /* line 169, utilities/_desktop.scss */
+  /* line 162, utilities/_desktop.scss */
   .container.container__footer_menu ul li {
     display: block;
     float: left;
   }
-  /* line 173, utilities/_desktop.scss */
+  /* line 166, utilities/_desktop.scss */
   .container.container__footer_menu ul li a {
     border: none;
     font-size: 14px;
@@ -587,12 +582,12 @@ textarea {
     padding-bottom: 10px;
   }
 
-  /* line 183, utilities/_desktop.scss */
+  /* line 176, utilities/_desktop.scss */
   .container__copyright {
     text-align: left;
     border-top: 0 none;
   }
-  /* line 186, utilities/_desktop.scss */
+  /* line 179, utilities/_desktop.scss */
   .container__copyright .copyright--right {
     text-align: right;
   }
@@ -619,14 +614,14 @@ textarea {
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
-  /* line 152, utilities/_desktop.scss */
+  /* line 145, utilities/_desktop.scss */
   .container__footer .footer__districts {
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 998px) {
-  /* line 193, utilities/_desktop.scss */
+  /* line 186, utilities/_desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -635,7 +630,7 @@ textarea {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 200, utilities/_desktop.scss */
+  /* line 193, utilities/_desktop.scss */
   .container__header .organization {
     text-align: left;
   }
