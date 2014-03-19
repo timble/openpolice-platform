@@ -298,6 +298,12 @@ textarea {
   padding-right: 20px;
 }
 
+/* line 2, organisms/_districts.scss */
+.districts__officers,
+.districts__officers .districts__officer {
+  margin-bottom: 25px;
+}
+
 /* line 1, organisms/_wrap.scss */
 #wrap {
   background-color: white;
@@ -848,7 +854,7 @@ you can use the generic selector below, but it's slower:
   }
 
   /* line 42, utilities/_grid.scss */
-  .districts__officer {
+  .districts__officers {
     width: 39.50617%;
     float: left;
     margin-right: 3.7037%;
