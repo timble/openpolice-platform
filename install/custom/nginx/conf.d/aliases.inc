@@ -798,8 +798,8 @@ location ~ "^/(5319|beloeil|leuze-en-hainaut)(?:/.*)?$" {
 	rewrite ^ http://www.policebeloeil-leuze.be/ permanent;
 }
 
-location ~ "^/(5324|mons|quevy)(?:/.*)?$" {
-	rewrite ^ http://www.policemonsquevy.be/ permanent;
+location ~ "^/(mons|quevy)(?:/.*)?$" {
+	rewrite ^ /5324 permanent;
 }
 
 location ~ "^/(5337|brunau|fleurus)(?:/.*)?$" {
