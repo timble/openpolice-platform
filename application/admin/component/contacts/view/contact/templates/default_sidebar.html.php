@@ -36,7 +36,7 @@
 
 <? if($contact->isAttachable()) : ?>
     <fieldset>
-        <legend><?= translate('Attachments'); ?></legend>
+        <legend><?= translate('Image'); ?></legend>
         <? if (!$contact->isNew()) : ?>
             <?= import('com:attachments.view.attachments.list.html', array('attachments' => $contact->getAttachments(), 'assignable' => false)) ?>
         <? endif ?>
