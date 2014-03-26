@@ -32,7 +32,7 @@
 <? endforeach; ?>
 </ul>
     <? else : ?>
-    <h2><?= translate('No results found') ?>.</h2>
+    <h2 onload="_gaq.push(['_trackEvent', 'Questions','No results found','<?= $state->searchword ?>']);"><?= translate('No results found') ?>.</h2>
     <? endif ?>
 <? else : ?>
    <ul class="nav nav--pills column--double">
