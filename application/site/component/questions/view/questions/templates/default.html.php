@@ -32,7 +32,7 @@
 <? endforeach; ?>
 </ul>
     <? else : ?>
-    <h2><?= translate('No results found') ?>.</h2>
+    <h2 id="no-results"><?= translate('No results found') ?>.</h2>
     <? endif ?>
 <? else : ?>
    <ul class="nav nav--pills column--double">
@@ -51,3 +51,9 @@
 <? endif ?>
 
 <?= import('default_contact.html') ?>
+
+<script data-inline>
+    if(document.getElementById('no-results')) {
+        _gaq.push(['_trackEvent', 'Questions','No results found','<?= $state->searchword ?>']);
+    }
+</script>
