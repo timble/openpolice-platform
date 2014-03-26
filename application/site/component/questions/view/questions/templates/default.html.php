@@ -21,6 +21,7 @@
 <? endif ?>
 
 <? if($state->category OR $state->searchword) : ?>
+<? if(count($questions)) : ?>
 <ul class="nav nav--pills nav--visited">
 <? foreach ($questions as $question) : ?>
     <li>
@@ -30,6 +31,9 @@
     </li>
 <? endforeach; ?>
 </ul>
+    <? else : ?>
+    <h2><?= translate('No results found') ?>.</h2>
+    <? endif ?>
 <? else : ?>
    <ul class="nav nav--pills column--double">
         <? foreach ($categories as $category): ?>
