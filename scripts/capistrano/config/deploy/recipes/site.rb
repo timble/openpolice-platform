@@ -5,18 +5,12 @@ namespace :site do
         db_user  = 'fedpol'
         db_pass  = ''
 
-        # Get the new zone number
+        # Get the necessary info from the user
         begin
             zone = Capistrano::CLI.ui.ask("New zone number [5xxx] : ")
 
             puts "Invalid zone number!".red if (zone !~ /^5[0-9]{3}$/ or zone.empty?)
         end while zone !~ /^5[0-9]{3}$/
-
-        # Get the language
-        begin
-            language = Capistrano::CLI.ui.ask("Language [default: nl-NL] : ")
-            language = 'nl-NL' if language.empty?
-        end while ! ['nl-NL', 'fr-FR'].include? language
 
         # Make sure zone doesn't exist
         path = "#{deploy_to}/shared/sites/#{zone}"
@@ -24,10 +18,23 @@ namespace :site do
             abort "Site #{zone} already exists!".red
         end
 
-        db_pass = Capistrano::CLI.password_prompt("Database password [user: #{db_user}]: ")
         if remote_database_exists?(zone, db_user, db_pass)
             abort "Database #{zone} already exists!".red
         end
+
+        begin
+            language = Capistrano::CLI.ui.ask("Language [default: nl-NL] : ")
+            language = 'nl-NL' if language.empty?
+        end while ! ['nl-NL', 'fr-FR'].include? language
+
+        template = Capistrano::CLI.ui.ask("Database template [default: 5388] : ")
+        template = '5388' if template.empty?
+
+        unless (remote_database_exists?(template, db_user, db_pass) or template != zone)
+            abort "Database #{template} doesn't exist!".red
+        end
+
+        db_pass = Capistrano::CLI.password_prompt("Database password [user: #{db_user}]: ")
 
         # Create the folder structure
         folders = ['config', 'files/attachments', 'files/downloads']
@@ -51,21 +58,13 @@ namespace :site do
         # Update the file permissions
         # @TODO Execute script as sudo using the deploy user
 
-        # Ask for the template zone
-        template = Capistrano::CLI.ui.ask("Database template [default: 5388] : ")
-        template = '5388' if template.empty?
-
-        unless (remote_database_exists?(template, db_user, db_pass) or template != zone)
-            abort "Database #{template} doesn't exist!".red
-        end
-
         # Copy the database
-        time =  Time.now.strftime('%Y%m%d%H%M%S%L')
+        time =  Time.now.strftime('%Y%m%d%H%M%S')
         dump = "/tmp/#{template}_#{time}.sql"
 
-        execute_mysql?("mysql -u\"#{db_user}\" -p -e \"CREATE DATABASE \\\`#{zone}\\\` CHARACTER SET utf8 COLLATE utf8_general_ci;\"", db_pass)
+        execute_mysql?("mysql -u\"#{db_user}\" -p -e \"CREATE DATABASE \\`#{zone}\\` CHARACTER SET utf8 COLLATE utf8_general_ci; FLUSH privileges;\"", db_pass)
         execute_mysql?("mysqldump -u\"#{db_user}\" -p #{template} > #{dump}", db_pass)
-        execute_mysql?("mysql -u\"#{db_user}\" -p #{zone} < #{dump}", db_pass)
+        execute_mysql?("mysql -u\"#{db_user}\" -p #{zone} -e \"source #{dump};\"", db_pass)
 
         run "rm -f #{dump}"
     end
@@ -102,7 +101,9 @@ end
 # Execute MySQL commands without passing the password in the process name
 def execute_mysql?(cmd, db_pass)
     run(cmd) do |ch, stream, out|
+        puts out.inspect
         if out =~ /^Enter password: /
+            puts db_pass.inspect
             ch.send_data "#{db_pass}\n"
         end
     end
