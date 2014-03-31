@@ -70,11 +70,30 @@ namespace :site do
         put sql, "/tmp/#{zone}.sql"
         execute_mysql?("mysql -u\"#{db_user}\" -p #{zone} -e \"source /tmp/#{zone}.sql;\"", db_pass)
         run "rm -f /tmp/#{zone}.sql"
+
+        # Output the Nginx directives and success message
+        puts "#{zone} has been created!".green
+        nginx = <<-NGINX.gsub(/^ {12}/, '')
+            ======== START =========
+            # #{title}
+            location  ~ "^/#{zone}(?:/.*)?$"  {
+                include /etc/nginx/conf.d/proxy.inc;
+                break;
+            }
+            ======== END ===========
+        NGINX
+
+        file = 'v2.inc'
+        if stage == 'staging'
+            file = 'v2.stage.inc'
+        end
+
+        puts "Add the following directives to the nginx/conf.d/#{file} file in the infrastructure repository to activate the site:"
+        puts nginx
     end
 end
 
 ## Helper methods: ##
-
 # Check if a file exists on all of the remote servers
 def remote_file_exists?(path)
   results = []
