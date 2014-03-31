@@ -4,6 +4,8 @@ namespace :site do
         zone     = ''
         db_user  = 'fedpol'
         db_pass  = ''
+        language = 'nl-NL'
+        title    = ''
 
         # Get the necessary info from the user
         begin
@@ -21,6 +23,10 @@ namespace :site do
         if remote_database_exists?(zone, db_user, db_pass)
             abort "Database #{zone} already exists!".red
         end
+
+        begin
+            title = Capistrano::CLI.ui.ask("Site name: ")
+        end while title.empty?
 
         begin
             language = Capistrano::CLI.ui.ask("Language [default: nl-NL] : ")
@@ -43,16 +49,7 @@ namespace :site do
         end
 
         # Setup config.php
-        config = <<-CONFIG.gsub(/^ {12}/, '')
-            <?php
-            class JSiteConfig extends JConfig
-            {
-            	var $db       = '#{zone}';
-            	var $site     = '#{zone}';
-            	var $language = '#{language}';
-            }
-        CONFIG
-
+        config = ERB.new(File.read("resources/config.php.erb")).result(binding)
         put config, "#{path}/config/config.php"
 
         # Update the file permissions
@@ -67,6 +64,12 @@ namespace :site do
         execute_mysql?("mysql -u\"#{db_user}\" -p #{zone} -e \"source #{dump};\"", db_pass)
 
         run "rm -f #{dump}"
+
+        # Prepare the database
+        sql = ERB.new(File.read("resources/site-creation.sql.erb")).result(binding)
+        put sql, "/tmp/#{zone}.sql"
+        execute_mysql?("mysql -u\"#{db_user}\" -p #{zone} -e \"source /tmp/#{zone}.sql;\"", db_pass)
+        run "rm -f /tmp/#{zone}.sql"
     end
 end
 
@@ -101,9 +104,7 @@ end
 # Execute MySQL commands without passing the password in the process name
 def execute_mysql?(cmd, db_pass)
     run(cmd) do |ch, stream, out|
-        puts out.inspect
         if out =~ /^Enter password: /
-            puts db_pass.inspect
             ch.send_data "#{db_pass}\n"
         end
     end

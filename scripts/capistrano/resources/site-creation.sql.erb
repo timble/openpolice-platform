@@ -1,0 +1,30 @@
+-- These queries are to be executed when creating a new site, based on a copy of an existing database.
+
+TRUNCATE TABLE `about`;
+TRUNCATE TABLE `activities`;
+TRUNCATE TABLE `attachments`;
+TRUNCATE TABLE `attachments_relations`;
+TRUNCATE TABLE `comments`;
+TRUNCATE TABLE `contacts`;
+TRUNCATE TABLE `contacts_hours`;
+TRUNCATE TABLE `districts`;
+TRUNCATE TABLE `districts_districts_officers`;
+TRUNCATE TABLE `districts_officers`;
+TRUNCATE TABLE `districts_relations`;
+TRUNCATE TABLE `files_thumbnails`;
+TRUNCATE TABLE `news`;
+TRUNCATE TABLE `revisions`;
+TRUNCATE TABLE `support_tickets`;
+TRUNCATE TABLE `traffic`;
+TRUNCATE TABLE `traffic_streets`;
+TRUNCATE TABLE `uploads`;
+TRUNCATE TABLE `users_sessions`;
+
+DELETE FROM `categories` WHERE `table` = 'about';
+DELETE FROM `users` WHERE users_user_id != 1;
+
+-- Replace the default Page Title on the Home page.
+-- Note: since we can't do a regex replace, we will simply rename the current "page_title" variable
+-- and add a new one to the params field.
+UPDATE `pages` SET `params` = REPLACE(`params`, 'page_title=', 'page_title_old=') WHERE `pages_page_id` = 1;
+UPDATE `pages` SET `params` = CONCAT_WS('\n', 'page_title="<%= title %>"', `params`) WHERE `pages_page_id` = 1;
