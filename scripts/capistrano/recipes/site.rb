@@ -53,7 +53,8 @@ namespace :site do
         put config, "#{path}/config/config.php"
 
         # Update the file permissions
-        # @TODO Execute script as sudo using the deploy user
+        puts "Password required for deploy user:"
+        sudo "~/scripts/v2_update_sites_permissions.sh", :pty => true
 
         # Copy the database
         time =  Time.now.strftime('%Y%m%d%H%M%S')
@@ -75,11 +76,13 @@ namespace :site do
         puts "#{zone} has been created!".green
         nginx = <<-NGINX.gsub(/^ {12}/, '')
             ======== START =========
+
             # #{title}
             location  ~ "^/#{zone}(?:/.*)?$"  {
                 include /etc/nginx/conf.d/proxy.inc;
                 break;
             }
+
             ======== END ===========
         NGINX
 
@@ -94,6 +97,7 @@ namespace :site do
 end
 
 ## Helper methods: ##
+# @TODO where should we put these?
 # Check if a file exists on all of the remote servers
 def remote_file_exists?(path)
   results = []
