@@ -86,12 +86,7 @@ namespace :site do
             ======== END ===========
         NGINX
 
-        file = 'v2.inc'
-        if stage == 'staging'
-            file = 'v2.stage.inc'
-        end
-
-        puts "Add the following directives to the nginx/conf.d/#{file} file in the infrastructure repository to activate the site:"
+        puts "Add the following directives to the /nginx/conf.d/v2.inc or v2.stage.icn file in the infrastructure repository:"
         puts nginx
     end
 end
