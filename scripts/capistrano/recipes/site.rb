@@ -86,7 +86,7 @@ namespace :site do
             ======== END ===========
         NGINX
 
-        puts "Add the following directives to the /nginx/conf.d/v2.inc or v2.stage.icn file in the infrastructure repository:"
+        puts "Add the following directives to the /nginx/conf.d/v2.inc or v2.stage.inc file in the infrastructure repository:"
         puts nginx
     end
 end
