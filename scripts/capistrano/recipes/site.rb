@@ -28,6 +28,8 @@ namespace :site do
             title = Capistrano::CLI.ui.ask("Site name: ")
         end while title.empty?
 
+        title = title.gsub(/"|'/, %q(\\\'))
+
         begin
             language = Capistrano::CLI.ui.ask("Language [default: nl-NL] : ")
             language = 'nl-NL' if language.empty?
