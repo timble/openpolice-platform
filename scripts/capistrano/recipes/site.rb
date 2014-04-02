@@ -77,7 +77,7 @@ namespace :site do
         nginx = <<-NGINX.gsub(/^ {12}/, '')
             ======== START =========
 
-            # #{title}
+            # #{zone} #{title}
             location  ~ "^/#{zone}(?:/.*)?$"  {
                 include /etc/nginx/conf.d/proxy.inc;
                 break;
