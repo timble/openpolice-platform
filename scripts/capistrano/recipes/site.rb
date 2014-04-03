@@ -28,6 +28,8 @@ namespace :site do
             title = Capistrano::CLI.ui.ask("Site name: ")
         end while title.empty?
 
+        title = title.gsub(/"|'/, %q(\\\'))
+
         begin
             language = Capistrano::CLI.ui.ask("Language [default: nl-NL] : ")
             language = 'nl-NL' if language.empty?
@@ -77,7 +79,7 @@ namespace :site do
         nginx = <<-NGINX.gsub(/^ {12}/, '')
             ======== START =========
 
-            # #{title}
+            # #{zone} #{title}
             location  ~ "^/#{zone}(?:/.*)?$"  {
                 include /etc/nginx/conf.d/proxy.inc;
                 break;
