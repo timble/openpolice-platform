@@ -45,7 +45,7 @@ namespace :site do
         db_pass = Capistrano::CLI.password_prompt("Database password [user: #{db_user}]: ")
 
         # Create the folder structure
-        folders = ['config', 'files/attachments', 'files/downloads']
+        folders = ['config', 'files/attachments', 'files/files/downloads', 'files/files/images']
         folders.each do |folder|
           run "mkdir -p #{path}/#{folder}"
         end
