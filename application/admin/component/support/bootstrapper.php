@@ -19,6 +19,7 @@ class SupportBootstrapper extends Library\BootstrapperAbstract
     public function bootstrap()
     {
         $manager = $this->getObjectManager();
-        $manager->registerAlias('com:support.view.attachment.file', 'com:attachments.view.attachment.file');
+
+        $manager->registerAlias('com:support.controller.attachment', 'com:attachments.controller.attachment');
     }
 }
