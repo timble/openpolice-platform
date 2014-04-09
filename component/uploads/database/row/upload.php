@@ -159,7 +159,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     {
         foreach($data as $item)
         {
-            if($item['catid'] == $this->catid && $item['state'] == '1')
+            if($item['catid'] == $this->catid && ($item['state'] == '1' || $item['state'] == '0'))
             {
                 $row = $this->getObject('com:news.database.row.article');
                 $row->id = $item['id'];
