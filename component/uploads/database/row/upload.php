@@ -52,6 +52,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $this->_importStreets($data);
                 }
 
+                if($table == 'officers'){
+                    $this->_importOfficers($data);
+                }
+
                 if($table == 'news'){
                     $this->_importNews($data);
                 }
@@ -80,6 +84,25 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             } else {
                 $row->title = $item['title'];
                 $row->slug = '';
+                $row->save();
+            }
+        }
+    }
+
+    public function _importOfficers($data)
+    {
+        foreach($data as $item)
+        {
+            $row = $this->getObject('com:districts.database.row.officer');
+            $row->id = $item['number'];
+
+            if(!$row->load())
+            {
+                $row->firstname = $item['firstname'];
+                $row->lastname = $item['lastname'];
+                $row->phone = preg_replace('/[^0-9+]/', " ", $item['phone']);
+                $row->mobile = preg_replace('/[^0-9+]/', " ", $item['mobile']);
+                $row->email = $item['email'];
                 $row->save();
             }
         }
