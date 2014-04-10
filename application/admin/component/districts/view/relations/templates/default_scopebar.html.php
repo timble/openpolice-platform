@@ -10,8 +10,13 @@
 
 <div class="scopebar">
     <div class="scopebar__group">
-        <a class="<?= is_null($state->search) ? 'active' : ''; ?>" href="<?= route('search=' ) ?>">
+        <a class="<?= is_null($state->search) && is_null($state->street) ? 'active' : ''; ?>" href="<?= route('search=&street=' ) ?>">
             <?= translate('All') ?>
+        </a>
+    </div>
+    <div class="scopebar__group">
+        <a class="<?= $state->street === '0' ? 'active' : ''; ?>" href="<?= route('street=0') ?>">
+            <?= translate('No street') ?>
         </a>
     </div>
     <div class="scopebar__search">

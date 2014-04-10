@@ -26,9 +26,9 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         $this->reset();
         $this->addOfficers();
         $this->addDistricts();
+        $this->addStreets();
         $this->addDistrictsofficers();
         $this->addRelations();
-        $this->addStreets();
         $this->addNews();
         $this->addContacts();
     }
