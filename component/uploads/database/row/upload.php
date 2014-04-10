@@ -76,6 +76,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
     public function _importDistricts($data)
     {
+        // Empty districts table
+        $this->getObject('com:districts.model.districts')->getRowset()->delete();
+
         foreach($data as $item)
         {
             $row = $this->getObject('com:districts.database.row.district');
@@ -95,6 +98,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
     public function _importOfficers($data)
     {
+        // Empty districts_officers table
+        $this->getObject('com:districts.model.officers')->getRowset()->delete();
+
         foreach($data as $item)
         {
             $row = $this->getObject('com:districts.database.row.officer');
@@ -138,7 +144,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         foreach($data as $item)
         {
             // Get CRAB ID
-            $street = $this->getObject('com:streets.database.row.islp');
+            $street = $this->getObject('com:streets.database.row.streets');
             $street->islp = $item['islp'];
             if($street->load())
             {
@@ -147,12 +153,15 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             $parity = null;
             switch ($item['range_parity']) {
+                case 'odd-even':
                 case 'Even+Oneven':
                     $parity = 'odd-even';
                     break;
+                case 'even':
                 case 'Even':
                     $parity = 'even';
                     break;
+                case 'odd':
                 case 'Oneven':
                     $parity = 'odd';
                     break;
