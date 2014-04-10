@@ -53,7 +53,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 }
 
                 if($table == 'streets'){
-                    $this->_importStreets($data);
+                    $this->_importLocalStreets($data);
                 }
 
                 if($table == 'officers'){
@@ -172,29 +172,26 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    public function _importStreets($data)
+    public function _importLocalStreets($data)
     {
         foreach($data as $item)
         {
             //Get city based on postcode
             $city = $this->getObject('com:streets.database.row.postcodes');
-            $city->streets_postcode_id = $item['postcode'];
+            $city->id = $item['postcode'];
             $city->load();
 
             //Get the street
             $street = $this->getObject('com:streets.database.row.streets');
             $street->title = $item['title'];
-            $street->city = $city->streets_city_id;
+            $street->streets_city_id = $city->streets_city_id;
 
             if($street->load()){
                 //Check if street does not have a islp value
                 if(!$street->islp) {
-                    $islp = $this->getObject('com:streets.database.row.islp');
-
                     //Set ISLP value and save
-                    $islp->id = $street->id;
-                    $islp->islp = $item['islp'];
-                    $islp->save();
+                    $street->islp = $item['islp'];
+                    $street->save();
                 }
             }
         }

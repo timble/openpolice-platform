@@ -3,26 +3,26 @@
     <table class="table">
         <thead>
         <tr>
-            <th>id</th>
+            <th>islp</th>
             <th>title</th>
             <th>postcode</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>587965</td>
+            <td>L00001</td>
             <td>Bondgenotenlaan</td>
             <td>3000</td>
         </tr>
         <tr>
-            <td>974981</td>
+            <td>L00024</td>
             <td>Bosberg</td>
-            <td>3000</td>
+            <td>3010</td>
         </tr>
         <tr>
-            <td>784521</td>
+            <td>L00087</td>
             <td>Brusselsestraat</td>
-            <td>3000</td>
+            <td>3020</td>
         </tr>
         </tbody>
     </table>

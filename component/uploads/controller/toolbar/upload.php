@@ -54,7 +54,7 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     protected function _commandStreets(Library\ControllerToolbarCommand $command)
     {
         $command->label = 'Local Streets';
-        $command->href = 'option=com_uploads&view=upload&table=agiv_streets';
+        $command->href = 'option=com_uploads&view=upload&table=streets';
     }
 
     protected function _commandOfficers(Library\ControllerToolbarCommand $command)
