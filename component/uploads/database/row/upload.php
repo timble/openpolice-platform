@@ -125,7 +125,6 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             if(!$row->load())
             {
-                $row->setData($item);
                 $row->save();
             }
         }
