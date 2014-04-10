@@ -98,9 +98,6 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
     public function _importOfficers($data)
     {
-        // Empty districts_officers table
-        $this->getObject('com:districts.model.officers')->getRowset()->delete();
-
         foreach($data as $item)
         {
             $row = $this->getObject('com:districts.database.row.officer');
@@ -113,8 +110,15 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row->phone = preg_replace('/[^0-9+]/', " ", $item['phone']);
                 $row->mobile = preg_replace('/[^0-9+]/', " ", $item['mobile']);
                 $row->email = $item['email'];
-                $row->save();
+            } else {
+                $row->firstname = $item['firstname'];
+                $row->lastname = $item['lastname'];
+                $row->phone = preg_replace('/[^0-9+]/', " ", $item['phone']);
+                $row->mobile = preg_replace('/[^0-9+]/', " ", $item['mobile']);
+                $row->email = $item['email'];
             }
+
+            $row->save();
         }
     }
 
