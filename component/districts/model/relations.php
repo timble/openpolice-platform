@@ -68,10 +68,6 @@ class ModelRelations extends Library\ModelTable
                 $query->where('tbl.range_parity LIKE :range_parity')->bind(array('range_parity' => '%'.$parity.'%'));
             }
 		}
-
-        if ($state->street === '0') {
-            $query->where('tbl.streets_street_id IS NULL');
-        }
 	}
 
     protected function _buildQueryOrder(Library\DatabaseQuerySelect $query)
