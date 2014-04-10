@@ -26,6 +26,7 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         $this->reset();
         $this->addOfficers();
         $this->addDistricts();
+        $this->addDistrictsofficers();
         $this->addRelations();
         $this->addStreets();
         $this->addNews();
@@ -36,6 +37,12 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     {
         $command->label = 'Districts';
         $command->href = 'option=com_uploads&view=upload&table=districts';
+    }
+
+    protected function _commandDistrictsofficers(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'Districts - Officers';
+        $command->href = 'option=com_uploads&view=upload&table=districts_officers';
     }
 
     protected function _commandRelations(Library\ControllerToolbarCommand $command)

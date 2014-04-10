@@ -44,6 +44,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $this->_importDistricts($data);
                 }
 
+                if($table == 'districts_officers'){
+                    $this->_importDistrictsofficers($data);
+                }
+
                 if($table == 'districts_relations'){
                     $this->_importRelations($data);
                 }
@@ -103,6 +107,25 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row->phone = preg_replace('/[^0-9+]/', " ", $item['phone']);
                 $row->mobile = preg_replace('/[^0-9+]/', " ", $item['mobile']);
                 $row->email = $item['email'];
+                $row->save();
+            }
+        }
+    }
+
+    public function _importDistrictsofficers($data)
+    {
+        // Empty districts_districts_officers table
+        $this->getObject('com:districts.model.districts_officers')->getRowset()->delete();
+
+        foreach($data as $item)
+        {
+            $row = $this->getObject('com:districts.database.row.districts_officers');
+            $row->districts_district_id = $item['districts_district_id'];
+            $row->districts_officer_id = $item['districts_officer_id'];
+
+            if(!$row->load())
+            {
+                $row->setData($item);
                 $row->save();
             }
         }
