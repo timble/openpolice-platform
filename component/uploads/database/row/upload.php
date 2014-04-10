@@ -159,7 +159,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             }
 
             $item['range_parity'] = $parity;
-            $item['id'] = sha1($item['districts_district_id'].$item['islp'].$item['range_start'].$item['range_end'].$item['range_parity']);
+            $item['id'] = sha1($item['districts_district_id'].$item['islp'].$item['streets_street_id'].$item['range_start'].$item['range_end'].$item['range_parity']);
 
             // Add row to districts_relations table when ID is unique
             $row = $this->getObject('com:districts.database.row.relation');
