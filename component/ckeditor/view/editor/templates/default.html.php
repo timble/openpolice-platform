@@ -13,7 +13,7 @@
 
 <script>
     jQuery(document).ready(function() {
-        CKEDITOR.replace( <?= $id ?>, {
+        CKEDITOR.replace( '<?= $id ?>', {
             baseHref   : '<?= $settings->baseHref ?>',
             toolbar    : '<?= $settings->options->toolbar ?>',
             height     : '<?= $settings->height ?>',
