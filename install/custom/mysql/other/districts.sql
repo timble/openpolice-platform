@@ -130,11 +130,6 @@ UPDATE `streets`, `streets_islp`
 SET `streets`.`islp` = `streets_islp`.`islp`
 WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, ' ', '_') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
 
-UPDATE `streets`, `streets_islp`
-SET `streets`.`islp` = `streets_islp`.`islp`
-WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, 'K.', 'Koning') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
-
-
 -- Update traffic_streets to use agiv
 UPDATE `traffic_streets`, `streets`
 SET `traffic_streets`.`streets_street_id` = `streets`.`streets_street_id`
