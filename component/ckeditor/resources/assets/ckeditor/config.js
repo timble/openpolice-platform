@@ -41,7 +41,7 @@ CKEDITOR.editorConfig = function( config ) {
     };
 
     // Pasting operations will loose any formatting information in the source text.
-    config.forcePasteAsPlainText = true,
+    config.forcePasteAsPlainText = true;
 
     config.allowedContent = true;
     config.toolbar_full =
