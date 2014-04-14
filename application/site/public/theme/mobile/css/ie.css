@@ -1176,6 +1176,11 @@ html {
   font-size: 16px;
 }
 
+/* line 1, atoms/_time.scss */
+time {
+  white-space: nowrap;
+}
+
 /* line 1, atoms/_a.scss */
 a {
   color: #004d9f;

@@ -48,3 +48,5 @@
     </ul>
     <?= $contact->misc ?>
 </address>
+
+<?= object('com:contacts.controller.hour')->contact($contact->id)->render(array('contact' => $contact)); ?>
