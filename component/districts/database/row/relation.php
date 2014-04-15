@@ -14,10 +14,7 @@ class DatabaseRowRelation extends Library\DatabaseRowTable
 {
     public function save()
     {
-        if(!$this->id)
-        {
-            $this->id = sha1($this->districts_district_id.$this->streets_street_id.$this->range_start.$this->range_end.$this->range_parity);
-        }
+        $this->id = sha1($this->districts_district_id.$this->islp.$this->streets_street_id.$this->range_start.$this->range_end.$this->range_parity);
 
         return parent::save();
     }
