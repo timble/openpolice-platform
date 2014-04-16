@@ -59,7 +59,7 @@
         @include span-columns(3, 12);
     }
 
-    .gallery .gallery__item:nth-child(3) {
+    .gallery .gallery__item:nth-child(4n) {
         @include span-columns(3 omega, 12);
     }
 }
