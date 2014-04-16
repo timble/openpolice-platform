@@ -49,7 +49,7 @@
     </a>
 
     <div itemprop="articleBody">
-        <div class="article__introtext">
+        <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>
             <?= $article->introtext ?>
         </div>
         <?= $article->fulltext ?>
