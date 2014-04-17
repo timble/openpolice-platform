@@ -108,7 +108,7 @@
             <a href="/<?= $site ?>/downloads">Downloads</a>
         </div>
         <div class="copyright--right">
-            © 2013 <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
+            © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
             <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/disclaimer.html">Disclaimer</a> -
             <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/privacy.html">Privacy</a> -
             <a href="http://www.belgium.be">Belgium.be</a>
