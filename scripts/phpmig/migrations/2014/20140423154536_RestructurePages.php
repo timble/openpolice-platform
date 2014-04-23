@@ -45,6 +45,7 @@ class RestructurePages extends Migration
         $this->_queries .= "UPDATE `pages` SET `title` = 'Fichiers' WHERE `pages_page_id` = '5';";
         $this->_queries .= "UPDATE `pages` SET `title` = 'Outils' WHERE `pages_page_id` = '9';";
         $this->_queries .= "UPDATE `pages` SET `title` = 'Registre' WHERE `pages_page_id` = '10';";
+        $this->_queries .= "UPDATE `pages` SET `title` = 'Support' WHERE `pages_page_id` = '92';";
 
         parent::up();
     }
