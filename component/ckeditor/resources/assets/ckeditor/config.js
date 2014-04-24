@@ -74,7 +74,7 @@ CKEDITOR.editorConfig = function( config ) {
             { name: 'basicstyles', items: [ 'Bold', 'Italic' ] },
             { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent' ] },
             { name: 'links', items: [ 'readmore' ] },
-            { name: 'insert', items: [ 'images', 'files','Link','Unlink' ,'Table' ] },
+            { name: 'insert', items: [ 'images', 'files','Link','Unlink','Anchor','Table' ] },
             { name: 'clipboard', items: [ 'PasteText', '-', 'Undo', 'Redo' ] },
             { name: 'document', items: [ 'Source' ] }
         ];
