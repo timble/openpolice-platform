@@ -8,6 +8,19 @@
  */
 ?>
 
+<ktml:module position="left">
+    <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
+
+    <? foreach($modules as $module) : ?>
+        <div class="sidebar__element">
+            <h3><?= $module->title ?></h3>
+            <?= $module->content ?>
+        </div>
+    <? endforeach ?>
+</ktml:module>
+
+<h1><?= escape(translate('Press')); ?></h1>
+
 <table class="table table--striped">
     <thead>
         <tr>
