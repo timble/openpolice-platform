@@ -17,12 +17,6 @@
         </div>
     </div>
     <div>
-        <label for="published"><?= translate('Sticky') ?></label>
-        <div>
-            <input type="checkbox" name="sticky" value="1" <?= $article->sticky ? 'checked="checked"' : '' ?> />
-        </div>
-    </div>
-    <div>
         <label for="created_on"><?= translate('Created on') ?></label>
         <div class="controls">
             <input id="created_on" type="text" name="created_on" value="<?= helper('date.format', array('date'=> $article->created_on, 'format' => 'd-m-Y H:i')) ?>" />
@@ -35,7 +29,7 @@
     <fieldset>
         <legend><?= translate('Attachments') ?></legend>
         <? if (!$article->isNew()) : ?>
-            <?= import('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments(), 'attachments_attachment_id' => $article->attachments_attachment_id)) ?>
+            <?= import('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments())) ?>
         <? endif ?>
         <?= import('com:attachments.view.attachments.upload.html') ?>
     </fieldset>
