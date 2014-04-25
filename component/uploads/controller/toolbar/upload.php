@@ -30,6 +30,7 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         $this->addDistrictsofficers();
         $this->addRelations();
         $this->addNews();
+        $this->addPress();
         $this->addContacts();
     }
 
@@ -67,6 +68,12 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     {
         $command->label = 'News';
         $command->href = 'option=com_uploads&view=upload&table=news';
+    }
+
+    protected function _commandPress(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'Press';
+        $command->href = 'option=com_uploads&view=upload&table=press';
     }
 
     protected function _commandContacts(Library\ControllerToolbarCommand $command)

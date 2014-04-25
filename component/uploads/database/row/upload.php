@@ -64,6 +64,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $this->_importNews($data);
                 }
 
+                if($table == 'press'){
+                    $this->_importPress($data);
+                }
+
                 if($table == 'contacts'){
                     $this->_importContacts($data);
                 }
@@ -232,6 +236,37 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->published = $item['state'];
 
                     $this->_clean($row);
+
+                    $row->save();
+                }
+            }
+        }
+    }
+
+    public function _importPress($data)
+    {
+        foreach($data as $item)
+        {
+            if($item['catid'] == $this->catid && ($item['state'] == '1' || $item['state'] == '0'))
+            {
+                $row = $this->getObject('com:press.database.row.article');
+                $row->id = $item['id'];
+
+                if(!$row->load())
+                {
+                    $row->title = $item['title'];
+                    $row->slug = $item['alias'];
+                    $row->introtext = stripslashes($item['introtext']);
+                    $row->fulltext = stripslashes($item['fulltext']);
+                    $row->created_on = $item['created'];
+                    $row->created_by = '1';
+                    $row->modified_on = $item['modified'];
+                    $row->modified_by = $item['modified_by'];
+                    $row->published = $item['state'];
+
+                    $this->_clean($row);
+
+                    $row->text = $row->introtext.$row->fulltext;
 
                     $row->save();
                 }
