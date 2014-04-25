@@ -21,9 +21,11 @@
     <fieldset>
         <legend><?= translate('Image') ?></legend>
         <? if (!$category->isNew()) : ?>
-            <?= import('com:attachments.view.attachments.list.html', array('attachments' => $category->getAttachments(), 'attachments_attachment_id' => $category->attachments_attachment_id)) ?>
+            <?= import('com:attachments.view.attachments.list.html', array('attachments' => $category->getAttachments(), 'assignable' => false)) ?>
         <? endif ?>
-        <?= import('com:attachments.view.attachments.upload.html') ?>
+        <? if(!count($category->getAttachments())) : ?>
+            <?= import('com:attachments.view.attachments.upload.html') ?>
+        <? endif ?>
     </fieldset>
 <? endif ?>
 <? endif ?>

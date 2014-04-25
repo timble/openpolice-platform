@@ -32,6 +32,8 @@
             <?= $category->description; ?>
         <? endif; ?>
 
+        <? if($category->count) : ?>
         <a class="article__readmore" href="<?= helper('route.category', array('row' => $category)) ?>"><?= translate('Read more') ?></a>
+        <? endif ?>
     </div>
 <? endforeach; ?>

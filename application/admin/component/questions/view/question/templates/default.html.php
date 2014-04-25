@@ -29,9 +29,16 @@
 			</div>
 		</div>
 		
-		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $question->text, 'attribs' => array('class' => 'ckeditor-required'))) ?>
+		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $question->text, 'removeButtons' => 'readmore', 'attribs' => array('class' => 'ckeditor-required'))) ?>
 	</div>
 	<div class="sidebar">
 	    <?= import('default_sidebar.html') ?>
     </div>
 </form>
+
+<script data-inline>
+    CKEDITOR.replace( 'text', {
+        toolbar : 'standard',
+        removeButtons: 'readmore'
+    } );
+</script>

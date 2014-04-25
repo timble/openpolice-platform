@@ -22,7 +22,7 @@
         <? endif; ?>
         <div class="media__body">
             <a class="media__heading" href="<?= $link ?>"><?= $article->title ?></a>
-            <div class="muted" style="font-size: 0.85em">
+            <div class="text--small">
                 <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'))) ?>
             </div>
         </div>

@@ -12,11 +12,11 @@
     .component {
         @include span-columns(9 omega, 12);
     }
-    .footer__news {
-        @include span-columns(7, 12);
-    }
     .footer__districts {
         @include span-columns(5 omega, 12);
+    }
+    .footer__news {
+        @include span-columns(7, 12);
     }
     .copyright--left {
         @include span-columns(5, 12);
@@ -33,13 +33,13 @@
     }
 
     .homepage__sticky {
-        @include span-columns(8, 12);
+        @include span-columns(10, 14);
     }
     .homepage__contact {
-        @include span-columns(4 omega, 12);
+        @include span-columns(4 omega, 14);
     }
 
-    .districts__officer {
+    .districts__officers {
         @include span-columns(5, 12);
     }
 
@@ -59,12 +59,19 @@
         @include span-columns(3, 12);
     }
 
-    .gallery .gallery__item:nth-child(3) {
+    .gallery .gallery__item:nth-child(4n) {
         @include span-columns(3 omega, 12);
     }
 }
 
 @include respond-min(998px) {
+    .homepage__sticky .media {
+      @include span-columns(6 omega, 12);
+      &:first-child {
+        @include span-columns(6, 12);
+      }
+    }
+
     .organization {
         @include span-columns(3, 12);
     }

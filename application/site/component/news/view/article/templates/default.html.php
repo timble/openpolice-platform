@@ -35,7 +35,7 @@
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
         <h1 itemprop="name"><?= $article->title ?></h1>
-        <time class="timestamp" itemprop="datePublished" datetime="<?= $published_on ?>">
+        <time class="text--small" itemprop="datePublished" datetime="<?= $published_on ?>">
             <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
@@ -49,10 +49,24 @@
     </a>
 
     <div itemprop="articleBody">
-        <div class="article__introtext">
+        <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>
             <?= $article->introtext ?>
         </div>
         <?= $article->fulltext ?>
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
 </article>
+
+<script src="assets://application/js/jquery.js" />
+<script src="assets://application/js/magnific-popup.js" />
+<script data-inline>
+    $(document).ready(function() {
+        // This will create a single gallery from all elements that have class data-gallery="enabled"
+        $('[data-gallery="enabled"]').magnificPopup({
+            type: 'image',
+            gallery:{
+                enabled:true
+            }
+        });
+    });
+</script>

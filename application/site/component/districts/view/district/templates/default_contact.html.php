@@ -39,7 +39,7 @@
                 <span class="value"><?= $contact->mobile?></span>
             </li>
         <? endif; ?>
-        <?if ($contact->email_to && $contact->params->get('show_email', false)) :?>
+        <?if ($contact->email_to) :?>
             <li>
                 <span><?= translate('Email') ?></span>:
                 <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>
@@ -48,3 +48,5 @@
     </ul>
     <?= $contact->misc ?>
 </address>
+
+<?= object('com:contacts.controller.hour')->contact($contact->id)->render(array('contact' => $contact)); ?>

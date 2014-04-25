@@ -18,6 +18,7 @@ class ModelArticles extends Library\ModelTable
 
 		$this->getState()
 		    ->insert('published' , 'int')
+		    ->insert('exclude' , 'int')
             ->insert('sticky' , 'boolean', false);
 	}
     
@@ -57,6 +58,10 @@ class ModelArticles extends Library\ModelTable
 
         if($state->sticky === true) {
             $query->where('tbl.sticky = :sticky')->bind(array('sticky' => '1'));
+        }
+
+        if ($state->exclude) {
+            $query->where('tbl.news_article_id != :news_article_id')->bind(array('news_article_id' => $state->exclude));
         }
 	}
 }

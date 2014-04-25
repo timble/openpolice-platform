@@ -1,48 +1,82 @@
 /*
  * Bootstrap variables
  */
-/* line 3, ie7.scss */
+/* line 4, ie7.scss */
 body {
   width: 600px;
   margin: 0 auto;
 }
 
-/* line 8, ie7.scss */
+/* line 9, ie7.scss */
 form {
   margin: 0;
 }
 
-/* line 12, ie7.scss */
+/* line 13, ie7.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
 }
 
-/* line 18, ie7.scss */
+/* line 19, ie7.scss */
 .form__left input {
   width: 95%;
 }
 
-/* line 24, ie7.scss */
+/* line 25, ie7.scss */
 * html .navbar__logo {
   padding-top: 10px;
 }
 
-/* line 29, ie7.scss */
+/* line 30, ie7.scss */
 .article__thumbnail {
   float: right;
   width: 200px;
   height: 150px;
   margin: 0 0 1.5em 1.5em;
 }
-/* line 35, ie7.scss */
+/* line 36, ie7.scss */
 .article__thumbnail img {
   width: 100%;
   height: 100%;
 }
 
-/* line 43, ie7.scss */
-.homepage__sticky .media__object img {
+/* line 45, ie7.scss */
+.homepage__sticky .media__object img,
+.footer__news .media__object img {
   width: 100%;
   height: 100%;
+}
+
+/* line 53, ie7.scss */
+.navbar__handlebar #button {
+  display: none;
+}
+
+/* line 60, ie7.scss */
+.navbar ul li {
+  float: left;
+}
+/* line 63, ie7.scss */
+.navbar ul li a {
+  text-align: center;
+  border: 0 none;
+  font-weight: normal;
+  padding: 10px 30px;
+}
+
+/* line 72, ie7.scss */
+.js-enabled .navbar #navigation {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  clip: auto;
+  position: static;
+}
+
+/* line 78, ie7.scss */
+.container__footer_menu li {
+  float: left;
 }

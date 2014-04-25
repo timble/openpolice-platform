@@ -226,27 +226,16 @@ textarea {
     page-break-after: avoid;
   }
 }
-/* line 10, organisms/_containers.scss */
-.container__header .row-fluid .span3,
+/* line 5, organisms/_containers.scss */
 .container__header .slogan,
-.container__breadcrumb,
 .container__banner,
-.container__footer,
-.container__quicklinks,
 .container__content .sidebar,
-.container__copyright .copyright,
 .is-hidden,
 .hidden-phone {
   display: none;
 }
 
-/* line 14, organisms/_containers.scss */
-.container__content {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* line 19, organisms/_containers.scss */
+/* line 9, organisms/_containers.scss */
 .container__header {
   margin-bottom: 0;
   padding-left: 0;
@@ -254,42 +243,65 @@ textarea {
   width: 100%;
 }
 
-/* line 26, organisms/_containers.scss */
+/* line 16, organisms/_containers.scss */
 .container__content {
-  padding-top: 37.5px;
+  padding-top: 25px;
   padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-/* line 31, organisms/_containers.scss */
-.container__content.police .contact__inner {
-  margin-left: 0;
-  border: 0 none;
-  padding: 0;
-}
-/* line 36, organisms/_containers.scss */
-.container__content.police .contact__inner a {
-  text-decoration: none;
-}
-/* line 41, organisms/_containers.scss */
-.container__content.police article {
-  border: 0 none !important;
-  padding-bottom: 0 !important;
+/* line 22, organisms/_containers.scss */
+.container__content.homepage {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
 }
 
-/* line 48, organisms/_containers.scss */
+/* line 29, organisms/_containers.scss */
 .container__copyright {
-  padding: 3px 20px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   text-align: center;
   border-top: 1px solid gainsboro;
-  font-size: 12.75px;
+  font-size: 0.85em;
 }
-/* line 54, organisms/_containers.scss */
+/* line 36, organisms/_containers.scss */
 .container__copyright a {
   text-decoration: none;
 }
 
-/* line 60, organisms/_containers.scss */
-.container__footer .button {
-  float: right;
+/* line 41, organisms/_containers.scss */
+.container__footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 1.5em;
+  background-color: #f8f8f8;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+}
+/* line 50, organisms/_containers.scss */
+.container__footer .container__quicklinks div {
+  margin-bottom: 25px;
+}
+/* line 55, organisms/_containers.scss */
+.container__footer .footer__districts {
+  margin-bottom: 25px;
+}
+
+/* line 61, organisms/_containers.scss */
+.container__footer_menu ul {
+  margin: 0;
+}
+/* line 64, organisms/_containers.scss */
+.container__footer_menu ul li a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* line 2, organisms/_districts.scss */
+.districts__officers,
+.districts__officers .districts__officer {
+  margin-bottom: 25px;
 }
 
 /* line 1, organisms/_wrap.scss */
@@ -341,119 +353,263 @@ textarea {
   margin: 0 10px;
 }
 
+/* line 1, organisms/_homepage.scss */
+.homepage__sticky {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* line 6, organisms/_homepage.scss */
+.homepage__news {
+  margin: 20px 0 0;
+  border-top: 1px solid #eee;
+  padding: 20px 0 0;
+}
+/* line 13, organisms/_homepage.scss */
+.homepage__news .thumbnail.media__object + .media__body, .homepage__news .media__object.article__thumbnail + .media__body {
+  padding-left: 86px;
+}
+
+/* line 18, organisms/_homepage.scss */
+.homepage__contact {
+  background-color: #0054ae;
+  border-top: 1px solid gainsboro;
+  color: white;
+  padding: 20px;
+}
+/* line 24, organisms/_homepage.scss */
+.homepage__contact a {
+  color: white;
+  text-decoration: none;
+}
+/* line 28, organisms/_homepage.scss */
+.homepage__contact a:hover {
+  color: white;
+}
+/* line 33, organisms/_homepage.scss */
+.homepage__contact .contact__inner {
+  margin-left: 0;
+  border: 0 none;
+  padding: 0;
+}
+/* line 39, organisms/_homepage.scss */
+.homepage__contact .nav--list li a {
+  border-bottom: 1px solid #004d9f;
+}
+/* line 42, organisms/_homepage.scss */
+.homepage__contact .nav--list li a:hover {
+  background-color: #006bdc;
+}
+/* line 47, organisms/_homepage.scss */
+.homepage__contact .well {
+  background-color: #0061c8;
+  border: 1px solid #004d9f;
+}
+/* line 52, organisms/_homepage.scss */
+.homepage__contact .muted, .homepage__contact .text--small {
+  color: #e6e6e6;
+}
+/* line 56, organisms/_homepage.scss */
+.homepage__contact ul {
+  margin-bottom: 0;
+}
+
 /* line 2, utilities/_clearfix.scss */
-.clearfix, form, .article, .navbar .navbar__handlebar {
+.clearfix, .homepage__news, .container__quicklinks, .container.container__footer_menu ul, form, .article, .navbar__handlebar {
   *zoom: 1;
 }
 /* line 13, utilities/_mixins.scss */
-.clearfix:before, form:before, .article:before, .navbar .navbar__handlebar:before, .clearfix:after, form:after, .article:after, .navbar .navbar__handlebar:after {
+.clearfix:before, .homepage__news:before, .container__quicklinks:before, .container.container__footer_menu ul:before, form:before, .article:before, .navbar__handlebar:before, .clearfix:after, .homepage__news:after, .container__quicklinks:after, .container.container__footer_menu ul:after, form:after, .article:after, .navbar__handlebar:after {
   display: table;
   content: "";
   line-height: 0;
 }
 /* line 20, utilities/_mixins.scss */
-.clearfix:after, form:after, .article:after, .navbar .navbar__handlebar:after {
+.clearfix:after, .homepage__news:after, .container__quicklinks:after, .container.container__footer_menu ul:after, form:after, .article:after, .navbar__handlebar:after {
   clear: both;
 }
 
 /* line 2, utilities/_desktop.scss */
+.contact__inner .well {
+  padding-bottom: 0;
+}
+/* line 6, utilities/_desktop.scss */
+.contact__inner .text--strong {
+  display: block;
+  margin-bottom: 0.75em;
+}
+
+/* line 13, utilities/_desktop.scss */
 #wrap {
   border-bottom: 1px solid gainsboro;
 }
 
-/* line 7, utilities/_desktop.scss */
+/* line 18, utilities/_desktop.scss */
 .navbar__handlebar,
 .visible-phone {
   display: none;
 }
 
-/* line 18, utilities/_desktop.scss */
+/* line 27, utilities/_desktop.scss */
 .container__header .is-hidden,
 .container__breadcrumb,
 .container__banner,
-.container__footer,
-.container__quicklinks,
 .container__content .sidebar,
 .container__copyright .copyright,
 .hidden-phone {
   display: block;
 }
 
-/* line 26, utilities/_desktop.scss */
+/* line 35, utilities/_desktop.scss */
 .container__header,
 .container__banner,
 .container__breadcrumb,
-.container__content,
+.container__content .homepage__sticky,
 .container__footer {
   padding-left: 0px;
   padding-right: 0px;
 }
 
-/* line 32, utilities/_desktop.scss */
+/* line 41, utilities/_desktop.scss */
 .container__header .organization {
   text-align: center;
 }
 
-/* line 38, utilities/_desktop.scss */
-.container__content.police .contact__inner {
-  border-left: 1px solid #eeeeee;
-  padding-left: 18px;
-  margin-top: 20px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-/* line 45, utilities/_desktop.scss */
-.container__content.police .contact__inner ul {
-  margin-bottom: 0;
-}
-/* line 49, utilities/_desktop.scss */
-.container__content.police .contact__inner .well {
-  margin-bottom: 10px;
-}
-
-/* line 55, utilities/_desktop.scss */
+/* line 46, utilities/_desktop.scss */
 .container__header {
   width: auto;
 }
 
-/* line 60, utilities/_desktop.scss */
+/* line 50, utilities/_desktop.scss */
+.container__content {
+  padding-top: 37px;
+}
+/* line 53, utilities/_desktop.scss */
+.container__content.homepage {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+/* line 58, utilities/_desktop.scss */
 .container__content .sidebar {
   margin-top: 20px;
 }
-/* line 63, utilities/_desktop.scss */
+/* line 61, utilities/_desktop.scss */
 .container__content .sidebar .sidebar__element {
   margin-bottom: 40px;
 }
 
-/* line 69, utilities/_desktop.scss */
-.container__quicklinks {
-  border-top: 1px solid #eeeeee;
-  padding-top: 1.5em;
-  margin-top: 1.5em;
+/* line 71, utilities/_desktop.scss */
+.homepage__sticky {
+  padding-bottom: 0;
 }
 
 /* line 75, utilities/_desktop.scss */
+.homepage__contact {
+  padding: 0;
+  margin-bottom: 25px;
+  background-color: transparent;
+  border-top: 0px none;
+  color: #222222;
+}
+/* line 83, utilities/_desktop.scss */
+.homepage__contact a,
+.homepage__contact a:hover {
+  color: #004d9f;
+}
+/* line 87, utilities/_desktop.scss */
+.homepage__contact .nav--list li a {
+  border-bottom: 1px solid #eeeeee;
+}
+/* line 90, utilities/_desktop.scss */
+.homepage__contact .nav--list li a:hover {
+  background-color: #ebf3f4;
+  color: #004d9f;
+}
+/* line 96, utilities/_desktop.scss */
+.homepage__contact .muted, .homepage__contact .text--small {
+  color: #505050;
+}
+/* line 100, utilities/_desktop.scss */
+.homepage__contact .contact__inner {
+  border-left: 1px solid #eeeeee;
+  padding-left: 18px;
+  margin-top: 20px;
+}
+/* line 106, utilities/_desktop.scss */
+.homepage__contact .contact__inner ul {
+  margin-bottom: 0;
+}
+/* line 110, utilities/_desktop.scss */
+.homepage__contact .contact__inner .well {
+  border: 1px solid #ebebeb;
+  background-color: #f8f8f8;
+  margin-bottom: 10px;
+}
+
+/* line 120, utilities/_desktop.scss */
+.quicklink__item_1,
+.quicklink__item_2,
+.quicklink__item_3 {
+  margin-bottom: 12.5px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12.5px;
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+/* line 126, utilities/_desktop.scss */
+.quicklink__item_1.quicklink__item_3,
+.quicklink__item_2.quicklink__item_3,
+.quicklink__item_3.quicklink__item_3 {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* line 140, utilities/_desktop.scss */
 .container__footer {
   padding-top: 1.5em;
   background-color: #f8f8f8;
-  border-top: 1px solid gainsboro;
-  -webkit-border-radius: 0 0 5px 5px;
-  -moz-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
+}
+/* line 145, utilities/_desktop.scss */
+.container__footer .footer__districts {
+  margin-top: 25px;
+  margin-top: 0;
 }
 
-/* line 84, utilities/_desktop.scss */
+/* line 154, utilities/_desktop.scss */
+.container.container__footer_menu {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+/* line 158, utilities/_desktop.scss */
+.container.container__footer_menu ul {
+  margin: 0;
+}
+/* line 162, utilities/_desktop.scss */
+.container.container__footer_menu ul li {
+  display: block;
+  float: left;
+}
+/* line 166, utilities/_desktop.scss */
+.container.container__footer_menu ul li a {
+  border: none;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 176, utilities/_desktop.scss */
 .container__copyright {
   text-align: left;
   border-top: 0 none;
 }
-/* line 87, utilities/_desktop.scss */
+/* line 179, utilities/_desktop.scss */
 .container__copyright .copyright--right {
   text-align: right;
 }
 
-/* line 94, utilities/_desktop.scss */
+/* line 186, utilities/_desktop.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -462,7 +618,7 @@ textarea {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 101, utilities/_desktop.scss */
+/* line 193, utilities/_desktop.scss */
 .container__header .organization {
   text-align: left;
 }
@@ -613,19 +769,19 @@ you can use the generic selector below, but it's slower:
 }
 
 /* line 15, utilities/_grid.scss */
-.footer__news {
-  width: 56.79012%;
-  float: left;
-  margin-right: 3.7037%;
-  display: inline;
-}
-
-/* line 18, utilities/_grid.scss */
 .footer__districts {
   width: 39.50617%;
   float: right;
   margin-right: 0;
   *margin-left: -3em;
+  display: inline;
+}
+
+/* line 18, utilities/_grid.scss */
+.footer__news {
+  width: 56.79012%;
+  float: left;
+  margin-right: 3.7037%;
   display: inline;
 }
 
@@ -665,15 +821,15 @@ you can use the generic selector below, but it's slower:
 
 /* line 35, utilities/_grid.scss */
 .homepage__sticky {
-  width: 65.4321%;
+  width: 70.52632%;
   float: left;
-  margin-right: 3.7037%;
+  margin-right: 3.15789%;
   display: inline;
 }
 
 /* line 38, utilities/_grid.scss */
 .homepage__contact {
-  width: 30.8642%;
+  width: 26.31579%;
   float: right;
   margin-right: 0;
   *margin-left: -3em;
@@ -681,7 +837,7 @@ you can use the generic selector below, but it's slower:
 }
 
 /* line 42, utilities/_grid.scss */
-.districts__officer {
+.districts__officers {
   width: 39.50617%;
   float: left;
   margin-right: 3.7037%;
@@ -723,7 +879,7 @@ you can use the generic selector below, but it's slower:
 }
 
 /* line 62, utilities/_grid.scss */
-.gallery .gallery__item:nth-child(3) {
+.gallery .gallery__item:nth-child(4n) {
   width: 22.22222%;
   float: right;
   margin-right: 0;
@@ -732,6 +888,22 @@ you can use the generic selector below, but it's slower:
 }
 
 /* line 68, utilities/_grid.scss */
+.homepage__sticky .media {
+  width: 48.14815%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -3em;
+  display: inline;
+}
+/* line 70, utilities/_grid.scss */
+.homepage__sticky .media:first-child {
+  width: 48.14815%;
+  float: left;
+  margin-right: 3.7037%;
+  display: inline;
+}
+
+/* line 75, utilities/_grid.scss */
 .organization {
   width: 22.22222%;
   float: left;
@@ -739,7 +911,7 @@ you can use the generic selector below, but it's slower:
   display: inline;
 }
 
-/* line 71, utilities/_grid.scss */
+/* line 78, utilities/_grid.scss */
 .navigation {
   width: 74.07407%;
   float: right;
@@ -748,7 +920,7 @@ you can use the generic selector below, but it's slower:
   display: inline;
 }
 
-/* line 75, utilities/_grid.scss */
+/* line 82, utilities/_grid.scss */
 .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
   width: 22.22222%;
   float: left;
@@ -756,7 +928,7 @@ you can use the generic selector below, but it's slower:
   display: inline;
 }
 
-/* line 78, utilities/_grid.scss */
+/* line 85, utilities/_grid.scss */
 .quicklink__item_4 {
   width: 22.22222%;
   float: right;
@@ -777,7 +949,7 @@ p {
 
 /* line 15, atoms/_type.scss */
 small {
-  font-size: 12.75px;
+  font-size: 0.85em;
 }
 
 /* line 19, atoms/_type.scss */
@@ -806,11 +978,15 @@ hr {
 /* line 1, atoms/_body.scss */
 body {
   font-family: Helvetica, sans-serif;
-  font-size: 1em;
   line-height: 1.5em;
   color: #222222;
   background-color: #eeeeee;
   margin: 0;
+}
+
+/* line 10, atoms/_body.scss */
+body {
+  font-size: 0.9375em;
 }
 
 /* line 1, atoms/_figure.scss */
@@ -839,7 +1015,7 @@ legend {
 }
 /* line 28, atoms/_form.scss */
 legend small {
-  font-size: 11.25px;
+  font-size: 12px;
   color: #999999;
 }
 
@@ -849,7 +1025,7 @@ input,
 button,
 select,
 textarea {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 1.5em;
 }
@@ -897,9 +1073,10 @@ textarea {
   height: auto;
 }
 
-/* line 88, atoms/_form.scss */
+/* line 89, atoms/_form.scss */
 textarea,
 input[type="text"],
+input[type="number"],
 input[type="search"] {
   background-color: white;
   border: 1px solid #cccccc;
@@ -912,9 +1089,10 @@ input[type="search"] {
   transition: border linear 0.2s, box-shadow linear 0.2s;
   -webkit-appearance: none;
 }
-/* line 96, atoms/_form.scss */
+/* line 97, atoms/_form.scss */
 textarea:focus,
 input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="search"]:focus {
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
@@ -941,14 +1119,14 @@ textarea::-webkit-input-placeholder {
   color: #999999;
 }
 
-/* line 120, atoms/_form.scss */
+/* line 121, atoms/_form.scss */
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
   color: #b94a48;
   border-color: #ee5f5b;
 }
-/* line 123, atoms/_form.scss */
+/* line 124, atoms/_form.scss */
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
@@ -995,7 +1173,12 @@ h3 {
 
 /* line 1, atoms/_html.scss */
 html {
-  font-size: 15px;
+  font-size: 16px;
+}
+
+/* line 1, atoms/_time.scss */
+time {
+  white-space: nowrap;
 }
 
 /* line 1, atoms/_a.scss */
@@ -1068,24 +1251,19 @@ ul.column--quad {
 .article__header h1 {
   margin-bottom: 0;
 }
-/* line 17, molecules/_article.scss */
-.article__header .timestamp {
-  padding-top: 4px;
-  font-size: 0.85em;
-}
 
-/* line 24, molecules/_article.scss */
+/* line 18, molecules/_article.scss */
 .article__introtext {
   font-weight: bold;
   margin-bottom: 1.5em;
 }
 
-/* line 29, molecules/_article.scss */
+/* line 23, molecules/_article.scss */
 .article__thumbnail {
   margin-bottom: 0.75em;
 }
 
-/* line 35, molecules/_article.scss */
+/* line 29, molecules/_article.scss */
 .article__thumbnail {
   float: right;
   width: 40%;
@@ -1096,43 +1274,53 @@ ul.column--quad {
 /* line 1, molecules/_banner.scss */
 .container__banner img {
   border: 1px solid #505050;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 /* line 1, molecules/_breadcrumb.scss */
+.container__breadcrumb {
+  padding: 5px 25px 0;
+}
+
+/* line 7, molecules/_breadcrumb.scss */
 .breadcrumb {
   font-size: 0.85em;
-  line-height: 2.5em;
-  padding: 0 1em;
-  margin: 0.25em 0 0 0;
+  line-height: 1.5em;
+  padding: 10px 10px 5px;
+  margin: 0;
+  clear: both;
   list-style: none;
   background-color: #f8f8f8;
+  border-bottom: 1px solid #eee;
+  border: 1px solid #eee;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  padding: 6px 1em 1px;
 }
-/* line 9, molecules/_breadcrumb.scss */
-.breadcrumb > li {
+/* line 17, molecules/_breadcrumb.scss */
+.breadcrumb li {
   display: inline-block;
+  text-shadow: 0 1px 0 white;
+  padding-bottom: 5px;
   *display: inline;
   /* IE7 inline-block hack */
   *zoom: 1;
-  text-shadow: 0 1px 0 white;
 }
-/* line 13, molecules/_breadcrumb.scss */
-.breadcrumb > li > .divider {
+/* line 22, molecules/_breadcrumb.scss */
+.breadcrumb li .divider {
   color: #ccc;
 }
-/* line 17, molecules/_breadcrumb.scss */
+/* line 26, molecules/_breadcrumb.scss */
 .breadcrumb .active {
   color: #999999;
 }
-/* line 21, molecules/_breadcrumb.scss */
+/* line 30, molecules/_breadcrumb.scss */
 .breadcrumb li::first-letter {
   text-transform: uppercase;
 }
@@ -1197,7 +1385,7 @@ input[type="submit"].button::-moz-focus-inner {
 /* line 2, molecules/button/_button--large.scss */
 .button--large {
   padding: 11px 19px;
-  font-size: 18.75px;
+  font-size: 1.25em;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -1254,23 +1442,48 @@ input[type="submit"].button::-moz-focus-inner {
 }
 
 /* line 7, molecules/_form.scss */
-.control-group {
+.form__group {
   margin-bottom: 0.75em;
 }
 
-/* line 11, molecules/_form.scss */
+/* line 12, molecules/_form.scss */
 .form__left {
   margin-right: 8em;
 }
 
-/* line 15, molecules/_form.scss */
+/* line 16, molecules/_form.scss */
 .form__right {
   width: 7em;
   float: right;
 }
-/* line 18, molecules/_form.scss */
+/* line 19, molecules/_form.scss */
 .form__right .button {
   width: 100%;
+}
+
+/* line 135, utilities/_mixins.scss */
+.has-error .form__label {
+  color: #a94442;
+}
+/* line 140, utilities/_mixins.scss */
+.has-error .form__input,
+.has-error .select2-default {
+  border-color: #a94442;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+/* line 143, utilities/_mixins.scss */
+.has-error .form__input:focus,
+.has-error .select2-default:focus {
+  border-color: #843534;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+/* line 150, utilities/_mixins.scss */
+.has-error .form__feedback {
+  color: #a94442;
 }
 
 /* line 5, molecules/_gallery.scss */
@@ -1298,7 +1511,7 @@ input[type="submit"].button::-moz-focus-inner {
 }
 /* line 12, molecules/_header.scss */
 .container__header .text--strong {
-  font-size: 18.75px;
+  font-size: 1.25em;
 }
 /* line 16, molecules/_header.scss */
 .container__header .organization {
@@ -1338,21 +1551,11 @@ input[type="submit"].button::-moz-focus-inner {
   text-decoration: none;
 }
 
-@media (max-width: 766px) {
-  /* line 59, molecules/_header.scss */
-  .js-enabled .container__header {
-    position: fixed;
-  }
-  /* line 63, molecules/_header.scss */
-  .js-enabled .container__content {
-    padding-top: 5.5em;
-  }
-}
 /* line 4, molecules/_media.scss */
 .media {
   overflow: hidden;
   *zoom: 1;
-  margin-bottom: 1em;
+  margin-bottom: 25px;
 }
 
 /* line 9, molecules/_media.scss */
@@ -1371,7 +1574,7 @@ input[type="submit"].button::-moz-focus-inner {
 
 /* line 5, molecules/_navbar.scss */
 .navbar {
-  min-height: 1.25em;
+  min-height: 29px;
   width: 100%;
   background-color: #0054ae;
   border-bottom: 1px solid #00346c;
@@ -1414,46 +1617,58 @@ input[type="submit"].button::-moz-focus-inner {
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   font-weight: bold;
 }
-/* line 52, molecules/_navbar.scss */
-.navbar .navbar__handlebar {
+
+/* line 53, molecules/_navbar.scss */
+.navbar__handlebar {
   border-bottom: 1px solid #004d9f;
   padding: 10px 10px;
 }
-/* line 57, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__logo {
+
+/* line 59, molecules/_navbar.scss */
+.navbar__logo {
   line-height: 36px;
   text-decoration: none;
   float: left;
   color: white;
   zoom: 1;
 }
-/* line 65, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__logo:hover {
+/* line 67, molecules/_navbar.scss */
+.navbar__logo:hover {
   color: white;
 }
-/* line 69, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__logo img {
+/* line 71, molecules/_navbar.scss */
+.navbar__logo img {
   margin-right: 6px;
-  margin-right: 0.4rem;
+  margin-right: 0.375rem;
 }
-/* line 74, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__avatar {
+
+/* line 76, molecules/_navbar.scss */
+.navbar__avatar {
   width: 24px;
   height: 24px;
 }
-/* line 79, molecules/_navbar.scss */
-.navbar .navbar__handlebar .navbar__handle {
+
+/* line 81, molecules/_navbar.scss */
+.navbar__handle {
   float: right;
-  padding: 6px 12px;
-  color: white;
+  padding: 5px 12px;
+  color: #004d9f;
   text-decoration: none;
   text-align: center;
-  border: 1px solid #ebebeb;
+  border: 1px solid #004895;
   border-radius: 8px;
-  background-color: #006bdc;
+  background-color: #fff;
+}
+/* line 91, molecules/_navbar.scss */
+.navbar__handle:after {
+  display: inline-block;
+  font-size: 30px;
+  content: '\2630';
+  vertical-align: text-bottom;
+  padding-left: 6px;
 }
 
-/* line 97, molecules/_navbar.scss */
+/* line 104, molecules/_navbar.scss */
 .js-enabled .navbar #navigation {
   margin: -1px;
   padding: 0;
@@ -1464,7 +1679,7 @@ input[type="submit"].button::-moz-focus-inner {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
-/* line 102, molecules/_navbar.scss */
+/* line 109, molecules/_navbar.scss */
 .js-enabled .navbar #navigation.is-shown {
   margin: 0;
   padding: 0;
@@ -1475,47 +1690,33 @@ input[type="submit"].button::-moz-focus-inner {
   position: static;
 }
 
-/* line 109, molecules/_navbar.scss */
+/* line 117, molecules/_navbar.scss */
+.navbar__handlebar #button {
+  display: none;
+}
+
+/* line 122, molecules/_navbar.scss */
 .navbar {
-  border-bottom: 0 none;
-  border: 1px solid #002d5d;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
   /* Customize the navbar links to be fill the entire space of the .navbar */
 }
-/* line 115, molecules/_navbar.scss */
+/* line 124, molecules/_navbar.scss */
 .navbar ul {
   display: table;
 }
-/* line 118, molecules/_navbar.scss */
+/* line 127, molecules/_navbar.scss */
 .navbar ul li {
   display: table-cell;
   width: 1%;
 }
-/* line 122, molecules/_navbar.scss */
+/* line 131, molecules/_navbar.scss */
 .navbar ul li a {
   text-align: center;
-  padding: 5px 15px 5px;
   border: 0 none;
   font-weight: normal;
-}
-/* line 128, molecules/_navbar.scss */
-.navbar ul li:first-child a {
-  border-left: 0;
-  -webkit-border-radius: 4px 0 0 4px;
-  -moz-border-radius: 4px 0 0 4px;
-  border-radius: 4px 0 0 4px;
-}
-/* line 132, molecules/_navbar.scss */
-.navbar ul li:last-child a {
-  border-right: 0;
-  -webkit-border-radius: 0 4px 4px 0;
-  -moz-border-radius: 0 4px 4px 0;
-  border-radius: 0 4px 4px 0;
+  padding: 10px 15px;
 }
 
-/* line 139, molecules/_navbar.scss */
+/* line 140, molecules/_navbar.scss */
 .js-enabled .navbar #navigation {
   margin: 0;
   padding: 0;
@@ -1526,6 +1727,40 @@ input[type="submit"].button::-moz-focus-inner {
   position: static;
 }
 
+@media screen and (orientation: landscape), screen and (orientation: portrait) {
+  /* line 147, molecules/_navbar.scss */
+  .navbar__handle:hover {
+    text-decoration: none;
+  }
+}
+/* line 153, molecules/_navbar.scss */
+.navbar {
+  border-bottom: 0 none;
+  border: 1px solid #002d5d;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  /* Customize the navbar links to be fill the entire space of the .navbar */
+}
+/* line 159, molecules/_navbar.scss */
+.navbar ul li a {
+  padding: 5px 15px;
+}
+/* line 162, molecules/_navbar.scss */
+.navbar ul li:first-child a {
+  border-left: 0;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+/* line 166, molecules/_navbar.scss */
+.navbar ul li:last-child a {
+  border-right: 0;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
+}
+
 /* line 8, molecules/nav/_nav.scss */
 .nav {
   margin-left: 0;
@@ -1533,13 +1768,13 @@ input[type="submit"].button::-moz-focus-inner {
   list-style: none;
 }
 /* line 14, molecules/nav/_nav.scss */
-.nav > li > a {
+.nav li a {
   display: block;
   text-decoration: none;
 }
 /* line 20, molecules/nav/_nav.scss */
-.nav > li > a:hover,
-.nav > li > a:focus {
+.nav li a:hover,
+.nav li a:focus {
   text-decoration: none;
   background-color: #ebf3f4;
 }
@@ -1556,36 +1791,36 @@ input[type="submit"].button::-moz-focus-inner {
   *zoom: 1;
 }
 /* line 39, molecules/nav/_nav.scss */
-.nav--list > li > a,
-.nav--list > li > a,
-.nav--pills > li > a,
-.nav--pills > li > a {
+.nav--list li a,
+.nav--list li a,
+.nav--pills li a,
+.nav--pills li a {
   padding-right: 12px;
   padding-left: 12px;
   margin-right: 2px;
 }
 
 /* line 5, molecules/nav/_nav--list.scss */
-.nav--list > li > a {
+.nav--list li a {
   padding-top: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #eeeeee;
 }
 /* line 11, molecules/nav/_nav--list.scss */
-.nav--list > li:last-child > a {
+.nav--list li:last-child a {
   border-bottom: 0 none;
 }
 /* line 18, molecules/nav/_nav--list.scss */
-.nav--list > .active > a,
-.nav--list > .active > a:hover,
-.nav--list > .active > a:focus {
+.nav--list .active a,
+.nav--list .active a:hover,
+.nav--list .active a:focus {
   color: #505050;
   background-color: #ebf3f4;
   font-weight: bold;
 }
 
 /* line 6, molecules/nav/_nav--pills.scss */
-.nav--pills > li > a {
+.nav--pills li a {
   padding-top: 8px;
   padding-bottom: 8px;
   margin-top: 2px;
@@ -1595,9 +1830,9 @@ input[type="submit"].button::-moz-focus-inner {
   border-radius: 5px;
 }
 /* line 17, molecules/nav/_nav--pills.scss */
-.nav--pills > .active > a,
-.nav--pills > .active > a:hover,
-.nav--pills > .active > a:focus {
+.nav--pills .active a,
+.nav--pills .active a:hover,
+.nav--pills .active a:focus {
   color: white;
   background-color: #004d9f;
 }
@@ -1889,11 +2124,11 @@ a.article__thumbnail:focus {
 
 /* line 14, molecules/_typography.scss */
 .text--small {
-  font-size: 12.75px;
+  font-size: 0.85em;
 }
 
 /* line 19, molecules/_typography.scss */
-.muted, .article__header .timestamp, .text--small {
+.muted, .text--small {
   color: #505050;
 }
 
@@ -1925,41 +2160,6 @@ a.article__thumbnail:focus {
   border-radius: 3px;
 }
 
-/* Print stub */
-@media only print {
-  /* line 6, utilities/_print.scss */
-  .container__header .navbar,
-  .container__copyright,
-  .pagination,
-  .st_sharethis {
-    display: none;
-  }
-
-  /* line 10, utilities/_print.scss */
-  .container__header .row-fluid .span3 {
-    display: block;
-    padding-left: 20px;
-    padding-top: 20px;
-  }
-  /* line 15, utilities/_print.scss */
-  .container__header .row-fluid .span3 .organization a:after {
-    content: "";
-  }
-  /* line 19, utilities/_print.scss */
-  .container__header .row-fluid .span3 .organization__name {
-    padding-left: 50px;
-  }
-
-  /* line 24, utilities/_print.scss */
-  .article__thumbnail:after {
-    content: "" !important;
-  }
-
-  /* line 28, utilities/_print.scss */
-  a {
-    border-bottom: 0 none !important;
-  }
-}
 /* Magnific Popup CSS v0.9.9 */
 /* line 78, utilities/_magnific-popup.scss */
 .mfp-bg {
@@ -2485,6 +2685,120 @@ img.mfp-img {
   padding-top: 0;
 }
 
+@media (max-width: 767px) {
+  /* line 3, utilities/_navicon.scss */
+  .navbar__handle:after {
+    content: "";
+    content: none;
+  }
+
+  /* ====================== lines button ==================================================*/
+  /* line 16, utilities/_navicon.scss */
+  .lines-button {
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+    /* */
+  }
+  /* line 21, utilities/_navicon.scss */
+  .lines-button:hover {
+    opacity: 1;
+  }
+  /* line 24, utilities/_navicon.scss */
+  .lines-button:active {
+    transition: 0;
+  }
+
+  /* line 38, utilities/_navicon.scss */
+  .lines {
+    display: inline-block;
+    width: 0.9375em;
+    height: 0.13393em;
+    background: #004d9f;
+    border-radius: 0.06696em;
+    transition: 0.4s;
+    position: relative;
+    top: -5px;
+  }
+  /* line 43, utilities/_navicon.scss */
+  .lines:before, .lines:after {
+    display: inline-block;
+    width: 0.9375em;
+    height: 0.13393em;
+    background: #004d9f;
+    border-radius: 0.06696em;
+    transition: 0.4s;
+    position: absolute;
+    left: 0;
+    content: '';
+    -webkit-transform-origin: 0.06696em center;
+    transform-origin: 0.06696em center;
+  }
+  /* line 51, utilities/_navicon.scss */
+  .lines:before {
+    top: 0.26786em;
+  }
+  /* line 54, utilities/_navicon.scss */
+  .lines:after {
+    top: -0.26786em;
+  }
+
+  /* line 63, utilities/_navicon.scss */
+  .lines-button.x.close .lines {
+    background: transparent;
+  }
+  /* line 65, utilities/_navicon.scss */
+  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    top: 0;
+  }
+  /* line 71, utilities/_navicon.scss */
+  .lines-button.x.close .lines:before {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+  /* line 75, utilities/_navicon.scss */
+  .lines-button.x.close .lines:after {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
+}
+/* Print stub */
+@media only print {
+  /* line 6, utilities/_print.scss */
+  .container__header .navbar,
+  .container__copyright,
+  .pagination,
+  .st_sharethis {
+    display: none;
+  }
+
+  /* line 10, utilities/_print.scss */
+  .container__header .organization {
+    display: block;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+  /* line 15, utilities/_print.scss */
+  .container__header .organization a:after {
+    content: "";
+  }
+  /* line 19, utilities/_print.scss */
+  .container__header .organization .organization__name {
+    padding-left: 50px;
+  }
+
+  /* line 24, utilities/_print.scss */
+  .article__thumbnail:after {
+    content: "" !important;
+  }
+
+  /* line 28, utilities/_print.scss */
+  a {
+    border-bottom: 0 none !important;
+  }
+}
 /* line 6, ie.scss */
 .container__header .nav li {
   display: block;

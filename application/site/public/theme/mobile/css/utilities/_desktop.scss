@@ -1,3 +1,14 @@
+.contact__inner {
+  .well {
+    padding-bottom: 0;
+  }
+
+  .text--strong {
+    display: block;
+    margin-bottom: $baseLineHeight / 2;
+  }
+}
+
 @include respond-min($navbarCollapseWidth) {
     #wrap {
         border-bottom: 1px solid darken($grayLighter, 7%);
@@ -11,8 +22,6 @@
     .container__header .is-hidden,
     .container__breadcrumb,
     .container__banner,
-    .container__footer,
-    .container__quicklinks,
     .container__content .sidebar,
     .container__copyright .copyright,
     .hidden-phone {
@@ -22,7 +31,7 @@
     .container__header,
     .container__banner,
     .container__breadcrumb,
-    .container__content,
+    .container__content .homepage__sticky,
     .container__footer {
         padding-left: 0px;
         padding-right: 0px;
@@ -34,30 +43,19 @@
         }
     }
 
-    .container__content.police {
-        .contact__inner {
-            border-left: 1px solid $grayLighter;
-
-            padding-left: 18px;
-            margin-top: 20px;
-            @include border-radius(5px);
-
-            ul {
-                margin-bottom: 0;
-            }
-
-            .well {
-                margin-bottom: 10px
-            }
-        }
-    }
-
     .container__header {
         width: auto;
     }
 
     .container__content {
-        .sidebar {
+      padding-top: floor($grid-padding * 1.5);
+
+      &.homepage {
+        padding-left: $grid-padding;
+        padding-right: $grid-padding;
+      }
+
+      .sidebar {
             margin-top: 20px;
 
             .sidebar__element {
@@ -67,19 +65,113 @@
     }
 
     .container__quicklinks {
-        border-top: 1px solid $grayLighter;
-        padding-top: $gutter-width / 2;
-        margin-top: $gutter-width / 2;
+        @extend .clearfix;
+    }
+
+    .homepage__sticky {
+      padding-bottom: 0;
+    }
+
+    .homepage__contact {
+      padding: 0;
+      margin-bottom: $grid-padding;
+      background-color: transparent;
+      border-top: 0px none;
+      color: $textColor;
+
+      a,
+      a:hover {
+        color: $linkColor;
+      }
+
+      .nav--list li a {
+        border-bottom: 1px solid $grayLighter;
+
+        &:hover {
+          background-color: $cyanLighter;
+          color: $linkColor;
+        }
+      }
+
+      .muted {
+        color: $gray;
+      }
+
+      .contact__inner {
+        border-left: 1px solid $grayLighter;
+
+        padding-left: 18px;
+        margin-top: 20px;
+
+        ul {
+          margin-bottom: 0;
+        }
+
+        .well {
+          border: 1px solid darken($wellBackground, 5%);
+          background-color: $wellBackground;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .quicklink__item_1,
+    .quicklink__item_2,
+    .quicklink__item_3 {
+        margin-bottom: $grid-padding/2;
+        border-bottom: 1px solid #eee;
+        padding-bottom: $grid-padding/2;
+
+        @include respond-min($navbarCollapseWidth) {
+            &.quicklink__item_3 {
+                margin-bottom: 0;
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+
+        @include respond-min(998px) {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
     }
 
     .container__footer {
         padding-top: $gutter-width / 2;
 
         background-color: $wellBackground;
-        border-top: 1px solid darken($grayLighter, 7%);
 
-        @include border-radius(0 0 5px 5px);
+        .footer__districts {
+          margin-top: $grid-padding;
+
+          @include respond-min($navbarCollapseWidth) {
+            margin-top: 0;
+          }
+        }
     }
+
+  .container.container__footer_menu {
+    padding-left: 14px;
+    padding-right: 14px;
+
+    ul {
+      @extend .clearfix;
+      margin: 0;
+
+      li {
+        display: block;
+        float: left;
+
+        a {
+          border: none;
+          font-size: 14px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
 
     .container__copyright {
         text-align: left;

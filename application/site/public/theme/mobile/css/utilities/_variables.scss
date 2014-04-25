@@ -45,7 +45,7 @@ $sansFontFamily: Helvetica, sans-serif;
 $serifFontFamily: Georgia, "Times New Roman", Times, serif;
 $monoFontFamily: Monaco, Menlo, Consolas, "Courier New", monospace;
 
-$base-font-size: 15px;
+$base-font-size: 16px;
 $baseLineHeight: 1.5em;
 $baseFontFamily: $sansFontFamily !default;
 
@@ -55,8 +55,8 @@ $linkColorHover: darken($linkColor, 15%) !default;
 $iconSpritePath: "../img/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
 
-$fontSizeLarge: $base-font-size * 1.25 !default;
-$fontSizeSmall: $base-font-size * 0.85 !default;
+$fontSizeLarge: 1.25em !default;
+$fontSizeSmall: 0.85em !default;
 
 $headingsFontFamily: inherit !default;
 // empty to use BS default, $baseFontFamily
@@ -114,7 +114,7 @@ $tableBorder: #ddd !default;
 $navbarCollapseWidth: 767px;
 $navbarCollapseDesktopWidth: $navbarCollapseWidth + 1;
 
-$navbarHeight: 2.5em;
+$navbarHeight: 58px;
 $navbarBackgroundHighlight: lighten($blue, 12%);
 $navbarBackground: lighten($blue, 3%);
 $navbarBorder: darken($navbarBackground, 16%);

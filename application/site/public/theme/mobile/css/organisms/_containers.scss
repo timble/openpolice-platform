@@ -1,19 +1,9 @@
-.container__header .row-fluid .span3,
 .container__header .slogan,
-.container__breadcrumb,
 .container__banner,
-.container__footer,
-.container__quicklinks,
 .container__content .sidebar,
-.container__copyright .copyright,
 .is-hidden,
 .hidden-phone {
     display: none;
-}
-
-.container__content {
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .container__header {
@@ -24,29 +14,21 @@
 }
 
 .container__content {
-    padding-top: $grid-padding * 1.5;
+    padding-top: $grid-padding;
     padding-bottom: $grid-padding;
+    padding-left: 20px;
+    padding-right: 20px;
 
-    &.police {
-        .contact__inner {
-            margin-left: 0;
-            border: 0 none;
-            padding: 0;
-
-            a {
-                text-decoration: none;
-            }
-        }
-
-        article {
-            border: 0 none !important;
-            padding-bottom: 0 !important;
-        }
+    &.homepage {
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-bottom: 0px;
     }
 }
 
 .container__copyright {
-    padding: 3px 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
     text-align: center;
     border-top: 1px solid darken($grayLighter, 7%);
     font-size: $fontSizeSmall;
@@ -57,7 +39,31 @@
 }
 
 .container__footer {
-    .button {
-        float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: $gutter-width / 2;
+  background-color: $wellBackground;
+  border-top: 1px solid darken($grayLighter, 7%);
+  border-bottom: 1px solid darken($grayLighter, 7%);
+
+  .container__quicklinks {
+    div {
+      margin-bottom: $grid-padding;
     }
+  }
+
+  .footer__districts {
+    margin-bottom: $grid-padding;
+  }
+}
+
+.container__footer_menu {
+  ul {
+    margin: 0;
+
+    li a {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
 }

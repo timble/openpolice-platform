@@ -24,9 +24,11 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         parent::_afterControllerBrowse($context);
 
         $this->reset();
+        $this->addOfficers();
         $this->addDistricts();
-        $this->addRelations();
         $this->addStreets();
+        $this->addDistrictsofficers();
+        $this->addRelations();
         $this->addNews();
         $this->addContacts();
     }
@@ -35,6 +37,12 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     {
         $command->label = 'Districts';
         $command->href = 'option=com_uploads&view=upload&table=districts';
+    }
+
+    protected function _commandDistrictsofficers(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'Districts - Officers';
+        $command->href = 'option=com_uploads&view=upload&table=districts_officers';
     }
 
     protected function _commandRelations(Library\ControllerToolbarCommand $command)
@@ -46,7 +54,13 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     protected function _commandStreets(Library\ControllerToolbarCommand $command)
     {
         $command->label = 'Local Streets';
-        $command->href = 'option=com_uploads&view=upload&table=agiv_streets';
+        $command->href = 'option=com_uploads&view=upload&table=streets';
+    }
+
+    protected function _commandOfficers(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'Officers';
+        $command->href = 'option=com_uploads&view=upload&table=officers';
     }
 
     protected function _commandNews(Library\ControllerToolbarCommand $command)

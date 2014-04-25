@@ -3,7 +3,7 @@
 
 .media {
     @include clearfix();
-    margin-bottom: 1em;
+    margin-bottom: $grid-padding;
 }
 
 .media__heading {

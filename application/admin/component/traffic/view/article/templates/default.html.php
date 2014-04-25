@@ -33,7 +33,7 @@
             </div>
         </div>
 		
-		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>
+		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text, 'removeButtons' => 'readmore')) ?>
 	</div>
 	<div class="sidebar">
         <?= import('default_sidebar.html') ?>

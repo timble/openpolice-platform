@@ -13,7 +13,7 @@
 
 <script>
     jQuery(document).ready(function() {
-        CKEDITOR.replace( <?= $id ?>, {
+        CKEDITOR.replace( '<?= $id ?>', {
             baseHref   : '<?= $settings->baseHref ?>',
             toolbar    : '<?= $settings->options->toolbar ?>',
             height     : '<?= $settings->height ?>',
@@ -21,7 +21,8 @@
             language   : '<?= $settings->language ?>',
             contentsLanguage     : '<?= $settings->contentsLanguage ?>',
             contentsLangDirection: '<?= $settings->contentsLangDirection ?>',
-            scayt_autoStartup    : '<?= $settings->scayt_autoStartup ?>'
+            scayt_autoStartup    : '<?= $settings->scayt_autoStartup ?>',
+            removeButtons        : '<?= $settings->removeButtons ?>'
         });
     });
 </script>

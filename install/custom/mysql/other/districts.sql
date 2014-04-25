@@ -108,20 +108,32 @@ UPDATE `streets_islp`, `streets_postcodes`
 SET `streets_islp`.`streets_city_id` = `streets_postcodes`.`streets_city_id`
 WHERE `streets_islp`.`postcode` = `streets_postcodes`.`streets_postcode_id`;
 
+
 -- Set ISLP code in streets table
 UPDATE `streets`, `streets_islp`
 SET `streets`.`islp` = `streets_islp`.`islp`
-WHERE `streets`.`title` = `streets_islp`.`title` AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id`;
+WHERE `streets`.`title` = `streets_islp`.`title` AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+
+UPDATE `streets`, `streets_islp`
+SET `streets`.`islp` = `streets_islp`.`islp`
+WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, '-', ' ') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+
+UPDATE `streets`, `streets_islp`
+SET `streets`.`islp` = `streets_islp`.`islp`
+WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, ' ', '-') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+
+UPDATE `streets`, `streets_islp`
+SET `streets`.`islp` = `streets_islp`.`islp`
+WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, ' ', '_') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+
+UPDATE `streets`, `streets_islp`
+SET `streets`.`islp` = `streets_islp`.`islp`
+WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, ' ', '_') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
 
 -- Update traffic_streets to use agiv
 UPDATE `traffic_streets`, `streets`
 SET `traffic_streets`.`streets_street_id` = `streets`.`streets_street_id`
 WHERE `traffic_streets`.`streets_street_id` = `streets`.`islp`;
-
--- Update districts_relations to use agiv
-UPDATE `districts_relations`, `streets_islps`
-SET `districts_relations`.`streets_street_id` = `streets_islps`.`streets_street_id`
-WHERE `districts_relations`.`islp` = `streets_islps`.`islp`;
 
 -- Add police_zone_id to streets_postcodes
 UPDATE `streets_postcodes`, `police_municipalities`

@@ -48,46 +48,53 @@
         @include box-shadow(inset 0 3px 8px rgba(0, 0, 0, .125));
         font-weight: bold;
     }
+}
 
-    .navbar__handlebar {
-        @extend .clearfix;
-        border-bottom: 1px solid $blue;
-        padding: 10px 10px;
+.navbar__handlebar {
+  @extend .clearfix;
+  border-bottom: 1px solid $blue;
+  padding: 10px 10px;
+}
 
-        .navbar__logo {
-            line-height: 36px;
-            text-decoration: none;
-            float: left;
+.navbar__logo {
+  line-height: 36px;
+  text-decoration: none;
+  float: left;
 
-            color: $white;
-            zoom: 1;
+  color: $white;
+  zoom: 1;
 
-            &:hover {
-                color: $white;
-            }
+  &:hover {
+    color: $white;
+  }
 
-            img {
-                @include rem(margin-right, 6px);
-            }
-        }
+  img {
+    @include rem(margin-right, 6px);
+  }
+}
 
-        .navbar__avatar {
-            width: 24px;
-            height: 24px;
-        }
+.navbar__avatar {
+  width: 24px;
+  height: 24px;
+}
 
-        .navbar__handle {
-            float: right;
-            padding: 6px 12px;
+.navbar__handle {
+  float: right;
+  padding: 5px 12px;
+  color: $linkColor;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid darken($navbarBackground, 5%);
+  border-radius: 8px;
+  background-color: #fff;
 
-            color: $white;
-            text-decoration: none;
-            text-align: center;
-            border: 1px solid darken($white, 8%);
-            border-radius: 8px;
-            background-color: $navbarLinkBackgroundHover;
-        }
-    }
+  &:after {
+    display: inline-block;
+    font-size: 30px;
+    content: '\2630';
+    vertical-align: text-bottom;
+    padding-left: 6px;
+  }
 }
 
 // JS dependencies
@@ -105,6 +112,43 @@
     }
 }
 
+@include respond-min(600px) {
+  .navbar__handlebar {
+    #button {
+      display: none;
+    }
+  }
+
+  .navbar {
+    /* Customize the navbar links to be fill the entire space of the .navbar */
+    ul {
+      display: table;
+    }
+    ul li {
+      display: table-cell;
+      width: 1%;
+    }
+    ul li a {
+      text-align: center;
+      border: 0 none;
+      font-weight: normal;
+      padding: 10px 15px;
+    }
+  }
+
+  // Always show the navbar on non-mobile screen
+  .js-enabled .navbar #navigation {
+    @include visually-shown;
+  }
+}
+
+// Prevent underline on touch devices
+@media screen and (orientation:landscape), screen and (orientation:portrait) {
+  .navbar__handle:hover {
+    text-decoration: none;
+  }
+}
+
 @include respond-min($navbarCollapseWidth) {
     .navbar {
         border-bottom: 0 none;
@@ -112,18 +156,8 @@
         @include border-radius($baseBorderRadius);
 
         /* Customize the navbar links to be fill the entire space of the .navbar */
-        ul {
-            display: table;
-        }
-        ul li {
-            display: table-cell;
-            width: 1%;
-        }
         ul li a {
-            text-align: center;
-            padding: 5px 15px 5px;
-            border: 0 none;
-            font-weight: normal;
+            padding: 5px 15px;
         }
         ul li:first-child a {
             border-left: 0;
@@ -133,10 +167,5 @@
             border-right: 0;
             @include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
         }
-    }
-
-    // Always show the navbar on non-small screen
-    .js-enabled .navbar #navigation {
-        @include visually-shown;
     }
 }
