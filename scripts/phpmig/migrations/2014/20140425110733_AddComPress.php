@@ -11,7 +11,6 @@ class AddComPress extends Migration
     {
         $this->_queries = "CREATE TABLE `press` (
                           `press_article_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-                          `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
                           `title` text NOT NULL,
                           `slug` varchar(250) DEFAULT NULL,
                           `text` mediumtext NOT NULL,
