@@ -896,7 +896,7 @@ you can use the generic selector below, but it's slower:
   }
 
   /* line 62, utilities/_grid.scss */
-  .gallery .gallery__item:nth-child(3) {
+  .gallery .gallery__item:nth-child(4n) {
     width: 22.22222%;
     float: right;
     margin-right: 0;
@@ -1193,6 +1193,11 @@ h3 {
 /* line 1, atoms/_html.scss */
 html {
   font-size: 16px;
+}
+
+/* line 1, atoms/_time.scss */
+time {
+  white-space: nowrap;
 }
 
 /* line 1, atoms/_a.scss */

@@ -89,39 +89,44 @@
 }
 /* line 54, default.scss */
 #support__ticket form .cke_bottom {
-  display: none !important;
+  background: #f7f7f7;
+  border: 1px solid #dddddd;
+  border-top-color: #eaeaea;
+  border-radius: 0 0 5px 5px;
 }
-/* line 58, default.scss */
+/* line 62, default.scss */
 #support__ticket form .cke_contents {
-  border: 1px solid #dddddd !important;
-  border-radius: 5px;
+  border: 1px solid #dddddd;
+  border-bottom: 0 none;
+  border-radius: 5px 5px 0 0;
+  min-height: 175px;
 }
-/* line 64, default.scss */
+/* line 70, default.scss */
 #support__ticket .attachment {
   background-color: #f1f1f1;
   padding: 4px 6px;
   border-radius: 4px;
 }
 
-/* line 72, default.scss */
+/* line 78, default.scss */
 .label-new {
   background-color: #e0f5fe;
   color: #049cdb;
 }
 
-/* line 73, default.scss */
+/* line 79, default.scss */
 .label-open {
   background-color: #fdebeb;
   color: #cf1010;
 }
 
-/* line 74, default.scss */
+/* line 80, default.scss */
 .label-pending {
   background-color: #fef4e5;
   color: #f89406;
 }
 
-/* line 75, default.scss */
+/* line 81, default.scss */
 .label-solved {
   background-color: #e3f6ec;
   color: #297e52;

@@ -629,6 +629,28 @@ CREATE TABLE `pages_orderings` (
 
 
 --
+-- Table structure data for table `press`
+--
+
+CREATE TABLE `press` (
+  `press_article_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `slug` varchar(250) DEFAULT NULL,
+  `text` mediumtext NOT NULL,
+  `published` tinyint(1) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `created_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `modified_on` datetime DEFAULT NULL,
+  `modified_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `locked_by` int(11) unsigned DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  `params` text,
+  PRIMARY KEY (`press_article_id`),
+  KEY `idx_state` (`published`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
 -- Table structure data for table `questions`
 --
 

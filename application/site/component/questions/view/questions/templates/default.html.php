@@ -21,6 +21,7 @@
 <? endif ?>
 
 <? if($state->category OR $state->searchword) : ?>
+<? if(count($questions)) : ?>
 <ul class="nav nav--pills nav--visited">
 <? foreach ($questions as $question) : ?>
     <li>
@@ -30,6 +31,9 @@
     </li>
 <? endforeach; ?>
 </ul>
+    <? else : ?>
+    <h2 id="no-results"><?= translate('No results found') ?>.</h2>
+    <? endif ?>
 <? else : ?>
    <ul class="nav nav--pills column--double">
         <? foreach ($categories as $category): ?>
@@ -47,3 +51,9 @@
 <? endif ?>
 
 <?= import('default_contact.html') ?>
+
+<script data-inline>
+    if(document.getElementById('no-results')) {
+        _gaq.push(['_trackEvent', 'Questions','No results found','<?= $state->searchword ?>']);
+    }
+</script>

@@ -1,6 +1,8 @@
 <?
     $zone = object('com:police.model.zone')->id($site)->getRow();
     $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
+
+    $press = object('com:pages.model.page')->id('101')->getRow();
 ?>
 
 <div id="wrap">
@@ -81,18 +83,17 @@
                     <ktml:modules:content>
                 </div>
             </ktml:modules>
-
         </div>
     </div>
     <div class="container container__footer_menu">
-            <ul class="nav nav--list">
-                <li><a href="/<?= $site ?>"><?= translate('Home') ?></a></li>
-                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('News')) ?>"><?= translate('News') ?></a></li>
-                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Questions')) ?>"><?= translate('Questions') ?></a></li>
-                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Traffic')) ?>"><?= translate('Traffic') ?></a></li>
-                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('About us')) ?>"><?= translate('About us') ?></a></li>
-                <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Contact')) ?>"><?= translate('Contact') ?></a></li>
-            </ul>
+        <ul class="nav nav--list">
+            <li><a href="/<?= $site ?>"><?= translate('Home') ?></a></li>
+            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('News')) ?>"><?= translate('News') ?></a></li>
+            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Questions')) ?>"><?= translate('Questions') ?></a></li>
+            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Traffic')) ?>"><?= translate('Traffic') ?></a></li>
+            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('About us')) ?>"><?= translate('About us') ?></a></li>
+            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Contact')) ?>"><?= translate('Contact') ?></a></li>
+        </ul>
     </div>
 </div>
 
@@ -106,9 +107,12 @@
                 <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>&nbsp;&nbsp;|&nbsp;
             <? endif ?>
             <a href="/<?= $site ?>/downloads">Downloads</a>
+            <? if($press->published) : ?>
+                &nbsp;|&nbsp;&nbsp;<a href="/<?= $site ?>/<?= $press->slug ?>"><?= $press->title ?></a>
+            <? endif ?>
         </div>
         <div class="copyright--right">
-            © 2013 <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
+            © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
             <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/disclaimer.html">Disclaimer</a> -
             <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/privacy.html">Privacy</a> -
             <a href="http://www.belgium.be">Belgium.be</a>

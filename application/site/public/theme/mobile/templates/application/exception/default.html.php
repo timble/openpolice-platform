@@ -8,7 +8,11 @@
  */
 ?>
 
-<? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
+<?
+    $zone = object('com:police.model.zone')->id($site)->getRow();
+    $language_short = explode("-", $language);
+    $language_short = $language_short[0];
+?>
 
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
@@ -43,10 +47,10 @@
 <body>
 <div id="wrap">
     <div class="container container__header">
-        <div class="logo" itemscope itemtype="http://schema.org/Organization">
+        <div class="organization" itemscope itemtype="http://schema.org/Organization">
             <a itemprop="url" href="/<?= $site ?>">
-                <img itemprop="logo" src="assets://application/images/logo-nl.jpg" />
-                <div><?= escape($zone->title); ?></div>
+                <img class="organization__logo" width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= $language_short ?>.jpg" />
+                <div class="organization__name"><?= escape($zone->title); ?></div>
             </a>
         </div>
         <div class="navigation">
@@ -85,15 +89,14 @@
             <a class="button button--primary button--large" href="/<?= $site ?>" title="<?= translate('Home Page'); ?>"><?= translate('Home Page'); ?></a>
         </div>
 
+        <? if(count($trace)) : ?>
         <div class="backtrace">
-            <button id="backtrace__button" class="btn button--link" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>">More</button>
+            <button id="backtrace__button" class="button--link" onclick="toggleBacktrace()" data-text-less="<?= translate('Less') ?>" data-text-more="<?= translate('More') ?>"><?= translate('More') ?></button>
         </div>
         <div id="backtrace__info" class="is-hidden">
-            <? if(count($trace)) : ?>
-                <?= import('default_backtrace.html'); ?>
-            <? endif; ?>
+            <?= import('default_backtrace.html'); ?>
         </div>
-
+        <? endif; ?>
     </div>
 </div>
 
