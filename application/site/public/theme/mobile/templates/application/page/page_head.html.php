@@ -45,7 +45,6 @@
 
         ga('create', 'UA-20242887-1', 'lokalepolitie.be');
         ga('send', 'pageview');
-
     </script>
     <?php endif; ?>
 </head>
