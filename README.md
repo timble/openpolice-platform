@@ -121,6 +121,14 @@ We simply just want to say thank you to the following projects for helping us ou
 * [VirtualBox](http://www.virtualbox.org)
 
 
+## Open Data resources
+
+The Police Internet Platform leverages open data resources and and wouldn't be as productive without these open data projects.
+We simply just want to say thank you to the following projects for helping us out:
+
+* [Flemish Geographical Information Agency](https://www.agiv.be/)
+
+
 ## How to contribute?
 
 Check our [contributing](CONTRIBUTING.md) guide.
