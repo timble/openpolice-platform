@@ -12,6 +12,7 @@ a:focus {
 // Anchors don't have an 'href' property
 a:not([href]) {
   color: inherit;
+  text-decoration: none;
 
   &:hover,
   &:focus {
