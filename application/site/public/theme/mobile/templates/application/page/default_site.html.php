@@ -71,25 +71,31 @@
                 <h3><?= translate('Latest news') ?></h3>
                 <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
             </div>
+            <? if($site != '5888') : ?>
             <div class="footer__districts">
                 <h3><?= translate('Your district officer') ?></h3>
                 <p><?= translate('You know the responsible district officer in your area? He or she is your first contact with the police.') ?></p>
                 <a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
             </div>
             <?php endif; ?>
+            <?php endif; ?>
 
+            <? if($site != '5888') : ?>
             <ktml:modules position="quicklinks">
                 <div class="container__quicklinks">
                     <ktml:modules:content>
                 </div>
             </ktml:modules>
+            <? endif ?>
         </div>
     </div>
     <div class="container container__footer_menu">
         <ul class="nav nav--list">
             <li><a href="/<?= $site ?>"><?= translate('Home') ?></a></li>
             <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('News')) ?>"><?= translate('News') ?></a></li>
+            <? if($site != '5888') : ?>
             <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Questions')) ?>"><?= translate('Questions') ?></a></li>
+            <? endif ?>
             <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Traffic')) ?>"><?= translate('Traffic') ?></a></li>
             <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('About us')) ?>"><?= translate('About us') ?></a></li>
             <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Contact')) ?>"><?= translate('Contact') ?></a></li>
