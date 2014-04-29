@@ -24,6 +24,7 @@ class SupportControllerComment extends Library\ControllerModel
             'behaviors' => array(
                 'editable',
                 'broadcastable',
+                'indexable',
                 'com:activities.controller.behavior.loggable',
                 'com:attachments.controller.behavior.attachable'
             )
