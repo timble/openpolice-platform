@@ -81,14 +81,16 @@
             <?php endif; ?>
             <?php endif; ?>
 
+            <? if($site !== '5888') : ?>
             <ktml:modules position="quicklinks">
                 <div class="container__quicklinks">
                     <ktml:modules:content>
                 </div>
             </ktml:modules>
+            <? endif ?>
         </div>
     </div>
-    <? endif ?>
+
     <div class="container container__footer_menu">
         <ul class="nav nav--list">
             <li><a href="/<?= $site ?>"><?= translate('Home') ?></a></li>
