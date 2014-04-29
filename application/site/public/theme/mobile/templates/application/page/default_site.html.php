@@ -64,6 +64,7 @@
         <? endif ?>
     </div>
 
+    <? if($extension !== 'police' && $site !== '5888') : ?>
     <div class="container container__footer">
         <div class="row">
             <? if($extension !== 'police') : ?>
@@ -71,7 +72,7 @@
                 <h3><?= translate('Latest news') ?></h3>
                 <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
             </div>
-            <? if($site != '5888') : ?>
+            <? if($site !== '5888') : ?>
             <div class="footer__districts">
                 <h3><?= translate('Your district officer') ?></h3>
                 <p><?= translate('You know the responsible district officer in your area? He or she is your first contact with the police.') ?></p>
@@ -80,15 +81,14 @@
             <?php endif; ?>
             <?php endif; ?>
 
-            <? if($site != '5888') : ?>
             <ktml:modules position="quicklinks">
                 <div class="container__quicklinks">
                     <ktml:modules:content>
                 </div>
             </ktml:modules>
-            <? endif ?>
         </div>
     </div>
+    <? endif ?>
     <div class="container container__footer_menu">
         <ul class="nav nav--list">
             <li><a href="/<?= $site ?>"><?= translate('Home') ?></a></li>
