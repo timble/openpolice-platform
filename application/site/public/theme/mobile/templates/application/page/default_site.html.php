@@ -64,7 +64,6 @@
         <? endif ?>
     </div>
 
-    <? if($extension !== 'police' && $site !== '5888') : ?>
     <div class="container container__footer">
         <div class="row">
             <? if($extension !== 'police') : ?>
