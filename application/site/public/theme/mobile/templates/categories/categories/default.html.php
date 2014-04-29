@@ -9,19 +9,19 @@
 ?>
 
 <? $site = escape(object('application')->getCfg('site' )) ?>
+<? $district = object('com:categories.model.category')->id('24')->getRow() ?>
 
-<? if($state->table == 'contacts') : ?>
-    <? $category = object('com:categories.model.category')->id('24')->getRow() ?>
+<? if($state->table == 'contacts' && $district->published) : ?>
     <div class="article">
         <h1 class="article__header">
-            <a href="/<?= $site ?>/contact/<?= $category->slug ?>">
-                <?= $category->title ?>
+            <a href="/<?= $site ?>/contact/<?= $district->slug ?>">
+                <?= $district->title ?>
             </a>
         </h1>
 
-        <?= $category->description ?>
+        <?= $district->description ?>
 
-        <a class="article__readmore" href="/<?= $site ?>/contact/<?= $category->slug ?>"><?= translate('Read more') ?></a>
+        <a class="article__readmore" href="/<?= $site ?>/contact/<?= $district->slug ?>"><?= translate('Read more') ?></a>
     </div>
 <? endif ?>
 
