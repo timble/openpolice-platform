@@ -20,7 +20,7 @@
 <meta content="<?= $published_on ?>" property="article:published_time" />
 
 <ktml:module position="left">
-    <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
+    <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
 
     <? foreach($modules as $module) : ?>
         <div class="sidebar__element">
