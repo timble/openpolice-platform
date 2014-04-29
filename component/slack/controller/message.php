@@ -44,7 +44,7 @@ class ControllerMessage extends Library\ControllerAbstract
             'from'       => 'Wilfried Pasmans',
             'token'      => $application->getCfg('slack_token'),
             'icon_emoji' => ':cop:',
-            'icon_url'   => ''
+            'icon_url'   => 'https://dl.dropboxusercontent.com/u/77404/timble/police/slack/pasmans.png'
         ));
 
         parent::_initialize($config);
