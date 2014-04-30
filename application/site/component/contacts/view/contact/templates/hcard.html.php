@@ -63,4 +63,6 @@
             <?= $contact->misc ?>
         </span>
     <? endif; ?>
+
+    <?= object('com:contacts.controller.hour')->contact($contact->id)->render(array('contact' => $contact)); ?>
 </address>
