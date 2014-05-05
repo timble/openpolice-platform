@@ -90,7 +90,7 @@ class SupportControllerComment extends Library\ControllerModel
     {
         // @TODO: Find out why a form with enctype='multipart/form-data' (set in attachments.upload.js)
         // never sets the redirect back to the referrer.
-        // For this reason, we force the redirect here:  
+        // For this reason, we force the redirect here:
         $context->response->setRedirect($context->request->getReferrer());
     }
 }
