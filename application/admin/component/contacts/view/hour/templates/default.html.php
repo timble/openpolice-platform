@@ -70,7 +70,7 @@
                 <div>
                     <label for="note"><?= translate( 'Note' ); ?></label>
                     <div>
-                        <input type="text" name="note" maxlength="50" value="<?= $hour->note; ?>" <?= $hour->appointment ? 'disabled' : '' ?> />
+                        <input type="text" name="note" maxlength="50" value="<?= $hour->note; ?>" />
                     </div>
                 </div>
 			</fieldset>
@@ -86,6 +86,5 @@
     $jQuery("input[name=appointment]").click(function(){
         $jQuery("input[name=opening_time]").attr('disabled', this.checked)
         $jQuery("input[name=closing_time]").attr('disabled', this.checked)
-        $jQuery("input[name=note]").attr('disabled', this.checked)
     });
 </script>
