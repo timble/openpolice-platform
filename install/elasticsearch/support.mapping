@@ -1,0 +1,9 @@
+PUT /support
+PUT /support/ticket/_mapping 
+{
+  "ticket" : {
+    "properties" : {
+      "last_activity_on" : {"type" : "date", "format" : "yyyy/MM/dd HH:mm:ss" }
+    }
+  }
+}
