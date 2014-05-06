@@ -29,15 +29,19 @@
             <? if($count = count($list)) : ?>
             <? $i = '1' ?>
             <? foreach ($list as $hour) : ?>
-                <? $day = helper('date.weekday', array('day_of_week' => $day_of_week, 'translate' => false)) ?>
+                <? if($hour->appointment) : ?>
+                    <?= @translate('Appointment only'); ?>
+                <? else : ?>
+                    <? $day = helper('date.weekday', array('day_of_week' => $day_of_week, 'translate' => false)) ?>
 
-                <time itemprop="openingHours" datetime="<?= substr($day, 0, 2).' '.$hour->opening_time.'-'.$hour->closing_time ?>">
-                <?= $hour->opening_time ?>
-                <?= translate('till') ?>
-                <?= $hour->closing_time ?>
-                </time>
-                <?= $i < $count ? translate('and from') : '' ?>
-                <? $i++ ?>
+                    <time itemprop="openingHours" datetime="<?= substr($day, 0, 2).' '.$hour->opening_time.'-'.$hour->closing_time ?>">
+                    <?= $hour->opening_time ?>
+                    <?= translate('till') ?>
+                    <?= $hour->closing_time ?>
+                    </time>
+                    <?= $i < $count ? translate('and from') : '' ?>
+                    <? $i++ ?>
+                <?endif ?>
             <? endforeach ?>
             <? if($hour->note) : ?>
                 <br /><span class="text--small"><?= $hour->note ?></span>

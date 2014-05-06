@@ -59,10 +59,10 @@
 				<a href="<?= @route( 'view=hour&id='. $hour->id ); ?>"><?= helper('date.weekday', array('day_of_week' => $hour->day_of_week)) ?></a>
 			</td>
             <td>
-                <?= $hour->opening_time ?>
+                <?= $hour->appointment ? @translate('Appointment only') : $hour->opening_time ?>
             </td>
             <td>
-                <?= $hour->closing_time ?>
+                <?= $hour->appointment ? @translate('Appointment only') : $hour->closing_time ?>
             </td>
 		</tr>
 		<? endforeach; ?>
