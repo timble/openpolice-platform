@@ -101,7 +101,7 @@ class ControllerDocument extends Library\ControllerAbstract
             throw new Library\ControllerExceptionActionFailed('Elasticsearch returned an error: '.$result->error);
         }
 
-        return true;
+        return $result;
     }
 }
  

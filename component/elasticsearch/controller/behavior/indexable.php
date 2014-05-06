@@ -20,7 +20,6 @@ class ControllerBehaviorIndexable extends Library\ControllerBehaviorAbstract
         if ($entity->getStatus() == Library\Database::STATUS_CREATED || $entity->getStatus() == Library\Database::STATUS_UPDATED)
         {
             $document = $entity->toArray();
-            $document['zone'] = $this->getObject('application')->getSite();
 
             foreach($document as $key => $value)
             {
