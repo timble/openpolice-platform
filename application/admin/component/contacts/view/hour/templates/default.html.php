@@ -58,6 +58,12 @@
                         <script data-inline> $jQuery("#closing_time").datetimepicker({datepicker:false, format:'H:i'}); </script>
 				    </div>
 				</div>
+                <div>
+                    <label for="note"><?= translate( 'Note' ); ?></label>
+                    <div>
+                        <input type="text" name="note" maxlength="50" value="<?= $hour->note; ?>" <?= $hour->appointment ? 'disabled' : '' ?> />
+                    </div>
+                </div>
 			</fieldset>
 		</div>
 	</div>

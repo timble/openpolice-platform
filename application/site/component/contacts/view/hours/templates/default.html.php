@@ -39,6 +39,9 @@
                 <?= $i < $count ? translate('and from') : '' ?>
                 <? $i++ ?>
             <? endforeach ?>
+            <? if($hour->note) : ?>
+                <br /><span class="text--small"><?= $hour->note ?></span>
+            <? endif ?>
             <? else : ?>
                 <?= translate('Closed') ?>
             <? endif ?>
