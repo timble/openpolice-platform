@@ -29,13 +29,13 @@
 			</th>
             <th width="1"></th>
 			<th>
-				<?= helper('grid.sort', array('column' => 'title', 'title' => 'Day')) ?>
+				<?= helper('grid.sort', array('column' => 'day_of_week', 'title' => 'Day')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'title', 'title' => 'Opening time')) ?>
+                <?= helper('grid.sort', array('column' => 'day_of_week', 'title' => 'Opening time')) ?>
             </th>
             <th>
-                <?= helper('grid.sort', array('column' => 'title', 'title' => 'Closing time')) ?>
+                <?= helper('grid.sort', array('column' => 'day_of_week', 'title' => 'Closing time')) ?>
             </th>
 		</tr>
 	</thead>
