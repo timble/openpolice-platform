@@ -39,7 +39,8 @@
             <description><![CDATA[
                 <?= $article->introtext ?>
                 <?= helper('com:attachments.image.thumbnail', array(
-                    'attachment' => $article->attachments_attachment_id
+                    'attachment' => $article->attachments_attachment_id,
+                    'attribs' => array('width' => '400', 'height' => '300')
                 )) ?>
                 <?= $article->fulltext ?>
             ]]></description>
