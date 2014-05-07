@@ -37,6 +37,7 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
                 $ticket->last_activity_by_name = $this->getObject('user')->getName();
 
                 $document = $ticket->toArray();
+                $document['id'] = md5($this->getObject('application')->getSite().'-'.$ticket->id);
                 $document['zone'] = $entity->zone;
 
                 foreach($document as $key => $value)
@@ -65,7 +66,7 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
                 $entity->{$field.'_name'} = $user->name;
             }
         }
-        
+
         return parent::indexDocument($commandContext);
     }
 }

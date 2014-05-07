@@ -20,6 +20,7 @@ class ControllerBehaviorIndexable extends Library\ControllerBehaviorAbstract
         if ($entity->getStatus() == Library\Database::STATUS_CREATED || $entity->getStatus() == Library\Database::STATUS_UPDATED)
         {
             $document = $entity->toArray();
+            $document['id'] = md5($this->getObject('application')->getSite().'-'.$entity->id);
 
             foreach($document as $key => $value)
             {
@@ -43,7 +44,7 @@ class ControllerBehaviorIndexable extends Library\ControllerBehaviorAbstract
         if ($entity->getStatus() == Library\Database::STATUS_DELETED)
         {
             $context = $this->_getCommandContext($entity);
-            $context->id = $entity->id;
+            $context->id = md5($this->getObject('application')->getSite().'-'.$entity->id);
 
             $this->getObject('com:elasticsearch.controller.document')
                     ->delete($context);
