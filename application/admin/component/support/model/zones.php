@@ -9,8 +9,9 @@ class SupportModelZones extends Library\ModelAbstract
         parent::__construct($config);
 
         $this->getState()
-            ->insert('sort', 'cmd')
-            ->insert('direction', 'cmd', 'asc')
+            ->insert('sort', 'cmd', 'last_activity_on')
+            ->insert('status', 'cmd')
+            ->insert('direction', 'cmd', 'desc')
             ->insert('status', 'string');
     }
 
@@ -26,9 +27,14 @@ class SupportModelZones extends Library\ModelAbstract
             $context->index    = 'support';
             $context->type     = 'ticket';
 
-            $query = new stdClass;
-            $query->match_all = new stdClass;
-            $context->query = $query;
+            if ($status = $this->getState()->status)
+            {
+                $query = new stdClass;
+                $query->match = new stdClass;
+                $query->match->status = $status;
+
+                $context->query = $query;
+            }
 
             if ($this->getState()->sort)
             {

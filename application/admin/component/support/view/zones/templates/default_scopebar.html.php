@@ -15,18 +15,10 @@
         </a>
     </div>
     <div class="scopebar__group">
-        <a class="<?= is_numeric($state->created_by) ? 'active' : ''; ?>" href="<?= route(is_numeric($state->created_by) ? 'created_by=' : 'created_by='.$user) ?>">
-            <?= translate('Created by me') ?>
-        </a>
-    </div>
-    <div class="scopebar__group">
         <? foreach($statuses as $status) : ?>
             <a class="<?= $state->status == $status ? 'active' : ''; ?>" href="<?= route('status='.$status) ?>">
                 <?= translate($status) ?>
             </a>
         <? endforeach ?>
-    </div>
-    <div class="scopebar__search">
-        <?= helper('grid.search') ?>
     </div>
 </div>

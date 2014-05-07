@@ -1,9 +1,19 @@
 PUT /support
 PUT /support/ticket/_mapping 
 {
-  "ticket" : {
-    "properties" : {
-      "last_activity_on" : {"type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
+    "ticket" : {
+        "properties" : {
+            "title": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                    "raw": {
+                        "type":  "string",
+                        "index": "not_analyzed"
+                    }
+                }
+            },
+            "last_activity_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
+        }
     }
-  }
 }

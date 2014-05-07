@@ -11,13 +11,5 @@ use Nooku\Library;
 
 class SupportControllerZone extends Library\ControllerModel
 {
-    public function getRequest()
-    {
-        $request = parent::getRequest();
 
-        $request->query->sort           = 'last_activity_on';
-        $request->query->direction      = 'DESC';
-
-        return $request;
-    }
 }

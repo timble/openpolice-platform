@@ -21,21 +21,18 @@
     <table>
         <thead>
         <tr>
-            <th width="10">
-                <?= helper( 'grid.checkall'); ?>
-            </th>
             <th width="20">
-                <?= translate('Zone') ?>
+                <?= helper('grid.sort', array('column' => 'zone')) ?>
             </th>
             <th width="10"></th>
             <th>
-                <?= translate('Title') ?>
+                <?= helper('grid.sort', array('column' => 'title')) ?>
             </th>
             <th width="1">
-                <?= translate('Created by') ?>
+                <?= helper('grid.sort', array('column' => 'created_by_name', 'title' => translate('Created By'))) ?>
             </th>
             <th width="1">
-                <?= translate('Last activity') ?>
+                <?= helper('grid.sort', array('column' => 'last_activity_on', 'title' => translate('Last activity'))) ?>
             </th>
         </tr>
         </thead>
@@ -49,9 +46,6 @@
         <tbody>
             <? foreach($zones as $zone): ?>
                 <tr>
-                    <td align="center">
-
-                    </td>
                     <td align="center">
                         <?= $zone->zone ?>
                     </td>
