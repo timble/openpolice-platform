@@ -24,7 +24,7 @@ class ControllerDocument extends Library\ControllerAbstract
             }
 
             if ($context->sort) {
-                $payload['sort'] = $context->sort;
+                $payload['sort'] = Library\ObjectConfig::unbox($context->sort);
             }
 
             $response = $this->_request($endpoint, $method, $payload);

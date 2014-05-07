@@ -35,7 +35,7 @@ class SupportModelZones extends Library\ModelAbstract
                 $sort = array();
                 $column = new stdClass;
                 $column->{$this->getState()->sort} = new stdClass;
-                $column->last_activity_on->order = $this->getState()->direction;
+                $column->{$this->getState()->sort}->order = strtolower($this->getState()->direction);
                 $sort[] = $column;
 
                 $context->sort = $sort;
