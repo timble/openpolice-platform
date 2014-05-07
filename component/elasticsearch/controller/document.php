@@ -9,6 +9,33 @@ class ControllerDocument extends Library\ControllerAbstract
     protected $_host   = '127.0.0.1';
     protected $_port   = '9200';
 
+    protected function _actionBrowse(Library\CommandContext $context)
+    {
+        $result = false;
+
+        if (isset($context->index) && isset($context->type))
+        {
+            $method   = 'GET';
+            $endpoint = '/' . $context->index . '/' . $context->type . '/_search';
+
+            $payload = array();
+            if ($context->query) {
+                $payload['query'] = $context->query;
+            }
+
+            if ($context->sort) {
+                $payload['sort'] = $context->sort;
+            }
+
+            $response = $this->_request($endpoint, $method, $payload);
+
+            $result = $response->hits;
+        }
+        else throw new ControllerExceptionBadRequest('Missing index and/or type.');
+
+        return $result;
+    }
+
     protected function _actionAdd(Library\CommandContext $context)
     {
         if (isset($context->index) && isset($context->type))
