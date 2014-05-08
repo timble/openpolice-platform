@@ -9,10 +9,40 @@ class SupportModelZones extends Library\ModelAbstract
         parent::__construct($config);
 
         $this->getState()
+            ->insert('id', 'md5', null, true)
             ->insert('sort', 'cmd', 'last_activity_on')
             ->insert('status', 'cmd')
             ->insert('direction', 'cmd', 'desc')
             ->insert('status', 'string');
+    }
+
+    public function getRow()
+    {
+        if (!isset($this->_row))
+        {
+            $state = $this->getState();
+
+            if($state->isUnique())
+            {
+                $context = new Library\CommandContext();
+                $context->setSubject($this);
+
+                $context->index    = 'support';
+                $context->type     = 'ticket';
+                $context->id       = $state->id;
+
+                $document = $this->getObject('com:elasticsearch.controller.document')
+                            ->read($context);
+
+                $data = (array) $document->_source;
+                $data['id'] = $document->_id;
+
+                $this->_row = $this->createRow(array('data' => $data, 'status' => Library\Database::STATUS_LOADED));
+            }
+            else $this->_row = $this->createRow();
+        }
+
+        return parent::getRow();
     }
 
     public function getRowset()
@@ -66,7 +96,16 @@ class SupportModelZones extends Library\ModelAbstract
             $this->_rowset = $rowset;
         }
 
-        return $this->_rowset;
+        return parent::getRowset();
+    }
+
+    public function createRow(array $options = array())
+    {
+        $identifier        = clone $this->getIdentifier();
+        $identifier->path  = array('database', 'row');
+        $identifier->name  = Library\StringInflector::singularize($this->getIdentifier()->name);
+
+        return $this->getObject($identifier, $options);
     }
 
     public function createRowset(array $options = array())

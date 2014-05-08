@@ -10,10 +10,6 @@ class SupportControllerPermissionZone extends ApplicationControllerPermissionAbs
 
     public function canEdit()
     {
-        if(parent::canEdit() && $this->getUser()->getRole() == 25) {
-            return true;
-        }
-
         return false;
     }
 

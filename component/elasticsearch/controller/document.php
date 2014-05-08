@@ -11,8 +11,6 @@ class ControllerDocument extends Library\ControllerAbstract
 
     protected function _actionBrowse(Library\CommandContext $context)
     {
-        $result = false;
-
         if (isset($context->index) && isset($context->type))
         {
             $method   = 'GET';
@@ -30,6 +28,30 @@ class ControllerDocument extends Library\ControllerAbstract
             $response = $this->_request($endpoint, $method, $payload);
 
             $result = $response->hits;
+        }
+        else throw new ControllerExceptionBadRequest('Missing index and/or type.');
+
+        return $result;
+    }
+
+    protected function _actionRead(Library\CommandContext $context)
+    {
+        if (isset($context->index) && isset($context->type))
+        {
+            if (!$context->id) {
+                throw new Library\ControllerExceptionBadRequest('Missing document ID');
+            }
+
+            $method   = 'GET';
+            $endpoint = '/' . $context->index . '/' . $context->type . '/' . $context->id;
+
+            $response = $this->_request($endpoint, $method);
+
+            if (!$response->found) {
+                throw new ControllerExceptionNotFound('Document Not Found');
+            }
+
+            $result = $response;
         }
         else throw new ControllerExceptionBadRequest('Missing index and/or type.');
 
