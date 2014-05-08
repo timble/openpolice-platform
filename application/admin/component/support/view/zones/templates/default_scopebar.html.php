@@ -10,13 +10,13 @@
 
 <div class="scopebar">
     <div class="scopebar__group">
-        <a class="<?= is_null($state->search) && is_null($state->created_by) && is_null($state->status) ? 'active' : ''; ?>" href="<?= route('search=&created_by=&status' ) ?>">
+        <a class="<?= is_null($state->matches) || !count($state->matches) ? 'active' : ''; ?>" href="<?= route('matchesg=' ) ?>">
             <?= translate('All') ?>
         </a>
     </div>
     <div class="scopebar__group">
         <? foreach($statuses as $status) : ?>
-            <a class="<?= $state->status == $status ? 'active' : ''; ?>" href="<?= route('status='.$status) ?>">
+            <a class="<?= isset($state->matches['status']) && $state->matches['status'] == $status ? 'active' : ''; ?>" href="<?= route('matches[status]='.$status) ?>">
                 <?= translate($status) ?>
             </a>
         <? endforeach ?>

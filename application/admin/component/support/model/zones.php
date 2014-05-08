@@ -13,7 +13,7 @@ class SupportModelZones extends Library\ModelAbstract
             ->insert('sort', 'cmd', 'last_activity_on')
             ->insert('status', 'cmd')
             ->insert('direction', 'cmd', 'desc')
-            ->insert('status', 'string');
+            ->insert('matches', 'string', array());
     }
 
     public function getRow()
@@ -57,11 +57,19 @@ class SupportModelZones extends Library\ModelAbstract
             $context->index    = 'support';
             $context->type     = 'ticket';
 
-            if ($status = $this->getState()->status)
+            if ($matches = $this->getState()->matches)
             {
+                settype($matches, 'array');
+
                 $query = new stdClass;
                 $query->match = new stdClass;
-                $query->match->status = $status;
+
+                foreach ($matches as $field => $match)
+                {
+                    if (!empty($match)) {
+                        $query->match->$field = $match;
+                    }
+                }
 
                 $context->query = $query;
             }
