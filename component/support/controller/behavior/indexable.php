@@ -26,6 +26,8 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
         }
         else
         {
+            $entity->parent = md5($entity->zone . '-' . $entity->row);
+
             if ($entity->getStatus() == Library\Database::STATUS_CREATED)
             {
                 $ticket = $this->getObject('com:support.model.tickets')

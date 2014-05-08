@@ -22,6 +22,13 @@ class ControllerBehaviorIndexable extends Library\ControllerBehaviorAbstract
             $document = $entity->toArray();
             $document['id'] = md5($this->getObject('application')->getSite().'-'.$entity->id);
 
+            if ($entity->getTable() instanceof Library\DatabaseTableAbstract)
+            {
+                if ($identity_column = $entity->getTable()->getIdentityColumn()) {
+                    $document[$identity_column] = $entity->id;
+                }
+            }
+
             foreach($document as $key => $value)
             {
                 if (substr($key, 0, 1) == '_') {

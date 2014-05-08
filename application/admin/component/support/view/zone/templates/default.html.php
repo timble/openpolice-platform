@@ -31,7 +31,7 @@
 <div id="support__ticket" class="scrollable">
     <div class="header">
         <h1>
-            <?= escape($zone->title) ?>
+            <?= $zone->zone ?> - <?= $zone->title ?>
         </h1>
         <?= $zone->created_by_name ?> - <?= helper('date.format', array('date'=> $zone->created_on, 'format' => 'd F Y H:m')) ?>
         <span class="label label-<?= $zone->status ?>"><?= translate($zone->status) ?></span>

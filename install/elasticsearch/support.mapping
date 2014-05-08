@@ -3,6 +3,7 @@ PUT /support/ticket/_mapping
 {
     "ticket" : {
         "properties" : {
+            "support_ticket_id" : { "type" : "integer" },
             "title": {
                 "type": "string",
                 "analyzer": "english",
@@ -13,7 +14,20 @@ PUT /support/ticket/_mapping
                     }
                 }
             },
+            "zone" : { "type" : "integer" },
             "last_activity_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
+        }
+    }
+}
+
+PUT /support/comment/_mapping
+{
+    "comment" : {
+        "properties" : {
+            "comments_comment_id" : { "type" : "integer" },
+            "zone" : { "type" : "integer" },
+            "row" : { "type" : "integer" },
+            "created_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
         }
     }
 }
