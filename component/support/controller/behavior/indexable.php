@@ -9,7 +9,7 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
     public function indexDocument(Library\CommandContext $commandContext)
     {
         $entity = $commandContext->result;
-        $entity->zone = !empty($commandContext->request->data->zone) ? $commandContext->request->data->zone : $this->getObject('application')->getSite();
+        $entity->zone = !empty($commandContext->request->data->site) ? $commandContext->request->data->site : $this->getObject('application')->getSite();
 
         if ($entity->getIdentifier()->name == 'ticket')
         {

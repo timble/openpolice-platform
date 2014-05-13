@@ -96,6 +96,14 @@ class ControllerBehaviorBroadcastable extends Slack\ControllerBehaviorBroadcasta
             'id'     => $id
         );
 
+        if (substr(JPATH_APPLICATION, -8) == '/manager') {
+            $parts['application'] = 'admin';
+        }
+
+        if ($site = $this->getMixer()->getRequest()->data->get('site', 'int')) {
+            $parts['site'] = $site;
+        }
+
         $host = $this->getObject('request')->getBaseUrl()->toString(Library\HttpUrl::SCHEME | Library\HttpUrl::HOST);
         $path = $this->getObject('lib:dispatcher.router.route', array(
             'url'    => '?'.http_build_query($parts),

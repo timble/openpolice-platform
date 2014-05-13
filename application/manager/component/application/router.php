@@ -1,20 +1,6 @@
 <?php
-/**
- * Nooku Framework - http://www.nooku.org
- *
- * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
- * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
- */
-
 use Nooku\Library;
 
-/**
- * Router
- *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
- * @package Component\Application
- */
 class ApplicationRouter extends Library\DispatcherRouter
 {
     public function parse(Library\HttpUrl $url)
@@ -61,11 +47,20 @@ class ApplicationRouter extends Library\DispatcherRouter
 
 	public function build(Library\HttpUrl $url)
 	{
-        $query    = $url->query;
+        $query    = &$url->query;
         $segments = array();
 
-        //Build site route
+        // Build site route
         $site = $this->getObject('application')->getSite();
+
+        // If the site parameter is set, overwrite it
+        if (isset($query['site']))
+        {
+            $site = $query['site'];
+
+            unset($query['site']);
+        }
+
         if($site != 'default' && $site != $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST)) {
             $segments[] = $site;
         }
@@ -100,8 +95,24 @@ class ApplicationRouter extends Library\DispatcherRouter
             unset($url->query['format']);
         }
 
-        //Build the route
-        $url->path = $this->getObject('request')->getBaseUrl()->getPath().'/'. implode('/', $segments);
+        // Build the full route
+        $path = $this->getObject('request')->getBaseUrl()->getPath();
+
+        // If the application parameter is set, replace /manager:
+        if (isset($query['application']))
+        {
+            $application = $query['application'];
+
+            if ($application == 'admin') {
+                $application = 'administrator';
+            }
+
+            $path = str_replace('/manager', '/'.$application, $path);
+
+            unset($query['application']);
+        }
+
+        $url->path = $path.'/'. implode('/', $segments);
 
         // Removed unused query variables
         unset($url->query['Itemid']);

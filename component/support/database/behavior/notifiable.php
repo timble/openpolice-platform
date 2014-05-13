@@ -39,8 +39,8 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         // Get the templates, ticket row and recipients
         if($name == 'comment')
         {
-            $templates  = array('plain' => 'comment.plain', 'html' => 'comment.html');
-            $ticket = $this->getObject('com:support.database.table.tickets')->select($data->row, Library\Database::FETCH_ROW);
+            $templates = array('plain' => 'comment.plain', 'html' => 'comment.html');
+            $ticket    = $this->getObject('com:support.database.table.tickets')->select($data->row, Library\Database::FETCH_ROW);
 
             $user   = $this->getObject('user');
             if($user->getRole() == 25)
@@ -75,6 +75,14 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
             'option' => 'com_support',
             'id'     => ($name == 'ticket' ? $data->id : $data->row)
         );
+
+        if (substr(JPATH_APPLICATION, -8) == '/manager') {
+            $parts['application'] = 'admin';
+        }
+
+        if ($site = $data->get('site', 'int')) {
+            $parts['site'] = $site;
+        }
 
         $host = $this->getObject('request')->getBaseUrl()->toString(Library\HttpUrl::SCHEME | Library\HttpUrl::HOST);
         $path = $this->getObject('lib:dispatcher.router.route', array(

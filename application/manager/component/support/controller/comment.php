@@ -16,7 +16,7 @@ class SupportControllerComment extends Support\ControllerComment
     {
         $data = $context->request->data;
 
-        if ($db = $data->get('zone', 'int'))
+        if ($db = $data->get('site', 'int'))
         {
             $adapter = $this->getObject('lib:database.adapter.mysql');
 

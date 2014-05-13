@@ -39,7 +39,7 @@
 
     <form id="comment" class="group" action="<?= route('&view=comment&row='.$ticket->support_ticket_id.'&table=support_tickets') ?>" method="post">
         <input type="hidden" name="row" value="<?= $ticket->support_ticket_id ?>" />
-        <input type="hidden" name="zone" value="<?= $ticket->zone ?>" />
+        <input type="hidden" name="site" value="<?= $ticket->zone ?>" />
         <input type="hidden" name="table" value="support_tickets" />
         <input type="hidden" name="status" value="" />
         <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => '', 'toolbar' => 'basic')) ?>
