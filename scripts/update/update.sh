@@ -7,7 +7,7 @@
 
 ## Variable initialization
 repo=$(cd "$(dirname $0)/../.."; pwd -P)
-branch="develop"
+branch="master"
 temp="/tmp/police-$RANDOM"
 
 dirs=(
