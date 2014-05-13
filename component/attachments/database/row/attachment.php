@@ -19,9 +19,7 @@ use Nooku\Library;
  */
 class DatabaseRowAttachment extends Library\DatabaseRowTable
 {
-    public static $image_extensions = array('jpg', 'jpeg', 'gif', 'png', 'tiff', 'tif', 'xbm', 'bmp');
-
-    public function save()
+	public function save()
 	{
 		$return = parent::save();
 
@@ -37,9 +35,9 @@ class DatabaseRowAttachment extends Library\DatabaseRowTable
 			}
 		}
 
-        if($this->isImage($this->thumbnail_fullpath))
+        // Save the thumbnail if the attachment is an image
+        if ($this->file->isImage())
         {
-            // Save the thumbnail
             $thumbnail = $this->getObject('com:files.database.row.thumbnail');
             $thumbnail->source = $this->file;
 
@@ -139,10 +137,5 @@ class DatabaseRowAttachment extends Library\DatabaseRowTable
         $data['thumbnail'] = $this->thumbnail;
 
         return $data;
-    }
-
-    public function isImage($file)
-    {
-        return in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), self::$image_extensions);
     }
 }
