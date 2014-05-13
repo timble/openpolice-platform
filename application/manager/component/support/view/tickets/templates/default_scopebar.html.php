@@ -10,7 +10,7 @@
 
 <div class="scopebar">
     <div class="scopebar__group">
-        <a class="<?= is_null($state->matches) || !count($state->matches) ? 'active' : ''; ?>" href="<?= route('matchesg=' ) ?>">
+        <a class="<?= is_null($state->matches) || !count($state->matches) ? 'active' : ''; ?>" href="<?= route('matches=' ) ?>">
             <?= translate('All') ?>
         </a>
     </div>

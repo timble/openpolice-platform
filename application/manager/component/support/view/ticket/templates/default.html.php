@@ -18,7 +18,7 @@
     window.addEvent('domready', function() {
         new Comment({
             container: 'comment',
-            action: '<?= route('&view=comment&row='.$zone->id.'&table=support_tickets') ?>',
+            action: '<?= route('&view=comment&row='.$ticket->id.'&table=support_tickets') ?>',
             token: '<?= $this->getObject('user')->getSession()->getToken() ?>'
         });
     });
@@ -31,14 +31,14 @@
 <div id="support__ticket" class="scrollable">
     <div class="header">
         <h1>
-            <?= $zone->zone ?> - <?= $zone->title ?>
+            <?= $ticket->zone ?> - <?= $ticket->title ?>
         </h1>
-        <?= $zone->created_by_name ?> - <?= helper('date.format', array('date'=> $zone->created_on, 'format' => 'd F Y H:m')) ?>
-        <span class="label label-<?= $zone->status ?>"><?= translate($zone->status) ?></span>
+        <?= $ticket->created_by_name ?> - <?= helper('date.format', array('date'=> $ticket->created_on, 'format' => 'd F Y H:m')) ?>
+        <span class="label label-<?= $ticket->status ?>"><?= translate($ticket->status) ?></span>
     </div>
 
-    <form id="comment" class="group" action="<?= route('&view=comment&row='.$zone->id.'&table=support_tickets') ?>" method="post">
-        <input type="hidden" name="row" value="<?= $zone->id ?>" />
+    <form id="comment" class="group" action="<?= route('&view=comment&row='.$ticket->id.'&table=support_tickets') ?>" method="post">
+        <input type="hidden" name="row" value="<?= $ticket->id ?>" />
         <input type="hidden" name="table" value="support_tickets" />
         <input type="hidden" name="status" value="" />
         <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => '', 'toolbar' => 'basic')) ?>
@@ -57,7 +57,7 @@
     </form>
 
     <div class="comments">
-        <? foreach($zone->getComments() as $comment) : ?>
+        <? foreach($ticket->getComments() as $comment) : ?>
         <div class="comment comment_<?= $comment->id ?>">
             <strong><?= $comment->created_by == $user->getId() ? translate('You') : $comment->created_by_name ?></strong>
             <span class="muted">
@@ -70,11 +70,11 @@
         <? endforeach; ?>
 
         <div class="comment">
-            <strong><?= $zone->created_by == $user->getId() ? translate('You') : $zone->created_by_name ?></strong>
+            <strong><?= $ticket->created_by == $user->getId() ? translate('You') : $ticket->created_by_name ?></strong>
             <span class="muted">
-                <?= helper('date.format', array('date'=> $zone->created_on, 'format' => 'd F Y H:i')) ?>
+                <?= helper('date.format', array('date'=> $ticket->created_on, 'format' => 'd F Y H:i')) ?>
             </span>
-            <?= $zone->text ?>
+            <?= $ticket->text ?>
         </div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <?php
 use Nooku\Library;
 
-class SupportDatabaseRowZone extends Library\DatabaseRowAbstract
+class SupportDatabaseRowTicket extends Library\DatabaseRowAbstract
 {
     public function getComments()
     {

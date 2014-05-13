@@ -1,7 +1,7 @@
 <?php
 use Nooku\Library;
 
-class SupportDatabaseRowsetZones extends Library\DatabaseRowsetAbstract
+class SupportDatabaseRowsetTickets extends Library\DatabaseRowsetAbstract
 {
     protected function _initialize(Library\ObjectConfig $config)
     {

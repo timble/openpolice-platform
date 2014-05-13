@@ -1,7 +1,7 @@
 <?php
 use Nooku\Library;
 
-class SupportControllerPermissionZone extends ApplicationControllerPermissionAbstract
+class SupportControllerPermissionTicket extends ApplicationControllerPermissionAbstract
 {
     public function canAdd()
     {

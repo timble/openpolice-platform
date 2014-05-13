@@ -44,24 +44,24 @@
         </tr>
         </tfoot>
         <tbody>
-            <? foreach($zones as $zone): ?>
+            <? foreach($tickets as $ticket): ?>
                 <tr>
                     <td align="center">
-                        <?= $zone->zone ?>
+                        <?= $ticket->zone ?>
                     </td>
                     <td>
-                        <span class="label label-<?= $zone->status ?>"><?= substr($zone->status, 0, 1) ?></span>
+                        <span class="label label-<?= $ticket->status ?>"><?= substr($ticket->status, 0, 1) ?></span>
                     </td>
                     <td style="white-space:nowrap;">
-                        <a href="<?= route( 'view=zone&id='.$zone->id ); ?>">
-                            <?= escape($zone->title) ?>
+                        <a href="<?= route( 'view=ticket&id='.$ticket->id ); ?>">
+                            <?= escape($ticket->title) ?>
                         </a>
                     </td>
                     <td>
-                        <?= $zone->created_by_name ?>
+                        <?= $ticket->created_by_name ?>
                     </td>
                     <td>
-                        <?= helper('date.humanize', array('date' => $zone->last_activity_on)) ?> by <?= $zone->last_activity_by_name ?>
+                        <?= helper('date.humanize', array('date' => $ticket->last_activity_on)) ?> by <?= $ticket->last_activity_by_name ?>
                     </td>
                 </tr>
             <? endforeach; ?>

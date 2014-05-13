@@ -9,7 +9,12 @@
 
 use Nooku\Library;
 
-class SupportControllerZone extends Library\ControllerModel
+class SupportViewTicketHtml extends Library\ViewHtml
 {
+    public function render()
+    {
+        $this->user = $this->getObject('user');
 
+        return parent::render();
+    }
 }

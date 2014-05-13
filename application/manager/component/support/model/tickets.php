@@ -2,7 +2,7 @@
 use Nooku\Library;
 use Nooku\Library\DatabaseQuerySelect;
 
-class SupportModelZones extends Library\ModelAbstract
+class SupportModelTickets extends Library\ModelAbstract
 {
     public function __construct(Library\ObjectConfig $config)
     {

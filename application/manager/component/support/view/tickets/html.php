@@ -9,11 +9,12 @@
 
 use Nooku\Library;
 
-class SupportViewZoneHtml extends Library\ViewHtml
+class SupportViewTicketsHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $this->user = $this->getObject('user');
+        $this->user = $this->getObject('user')->getId();
+        $this->statuses = $this->getObject('com:support.model.statuses')->getRowset()->text;
 
         return parent::render();
     }
