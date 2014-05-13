@@ -39,6 +39,7 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
                 $ticket->last_activity_by_name = $this->getObject('user')->getName();
 
                 $document = $ticket->toArray();
+                $document['support_ticket_id'] = $ticket->id;
                 $document['id'] = md5($this->getObject('application')->getSite().'-'.$ticket->id);
                 $document['zone'] = $entity->zone;
 

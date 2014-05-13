@@ -7,10 +7,12 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
+namespace Nooku\Component\Support;
+
 use Nooku\Library;
 use Nooku\Component\Comments;
 
-class SupportDatabaseTableComments extends Comments\DatabaseTableComments
+class DatabaseTableComments extends Comments\DatabaseTableComments
 {
     protected function _initialize(Library\ObjectConfig $config)
     {

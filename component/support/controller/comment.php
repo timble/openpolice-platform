@@ -7,9 +7,11 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
+namespace Nooku\Component\Support;
+
 use Nooku\Library;
 
-class SupportControllerComment extends Library\ControllerModel
+class ControllerComment extends Library\ControllerModel
 {
     public function __construct(Library\ObjectConfig $config)
     {
