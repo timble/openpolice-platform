@@ -34,4 +34,8 @@
         var $jQuery = jQuery.noConflict();
     </script>
     <script src="assets://application/js/select2.js" /></script>
+
+    <script src="assets://js/koowa.js" />
+    <style src="assets://css/koowa.css" />
+
 </head>

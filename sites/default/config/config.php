@@ -6,4 +6,3 @@ class JSIteConfig extends JConfig
 	//var $debug    = '0';
 	var $db = '9999';
 }
-?>

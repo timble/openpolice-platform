@@ -66,7 +66,6 @@ class ApplicationControllerToolbarTabbar extends Library\ControllerToolbarAbstra
 	public function getCommands()
 	{
         $menu = $this->getObject('com:pages.model.menus')
-            ->application('admin')
             ->getRowset()
             ->find(array('slug' => 'menubar'));
 

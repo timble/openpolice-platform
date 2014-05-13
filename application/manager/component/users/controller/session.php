@@ -81,7 +81,7 @@ class UsersControllerSession extends Library\ControllerModel
             'email'       => $context->user->getEmail(),
             'data'        => '',
             'time'        => time(),
-            'application' => 'admin',
+            'application' => 'manager',
             'name'        => $context->user->getName()
         );
 
@@ -102,7 +102,7 @@ class UsersControllerSession extends Library\ControllerModel
     protected function _actionDelete(Library\CommandContext $context)
     {
         //Force logout from site and administrator
-        $context->request->query->application = array('site', 'admin');
+        $context->request->query->application = array('site', 'admin', 'manager');
 
         //Remove the session from the session store
         $entity = parent::_actionDelete($context);

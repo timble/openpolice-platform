@@ -67,7 +67,7 @@ class ApplicationDispatcherHttp extends Library\DispatcherAbstract implements Li
             'event_subscribers' => array('com:application.event.subscriber.unauthorized'),
             'site'     => null,
             'options'  => array(
-                'session_name' => 'admin',
+                'session_name' => 'manager',
                 'config_file'  => JPATH_ROOT.'/config/config.php',
                 'language'     => null,
                 'theme'        => 'default'
