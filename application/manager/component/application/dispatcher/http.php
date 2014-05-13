@@ -63,7 +63,7 @@ class ApplicationDispatcherHttp extends Library\DispatcherAbstract implements Li
     {
         $config->append(array(
             'controller'        => 'page',
-            'base_url'          => '/administrator',
+            'base_url'          => '/manager',
             'event_subscribers' => array('com:application.event.subscriber.unauthorized'),
             'site'     => null,
             'options'  => array(
