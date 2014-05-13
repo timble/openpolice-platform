@@ -50,16 +50,16 @@
             <div  class="well well--small">
                 <div>
                     <span class="muted"><?= translate('Urgent police assistance') ?></span><br />
-                    <span class="text--strong"><a tabindex="-1" href="tel:101">101</a></span>
+                    <span class="text--strong">101</span>
                 </div>
                 <div>
                     <span class="muted"><?= translate('No emergency') ?></span><br />
-                    <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_emergency) ?>"><?= $zone->phone_emergency ?></a></span>
+                    <span class="text--strong"><?= $zone->phone_emergency ?></span>
                 </div>
                 <? if($zone->phone_information) : ?>
                     <div>
                         <span class="muted"><?= translate('General information') ?></span><br />
-                        <span class="text--strong"><a tabindex="-1" href="tel:<?= str_replace(' ', '', $zone->phone_information) ?>"><?= $zone->phone_information ?></a></span>
+                        <span class="text--strong"><?= $zone->phone_information ?></span>
                     </div>
                 <? endif ?>
             </div>
