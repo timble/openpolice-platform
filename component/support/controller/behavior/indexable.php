@@ -35,11 +35,12 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
 
                 $ticket->last_activity_on = gmdate('Y-m-d H:i:s');
                 $ticket->last_activity_by = (int) $this->getObject('user')->getId();
-                $ticket->last_activity_by_name = $this->getObject('user')->getName();
+
+                $this->_includeFullNames($ticket);
 
                 $document = $ticket->toArray();
                 $document['support_ticket_id'] = $ticket->id;
-                $document['id'] = md5($this->getObject('application')->getSite().'-'.$ticket->id);
+                $document['id'] = md5($entity->zone.'-'.$ticket->id);
                 $document['zone'] = $entity->zone;
 
                 foreach($document as $key => $value)
@@ -58,17 +59,27 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
         }
 
         // Make sure to include full user names for all fields that store a user id:
+        $this->_includeFullNames($entity);
+
+        return parent::indexDocument($commandContext);
+    }
+
+    protected function _includeFullNames($row)
+    {
         $fields = array('created_by', 'modified_by', 'last_activity_by');
         foreach($fields as $field)
         {
-            $id = $entity->$field;
-            if (is_integer($id) && $id > 0)
+            $id         = (int) $row->$field;
+            $field_name = $field.'_name';
+
+            if ($id > 0 && empty($row->$field_name))
             {
                 $user = $this->getObject('com:users.database.table.users')->select($id, Library\Database::FETCH_ROW);
-                $entity->{$field.'_name'} = $user->name;
+
+                if (!$user->isNew()) {
+                    $row->$field_name = $user->name;
+                }
             }
         }
-
-        return parent::indexDocument($commandContext);
     }
 }
