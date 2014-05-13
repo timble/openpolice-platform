@@ -7,7 +7,7 @@
 
 ## Variable initialization
 repo=$(cd "$(dirname $0)/../.."; pwd -P)
-branch="master"
+branch="release/0.8.1"
 temp="/tmp/police-$RANDOM"
 
 dirs=(
@@ -170,10 +170,10 @@ find . -path ./.git -prune -type d -print0 | xargs -0 chmod 0775
 find . -path ./.git -prune -type f -print0 | xargs -0 chmod 0664
 
 git add -A
-git commit -m "Update Nooku Framework.
-
-Branch: origin/$branch
-Commit: $(git --git-dir=$HOME/.git-cache/nooku-framework/.git rev-parse origin/$branch)"
+# git commit -m "Update Nooku Framework.
+#
+# Branch: origin/$branch
+# Commit: $(git --git-dir=$HOME/.git-cache/nooku-framework/.git rev-parse origin/$branch)"
 
 # Composer
 printf "$(tput bold)%s$(tput sgr0)\n" "Running custom composer..."
