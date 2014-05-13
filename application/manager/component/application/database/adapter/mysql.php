@@ -98,4 +98,28 @@ class ApplicationDatabaseAdapterMysql extends Library\DatabaseAdapterMysql imple
 
 	    return parent::getTableSchema($table);
 	}
+
+    /**
+     * Sets the database name
+     *
+     * @param   string $database  The database name.
+     * @throws  \RuntimeException If the database could not be set
+     * @return  DatabaseAdapterMysql
+     */
+    public function setDatabase($database)
+    {
+        try
+        {
+            if (is_numeric($database)) {
+                $database = $this->_identifier_quote.$database.$this->_identifier_quote;
+            }
+
+            $this->execute('USE '.$this->quoteIdentifier($database));
+        } catch(\RuntimeException $e) {
+            throw new \RuntimeException('Could not connect to database : ' . $database);
+        }
+
+        $this->_database = $database;
+        return $this;
+    }
 }
