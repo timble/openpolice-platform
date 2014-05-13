@@ -19,7 +19,7 @@ class ControllerBehaviorBroadcastable extends Slack\ControllerBehaviorBroadcasta
         $name = $entity->getIdentifier()->name;
 
         $user = $this->getObject('user');
-        $ticket = $name == 'ticket' ? $entity : $this->getObject('com:support.model.tickets')->id($entity->row)->getRow();
+        $ticket = $name == 'ticket' ? $entity : $this->getObject('com:support.database.table.tickets')->select($entity->row, Library\Database::FETCH_ROW);
 
         $url  = $this->_getTicketURL($ticket->id);
         $link = '<'.$url.'|' . $ticket->title . '>';
@@ -38,7 +38,7 @@ class ControllerBehaviorBroadcastable extends Slack\ControllerBehaviorBroadcasta
         $attachment = new \stdClass;
 
         $name   = $entity->getIdentifier()->name;
-        $ticket = $name == 'ticket' ? $entity : $this->getObject('com:support.model.tickets')->id($entity->row)->getRow();
+        $ticket = $name == 'ticket' ? $entity : $this->getObject('com:support.database.table.tickets')->select($entity->row, Library\Database::FETCH_ROW);
         $url    = $this->_getTicketURL($ticket->id);
 
         $attachment->fallback = 'Police support request <'.$url.'|' . $ticket->title . '> (#' . $ticket->id.')';

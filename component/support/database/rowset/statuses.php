@@ -7,9 +7,11 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
+namespace Nooku\Component\Support;
+
 use Nooku\Library;
 
-class SupportDatabaseRowsetStatuses extends Library\DatabaseRowsetAbstract
+class DatabaseRowsetStatuses extends Library\DatabaseRowsetAbstract
 {
     protected function _initialize(Library\ObjectConfig $config)
     {

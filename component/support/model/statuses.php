@@ -7,9 +7,11 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
+namespace Nooku\Component\Support;
+
 use Nooku\Library;
 
-class SupportModelStatuses extends Library\ModelAbstract
+class ModelStatuses extends Library\ModelAbstract
 {
     public function __construct(Library\ObjectConfig $config)
     {

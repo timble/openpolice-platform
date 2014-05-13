@@ -40,7 +40,7 @@ class DatabaseBehaviorNotifiable extends Library\DatabaseBehaviorAbstract
         if($name == 'comment')
         {
             $templates  = array('plain' => 'comment.plain', 'html' => 'comment.html');
-            $ticket = $this->getObject('com:support.model.tickets')->id($data->row)->getRow();
+            $ticket = $this->getObject('com:support.database.table.tickets')->select($data->row, Library\Database::FETCH_ROW);
 
             $user   = $this->getObject('user');
             if($user->getRole() == 25)

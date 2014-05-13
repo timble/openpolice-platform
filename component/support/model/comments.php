@@ -7,10 +7,12 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
+namespace Nooku\Component\Support;
+
 use Nooku\Library;
 use Nooku\Component\Comments;
 
-class SupportModelComments extends Comments\ModelComments
+class ModelComments extends Comments\ModelComments
 {
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
     {

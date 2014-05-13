@@ -1,7 +1,9 @@
 <?php
+namespace Nooku\Component\Support;
+
 use Nooku\Library;
 
-class SupportDatabaseRowTicket extends Library\DatabaseRowTable
+class DatabaseRowTicket extends Library\DatabaseRowTable
 {
     /**
      * Get a list of comments

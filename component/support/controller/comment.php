@@ -58,9 +58,8 @@ class ControllerComment extends Library\ControllerModel
     {
         $comment = $context->request->data;
 
-        $ticket = $this->getObject('com:support.model.tickets')
-            ->id($comment->get('row', 'int'))
-            ->getRow();
+        $id     = $comment->get('row', 'int');
+        $ticket = $this->getObject('com:support.database.table.tickets')->select($id, Library\Database::FETCH_ROW);
 
         // Agent can change the ticket status when adding a comment
         if($ticket->status != $comment->get('status', 'string'))

@@ -9,7 +9,7 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
     public function indexDocument(Library\CommandContext $commandContext)
     {
         $entity = $commandContext->result;
-        $entity->zone = $this->getObject('application')->getSite();
+        $entity->zone = !empty($commandContext->request->data->zone) ? $commandContext->request->data->zone : $this->getObject('application')->getSite();
 
         if ($entity->getIdentifier()->name == 'ticket')
         {
@@ -30,9 +30,8 @@ class ControllerBehaviorIndexable extends Elasticsearch\ControllerBehaviorIndexa
 
             if ($entity->getStatus() == Library\Database::STATUS_CREATED)
             {
-                $ticket = $this->getObject('com:support.model.tickets')
-                    ->id($entity->get('row', 'int'))
-                    ->getRow();
+                $id     = $entity->get('row', 'int');
+                $ticket = $this->getObject('com:support.database.table.tickets')->select($id, Library\Database::FETCH_ROW);
 
                 $ticket->last_activity_on = gmdate('Y-m-d H:i:s');
                 $ticket->last_activity_by = (int) $this->getObject('user')->getId();
