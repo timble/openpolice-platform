@@ -387,29 +387,33 @@ textarea {
   color: white;
 }
 /* line 33, organisms/_homepage.scss */
+.homepage__contact .text--strong {
+  color: white;
+}
+/* line 37, organisms/_homepage.scss */
 .homepage__contact .contact__inner {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 39, organisms/_homepage.scss */
+/* line 43, organisms/_homepage.scss */
 .homepage__contact .nav--list li a {
   border-bottom: 1px solid #004d9f;
 }
-/* line 42, organisms/_homepage.scss */
+/* line 46, organisms/_homepage.scss */
 .homepage__contact .nav--list li a:hover {
   background-color: #006bdc;
 }
-/* line 47, organisms/_homepage.scss */
+/* line 51, organisms/_homepage.scss */
 .homepage__contact .well {
   background-color: #0061c8;
   border: 1px solid #004d9f;
 }
-/* line 52, organisms/_homepage.scss */
+/* line 56, organisms/_homepage.scss */
 .homepage__contact .muted, .homepage__contact .text--small {
   color: #e6e6e6;
 }
-/* line 56, organisms/_homepage.scss */
+/* line 60, organisms/_homepage.scss */
 .homepage__contact ul {
   margin-bottom: 0;
 }
@@ -511,42 +515,43 @@ textarea {
   border-top: 0px none;
   color: #222222;
 }
-/* line 83, utilities/_desktop.scss */
+/* line 84, utilities/_desktop.scss */
 .homepage__contact a,
-.homepage__contact a:hover {
+.homepage__contact a:hover,
+.homepage__contact .text--strong {
   color: #004d9f;
 }
-/* line 87, utilities/_desktop.scss */
+/* line 88, utilities/_desktop.scss */
 .homepage__contact .nav--list li a {
   border-bottom: 1px solid #eeeeee;
 }
-/* line 90, utilities/_desktop.scss */
+/* line 91, utilities/_desktop.scss */
 .homepage__contact .nav--list li a:hover {
   background-color: #ebf3f4;
   color: #004d9f;
 }
-/* line 96, utilities/_desktop.scss */
+/* line 97, utilities/_desktop.scss */
 .homepage__contact .muted, .homepage__contact .text--small {
   color: #505050;
 }
-/* line 100, utilities/_desktop.scss */
+/* line 101, utilities/_desktop.scss */
 .homepage__contact .contact__inner {
   border-left: 1px solid #eeeeee;
   padding-left: 18px;
   margin-top: 20px;
 }
-/* line 106, utilities/_desktop.scss */
+/* line 107, utilities/_desktop.scss */
 .homepage__contact .contact__inner ul {
   margin-bottom: 0;
 }
-/* line 110, utilities/_desktop.scss */
+/* line 111, utilities/_desktop.scss */
 .homepage__contact .contact__inner .well {
   border: 1px solid #ebebeb;
   background-color: #f8f8f8;
   margin-bottom: 10px;
 }
 
-/* line 120, utilities/_desktop.scss */
+/* line 121, utilities/_desktop.scss */
 .quicklink__item_1,
 .quicklink__item_2,
 .quicklink__item_3 {
@@ -557,7 +562,7 @@ textarea {
   border-bottom: none;
   padding-bottom: 0;
 }
-/* line 126, utilities/_desktop.scss */
+/* line 127, utilities/_desktop.scss */
 .quicklink__item_1.quicklink__item_3,
 .quicklink__item_2.quicklink__item_3,
 .quicklink__item_3.quicklink__item_3 {
@@ -566,32 +571,32 @@ textarea {
   padding-bottom: 0;
 }
 
-/* line 140, utilities/_desktop.scss */
+/* line 141, utilities/_desktop.scss */
 .container__footer {
   padding-top: 1.5em;
   background-color: #f8f8f8;
 }
-/* line 145, utilities/_desktop.scss */
+/* line 146, utilities/_desktop.scss */
 .container__footer .footer__districts {
   margin-top: 25px;
   margin-top: 0;
 }
 
-/* line 154, utilities/_desktop.scss */
+/* line 155, utilities/_desktop.scss */
 .container.container__footer_menu {
   padding-left: 14px;
   padding-right: 14px;
 }
-/* line 158, utilities/_desktop.scss */
+/* line 159, utilities/_desktop.scss */
 .container.container__footer_menu ul {
   margin: 0;
 }
-/* line 162, utilities/_desktop.scss */
+/* line 163, utilities/_desktop.scss */
 .container.container__footer_menu ul li {
   display: block;
   float: left;
 }
-/* line 166, utilities/_desktop.scss */
+/* line 167, utilities/_desktop.scss */
 .container.container__footer_menu ul li a {
   border: none;
   font-size: 14px;
@@ -599,17 +604,17 @@ textarea {
   padding-bottom: 10px;
 }
 
-/* line 176, utilities/_desktop.scss */
+/* line 177, utilities/_desktop.scss */
 .container__copyright {
   text-align: left;
   border-top: 0 none;
 }
-/* line 179, utilities/_desktop.scss */
+/* line 180, utilities/_desktop.scss */
 .container__copyright .copyright--right {
   text-align: right;
 }
 
-/* line 186, utilities/_desktop.scss */
+/* line 187, utilities/_desktop.scss */
 #wrap {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro;
@@ -618,7 +623,7 @@ textarea {
   border-radius: 0 0 5px 5px;
 }
 
-/* line 193, utilities/_desktop.scss */
+/* line 194, utilities/_desktop.scss */
 .container__header .organization {
   text-align: left;
 }
@@ -744,7 +749,7 @@ you can use the generic selector below, but it's slower:
   margin-left: auto;
   margin-right: auto;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .container:after {
   content: "";
   display: table;

@@ -80,7 +80,8 @@
       color: $textColor;
 
       a,
-      a:hover {
+      a:hover,
+      .text--strong {
         color: $linkColor;
       }
 
