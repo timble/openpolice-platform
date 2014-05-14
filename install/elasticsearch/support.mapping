@@ -1,6 +1,6 @@
-PUT /support
-PUT /support/ticket/_mapping 
-{
+curl -s -XPUT "http://localhost:9200/support"
+
+curl -s -XPUT "http://localhost:9200/support/ticket/_mapping" -d '{
     "ticket" : {
         "properties" : {
             "support_ticket_id" : { "type" : "integer" },
@@ -18,10 +18,9 @@ PUT /support/ticket/_mapping
             "last_activity_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
         }
     }
-}
+}'
 
-PUT /support/comment/_mapping
-{
+curl -s -XPUT "http://localhost:9200/support/comment/_mapping" -d '{
     "comment" : {
         "properties" : {
             "comments_comment_id" : { "type" : "integer" },
@@ -30,4 +29,4 @@ PUT /support/comment/_mapping
             "created_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
         }
     }
-}
+}'
