@@ -16,8 +16,8 @@
 
         <div class="navigation">
             <span class="slogan">
-                <?= JText::sprintf('Call for urgent police assistance', '101', '101') ?>.
-                <?= JText::sprintf('No emergency, just police', escape(str_replace(' ', '', $zone->phone_emergency)), escape($zone->phone_emergency)) ?>.
+                <?= JText::sprintf('Call for urgent police assistance', '101') ?>.
+                <?= JText::sprintf('No emergency, just police', escape($zone->phone_emergency)) ?>.
             </span>
             <div class="navbar">
                 <div class="navbar__handlebar">

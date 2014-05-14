@@ -19,7 +19,10 @@
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form">
-	<div class="main">
+    <input type="hidden" name="published" value="0" />
+    <input type="hidden" name="appointment" value="0" />
+
+    <div class="main">
 		<div class="scrollable">
 			<fieldset>
 				<legend><?= translate( 'Information' ); ?></legend>
@@ -40,12 +43,18 @@
 				        <?= helper('listbox.days', array('name' => 'day_of_week', 'selected' => $hour->day_of_week)) ?>
 				    </div>
 				</div>
+                <div>
+                    <label for="appointment"><?= translate( 'Appointment only' ); ?></label>
+                    <div>
+                        <input type="checkbox" name="appointment" value="1" <?= $hour->appointment ? 'checked="checked"' : '' ?> />
+                    </div>
+                </div>
 				<div>
 				    <label for="opening_time">
 				    	<?= translate( 'Opening Time' ); ?>
 				    </label>
 				    <div>
-                        <input name="opening_time" type="text" value="<?= $hour->opening_time; ?>" id="opening_time" />
+                        <input name="opening_time" type="text" value="<?= $hour->opening_time; ?>" id="opening_time" <?= $hour->appointment ? 'disabled' : '' ?> />
                         <script data-inline> $jQuery("#opening_time").datetimepicker({datepicker:false, format:'H:i'}); </script>
 				    </div>
 				</div>
@@ -54,10 +63,16 @@
 				    	<?= translate( 'Closing Time' ); ?>
 				    </label>
 				    <div>
-				        <input name="closing_time" type="text" value="<?= $hour->closing_time; ?>" id="closing_time" />
+				        <input name="closing_time" type="text" value="<?= $hour->closing_time; ?>" id="closing_time" <?= $hour->appointment ? 'disabled' : '' ?> />
                         <script data-inline> $jQuery("#closing_time").datetimepicker({datepicker:false, format:'H:i'}); </script>
 				    </div>
 				</div>
+                <div>
+                    <label for="note"><?= translate( 'Note' ); ?></label>
+                    <div>
+                        <input type="text" name="note" maxlength="50" value="<?= $hour->note; ?>" />
+                    </div>
+                </div>
 			</fieldset>
 		</div>
 	</div>
@@ -66,3 +81,10 @@
         <?= import('default_sidebar.html'); ?>
     </div>
 </form>
+
+<script data-inline>
+    $jQuery("input[name=appointment]").click(function(){
+        $jQuery("input[name=opening_time]").attr('disabled', this.checked)
+        $jQuery("input[name=closing_time]").attr('disabled', this.checked)
+    });
+</script>

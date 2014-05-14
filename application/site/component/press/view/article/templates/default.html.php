@@ -9,7 +9,7 @@
 ?>
 
 <ktml:module position="left">
-    <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
+    <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
 
     <? foreach($modules as $module) : ?>
         <div class="sidebar__element">

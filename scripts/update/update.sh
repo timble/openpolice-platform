@@ -7,16 +7,16 @@
 
 ## Variable initialization
 repo=$(cd "$(dirname $0)/../.."; pwd -P)
-branch="develop"
+branch="master"
 temp="/tmp/police-$RANDOM"
 
 dirs=(
   "application/admin/component/about"
   "application/admin/component/contacts"
   "application/admin/component/districts"
-  "application/admin/component/hipchat"
   "application/admin/component/news"
   "application/admin/component/police"
+  "application/admin/component/press"
   "application/admin/component/questions"
   "application/admin/component/streets"
   "application/admin/component/support"
@@ -31,6 +31,7 @@ dirs=(
   "application/site/component/districts"
   "application/site/component/news"
   "application/site/component/police"
+  "application/site/component/press"
   "application/site/component/questions"
   "application/site/component/streets"
   "application/site/component/traffic"
@@ -41,12 +42,13 @@ dirs=(
   "component/contacts"
   "component/districts"
   "component/elasticsearch"
-  "component/hipchat"
   "component/mailer"
   "component/news"
   "component/police"
+  "component/press"
   "component/questions"
   "component/sendgrid"
+  "component/slack"
   "component/streets"
   "component/support"
   "component/swiftmailer"
