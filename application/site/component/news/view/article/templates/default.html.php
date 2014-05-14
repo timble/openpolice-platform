@@ -8,6 +8,7 @@
  */
 ?>
 
+<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" name="author" />
 <meta content="summary" name="twitter:card" />
 <meta content="@<?= $zone->twitter ?>" name="twitter:site" />
 <meta content="<?= url(); ?>" property="og:url" />
