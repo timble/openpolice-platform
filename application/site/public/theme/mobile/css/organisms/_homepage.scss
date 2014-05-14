@@ -51,6 +51,11 @@
   .well {
     background-color: lighten($navbarBackground, 5%);
     border: 1px solid $blue;
+    padding-bottom: 0;
+
+    p {
+      margin-bottom: $baseLineHeight / 2;
+    }
   }
 
   .muted {
