@@ -50,7 +50,10 @@
             <div class="well well--small">
                 <p>
                     <span class="muted"><?= translate('Urgent police assistance') ?></span><br />
-                    <span class="text--strong">101</span> <?= @translate('or') ?> <span class="text--strong"><?= $zone->phone_emergency ?></span>
+                    <span class="text--strong">101</span>
+                    <? if($zone->phone_emergency) : ?>
+                    <?= @translate('or') ?> <span class="text--strong"><?= $zone->phone_emergency ?></span>
+                    <? endif ?>
                 </p>
                 <? if($zone->phone_information) : ?>
                 <p>
