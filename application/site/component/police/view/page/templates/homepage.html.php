@@ -47,20 +47,19 @@
     <div class="homepage__contact">
         <div class="contact__inner">
             <h3><?= translate('Contact us') ?></h3>
-            <div  class="well well--small">
-                <div>
+            <div class="well well--small">
+                <p>
                     <span class="muted"><?= translate('Urgent police assistance') ?></span><br />
                     <span class="text--strong">101</span>
-                </div>
-                <div>
-                    <span class="muted"><?= translate('No emergency') ?></span><br />
-                    <span class="text--strong"><?= $zone->phone_emergency ?></span>
-                </div>
+                    <? if($zone->phone_emergency) : ?>
+                    <?= @translate('or') ?> <span class="text--strong"><?= $zone->phone_emergency ?></span>
+                    <? endif ?>
+                </p>
                 <? if($zone->phone_information) : ?>
-                    <div>
-                        <span class="muted"><?= translate('General information') ?></span><br />
-                        <span class="text--strong"><?= $zone->phone_information ?></span>
-                    </div>
+                <p>
+                    <span class="muted"><?= translate('General information') ?></span><br />
+                    <span class="text--strong"><?= $zone->phone_information ?></span>
+                </p>
                 <? endif ?>
             </div>
 

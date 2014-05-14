@@ -377,39 +377,48 @@ textarea {
   color: white;
   padding: 20px;
 }
-/* line 24, organisms/_homepage.scss */
+/* line 26, organisms/_homepage.scss */
 .homepage__contact a {
   color: white;
   text-decoration: none;
 }
-/* line 28, organisms/_homepage.scss */
+/* line 30, organisms/_homepage.scss */
 .homepage__contact a:hover {
   color: white;
 }
-/* line 33, organisms/_homepage.scss */
+/* line 35, organisms/_homepage.scss */
+.homepage__contact .text--strong {
+  color: white;
+}
+/* line 39, organisms/_homepage.scss */
 .homepage__contact .contact__inner {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 39, organisms/_homepage.scss */
+/* line 45, organisms/_homepage.scss */
 .homepage__contact .nav--list li a {
   border-bottom: 1px solid #004d9f;
 }
-/* line 42, organisms/_homepage.scss */
+/* line 48, organisms/_homepage.scss */
 .homepage__contact .nav--list li a:hover {
   background-color: #006bdc;
 }
-/* line 47, organisms/_homepage.scss */
+/* line 53, organisms/_homepage.scss */
 .homepage__contact .well {
   background-color: #0061c8;
   border: 1px solid #004d9f;
+  padding-bottom: 0;
 }
-/* line 52, organisms/_homepage.scss */
+/* line 58, organisms/_homepage.scss */
+.homepage__contact .well p {
+  margin-bottom: 0.75em;
+}
+/* line 63, organisms/_homepage.scss */
 .homepage__contact .muted, .homepage__contact .text--small {
   color: #e6e6e6;
 }
-/* line 56, organisms/_homepage.scss */
+/* line 67, organisms/_homepage.scss */
 .homepage__contact ul {
   margin-bottom: 0;
 }
@@ -429,29 +438,19 @@ textarea {
   clear: both;
 }
 
-/* line 2, utilities/_desktop.scss */
-.contact__inner .well {
-  padding-bottom: 0;
-}
-/* line 6, utilities/_desktop.scss */
-.contact__inner .text--strong {
-  display: block;
-  margin-bottom: 0.75em;
-}
-
 @media screen and (min-width: 767px) {
-  /* line 13, utilities/_desktop.scss */
+  /* line 2, utilities/_desktop.scss */
   #wrap {
     border-bottom: 1px solid gainsboro;
   }
 
-  /* line 18, utilities/_desktop.scss */
+  /* line 7, utilities/_desktop.scss */
   .navbar__handlebar,
   .visible-phone {
     display: none;
   }
 
-  /* line 27, utilities/_desktop.scss */
+  /* line 16, utilities/_desktop.scss */
   .container__header .is-hidden,
   .container__breadcrumb,
   .container__banner,
@@ -461,7 +460,7 @@ textarea {
     display: block;
   }
 
-  /* line 35, utilities/_desktop.scss */
+  /* line 24, utilities/_desktop.scss */
   .container__header,
   .container__banner,
   .container__breadcrumb,
@@ -471,40 +470,40 @@ textarea {
     padding-right: 0px;
   }
 
-  /* line 41, utilities/_desktop.scss */
+  /* line 30, utilities/_desktop.scss */
   .container__header .organization {
     text-align: center;
   }
 
-  /* line 46, utilities/_desktop.scss */
+  /* line 35, utilities/_desktop.scss */
   .container__header {
     width: auto;
   }
 
-  /* line 50, utilities/_desktop.scss */
+  /* line 39, utilities/_desktop.scss */
   .container__content {
     padding-top: 37px;
   }
-  /* line 53, utilities/_desktop.scss */
+  /* line 42, utilities/_desktop.scss */
   .container__content.homepage {
     padding-left: 25px;
     padding-right: 25px;
   }
-  /* line 58, utilities/_desktop.scss */
+  /* line 47, utilities/_desktop.scss */
   .container__content .sidebar {
     margin-top: 20px;
   }
-  /* line 61, utilities/_desktop.scss */
+  /* line 50, utilities/_desktop.scss */
   .container__content .sidebar .sidebar__element {
     margin-bottom: 40px;
   }
 
-  /* line 71, utilities/_desktop.scss */
+  /* line 60, utilities/_desktop.scss */
   .homepage__sticky {
     padding-bottom: 0;
   }
 
-  /* line 75, utilities/_desktop.scss */
+  /* line 64, utilities/_desktop.scss */
   .homepage__contact {
     padding: 0;
     margin-bottom: 25px;
@@ -512,42 +511,43 @@ textarea {
     border-top: 0px none;
     color: #222222;
   }
-  /* line 83, utilities/_desktop.scss */
+  /* line 73, utilities/_desktop.scss */
   .homepage__contact a,
-  .homepage__contact a:hover {
+  .homepage__contact a:hover,
+  .homepage__contact .text--strong {
     color: #004d9f;
   }
-  /* line 87, utilities/_desktop.scss */
+  /* line 77, utilities/_desktop.scss */
   .homepage__contact .nav--list li a {
     border-bottom: 1px solid #eeeeee;
   }
-  /* line 90, utilities/_desktop.scss */
+  /* line 80, utilities/_desktop.scss */
   .homepage__contact .nav--list li a:hover {
     background-color: #ebf3f4;
     color: #004d9f;
   }
-  /* line 96, utilities/_desktop.scss */
+  /* line 86, utilities/_desktop.scss */
   .homepage__contact .muted, .homepage__contact .text--small {
     color: #505050;
   }
-  /* line 100, utilities/_desktop.scss */
+  /* line 90, utilities/_desktop.scss */
   .homepage__contact .contact__inner {
     border-left: 1px solid #eeeeee;
     padding-left: 18px;
     margin-top: 20px;
   }
-  /* line 106, utilities/_desktop.scss */
+  /* line 96, utilities/_desktop.scss */
   .homepage__contact .contact__inner ul {
     margin-bottom: 0;
   }
-  /* line 110, utilities/_desktop.scss */
+  /* line 100, utilities/_desktop.scss */
   .homepage__contact .contact__inner .well {
     border: 1px solid #ebebeb;
     background-color: #f8f8f8;
     margin-bottom: 10px;
   }
 
-  /* line 120, utilities/_desktop.scss */
+  /* line 110, utilities/_desktop.scss */
   .quicklink__item_1,
   .quicklink__item_2,
   .quicklink__item_3 {
@@ -555,30 +555,30 @@ textarea {
     border-bottom: 1px solid #eee;
     padding-bottom: 12.5px;
   }
-  /* line 140, utilities/_desktop.scss */
+  /* line 130, utilities/_desktop.scss */
   .container__footer {
     padding-top: 1.5em;
     background-color: #f8f8f8;
   }
-  /* line 145, utilities/_desktop.scss */
+  /* line 135, utilities/_desktop.scss */
   .container__footer .footer__districts {
     margin-top: 25px;
   }
-  /* line 154, utilities/_desktop.scss */
+  /* line 144, utilities/_desktop.scss */
   .container.container__footer_menu {
     padding-left: 14px;
     padding-right: 14px;
   }
-  /* line 158, utilities/_desktop.scss */
+  /* line 148, utilities/_desktop.scss */
   .container.container__footer_menu ul {
     margin: 0;
   }
-  /* line 162, utilities/_desktop.scss */
+  /* line 152, utilities/_desktop.scss */
   .container.container__footer_menu ul li {
     display: block;
     float: left;
   }
-  /* line 166, utilities/_desktop.scss */
+  /* line 156, utilities/_desktop.scss */
   .container.container__footer_menu ul li a {
     border: none;
     font-size: 14px;
@@ -586,18 +586,18 @@ textarea {
     padding-bottom: 10px;
   }
 
-  /* line 176, utilities/_desktop.scss */
+  /* line 166, utilities/_desktop.scss */
   .container__copyright {
     text-align: left;
     border-top: 0 none;
   }
-  /* line 179, utilities/_desktop.scss */
+  /* line 169, utilities/_desktop.scss */
   .container__copyright .copyright--right {
     text-align: right;
   }
 }
 @media screen and (min-width: 767px) and (min-width: 767px) {
-  /* line 126, utilities/_desktop.scss */
+  /* line 116, utilities/_desktop.scss */
   .quicklink__item_1.quicklink__item_3,
   .quicklink__item_2.quicklink__item_3,
   .quicklink__item_3.quicklink__item_3 {
@@ -607,7 +607,7 @@ textarea {
   }
 }
 @media screen and (min-width: 767px) and (min-width: 998px) {
-  /* line 120, utilities/_desktop.scss */
+  /* line 110, utilities/_desktop.scss */
   .quicklink__item_1,
   .quicklink__item_2,
   .quicklink__item_3 {
@@ -618,14 +618,14 @@ textarea {
 }
 
 @media screen and (min-width: 767px) and (min-width: 767px) {
-  /* line 145, utilities/_desktop.scss */
+  /* line 135, utilities/_desktop.scss */
   .container__footer .footer__districts {
     margin-top: 0;
   }
 }
 
 @media screen and (min-width: 998px) {
-  /* line 186, utilities/_desktop.scss */
+  /* line 176, utilities/_desktop.scss */
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -634,7 +634,7 @@ textarea {
     border-radius: 0 0 5px 5px;
   }
 
-  /* line 193, utilities/_desktop.scss */
+  /* line 183, utilities/_desktop.scss */
   .container__header .organization {
     text-align: left;
   }
@@ -761,7 +761,7 @@ you can use the generic selector below, but it's slower:
     margin-left: auto;
     margin-right: auto;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rvm/gems/ruby-1.9.3-p448/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
   .container:after {
     content: "";
     display: table;
