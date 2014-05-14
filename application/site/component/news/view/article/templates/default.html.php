@@ -9,8 +9,10 @@
 ?>
 
 <meta content="<?= @translate('Police') ?> <?= $zone->title ?>" name="author" />
+<? if($zone->twitter) : ?>
 <meta content="summary" name="twitter:card" />
 <meta content="@<?= $zone->twitter ?>" name="twitter:site" />
+<? endif ?>
 <meta content="<?= url(); ?>" property="og:url" />
 <meta content="<?= $article->title ?>" property="og:title" />
 <meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
