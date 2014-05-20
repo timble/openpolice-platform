@@ -277,22 +277,25 @@ textarea {
   padding-top: 1.5em;
   background-color: #f8f8f8;
   border-top: 1px solid gainsboro;
-  border-bottom: 1px solid gainsboro;
 }
-/* line 50, organisms/_containers.scss */
+/* line 49, organisms/_containers.scss */
 .container__footer .container__quicklinks div {
   margin-bottom: 25px;
 }
-/* line 55, organisms/_containers.scss */
+/* line 54, organisms/_containers.scss */
 .container__footer .footer__districts {
   margin-bottom: 25px;
 }
 
-/* line 61, organisms/_containers.scss */
+/* line 59, organisms/_containers.scss */
+.container__footer_menu {
+  border-top: 1px solid gainsboro;
+}
+/* line 62, organisms/_containers.scss */
 .container__footer_menu ul {
   margin: 0;
 }
-/* line 64, organisms/_containers.scss */
+/* line 65, organisms/_containers.scss */
 .container__footer_menu ul li a {
   padding-left: 20px;
   padding-right: 20px;
@@ -377,48 +380,48 @@ textarea {
   color: white;
   padding: 20px;
 }
-/* line 26, organisms/_homepage.scss */
+/* line 24, organisms/_homepage.scss */
 .homepage__contact a {
   color: white;
   text-decoration: none;
 }
-/* line 30, organisms/_homepage.scss */
+/* line 28, organisms/_homepage.scss */
 .homepage__contact a:hover {
   color: white;
 }
-/* line 35, organisms/_homepage.scss */
+/* line 33, organisms/_homepage.scss */
 .homepage__contact .text--strong {
   color: white;
 }
-/* line 39, organisms/_homepage.scss */
+/* line 37, organisms/_homepage.scss */
 .homepage__contact .contact__inner {
   margin-left: 0;
   border: 0 none;
   padding: 0;
 }
-/* line 45, organisms/_homepage.scss */
+/* line 43, organisms/_homepage.scss */
 .homepage__contact .nav--list li a {
   border-bottom: 1px solid #004d9f;
 }
-/* line 48, organisms/_homepage.scss */
+/* line 46, organisms/_homepage.scss */
 .homepage__contact .nav--list li a:hover {
   background-color: #006bdc;
 }
-/* line 53, organisms/_homepage.scss */
+/* line 51, organisms/_homepage.scss */
 .homepage__contact .well {
   background-color: #0061c8;
   border: 1px solid #004d9f;
   padding-bottom: 0;
 }
-/* line 58, organisms/_homepage.scss */
+/* line 56, organisms/_homepage.scss */
 .homepage__contact .well p {
   margin-bottom: 0.75em;
 }
-/* line 63, organisms/_homepage.scss */
+/* line 61, organisms/_homepage.scss */
 .homepage__contact .muted, .homepage__contact .text--small {
   color: #e6e6e6;
 }
-/* line 67, organisms/_homepage.scss */
+/* line 65, organisms/_homepage.scss */
 .homepage__contact ul {
   margin-bottom: 0;
 }
