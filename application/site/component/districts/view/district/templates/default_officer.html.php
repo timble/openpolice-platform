@@ -24,7 +24,7 @@
     <? if(count($officer->getAttachments())) : ?>
     <? foreach($officer->getAttachments() as $item) : ?>
         <? if($item->file->isImage()) : ?>
-            <img width="140" class="thumbnail" src="attachments://<?= $item->thumbnail ?>" />
+            <img width="140" class="thumbnail" src="attachments://<?= $item->path ?>" />
         <? endif ?>
     <? endforeach ?>
     <? else : ?>
