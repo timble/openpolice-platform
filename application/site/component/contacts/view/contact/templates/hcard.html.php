@@ -62,7 +62,7 @@
         <?if ($contact->url) :?>
             <li>
                 <span><?= translate('Website') ?></span>:
-                <a class="url" href="<?= $contact->url ?>"><?= $contact->url ?></a>
+                <a class="url" href="<?= $contact->url ?>"><?= str_replace('http://', '', $contact->url); ?></a>
             </li>
         <? endif; ?>
     </ul>
