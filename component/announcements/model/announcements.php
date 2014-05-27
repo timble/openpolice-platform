@@ -9,7 +9,22 @@ class ModelAnnouncements extends Library\ModelAbstract
     {
         if (!isset($this->_rowset))
         {
-            $contents = file_get_contents('http://belgianpolice.github.io/blog.json');
+            $feed = 'http://belgianpolice.github.io/blog.json';
+
+            if ($proxy = $this->getObject('application')->getCfg('http_proxy'))
+            {
+                $options = array(
+                    'http' => array(
+                        'proxy' => $proxy,
+                        'request_fulluri' => true,
+                    ),
+                );
+                $context = stream_context_create($options);
+
+                $contents = file_get_contents($feed, null, $context);
+            }
+            else $contents = file_get_contents($feed);
+
             $contents = utf8_encode($contents);
 
             $data = json_decode($contents, true);
