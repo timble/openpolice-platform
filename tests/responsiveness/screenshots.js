@@ -13,24 +13,20 @@ var screenshotUrl = 'http://www.lokalepolitie.be/5388',
     screenshotDateTime = screenshotNow.getFullYear() + pad(screenshotNow.getMonth() + 1) + pad(screenshotNow.getDate()) + '-' + pad(screenshotNow.getHours()) + pad(screenshotNow.getMinutes()) + pad(screenshotNow.getSeconds()),
     viewports = [
         {
-            'name': 'smartphone-portrait',
-            'viewport': {width: 320, height: 480}
+            'name': '320',
+            'viewport': {width: 320}
         },
         {
-            'name': 'smartphone-landscape',
-            'viewport': {width: 480, height: 320}
+            'name': '600',
+            'viewport': {width: 600}
         },
         {
-            'name': 'tablet-portrait',
-            'viewport': {width: 768, height: 1024}
+            'name': '767',
+            'viewport': {width: 767}
         },
         {
-            'name': 'tablet-landscape',
-            'viewport': {width: 1024, height: 768}
-        },
-        {
-            'name': 'desktop-standard',
-            'viewport': {width: 1280, height: 1024}
+            'name': '998',
+            'viewport': {width: 998}
         }
     ];
 
@@ -40,18 +36,18 @@ casper.start(screenshotUrl, function() {
 
 casper.each(viewports, function(casper, viewport) {
     this.then(function() {
-        this.viewport(viewport.viewport.width, viewport.viewport.height);
+        this.viewport(viewport.viewport.width, 1200);
     });
     this.thenOpen(screenshotUrl, function() {
         this.wait(5000);
     });
     this.then(function(){
-        this.echo('Screenshot for ' + viewport.name + ' (' + viewport.viewport.width + 'x' + viewport.viewport.height + ')', 'info');
-        this.capture('output/' + screenshotDateTime + '/' + viewport.name + '-' + viewport.viewport.width + 'x' + viewport.viewport.height + '.png', {
+        this.echo('Screenshot for ' + viewport.name + ' (' + viewport.viewport.width + ')', 'info');
+        this.capture('output/' + screenshotDateTime + '/' + viewport.name + '.png', {
             top: 0,
             left: 0,
             width: viewport.viewport.width,
-            height: 1400
+            height: 1200
         });
     });
 });
