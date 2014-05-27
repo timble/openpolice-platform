@@ -13,6 +13,8 @@ class ModelAnnouncements extends Library\ModelAbstract
 
             if ($proxy = $this->getObject('application')->getCfg('http_proxy'))
             {
+                $proxy = str_replace('http://', 'tcp://', $proxy);
+
                 $options = array(
                     'http' => array(
                         'proxy' => $proxy,
