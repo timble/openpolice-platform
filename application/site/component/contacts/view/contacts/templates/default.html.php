@@ -39,7 +39,7 @@
         <tr>
             <td>
                 <a href="<?= helper('route.contact', array('row' => $contact)) ?>">
-                    <?= $contact->name; ?>
+                    <?= $contact->title; ?>
                 </a>
             </td>
             <td nowrap="nowrap">
