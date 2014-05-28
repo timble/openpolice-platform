@@ -5,6 +5,14 @@ use Nooku\Library;
 
 class ModelAnnouncements extends Library\ModelAbstract
 {
+    public function __construct(Library\ObjectConfig $config)
+    {
+        parent::__construct($config);
+
+        $this->getState()
+            ->insert('limit'    , 'int');
+    }
+
     public function getRowset()
     {
         if (!isset($this->_rowset))
@@ -30,6 +38,17 @@ class ModelAnnouncements extends Library\ModelAbstract
             $contents = utf8_encode($contents);
 
             $data = json_decode($contents, true);
+
+            usort($data, function ($a, $b) {
+                $a = strtotime($a['date']);
+                $b = strtotime($b['date']);
+
+                if ($a == $b) {
+                    return 0;
+                }
+
+                return ($a > $b) ? -1 : 1;
+            });
 
             $this->_rowset = $this->createRowset(array(
                 'data' => $data
