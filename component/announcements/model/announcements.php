@@ -33,17 +33,20 @@ class ModelAnnouncements extends Library\ModelAbstract
             $key = $this->_getKey();
 
             // @TODO When upgrading the framework, the apc functions should be moved into a model behavior.
-            if(apc_exists($key))
+            if (extension_loaded('apc'))
             {
-                $data   = apc_fetch($key);
-                $data   = unserialize($data);
+                if(apc_exists($key))
+                {
+                    $data   = apc_fetch($key);
+                    $data   = unserialize($data);
+                }
+                else
+                {
+                    $data = $this->_fetchData();
+                    apc_store($key, serialize($data), $this->_ttl);
+                }
             }
-            else
-            {
-                $data = $this->_fetchData();
-
-                apc_store($key, serialize($data), $this->_ttl);
-            }
+            else $data = $this->_fetchData();
 
             $this->_rowset = $this->createRowset(array(
                 'data' => $data
