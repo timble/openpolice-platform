@@ -6,6 +6,6 @@
     $(function() {
         // By removing the ID attribute Select2 will not be fired
         $('#autocomplete__streets').removeAttr('id');
-        $('#autocomplete__streets--footer').removeAttr('id');
+        $('#autocomplete__municipality').removeAttr('id');
     });
 })(jQuery);

@@ -1,7 +1,12 @@
+
+<script src="assets://application/js/jquery.js" />
+<script src="assets://application/components/select2/select2.js" />
+<script src="assets://application/js/ie7.js" condition="if lte IE 7" />
+
 <script>
-    $jQuery(document).ready(function() {
+    $(document).ready(function() {
         function format(item) { return item.title; };
-        $jQuery("#municipality").select2({
+        $("#autocomplete__municipality").select2({
             placeholder: "<?= translate('Search your city') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
@@ -16,7 +21,7 @@
                 results: function (data) { // parse the results into the format expected by Select2.
                     // since we are using custom formatting functions we do not need to alter remote JSON data
                     var results = [];
-                    $jQuery.each(data.items, function(i, item) {
+                    $.each(data.items, function(i, item) {
                         results.push(item.data);
                     });
                     return {results: results};
@@ -26,9 +31,9 @@
                 // the input tag has a value attribute preloaded that points to a preselected movie's id
                 // this function resolves that id attribute to an object that select2 can render
                 // using its formatResult renderer - that way the movie name is shown preselected
-                var id=$jQuery(element).val();
+                var id=$(element).val();
                 if (id!=="") {
-                    $jQuery.ajax("/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>?view=street&format=json&id="+id, {
+                    $.ajax("/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>?view=street&format=json&id="+id, {
                         dataType: "json"
                     }).done(function(data) { callback(data.item); });
                 }
@@ -49,7 +54,7 @@
             <div class="splash__logo"><img src="assets://application/images/logo-<?= $language_short ?>.jpg" /></div>
             <div class="splash__search">
                 <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
-                    <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Search your city') ?> ..." name="id" style="width: 100%">
+                    <input type="text" class="bigdrop" id="autocomplete__municipality" placeholder="<?= translate('Search your city') ?> ..." name="id" style="width: 100%">
                     <div class="splash__toolbar">
                         <button class="button button--primary">Go to site</button>
                     </div>
