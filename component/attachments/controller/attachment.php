@@ -50,5 +50,4 @@ class ControllerAttachment extends Library\ControllerModel
         }
         else parent::_actionRender($context);
     }
-
 }
