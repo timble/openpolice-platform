@@ -75,7 +75,7 @@ class ModelAnnouncements extends Library\ModelAbstract
 
     protected function _fetchData()
     {
-        $feed = 'http://belgianpolice.github.ios/blog.json';
+        $feed = 'http://belgianpolice.github.io/blog.json';
 
         $options = array(
             'http' => array(
