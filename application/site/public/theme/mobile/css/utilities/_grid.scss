@@ -2,87 +2,90 @@
 
 @include respond-min($navbarCollapseWidth) {
     .container {
-        // page acts as a container for our grid.
-        @include container;
+      // page acts as a container for our grid.
+      @include container;
+      padding-left: $grid-padding;
+      padding-right: $grid-padding;
     }
 
     .sidebar {
-        @include span-columns(3, 12);
+      @include span(3 of 12);
     }
     .component {
-        @include span-columns(9 omega, 12);
+        @include span(last 9 of 12);
+      
     }
     .footer__districts {
-        @include span-columns(5 omega, 12);
+        @include span(last 5 of 12);
     }
     .footer__news {
-        @include span-columns(7, 12);
+        @include span(7 of 12);
     }
     .copyright--left {
-        @include span-columns(5, 12);
+        @include span(5 of 12);
     }
     .copyright--right {
-        @include span-columns(7 omega, 12);
+        @include span(last 7 of 12);
     }
 
     .quicklink__item_1, .quicklink__item_3 {
-        @include span-columns(6, 12);
+        @include span(6 of 12);
     }
     .quicklink__item_2, .quicklink__item_4 {
-        @include span-columns(6 omega, 12);
+        @include span(last 6 of 12);
     }
 
     .homepage__sticky {
-        @include span-columns(10, 14);
+        @include span(10 of 14);
     }
     .homepage__contact {
-        @include span-columns(4 omega, 14);
+        @include span(last 4 of 14);
     }
 
     .districts__officers {
-        @include span-columns(5, 12);
+        @include span(last 5 of 12);
     }
 
     .districts__contact {
-        @include span-columns(7 omega, 12);
+        @include span(last 7 of 12);
     }
 
     .exception__message {
-        @include span-columns(7, 12);
+        @include span(7 of 12);
     }
 
     .exception__image {
-        @include span-columns(5 omega, 12);
+        @include span(last 5 of 12);
     }
 
     .gallery .gallery__item {
-        @include span-columns(3, 12);
+        @include span(3 of 12);
     }
 
     .gallery .gallery__item:nth-child(4n) {
-        @include span-columns(3 omega, 12);
+        @include span(last 3 of 12);
     }
 }
 
 @include respond-min(998px) {
     .homepage__sticky .media {
-      @include span-columns(6 omega, 12);
+      @include span(last 6 of 12);
       &:first-child {
-        @include span-columns(6, 12);
+        @include span(6 of 12);
       }
     }
 
     .organization {
-        @include span-columns(3, 12);
+        @include span(3 of 12);
     }
     .navigation {
-        @include span-columns(9 omega, 12);
+        @include span(last 9 of 12);
     }
 
     .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
-        @include span-columns(3, 12);
+        @include span(3 of 12);
     }
     .quicklink__item_4 {
-        @include span-columns(3 omega, 12);
+        @include span(last 3 of 12);
     }
 }
