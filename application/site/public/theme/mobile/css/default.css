@@ -196,11 +196,18 @@ textarea {
     text-decoration: none; }
 
 .container__footer {
+  *zoom: 1;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 1.5em;
   background-color: #f8f8f8;
   border-top: 1px solid gainsboro; }
+  .container__footer:before, .container__footer:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  .container__footer:after {
+    clear: both; }
   .container__footer .container__quicklinks div {
     margin-bottom: 25px; }
   .container__footer .footer__districts {
