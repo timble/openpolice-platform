@@ -34,11 +34,20 @@
             <th>
                 <?= helper('grid.sort', array('column' => 'islp')) ?>
             </th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'created_on', 'title' => 'Created on')) ?>
+            </th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'modified_on', 'title' => 'Modified on')) ?>
+            </th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'district_count', 'title' => 'Districts')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<td colspan="5">
+			<td colspan="7">
 				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
@@ -57,6 +66,19 @@
             </td>
             <td>
                 <?= $street->islp ?>
+            </td>
+            <td>
+                <? if($street->created_on) : ?>
+                <?= helper('date.format', array('date'=> $street->created_on, 'format' => 'D d/m/Y')) ?>
+                <? endif ?>
+            </td>
+            <td>
+                <? if($street->modified_on) : ?>
+                <?= helper('date.format', array('date'=> $street->modified_on, 'format' => 'D d/m/Y')) ?>
+                <? endif ?>
+            </td>
+            <td>
+                <?= $street->district_count ?>
             </td>
 		</tr>
 		<? endforeach; ?>
