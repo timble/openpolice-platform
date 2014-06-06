@@ -227,8 +227,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $row->id = $item['streets_street_id'];
 
             if($row->load()){
-                $row->setData($item);
-                $row->save();
+                if($row->title != $item['title'] || $row->title0 != $item['title0']) {
+                    $row->setData($item);
+                    $row->save();
+                }
             } else {
                 $row->setData($item);
                 $row->save();
