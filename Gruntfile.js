@@ -18,6 +18,12 @@ module.exports = function(grunt) {
             css: {
                 files: '**/*.scss',
                 tasks: ['sass']
+            },
+            livereload: {
+                // Here we watch the files the sass task will compile to
+                // These files are sent to the live reload server after sass compiles to them
+                options: { livereload: true },
+                files: ['application/site/public/theme/mobile/css/default.css']
             }
         }
     });
