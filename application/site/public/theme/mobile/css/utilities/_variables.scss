@@ -132,13 +132,10 @@ $navbarBrandColor: $navbarLinkColor;
 // -------------------------
 $wellBackground: #F8F8F8;
 
-// Susy
 $gutter-width: 3em;
-// 1em gutters between columns
 $grid-padding: 25px;
 
 // Susy grid
 $susy: (
-  columns: 12,
-  gutters: 1/4,
+  gutters: $gutter-width/4em
 );
