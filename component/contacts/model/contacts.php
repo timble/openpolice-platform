@@ -60,7 +60,7 @@ class ModelContacts extends Library\ModelTable
 		}
 
 		if ($state->search) {
-			$query->where('tbl.name LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
 		}
 		
 		if (is_numeric($state->access)) {

@@ -26,12 +26,17 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         $this->reset();
         $this->addOfficers();
         $this->addDistricts();
-        $this->addStreets();
+        $this->addLocalstreets();
         $this->addDistrictsofficers();
         $this->addRelations();
+        $this->addSeparator();
         $this->addNews();
+        $this->addSeparator();
         $this->addPress();
+        $this->addSeparator();
         $this->addContacts();
+        $this->addSeparator();
+        $this->addStreets();
     }
 
     protected function _commandDistricts(Library\ControllerToolbarCommand $command)
@@ -52,10 +57,10 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         $command->href = 'option=com_uploads&view=upload&table=districts_relations';
     }
 
-    protected function _commandStreets(Library\ControllerToolbarCommand $command)
+    protected function _commandLocalstreets(Library\ControllerToolbarCommand $command)
     {
         $command->label = 'Local Streets';
-        $command->href = 'option=com_uploads&view=upload&table=streets';
+        $command->href = 'option=com_uploads&view=upload&table=localstreets';
     }
 
     protected function _commandOfficers(Library\ControllerToolbarCommand $command)
@@ -80,5 +85,11 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     {
         $command->label = 'Contacts';
         $command->href = 'option=com_uploads&view=upload&table=contacts';
+    }
+
+    protected function _commandStreets(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'Streets';
+        $command->href = 'option=com_uploads&view=upload&table=streets';
     }
 }

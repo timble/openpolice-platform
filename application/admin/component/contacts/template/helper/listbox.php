@@ -23,7 +23,7 @@ class ContactsTemplateHelperListbox extends Library\TemplateHelperListbox
         $config->append(array(
             'model' => 'contacts',
             'value'	=> 'id',
-            'label'	=> 'name'
+            'label'	=> 'title'
         ));
 
         return parent::_render($config);
