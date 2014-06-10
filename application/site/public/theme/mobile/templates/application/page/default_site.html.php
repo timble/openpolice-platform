@@ -112,7 +112,7 @@
                 <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
             <? endif ?>
             <? foreach($pages as $page) : ?>
-                <? if($page->level == '1' && $page->hidden == true && $page->id != '1') : ?>
+                <? if($page->id == '89' || $page->id == '101') : ?>
                     &nbsp;|&nbsp;&nbsp;<a href="/<?= $site ?>/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>
