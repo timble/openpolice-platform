@@ -106,8 +106,9 @@
     <div class="container container__copyright">
         <div class="copyright--left">
             <? if($zone->twitter) : ?>
-                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>&nbsp;&nbsp;|&nbsp;
+                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
             <? endif ?>
+            <?= $zone->twitter && $zone->facebook ? '&nbsp;|&nbsp;' : '' ?>
             <? if($zone->facebook) : ?>
                 <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
             <? endif ?>
