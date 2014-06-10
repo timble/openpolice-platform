@@ -2,7 +2,7 @@
     $zone = object('com:police.model.zone')->id($site)->getRow();
     $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
 
-    $press = object('com:pages.model.page')->id('101')->getRow();
+    $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset()
 ?>
 
 <div id="wrap">
@@ -93,13 +93,11 @@
     <div class="container container__footer_menu">
         <ul class="nav nav--list">
             <li><a href="/<?= $site ?>"><?= translate('Home') ?></a></li>
-            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('News')) ?>"><?= translate('News') ?></a></li>
-            <? if($site != '5888') : ?>
-            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Questions')) ?>"><?= translate('Questions') ?></a></li>
+            <? foreach($pages as $page) : ?>
+            <? if($page->level == '1' && $page->hidden == false) : ?>
+                <li><a href="/<?= $site ?>/<?= $page->slug ?>"><?= $page->title ?></a></li>
             <? endif ?>
-            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Traffic')) ?>"><?= translate('Traffic') ?></a></li>
-            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('About us')) ?>"><?= translate('About us') ?></a></li>
-            <li><a href="/<?= $site ?>/<?= object('lib:filter.slug')->sanitize(translate('Contact')) ?>"><?= translate('Contact') ?></a></li>
+            <? endforeach ?>
         </ul>
     </div>
 </div>
@@ -111,12 +109,13 @@
                 <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>&nbsp;&nbsp;|&nbsp;
             <? endif ?>
             <? if($zone->facebook) : ?>
-                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>&nbsp;&nbsp;|&nbsp;
+                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
             <? endif ?>
-            <a href="/<?= $site ?>/downloads">Downloads</a>
-            <? if($press->published) : ?>
-                &nbsp;|&nbsp;&nbsp;<a href="/<?= $site ?>/<?= $press->slug ?>"><?= $press->title ?></a>
-            <? endif ?>
+            <? foreach($pages as $page) : ?>
+                <? if($page->level == '1' && $page->hidden == true && $page->id != '1') : ?>
+                    &nbsp;|&nbsp;&nbsp;<a href="/<?= $site ?>/<?= $page->slug ?>"><?= $page->title ?></a>
+                <? endif ?>
+            <? endforeach ?>
         </div>
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
