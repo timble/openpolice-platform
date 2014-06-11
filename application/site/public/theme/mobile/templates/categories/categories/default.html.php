@@ -49,3 +49,19 @@
     </div>
 <? endforeach; ?>
 
+<? foreach(object('com:categories.model.category')->getRowset() as $category) : ?>
+<? if($category->table == 'bin' && $category->published == '1') : ?>
+    <div class="article">
+        <h1 class="article__header">
+            <a href="/<?= $site ?>/contact/<?= $category->slug ?>">
+                <?= $category->title ?>
+            </a>
+        </h1>
+
+        <?= $category->description ?>
+
+        <a class="article__readmore" href="/<?= $site ?>/contact/<?= $category->slug ?>"><?= translate('Read more') ?></a>
+    </div>
+<? endif ?>
+<? endforeach ?>
+
