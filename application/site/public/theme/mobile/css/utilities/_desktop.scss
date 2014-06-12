@@ -54,7 +54,7 @@
     }
 
     .container__quicklinks {
-        @extend .clearfix;
+        @include clearfix();
     }
 
     .homepage__sticky {
@@ -146,7 +146,7 @@
     padding-right: 14px;
 
     ul {
-      @extend .clearfix;
+      @include clearfix();
       margin: 0;
 
       li {
