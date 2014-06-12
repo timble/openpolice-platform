@@ -26,17 +26,13 @@ class ModelOfficers extends Library\ModelTable
 
         $query->columns(array(
             'district_count' => 'COUNT(districts_officers.districts_district_id)',
-            'thumbnail'      => 'thumbnails.thumbnail',
-            'attachment_path'      => 'attachments.path'
         ));
     }
 	
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
 		$query->join(array('districts_officers' => 'districts_districts_officers'), 'districts_officers.districts_officer_id = tbl.districts_officer_id')
-              ->join(array('district' => 'districts'), 'district.districts_district_id = districts_officers.districts_district_id')
-              ->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id')
-              ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path');
+              ->join(array('district' => 'districts'), 'district.districts_district_id = districts_officers.districts_district_id');
 	}
     
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

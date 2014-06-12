@@ -1,0 +1,68 @@
+.homepage__sticky {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.homepage__news {
+  @extend .clearfix;
+  margin: 20px 0 0;
+  border-top: 1px solid #eee;
+  padding: 20px 0 0;
+
+  // Keeping the muted date on the same indent as the title
+  .thumbnail.media__object + .media__body {
+    padding-left: 86px;
+  }
+}
+
+.homepage__contact {
+  background-color: $navbarBackground;
+  border-top: 1px solid darken($grayLighter, 7%);
+  color: white;
+  padding: 20px;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .text--strong {
+    color: white;
+  }
+
+  .contact__inner {
+    margin-left: 0;
+    border: 0 none;
+    padding: 0;
+  }
+
+  .nav--list li a {
+    border-bottom: 1px solid $blue;
+
+    &:hover {
+      background-color: $navbarLinkBackgroundHover;
+    }
+  }
+
+  .well {
+    background-color: lighten($navbarBackground, 5%);
+    border: 1px solid $blue;
+    padding-bottom: 0;
+
+    p {
+      margin-bottom: $baseLineHeight / 2;
+    }
+  }
+
+  .muted {
+    color: darken(white, 10%);
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}

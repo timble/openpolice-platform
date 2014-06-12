@@ -19,7 +19,7 @@
     <? foreach ($contacts->find(array('categories_category_id' => $category->id)) as $contact) : ?>
         <li>
             <a class="<?= $state->contact == $contact->id ? 'active' : ''; ?>" href="<?= route('contact='.$contact->id ) ?>">
-                <span class="navigation__text"><?= escape($contact->name) ?></span>
+                <span class="navigation__text"><?= escape($contact->title) ?></span>
             </a>
         </li>
     <? endforeach ?>

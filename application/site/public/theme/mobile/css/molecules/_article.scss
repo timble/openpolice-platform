@@ -13,12 +13,6 @@
     h1 {
         margin-bottom: 0;
     }
-
-    .timestamp {
-        padding-top: 4px;
-        @extend .muted;
-        font-size: 0.85em;
-    }
 }
 
 .article__introtext {
@@ -27,8 +21,15 @@
 }
 
 .article__thumbnail {
-    float: right;
-    max-width: 40%;
-    margin: 0 0 $baseLineHeight $baseLineHeight;
     @extend .thumbnail;
+    margin-bottom: $baseLineHeight / 2;
+}
+
+@include respond-min(400px) {
+    .article__thumbnail {
+        float: right;
+        width: 40%;
+        max-width: 200px;
+        margin: 0 0 $baseLineHeight $baseLineHeight;
+    }
 }

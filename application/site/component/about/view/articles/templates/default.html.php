@@ -41,7 +41,7 @@
             <? else : ?>
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('class' => 'article__thumbnail', 'width' => '200', 'height' => '150'))) ?>
+                    'attribs' => array('class' => 'article__thumbnail', 'width' => '400', 'height' => '300'))) ?>
             <? endif; ?>
 
         <? endif; ?>

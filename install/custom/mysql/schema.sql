@@ -484,7 +484,7 @@ CREATE TABLE `news` (
   `params` text,
   PRIMARY KEY (`news_article_id`),
   KEY `idx_state` (`published`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 --
@@ -625,6 +625,28 @@ CREATE TABLE `pages_orderings` (
   KEY `ix_title` (`title`),
   KEY `ix_custom` (`custom`),
   CONSTRAINT `pages_orderings__pages_page_id` FOREIGN KEY (`pages_page_id`) REFERENCES `pages` (`pages_page_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure data for table `press`
+--
+
+CREATE TABLE `press` (
+  `press_article_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` text NOT NULL,
+  `slug` varchar(250) DEFAULT NULL,
+  `text` mediumtext NOT NULL,
+  `published` tinyint(1) DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `created_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `modified_on` datetime DEFAULT NULL,
+  `modified_by` int(11) unsigned NOT NULL DEFAULT '0',
+  `locked_by` int(11) unsigned DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  `params` text,
+  PRIMARY KEY (`press_article_id`),
+  KEY `idx_state` (`published`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -1012,41 +1034,6 @@ CREATE TABLE `support_tickets` (
   PRIMARY KEY (`support_ticket_id`),
   KEY `created_on` (`created_on`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
---
--- Table structure data for table `data`.`support_announcements`
---
-
-DROP TABLE IF EXISTS `data`.`support_announcements`;
-
-CREATE TABLE `data`.`support_announcements` (
-  `support_announcement_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `slug` varchar(255) DEFAULT NULL,
-  `text` text NOT NULL,
-  `published` tinyint(1) NOT NULL DEFAULT '1',
-  `created_by` int(10) unsigned DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `modified_by` int(10) unsigned DEFAULT NULL,
-  `modified_on` datetime DEFAULT NULL,
-  `locked_by` int(11) DEFAULT NULL,
-  `locked_on` datetime DEFAULT NULL,
-  PRIMARY KEY (`support_announcement_id`),
-  KEY `idx_enabled` (`published`),
-  KEY `created_on` (`created_on`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
---
--- Table structure data for table `support_announcements`
---
-
-DROP VIEW IF EXISTS `support_announcements`;
-
-CREATE VIEW `support_announcements` AS
-SELECT *
-FROM `data`.`support_announcements`;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

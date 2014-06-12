@@ -12,11 +12,14 @@
 <? $email_to = str_replace(".", "&#46;", $email_to) ?>
 
 <address class="vcard">
-    <h1 class="article__header fn url" href="<?= route(); ?>"><?= $contact->name?></h1>
+    <h1 class="article__header fn"><?= $contact->title?></h1>
+    <? if($contact->name) : ?>
+    <h2><?= $contact->name?></h2>
+    <? endif ?>
     <? if($contact->isAttachable()) : ?>
         <? foreach($contact->getAttachments() as $item) : ?>
             <? if($item->file->isImage()) : ?>
-                <img width="200" height="150" class="photo article__thumbnail" align="right" src="attachments://<?= $item->thumbnail ?>" />
+                <img width="400" height="300" class="photo article__thumbnail" align="right" src="attachments://<?= $item->thumbnail ?>" />
             <? endif ?>
         <? endforeach ?>
     <? endif ?>
@@ -54,6 +57,12 @@
             <li>
                 <span><?= translate('Email') ?></span>:
                 <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>
+            </li>
+        <? endif; ?>
+        <?if ($contact->url) :?>
+            <li>
+                <span><?= translate('Website') ?></span>:
+                <a class="url" href="<?= $contact->url ?>"><?= str_replace('http://', '', $contact->url); ?></a>
             </li>
         <? endif; ?>
     </ul>

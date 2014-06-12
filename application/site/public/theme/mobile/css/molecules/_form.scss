@@ -4,9 +4,10 @@
 // Common properties
 // -----------------
 // Margin to space out fieldsets
-.control-group {
+.form__group {
     margin-bottom: $baseLineHeight / 2;
 }
+
 
 .form__left {
     margin-right: 8em;
@@ -18,4 +19,8 @@
     .button {
         width: 100%;
     }
+}
+
+.has-error {
+    @include form-control-validation(#a94442, #a94442, #f2dede);
 }

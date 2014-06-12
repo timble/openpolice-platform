@@ -29,11 +29,9 @@
         <th width="100%">
             <?= translate('Name'); ?>
         </th>
-        <? if ($params->get('show_telephone', true)) : ?>
-            <th>
-                <?= translate('Phone'); ?>
-            </th>
-        <? endif; ?>
+        <th>
+            <?= translate('Phone'); ?>
+        </th>
     </tr>
     </thead>
     <tbody>
@@ -41,14 +39,12 @@
         <tr>
             <td>
                 <a href="<?= helper('route.contact', array('row' => $contact)) ?>">
-                    <?= $contact->name; ?>
+                    <?= $contact->title; ?>
                 </a>
             </td>
-            <? if ($params->get('show_telephone', true)) : ?>
-                <td nowrap="nowrap">
-                    <?= escape($contact->telephone); ?>
-                </td>
-            <? endif; ?>
+            <td nowrap="nowrap">
+                <?= escape($contact->telephone ? $contact->telephone : $contact->mobile); ?>
+            </td>
         </tr>
     <? endforeach; ?>
     </tbody>

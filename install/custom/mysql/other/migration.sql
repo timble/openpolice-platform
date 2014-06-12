@@ -47,3 +47,7 @@ UPDATE `pol_content` set `introtext` = replace(`introtext`, '<img', '<img class=
 
 RENAME TABLE `pol_content` TO `news`;
 
+-- Assign category to frontpage articles
+UPDATE `pol_content_frontpage` AS `frontpage`, `pol_content` AS `content`
+SET `content`.`catid` = '1', `content`.`sectionid` = '1'
+WHERE `content`.`id` = `frontpage`.`content_id` AND `content`.`catid` = '0';

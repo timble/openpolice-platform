@@ -24,20 +24,6 @@ class NewsRouter extends Library\DispatcherRouter
 
         $view = $page->getLink()->query['view'];
 
-        if($view == 'categories')
-        {
-            if(isset($query['category']))
-            {
-                if($query['category'] != $page->getLink()->query['category']) {
-                    $segments[] = $query['category'];
-                }
-            }
-
-            if(isset($query['id'])) {
-                $segments[] = $query['id'];
-            }
-        }
-
         if($view == 'articles')
         {
             if(isset($query['id'])) {
@@ -53,7 +39,6 @@ class NewsRouter extends Library\DispatcherRouter
             }
         }
 
-        unset($query['category']);
         unset($query['id']);
         unset($query['view']);
 
@@ -73,29 +58,6 @@ class NewsRouter extends Library\DispatcherRouter
         $page = $this->getObject('application.pages')->getActive();
 
         $view  = $page->getLink()->query['view'];
-        $count = count($path);
-
-        if($view == 'categories')
-        {
-            if($count)
-            {
-                $count--;
-                $segment = array_shift( $path );
-
-                $vars['category'] = $segment;
-                $vars['view'] = 'articles';
-            }
-
-            if($count)
-            {
-                $count--;
-                $segment = array_shift( $path) ;
-
-                $vars['id']     = $segment;
-                $vars['view']   = 'article';
-                $vars['layout'] = 'default';
-            }
-        }
 
         if($view == 'articles')
         {

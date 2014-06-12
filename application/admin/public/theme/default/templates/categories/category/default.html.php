@@ -15,6 +15,7 @@
     <input type="hidden" name="access" value="0" />
     <input type="hidden" name="published" value="0" />
     <input type="hidden" name="table" value="<?= $state->table ?>" />
+    <input type="hidden" name="attachments_attachment_id" value="0" />
 
     <div class="main">
         <div class="title">
@@ -24,7 +25,9 @@
                 <input <?= $disabled ? 'disabled' : '' ?> type="text" name="slug" maxlength="255" value="<?= $category->slug ?>" />
             </div>
         </div>
+        <? if($state->table != 'questions') : ?>
         <?= object('com:ckeditor.controller.editor')->render(array('name' => 'description', 'text' => $category->description, 'toolbar' => 'basic')) ?>
+        <? endif ?>
     </div>
 
     <div class="sidebar">

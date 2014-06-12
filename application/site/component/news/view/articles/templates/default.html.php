@@ -9,7 +9,7 @@
 ?>
 
 <ktml:module position="left">
-    <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
+    <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
 
     <? foreach($modules as $module) : ?>
         <div class="sidebar__element">
@@ -24,18 +24,16 @@
         <? $link = helper('route.article', array('row' => $article)); ?>
         <header class="article__header">
             <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
-            <div class="timestamp">
+            <div class="text--small">
                 <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
             </div>
         </header>
 
         <? if($article->attachments_attachment_id): ?>
             <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-                <figure>
-                    <?= helper('com:attachments.image.thumbnail', array(
-                        'attachment' => $article->attachments_attachment_id,
-                        'attribs' => array('width' => '200', 'height' => '150'))) ?>
-                </figure>
+                <?= helper('com:attachments.image.thumbnail', array(
+                    'attachment' => $article->attachments_attachment_id,
+                    'attribs' => array('width' => '400', 'height' => '300'))) ?>
             </a>
         <? endif; ?>
 

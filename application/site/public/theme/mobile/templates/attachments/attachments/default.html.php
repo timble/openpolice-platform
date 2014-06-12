@@ -10,7 +10,7 @@
 
 <? $list = (isset($row) && isset($table)) ? $attachments->find(array('row' => $row, 'table' => $table)) : $attachments ?>
 
-<? if(count($list)) : ?>
+<? if(count($list) > '1' || (count($list) == '1' && reset($exclude) == '0')) : ?>
     <ul class="gallery">
         <? foreach($list as $item) : ?>
             <? if($item->file->isImage() && !in_array($item->id, Nooku\Library\ObjectConfig::unbox($exclude))) : ?>

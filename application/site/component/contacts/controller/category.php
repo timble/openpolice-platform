@@ -16,6 +16,14 @@ use Nooku\Library;
  * @package Component\Contacts
  */
 class ContactsControllerCategory extends CategoriesControllerCategory
-{    
+{
+    public function getRequest()
+    {
+        $request = parent::getRequest();
 
+        //Display only published items
+        $request->query->published = 1;
+
+        return $request;
+    }
 }

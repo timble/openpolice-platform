@@ -1,16 +1,25 @@
+.container__breadcrumb {
+    @include respond-min($navbarCollapseWidth) {
+        padding: 5px $grid-padding 0;
+    }
+}
+
 .breadcrumb {
     font-size: 0.85em;
-    line-height: 2.5em;
-    padding: 0 1em;
-    margin: 0.25em 0 0 0;
+    line-height: 1.5em;
+    padding: 10px 10px 5px;
+    margin: 0;
+    clear: both;
     list-style: none;
     background-color: $wellBackground;
-    @include border-radius($baseBorderRadius);
-    > li {
+    border-bottom: 1px solid #eee;
+
+    li {
         display: inline-block;
-        @include ie7-inline-block();
         text-shadow: 0 1px 0 $white;
-        > .divider {
+        padding-bottom: 5px;
+        @include ie7-inline-block();
+        .divider {
             color: #ccc;
         }
     }
@@ -21,4 +30,10 @@
     li::first-letter {
         text-transform: uppercase;
     }
+
+  @include respond-min($navbarCollapseWidth) {
+    border: 1px solid #eee;
+    @include border-radius($baseBorderRadius);
+    padding: 6px 1em 1px;
+  }
 }

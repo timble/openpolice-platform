@@ -10,7 +10,15 @@
 use Nooku\Library;
 
 class QuestionsControllerQuestion extends Library\ControllerModel
-{ 
+{
+    public function __construct(Library\ObjectConfig $config)
+    {
+        parent::__construct($config);
+
+        $this->registerCallback('after.save'  , array($this, 'setDefaultAttachment'));
+        $this->registerCallback('after.apply'  , array($this, 'setDefaultAttachment'));
+    }
+
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
@@ -22,5 +30,35 @@ class QuestionsControllerQuestion extends Library\ControllerModel
         ));
     
         parent::_initialize($config);
+    }
+
+    public function setDefaultAttachment(Library\CommandContext $context)
+    {
+        if(!$this->isAttachable()) {
+            return;
+        }
+
+        $row = $context->result;
+
+        $attachments = $this->getObject('com:attachments.model.attachments')
+            ->row($row->id)
+            ->table($row->getTable()->getBase())
+            ->getRowset();
+
+        // If attachments have been linked to this row but there's no default attachment ID is still empty, set the first one as default.
+        if(!$row->attachments_attachment_id && count($attachments))
+        {
+            foreach($attachments as $attachment) {
+                // Make sure the attachment is an image
+                if($attachment->file->isImage()) {
+                    $row->attachments_attachment_id = $attachment->id;
+                    $row->save();
+
+                    break;
+                }
+            }
+        }
+
+        return;
     }
 }

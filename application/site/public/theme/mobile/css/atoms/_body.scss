@@ -1,8 +1,13 @@
 body {
     font-family: $baseFontFamily;
-    font-size: 1em;
     line-height: $baseLineHeight;
     color: $textColor;
     background-color: $bodyBackground;
     margin: 0;
+}
+
+@include respond-min($navbarCollapseWidth) {
+  body {
+    font-size: 0.9375em;
+  }
 }

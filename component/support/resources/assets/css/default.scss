@@ -52,12 +52,18 @@ $border: #dddddd;
         }
 
         .cke_bottom {
-            display: none !important;
+//            display: none !important;
+          background: lighten($border, 10%);
+          border: 1px solid lighten($border, 0%);
+          border-top-color: lighten($border, 5%);
+          border-radius: 0 0 5px 5px;
         }
 
         .cke_contents {
-            border: 1px solid lighten($border, 0%) !important;
-            border-radius: 5px;
+            border: 1px solid lighten($border, 0%);
+          border-bottom: 0 none;
+            border-radius: 5px 5px 0 0;
+          min-height: 175px;
         }
     }
 

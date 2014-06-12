@@ -7,16 +7,16 @@
 
 ## Variable initialization
 repo=$(cd "$(dirname $0)/../.."; pwd -P)
-branch="develop"
+branch="0.9"
 temp="/tmp/police-$RANDOM"
 
 dirs=(
   "application/admin/component/about"
   "application/admin/component/contacts"
   "application/admin/component/districts"
-  "application/admin/component/hipchat"
   "application/admin/component/news"
   "application/admin/component/police"
+  "application/admin/component/press"
   "application/admin/component/questions"
   "application/admin/component/streets"
   "application/admin/component/support"
@@ -30,6 +30,7 @@ dirs=(
   "application/site/component/districts"
   "application/site/component/news"
   "application/site/component/police"
+  "application/site/component/press"
   "application/site/component/questions"
   "application/site/component/streets"
   "application/site/component/traffic"
@@ -39,12 +40,13 @@ dirs=(
   "component/about"
   "component/contacts"
   "component/districts"
-  "component/hipchat"
   "component/mailer"
   "component/news"
   "component/police"
+  "component/press"
   "component/questions"
   "component/sendgrid"
+  "component/slack"
   "component/streets"
   "component/support"
   "component/swiftmailer"
@@ -168,10 +170,10 @@ find . -path ./.git -prune -type d -print0 | xargs -0 chmod 0775
 find . -path ./.git -prune -type f -print0 | xargs -0 chmod 0664
 
 git add -A
-git commit -m "Update Nooku Framework.
-
-Branch: origin/$branch
-Commit: $(git --git-dir=$HOME/.git-cache/nooku-framework/.git rev-parse origin/$branch)"
+# git commit -m "Update Nooku Framework.
+#
+# Branch: origin/$branch
+# Commit: $(git --git-dir=$HOME/.git-cache/nooku-framework/.git rev-parse origin/$branch)"
 
 # Composer
 printf "$(tput bold)%s$(tput sgr0)\n" "Running custom composer..."

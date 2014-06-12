@@ -18,7 +18,8 @@ class ModelRelations extends Library\ModelTable
 
 		$this->getState()
 		    ->insert('district' , 'string')
-		    ->insert('street' , 'string');
+		    ->insert('street' , 'string', '0')
+		    ->insert('number' , 'string', '0');
 	}
 
 	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
@@ -57,6 +58,14 @@ class ModelRelations extends Library\ModelTable
 
             if(!is_numeric($state->street)){
                 $query->where('street.title LIKE :street')->bind(array('street' => '%'.$state->street.'%'));
+            }
+
+            if(is_numeric($state->number)) {
+                $query->where('tbl.range_start <= :range_start')->bind(array('range_start' => $state->number));
+                $query->where('tbl.range_end >= :range_end')->bind(array('range_end' => $state->number));
+
+                $parity = ($state->number % 2 == 0) ? 'even' : 'odd';
+                $query->where('tbl.range_parity LIKE :range_parity')->bind(array('range_parity' => '%'.$parity.'%'));
             }
 		}
 	}

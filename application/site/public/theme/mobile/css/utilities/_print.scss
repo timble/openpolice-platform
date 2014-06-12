@@ -7,12 +7,12 @@
         display: none;
     }
 
-    .container__header .row-fluid .span3 {
+    .container__header .organization {
         display: block;
         padding-left: 20px;
         padding-top: 20px;
 
-        .organization a:after {
+        a:after {
             content: "";
         }
 
