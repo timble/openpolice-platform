@@ -44,7 +44,7 @@
     }
 
     .districts__officers {
-        @include span(last 5 of 12);
+        @include span(5 of 12);
     }
 
     .districts__contact {

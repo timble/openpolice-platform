@@ -586,8 +586,8 @@ you can use the generic selector below, but it's slower:
 
 .districts__officers {
   width: 39.50617%;
-  float: right;
-  margin-right: 0; }
+  float: left;
+  margin-right: 3.7037%; }
 
 .districts__contact {
   width: 56.79012%;
