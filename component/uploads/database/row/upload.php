@@ -161,6 +161,8 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             if($street->load())
             {
                 $item['streets_street_id'] = $street->id;
+            } else {
+                $item['streets_street_id'] = '';
             }
 
             $parity = null;
