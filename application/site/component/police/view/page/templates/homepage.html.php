@@ -64,7 +64,7 @@
             </div>
 
             <ul class="nav nav--list">
-                <? foreach(object('com:pages.model.pages')->menu('1')->published('true')->getRowset() as $page) : ?>
+                <? foreach(object('com:pages.model.pages')->menu('1')->published('true')->hidden('false')->getRowset() as $page) : ?>
                     <? if($page->level == '2') : ?>
                     <li><a href="/<?= $site ?>/contact/<?= $page->slug ?>"><?= $page->title ?><?= $page->ancestor_id ?></a></li>
                     <? endif ?>
