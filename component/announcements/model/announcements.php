@@ -77,25 +77,31 @@ class ModelAnnouncements extends Library\ModelAbstract
     {
         $feed = 'http://belgianpolice.github.io/blog.json';
 
+        $options = array(
+            'http' => array(
+                'timeout' => 5,
+                'method'  => 'GET'
+            ),
+        );
+
         if ($proxy = $this->getObject('application')->getCfg('http_proxy'))
         {
             $proxy = str_replace('http://', 'tcp://', $proxy);
 
-            $options = array(
-                'http' => array(
-                    'proxy' => $proxy,
-                    'request_fulluri' => true,
-                ),
-            );
-            $context = stream_context_create($options);
-
-            $contents = file_get_contents($feed, null, $context);
+            $options['http']['proxy'] = $proxy;
+            $options['http']['request_fulluri'] = true;
         }
-        else $contents = file_get_contents($feed);
 
-        $contents = utf8_encode($contents);
+        $context = stream_context_create($options);
+        $contents = @file_get_contents($feed, null, $context);
 
-        $data = json_decode($contents, true);
+        if ($contents !== false)
+        {
+            $contents = utf8_encode($contents);
+
+            $data = json_decode($contents, true);
+        }
+        else $data = array();
 
         usort($data, function ($a, $b) {
             $a = strtotime($a['date']);

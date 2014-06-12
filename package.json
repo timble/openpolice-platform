@@ -1,0 +1,29 @@
+{
+  "name": "internet-platform",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-watch": "~0.6.1"
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "bc19f37964e6705373eb068dd48d2f38d7dd4b35",
+  "description": "## Police Internet Platform",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-sass": "~0.7.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.assembla.com:timble-police.2.git"
+  },
+  "author": "",
+  "license": "GNU GPLv3"
+}
