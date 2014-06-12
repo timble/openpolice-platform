@@ -67,10 +67,6 @@
   &:hover {
     color: $white;
   }
-
-  img {
-    @include rem(margin-right, 6px);
-  }
 }
 
 .navbar__avatar {

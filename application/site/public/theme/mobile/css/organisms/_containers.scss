@@ -39,6 +39,8 @@
 }
 
 .container__footer {
+  @include clearfix();
+
   padding-left: 20px;
   padding-right: 20px;
   padding-top: $gutter-width / 2;
