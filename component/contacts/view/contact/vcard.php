@@ -27,8 +27,8 @@ class ViewContactVcard extends Library\ViewVcard
             $this->setEmail($contact->email_to);
         }
 
-        if(!empty($contact->name)) {
-            $this->setFormattedName($contact->name);
+        if(!empty($contact->title)) {
+            $this->setFormattedName($contact->title);
         } 
 
         if(!empty($contact->con_position)) {

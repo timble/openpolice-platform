@@ -52,7 +52,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $this->_importRelations($data);
                 }
 
-                if($table == 'streets'){
+                if($table == 'localstreets'){
                     $this->_importLocalStreets($data);
                 }
 
@@ -70,6 +70,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
                 if($table == 'contacts'){
                     $this->_importContacts($data);
+                }
+
+                if($table == 'streets'){
+                    $this->_importStreets($data);
                 }
 
                 fclose($handle);
@@ -157,6 +161,8 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             if($street->load())
             {
                 $item['streets_street_id'] = $street->id;
+            } else {
+                $item['streets_street_id'] = '';
             }
 
             $parity = null;
@@ -210,6 +216,26 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $street->islp = $item['islp'];
                     $street->save();
                 }
+            }
+        }
+    }
+
+    public function _importStreets($data)
+    {
+        foreach($data as $item)
+        {
+            //Get the street
+            $row = $this->getObject('com:streets.database.row.streets');
+            $row->id = $item['streets_street_id'];
+
+            if($row->load()){
+                if($row->title != $item['title'] || $row->title0 != $item['title0']) {
+                    $row->setData($item);
+                    $row->save();
+                }
+            } else {
+                $row->setData($item);
+                $row->save();
             }
         }
     }

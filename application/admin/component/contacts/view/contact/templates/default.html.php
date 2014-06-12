@@ -24,7 +24,7 @@
 
     <div class="main">
         <div class="title">
-            <input class="required" type="text" name="name" maxlength="255" value="<?= $contact->name ?>" placeholder="<?= translate('Name') ?>" />
+            <input class="required" type="text" name="title" maxlength="255" value="<?= $contact->title ?>" placeholder="<?= translate('Name') ?>" />
             <div class="slug">
                 <span class="add-on"><?= translate('Slug'); ?></span>
                 <input type="text" name="slug" maxlength="255" value="<?= $contact->slug ?>" />
@@ -34,6 +34,12 @@
         <div class="scrollable">
             <fieldset>
                 <legend><?= translate('Information'); ?></legend>
+                <div>
+                    <label for="name"><?= translate( 'Name' ); ?></label>
+                    <div>
+                        <input type="text" name="name" maxlength="255" value="<?= $contact->name; ?>" />
+                    </div>
+                </div>
                 <div>
                     <label for="email_to"><?= translate( 'E-mail' ); ?></label>
                     <div>
@@ -74,6 +80,12 @@
                     <label for="fax"><?= translate( 'Fax' ); ?></label>
                     <div>
                         <input type="text" name="fax" maxlength="255" value="<?= $contact->fax; ?>" />
+                    </div>
+                </div>
+                <div>
+                    <label for="url"><?= translate( 'URL' ); ?></label>
+                    <div>
+                        <input type="text" name="url" maxlength="255" class="validate-url" value="<?= $contact->url; ?>" />
                     </div>
                 </div>
             </fieldset>

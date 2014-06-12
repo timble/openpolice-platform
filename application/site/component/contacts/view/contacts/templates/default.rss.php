@@ -47,7 +47,7 @@ use Nooku\Library;
 
         <? foreach($contacts as $contact) : ?>
         <item>
-            <title><?= escape($contact->name) ?></title>
+            <title><?= escape($contact->title) ?></title>
             <link><?= helper('route.contact', array('row' => $contact)) ?></link>
             <guid isPermaLink="false"><?= helper('route.contact', array('row' => $contact)) ?></guid>
             <description><![CDATA[<?= import('com:contacts.view.contact.hcard.html', array('contact' => $contact)); ?>]]></description>

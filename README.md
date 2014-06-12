@@ -13,7 +13,7 @@ Check this website at [www.lokalepolitie.be/leuven](http://www.lokalepolitie.be/
 
 ## Installation
 
-You can run the project with the supplied Vagrantfile - make sure you understand what [Vagrant](http://vagrantup.com/) is.
+You can run the project easily with the supplied Vagrantfile - make sure you understand what [Vagrant](http://vagrantup.com/) is.
 
 * Install [Composer](http://getcomposer.org/doc/00-intro.md)
 * Install [VirtualBox](http://www.virtualbox.org/)
@@ -22,12 +22,24 @@ You can run the project with the supplied Vagrantfile - make sure you understand
     ```$ git clone https://github.com/belgianpolice/internet-platform.git```
 * Go to the repository folder where this README is located and bootup the server
     ```$ vagrant up```
-* Go to the following folder ```$ cd install/custom```
-* Install the dependencies by running Composer: ```$ composer install```
 * Add the following line to your hosts file
     ```192.168.52.10 police.dev phpmyadmin.police.dev```
+* You can now access the sample site at [police.dev/9999](http://police.dev/9999)!
 
 Note: Linux users need to install NFS (Network File System) manually, see [help.ubuntu.com](http://help.ubuntu.com/community/SettingUpNFSHowTo) for more information.
+
+### Development dependencies
+
+* Install [node.js](http://nodejs.org/)
+* Install [Grunt](http://gruntjs.com/) by running ```npm install -g grunt-cli```
+* Go to the repository folder where the README is located
+* Install project dependencies with ```npm install```
+* Run Grunt with ```grunt```
+
+### Live Reload
+
+* Install the [LiveReload browser plug-in](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions)
+* Restart the browser and click the LiveReload icon to activate it.
 
 
 ## Vagrant command-line interface
@@ -48,7 +60,7 @@ More information about the Vagrant command-line interface can be found at [docs.
 
 You can use the following commands to manage the platform:
 
-* ```police reinstall``` to re-create the database
+* ```police reinstall``` to re-create the sample site.
 
 First use the Vagrant command-line interface to access the Secure Shell, see above.
 

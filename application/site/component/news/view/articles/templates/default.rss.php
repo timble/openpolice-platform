@@ -34,12 +34,13 @@
         <item>
             <title><![CDATA[<?= escape($article->title) ?>]]></title>
             <link><?= helper('route.article', array('row' => $article)) ?></link>
-            <dc:creator><?= $article->created_by_name ?></dc:creator>
+            <dc:creator><?= @translate('Police') ?> <?= $zone->title ?></dc:creator>
             <guid isPermaLink="false"><?= helper('route.article', array('row' => $article)) ?></guid>
             <description><![CDATA[
                 <?= $article->introtext ?>
                 <?= helper('com:attachments.image.thumbnail', array(
-                    'attachment' => $article->attachments_attachment_id
+                    'attachment' => $article->attachments_attachment_id,
+                    'attribs' => array('width' => '400', 'height' => '300')
                 )) ?>
                 <?= $article->fulltext ?>
             ]]></description>
