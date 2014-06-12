@@ -60,7 +60,6 @@ class JConfig
 	var $smtpuser = '';
 	var $smtppass = '';
 	var $smtphost = 'localhost';
-	var $smtpport = '25';
 
 	/* Cache Settings */
 	var $caching       = '0';

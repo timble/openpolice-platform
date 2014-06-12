@@ -30,6 +30,10 @@
     }
   }
 
+  .text--strong {
+    color: white;
+  }
+
   .contact__inner {
     margin-left: 0;
     border: 0 none;
@@ -47,6 +51,11 @@
   .well {
     background-color: lighten($navbarBackground, 5%);
     border: 1px solid $blue;
+    padding-bottom: 0;
+
+    p {
+      margin-bottom: $baseLineHeight / 2;
+    }
   }
 
   .muted {

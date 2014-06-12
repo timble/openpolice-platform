@@ -37,11 +37,11 @@ class ContactsViewContactHtml extends Library\ViewHtml
         if($page->getLink()->query['view'] == 'categories' )
         {
             $pathway->addItem($category->title, $this->getTemplate()->getHelper('route')->category(array('row' => $category)));
-            $pathway->addItem($contact->name, '');
+            $pathway->addItem($contact->title, '');
         }
 
         if($page->getLink()->query['view'] == 'contacts' ) {
-            $pathway->addItem($contact->name, '');
+            $pathway->addItem($contact->title, '');
         }
 
         $this->params   = $params;

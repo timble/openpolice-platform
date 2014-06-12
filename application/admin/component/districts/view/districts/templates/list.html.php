@@ -9,12 +9,16 @@
 ?>
 
 <ul class="navigation">
-	<a class="<?= $state->district == null ? 'active' : ''; ?>" href="<?= route('district=' ) ?>">
-		<?= 'All districts' ?>
-	</a>
+	<li>
+        <a class="<?= $state->district == null ? 'active' : ''; ?>" href="<?= route('district=' ) ?>">
+            <?= 'All districts' ?>
+        </a>
+	</li>
 	<? foreach ($districts as $district) : ?>
-	<a class="<?= $state->district == $district->id ? 'active' : ''; ?>" href="<?= route('district='.$district->id ) ?>">
-		<?= escape($district->title) ?>
-	</a>
-	<? endforeach ?>
+	<li>
+        <a class="<?= $state->district == $district->id ? 'active' : ''; ?>" href="<?= route('district='.$district->id ) ?>">
+		    <?= escape($district->title) ?>
+	    </a>
+    </li>
+    <? endforeach ?>
 </ul>
