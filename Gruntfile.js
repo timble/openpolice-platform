@@ -17,12 +17,17 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: '**/*.scss',
-                tasks: ['sass']
+                tasks: ['sass'],
+                options: {
+                    atBegin: true
+                }
             },
             livereload: {
                 // Here we watch the files the sass task will compile to
                 // These files are sent to the live reload server after sass compiles to them
-                options: { livereload: true },
+                options: {
+                    livereload: true
+                },
                 files: ['application/site/public/theme/mobile/css/default.css']
             }
         }
