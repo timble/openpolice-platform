@@ -61,7 +61,7 @@
 </article>
 
 <script src="assets://application/js/jquery.js" />
-<script src="assets://application/js/magnific-popup.js" />
+<script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
 <script data-inline>
     $(document).ready(function() {
         // This will create a single gallery from all elements that have class data-gallery="enabled"
