@@ -26,10 +26,9 @@
                         <?= translate('Police') ?>
                         <?= escape($zone->title); ?>
                     </a>
-                    <a id="button" class="navbar__handle lines-button x" href="#" onclick="Apollo.toggleClass(document.getElementById('navigation'), 'is-shown');Apollo.toggleClass(document.getElementById('button'), 'close')">MENU <span class="lines"></span></a>
-
+                    <button id="button" class="navbar__handle lines-button x" aria-hidden="true" aria-pressed="false" aria-controls="navigation" onclick="Apollo.toggleClass(document.getElementById('navigation'), 'is-shown');Apollo.toggleClass(document.getElementById('button'), 'close');toggleAttribute(document.getElementById('navigation'), 'aria-expanded');toggleAttribute(document.getElementById('button'), 'aria-pressed')">MENU <span class="lines"></span></button>
                 </div>
-                <div id="navigation">
+                <div id="navigation" aria-expanded="false">
                     <ktml:modules position="navigation">
                         <ktml:modules:content>
                     </ktml:modules>
