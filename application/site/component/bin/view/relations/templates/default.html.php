@@ -10,8 +10,9 @@
 
 <? $site = escape(object('application')->getCfg('site' )) ?>
 
-<script src="assets://application/js/jquery.js" />
 <style src="assets://application/components/select2/select2.css" />
+
+<script src="assets://application/components/jquery/dist/jquery.min.js" />
 <script src="assets://application/components/select2/select2.js" />
 <script src="assets://application/js/ie7.js" condition="if lte IE 7" />
 
