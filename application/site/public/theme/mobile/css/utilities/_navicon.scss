@@ -1,3 +1,5 @@
+// Inspired by https://github.com/SaraSoueidan/navicon-transformicons
+
 @media (max-width: $navbarCollapseWidth) {
   // Remove 'Hamburger Icon' with Unicode
   .navbar__handle:after {
@@ -25,6 +27,7 @@
       transition: 0;
     }
   }
+
   //common to all three-liners
   @mixin line {
     display: inline-block;
@@ -34,6 +37,7 @@
     border-radius: $button-size/14;
     transition: $transition;
   }
+
   //common to all three-liners
   .lines {
     @include line;
@@ -56,8 +60,6 @@
     }
   }
 
-
-
   //three-lines to x
   .lines-button.x.close{
     .lines {
@@ -66,7 +68,7 @@
         -webkit-transform-origin: 50% 50%;
         transform-origin: 50% 50%;
         top:0;
-        //width: $button-size;
+        width: $button-size;
       }
       &:before{
         -webkit-transform: rotate3d(0,0,1,45deg);

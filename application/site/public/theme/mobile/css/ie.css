@@ -1953,7 +1953,8 @@ img.mfp-img {
     .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
       -webkit-transform-origin: 50% 50%;
       transform-origin: 50% 50%;
-      top: 0; }
+      top: 0;
+      width: 0.9375em; }
     .lines-button.x.close .lines:before {
       -webkit-transform: rotate3d(0, 0, 1, 45deg);
       transform: rotate3d(0, 0, 1, 45deg); }
