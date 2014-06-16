@@ -38,7 +38,9 @@
     </div>
 
     <div class="container container__banner">
-        <img width="890" height="110" src="assets://application/images/banners/<?= $site ?>.jpg" alt="<?= translate('Police') ?> <?= escape($zone->title); ?> banner" />
+        <div class="banner__image banner__image--<?= $site ?>">
+
+        </div>
     </div>
 
     <ktml:modules position="breadcrumbs">

@@ -164,7 +164,6 @@ textarea {
   h3 {
     page-break-after: avoid; } }
 .container__header .slogan,
-.container__banner,
 .container__content .sidebar,
 .is-hidden,
 .hidden-phone {
@@ -317,14 +316,12 @@ textarea {
 
   .container__header .is-hidden,
   .container__breadcrumb,
-  .container__banner,
   .container__content .sidebar,
   .container__copyright .copyright,
   .hidden-phone {
     display: block; }
 
   .container__header,
-  .container__banner,
   .container__breadcrumb,
   .container__content .homepage__sticky,
   .container__footer {
@@ -895,15 +892,103 @@ ul.column--double, ul.column--triple, ul.column--quad {
     width: 40%;
     max-width: 200px;
     margin: 0 0 1.5em 1.5em; } }
-.container__banner img {
-  border: 1px solid #505050;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+@media screen and (min-width: 767px) {
+  .banner__image {
+    height: 110px;
+    border: 1px solid #505050;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
 
+  .banner__image--5271 {
+    background: url("../images/banners/5271.jpg"); }
+
+  .banner__image--5278 {
+    background: url("../images/banners/5278.jpg"); }
+
+  .banner__image--5283 {
+    background: url("../images/banners/5283.jpg"); }
+
+  .banner__image--5295 {
+    background: url("../images/banners/5295.jpg"); }
+
+  .banner__image--5317 {
+    background: url("../images/banners/5317.jpg"); }
+
+  .banner__image--5318 {
+    background: url("../images/banners/5318.jpg"); }
+
+  .banner__image--5320 {
+    background: url("../images/banners/5320.jpg"); }
+
+  .banner__image--5324 {
+    background: url("../images/banners/5324.jpg"); }
+
+  .banner__image--5325 {
+    background: url("../images/banners/5325.jpg"); }
+
+  .banner__image--5339 {
+    background: url("../images/banners/5339.jpg"); }
+
+  .banner__image--5340 {
+    background: url("../images/banners/5340.jpg"); }
+
+  .banner__image--5342 {
+    background: url("../images/banners/5342.jpg"); }
+
+  .banner__image--5355 {
+    background: url("../images/banners/5355.jpg"); }
+
+  .banner__image--5366 {
+    background: url("../images/banners/5366.jpg"); }
+
+  .banner__image--5370 {
+    background: url("../images/banners/5370.jpg"); }
+
+  .banner__image--5388 {
+    background: url("../images/banners/5388.jpg"); }
+
+  .banner__image--5396 {
+    background: url("../images/banners/5396.jpg"); }
+
+  .banner__image--5401 5405 {
+    background: url("../images/banners/5401 5405.jpg"); }
+
+  .banner__image--5408 {
+    background: url("../images/banners/5408.jpg"); }
+
+  .banner__image--5415 {
+    background: url("../images/banners/5415.jpg"); }
+
+  .banner__image--5421 {
+    background: url("../images/banners/5421.jpg"); }
+
+  .banner__image--5443 {
+    background: url("../images/banners/5443.jpg"); }
+
+  .banner__image--5446 {
+    background: url("../images/banners/5446.jpg"); }
+
+  .banner__image--5449 {
+    background: url("../images/banners/5449.jpg"); }
+
+  .banner__image--5459 {
+    background: url("../images/banners/5459.jpg"); }
+
+  .banner__image--5461 {
+    background: url("../images/banners/5461.jpg"); }
+
+  .banner__image--5888 {
+    background: url("../images/banners/5888.jpg"); }
+
+  .banner__image--9999 {
+    background: url("../images/banners/9999.jpg"); }
+
+  .banner__image--demo {
+    background: url("../images/banners/demo.jpg"); } }
 @media screen and (min-width: 767px) {
   .container__breadcrumb {
     padding: 5px 25px 0; } }
