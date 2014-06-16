@@ -2,70 +2,55 @@
  * Bootstrap variables
  */
 body {
-    width: 600px;
-    margin: 0 auto;
-}
+  width: 600px;
+  margin: 0 auto; }
 
 form {
-    margin: 0;
-}
+  margin: 0; }
 
 #wrap {
-    border-left: 1px solid gainsboro;
-    border-right: 1px solid gainsboro;
-}
+  border-left: 1px solid gainsboro;
+  border-right: 1px solid gainsboro; }
 
 .form__left input {
-    width: 95%;
-}
+  width: 95%; }
 
 * html .navbar__logo {
-    padding-top: 10px;
-}
+  padding-top: 10px; }
 
 .article__thumbnail {
-    float: right;
-    width: 200px;
-    height: 150px;
-    margin: 0 0 1.5em 1.5em;
-}
-
-.article__thumbnail img {
+  float: right;
+  width: 200px;
+  height: 150px;
+  margin: 0 0 1.5em 1.5em; }
+  .article__thumbnail img {
     width: 100%;
-    height: 100%;
-}
+    height: 100%; }
 
 .homepage__sticky .media__object img,
 .footer__news .media__object img {
-    width: 100%;
-    height: 100%;
-}
+  width: 100%;
+  height: 100%; }
 
 .navbar__handlebar #button {
-    display: none;
-}
+  display: none; }
 
 .navbar ul li {
-    float: left;
-}
-
+  float: left; }
 .navbar ul li a {
-    text-align: center;
-    border: 0 none;
-    font-weight: normal;
-    padding: 10px 30px;
-}
+  text-align: center;
+  border: 0 none;
+  font-weight: normal;
+  padding: 10px 30px; }
 
 .js-enabled .navbar {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    height: auto;
-    overflow: auto;
-    clip: auto;
-    position: static;
-}
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  clip: auto;
+  position: static; }
 
 .container__footer_menu li {
-    float: left;
-}
+  float: left; }
