@@ -1,4 +1,4 @@
-@include respond-min($navbarCollapseWidth) {
+@include respond-min(998px) {
   .banner__image {
     height: 110px;
     border: 1px solid $gray;
