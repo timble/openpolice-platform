@@ -1,19 +1,19 @@
 $fix-mqs: false !default;
 
 @mixin respond-min($width) {
-    // If we're outputting for a fixed media query set...
-    @if $fix-mqs {
-        // ...and if we should apply these rules...
-        @if $fix-mqs >= $width {
-            // ...output the content the user gave us.
-            @content;
-        }
-    } @else {
-        // Otherwise, output it using a regular media query
-        @media screen and (min-width: $width) {
-            @content;
-        }
+  // If we're outputting for a fixed media query set...
+  @if $fix-mqs {
+    // ...and if we should apply these rules...
+    @if $fix-mqs >= $width {
+      // ...output the content the user gave us.
+      @content;
     }
+  } @else {
+    // Otherwise, output it using a regular media query
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  }
 }
 
 // I also have a respond-max mixin, that does what you might expect
@@ -21,8 +21,8 @@ $fix-mqs: false !default;
 $old-ie: false !default;
 
 @mixin old-ie {
-    // Only use this content if we're dealing with old IE
-    @if $old-ie {
-        @content;
-    }
+  // Only use this content if we're dealing with old IE
+  @if $old-ie {
+    @content;
+  }
 }

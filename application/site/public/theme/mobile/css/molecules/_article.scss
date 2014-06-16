@@ -1,35 +1,35 @@
 .article {
-    @extend .clearfix;
-    margin-bottom: $gutter-width;
+  @extend .clearfix;
+  margin-bottom: $gutter-width;
 
-    p img[align="right"] {
-        margin: 0 0 $baseLineHeight $baseLineHeight;
-    }
+  p img[align="right"] {
+    margin: 0 0 $baseLineHeight $baseLineHeight;
+  }
 }
 
 .article__header {
-    margin-bottom: 0.65em;
+  margin-bottom: 0.65em;
 
-    h1 {
-        margin-bottom: 0;
-    }
+  h1 {
+    margin-bottom: 0;
+  }
 }
 
 .article__introtext {
-    font-weight: bold;
-    margin-bottom: $baseLineHeight;
+  font-weight: bold;
+  margin-bottom: $baseLineHeight;
 }
 
 .article__thumbnail {
-    @extend .thumbnail;
-    margin-bottom: $baseLineHeight / 2;
+  @extend .thumbnail;
+  margin-bottom: $baseLineHeight / 2;
 }
 
 @include respond-min(400px) {
-    .article__thumbnail {
-        float: right;
-        width: 40%;
-        max-width: 200px;
-        margin: 0 0 $baseLineHeight $baseLineHeight;
-    }
+  .article__thumbnail {
+    float: right;
+    width: 40%;
+    max-width: 200px;
+    margin: 0 0 $baseLineHeight $baseLineHeight;
+  }
 }

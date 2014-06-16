@@ -38,71 +38,73 @@
 
 @include respond-min($navbarCollapseWidth) {
   .header {
-        background: none;
-        border-bottom: 0px none;
+    background: none;
+    border-bottom: 0px none;
 
-        .text--strong {
-            font-size: $fontSizeLarge;
-        }
-
-        .button--hamburger {
-          display: none;
-        }
-
-        .organization {
-            padding: 26px 0 0 0;
-            text-decoration: none;
-            color: $linkColor;
-            border-bottom: 0px none;
-            text-align: center;
-
-            a {
-              text-decoration: none;
-
-              &:hover .organization__name {
-                text-decoration: underline;
-                color: $linkColor;
-              }
-            }
-        }
-
-        .organization__logo {
-            float: none;
-            width: 160px;
-            height: 42px;
-            vertical-align: bottom;
-            margin-left: 10px;
-            background-size: 160px 42px;
-        }
-
-        $languages: 'en', 'nl', 'fr', 'de';
-
-        @each $language in $languages {
-          .organization__logo--#{$language} { background-image: url("../images/logo-#{$language}.png"); }
-        }
-
-        .organization__name {
-            margin-left: 57px;
-            margin-top: 6px;
-            font-size: 0.9em;
-            color: $linkColor;
-            line-height: 1em;
-
-          span {
-            @include visually-hidden;
-          }
-        }
-
-        .slogan {
-            margin: 25px 0 10px;
-            display: block;
-            text-align: center;
-
-            a {
-                text-decoration: none;
-            }
-        }
+    .text--strong {
+      font-size: $fontSizeLarge;
     }
+
+    .button--hamburger {
+      display: none;
+    }
+
+    .organization {
+      padding: 26px 0 0 0;
+      text-decoration: none;
+      color: $linkColor;
+      border-bottom: 0px none;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+
+        &:hover .organization__name {
+          text-decoration: underline;
+          color: $linkColor;
+        }
+      }
+    }
+
+    .organization__logo {
+      float: none;
+      width: 160px;
+      height: 42px;
+      vertical-align: bottom;
+      margin-left: 10px;
+      background-size: 160px 42px;
+    }
+
+    $languages: 'en', 'nl', 'fr', 'de';
+
+    @each $language in $languages {
+      .organization__logo--#{$language} {
+        background-image: url("../images/logo-#{$language}.png");
+      }
+    }
+
+    .organization__name {
+      margin-left: 57px;
+      margin-top: 6px;
+      font-size: 0.9em;
+      color: $linkColor;
+      line-height: 1em;
+
+      span {
+        @include visually-hidden;
+      }
+    }
+
+    .slogan {
+      margin: 25px 0 10px;
+      display: block;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 @include respond-min(998px) {

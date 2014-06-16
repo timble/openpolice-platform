@@ -18,7 +18,7 @@
 }
 
 // Prevent underline on touch devices
-@media screen and (orientation:landscape), screen and (orientation:portrait) {
+@media screen and (orientation: landscape), screen and (orientation: portrait) {
   .button--hamburger:hover {
     text-decoration: none;
   }
@@ -84,21 +84,21 @@
       .lines {
         background: transparent;
 
-        &:before, &:after{
+        &:before, &:after {
           -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
           top: 0;
           width: $button-size;
         }
 
-        &:before{
-          -webkit-transform: rotate3d(0,0,1,45deg);
-          transform: rotate3d(0,0,1,45deg);
+        &:before {
+          -webkit-transform: rotate3d(0, 0, 1, 45deg);
+          transform: rotate3d(0, 0, 1, 45deg);
         }
 
-        &:after{
-          -webkit-transform: rotate3d(0,0,1,-45deg);
-          transform: rotate3d(0,0,1,-45deg);
+        &:after {
+          -webkit-transform: rotate3d(0, 0, 1, -45deg);
+          transform: rotate3d(0, 0, 1, -45deg);
         }
       }
     }

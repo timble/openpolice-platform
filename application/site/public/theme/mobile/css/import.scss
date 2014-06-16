@@ -2,20 +2,17 @@
 @import "utilities/variables";
 @import "utilities/mixins";
 @import "utilities/reset";
-
 @import "organisms/containers";
 @import "organisms/districts";
 @import "organisms/wrap";
 @import "organisms/splash";
 @import "organisms/homepage";
-
 @import "utilities/clearfix";
 @import "utilities/desktop";
 @import "utilities/icomoon";
 @import "utilities/select2";
 @import "utilities/system";
 @import "utilities/grid";
-
 @import "atoms/address";
 @import "atoms/type";
 @import "atoms/body";
@@ -26,7 +23,6 @@
 @import "atoms/time";
 @import "atoms/a";
 @import "atoms/ul";
-
 @import "molecules/article";
 @import "molecules/banner";
 @import "molecules/breadcrumb";
@@ -51,6 +47,5 @@
 @import "molecules/typography";
 @import "molecules/well/well";
 @import "molecules/well/well--small";
-
 @import "../components/magnific-popup/src/css/main";
 @import "utilities/print";

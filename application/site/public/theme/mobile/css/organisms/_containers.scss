@@ -2,39 +2,39 @@
 .container__content .sidebar,
 .is-hidden,
 .hidden-phone {
-    display: none;
+  display: none;
 }
 
 .container__header {
-    margin-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
 }
 
 .container__content {
-    padding-top: $grid-padding;
-    padding-bottom: $grid-padding;
-    padding-left: 20px;
-    padding-right: 20px;
+  padding-top: $grid-padding;
+  padding-bottom: $grid-padding;
+  padding-left: 20px;
+  padding-right: 20px;
 
-    &.homepage {
-      padding-left: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-    }
+  &.homepage {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+  }
 }
 
 .container__copyright {
-    padding-top: 13px;
-    padding-bottom: 13px;
-    text-align: center;
-    border-top: 1px solid darken($grayLighter, 7%);
-    font-size: $fontSizeSmall;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-align: center;
+  border-top: 1px solid darken($grayLighter, 7%);
+  font-size: $fontSizeSmall;
 
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }
 
 .container__footer {
