@@ -2,7 +2,7 @@
 
 @media (max-width: $navbarCollapseWidth) {
   // Remove 'Hamburger Icon' with Unicode
-  .navbar__handle:after {
+  .button--hamburger:after {
     content: "";
     content: none;
   }

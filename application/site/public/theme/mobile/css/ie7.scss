@@ -69,7 +69,7 @@ form {
 }
 
 // Always show the navbar
-.js-enabled .navbar #navigation {
+.js-enabled .navbar {
   @include visually-shown;
 }
 

@@ -1,43 +1,94 @@
-.container__header {
-    .organization {
-        display: none;
+.header {
+  @extend .clearfix;
+
+  background-color: $navbarBackground;
+  border-bottom: 1px solid darken($blue, 10%);
+
+  .organization {
+    @extend .clearfix;
+
+    padding: 10px;
+    border-bottom: 1px solid $blue;
+
+    a {
+      display: inline-block;
+      line-height: 36px;
+      color: $white;
+
+      &:hover {
+        color: $white;
+      }
     }
+  }
+
+  .organization__logo {
+    height: 36px;
+    width: 24px;
+    background: url("../images/avatar.png") no-repeat left center;
+    margin-right: 6px;
+
+    float: left;
+  }
+
+  .organization__name {
+    float: left;
+  }
 }
 
 @include respond-min($navbarCollapseWidth) {
-    .container__header {
-        position: relative;
-        margin-bottom: 20px;
+  .header {
+        background: none;
+        border-bottom: 0px none;
 
         .text--strong {
             font-size: $fontSizeLarge;
         }
 
+        .button--hamburger {
+          display: none;
+        }
+
         .organization {
-            padding-top: 26px;
+            padding: 26px 0 0 0;
             text-decoration: none;
             color: $linkColor;
-            display: block;
+            border-bottom: 0px none;
+            text-align: center;
 
             a {
-                text-decoration: none;
-            }
+              text-decoration: none;
 
-            a:hover {
+              &:hover .organization__name {
                 text-decoration: underline;
+                color: $linkColor;
+              }
             }
         }
 
         .organization__logo {
+            float: none;
             width: 160px;
+            height: 42px;
             vertical-align: bottom;
             margin-left: 10px;
         }
 
+        $languages: 'en', 'nl', 'fr', 'de';
+
+        @each $language in $languages {
+          .organization__logo--#{$language} { background-image: url("../images/logo-#{$language}.png"); }
+        }
+
         .organization__name {
             margin-left: 57px;
-            margin-top: 3px;
+            margin-top: 6px;
             font-size: 0.9em;
+            color: $linkColor;
+            line-height: 1em;
+
+          span {
+            @include visually-hidden;
+          }
         }
 
         .slogan {
@@ -52,3 +103,12 @@
     }
 }
 
+@include respond-min(998px) {
+  .header {
+    margin-bottom: 20px;
+
+    .organization {
+      text-align: left;
+    }
+  }
+}

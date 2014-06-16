@@ -7,28 +7,22 @@
 
 <div id="wrap">
     <div class="container container__header">
-        <div class="organization" itemscope itemtype="http://schema.org/Organization">
-            <a itemprop="url" href="/<?= $site ?>">
-                <img class="organization__logo" width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
-                <div class="organization__name"><?= escape($zone->title); ?></div>
-            </a>
-        </div>
+        <div class="header">
+            <div class="organization" itemscope itemtype="http://schema.org/Organization">
+                <a itemprop="url" href="/<?= $site ?>">
+                    <div class="organization__logo organization__logo--<?= $language_short; ?>"></div>
+                    <div class="organization__name"><span><?= translate('Police') ?></span> <?= escape($zone->title); ?></div>
+                    <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
+                </a>
+                <button id="hamburger" class="button--hamburger lines-button x" aria-hidden="true" aria-pressed="false" aria-controls="navigation" onclick="apollo.toggleClass(document.getElementById('navigation'), 'is-shown');apollo.toggleClass(document.getElementById('hamburger'), 'close');hamburger()">MENU <span class="lines"></span></button>
+            </div>
 
-        <div class="navigation">
-            <span class="slogan">
-                <?= JText::sprintf('Call for urgent police assistance', '101') ?>.
-                <?= JText::sprintf('No emergency, just police', escape($zone->phone_information)) ?>.
-            </span>
-            <div class="navbar">
-                <div class="navbar__handlebar">
-                    <a class="navbar__logo" href="/<?= $site ?>">
-                        <img class="navbar__avatar" width="37" height="37" alt="<?= translate('Police') ?> logo" src="assets://application/images/avatar.png" />
-                        <?= translate('Police') ?>
-                        <?= escape($zone->title); ?>
-                    </a>
-                    <button id="button" class="navbar__handle lines-button x" aria-hidden="true" aria-pressed="false" aria-controls="navigation" onclick="Apollo.toggleClass(document.getElementById('navigation'), 'is-shown');Apollo.toggleClass(document.getElementById('button'), 'close');toggleAttribute(document.getElementById('navigation'), 'aria-expanded');toggleAttribute(document.getElementById('button'), 'aria-pressed')">MENU <span class="lines"></span></button>
-                </div>
-                <div id="navigation" aria-expanded="false">
+            <div class="navigation">
+                <span class="slogan">
+                    <?= JText::sprintf('Call for urgent police assistance', '101') ?>.
+                    <?= JText::sprintf('No emergency, just police', escape($zone->phone_information)) ?>.
+                </span>
+                <div id="navigation" class="navbar">
                     <ktml:modules position="navigation">
                         <ktml:modules:content>
                     </ktml:modules>

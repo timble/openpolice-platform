@@ -1,11 +1,6 @@
 function hamburger()
 {
-    toggleAttribute(document.getElementById('button'), 'aria-pressed');
-
-    var User = require('apollo.js');
-    var user = new User();
-
-    User.toggleClass(document.getElementById('button'), 'close');
+    toggleAttribute(document.getElementById('hamburger'), 'aria-pressed');
 }
 
 function toggleAttribute(element, attribute)

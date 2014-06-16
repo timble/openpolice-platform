@@ -5,8 +5,7 @@
 .navbar {
     min-height: $navbarHeight / 2;
     width: 100%;
-    background-color: $navbarBackground;
-    border-bottom: 1px solid darken($blue, 10%);
+  background-color: $navbarBackground;
 
     // Prevent floats from breaking the navbar
     @include clearfix();
@@ -50,69 +49,22 @@
     }
 }
 
-.navbar__handlebar {
-  @extend .clearfix;
-  border-bottom: 1px solid $blue;
-  padding: 10px 10px;
-}
-
-.navbar__logo {
-  line-height: 36px;
-  text-decoration: none;
-  float: left;
-
-  color: $white;
-  zoom: 1;
-
-  &:hover {
-    color: $white;
-  }
-}
-
-.navbar__avatar {
-  width: 24px;
-  height: 24px;
-}
-
-.navbar__handle {
-  float: right;
-  padding: 5px 12px;
-  color: $linkColor;
-  text-decoration: none;
-  text-align: center;
-  border: 1px solid darken($navbarBackground, 5%);
-  border-radius: 8px;
-  background-color: #fff;
-
-  &:after {
-    display: inline-block;
-    font-size: 30px;
-    content: '\2630';
-    vertical-align: text-bottom;
-    padding-left: 6px;
-  }
-}
-
 // JS dependencies
 .js-enabled {
-    .navbar {
-        // Hide the navbar
-        #navigation {
-            @include visually-hidden;
-        }
+  // Hide the navbar
+  .navbar {
+      @include visually-hidden;
+  }
 
-        // Show the navbar when the handle is clicked
-        #navigation.is-shown {
-            @include visually-shown;
-        }
-    }
+  // Show the navbar when the handle is clicked
+  .navbar.is-shown {
+      @include visually-shown;
+  }
 }
 
 @include respond-min(600px) {
-  .navbar__handlebar {
-    #button {
-      display: none;
-    }
+  .button--hamburger {
+    display: none;
   }
 
   .navbar {
@@ -133,20 +85,26 @@
   }
 
   // Always show the navbar on non-mobile screen
-  .js-enabled .navbar #navigation {
+  .js-enabled .navbar {
     @include visually-shown;
   }
 }
 
-// Prevent underline on touch devices
-@media screen and (orientation:landscape), screen and (orientation:portrait) {
-  .navbar__handle:hover {
-    text-decoration: none;
-  }
-}
-
 @include respond-min($navbarCollapseWidth) {
+  // JS dependencies
+  .js-enabled {
+    // Hide the navbar
     .navbar {
+      @include visually-shown;
+    }
+
+    // Show the navbar when the handle is clicked
+    .navbar.is-shown {
+      @include visually-shown;
+    }
+  }
+
+  .navbar {
         border-bottom: 0 none;
         border: 1px solid $navbarBorder;
         @include border-radius($baseBorderRadius);
