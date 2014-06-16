@@ -1243,7 +1243,8 @@ input[type="submit"].button {
     width: 160px;
     height: 42px;
     vertical-align: bottom;
-    margin-left: 10px; }
+    margin-left: 10px;
+    background-size: 160px 42px; }
   .header .organization__logo--en {
     background-image: url("../images/logo-en.png"); }
   .header .organization__logo--nl {
