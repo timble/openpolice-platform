@@ -23,3 +23,84 @@
     text-decoration: none;
   }
 }
+
+// Inspired by https://github.com/SaraSoueidan/navicon-transformicons
+@media (max-width: $navbarCollapseWidth) {
+  // Remove 'Hamburger Icon' with Unicode
+  .button--hamburger:after {
+    content: "";
+    content: none;
+  }
+
+  $transition: .4s; // increase this to see the transformations happen in slow motion
+  $button-size: 0.9375em;
+
+  // common to all three-liners
+  .button--hamburger {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      transition: 0;
+    }
+
+    // Three-liners
+    .lines {
+      position: relative;
+      top: -5px;
+
+      &, &:before, &:after {
+        display: inline-block;
+        width: $button-size;
+        height: $button-size / 7;
+        background: $linkColor;
+        border-radius: $button-size / 14;
+        transition: $transition;
+      }
+
+      &:before, &:after {
+        position: absolute;
+        left: 0;
+        content: '';
+        -webkit-transform-origin: $button-size / 14 center;
+        transform-origin: $button-size / 14 center;
+      }
+
+      &:before {
+        top: $button-size / 3.5;
+      }
+
+      &:after {
+        top: -$button-size / 3.5;
+      }
+    }
+
+    // Three-lines to x
+    &.close {
+      .lines {
+        background: transparent;
+
+        &:before, &:after{
+          -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+          top: 0;
+          width: $button-size;
+        }
+
+        &:before{
+          -webkit-transform: rotate3d(0,0,1,45deg);
+          transform: rotate3d(0,0,1,45deg);
+        }
+
+        &:after{
+          -webkit-transform: rotate3d(0,0,1,-45deg);
+          transform: rotate3d(0,0,1,-45deg);
+        }
+      }
+    }
+  }
+}

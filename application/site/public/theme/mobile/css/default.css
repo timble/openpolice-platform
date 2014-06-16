@@ -1122,6 +1122,51 @@ input[type="submit"].button {
 @media screen and (orientation: landscape), screen and (orientation: portrait) {
   .button--hamburger:hover {
     text-decoration: none; } }
+@media (max-width: 767px) {
+  .button--hamburger:after {
+    content: "";
+    content: none; }
+
+  .button--hamburger {
+    cursor: pointer;
+    user-select: none; }
+    .button--hamburger:hover {
+      opacity: 1; }
+    .button--hamburger:active {
+      transition: 0; }
+    .button--hamburger .lines {
+      position: relative;
+      top: -5px; }
+      .button--hamburger .lines, .button--hamburger .lines:before, .button--hamburger .lines:after {
+        display: inline-block;
+        width: 0.9375em;
+        height: 0.13393em;
+        background: #004d9f;
+        border-radius: 0.06696em;
+        transition: 0.4s; }
+      .button--hamburger .lines:before, .button--hamburger .lines:after {
+        position: absolute;
+        left: 0;
+        content: '';
+        -webkit-transform-origin: 0.06696em center;
+        transform-origin: 0.06696em center; }
+      .button--hamburger .lines:before {
+        top: 0.26786em; }
+      .button--hamburger .lines:after {
+        top: -0.26786em; }
+    .button--hamburger.close .lines {
+      background: transparent; }
+      .button--hamburger.close .lines:before, .button--hamburger.close .lines:after {
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        top: 0;
+        width: 0.9375em; }
+      .button--hamburger.close .lines:before {
+        -webkit-transform: rotate3d(0, 0, 1, 45deg);
+        transform: rotate3d(0, 0, 1, 45deg); }
+      .button--hamburger.close .lines:after {
+        -webkit-transform: rotate3d(0, 0, 1, -45deg);
+        transform: rotate3d(0, 0, 1, -45deg); } }
 .form__group {
   margin-bottom: 0.75em; }
 
@@ -1169,7 +1214,7 @@ input[type="submit"].button {
   background-color: #0054ae;
   border-bottom: 1px solid #00346c; }
   .header .organization {
-    padding: 10px;
+    padding: 10px 10px 2px;
     border-bottom: 1px solid #004d9f; }
     .header .organization a {
       display: inline-block;
@@ -1181,6 +1226,7 @@ input[type="submit"].button {
     height: 36px;
     width: 24px;
     background: url("../images/avatar.png") no-repeat left center;
+    background-size: 24px 24px;
     margin-right: 6px;
     float: left; }
   .header .organization__name {
@@ -2042,61 +2088,6 @@ img.mfp-img {
   right: 0;
   padding-top: 0; }
 
-@media (max-width: 767px) {
-  .button--hamburger:after {
-    content: "";
-    content: none; }
-
-  /* ====================== lines button ==================================================*/
-  .lines-button {
-    transition: .3s;
-    cursor: pointer;
-    user-select: none;
-    /* */ }
-    .lines-button:hover {
-      opacity: 1; }
-    .lines-button:active {
-      transition: 0; }
-
-  .lines {
-    display: inline-block;
-    width: 0.9375em;
-    height: 0.13393em;
-    background: #004d9f;
-    border-radius: 0.06696em;
-    transition: 0.4s;
-    position: relative;
-    top: -5px; }
-    .lines:before, .lines:after {
-      display: inline-block;
-      width: 0.9375em;
-      height: 0.13393em;
-      background: #004d9f;
-      border-radius: 0.06696em;
-      transition: 0.4s;
-      position: absolute;
-      left: 0;
-      content: '';
-      -webkit-transform-origin: 0.06696em center;
-      transform-origin: 0.06696em center; }
-    .lines:before {
-      top: 0.26786em; }
-    .lines:after {
-      top: -0.26786em; }
-
-  .lines-button.x.close .lines {
-    background: transparent; }
-    .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
-      -webkit-transform-origin: 50% 50%;
-      transform-origin: 50% 50%;
-      top: 0;
-      width: 0.9375em; }
-    .lines-button.x.close .lines:before {
-      -webkit-transform: rotate3d(0, 0, 1, 45deg);
-      transform: rotate3d(0, 0, 1, 45deg); }
-    .lines-button.x.close .lines:after {
-      -webkit-transform: rotate3d(0, 0, 1, -45deg);
-      transform: rotate3d(0, 0, 1, -45deg); } }
 /* Print stub */
 @media only print {
   .container__header .navbar,

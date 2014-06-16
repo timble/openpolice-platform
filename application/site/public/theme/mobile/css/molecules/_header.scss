@@ -7,7 +7,7 @@
   .organization {
     @extend .clearfix;
 
-    padding: 10px;
+    padding: 10px 10px 2px;
     border-bottom: 1px solid $blue;
 
     a {
@@ -25,6 +25,7 @@
     height: 36px;
     width: 24px;
     background: url("../images/avatar.png") no-repeat left center;
+    background-size: 24px 24px;
     margin-right: 6px;
 
     float: left;
