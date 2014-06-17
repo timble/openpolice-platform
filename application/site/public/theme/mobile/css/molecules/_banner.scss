@@ -4,9 +4,10 @@
     border: 1px solid $gray;
     @include border-radius($baseBorderRadius);
     @include box-sizing(border-box);
+    background: url("../images/banners/default.jpg");
   }
 
-  $sites: 5271, 5278, 5283, 5295, 5317, 5318, 5320, 5324, 5325, 5339, 5340, 5342, 5355, 5366, 5370, 5388, 5396, 5401 5405, 5408, 5415, 5421, 5443, 5446, 5449, 5459, 5461, 5888, 9999, "demo";
+  $sites: 5317, 5318, 5388, 5446, 5888;
 
   @each $site in $sites {
     .banner__image--#{$site} {
