@@ -6,25 +6,25 @@
 // ----------
 
 .nav {
-    margin-left: 0;
-    margin-bottom: $baseLineHeight;
-    list-style: none;
+  margin-left: 0;
+  margin-bottom: $baseLineHeight;
+  list-style: none;
 
-    // Make links block level
-    li a {
-        display: block;
-        text-decoration: none;
-    }
+  // Make links block level
+  li a {
+    display: block;
+    text-decoration: none;
+  }
 
-    li a:hover,
-    li a:focus {
-        text-decoration: none;
-        background-color: $cyanLighter;
-    }
+  li a:hover,
+  li a:focus {
+    text-decoration: none;
+    background-color: $cyanLighter;
+  }
 }
 
 .nav--visited a:visited {
-    color: #609;
+  color: #609;
 }
 
 // TABS AND PILLS
@@ -33,12 +33,12 @@
 // Common styles
 .nav--list,
 .nav--pills {
-    @include clearfix();
+  @include clearfix();
 
-    li a,
-    li a {
-        padding-right: 12px;
-        padding-left: 12px;
-        margin-right: 2px;
-    }
+  li a,
+  li a {
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: 2px;
+  }
 }

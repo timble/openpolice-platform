@@ -29,13 +29,13 @@
 			</th>
             <th width="1"></th>
 			<th>
-				<?= helper('grid.sort', array('column' => 'title', 'title' => 'Day')) ?>
+				<?= helper('grid.sort', array('column' => 'day_of_week', 'title' => 'Day')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'title', 'title' => 'Opening time')) ?>
+                <?= helper('grid.sort', array('column' => 'day_of_week', 'title' => 'Opening time')) ?>
             </th>
             <th>
-                <?= helper('grid.sort', array('column' => 'title', 'title' => 'Closing time')) ?>
+                <?= helper('grid.sort', array('column' => 'day_of_week', 'title' => 'Closing time')) ?>
             </th>
 		</tr>
 	</thead>
@@ -59,10 +59,10 @@
 				<a href="<?= @route( 'view=hour&id='. $hour->id ); ?>"><?= helper('date.weekday', array('day_of_week' => $hour->day_of_week)) ?></a>
 			</td>
             <td>
-                <?= $hour->opening_time ?>
+                <?= $hour->appointment ? @translate('Appointment only') : $hour->opening_time ?>
             </td>
             <td>
-                <?= $hour->closing_time ?>
+                <?= $hour->appointment ? @translate('Appointment only') : $hour->closing_time ?>
             </td>
 		</tr>
 		<? endforeach; ?>

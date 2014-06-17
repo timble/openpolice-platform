@@ -15,7 +15,11 @@ $config = new PHPMigConfig();
 
 $container = new Pimple();
 $container['db'] = $container->share(function() use ($config) {
-    return new \PDO('mysql:dbname=data;host='.$config->host, $config->user, $config->password);
+    $options = array(
+        \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+    );
+
+    return new \PDO('mysql:dbname=data;host='.$config->host, $config->user, $config->password, $options);
 });
 
 $container['phpmig.adapter'] = $container->share(function() use ($container) {

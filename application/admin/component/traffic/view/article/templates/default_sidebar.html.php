@@ -32,7 +32,9 @@
             $jQuery(function(){
                 $jQuery('#start_on').datetimepicker({
                     format:'d-m-Y',
-                    timepicker:false
+                    timepicker:false,
+                    lang: '<?= helper('com:police.string.language') ?>',
+                    dayOfWeekStart: '1'
                 });
             });
         </script>
@@ -50,7 +52,9 @@
                         onShow:function( ct ){
                             this.setOptions({
                                 minDate:$jQuery('#start_on').val()?$jQuery('#start_on').val():false,
-                                formatDate: 'd-m-Y'
+                                formatDate: 'd-m-Y',
+                                lang: '<?= helper('com:police.string.language') ?>',
+                                dayOfWeekStart: '1'
                             })
                         },
                         timepicker:false

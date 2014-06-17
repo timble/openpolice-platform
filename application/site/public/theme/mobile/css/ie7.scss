@@ -1,5 +1,5 @@
+@import "illusion";
 @import "utilities/_variables";
-@import "utilities/_mixins";
 
 body {
   width: 600px;
@@ -28,31 +28,29 @@ form {
 
 // Right alignment of the thumbnail, on mobile it is on top
 .article__thumbnail {
-    float: right;
-    width: 200px;
-    height: 150px;
-    margin: 0 0 $baseLineHeight $baseLineHeight;
+  float: right;
+  width: 200px;
+  height: 150px;
+  margin: 0 0 $baseLineHeight $baseLineHeight;
 
-    img {
-        width: 100%; // IE6
-        height: 100%; // IE6
-    }
+  img {
+    width: 100%; // IE6
+    height: 100%; // IE6
+  }
 }
 
 .homepage__sticky,
 .footer__news {
-    .media__object {
-        img {
-            width: 100%; // IE6
-            height: 100%; // IE6
-        }
+  .media__object {
+    img {
+      width: 100%; // IE6
+      height: 100%; // IE6
     }
+  }
 }
 
-.navbar__handlebar {
-  #button {
-    display: none;
-  }
+.button--hamburger {
+  display: none;
 }
 
 // Horizontal align the footer menu items
@@ -69,7 +67,7 @@ form {
 }
 
 // Always show the navbar
-.js-enabled .navbar #navigation {
+.js-enabled .navbar {
   @include visually-shown;
 }
 

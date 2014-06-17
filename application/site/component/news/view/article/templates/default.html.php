@@ -8,8 +8,11 @@
  */
 ?>
 
+<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" name="author" />
+<? if($zone->twitter) : ?>
 <meta content="summary" name="twitter:card" />
 <meta content="@<?= $zone->twitter ?>" name="twitter:site" />
+<? endif ?>
 <meta content="<?= url(); ?>" property="og:url" />
 <meta content="<?= $article->title ?>" property="og:title" />
 <meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
@@ -20,7 +23,7 @@
 <meta content="<?= $published_on ?>" property="article:published_time" />
 
 <ktml:module position="left">
-    <? $modules = object('com:pages.model.modules')->position('quicklinks')->getRowset(); ?>
+    <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
 
     <? foreach($modules as $module) : ?>
         <div class="sidebar__element">
@@ -49,7 +52,7 @@
     </a>
 
     <div itemprop="articleBody">
-        <div class="article__introtext">
+        <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>
             <?= $article->introtext ?>
         </div>
         <?= $article->fulltext ?>
@@ -57,8 +60,8 @@
     </div>
 </article>
 
-<script src="assets://application/js/jquery.js" />
-<script src="assets://application/js/magnific-popup.js" />
+<script src="assets://application/components/jquery/dist/jquery.min.js" />
+<script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
 <script data-inline>
     $(document).ready(function() {
         // This will create a single gallery from all elements that have class data-gallery="enabled"

@@ -44,20 +44,36 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $this->_importDistricts($data);
                 }
 
+                if($table == 'districts_officers'){
+                    $this->_importDistrictsofficers($data);
+                }
+
                 if($table == 'districts_relations'){
                     $this->_importRelations($data);
                 }
 
-                if($table == 'streets'){
-                    $this->_importStreets($data);
+                if($table == 'localstreets'){
+                    $this->_importLocalStreets($data);
+                }
+
+                if($table == 'officers'){
+                    $this->_importOfficers($data);
                 }
 
                 if($table == 'news'){
                     $this->_importNews($data);
                 }
 
+                if($table == 'press'){
+                    $this->_importPress($data);
+                }
+
                 if($table == 'contacts'){
                     $this->_importContacts($data);
+                }
+
+                if($table == 'streets'){
+                    $this->_importStreets($data);
                 }
 
                 fclose($handle);
@@ -68,6 +84,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
     public function _importDistricts($data)
     {
+        // Empty districts table
+        $this->getObject('com:districts.model.districts')->getRowset()->delete();
+
         foreach($data as $item)
         {
             $row = $this->getObject('com:districts.database.row.district');
@@ -85,6 +104,50 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
+    public function _importOfficers($data)
+    {
+        foreach($data as $item)
+        {
+            $row = $this->getObject('com:districts.database.row.officer');
+            $row->id = $item['number'];
+
+            if(!$row->load())
+            {
+                $row->firstname = $item['firstname'];
+                $row->lastname = $item['lastname'];
+                $row->phone = preg_replace('/[^0-9+]/', " ", $item['phone']);
+                $row->mobile = preg_replace('/[^0-9+]/', " ", $item['mobile']);
+                $row->email = $item['email'];
+            } else {
+                $row->firstname = $item['firstname'];
+                $row->lastname = $item['lastname'];
+                $row->phone = preg_replace('/[^0-9+]/', " ", $item['phone']);
+                $row->mobile = preg_replace('/[^0-9+]/', " ", $item['mobile']);
+                $row->email = $item['email'];
+            }
+
+            $row->save();
+        }
+    }
+
+    public function _importDistrictsofficers($data)
+    {
+        // Empty districts_districts_officers table
+        $this->getObject('com:districts.model.districts_officers')->getRowset()->delete();
+
+        foreach($data as $item)
+        {
+            $row = $this->getObject('com:districts.database.row.districts_officers');
+            $row->districts_district_id = $item['districts_district_id'];
+            $row->districts_officer_id = $item['districts_officer_id'];
+
+            if(!$row->load())
+            {
+                $row->save();
+            }
+        }
+    }
+
     public function _importRelations($data)
     {
         // Empty districts_relations table
@@ -93,28 +156,33 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         foreach($data as $item)
         {
             // Get CRAB ID
-            $street = $this->getObject('com:streets.database.row.islp');
+            $street = $this->getObject('com:streets.database.row.streets');
             $street->islp = $item['islp'];
             if($street->load())
             {
                 $item['streets_street_id'] = $street->id;
+            } else {
+                $item['streets_street_id'] = '';
             }
 
             $parity = null;
             switch ($item['range_parity']) {
+                case 'odd-even':
                 case 'Even+Oneven':
                     $parity = 'odd-even';
                     break;
+                case 'even':
                 case 'Even':
                     $parity = 'even';
                     break;
+                case 'odd':
                 case 'Oneven':
                     $parity = 'odd';
                     break;
             }
 
             $item['range_parity'] = $parity;
-            $item['id'] = sha1($item['districts_district_id'].$item['islp'].$item['range_start'].$item['range_end'].$item['range_parity']);
+            $item['id'] = sha1($item['districts_district_id'].$item['islp'].$item['streets_street_id'].$item['range_start'].$item['range_end'].$item['range_parity']);
 
             // Add row to districts_relations table when ID is unique
             $row = $this->getObject('com:districts.database.row.relation');
@@ -127,30 +195,47 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    public function _importStreets($data)
+    public function _importLocalStreets($data)
     {
         foreach($data as $item)
         {
             //Get city based on postcode
             $city = $this->getObject('com:streets.database.row.postcodes');
-            $city->streets_postcode_id = $item['postcode'];
+            $city->id = $item['postcode'];
             $city->load();
 
             //Get the street
             $street = $this->getObject('com:streets.database.row.streets');
             $street->title = $item['title'];
-            $street->city = $city->streets_city_id;
+            $street->streets_city_id = $city->streets_city_id;
 
             if($street->load()){
                 //Check if street does not have a islp value
                 if(!$street->islp) {
-                    $islp = $this->getObject('com:streets.database.row.islp');
-
                     //Set ISLP value and save
-                    $islp->id = $street->id;
-                    $islp->islp = $item['islp'];
-                    $islp->save();
+                    $street->islp = $item['islp'];
+                    $street->save();
                 }
+            }
+        }
+    }
+
+    public function _importStreets($data)
+    {
+        foreach($data as $item)
+        {
+            //Get the street
+            $row = $this->getObject('com:streets.database.row.streets');
+            $row->id = $item['streets_street_id'];
+
+            if($row->load()){
+                if($row->title != $item['title'] || $row->title0 != $item['title0']) {
+                    $row->setData($item);
+                    $row->save();
+                }
+            } else {
+                $row->setData($item);
+                $row->save();
             }
         }
     }
@@ -159,7 +244,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     {
         foreach($data as $item)
         {
-            if($item['catid'] == $this->catid && $item['state'] == '1')
+            if($item['catid'] == $this->catid && ($item['state'] == '1' || $item['state'] == '0'))
             {
                 $row = $this->getObject('com:news.database.row.article');
                 $row->id = $item['id'];
@@ -177,6 +262,37 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->published = $item['state'];
 
                     $this->_clean($row);
+
+                    $row->save();
+                }
+            }
+        }
+    }
+
+    public function _importPress($data)
+    {
+        foreach($data as $item)
+        {
+            if($item['catid'] == $this->catid && ($item['state'] == '1' || $item['state'] == '0'))
+            {
+                $row = $this->getObject('com:press.database.row.article');
+                $row->id = $item['id'];
+
+                if(!$row->load())
+                {
+                    $row->title = $item['title'];
+                    $row->slug = $item['alias'];
+                    $row->introtext = stripslashes($item['introtext']);
+                    $row->fulltext = stripslashes($item['fulltext']);
+                    $row->created_on = $item['created'];
+                    $row->created_by = '1';
+                    $row->modified_on = $item['modified'];
+                    $row->modified_by = $item['modified_by'];
+                    $row->published = $item['state'];
+
+                    $this->_clean($row);
+
+                    $row->text = $row->introtext.$row->fulltext;
 
                     $row->save();
                 }

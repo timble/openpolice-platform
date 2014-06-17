@@ -48,10 +48,15 @@ class AboutControllerArticle extends Library\ControllerModel
         // If attachments have been linked to this row but there's no default attachment ID is still empty, set the first one as default.
         if(!$row->attachments_attachment_id && count($attachments))
         {
-            $top = $attachments->top();
+            foreach($attachments as $attachment) {
+                // Make sure the attachment is an image
+                if($attachment->file->isImage()) {
+                    $row->attachments_attachment_id = $attachment->id;
+                    $row->save();
 
-            $row->attachments_attachment_id = $top->id;
-            $row->save();
+                    break;
+                }
+            }
         }
 
         return;

@@ -25,10 +25,10 @@
 			<th width="10">
 				<?= helper( 'grid.checkall'); ?>
 			</th>
-			<th>
+			<th width="20%">
 				<?= helper('grid.sort', array('column' => 'firstname', 'title' => 'Name')) ?>
 			</th>
-			<th>
+			<th width="80%">
 				<?= helper('grid.sort', array('column' => 'district_count', 'title' => 'Districts')) ?>
 			</th>
 		</tr>
@@ -49,7 +49,7 @@
 			<td>
 				<a href="<?= route( 'view=officer&id='. $officer->id ); ?>"><?= escape($officer->title); ?></a>
 			</td>
-			<td class="array-separator">
+			<td class="array-separator ellipsis">
                 <?= implode(', ', $districts_officers->find(array('districts_officer_id' => $officer->id))->district) ?>
 			</td>
 		</tr>

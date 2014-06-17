@@ -17,7 +17,7 @@ class ModelDistricts extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 
 		$query->columns(array(
-			'contact'       => 'contact.name'
+			'contact'       => 'contact.title'
 		));
 	}
 
