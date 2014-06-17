@@ -32,7 +32,7 @@ form {
   width: 100%;
   height: 100%; }
 
-.navbar__handlebar #button {
+.button--hamburger {
   display: none; }
 
 .navbar ul li {

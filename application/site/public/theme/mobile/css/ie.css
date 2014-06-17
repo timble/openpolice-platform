@@ -1207,16 +1207,23 @@ input[type="submit"].button {
     .header .organization a {
       display: inline-block;
       line-height: 36px;
-      color: white; }
-      .header .organization a:hover {
-        color: white; }
+      color: white;
+      text-decoration: none; }
+      .header .organization a:hover .organization__name {
+        color: white;
+        text-decoration: underline; }
   .header .organization__logo {
     height: 36px;
     width: 24px;
-    background: url("../images/avatar.png") no-repeat left center;
+    background-image: url("../images/avatar.png");
+    background-position: left center;
     background-size: 24px 24px;
+    background-repeat: no-repeat;
     margin-right: 6px;
     float: left; }
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .header .organization__logo {
+      background-image: url("../images/avatar@2x.png"); } }
   .header .organization__name {
     float: left; }
 
@@ -1233,11 +1240,8 @@ input[type="submit"].button {
     color: #004d9f;
     border-bottom: 0px none;
     text-align: center; }
-    .header .organization a {
-      text-decoration: none; }
-      .header .organization a:hover .organization__name {
-        text-decoration: underline;
-        color: #004d9f; }
+    .header .organization a:hover .organization__name {
+      color: #004d9f; }
   .header .organization__logo {
     float: none;
     width: 160px;
@@ -2099,6 +2103,9 @@ img.mfp-img {
 
   a {
     border-bottom: 0 none !important; } }
+#wrap {
+  width: 942px; }
+
 .container__header .nav li {
   display: block;
   float: left;

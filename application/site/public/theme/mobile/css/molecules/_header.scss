@@ -14,9 +14,11 @@
       display: inline-block;
       line-height: 36px;
       color: $white;
+      text-decoration: none;
 
-      &:hover {
+      &:hover .organization__name {
         color: $white;
+        text-decoration: underline;
       }
     }
   }
@@ -65,10 +67,7 @@
       text-align: center;
 
       a {
-        text-decoration: none;
-
         &:hover .organization__name {
-          text-decoration: underline;
           color: $linkColor;
         }
       }
