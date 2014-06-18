@@ -316,7 +316,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
 
         $data      = array();
-        $extension = strtolower(end(explode('.', strtolower($file['name']))));
+        $extension = $this->_getFileExtension($file['name']);
 
         switch ($extension)
         {
@@ -342,9 +342,6 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                             $data[] = $arr;
                         }
                     }
-
-                    // Sort based on key
-                    ksort($data);
 
                     fclose($handle);
                 }
@@ -382,15 +379,14 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     }
                 }
 
-                // Sort based on key
-                ksort($data);
-
                 break;
 
             default:
                 throw new \UnexpectedValueException($file['name'] . ' is not a CSV or XML file!');
                 break;
         }
+
+        ksort($data);
 
         return $data;
     }
@@ -456,9 +452,13 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             if(substr($link, 0, strlen('sites/')) == 'sites/')
             {
-                $fullpath = $root . '/' . $link;
+                $fullpath  = $root . '/' . $link;
+                $extension = $this->_getFileExtension($fullpath);
 
-                $return = $this->_saveAttachment($row, $fullpath);
+                if (in_array($extension, array('jpg', 'jpeg', 'png'))) {
+                    $return = $this->_saveAttachment($row, $fullpath);
+                }
+                else $return = false;
 
                 if(!$attachment) {
                     $attachment = $return;
@@ -539,5 +539,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
 
         return false;
+    }
+
+    protected function _getFileExtension($filename)
+    {
+        return end(explode('.', strtolower($filename)));
     }
 }
