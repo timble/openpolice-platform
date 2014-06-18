@@ -341,10 +341,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                         } else {
                             $data[] = $arr;
                         }
-
-                        // Sort based on key
-                        ksort($data);
                     }
+
+                    // Sort based on key
+                    ksort($data);
 
                     fclose($handle);
                 }
@@ -380,10 +380,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     } else {
                         $data[] = $arr;
                     }
-
-                    // Sort based on key
-                    ksort($data);
                 }
+
+                // Sort based on key
+                ksort($data);
 
                 break;
 
