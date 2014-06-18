@@ -239,7 +239,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    $this->_clean($row);
+                    $this->_clean($row, 'news');
 
                     $row->save();
                 }
@@ -268,7 +268,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    $this->_clean($row);
+                    $this->_clean($row, 'press');
 
                     $row->text = $row->introtext.$row->fulltext;
 
@@ -391,7 +391,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         return $data;
     }
 
-    protected function _clean(Library\DatabaseRowAbstract $row)
+    protected function _clean(Library\DatabaseRowAbstract $row, $table)
     {
         $row->introtext = preg_replace("/<em>/", "", $row->introtext);
         $row->introtext = preg_replace("/<\/em>/", "", $row->introtext);
@@ -426,7 +426,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             $this->_cleanAttributes($dom);
 
-            $attachment = $this->_extractImages($row, $dom);
+            $attachment = $this->_extractImages($row, $dom, $table);
             if($property == 'introtext' && $attachment) {
                 $row->attachments_attachment_id = $attachment;
             }
@@ -435,7 +435,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    protected function _extractImages(Library\DatabaseRowAbstract $row, \DOMDocument $dom)
+    protected function _extractImages(Library\DatabaseRowAbstract $row, \DOMDocument $dom, $table)
     {
         $root   = $this->getObject('application')->getCfg('old_codebase_root');
         if(empty($root)) {
@@ -460,7 +460,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 list($width, $height) = getimagesize($fullpath);
 
                 if ($allowed && $filesize < 10485760 && $width <= 2048 && $height <= 2048) {
-                    $return = $this->_saveAttachment($row, $fullpath);
+                    $return = $this->_saveAttachment($row, $fullpath, $table);
                 }
                 else $return = false;
 
@@ -490,7 +490,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    protected function _saveAttachment(Library\DatabaseRowAbstract $row, $filepath)
+    protected function _saveAttachment(Library\DatabaseRowAbstract $row, $filepath, $table)
     {
         if(!file_exists($filepath)) {
             return false;
@@ -524,7 +524,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 'container' => 'attachments-attachments',
                 'hash' => $hash,
                 'row' => $row->id,
-                'table' => 'news'
+                'table' => $table
             ));
 
             $model  = $file_controller->getModel();
