@@ -101,7 +101,9 @@
                     <? if (!$officer->isNew()) : ?>
                         <?= import('com:attachments.view.attachments.list.html', array('attachments' => $officer->getAttachments(), 'attachments_attachment_id' => $officer->attachments_attachment_id)) ?>
                     <? endif ?>
+                    <? if(!count($officer->getAttachments())) : ?>
                     <?= import('com:attachments.view.attachments.upload.html') ?>
+                    <? endif ?>
                 </fieldset>
             <? endif ?>
 		</div>

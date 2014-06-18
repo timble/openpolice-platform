@@ -1,25 +1,25 @@
 .nowrap {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .highlight {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 .text--strong {
-    color: $blue;
-    font-weight: bold;
+  color: $blue;
+  font-weight: bold;
 }
 
 .text--small {
-    font-size: $fontSizeSmall;
-    @extend .muted;
+  font-size: $fontSizeSmall;
+  @extend .muted;
 }
 
 .muted {
-    color: $gray;
+  color: $gray;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }

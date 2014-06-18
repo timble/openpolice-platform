@@ -5,25 +5,28 @@
 .button--link,
 .button--link:active,
 .button--link[disabled] {
-    background-color: transparent;
-    background-image: none;
-    @include box-shadow(none);
+  background-color: transparent;
+  background-image: none;
+  @include box-shadow(none);
 }
+
 .button--link {
-    border-color: transparent;
-    cursor: pointer;
-    color: $linkColor;
-    @include border-radius(0);
+  border-color: transparent;
+  cursor: pointer;
+  color: $linkColor;
+  @include border-radius(0);
 }
+
 .button--link:hover,
 .button--link:focus {
-    color: $linkColorHover;
-    text-decoration: underline;
-    background-color: transparent;
-    border-color: transparent;
+  color: $linkColorHover;
+  text-decoration: underline;
+  background-color: transparent;
+  border-color: transparent;
 }
+
 .button--link[disabled]:hover,
 .button--link[disabled]:focus {
-    color: $grayDark;
-    text-decoration: none;
+  color: $grayDark;
+  text-decoration: none;
 }

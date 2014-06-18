@@ -20,8 +20,14 @@
 </ul>
 <? endif ?>
 
-<? if($officer->attachments_attachment_id) : ?>
-<img width="140px" class="thumbnail" src="attachments/<?= $officer->attachment_path ?>">
-<? else : ?>
-<img width="140px" class="thumbnail" src="assets://districts/images/placeholder.png" />
+<? if($officer->isAttachable()) : ?>
+    <? if(count($officer->getAttachments())) : ?>
+    <? foreach($officer->getAttachments() as $item) : ?>
+        <? if($item->file->isImage()) : ?>
+            <img width="140" class="thumbnail" src="attachments://<?= $item->path ?>" />
+        <? endif ?>
+    <? endforeach ?>
+    <? else : ?>
+        <img width="140" class="thumbnail" src="assets://districts/images/placeholder.png" />
+    <? endif ?>
 <? endif ?>

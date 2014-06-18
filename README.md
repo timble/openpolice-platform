@@ -28,6 +28,19 @@ You can run the project easily with the supplied Vagrantfile - make sure you und
 
 Note: Linux users need to install NFS (Network File System) manually, see [help.ubuntu.com](http://help.ubuntu.com/community/SettingUpNFSHowTo) for more information.
 
+### Development dependencies
+
+* Install [node.js](http://nodejs.org/)
+* Install [Grunt](http://gruntjs.com/) by running ```npm install -g grunt-cli```
+* Go to the repository folder where the README is located
+* Install project dependencies with ```npm install```
+* Run Grunt with ```grunt```
+
+### Live Reload
+
+* Install the [LiveReload browser plug-in](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions)
+* Restart the browser and click the LiveReload icon to activate it.
+
 
 ## Vagrant command-line interface
 

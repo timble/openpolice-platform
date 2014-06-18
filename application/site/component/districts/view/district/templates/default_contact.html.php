@@ -2,7 +2,7 @@
 <? $email_to = str_replace(".", "&#46;", $email_to) ?>
 
 <address class="vcard">
-    <h2 class="article__header fn url" href="<?= route(); ?>"><?= $contact->name?></h2>
+    <h2 class="article__header fn url" href="<?= route(); ?>"><?= $contact->title?></h2>
     <?if ($contact->con_position) : ?>
         <h2 class="title"><?= $contact->con_position?></h2>
     <? endif;?>

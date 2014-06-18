@@ -9,12 +9,16 @@
 ?>
 
 <ul class="navigation">
-    <a class="<?= $state->city == null ? 'active' : ''; ?>" href="<?= route('city=' ) ?>">
-        <?= 'All cities' ?>
-    </a>
-    <? foreach ($cities as $city) : ?>
-        <a class="<?= $state->city == $city->id ? 'active' : ''; ?>" href="<?= route('city='.$city->id ) ?>">
-            <?= escape($city->title) ?>
+    <li>
+        <a class="<?= $state->city == null ? 'active' : ''; ?>" href="<?= route('city=' ) ?>">
+            <?= 'All cities' ?>
         </a>
+    </li>
+    <? foreach ($cities as $city) : ?>
+        <li>
+            <a class="<?= $state->city == $city->id ? 'active' : ''; ?>" href="<?= route('city='.$city->id ) ?>">
+                <?= escape($city->title) ?>
+            </a>
+        </li>
     <? endforeach ?>
 </ul>
