@@ -23,7 +23,7 @@ class ControllerAttachment extends Library\ControllerModel
     {
         $model = $this->getModel();
 
-        if ($model->getState()->isUnique())
+        if ($model->getState()->isUnique() && $this->getRequest()->getFormat() == 'file')
         {
             $attachment = $this->getModel()->getRow();
 
