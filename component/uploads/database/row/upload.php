@@ -335,7 +335,15 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                             $arr[$col] = $row[$i];
                         }
 
-                        $data[] = $arr;
+                        // Use ID as key if it
+                        if ($arr['id']) {
+                            $data[$arr['id']] = $arr;
+                        } else {
+                            $data[] = $arr;
+                        }
+
+                        // Sort based on key
+                        ksort($data);
                     }
 
                     fclose($handle);
@@ -366,7 +374,15 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                         $arr[$key] = (string) $field;
                     }
 
-                    $data[] = $arr;
+                    // Use ID as key if it
+                    if ($arr['id']) {
+                        $data[$arr['id']] = $arr;
+                    } else {
+                        $data[] = $arr;
+                    }
+
+                    // Sort based on key
+                    ksort($data);
                 }
 
                 break;
