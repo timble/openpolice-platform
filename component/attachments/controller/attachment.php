@@ -34,13 +34,12 @@ class ControllerAttachment extends Library\ControllerModel
                     ->getRow();
 
                 $fullpath = $container->path.DS.$attachment->path;
-                $mimetype = $attachment->file->mimetype;
 
                 try
                 {
                     $context->response
                         ->attachTransport('chunked')
-                        ->setPath('file://'.$fullpath, $mimetype);
+                        ->setPath('file://'.$fullpath, 'application/force-download');
                 }
                 catch (InvalidArgumentException $e) {
                     throw new KControllerExceptionResourceNotFound('File not found');
