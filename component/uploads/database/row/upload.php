@@ -454,8 +454,12 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             {
                 $fullpath  = $root . '/' . $link;
                 $extension = $this->_getFileExtension($fullpath);
+                $filesize  = filesize($fullpath);
+                $allowed   = in_array($extension, array('jpg', 'jpeg', 'png'));
 
-                if (in_array($extension, array('jpg', 'jpeg', 'png'))) {
+                list($width, $height) = getimagesize($fullpath);
+
+                if ($allowed && $filesize < 10485760 && $width <= 2048 && $height <= 2048) {
                     $return = $this->_saveAttachment($row, $fullpath);
                 }
                 else $return = false;
