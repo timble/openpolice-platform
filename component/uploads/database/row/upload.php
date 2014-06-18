@@ -14,71 +14,49 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class DatabaseRowUpload extends Library\DatabaseRowTable
 {
-    public function save() {
+    public function save()
+    {
+        $table  = $this->table;
 
-        $file = $_FILES["file"];
-        $source = $file["tmp_name"];
+        $file   = $this->getObject('lib:dispatcher.request')->files->file;
+        $data   = $this->_loadData($file);
 
-        $allowedExtensions = array("csv");
-
-        $table = $this->table;
-
-        if(in_array(end(explode(".", strtolower($file['name']))), $allowedExtensions))
-        {
-            if (($handle = fopen($source, "r")) !== FALSE)
-            {
-                // get the first (header) line
-                $header = fgetcsv($handle, '1000');
-
-                // get the rest of the rows
-                $data = array();
-                while ($row = fgetcsv($handle, '1000'))
-                {
-                    $arr = array();
-                    foreach ($header as $i => $col)
-                        $arr[$col] = $row[$i];
-                    $data[] = $arr;
-                }
-
-                if($table == 'districts'){
-                    $this->_importDistricts($data);
-                }
-
-                if($table == 'districts_officers'){
-                    $this->_importDistrictsofficers($data);
-                }
-
-                if($table == 'districts_relations'){
-                    $this->_importRelations($data);
-                }
-
-                if($table == 'localstreets'){
-                    $this->_importLocalStreets($data);
-                }
-
-                if($table == 'officers'){
-                    $this->_importOfficers($data);
-                }
-
-                if($table == 'news'){
-                    $this->_importNews($data);
-                }
-
-                if($table == 'press'){
-                    $this->_importPress($data);
-                }
-
-                if($table == 'contacts'){
-                    $this->_importContacts($data);
-                }
-
-                if($table == 'streets'){
-                    $this->_importStreets($data);
-                }
-
-                fclose($handle);
-            }
+        if($table == 'districts'){
+            $this->_importDistricts($data);
         }
+
+        if($table == 'districts_officers'){
+            $this->_importDistrictsofficers($data);
+        }
+
+        if($table == 'districts_relations'){
+            $this->_importRelations($data);
+        }
+
+        if($table == 'localstreets'){
+            $this->_importLocalStreets($data);
+        }
+
+        if($table == 'officers'){
+            $this->_importOfficers($data);
+        }
+
+        if($table == 'news'){
+            $this->_importNews($data);
+        }
+
+        if($table == 'press'){
+            $this->_importPress($data);
+        }
+
+        if($table == 'contacts'){
+            $this->_importContacts($data);
+        }
+
+        if($table == 'streets'){
+            $this->_importStreets($data);
+        }
+
         return parent::save();
     }
 
@@ -329,6 +307,76 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row->save();
             }
         }
+    }
+
+    protected function _loadData(array $file)
+    {
+        if (!file_exists($file['tmp_name'])) {
+            throw new \UnexpectedValueException('Temporary uploaded file does not exist: ' . $file['tmp_name']);
+        }
+
+        $data      = array();
+        $extension = strtolower(end(explode('.', strtolower($file['name']))));
+
+        switch ($extension)
+        {
+            case 'csv':
+                if (($handle = fopen($file['tmp_name'], 'r')) !== FALSE)
+                {
+                    // get the first (header) line
+                    $header = fgetcsv($handle, '1000');
+
+                    // get the rest of the rows
+                    while ($row = fgetcsv($handle, '1000'))
+                    {
+                        $arr = array();
+
+                        foreach ($header as $i => $col) {
+                            $arr[$col] = $row[$i];
+                        }
+
+                        $data[] = $arr;
+                    }
+
+                    fclose($handle);
+                }
+                else throw new \Exception('Failed to read ' . $file['tmp_name']);
+                break;
+
+            case 'xml':
+                $string = file_get_contents($file['tmp_name']);
+
+                if ($string === false) {
+                    throw new \Exception('Failed to read ' . $file['tmp_name']);
+                }
+
+                $xml = simplexml_load_string($string);
+
+                if ($xml === false) {
+                    throw new \UnexpectedValueException('Could not parse ' . $file['name']);
+                }
+
+                foreach ($xml->database->table_data->row as $row)
+                {
+                    $arr = array();
+
+                    foreach ($row->field as $field)
+                    {
+                        $key       = (string) $field['name'];
+                        $arr[$key] = (string) $field;
+                    }
+
+                    $data[] = $arr;
+                }
+
+                break;
+
+            default:
+                throw new \UnexpectedValueException($file['name'] . ' is not a CSV or XML file!');
+                break;
+        }
+
+        return $data;
     }
 
     protected function _clean(Library\DatabaseRowAbstract $row)

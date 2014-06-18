@@ -25,7 +25,7 @@
                 <input type="file" name="file" />
 
                 <div class="alert alert-error">
-                    <strong>Filetype!</strong> We only accept a <a href="http://en.wikipedia.org/wiki/Comma-separated_values">CSV (wikipedia.com)</a> file.<br />
+                    <strong>Filetype!</strong> We only accept <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV (wikipedia.com)</a> or <a href="https://en.wikipedia.org/wiki/XML">XML</a> files.<br />
                     <strong>Columns!</strong> The first row must contain the column names as indicated below.
                 </div>
             </fieldset>
