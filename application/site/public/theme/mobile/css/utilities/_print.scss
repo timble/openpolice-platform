@@ -1,24 +1,10 @@
 /* Print stub */
 @media only print {
-  .container__header .navbar,
+  .container__header,
+  .container__breadcrumb,
   .container__copyright,
-  .pagination,
-  .st_sharethis {
+  .pagination {
     display: none;
-  }
-
-  .container__header .organization {
-    display: block;
-    padding-left: 20px;
-    padding-top: 20px;
-
-    a:after {
-      content: "";
-    }
-
-    .organization__name {
-      padding-left: 50px;
-    }
   }
 
   .article__thumbnail:after {

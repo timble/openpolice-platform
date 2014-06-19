@@ -2024,20 +2024,11 @@ img.mfp-img {
 
 /* Print stub */
 @media only print {
-  .container__header .navbar,
+  .container__header,
+  .container__breadcrumb,
   .container__copyright,
-  .pagination,
-  .st_sharethis {
+  .pagination {
     display: none; }
-
-  .container__header .organization {
-    display: block;
-    padding-left: 20px;
-    padding-top: 20px; }
-    .container__header .organization a:after {
-      content: ""; }
-    .container__header .organization .organization__name {
-      padding-left: 50px; }
 
   .article__thumbnail:after {
     content: "" !important; }
