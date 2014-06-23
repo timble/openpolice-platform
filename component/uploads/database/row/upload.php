@@ -204,7 +204,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         {
             //Get the street
             $row = $this->getObject('com:streets.database.row.streets');
-            $row->id = $item['streets_street_id'];
+            $row->id = $item['id'];
 
             if($row->load()){
                 if($row->title != $item['title'] || $row->title0 != $item['title0']) {
