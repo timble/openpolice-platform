@@ -153,3 +153,8 @@ WHERE `attachments_relations`.`row` = `districts_officers`.`old_id` AND `attachm
 -- Add SHA1 to streets
 UPDATE `districts_relations`
 SET `districts_relations`.`districts_relation_id` = SHA(CONCAT(`districts_district_id`, `islp`, `range_start`, `range_end`, `range_parity`));
+
+-- Find AGIV IDs based on streetname
+UPDATE `data`.`streets` AS `streets`, `districts_streets`
+SET `districts_streets`.`streets_street_id` = `streets`.`streets_street_id`
+WHERE `districts_streets`.`title` = `streets`.`title` AND `districts_streets`.`streets_city_id` = `streets`.`streets_city_id`;

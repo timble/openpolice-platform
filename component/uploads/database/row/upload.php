@@ -135,12 +135,22 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         {
             // Get CRAB ID
             $street = $this->getObject('com:streets.database.row.streets');
-            $street->islp = $item['islp'];
-            if($street->load())
+
+            $item['streets_street_id'] = '';
+
+            if($item['islp'])
             {
-                $item['streets_street_id'] = $street->id;
-            } else {
-                $item['streets_street_id'] = '';
+                $street->islp = $item['islp'];
+                if($street->load())
+                {
+                    $item['streets_street_id'] = $street->id;
+                }
+            } elseif($item['streets_street_id']) {
+                $street->streets_street_id = $item['streets_street_id'];
+                if($street->load())
+                {
+                    $item['streets_street_id'] = $street->id;
+                }
             }
 
             $parity = null;
