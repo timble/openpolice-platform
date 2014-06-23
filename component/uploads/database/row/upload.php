@@ -146,7 +146,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $item['streets_street_id'] = $street->id;
                 }
             } elseif($item['streets_street_id']) {
-                $street->streets_street_id = $item['streets_street_id'];
+                $street->id = $item['streets_street_id'];
                 if($street->load())
                 {
                     $item['streets_street_id'] = $street->id;
