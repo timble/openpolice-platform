@@ -136,21 +136,17 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             // Get CRAB ID
             $street = $this->getObject('com:streets.database.row.streets');
 
-            $item['streets_street_id'] = '';
-
-            if($item['islp'])
+            if(!array_key_exists('streets_street_id', $item))
             {
                 $street->islp = $item['islp'];
                 if($street->load())
                 {
                     $item['streets_street_id'] = $street->id;
+                } else {
+                    $item['streets_street_id'] = '';
                 }
-            } elseif($item['streets_street_id']) {
-                $street->id = $item['streets_street_id'];
-                if($street->load())
-                {
-                    $item['streets_street_id'] = $street->id;
-                }
+            } else {
+                $item['islp'] = '';
             }
 
             $parity = null;
@@ -346,7 +342,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                         }
 
                         // Use ID as key if it
-                        if ($arr['id']) {
+                        if (array_key_exists('id', $arr)) {
                             $data[$arr['id']] = $arr;
                         } else {
                             $data[] = $arr;
@@ -382,7 +378,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     }
 
                     // Use ID as key if it
-                    if ($arr['id']) {
+                    if (array_key_exists('id', $arr)) {
                         $data[$arr['id']] = $arr;
                     } else {
                         $data[] = $arr;
