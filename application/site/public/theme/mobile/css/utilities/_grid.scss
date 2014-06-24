@@ -109,4 +109,8 @@
     @include span(first 3 of 12);
   }
 
+  // Override previous selector
+  .quicklinks__item.one-third:nth-child(3) {
+    @include span(4 of 12);
+  }
 }
