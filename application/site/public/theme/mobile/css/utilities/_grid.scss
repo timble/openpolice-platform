@@ -9,83 +9,83 @@
   }
 
   .sidebar {
-    @include span(3 of 12);
+    @include span(first 3 of 12);
   }
   .component {
-    @include span(last 9 of 12);
+    @include span(9 of 12);
 
   }
   .footer__districts {
-    @include span(last 5 of 12);
-  }
-  .footer__news {
-    @include span(7 of 12);
-  }
-  .copyright--left {
     @include span(5 of 12);
   }
+  .footer__news {
+    @include span(first 7 of 12);
+  }
+  .copyright--left {
+    @include span(first 5 of 12);
+  }
   .copyright--right {
-    @include span(last 7 of 12);
+    @include span(7 of 12);
   }
 
   .quicklink__item_1, .quicklink__item_3 {
-    @include span(6 of 12);
+    @include span(first 6 of 12);
   }
   .quicklink__item_2, .quicklink__item_4 {
-    @include span(last 6 of 12);
+    @include span(6 of 12);
   }
 
   .homepage__sticky {
-    @include span(10 of 14);
+    @include span(first 10 of 14);
   }
   .homepage__contact {
-    @include span(last 4 of 14);
+    @include span(4 of 14);
   }
 
   .districts__officers {
-    @include span(5 of 12);
+    @include span(first 5 of 12);
   }
 
   .districts__contact {
-    @include span(last 7 of 12);
-  }
-
-  .exception__message {
     @include span(7 of 12);
   }
 
+  .exception__message {
+    @include span(first 7 of 12);
+  }
+
   .exception__image {
-    @include span(last 5 of 12);
+    @include span(5 of 12);
+  }
+
+  .gallery .gallery__item:first-child {
+    @include span(first 3 of 12);
   }
 
   .gallery .gallery__item {
     @include span(3 of 12);
   }
-
-  .gallery .gallery__item:nth-child(4n) {
-    @include span(last 3 of 12);
-  }
 }
 
 @include respond-min(998px) {
   .homepage__sticky .media {
-    @include span(last 6 of 12);
+    @include span(6 of 12);
     &:first-child {
-      @include span(6 of 12);
+      @include span(first 6 of 12);
     }
   }
 
   .organization {
-    @include span(3 of 12);
+    @include span(first 3 of 12);
   }
   .navigation {
-    @include span(last 9 of 12);
+    @include span(9 of 12);
   }
 
-  .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
+  .quicklink__item_2, .quicklink__item_3, .quicklink__item_4 {
     @include span(3 of 12);
   }
-  .quicklink__item_4 {
-    @include span(last 3 of 12);
+  .quicklink__item_1 {
+    @include span(first 3 of 12);
   }
 }

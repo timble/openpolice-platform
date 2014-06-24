@@ -536,111 +536,111 @@ you can use the generic selector below, but it's slower:
   .sidebar {
     width: 22.22222%;
     float: left;
-    margin-right: 3.7037%; }
+    margin-left: 0; }
 
   .component {
     width: 74.07407%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.7037%; }
 
   .footer__districts {
     width: 39.50617%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.7037%; }
 
   .footer__news {
     width: 56.79012%;
     float: left;
-    margin-right: 3.7037%; }
+    margin-left: 0; }
 
   .copyright--left {
     width: 39.50617%;
     float: left;
-    margin-right: 3.7037%; }
+    margin-left: 0; }
 
   .copyright--right {
     width: 56.79012%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.7037%; }
 
   .quicklink__item_1, .quicklink__item_3 {
     width: 48.14815%;
     float: left;
-    margin-right: 3.7037%; }
+    margin-left: 0; }
 
   .quicklink__item_2, .quicklink__item_4 {
     width: 48.14815%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.7037%; }
 
   .homepage__sticky {
     width: 70.52632%;
     float: left;
-    margin-right: 3.15789%; }
+    margin-left: 0; }
 
   .homepage__contact {
     width: 26.31579%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.15789%; }
 
   .districts__officers {
     width: 39.50617%;
     float: left;
-    margin-right: 3.7037%; }
+    margin-left: 0; }
 
   .districts__contact {
     width: 56.79012%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.7037%; }
 
   .exception__message {
     width: 56.79012%;
     float: left;
-    margin-right: 3.7037%; }
+    margin-left: 0; }
 
   .exception__image {
     width: 39.50617%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.7037%; }
+
+  .gallery .gallery__item:first-child {
+    width: 22.22222%;
+    float: left;
+    margin-left: 0; }
 
   .gallery .gallery__item {
     width: 22.22222%;
     float: left;
-    margin-right: 3.7037%; }
-
-  .gallery .gallery__item:nth-child(4n) {
-    width: 22.22222%;
-    float: right;
-    margin-right: 0; } }
+    margin-left: 3.7037%; } }
 @media screen and (min-width: 998px) {
   .homepage__sticky .media {
     width: 48.14815%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.7037%; }
     .homepage__sticky .media:first-child {
       width: 48.14815%;
       float: left;
-      margin-right: 3.7037%; }
+      margin-left: 0; }
 
   .organization {
     width: 22.22222%;
     float: left;
-    margin-right: 3.7037%; }
+    margin-left: 0; }
 
   .navigation {
     width: 74.07407%;
-    float: right;
-    margin-right: 0; }
+    float: left;
+    margin-left: 3.7037%; }
 
-  .quicklink__item_1, .quicklink__item_2, .quicklink__item_3 {
+  .quicklink__item_2, .quicklink__item_3, .quicklink__item_4 {
     width: 22.22222%;
     float: left;
-    margin-right: 3.7037%; }
+    margin-left: 3.7037%; }
 
-  .quicklink__item_4 {
+  .quicklink__item_1 {
     width: 22.22222%;
-    float: right;
-    margin-right: 0; } }
+    float: left;
+    margin-left: 0; } }
 address {
   font-style: normal; }
 

@@ -137,5 +137,6 @@ $grid-padding: 25px;
 
 // Susy grid
 $susy: (
-  gutters: $gutter-width/4em
+  gutters: $gutter-width/4em,
+  gutter-position: before
 );
