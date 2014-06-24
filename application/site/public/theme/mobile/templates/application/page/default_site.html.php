@@ -59,9 +59,17 @@
         <? endif ?>
     </div>
 
+    <ktml:modules position="quicklinks">
+    <div class="container container__footer">
+        <div class="container__quicklinks">
+            <ktml:modules:content>
+        </div>
+    </div>
+    </ktml:modules>
+
+    <? if($extension !== 'police') : ?>
     <div class="container container__footer">
         <div class="row">
-            <? if($extension !== 'police') : ?>
             <div class="footer__news">
                 <h3><?= translate('Latest news') ?></h3>
                 <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
@@ -73,17 +81,9 @@
                 <a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
             </div>
             <?php endif; ?>
-            <?php endif; ?>
-
-            <? if($site !== '5888') : ?>
-            <ktml:modules position="quicklinks">
-                <div class="container__quicklinks">
-                    <ktml:modules:content>
-                </div>
-            </ktml:modules>
-            <? endif ?>
         </div>
     </div>
+    <?php endif; ?>
 
     <div class="container container__footer_menu">
         <ul class="nav nav--list">
