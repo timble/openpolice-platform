@@ -7,7 +7,7 @@
     background: url("../images/banners/default.jpg");
   }
 
-  $sites: 5317, 5318, 5388, 5446, 5888;
+  $sites: 5317, 5318, 5388, 5396, 5446, 5888;
 
   @each $site in $sites {
     .banner__image--#{$site} {
