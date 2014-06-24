@@ -563,13 +563,23 @@ you can use the generic selector below, but it's slower:
     float: left;
     margin-left: 3.7037%; }
 
-  .quicklink__item_1, .quicklink__item_3 {
+  .quicklinks__item:nth-child(2n), .quicklinks__item:nth-child(4n) {
     width: 48.14815%;
     float: left;
     margin-left: 0; }
 
-  .quicklink__item_2, .quicklink__item_4 {
+  .quicklinks__item {
     width: 48.14815%;
+    float: left;
+    margin-left: 3.7037%; }
+
+  .quicklinks__item.one-third:first-child {
+    width: 30.8642%;
+    float: left;
+    margin-left: 0; }
+
+  .quicklinks__item.one-third {
+    width: 30.8642%;
     float: left;
     margin-left: 3.7037%; }
 
@@ -632,15 +642,15 @@ you can use the generic selector below, but it's slower:
     float: left;
     margin-left: 3.7037%; }
 
-  .quicklink__item_2, .quicklink__item_3, .quicklink__item_4 {
+  .quicklinks__item:first-child {
     width: 22.22222%;
     float: left;
-    margin-left: 3.7037%; }
+    margin-left: 0; }
 
-  .quicklink__item_1 {
+  .quicklinks__item {
     width: 22.22222%;
     float: left;
-    margin-left: 0; } }
+    margin-left: 3.7037%; } }
 address {
   font-style: normal; }
 
