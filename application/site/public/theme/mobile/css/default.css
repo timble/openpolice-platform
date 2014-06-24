@@ -563,7 +563,7 @@ you can use the generic selector below, but it's slower:
     float: left;
     margin-left: 3.7037%; }
 
-  .quicklinks__item:nth-child(2n), .quicklinks__item:nth-child(4n) {
+  .quicklinks__item:first-child, .quicklinks__item:nth-child(4n) {
     width: 48.14815%;
     float: left;
     margin-left: 0; }
@@ -647,7 +647,7 @@ you can use the generic selector below, but it's slower:
     float: left;
     margin-left: 0; }
 
-  .quicklinks__item {
+  .quicklinks__item, .quicklinks__item:nth-child(4n) {
     width: 22.22222%;
     float: left;
     margin-left: 3.7037%; } }

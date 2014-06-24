@@ -32,7 +32,7 @@
     @include span(7 of 12);
   }
 
-  .quicklinks__item:nth-child(2n), .quicklinks__item:nth-child(4n) {
+  .quicklinks__item:first-child, .quicklinks__item:nth-child(4n) {
     @include span(first 6 of 12);
   }
 
@@ -100,7 +100,7 @@
     @include span(first 3 of 12);
   }
 
-  .quicklinks__item {
+  .quicklinks__item, .quicklinks__item:nth-child(4n) {
     @include span(3 of 12);
   }
 }
