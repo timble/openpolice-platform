@@ -51,7 +51,7 @@
         </ktml:modules>
 
         <? if(!$singleColumn) : ?>
-        <div class="component">
+        <div class="component <?= $extension ?>">
         <? endif ?>
             <ktml:content>
         <? if(!$singleColumn) : ?>

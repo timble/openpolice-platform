@@ -533,6 +533,11 @@ you can use the generic selector below, but it's slower:
   float: left;
   margin-left: 3.7037%; }
 
+.component.files {
+  width: 100%;
+  float: left;
+  margin-left: 0; }
+
 .footer__districts {
   width: 39.50617%;
   float: left;

@@ -14,8 +14,13 @@
 
   .component {
     @include span(9 of 12);
-
   }
+
+  // Files view doesn't have a sidebar
+  .component.files {
+    @include span(first 12 of 12);
+  }
+
   .footer__districts {
     @include span(5 of 12);
   }
