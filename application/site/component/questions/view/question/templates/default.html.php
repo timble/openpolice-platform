@@ -24,4 +24,6 @@
     <?= $question->text ?>
 </article>
 
+<? if(object('application')->getCfg('site') != '5396') : ?>
 <?= import('com:questions.view.questions.default_contact.html') ?>
+<? endif ?>

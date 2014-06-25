@@ -50,7 +50,9 @@
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 <? endif ?>
 
+<? if(object('application')->getCfg('site') != '5396') : ?>
 <?= import('default_contact.html') ?>
+<? endif ?>
 
 <script data-inline>
     if(document.getElementById('no-results')) {
