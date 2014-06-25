@@ -21,7 +21,7 @@ class NewsViewArticleHtml extends Library\ViewHtml
 
         //Get the thumbnail
         if ($article->attachments_attachment_id) {
-            $this->thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $article->attachments_attachment_id)->load()->thumbnail;
+            $this->thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $article->attachments_attachment_id)->load()->path;
         }
 
         $this->url = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
