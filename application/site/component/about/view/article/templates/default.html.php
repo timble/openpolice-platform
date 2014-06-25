@@ -17,7 +17,7 @@
 <article class="article">
     <h1><?= $article->title ?></h1>
     <? if($article->attachments_attachment_id) : ?>
-        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image']);" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
+        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
             <?= helper('com:attachments.image.thumbnail', array(
                 'attachment' => $article->attachments_attachment_id,
                 'attribs' => array('width' => '400', 'height' => '300'))) ?>

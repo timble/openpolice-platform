@@ -56,6 +56,6 @@
 
 <script data-inline>
     if(document.getElementById('no-results')) {
-        ga('send', 'event', 'Questions','No results found','<?= $state->searchword ?>']);
+        ga('send', 'event', 'Questions','No results found','<?= $state->searchword ?>');
     }
 </script>
