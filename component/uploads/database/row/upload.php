@@ -153,6 +153,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             switch ($item['range_parity']) {
                 case 'odd-even':
                 case 'Even+Oneven':
+                case 'Even/Oneven':
                     $parity = 'odd-even';
                     break;
                 case 'even':
