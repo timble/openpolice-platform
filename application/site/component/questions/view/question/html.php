@@ -30,6 +30,11 @@ class QuestionsViewQuestionHtml extends QuestionsViewHtml
             $this->attachments($question->getAttachments());
         }
 
+        //Get the thumbnail
+        if ($question->attachments_attachment_id) {
+            $this->thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $question->attachments_attachment_id)->load()->thumbnail;
+        }
+
         return parent::render();
     }
 
