@@ -15,7 +15,7 @@
         <? foreach($list as $item) : ?>
             <? if($item->file->isImage() && !in_array($item->id, Nooku\Library\ObjectConfig::unbox($exclude))) : ?>
                 <li class="gallery__item">
-                    <a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Modalbox', 'Image']);" class="thumbnail" data-gallery="enabled" href="attachments://<?= $item->path; ?>">
+                    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image']);" class="thumbnail" data-gallery="enabled" href="attachments://<?= $item->path; ?>">
                         <img width="640px" src="attachments://<?= $item->thumbnail ?>" />
                     </a>
                 </li>
@@ -26,7 +26,7 @@
     <ul>
         <? foreach($list as $item) : ?>
             <? if(!$item->file->isImage()) : ?>
-                <li><a onClick="_gaq.push(['_trackEvent', 'Attachments', 'Download', '<?=escape($item->name)?>']);" href="attachments://<?= $item->path; ?>"><?= escape($item->name) ?></a> (<?= helper('com:files.filesize.humanize', array('size' => $item->file->size));?>, <?= $item->file->extension ?>)</li>
+                <li><a onClick="ga('send', 'event', 'Attachments', 'Download', '<?=escape($item->name)?>']);" href="attachments://<?= $item->path; ?>"><?= escape($item->name) ?></a> (<?= helper('com:files.filesize.humanize', array('size' => $item->file->size));?>, <?= $item->file->extension ?>)</li>
             <? endif ?>
         <? endforeach ?>
     </ul>
