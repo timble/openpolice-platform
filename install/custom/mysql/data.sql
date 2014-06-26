@@ -403,8 +403,6 @@ INSERT INTO `data`.`police_zones` (`police_zone_id`, `title`, `language`, `phone
 VALUES
   (9999, 'Example Zone', 1, '123 456 789', NULL, '9999@examplezone.police', '', '', '', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
 
-
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET TIME_ZONE=@OLD_TIME_ZONE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
