@@ -8,15 +8,21 @@ class SupportControllerComment extends Support\ControllerComment
     {
         parent::__construct($config);
 
-        $this->registerCallback('before.post'  , array($this, 'setDatabase'));
-        $this->registerCallback('after.post'  , array($this, 'resetDatabase'));
+        $this->registerCallback('after.add'  , array($this, 'resetDatabase'));
     }
 
-    public function setDatabase(Library\CommandContext $context)
+    public function getModel()
     {
-        $data = $context->request->data;
+        // Make sure to switch to the correct database before
+        // the table is queried for information.
+        $this->setDatabase($this->getRequest()->data->site);
 
-        if ($db = $data->get('site', 'int'))
+        return parent::getModel();
+    }
+
+    public function setDatabase($site)
+    {
+        if ($db = $site)
         {
             $adapter = $this->getObject('lib:database.adapter.mysql');
 
