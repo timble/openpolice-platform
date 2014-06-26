@@ -8,7 +8,7 @@ class SupportControllerComment extends Support\ControllerComment
     {
         parent::__construct($config);
 
-        $this->registerCallback('after.add'  , array($this, 'resetDatabase'));
+        $this->registerCallback('after.post'  , array($this, 'resetDatabase'));
     }
 
     public function getModel()
@@ -20,9 +20,9 @@ class SupportControllerComment extends Support\ControllerComment
         return parent::getModel();
     }
 
-    public function setDatabase($site)
+    public function setDatabase($db)
     {
-        if ($db = $site)
+        if (!empty($db))
         {
             $adapter = $this->getObject('lib:database.adapter.mysql');
 
@@ -35,10 +35,9 @@ class SupportControllerComment extends Support\ControllerComment
     public function resetDatabase(Library\CommandContext $context)
     {
         $adapter = $this->getObject('lib:database.adapter.mysql');
-        $db      = $this->getObject('application')->getCfg('db');
 
-        if ($db != $adapter->getDatabase()) {
-            $adapter->setDatabase($db);
+        if ($adapter->getDatabase() != 'manager') {
+            $adapter->setDatabase('manager');
         }
     }
 }
