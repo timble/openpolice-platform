@@ -104,8 +104,6 @@ class ApplicationDispatcherHttp extends Library\DispatcherAbstract implements Li
         $this->getEventDispatcher()->setDebugMode($this->getCfg('debug_mode'));
 
         //Set the paths
-        $params = $this->getObject('application.extensions')->files->params;
-
         define('JPATH_FILES'  , JPATH_SITES.'/'.$this->getSite().'/files');
         define('JPATH_CACHE'  , $this->getCfg('cache_path', JPATH_ROOT.'/cache'));
 

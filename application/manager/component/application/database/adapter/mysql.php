@@ -60,7 +60,7 @@ class ApplicationDatabaseAdapterMysql extends Library\DatabaseAdapterMysql imple
                 'host'		   => $application->getCfg('host'),
                 'username'	   => $application->getCfg('user'),
                 'password'     => $application->getCfg('password'),
-                'database'	   => $application->getCfg('db'),
+                'database'	   => 'manager',
             )
         ));
 

@@ -8,8 +8,8 @@ class SupportControllerComment extends Support\ControllerComment
     {
         parent::__construct($config);
 
-        $this->registerCallback('before.add'  , array($this, 'setDatabase'));
-        $this->registerCallback('after.add'  , array($this, 'resetDatabase'));
+        $this->registerCallback('before.post'  , array($this, 'setDatabase'));
+        $this->registerCallback('after.post'  , array($this, 'resetDatabase'));
     }
 
     public function setDatabase(Library\CommandContext $context)
