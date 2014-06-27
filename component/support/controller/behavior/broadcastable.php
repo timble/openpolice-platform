@@ -89,28 +89,15 @@ class ControllerBehaviorBroadcastable extends Slack\ControllerBehaviorBroadcasta
 
     protected function _getTicketURL($id)
     {
-        // Create the route to the topic
-        $parts = array(
-            'view'   => 'ticket',
-            'option' => 'com_support',
-            'id'     => $id
-        );
-
-        if (substr(JPATH_APPLICATION, -8) == '/manager') {
-            $parts['application'] = 'admin';
+        $site       = $this->getMixer()->getRequest()->data->get('site', 'int');
+        if (!$site) {
+            $site = $this->getObject('application')->getSite();
         }
 
-        if ($site = $this->getMixer()->getRequest()->data->get('site', 'int')) {
-            $parts['site'] = $site;
-        }
+        $identifier = md5($site . '-' . $id);
 
         $host = $this->getObject('request')->getBaseUrl()->toString(Library\HttpUrl::SCHEME | Library\HttpUrl::HOST);
-        $path = $this->getObject('lib:dispatcher.router.route', array(
-            'url'    => '?'.http_build_query($parts),
-            'escape' => true
-        ));
-
-        $url  = $host.$path;
+        $url  = $host.'/manager/support/ticket?id='.$identifier;
 
         return $url;
     }
