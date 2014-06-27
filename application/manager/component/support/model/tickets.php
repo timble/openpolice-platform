@@ -9,11 +9,26 @@ class SupportModelTickets extends Library\ModelAbstract
         parent::__construct($config);
 
         $this->getState()
-            ->insert('id', 'md5', null, true)
-            ->insert('sort', 'cmd', 'last_activity_on')
+            ->insert('id'    , 'md5', null, true)
+            ->insert('sort'  , 'cmd', 'last_activity_on')
+            ->insert('limit' , 'int')
+            ->insert('offset', 'int')
             ->insert('status', 'cmd')
             ->insert('direction', 'cmd', 'desc')
             ->insert('matches', 'string', array());
+    }
+
+    public function onStateChange($name)
+    {
+        parent::onStateChange($name);
+
+        // If limit has been changed, adjust offset accordingly
+        if($name == 'limit')
+        {
+            $limit = $this->getState()->limit;
+
+            $this->getState()->offset = $limit != 0 ? (floor($this->getState()->offset / $limit) * $limit) : 0;
+        }
     }
 
     public function getRow()
@@ -56,6 +71,14 @@ class SupportModelTickets extends Library\ModelAbstract
 
             $context->index    = 'support';
             $context->type     = 'ticket';
+
+            if ($limit = $this->getState()->limit) {
+                $context->limit = $limit;
+            }
+
+            if ($offset = $this->getState()->offset) {
+                $context->offset = $offset;
+            }
 
             if ($matches = $this->getState()->matches)
             {

@@ -16,6 +16,15 @@ class ControllerDocument extends Library\ControllerAbstract
             $method   = 'GET';
             $endpoint = '/' . $context->index . '/' . $context->type . '/_search';
 
+            $parameters = array();
+            if ($context->limit) {
+                $parameters['size'] = $context->limit;
+            }
+
+            if ($context->offset) {
+                $parameters['from'] = $context->offset;
+            }
+
             $payload = array();
             if ($context->query) {
                 $payload['query'] = $context->query;
@@ -25,7 +34,7 @@ class ControllerDocument extends Library\ControllerAbstract
                 $payload['sort'] = Library\ObjectConfig::unbox($context->sort);
             }
 
-            $response = $this->_request($endpoint, $method, $payload);
+            $response = $this->_request($endpoint, $method, $payload, $parameters);
 
             $result = $response->hits;
         }
@@ -111,7 +120,7 @@ class ControllerDocument extends Library\ControllerAbstract
         return true;
     }
 
-    protected function _request($endpoint, $method = 'GET', array $payload = array())
+    protected function _request($endpoint, $method = 'GET', array $payload = array(), $parameters = array())
     {
         $ch = curl_init();
 
@@ -119,7 +128,8 @@ class ControllerDocument extends Library\ControllerAbstract
                     ->setScheme($this->_scheme)
                     ->setHost($this->_host)
                     ->setPort($this->_port)
-                    ->setPath($endpoint);
+                    ->setPath($endpoint)
+                    ->setQuery($parameters);
 
         curl_setopt_array($ch, array(
             CURLOPT_URL            => $url->toString(),
