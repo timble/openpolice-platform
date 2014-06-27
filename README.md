@@ -108,10 +108,16 @@ For more information, please refer to the [Phpmig GitHub page](https://github.co
 The Police Internet Platform is built on open source software and wouldn't be as productive without these open source projects around.
 We simply just want to say thank you to the following projects for helping us out:
 
+* [Apollo](https://github.com/toddmotto/apollo)
 * [Bootstrap](http://getbootstrap.com)
+* [Bower](http://bower.io/)
 * [Capistrano](http://www.capistranorb.com)
 * [Composer](http://getcomposer.org)
+* [Elasticsearch](http://www.elasticsearch.org/)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [Git](http://git-scm.com)
+* [Grunt](http://gruntjs.com/)
+* [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
 * [Imagine](https://github.com/avalanche123/Imagine)
 * [Joomla](http://www.joomla.org)
 * [jQuery](http://jquery.com)
