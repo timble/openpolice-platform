@@ -16,7 +16,7 @@
   }
 }
 
-@include respond-min($navbarCollapseWidth) {
+@include respond-min($breakpoint-beta) {
   .table--openinghours {
     th,
     td {

@@ -19,7 +19,7 @@ ul {
   }
 }
 
-@include respond-min($navbarCollapseWidth) {
+@include respond-min($breakpoint-beta) {
   ul {
     &.column--double {
       @include column-count(2);

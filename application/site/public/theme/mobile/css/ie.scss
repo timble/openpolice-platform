@@ -1,5 +1,7 @@
+@import "utilities/variables";
+
 $old-ie: true;
-$fix-mqs: 998px;
+$fix-mqs: $breakpoint-charlie;
 @import 'default';
 
 #wrap {

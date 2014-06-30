@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-@include respond-min($navbarCollapseWidth) {
+@include respond-min($breakpoint-beta) {
   body {
     font-size: 0.9375em;
   }

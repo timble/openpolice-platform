@@ -25,7 +25,7 @@
 }
 
 // Inspired by https://github.com/SaraSoueidan/navicon-transformicons
-@media (max-width: $navbarCollapseWidth) {
+@media (max-width: $breakpoint-beta) {
   // Remove 'Hamburger Icon' with Unicode
   .button--hamburger:after {
     content: "";

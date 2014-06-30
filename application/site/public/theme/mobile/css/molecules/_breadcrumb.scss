@@ -1,5 +1,5 @@
 .container__breadcrumb {
-  @include respond-min($navbarCollapseWidth) {
+  @include respond-min($breakpoint-beta) {
     padding: 5px $grid-padding 0;
   }
 }
@@ -31,7 +31,7 @@
     text-transform: uppercase;
   }
 
-  @include respond-min($navbarCollapseWidth) {
+  @include respond-min($breakpoint-beta) {
     border: 1px solid #eee;
     @include border-radius($baseBorderRadius);
     padding: 6px 1em 1px;

@@ -41,7 +41,7 @@ table {
   }
 }
 
-@include respond-min($navbarCollapseWidth) {
+@include respond-min($breakpoint-beta) {
   .table {
     background-color: $tableBackground;
     margin-bottom: $baseLineHeight;

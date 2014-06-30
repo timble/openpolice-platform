@@ -62,7 +62,7 @@
   }
 }
 
-@include respond-min(600px) {
+@include respond-min($breakpoint-alpha) {
   .button--hamburger {
     display: none;
   }
@@ -90,7 +90,7 @@
   }
 }
 
-@include respond-min($navbarCollapseWidth) {
+@include respond-min($breakpoint-beta) {
   // JS dependencies
   .js-enabled {
     // Hide the navbar

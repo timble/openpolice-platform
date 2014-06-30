@@ -46,7 +46,7 @@
   }
 }
 
-@include respond-min($navbarCollapseWidth) {
+@include respond-min($breakpoint-beta) {
   .header {
     background: none;
     border-bottom: 0px none;
@@ -114,7 +114,7 @@
   }
 }
 
-@include respond-min(998px) {
+@include respond-min($breakpoint-charlie) {
   .header {
     margin-bottom: 20px;
 

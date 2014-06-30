@@ -2,7 +2,7 @@
 @import "utilities/_variables";
 
 body {
-  width: 600px;
+  width: $breakpoint-alpha;
   margin: 0 auto;
 }
 

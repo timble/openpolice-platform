@@ -1,4 +1,4 @@
-@include respond-min(998px) {
+@include respond-min($breakpoint-charlie) {
   .banner__image {
     height: 110px;
     border: 1px solid $gray;

@@ -1,6 +1,6 @@
 @import "susy";
 
-@include respond-min($navbarCollapseWidth) {
+@include respond-min($breakpoint-beta) {
   .container {
     // page acts as a container for our grid.
     @include container;
@@ -85,7 +85,7 @@
   }
 }
 
-@include respond-min(998px) {
+@include respond-min($breakpoint-charlie) {
   .homepage__sticky .media {
     @include span(6 of 12);
     &:first-child {
