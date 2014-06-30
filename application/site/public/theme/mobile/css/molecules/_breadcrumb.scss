@@ -1,5 +1,5 @@
 .container__breadcrumb {
-  @include respond-min($breakpoint-beta) {
+  @include respond-min($breakpoint-charlie) {
     padding: 5px $grid-padding 0;
   }
 }
@@ -31,7 +31,7 @@
     text-transform: uppercase;
   }
 
-  @include respond-min($breakpoint-beta) {
+  @include respond-min($breakpoint-charlie) {
     border: 1px solid #eee;
     @include border-radius($baseBorderRadius);
     padding: 6px 1em 1px;

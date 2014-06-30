@@ -1,4 +1,4 @@
-@include respond-min($breakpoint-beta) {
+@include respond-min($breakpoint-charlie) {
   #wrap {
     border-bottom: 1px solid darken($grayLighter, 7%);
   }
@@ -102,7 +102,7 @@
     border-bottom: 1px solid #eee;
     padding-bottom: $grid-padding/2;
 
-    @include respond-min($breakpoint-beta) {
+    @include respond-min($breakpoint-charlie) {
       &.quicklink__item_3 {
         margin-bottom: 0;
         border-bottom: none;
@@ -110,7 +110,7 @@
       }
     }
 
-    @include respond-min($breakpoint-charlie) {
+    @include respond-min($breakpoint-delta) {
       margin-bottom: 0;
       border-bottom: none;
       padding-bottom: 0;
@@ -125,7 +125,7 @@
     .footer__districts {
       margin-top: $grid-padding;
 
-      @include respond-min($breakpoint-beta) {
+      @include respond-min($breakpoint-charlie) {
         margin-top: 0;
       }
     }
@@ -162,7 +162,7 @@
   }
 }
 
-@include respond-min($breakpoint-charlie) {
+@include respond-min($breakpoint-delta) {
   #wrap {
     border-left: 1px solid darken($grayLighter, 7%);
     border-right: 1px solid darken($grayLighter, 7%);
