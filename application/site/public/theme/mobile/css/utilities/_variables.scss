@@ -45,63 +45,23 @@ $breakpoint-delta: 998px;
  * Bootstrap variables
  */
 
-$bodyBackground: $grayLighter;
+$font-size: 16px;
+$line-height: 1.5em;
+$font-family: Helvetica, sans-serif;
 
-$textColor: $grayDarker;
+$color-background-well: #F8F8F8;
+$color-background-body: $grayLighter;
 
-$sansFontFamily: Helvetica, sans-serif;
-$serifFontFamily: Georgia, "Times New Roman", Times, serif;
-$monoFontFamily: Monaco, Menlo, Consolas, "Courier New", monospace;
+$color-border: #eee;
+$color-border-well: $color-border;
+$border-color-input: #ccc !default;
 
-$base-font-size: 16px;
-$baseLineHeight: 1.5em;
-$baseFontFamily: $sansFontFamily !default;
+$color-text: $grayDarker;
 
-$linkColor: $blue;
-$linkColorHover: darken($linkColor, 15%) !default;
+$color-link: $blue;
+$color-link-hover: darken($color-link, 15%) !default;
 
-$iconSpritePath: "../img/glyphicons-halflings.png";
-$iconWhiteSpritePath: "../img/glyphicons-halflings-white.png";
-
-$fontSizeLarge: 1.25em !default;
-$fontSizeSmall: 0.85em !default;
-
-$headingsFontFamily: inherit !default;
-// empty to use BS default, $baseFontFamily
-$headingsFontWeight: bold !default;
-// instead of browser default, bold
-$headingsColor: inherit !default;
-// empty to use BS default, $textColor
-
-$baseBorderRadius: 4px !default;
-$borderRadiusLarge: 6px !default;
-$borderRadiusSmall: 3px !default;
-
-$paddingLarge: 11px 19px !default;
-// 44px
-$paddingSmall: 2px 10px !default;
-// 26px
-
-
-// Forms
-// -------------------------
-$inputBackground: $white !default;
-$inputBorder: #ccc !default;
-$inputBorderRadius: $baseBorderRadius !default;
-$inputDisabledBackground: $grayLighter !default;
-$formActionsBackground: #f5f5f5 !default;
-$inputHeight: $baseLineHeight * 1.5;
-// base line-height + 8px vertical padding + 2px top/bottom border
-
-
-// Input placeholder text color
-// -------------------------
-$placeholderText: $grayLight !default;
-
-
-// Hr border color
-// -------------------------
-$hrBorder: $grayLighter !default;
+$border-radius: 4px !default;
 
 
 // Pagination
@@ -142,7 +102,6 @@ $navbarBrandColor: $navbarLinkColor;
 
 // Wells
 // -------------------------
-$wellBackground: #F8F8F8;
 
 $gutter-width: 3em;
 $grid-padding: 25px;

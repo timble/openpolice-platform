@@ -11,8 +11,8 @@
   margin: 0;
   clear: both;
   list-style: none;
-  background-color: $wellBackground;
-  border-bottom: 1px solid #eee;
+  background-color: $color-background-well;
+  border-bottom: 1px solid $color-border-well;
 
   li {
     display: inline-block;
@@ -32,8 +32,8 @@
   }
 
   @include respond-min($breakpoint-charlie) {
-    border: 1px solid #eee;
-    @include border-radius($baseBorderRadius);
+    border: 1px solid $color-border-well;
+    @include border-radius($border-radius);
     padding: 6px 1em 1px;
   }
 }

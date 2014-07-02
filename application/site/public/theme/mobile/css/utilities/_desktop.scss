@@ -1,6 +1,6 @@
 @include respond-min($breakpoint-charlie) {
   #wrap {
-    border-bottom: 1px solid darken($grayLighter, 7%);
+    border-bottom: 1px solid darken($color-border, 7%);
   }
 
   .visible-phone {
@@ -56,20 +56,20 @@
     margin-bottom: $grid-padding;
     background-color: transparent;
     border-top: 0px none;
-    color: $textColor;
+    color: $color-text;
 
     a,
     a:hover,
     .text--strong {
-      color: $linkColor;
+      color: $color-link;
     }
 
     .nav--list li a {
-      border-bottom: 1px solid $grayLighter;
+      border-bottom: 1px solid $color-border;
 
       &:hover {
         background-color: $cyanLighter;
-        color: $linkColor;
+        color: $color-link;
       }
     }
 
@@ -78,7 +78,7 @@
     }
 
     .contact__inner {
-      border-left: 1px solid $grayLighter;
+      border-left: 1px solid $color-border;
 
       padding-left: 18px;
       margin-top: 20px;
@@ -88,8 +88,8 @@
       }
 
       .well {
-        border: 1px solid darken($wellBackground, 5%);
-        background-color: $wellBackground;
+        border: 1px solid $color-border-well;
+        background-color: $color-background-well;
         margin-bottom: 10px;
       }
     }
@@ -99,7 +99,7 @@
   .quicklink__item_2,
   .quicklink__item_3 {
     margin-bottom: $grid-padding/2;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $color-border;
     padding-bottom: $grid-padding/2;
 
     @include respond-min($breakpoint-charlie) {
@@ -120,7 +120,7 @@
   .container__footer {
     padding-top: $gutter-width / 2;
 
-    background-color: $wellBackground;
+    background-color: $color-background-well;
 
     .footer__districts {
       margin-top: $grid-padding;
@@ -164,8 +164,8 @@
 
 @include respond-min($breakpoint-delta) {
   #wrap {
-    border-left: 1px solid darken($grayLighter, 7%);
-    border-right: 1px solid darken($grayLighter, 7%);
+    border-left: 1px solid darken($color-border, 7%);
+    border-right: 1px solid darken($color-border, 7%);
     @include border-radius(0 0 5px 5px);
   }
 }

@@ -2,11 +2,9 @@
 // -------------------------
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 ($baseLineHeight / 2) 0;
+  margin: 0 0 ($line-height / 2) 0;
   line-height: 1.25em;
-  font-family: $headingsFontFamily;
   font-weight: normal;
-  color: $headingsColor;
   text-rendering: optimizelegibility; // Fix the character spacing for headings
   small {
     font-weight: normal;

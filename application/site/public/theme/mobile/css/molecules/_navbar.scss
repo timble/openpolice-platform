@@ -107,7 +107,7 @@
   .navbar {
     border-bottom: 0 none;
     border: 1px solid $navbarBorder;
-    @include border-radius($baseBorderRadius);
+    @include border-radius($border-radius);
 
     /* Customize the navbar links to be fill the entire space of the .navbar */
     ul li a {
@@ -115,11 +115,11 @@
     }
     ul li:first-child a {
       border-left: 0;
-      @include border-radius($baseBorderRadius 0 0 $baseBorderRadius);
+      @include border-radius($border-radius 0 0 $border-radius);
     }
     ul li:last-child a {
       border-right: 0;
-      @include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
+      @include border-radius(0 $border-radius $border-radius 0);
     }
   }
 }

@@ -1,7 +1,7 @@
 .button--hamburger {
   float: right;
   padding: 5px 12px;
-  color: $linkColor;
+  color: $color-link;
   text-decoration: none;
   text-align: center;
   border: 1px solid darken($navbarBackground, 5%);
@@ -57,7 +57,7 @@
         display: inline-block;
         width: $button-size;
         height: $button-size / 7;
-        background: $linkColor;
+        background: $color-link;
         border-radius: $button-size / 14;
         transition: $transition;
       }

@@ -2,7 +2,7 @@
   .banner__image {
     height: 110px;
     border: 1px solid $gray;
-    @include border-radius($baseBorderRadius);
+    @include border-radius($border-radius);
     @include box-sizing(border-box);
     background: url("../images/banners/default.jpg");
   }

@@ -13,13 +13,13 @@
 .button--link {
   border-color: transparent;
   cursor: pointer;
-  color: $linkColor;
+  color: $color-link;
   @include border-radius(0);
 }
 
 .button--link:hover,
 .button--link:focus {
-  color: $linkColorHover;
+  color: $color-link-hover;
   text-decoration: underline;
   background-color: transparent;
   border-color: transparent;

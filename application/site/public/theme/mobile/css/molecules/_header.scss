@@ -52,7 +52,7 @@
     border-bottom: 0px none;
 
     .text--strong {
-      font-size: $fontSizeLarge;
+      font-size: 1.25em;
     }
 
     .button--hamburger {
@@ -62,13 +62,13 @@
     .organization {
       padding: 26px 0 0 0;
       text-decoration: none;
-      color: $linkColor;
+      color: $color-link;
       border-bottom: 0px none;
       text-align: center;
 
       a {
         &:hover .organization__name {
-          color: $linkColor;
+          color: $color-link;
         }
       }
     }
@@ -94,7 +94,7 @@
       margin-left: 57px;
       margin-top: 6px;
       font-size: 0.9em;
-      color: $linkColor;
+      color: $color-link;
       line-height: 1em;
 
       span {

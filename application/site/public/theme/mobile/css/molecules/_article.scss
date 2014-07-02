@@ -3,7 +3,7 @@
   margin-bottom: $gutter-width;
 
   p img[align="right"] {
-    margin: 0 0 $baseLineHeight $baseLineHeight;
+    margin: 0 0 $line-height $line-height;
   }
 }
 
@@ -17,12 +17,12 @@
 
 .article__introtext {
   font-weight: bold;
-  margin-bottom: $baseLineHeight;
+  margin-bottom: $line-height;
 }
 
 .article__thumbnail {
   @extend .thumbnail;
-  margin-bottom: $baseLineHeight / 2;
+  margin-bottom: $line-height / 2;
 }
 
 @include respond-min($breakpoint-alpha) {
@@ -30,6 +30,6 @@
     float: right;
     width: 40%;
     max-width: 200px;
-    margin: 0 0 $baseLineHeight $baseLineHeight;
+    margin: 0 0 $line-height $line-height;
   }
 }

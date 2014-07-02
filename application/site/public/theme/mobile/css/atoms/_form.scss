@@ -17,16 +17,16 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: $baseLineHeight;
+  margin-bottom: $line-height;
   font-size: 1.5em;
-  line-height: $baseLineHeight * 2;
+  line-height: $line-height * 2;
   color: $grayDark;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 
   // Small
   small {
-    font-size: $base-font-size * 0.75;
+    font-size: $font-size * 0.75;
     color: $grayLight;
   }
 }
@@ -37,14 +37,14 @@ input,
 button,
 select,
 textarea {
-  @include font-shorthand($base-font-size, normal, $baseLineHeight); // Set size, weight, line-height here
+  @include font-shorthand($font-size, normal, $line-height); // Set size, weight, line-height here
 }
 
 input,
 button,
 select,
 textarea {
-  font-family: $baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+  font-family: $font-family; // And only set font-family here for those that need it (note the missing label element)
 }
 
 // Identify controls by their labels
@@ -61,11 +61,11 @@ select,
 textarea,
 input {
   display: inline-block;
-  height: $baseLineHeight * 1.5;
+  height: $line-height * 1.5;
   padding: 0 6px;
-  line-height: $baseLineHeight * 1.5;
+  line-height: $line-height * 1.5;
   color: $gray;
-  @include border-radius($inputBorderRadius);
+  @include border-radius($border-radius);
   vertical-align: middle;
   @include box-sizing(border-box !important);
 }
@@ -87,8 +87,7 @@ textarea,
 input[type="text"],
 input[type="number"],
 input[type="search"] {
-  background-color: $inputBackground;
-  border: 1px solid $inputBorder;
+  border: 1px solid $border-color-input;
   @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
   @include transition(border linear .2s, box-shadow linear .2s);
   -webkit-appearance: none;
