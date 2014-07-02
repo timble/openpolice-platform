@@ -72,6 +72,7 @@ files=(
   "application/site/component/application/resources/language/fr-FR.ini"
   "application/site/component/files/resources/language/nl-NL.ini"
   "application/site/component/files/resources/language/fr-FR.ini"
+  "component/ckeditor/resources/assets/ckeditor/config.js"
 )
 
 ## Function definitions
