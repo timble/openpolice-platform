@@ -1,5 +1,17 @@
-.container__banner img {
+@include respond-min(998px) {
+  .banner__image {
+    height: 110px;
     border: 1px solid $gray;
     @include border-radius($baseBorderRadius);
     @include box-sizing(border-box);
+    background: url("../images/banners/default.jpg");
+  }
+
+  $sites: 5317, 5318, 5388, 5396, 5446, 5888;
+
+  @each $site in $sites {
+    .banner__image--#{$site} {
+      background: url("../images/banners/#{$site}.jpg");
+    }
+  }
 }

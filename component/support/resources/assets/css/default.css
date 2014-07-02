@@ -1,4 +1,3 @@
-/* line 11, ../../../../../application/admin/public/theme/default/stylesheets/_labels.scss */
 .label,
 .badge {
   padding: 1px 6px;
@@ -8,125 +7,123 @@
   color: #555555;
 }
 
-/* line 21, ../../../../../application/admin/public/theme/default/stylesheets/_labels.scss */
 .label:empty,
 .badge:empty {
   display: none;
 }
 
-/* line 27, ../../../../../application/admin/public/theme/default/stylesheets/_labels.scss */
 .label-important {
   background-color: #fdebeb;
   color: #cf1010;
 }
 
-/* line 31, ../../../../../application/admin/public/theme/default/stylesheets/_labels.scss */
 .label-warning {
   background-color: #fef4e5;
   color: #f89406;
 }
 
-/* line 35, ../../../../../application/admin/public/theme/default/stylesheets/_labels.scss */
 .label-success {
   background-color: #e3f6ec;
   color: #297e52;
 }
 
-/* line 39, ../../../../../application/admin/public/theme/default/stylesheets/_labels.scss */
 .label-info {
   background-color: #e0f5fe;
   color: #049cdb;
 }
 
-/* line 6, default.scss */
 .muted {
   color: gray;
   margin-left: 6px;
 }
 
-/* line 11, default.scss */
 #support__ticket {
   border-top: 1px solid #dddddd;
 }
-/* line 14, default.scss */
+
 #support__ticket .header {
   padding: 10px 20px;
   border-top: 0 none;
   border-bottom: 1px solid #dddddd;
   background-color: whitesmoke;
 }
-/* line 20, default.scss */
+
 #support__ticket .header h1 {
   margin: 0 0 5px 0;
   font-size: 1.8em;
 }
-/* line 26, default.scss */
+
 #support__ticket .well {
   min-height: 20px;
   padding: 10px;
 }
-/* line 30, default.scss */
+
 #support__ticket .well .well__content {
   padding: 10px;
   border: 1px solid #e4e4e4;
   background: #FFF;
 }
-/* line 38, default.scss */
+
 #support__ticket .comments .comment {
   border-top: 1px dotted #dddddd;
   padding: 20px 20px 10px;
 }
-/* line 44, default.scss */
+
 #support__ticket form {
   padding: 10px 20px;
 }
-/* line 47, default.scss */
+
 #support__ticket form .cke_top {
   background: white !important;
   background-image: none !important;
   border-bottom: 0 none !important;
   padding-left: 0 !important;
 }
-/* line 54, default.scss */
+
 #support__ticket form .cke_bottom {
   background: #f7f7f7;
   border: 1px solid #dddddd;
   border-top-color: #eaeaea;
   border-radius: 0 0 5px 5px;
 }
-/* line 62, default.scss */
+
 #support__ticket form .cke_contents {
   border: 1px solid #dddddd;
   border-bottom: 0 none;
   border-radius: 5px 5px 0 0;
   min-height: 175px;
 }
-/* line 70, default.scss */
+
 #support__ticket .attachment {
   background-color: #f1f1f1;
   padding: 4px 6px;
   border-radius: 4px;
 }
 
-/* line 78, default.scss */
+#support__ticket .comment {
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
 .label-new {
   background-color: #e0f5fe;
   color: #049cdb;
 }
 
-/* line 79, default.scss */
 .label-open {
   background-color: #fdebeb;
   color: #cf1010;
 }
 
-/* line 80, default.scss */
 .label-pending {
   background-color: #fef4e5;
   color: #f89406;
 }
 
-/* line 81, default.scss */
 .label-solved {
   background-color: #e3f6ec;
   color: #297e52;

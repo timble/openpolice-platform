@@ -1,12 +1,12 @@
 .button--primary {
-    border: 1px solid $navbarBorder;
-    background-color: $navbarBackground;
-    color: $white;
+  border: 1px solid $navbarBorder;
+  background-color: $navbarBackground;
+  color: $white;
 
-    // in these cases the gradient won't cover the background, so we override
-    &:hover, &:focus, &:active, &.active, &.disabled, &[disabled], &.pseudo-class-hover, &.pseudo-class-active, &.pseudo-class-disabled {
-        color: $white;
-        background-color: $navbarBackgroundHighlight;
-        border-color: $navbarBorder;
-    }
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled], &.pseudo-class-hover, &.pseudo-class-active, &.pseudo-class-disabled {
+    color: $white;
+    background-color: $navbarBackgroundHighlight;
+    border-color: $navbarBorder;
+  }
 }

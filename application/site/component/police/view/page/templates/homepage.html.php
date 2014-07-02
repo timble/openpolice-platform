@@ -64,14 +64,11 @@
             </div>
 
             <ul class="nav nav--list">
-                <? if($site != '5888') : ?>
-                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Your district officer') ?></a></li>
-                <? endif ?>
-                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Stations')) ?>"><?= translate('Stations') ?></a></li>
-                <? if($site != '5888') : ?>
-                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Services')) ?>"><?= translate('Services') ?></a></li>
-                <? endif ?>
-                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Emergency numbers')) ?>"><?= translate('Emergency numbers') ?></a></li>
+                <? foreach(object('com:pages.model.pages')->menu('1')->published('true')->hidden('false')->getRowset() as $page) : ?>
+                    <? if($page->level == '2') : ?>
+                    <li><a href="/<?= $site ?>/contact/<?= $page->slug ?>"><?= $page->title ?><?= $page->ancestor_id ?></a></li>
+                    <? endif ?>
+                <? endforeach ?>
             </ul>
         </div>
     </div>

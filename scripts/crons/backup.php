@@ -15,28 +15,12 @@ $values     = explode(':', $contents);
 $config->user = $values[0];
 $config->password = implode('', array_slice($values, 1));
 
-// Step 1 - create the daily dumps
+// Create the daily dumps
 $backup = new Backup('/var/backups/');
 $backup->dumpDatabases($config);
 
-// Step 2 - execute the weekly rotation on the database dumps every sunday
-if(date('N') == 7)
-{
-    $filename = 'databases'.DS.'weekly'.DS.'platform-'.date('Y-\w\e\e\kW').'.'.date('Ymd').'.tgz';
-    $backup->rotate('databases'.DS.'daily', 'tar.gz', $filename);
-}
-
-// Step 3 - execute the monthly rotation on the database dumps, the last day of each month
-if(date('j') == date('t'))
-{
-    $filename = 'databases'.DS.'monthly'.DS.'platform-'.date('Ymd').'.tgz';
-    $backup->rotate('databases'.DS.'weekly', 'tgz', $filename);
-}
-
-// Step 4 - clean-up backups
-$backup->cleanup('databases'.DS.'daily', 7); // remove dumps older than 7 days
-$backup->cleanup('databases'.DS.'weekly', 31); // remove weekly rotations older than 1 month
-$backup->cleanup('databases'.DS.'monthly', 62); // remove monthly rotations older than 2 months
+// Clean-up old backups
+$backup->cleanup('databases'.DS.'daily', 31); // remove dumps older than 31 days
 
 /**
  * Backup class
@@ -131,24 +115,6 @@ class Backup
 
         $cmd = 'tar -cvzf '.$filename.' ' .$source;
         exec($cmd);
-    }
-
-    /**
-     * Rotates the specified files with extension $src_extension in
-     * the $source directory, and creates a tar file at given $filename path
-     *
-     * @param string $source
-     * @param string $src_extension
-     * @param string $filename
-     */
-    public function rotate($source, $src_extension, $filename)
-    {
-        $source = $this->_getPath($source);
-        $filename = $this->_getPath($filename);
-
-        $cmd = 'cd '.$source.' && tar -cvzf '.$filename.' `ls platform*.'.$src_extension.'`';
-
-        return exec($cmd);
     }
 
     /**

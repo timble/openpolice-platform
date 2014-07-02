@@ -14,71 +14,49 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class DatabaseRowUpload extends Library\DatabaseRowTable
 {
-    public function save() {
+    public function save()
+    {
+        $table  = $this->table;
 
-        $file = $_FILES["file"];
-        $source = $file["tmp_name"];
+        $file   = $this->getObject('lib:dispatcher.request')->files->file;
+        $data   = $this->_loadData($file);
 
-        $allowedExtensions = array("csv");
-
-        $table = $this->table;
-
-        if(in_array(end(explode(".", strtolower($file['name']))), $allowedExtensions))
-        {
-            if (($handle = fopen($source, "r")) !== FALSE)
-            {
-                // get the first (header) line
-                $header = fgetcsv($handle, '1000');
-
-                // get the rest of the rows
-                $data = array();
-                while ($row = fgetcsv($handle, '1000'))
-                {
-                    $arr = array();
-                    foreach ($header as $i => $col)
-                        $arr[$col] = $row[$i];
-                    $data[] = $arr;
-                }
-
-                if($table == 'districts'){
-                    $this->_importDistricts($data);
-                }
-
-                if($table == 'districts_officers'){
-                    $this->_importDistrictsofficers($data);
-                }
-
-                if($table == 'districts_relations'){
-                    $this->_importRelations($data);
-                }
-
-                if($table == 'localstreets'){
-                    $this->_importLocalStreets($data);
-                }
-
-                if($table == 'officers'){
-                    $this->_importOfficers($data);
-                }
-
-                if($table == 'news'){
-                    $this->_importNews($data);
-                }
-
-                if($table == 'press'){
-                    $this->_importPress($data);
-                }
-
-                if($table == 'contacts'){
-                    $this->_importContacts($data);
-                }
-
-                if($table == 'streets'){
-                    $this->_importStreets($data);
-                }
-
-                fclose($handle);
-            }
+        if($table == 'districts'){
+            $this->_importDistricts($data);
         }
+
+        if($table == 'districts_officers'){
+            $this->_importDistrictsofficers($data);
+        }
+
+        if($table == 'districts_relations'){
+            $this->_importRelations($data);
+        }
+
+        if($table == 'localstreets'){
+            $this->_importLocalStreets($data);
+        }
+
+        if($table == 'officers'){
+            $this->_importOfficers($data);
+        }
+
+        if($table == 'news'){
+            $this->_importNews($data);
+        }
+
+        if($table == 'press'){
+            $this->_importPress($data);
+        }
+
+        if($table == 'contacts'){
+            $this->_importContacts($data);
+        }
+
+        if($table == 'streets'){
+            $this->_importStreets($data);
+        }
+
         return parent::save();
     }
 
@@ -157,18 +135,25 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         {
             // Get CRAB ID
             $street = $this->getObject('com:streets.database.row.streets');
-            $street->islp = $item['islp'];
-            if($street->load())
+
+            if(!array_key_exists('streets_street_id', $item))
             {
-                $item['streets_street_id'] = $street->id;
+                $street->islp = $item['islp'];
+                if($street->load())
+                {
+                    $item['streets_street_id'] = $street->id;
+                } else {
+                    $item['streets_street_id'] = '';
+                }
             } else {
-                $item['streets_street_id'] = '';
+                $item['islp'] = '';
             }
 
             $parity = null;
             switch ($item['range_parity']) {
                 case 'odd-even':
                 case 'Even+Oneven':
+                case 'Even/Oneven':
                     $parity = 'odd-even';
                     break;
                 case 'even':
@@ -226,7 +211,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         {
             //Get the street
             $row = $this->getObject('com:streets.database.row.streets');
-            $row->id = $item['streets_street_id'];
+            $row->id = $item['id'];
 
             if($row->load()){
                 if($row->title != $item['title'] || $row->title0 != $item['title0']) {
@@ -261,7 +246,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    $this->_clean($row);
+                    $this->_clean($row, 'news');
 
                     $row->save();
                 }
@@ -290,7 +275,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    $this->_clean($row);
+                    $this->_clean($row, 'press');
 
                     $row->text = $row->introtext.$row->fulltext;
 
@@ -331,7 +316,89 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    protected function _clean(Library\DatabaseRowAbstract $row)
+    protected function _loadData(array $file)
+    {
+        if (!file_exists($file['tmp_name'])) {
+            throw new \UnexpectedValueException('Temporary uploaded file does not exist: ' . $file['tmp_name']);
+        }
+
+        $data      = array();
+        $extension = $this->_getFileExtension($file['name']);
+
+        switch ($extension)
+        {
+            case 'csv':
+                if (($handle = fopen($file['tmp_name'], 'r')) !== FALSE)
+                {
+                    // get the first (header) line
+                    $header = fgetcsv($handle, '1000');
+
+                    // get the rest of the rows
+                    while ($row = fgetcsv($handle, '1000'))
+                    {
+                        $arr = array();
+
+                        foreach ($header as $i => $col) {
+                            $arr[$col] = $row[$i];
+                        }
+
+                        // Use ID as key if it
+                        if (array_key_exists('id', $arr)) {
+                            $data[$arr['id']] = $arr;
+                        } else {
+                            $data[] = $arr;
+                        }
+                    }
+
+                    fclose($handle);
+                }
+                else throw new \Exception('Failed to read ' . $file['tmp_name']);
+                break;
+
+            case 'xml':
+                $string = file_get_contents($file['tmp_name']);
+
+                if ($string === false) {
+                    throw new \Exception('Failed to read ' . $file['tmp_name']);
+                }
+
+                $xml = simplexml_load_string($string);
+
+                if ($xml === false) {
+                    throw new \UnexpectedValueException('Could not parse ' . $file['name']);
+                }
+
+                foreach ($xml->database->table_data->row as $row)
+                {
+                    $arr = array();
+
+                    foreach ($row->field as $field)
+                    {
+                        $key       = (string) $field['name'];
+                        $arr[$key] = (string) $field;
+                    }
+
+                    // Use ID as key if it
+                    if (array_key_exists('id', $arr)) {
+                        $data[$arr['id']] = $arr;
+                    } else {
+                        $data[] = $arr;
+                    }
+                }
+
+                break;
+
+            default:
+                throw new \UnexpectedValueException($file['name'] . ' is not a CSV or XML file!');
+                break;
+        }
+
+        ksort($data);
+
+        return $data;
+    }
+
+    protected function _clean(Library\DatabaseRowAbstract $row, $table)
     {
         $row->introtext = preg_replace("/<em>/", "", $row->introtext);
         $row->introtext = preg_replace("/<\/em>/", "", $row->introtext);
@@ -366,7 +433,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             $this->_cleanAttributes($dom);
 
-            $attachment = $this->_extractImages($row, $dom);
+            $attachment = $this->_extractImages($row, $dom, $table);
             if($property == 'introtext' && $attachment) {
                 $row->attachments_attachment_id = $attachment;
             }
@@ -375,7 +442,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    protected function _extractImages(Library\DatabaseRowAbstract $row, \DOMDocument $dom)
+    protected function _extractImages(Library\DatabaseRowAbstract $row, \DOMDocument $dom, $table)
     {
         $root   = $this->getObject('application')->getCfg('old_codebase_root');
         if(empty($root)) {
@@ -392,9 +459,17 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             if(substr($link, 0, strlen('sites/')) == 'sites/')
             {
-                $fullpath = $root . '/' . $link;
+                $fullpath  = $root . '/' . $link;
+                $extension = $this->_getFileExtension($fullpath);
+                $filesize  = filesize($fullpath);
+                $allowed   = in_array($extension, array('jpg', 'jpeg', 'png'));
 
-                $return = $this->_saveAttachment($row, $fullpath);
+                list($width, $height) = getimagesize($fullpath);
+
+                if ($allowed && $filesize < 10485760 && $width <= 2048 && $height <= 2048) {
+                    $return = $this->_saveAttachment($row, $fullpath, $table);
+                }
+                else $return = false;
 
                 if(!$attachment) {
                     $attachment = $return;
@@ -422,7 +497,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
-    protected function _saveAttachment(Library\DatabaseRowAbstract $row, $filepath)
+    protected function _saveAttachment(Library\DatabaseRowAbstract $row, $filepath, $table)
     {
         if(!file_exists($filepath)) {
             return false;
@@ -456,7 +531,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 'container' => 'attachments-attachments',
                 'hash' => $hash,
                 'row' => $row->id,
-                'table' => 'news'
+                'table' => $table
             ));
 
             $model  = $file_controller->getModel();
@@ -475,5 +550,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
 
         return false;
+    }
+
+    protected function _getFileExtension($filename)
+    {
+        return end(explode('.', strtolower($filename)));
     }
 }

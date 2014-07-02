@@ -7,29 +7,22 @@
 
 <div id="wrap">
     <div class="container container__header">
-        <div class="organization" itemscope itemtype="http://schema.org/Organization">
-            <a itemprop="url" href="/<?= $site ?>">
-                <img class="organization__logo" width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.jpg" />
-                <div class="organization__name"><?= escape($zone->title); ?></div>
-            </a>
-        </div>
+        <div class="header">
+            <div class="organization" itemscope itemtype="http://schema.org/Organization">
+                <a itemprop="url" href="/<?= $site ?>">
+                    <div class="organization__logo organization__logo--<?= $language_short; ?>"></div>
+                    <div class="organization__name"><span><?= translate('Police') ?></span> <?= escape($zone->title); ?></div>
+                    <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
+                </a>
+                <button id="hamburger" class="button--hamburger" aria-hidden="true" aria-pressed="false" aria-controls="navigation" onclick="apollo.toggleClass(document.getElementById('navigation'), 'is-shown');apollo.toggleClass(document.getElementById('hamburger'), 'close');hamburger()">MENU <span class="lines"></span></button>
+            </div>
 
-        <div class="navigation">
-            <span class="slogan">
-                <?= JText::sprintf('Call for urgent police assistance', '101') ?>.
-                <?= JText::sprintf('No emergency, just police', escape($zone->phone_information)) ?>.
-            </span>
-            <div class="navbar">
-                <div class="navbar__handlebar">
-                    <a class="navbar__logo" href="/<?= $site ?>">
-                        <img class="navbar__avatar" width="37" height="37" alt="<?= translate('Police') ?> logo" src="assets://application/images/avatar.png" />
-                        <?= translate('Police') ?>
-                        <?= escape($zone->title); ?>
-                    </a>
-                    <a id="button" class="navbar__handle lines-button x" href="#" onclick="Apollo.toggleClass(document.getElementById('navigation'), 'is-shown');Apollo.toggleClass(document.getElementById('button'), 'close')">MENU <span class="lines"></span></a>
-
-                </div>
-                <div id="navigation">
+            <div class="navigation">
+                <span class="slogan">
+                    <?= JText::sprintf('Call for urgent police assistance', '101') ?>.
+                    <?= JText::sprintf('No emergency, just police', escape($zone->phone_information)) ?>.
+                </span>
+                <div id="navigation" class="navbar">
                     <ktml:modules position="navigation">
                         <ktml:modules:content>
                     </ktml:modules>
@@ -39,7 +32,9 @@
     </div>
 
     <div class="container container__banner">
-        <img width="890" height="110" src="assets://application/images/banners/<?= $site ?>.jpg" alt="<?= translate('Police') ?> <?= escape($zone->title); ?> banner" />
+        <div class="banner__image banner__image--<?= $site ?>">
+
+        </div>
     </div>
 
     <ktml:modules position="breadcrumbs">
@@ -56,7 +51,7 @@
         </ktml:modules>
 
         <? if(!$singleColumn) : ?>
-        <div class="component">
+        <div class="component <?= $extension ?>">
         <? endif ?>
             <ktml:content>
         <? if(!$singleColumn) : ?>
@@ -64,9 +59,17 @@
         <? endif ?>
     </div>
 
+    <ktml:modules position="quicklinks">
+    <div class="container container__footer">
+        <div class="container__quicklinks">
+            <ktml:modules:content>
+        </div>
+    </div>
+    </ktml:modules>
+
+    <? if($extension !== 'police') : ?>
     <div class="container container__footer">
         <div class="row">
-            <? if($extension !== 'police') : ?>
             <div class="footer__news">
                 <h3><?= translate('Latest news') ?></h3>
                 <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
@@ -78,17 +81,9 @@
                 <a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
             </div>
             <?php endif; ?>
-            <?php endif; ?>
-
-            <? if($site !== '5888') : ?>
-            <ktml:modules position="quicklinks">
-                <div class="container__quicklinks">
-                    <ktml:modules:content>
-                </div>
-            </ktml:modules>
-            <? endif ?>
         </div>
     </div>
+    <?php endif; ?>
 
     <div class="container container__footer_menu">
         <ul class="nav nav--list">

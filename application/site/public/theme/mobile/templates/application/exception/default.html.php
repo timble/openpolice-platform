@@ -47,17 +47,19 @@
 <body>
 <div id="wrap">
     <div class="container container__header">
-        <div class="organization" itemscope itemtype="http://schema.org/Organization">
-            <a itemprop="url" href="/<?= $site ?>">
-                <img class="organization__logo" width="160" height="42" itemprop="logo" alt="<?= translate('Police') ?> logo" src="assets://application/images/logo-<?= $language_short ?>.jpg" />
-                <div class="organization__name"><?= escape($zone->title); ?></div>
-            </a>
-        </div>
-        <div class="navigation">
-            <span class="slogan">
-                <?= JText::sprintf('Call for urgent police assistance', '101', '101') ?>.
-                <?= JText::sprintf('No emergency, just police', escape(str_replace(' ', '', $zone->phone_emergency)), escape($zone->phone_emergency)) ?>.
-            </span>
+        <div class="header">
+            <div class="organization" itemscope itemtype="http://schema.org/Organization">
+                <a itemprop="url" href="/<?= $site ?>">
+                    <div class="organization__logo organization__logo--<?= $language_short; ?>"></div>
+                    <div class="organization__name"><?= escape($zone->title); ?></div>
+                </a>
+            </div>
+            <div class="navigation">
+                <span class="slogan">
+                    <?= JText::sprintf('Call for urgent police assistance', '101', '101') ?>.
+                    <?= JText::sprintf('No emergency, just police', escape(str_replace(' ', '', $zone->phone_emergency)), escape($zone->phone_emergency)) ?>.
+                </span>
+            </div>
         </div>
     </div>
 

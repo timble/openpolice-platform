@@ -12,14 +12,6 @@ use Nooku\Library;
 
 class ModelOfficers extends Library\ModelTable
 {	
-    public function __construct(Library\ObjectConfig $config)
-	{
-		parent::__construct($config);
-
-		$this->getState()
-		    ->insert('location' , 'int');
-	}
-	
 	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
     {
         parent::_buildQueryColumns($query);
@@ -41,7 +33,7 @@ class ModelOfficers extends Library\ModelTable
 		$state = $this->getState();
 
 		if ($state->search) {
-			$query->where('tbl.firstname LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+			$query->where('tbl.firstname LIKE :search OR tbl.lastname LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
 		}
 	}
 	

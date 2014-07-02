@@ -35,7 +35,7 @@
 		
 		<?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text, 'removeButtons' => 'readmore')) ?>
 	</div>
-	<div class="sidebar">
+	<div class="sidebar" style="padding-bottom: 200px">
         <?= import('default_sidebar.html') ?>
     </div>
 </form>

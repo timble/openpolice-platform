@@ -1,11 +1,11 @@
 .well {
-    padding: $baseLineHeight;
-    margin-bottom: $baseLineHeight;
-    background-color: $wellBackground;
-    border: 1px solid darken($wellBackground, 5%);
-    @include border-radius($baseBorderRadius);
+  padding: $baseLineHeight;
+  margin-bottom: $baseLineHeight;
+  background-color: $wellBackground;
+  border: 1px solid darken($wellBackground, 5%);
+  @include border-radius($baseBorderRadius);
 
-    ul {
-        margin-bottom: 0;
-    }
+  ul {
+    margin-bottom: 0;
+  }
 }
