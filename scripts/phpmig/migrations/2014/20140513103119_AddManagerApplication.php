@@ -9,8 +9,11 @@ class AddManagerApplication extends Migration
     public function up()
     {
         // We only need to run this migration once, but since the database has to be created first,
-        // we use 5388 as the zone list to limit the number of times these queries will be run.
-        $this->getZones()->set(array('5388' => 'Leuven'));
+        // we use a random zone number to limit the number of times these queries will be run.
+        $zones = $this->getZones()->get();
+        $key   = key($zones);
+
+        $this->getZones()->set(array($key => $zones[$key]));
 
         $this->_queries = <<<EOL
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
