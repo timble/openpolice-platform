@@ -16,7 +16,7 @@ class Installer
 
     public $task;
     public $database = '9999';
-    public $www = '/var/www/demo.openpolice.be/internet/';
+    public $www = '/var/www/internet.openpolice.be';
 
     public function __construct($task)
     {
