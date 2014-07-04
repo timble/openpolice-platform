@@ -1,8 +1,18 @@
-<style src="assets://application/components/select2/select2.css" />
+<?
+/**
+ * Belgian Police Web Platform - Police Component
+ *
+ * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
+ * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @link		https://github.com/belgianpolice/internet-platform
+ */
+?>
 
-<script src="assets://application/components/jquery/dist/jquery.min.js" />
-<script src="assets://application/components/select2/select2.js" />
-<script src="assets://application/js/ie7.js" condition="if lte IE 7" />
+<style src="http://www.lokalepolitie.be/theme/mobile/components/select2/select2.css" />
+
+<script src="http://www.lokalepolitie.be/theme/mobile/components/jquery/dist/jquery.min.js" />
+<script src="http://www.lokalepolitie.be/theme/mobile/components/select2/select2.js" />
+<script src="http://www.lokalepolitie.be/theme/mobile/js/ie7.js" condition="if lte IE 7" />
 
 <script>
     $(document).ready(function() {
@@ -49,6 +59,18 @@
     });
 </script>
 
+<?
+$language_short = explode("-", $language);
+$language_short = $language_short[0];
+?>
+
+<!DOCTYPE HTML>
+<html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"">
+
+<?= import('page_head.html') ?>
+<body id="page" class="no-js">
+<script data-inline type="text/javascript" pagespeed_no_defer="">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.getElementById("page");var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg,"js-enabled")}</script>
+
 <div id="wrap">
     <div class="container container__content">
         <div class="splash">
@@ -87,3 +109,6 @@
         </div>
     </div>
 </div>
+
+</body>
+</html>
