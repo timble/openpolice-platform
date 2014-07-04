@@ -71,7 +71,7 @@ VALUES
 	(3,2,1,'Pages','pages','option=com_pages&view=pages',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(4,2,0,'Content','content',NULL,NULL,'separator',1,0,0,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(5,2,0,'Files','files','option=com_files&view=files',NULL,'component',1,0,0,19,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(6,2,0,'Users','users','option=com_users&view=users',NULL,'component',1,0,0,31,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(6,2,1,'Users','users','option=com_users&view=users',NULL,'component',1,0,0,31,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(7,2,1,'Extensions','extensions',NULL,NULL,'separator',1,0,0,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(8,2,1,'Settings','settings','option=com_extensions&view=settings',NULL,'component',1,0,0,28,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(9,2,0,'Tools','tools',NULL,NULL,'separator',1,0,0,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
@@ -367,7 +367,7 @@ VALUES
 INSERT INTO `users_passwords` (`email`, `expiration`, `hash`, `reset`)
 VALUES
 	('admin@example.com',NULL,'$2y$10$j6EOjAGYAVYACaMsq3XXIOBt6B78vAsRChA7P83MACnBPM7wSxqPC',''),
-  ('police@example.com',NULL,'$2y$10$j6EOjAGYAVYACaMsq3XXIOBt6B78vAsRChA7P83MACnBPM7wSxqPC','');
+  ('demo@example.com',NULL,'$2y$10$j6EOjAGYAVYACaMsq3XXIOBt6B78vAsRChA7P83MACnBPM7wSxqPC','');
 
 
 --
