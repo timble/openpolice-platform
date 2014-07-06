@@ -86,6 +86,7 @@ class Installer
 class JSiteConfig extends JConfig
 {
 	var \$theme = 'mobile';
+	var \$analytics = 'UA-20242887-6';
 	var \$site = '$site';
 }
 EOF;
