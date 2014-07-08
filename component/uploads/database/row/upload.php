@@ -137,20 +137,19 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             {
                 $street = false;
 
-                // Get CRAB ID
-                foreach($this->getObject('com:streets.model.streets')->islp($item['islp'])->getRowset() as $row) {
-                    $street = $row->streets_street_id;
-                }
+                $query = $this->getObject('lib:database.query.select')
+                            ->where('tbl.islp = :islp')
+                            ->bind(array('islp' => $item['islp']));
 
-                if($street)
-                {
+                // Get CRAB ID
+                $street = $this->getObject('com:streets.database.table.streets')->select($query, Library\Database::FETCH_ROW);
+
+                if(!$street->isNew()) {
                     $item['streets_street_id'] = $street;
-                } else {
-                    $item['streets_street_id'] = '';
                 }
-            } else {
-                $item['islp'] = '';
+                else $item['streets_street_id'] = '';
             }
+            else $item['islp'] = '';
 
             $parity = null;
             switch ($item['range_parity']) {
