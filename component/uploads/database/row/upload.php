@@ -133,15 +133,18 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
         foreach($data as $item)
         {
-            // Get CRAB ID
-            $street = $this->getObject('com:streets.database.row.streets');
-
             if(!array_key_exists('streets_street_id', $item))
             {
-                $street->islp = $item['islp'];
-                if($street->load())
+                $street = false;
+
+                // Get CRAB ID
+                foreach($this->getObject('com:streets.model.streets')->islp($item['islp'])->getRowset() as $row) {
+                    $street = $row->streets_street_id;
+                }
+
+                if($street)
                 {
-                    $item['streets_street_id'] = $street->id;
+                    $item['streets_street_id'] = $street;
                 } else {
                     $item['streets_street_id'] = '';
                 }
