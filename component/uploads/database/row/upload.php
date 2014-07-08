@@ -139,7 +139,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
                 // Get CRAB ID
                 foreach($this->getObject('com:streets.model.streets')->islp($item['islp'])->getRowset() as $row) {
-                    $street = $row->streets_street_id;
+                    $street = $row->id;
                 }
 
                 if($street)
