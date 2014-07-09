@@ -12,6 +12,7 @@ temp="/tmp/police-$RANDOM"
 
 dirs=(
   "application/admin/component/about"
+  "application/admin/component/announcements"
   "application/admin/component/bin"
   "application/admin/component/contacts"
   "application/admin/component/districts"
@@ -41,6 +42,7 @@ dirs=(
   "application/site/public/theme/mobile"
   "application/site/public/theme/portal"
   "component/about"
+  "component/announcements"
   "component/bin"
   "component/contacts"
   "component/districts"

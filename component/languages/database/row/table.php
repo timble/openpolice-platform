@@ -42,14 +42,13 @@ class DatabaseRowTable extends Library\DatabaseRowTable
                     $database->execute($query);
                     
                     // Copy content of original table into the language specific one.
-                    $query = $this->getObject('lib:atabase.query.insert')
+                    $query = $this->getObject('lib:database.query.insert')
                         ->table($table)
                         ->values($this->getObject('lib:database.query.select')->table($this->name));
                     $database->execute($query);
                     
                     $status   = DatabaseRowTranslation::STATUS_MISSING;
                     $original = 0;
-                            
                 }
                 else
                 {
