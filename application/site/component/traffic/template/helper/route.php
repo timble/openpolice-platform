@@ -22,7 +22,7 @@ class TrafficTemplateHelperRoute extends PagesTemplateHelperRoute
 
         $article = $config->row;
 
-        $category = $this->getObject('com:categories.model.category')->id($article->categories_category_id)->getRow();
+        $category = $this->getObject('com:traffic.model.category')->id($article->traffic_category_id)->getRow();
 
         $route = array(
             'view'     => 'article',

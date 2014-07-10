@@ -22,8 +22,6 @@ class TrafficControllerCategory extends Library\ControllerModel
     {
         $request = parent::getRequest();
 
-        $request->query->table     = $this->getIdentifier()->package;
-        $request->query->access    = $this->getUser()->isAuthentic();
         $request->query->published = 1;
         $request->query->sort      = 'title';
 
