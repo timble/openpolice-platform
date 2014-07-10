@@ -129,7 +129,7 @@ mkdir -p "$HOME/.git-cache"
 
 if test ! -d "$HOME/.git-cache/nooku-framework"
 then
-  git clone --quiet git@git.assembla.com:nooku-framework.git $HOME/.git-cache/nooku-framework
+  git clone --quiet git@github.com:nooku/nooku-framework.git $HOME/.git-cache/nooku-framework
 fi
 
 cd "$HOME/.git-cache/nooku-framework"
