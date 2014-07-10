@@ -19,34 +19,5 @@ use Nooku\Library;
  */
 class ControllerAttachment extends Library\ControllerModel
 {
-    protected function _actionRender(Library\CommandContext $context)
-    {
-        $model = $this->getModel();
 
-        if ($model->getState()->isUnique() && $this->getRequest()->getFormat() == 'file')
-        {
-            $attachment = $this->getModel()->getRow();
-
-            if (!$attachment->isNew())
-            {
-                $container = $this->getObject('com:files.model.containers')
-                    ->slug($attachment->container)
-                    ->getRow();
-
-                $fullpath = $container->path.DS.$attachment->path;
-
-                try
-                {
-                    $context->response
-                        ->attachTransport('chunked')
-                        ->setPath('file://'.$fullpath, 'application/force-download');
-                }
-                catch (InvalidArgumentException $e) {
-                    throw new KControllerExceptionResourceNotFound('File not found');
-                }
-            }
-            else throw new KControllerExceptionResourceNotFound('Attachment not found');
-        }
-        else parent::_actionRender($context);
-    }
 }
