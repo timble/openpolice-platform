@@ -32,6 +32,6 @@
     </div>
 
     <div class="sidebar">
-        <?= import('default_sidebar.html'); ?>
+        <?= import('com:categories.view.category.default_sidebar.html'); ?>
     </div>
 </form>
