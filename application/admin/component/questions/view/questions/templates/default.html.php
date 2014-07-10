@@ -34,7 +34,7 @@
 	<table>
 	<thead>
 		<tr>
-            <? if($sortable) : ?>
+            <? if(isset($sortable)) : ?>
                 <th class="handle"></th>
             <? endif ?>
             <th width="10">
@@ -58,10 +58,10 @@
 			</td>
 		</tr>
 	</tfoot>
-	<tbody<?= $sortable ? ' class="sortable"' : '' ?>>
+	<tbody<?= isset($sortable) ? ' class="sortable"' : '' ?>>
 		<? foreach ($questions as $question) : ?>
 		<tr>
-            <? if($sortable) : ?>
+            <? if(isset($sortable)) : ?>
                 <td class="handle">
                     <span class="text-small data-order"><?= $question->ordering ?></span>
                 </td>

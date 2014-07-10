@@ -1,4 +1,4 @@
-<? if(!$question->categories_category_id) : ?>
+<? if(!$question->questions_category_id) : ?>
 <script>
     // Set default value for categories radiolist
     $jQuery(document).ready(

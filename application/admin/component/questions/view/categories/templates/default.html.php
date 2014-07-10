@@ -21,7 +21,7 @@
     <table>
         <thead>
         <tr>
-            <? if($state->sort == 'ordering' && $state->direction == 'asc') : ?>
+            <? if(isset($sortable)) : ?>
                 <th class="handle"></th>
             <? endif ?>
             <th width="1">
@@ -50,10 +50,10 @@
         </tr>
         </tfoot>
 
-        <tbody<? if($state->sort == 'ordering' && $state->direction == 'asc') : ?> class="sortable"<? endif ?>>
+        <tbody<? if(isset($sortable)) : ?> class="sortable"<? endif ?>>
         <? foreach( $categories as $category) :  ?>
             <tr>
-                <? if($state->sort == 'ordering' && $state->direction == 'asc') : ?>
+                <? if(isset($sortable)) : ?>
                     <td class="handle">
                         <span class="text-small data-order"><?= $category->ordering ?></span>
                     </td>

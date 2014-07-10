@@ -8,7 +8,7 @@
  */
 ?>
 
-<? if(!$article->categories_category_id) : ?>
+<? if(!$article->about_category_id) : ?>
 <script>
     // Set default value for categories radiolist
     $jQuery(document).ready(
