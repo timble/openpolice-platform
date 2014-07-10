@@ -9,7 +9,19 @@
 
 use Nooku\Library;
 
-class QuestionsControllerCategory extends CategoriesControllerCategory
+class QuestionsControllerCategory extends Library\ControllerModel
 {
+    protected function _initialize(Library\ObjectConfig $config)
+    {
+        $config->append(array(
+            'behaviors' => array(
+                'editable',
+                'com:activities.controller.behavior.loggable',
+                'com:attachments.controller.behavior.attachable',
+                'com:languages.controller.behavior.translatable'
+            )
+        ));
 
+        parent::_initialize($config);
+    }
 }

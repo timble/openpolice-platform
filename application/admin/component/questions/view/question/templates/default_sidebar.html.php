@@ -21,7 +21,7 @@
 
 <fieldset>
     <legend><?= translate('Category') ?></legend>
-    <?= helper('com:categories.radiolist.categories', array('row' => $question, 'uncategorised' => false)) ?>
+    <?= helper('com:questions.radiolist.categories', array('row' => $question)) ?>
 </fieldset>
 
 <? if($question->isAttachable()) : ?>

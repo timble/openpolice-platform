@@ -21,7 +21,7 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
 
         $question = $config->row;
 
-        $category = $this->getObject('com:categories.model.category')->id($question->categories_category_id)->getRow();
+        $category = $this->getObject('com:questions.model.category')->id($question->questions_category_id)->getRow();
 
         $route = array(
             'view'     => 'question',

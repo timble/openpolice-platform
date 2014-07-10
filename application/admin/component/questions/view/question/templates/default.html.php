@@ -16,6 +16,12 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+<? if($question->isTranslatable()) : ?>
+<ktml:module position="actionbar" content="append">
+    <?= helper('com:languages.listbox.languages') ?>
+</ktml:module>
+<? endif ?>
+
 <form action="" method="post" class="-koowa-form" enctype="multipart/form-data">
 	<input type="hidden" name="published" value="0" />
     <input type="hidden" name="attachments_attachment_id" value="0" />

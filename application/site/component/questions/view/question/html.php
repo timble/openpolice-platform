@@ -42,7 +42,6 @@ class QuestionsViewQuestionHtml extends QuestionsViewHtml
     {
         //Get the category
         $category = $this->getObject('com:questions.model.categories')
-            ->table('questions')
             ->slug($this->getModel()->getState()->category)
             ->getRow();
 
