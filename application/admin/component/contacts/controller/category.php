@@ -9,13 +9,19 @@
 
 use Nooku\Library;
 
-/**
- * Category Controller
- *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
- * @package Component\Contacts
- */
-class ContactsControllerCategory extends CategoriesControllerCategory
-{    
+class ContactsControllerCategory extends Library\ControllerModel
+{
+    protected function _initialize(Library\ObjectConfig $config)
+    {
+        $config->append(array(
+            'behaviors' => array(
+                'editable',
+                'com:activities.controller.behavior.loggable',
+                'com:attachments.controller.behavior.attachable',
+                'com:languages.controller.behavior.translatable'
+            )
+        ));
 
+        parent::_initialize($config);
+    }
 }
