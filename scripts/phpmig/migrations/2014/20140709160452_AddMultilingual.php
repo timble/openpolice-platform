@@ -54,9 +54,8 @@ class AddMultilingual extends Migration
                                 (8, 40, 'questions_categories', 'questions_category_id', 0),
                                 (9, 43, 'about', 'about_article_id', 0),
                                 (10, 43, 'about_categories', 'categories_category_id', 0),
-                                (11, 45, 'press', 'press_article_id', 0)
-                                (12, 36, 'districts', 'districts_district_id', 0);
-                            ";
+                                (11, 45, 'press', 'press_article_id', 0),
+                                (12, 36, 'districts', 'districts_district_id', 0);";
 
         $this->_queries .= "DELETE FROM `languages`;";
         $this->_queries .= "INSERT INTO `languages` (`languages_language_id`, `application`, `name`, `native_name`, `iso_code`, `slug`, `enabled`, `primary`)
