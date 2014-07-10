@@ -28,8 +28,7 @@ class AboutViewArticleHtml extends AboutViewHtml
     public function getCategory()
     {
         //Get the category
-        $category = $this->getObject('com:categories.model.categories')
-            ->table('about')
+        $category = $this->getObject('com:about.model.categories')
             ->slug($this->getModel()->getState()->category)
             ->getRow();
 
