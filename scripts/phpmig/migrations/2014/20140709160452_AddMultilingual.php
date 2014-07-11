@@ -10,6 +10,8 @@ class AddMultilingual extends Migration
     public function up()
     {
         $this->_queries = "UPDATE `pages` SET `title` = 'Tables', `slug` = 'tables', `link_url` = 'option=com_languages&view=tables' WHERE `pages_page_id` = '23';";
+        $this->_queries .= "UPDATE `pages_closures` SET `ancestor_id` = '9' WHERE `ancestor_id` = '4' AND `descendant_id` IN ('15', '22', '23') AND `level` = '1';";
+        $this->_queries .= "UPDATE `pages_orderings` SET `custom` = '00000000005' WHERE `pages_page_id` IN ('15');";
 
         // Decouple categories table to about_categories
         $this->_queries .= "CREATE TABLE IF NOT EXISTS `about_categories` LIKE `categories`;";
@@ -142,7 +144,7 @@ class AddMultilingual extends Migration
                                 (20, 2, 0, 'Contacts', 'contacts', 'option=com_contacts&view=contacts', NULL, 'component', 1, 0, 0, 7, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
                                 (21, 2, 0, 'Catégories', 'categories', 'option=com_contacts&view=categories', NULL, 'component', 1, 0, 0, 7, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
                                 (22, 2, 1, 'Languages', 'languages', 'option=com_languages&view=languages', NULL, 'component', 0, 0, 0, 23, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
-                                (23, 2, 1, 'Components', 'components', 'option=com_languages&view=components', NULL, 'component', 0, 0, 0, 23, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+                                (23, 2, 1, 'Tables', 'tables', 'option=com_languages&view=tables', NULL, 'component', 0, 0, 0, 23, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
                                 (24, 2, 1, 'Pages', 'pages', 'option=com_pages&view=pages', NULL, 'component', 1, 0, 0, 25, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
                                 (25, 2, 1, 'Menus', 'menus', 'option=com_pages&view=menus', NULL, 'component', 1, 0, 0, 25, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
                                 (26, 2, 1, 'Modules', 'modules', 'option=com_pages&view=modules', NULL, 'component', 1, 0, 0, 25, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
@@ -321,6 +323,7 @@ class AddMultilingual extends Migration
         // Make zone names multilingual
         $this->_queries = "ALTER TABLE `police_zones` CHANGE `title` `title_nl` VARCHAR(250)  NOT NULL  DEFAULT '';";
         $this->_queries .= "ALTER TABLE `police_zones` ADD `title_fr` VARCHAR(250)  NOT NULL  DEFAULT '' AFTER `title_nl`;";
+        $this->_queries .= "UPDATE `police_zones` SET `title_fr` = `title_nl` WHERE `language` = '2';";
 
         parent::up();
     }
@@ -331,6 +334,8 @@ class AddMultilingual extends Migration
     public function down()
     {
         $this->_queries = "UPDATE `pages` SET `title` = 'Components', `slug` = 'components', `link_url` = 'option=com_languages&view=components' WHERE `pages_page_id` = '23';";
+        $this->_queries .= "UPDATE `pages_closures` SET `ancestor_id` = '4' WHERE `ancestor_id` = '9' AND `descendant_id` IN ('15', '22', '23') AND `level` = '1';";
+        $this->_queries .= "UPDATE `pages_orderings` SET `custom` = '00000000009' WHERE `pages_page_id` IN ('15');";
 
         // Move about_categories to categories
         $this->_queries .= "ALTER TABLE `about` CHANGE `about_category_id` `categories_category_id` INT(11)  NOT NULL  DEFAULT '0';";
