@@ -314,6 +314,15 @@ class AddMultilingual extends Migration
                                 (125, 'fr-FR', 'pages', 99, 3, 0, 0);";
 
         parent::up();
+
+        // Target `data` database
+        $this->getZones()->reset()->set(array('data' => 'data'));
+
+        // Make zone names multilingual
+        $this->_queries = "ALTER TABLE `police_zones` CHANGE `title` `title_nl` VARCHAR(250)  NOT NULL  DEFAULT '';";
+        $this->_queries .= "ALTER TABLE `police_zones` ADD `title_fr` VARCHAR(250)  NOT NULL  DEFAULT '' AFTER `title_nl`;";
+
+        parent::up();
     }
 
     /**
@@ -371,10 +380,19 @@ class AddMultilingual extends Migration
 
 
         // All the multilingual zones.
-        $this->getZones()->where('language', '=', 3);
+        $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "UPDATE `pages` SET `published` = '0' WHERE `pages_page_id` IN ('15', '22', '23');";
         $this->_queries .= "DROP TABLE IF EXISTS `fr-fr_pages`;";
+
+        parent::down();
+
+        // Target `data` database
+        $this->getZones()->reset()->set(array('data' => 'data'));
+
+        // Restore zones names to one language
+        $this->_queries = "ALTER TABLE `police_zones` CHANGE `title_nl` `title` VARCHAR(250)  NOT NULL  DEFAULT '';";
+        $this->_queries .= "ALTER TABLE `police_zones` DROP `title_fr`;";
 
         parent::down();
     }
