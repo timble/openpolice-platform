@@ -76,7 +76,7 @@
                         <?= translate( 'Address' ); ?>
                     </label>
                     <div>
-                        <input type="text" name="coordinator_address" maxlength="250" class="required" value="<?= $district->coordinator_address; ?>" />
+                        <input type="text" name="coordinator_address" maxlength="250" value="<?= $district->coordinator_address; ?>" />
                     </div>
                 </div>
                 <div>
@@ -84,7 +84,7 @@
                         <?= translate( 'Postcode' ); ?>
                     </label>
                     <div>
-                        <input type="text" name="coordinator_postcode" maxlength="250" class="required" value="<?= $district->coordinator_postcode; ?>" />
+                        <input type="text" name="coordinator_postcode" maxlength="250" value="<?= $district->coordinator_postcode; ?>" />
                     </div>
                 </div>
                 <div>
@@ -92,7 +92,7 @@
                         <?= translate( 'Suburb' ); ?>
                     </label>
                     <div>
-                        <input type="text" name="coordinator_suburb" maxlength="250" class="required" value="<?= $district->coordinator_suburb; ?>" />
+                        <input type="text" name="coordinator_suburb" maxlength="250" value="<?= $district->coordinator_suburb; ?>" />
                     </div>
                 </div>
                 <div>
