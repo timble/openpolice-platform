@@ -28,7 +28,7 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
     <div class="container container__header">
         <div class="header">
             <div class="organization" itemscope itemtype="http://schema.org/Organization">
-                <a itemprop="url" href="/<?= $site ?>">
+                <a itemprop="url" href="/<?= $site ?><?= count($languages) > '1' ? '/'.$active->slug : '' ?>">
                     <div class="organization__logo organization__logo--<?= $active->slug; ?>"></div>
                     <div class="organization__name"><span><?= translate('Police') ?></span> <?= escape($zone->title); ?></div>
                     <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
@@ -107,10 +107,10 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
 
     <div class="container container__footer_menu">
         <ul class="nav nav--list">
-            <li><a href="/<?= $site ?>"><?= translate('Home') ?></a></li>
+            <li><a href="/<?= $site ?><?= count($languages) > '1' ? '/'.$active->slug : '' ?>"><?= translate('Home') ?></a></li>
             <? foreach($pages as $page) : ?>
                 <? if($page->level == '1' && $page->hidden == false) : ?>
-                    <li><a href="/<?= $site ?>/<?= $page->slug ?>"><?= $page->title ?></a></li>
+                    <li><a href="/<?= $site ?><?= count($languages) > '1' ? '/'.$active->slug : '' ?>/<?= $page->slug ?>"><?= $page->title ?></a></li>
                 <? endif ?>
             <? endforeach ?>
         </ul>
@@ -129,7 +129,7 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
             <? endif ?>
             <? foreach($pages as $page) : ?>
                 <? if($page->id == '89' || $page->id == '101') : ?>
-                    &nbsp;|&nbsp;&nbsp;<a href="/<?= $site ?>/<?= $page->slug ?>"><?= $page->title ?></a>
+                    &nbsp;|&nbsp;&nbsp;<a href="/<?= $site ?><?= count($languages) > '1' ? '/'.$active->slug : '' ?>/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>
         </div>
