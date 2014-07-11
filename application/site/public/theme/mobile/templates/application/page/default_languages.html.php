@@ -1,10 +1,3 @@
-<?
-$languages  = $this->getObject('application.languages');
-
-$active     = $languages->getActive();
-$primary    = $languages->getPrimary();
-?>
-
 <? if(count($languages) > '1') : ?>
 <ul class="languages">
     <? foreach($languages as $language) : ?>

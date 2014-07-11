@@ -8,14 +8,13 @@
  */
 ?>
 <?
-$language_short = explode("-", $language);
-$language_short = $language_short[0];
+$languages  = $this->getObject('application.languages');
+$active     = $languages->getActive();
 
 $zone = object('com:police.model.zone')->id($site)->getRow();
 $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
 
 $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
-
 ?>
 
 <!DOCTYPE HTML>
@@ -30,7 +29,7 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
         <div class="header">
             <div class="organization" itemscope itemtype="http://schema.org/Organization">
                 <a itemprop="url" href="/<?= $site ?>">
-                    <div class="organization__logo organization__logo--<?= $language_short; ?>"></div>
+                    <div class="organization__logo organization__logo--<?= $active->slug; ?>"></div>
                     <div class="organization__name"><span><?= translate('Police') ?></span> <?= escape($zone->title); ?></div>
                     <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
                 </a>
@@ -59,7 +58,7 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
 
     <ktml:modules position="breadcrumbs">
         <div class="container container__breadcrumb">
-            <?= @import('default_languages.html') ?>
+            <?= @import('default_languages.html', array('languages' => $languages, 'active' => $active)) ?>
             <ktml:modules:content>
         </div>
     </ktml:modules>
@@ -136,9 +135,9 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
         </div>
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
-            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/disclaimer.html">Disclaimer</a> -
-            <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/privacy.html">Privacy</a> -
-            <a href="http://www.belgium.be">Belgium.be</a>
+            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a> -
+            <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/privacy.html">Privacy</a> -
+            <a href="http://www.belgium.be/<?= $active->slug ?>">Belgium.be</a>
         </div>
     </div>
 </div>
