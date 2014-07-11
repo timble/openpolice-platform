@@ -20,7 +20,7 @@
 
 <? if($article->isTranslatable()) : ?>
 <ktml:module position="actionbar" content="append">
-    <?= helper('com:languages.listbox.languages') ?>
+    <?= helper('com:languages.listbox.languages', array('attribs' => array('disabled' => 'true'))) ?>
 </ktml:module>
 <? endif ?>
 
