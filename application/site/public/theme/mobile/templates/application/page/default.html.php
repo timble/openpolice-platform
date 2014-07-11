@@ -14,7 +14,8 @@ $language_short = $language_short[0];
 $zone = object('com:police.model.zone')->id($site)->getRow();
 $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
 
-$pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset()
+$pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
+
 ?>
 
 <!DOCTYPE HTML>
@@ -58,6 +59,7 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
 
     <ktml:modules position="breadcrumbs">
         <div class="container container__breadcrumb">
+            <?= @import('default_languages.html') ?>
             <ktml:modules:content>
         </div>
     </ktml:modules>

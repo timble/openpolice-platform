@@ -175,6 +175,24 @@ textarea {
   padding-right: 0;
   width: 100%; }
 
+.container__breadcrumb {
+  font-size: 0.85em;
+  line-height: 1.5em;
+  padding: 10px 10px 5px;
+  margin: 0;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #eee;
+  *zoom: 1; }
+  .container__breadcrumb:before, .container__breadcrumb:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  .container__breadcrumb:after {
+    clear: both; }
+  .container__breadcrumb ul {
+    margin: 0;
+    list-style: none; }
+
 .container__content {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -328,6 +346,14 @@ textarea {
 
   .container__header {
     width: auto; }
+
+  .container.container__breadcrumb {
+    border: 1px solid #eee;
+    margin: 5px 25px;
+    padding: 6px 10px 6px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
 
   .container__content {
     padding-top: 37px; }
@@ -941,23 +967,11 @@ ul.column--double, ul.column--triple, ul.column--quad {
 
   .banner__image--5888 {
     background: url("../images/banners/5888.jpg"); } }
-@media screen and (min-width: 767px) {
-  .container__breadcrumb {
-    padding: 5px 25px 0; } }
-
 .breadcrumb {
-  font-size: 0.85em;
-  line-height: 1.5em;
-  padding: 10px 10px 5px;
-  margin: 0;
-  clear: both;
-  list-style: none;
-  background-color: #f8f8f8;
-  border-bottom: 1px solid #eee; }
+  margin-right: 90px; }
   .breadcrumb li {
     display: inline-block;
     text-shadow: 0 1px 0 white;
-    padding-bottom: 5px;
     *display: inline;
     /* IE7 inline-block hack */
     *zoom: 1; }
@@ -967,13 +981,6 @@ ul.column--double, ul.column--triple, ul.column--quad {
     color: #999999; }
   .breadcrumb li::first-letter {
     text-transform: uppercase; }
-  @media screen and (min-width: 767px) {
-    .breadcrumb {
-      border: 1px solid #eee;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      padding: 6px 1em 1px; } }
 
 .button {
   padding: 4px 12px;
@@ -1256,6 +1263,18 @@ input[type="submit"].button {
     margin-bottom: 20px; }
     .header .organization {
       text-align: left; } }
+.languages {
+  list-style: none;
+  float: right; }
+
+.languages__item {
+  float: left;
+  text-transform: uppercase; }
+  .languages__item:first-child {
+    border-right: 1px solid #eee;
+    margin-right: 5px;
+    padding-right: 5px; }
+
 .media {
   *zoom: 1;
   margin-bottom: 25px; }
