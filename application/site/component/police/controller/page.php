@@ -30,22 +30,18 @@ class PoliceControllerPage extends Library\ControllerView
 
             if(!count($language))
             {
-                // HOTFIX - Always redirect to active language because of issue with HTTP Headers on the server
-                return $this->getObject('component')->redirect('/'.$site.'/'.$languages->getActive()->slug);
-
-//                foreach($this->getObject('request')->getLanguages() as $language)
-//                {
-//                    if(in_array($language, $languages->slug, true))
-//                    {
-//                        // Redirect to browser language
-//                        return $this->getObject('component')->redirect('/'.$site.'/'.$language);
-//                    } else {
-//                        // Redirect to primary language
-//                        return $this->getObject('component')->redirect('/'.$site.'/'.$languages->getActive()->slug);
-//                    }
-//                }
+                foreach($this->getObject('request')->getLanguages() as $language)
+                {
+                    if(in_array($language, $languages->slug, true))
+                    {
+                        // Redirect to browser language
+                        return $this->getObject('component')->redirect('/'.$site.'/'.$language);
+                    } else {
+                        // Redirect to primary language
+                        return $this->getObject('component')->redirect('/'.$site.'/'.$languages->getActive()->slug);
+                    }
+                }
             }
-
 
             if (isset($url->query['language']) && $context->request->getFormat() == 'html')
             {
