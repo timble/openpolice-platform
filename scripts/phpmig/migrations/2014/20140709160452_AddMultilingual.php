@@ -43,11 +43,11 @@ class AddMultilingual extends Migration
         $this->_queries .= "ALTER TABLE `contacts_categories` DROP `table`;";
         $this->_queries .= "ALTER TABLE `contacts` CHANGE `categories_category_id` `contacts_category_id` INT(11)  NOT NULL  DEFAULT '0';";
 
-        $this->_queries .= "DELETE FROM `categories`;";
+        $this->_queries .= "TRUNCATE TABLE `categories`;";
 
-        $this->_queries .= "DELETE FROM `languages_tables`;";
+        $this->_queries .= "TRUNCATE TABLE `languages_tables`;";
 
-        $this->_queries .= "DELETE FROM `languages`;";
+        $this->_queries .= "TRUNCATE TABLE `languages`;";
         $this->_queries .= "INSERT INTO `languages` (`languages_language_id`, `application`, `name`, `native_name`, `iso_code`, `slug`, `enabled`, `primary`)
                             VALUES
                                 (1, 'admin', 'Dutch', 'Dutch', 'nl-NL', 'nl', 0, 0),
@@ -325,9 +325,12 @@ class AddMultilingual extends Migration
         $this->getZones()->reset()->set(array('data' => 'data'));
 
         // Make zone names multilingual
-        $this->_queries = "ALTER TABLE `police_zones` CHANGE `title` `title_nl` VARCHAR(250)  NOT NULL  DEFAULT '';";
+        $this->_queries = "ALTER TABLE `police_zones` ADD `title_nl` VARCHAR(250)  NOT NULL  DEFAULT '' AFTER `title`;";
         $this->_queries .= "ALTER TABLE `police_zones` ADD `title_fr` VARCHAR(250)  NOT NULL  DEFAULT '' AFTER `title_nl`;";
-        $this->_queries .= "UPDATE `police_zones` SET `title_fr` = `title_nl` WHERE `language` = '2';";
+        $this->_queries .= "ALTER TABLE `police_zones` ADD `title_de` VARCHAR(250)  NOT NULL  DEFAULT '' AFTER `title_fr`;";
+        $this->_queries .= "UPDATE `police_zones` SET `title_nl` = `title` WHERE `language` IN ('1', '3');";
+        $this->_queries .= "UPDATE `police_zones` SET `title_fr` = `title` WHERE `language` IN ('2', '3');";
+        $this->_queries .= "UPDATE `police_zones` SET `title_de` = `title` WHERE `language` IN ('4');";
 
         parent::up();
     }
@@ -337,7 +340,10 @@ class AddMultilingual extends Migration
      */
     public function down()
     {
-        $this->_queries = "UPDATE `pages` SET `title` = 'Components', `slug` = 'components', `link_url` = 'option=com_languages&view=components' WHERE `pages_page_id` = '23';";
+        $this->_queries = "ALTER TABLE `about` CHANGE `about_article_id` `articles_article_id` INT(11)  UNSIGNED  NOT NULL  AUTO_INCREMENT;";
+
+
+        $this->_queries .= "UPDATE `pages` SET `title` = 'Components', `slug` = 'components', `link_url` = 'option=com_languages&view=components' WHERE `pages_page_id` = '23';";
         $this->_queries .= "UPDATE `pages_closures` SET `ancestor_id` = '4' WHERE `ancestor_id` = '9' AND `descendant_id` IN ('15', '22', '23');";
         $this->_queries .= "UPDATE `pages_orderings` SET `custom` = '00000000009' WHERE `pages_page_id` IN ('15');";
 
@@ -376,14 +382,14 @@ class AddMultilingual extends Migration
         $this->_queries .= "UPDATE `categories` SET `table` = 'questions' WHERE `table` = '';";
         $this->_queries .= "DROP TABLE IF EXISTS `questions_categories`;";
 
-        $this->_queries .= "DELETE FROM `languages`;";
+        $this->_queries .= "TRUNCATE TABLE `languages`;";
         $this->_queries .= "INSERT INTO `languages` (`languages_language_id`, `application`, `name`, `native_name`, `iso_code`, `slug`, `enabled`, `primary`)
                             VALUES
                                 (1, 'admin', 'English (United Kingdom)', 'English (United Kingdom)', 'en-GB', 'en', 1, 1),
                                 (2, 'site', 'English (United Kingdom)', 'English (United Kingdom)', 'en-GB', 'en', 1, 1);";
 
-        $this->_queries .= "DELETE FROM `languages_tables`;";
-        $this->_queries .= "DELETE FROM `languages_translations`;";
+        $this->_queries .= "TRUNCATE TABLE `languages_tables`;";
+        $this->_queries .= "TRUNCATE TABLE `languages_translations`;";
 
         parent::down();
 
@@ -400,8 +406,9 @@ class AddMultilingual extends Migration
         $this->getZones()->reset()->set(array('data' => 'data'));
 
         // Restore zones names to one language
-        $this->_queries = "ALTER TABLE `police_zones` CHANGE `title_nl` `title` VARCHAR(250)  NOT NULL  DEFAULT '';";
-        $this->_queries .= "ALTER TABLE `police_zones` DROP `title_fr`;";
+        $this->_queries = "ALTER TABLE `police_zones` DROP `title_fr`;";
+        $this->_queries .= "ALTER TABLE `police_zones` DROP `title_nl`;";
+        $this->_queries .= "ALTER TABLE `police_zones` DROP `title_de`;";
 
         parent::down();
     }
