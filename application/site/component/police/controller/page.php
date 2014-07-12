@@ -15,44 +15,47 @@ class PoliceControllerPage extends Library\ControllerView
     {
         $page = parent::_actionRender($context);
 
-        $url = clone($context->request->getUrl());
+        $languages = $this->getObject('application.languages');
 
-        $site       = $this->getObject('application')->getSite();
-        $languages  = $this->getObject('application.languages');
-
-        $route = $url->getPath();
-        $route = str_replace($site, '', $route);
-        $route = ltrim($route, '/');
-
-        $language  = $languages->find(array('slug' => strtok($route, '/')));
-
-        if(!count($language))
+        if(count($languages) > '1')
         {
-            foreach($this->getObject('request')->getLanguages() as $language)
+            $url    = clone($context->request->getUrl());
+            $site   = $this->getObject('application')->getSite();
+
+            $route = $url->getPath();
+            $route = str_replace($site, '', $route);
+            $route = ltrim($route, '/');
+
+            $language  = $languages->find(array('slug' => strtok($route, '/')));
+
+            if(!count($language))
             {
-                if(in_array($language, $languages->slug, true))
+                foreach($this->getObject('request')->getLanguages() as $language)
                 {
-                    // Redirect to browser language
-                    return $this->getObject('component')->redirect('/'.$site.'/'.$language);
-                } else {
-                    // Redirect to primary language
-                    return $this->getObject('component')->redirect('/'.$site.'/'.$languages->getActive()->slug);
+                    if(in_array($language, $languages->slug, true))
+                    {
+                        // Redirect to browser language
+                        return $this->getObject('component')->redirect('/'.$site.'/'.$language);
+                    } else {
+                        // Redirect to primary language
+                        return $this->getObject('component')->redirect('/'.$site.'/'.$languages->getActive()->slug);
+                    }
                 }
             }
-        }
 
-        if (isset($url->query['language']) && $context->request->getFormat() == 'html')
-        {
-            $config = array(
-                'package'   => null,
-                'category'  => null,
-                'language'  => $url->query['language']
-            );
+            if (isset($url->query['language']) && $context->request->getFormat() == 'html')
+            {
+                $config = array(
+                    'package'   => null,
+                    'category'  => null,
+                    'language'  => $url->query['language']
+                );
 
-            $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
-            $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
+                $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
+                $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
 
-            return $this->getObject('component')->redirect($href);
+                return $this->getObject('component')->redirect($href);
+            }
         }
 
         return $page;

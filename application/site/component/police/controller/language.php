@@ -17,7 +17,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
         $url = clone($context->request->getUrl());
 
-        if (isset($url->query['language']) && $context->request->getFormat() == 'html')
+        if (isset($url->query['language']) && $context->request->getFormat() == 'html' && count($this->getObject('application.languages')) > '1')
         {
             $model = $this->getModel();
 
@@ -42,7 +42,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
         $url = clone($context->request->getUrl());
 
-        if (isset($url->query['language']) && $context->request->getFormat() == 'html')
+        if (isset($url->query['language']) && $context->request->getFormat() == 'html' && count($this->getObject('application.languages')) > '1')
         {
             $model = $this->getModel();
 

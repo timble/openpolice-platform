@@ -56,11 +56,11 @@ class AddMultilingual extends Migration
                                 (4, 'site', 'French', 'French', 'fr-FR', 'fr', 0, 0);";
 
         $this->_queries .= "ALTER TABLE `languages_translations` ADD `slug` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `row`;";
+
         parent::up();
 
-
         // All the Dutch speaking zones.
-        $this->getZones()->where('language', '=', 1);
+        $this->getZones()->reset()->where('language', '=', 1);
 
         $this->_queries = "UPDATE `languages` SET `enabled` = '1', `primary` = '1' WHERE `languages_language_id` IN ('1', '2');";
 
@@ -129,7 +129,7 @@ class AddMultilingual extends Migration
 
         $this->_queries .= "INSERT INTO `fr-fr_pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
                             VALUES
-                                (1, 1, 0, 'Home', 'home', 'option=com_police&view=page&layout=homepage', NULL, 'component', 1, 1, 1, 41, 1, NULL, NULL, NULL, NULL, NULL, 0, 'page_title=\"Police Comines-Warneton\"'),
+                                (1, 1, 0, 'Home', 'home', 'option=com_police&view=page&layout=homepage', NULL, 'component', 1, 1, 1, 41, 1, NULL, NULL, NULL, NULL, NULL, 0, 'page_title=\"Police - Bruxelles-Ouest (Berchem-Sainte-Agathe, Ganshoren, Jette, Koekelberg, Molenbeek-Saint-Jean)\"'),
                                 (2, 2, 0, 'Dashboard', 'dashboard', 'option=com_dashboard&view=dashboard', NULL, 'component', 1, 0, 0, 35, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
                                 (3, 2, 1, 'Pages', 'pages', 'option=com_pages&view=pages', NULL, 'component', 1, 0, 0, 25, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
                                 (4, 2, 0, 'Contenu', 'content', NULL, NULL, 'separator', 1, 0, 0, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
