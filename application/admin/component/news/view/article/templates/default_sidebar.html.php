@@ -40,16 +40,3 @@
         <?= import('com:attachments.view.attachments.upload.html') ?>
     </fieldset>
 <? endif ?>
-
-<? if($article->isTranslatable()) : ?>
-    <fieldset>
-        <legend><?= translate('Translations') ?></legend>
-        <? $translations = $article->getTranslations() ?>
-        <? foreach($article->getLanguages() as $language) : ?>
-            <?= $language->name.':' ?>
-            <? $translation = $translations->find(array('iso_code' => $language->iso_code)) ?>
-            <?= helper('com:languages.grid.status',
-                array('status' => $translation->status, 'original' => $translation->original, 'deleted' => $translation->deleted)) ?>
-        <? endforeach ?>
-    </fieldset>
-<? endif ?>
