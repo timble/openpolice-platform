@@ -450,6 +450,7 @@ CREATE TABLE `languages_translations` (
   `iso_code` varchar(8) NOT NULL,
   `table` varchar(64) NOT NULL,
   `row` int(10) unsigned NOT NULL,
+  `slug` varchar(250) NOT NULL,
   `status` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `original` tinyint(1) NOT NULL DEFAULT '0',
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
