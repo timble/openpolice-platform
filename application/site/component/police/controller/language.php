@@ -30,7 +30,8 @@ class PoliceControllerLanguage extends Library\ControllerModel
             $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
             $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
 
-            return $this->getObject('component')->redirect($href);
+            $this->getObject('component')->redirect('http://'.$url->getHost().$href);
+            return true;
         }
 
         return $rows;
@@ -56,7 +57,8 @@ class PoliceControllerLanguage extends Library\ControllerModel
             $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
             $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
 
-            return $this->getObject('component')->redirect($href);
+            $this->getObject('component')->redirect('http://'.$url->getHost().$href);
+            return true;
         }
 
         return $row;
