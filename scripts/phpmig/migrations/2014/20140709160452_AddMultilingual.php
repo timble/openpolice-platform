@@ -10,7 +10,7 @@ class AddMultilingual extends Migration
     public function up()
     {
         $this->_queries = "UPDATE `pages` SET `title` = 'Tables', `slug` = 'tables', `link_url` = 'option=com_languages&view=tables' WHERE `pages_page_id` = '23';";
-        $this->_queries .= "UPDATE `pages_closures` SET `ancestor_id` = '9' WHERE `ancestor_id` = '4' AND `descendant_id` IN ('15', '22', '23') AND `level` = '1';";
+        $this->_queries .= "UPDATE `pages_closures` SET `ancestor_id` = '9' WHERE `ancestor_id` = '4' AND `descendant_id` IN ('15', '22', '23');";
         $this->_queries .= "UPDATE `pages_orderings` SET `custom` = '00000000005' WHERE `pages_page_id` IN ('15');";
 
         // Decouple categories table to about_categories
@@ -52,6 +52,8 @@ class AddMultilingual extends Migration
                                 (2, 'site', 'Dutch', 'Dutch', 'nl-NL', 'nl', 0, 0),
                                 (3, 'admin', 'French', 'French', 'fr-FR', 'fr', 0, 0),
                                 (4, 'site', 'French', 'French', 'fr-FR', 'fr', 0, 0);";
+
+        $this->_queries .= "ALTER TABLE `languages_translations` ADD `slug` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `row`;";
         parent::up();
 
 
@@ -83,14 +85,14 @@ class AddMultilingual extends Migration
                             VALUES
                                 (1, 25, 'pages', 'pages_page_id', 1),
                                 (2, 7,  'contacts', 'contacts_contact_id', 0),
-                                (3, 7,  'contacts_categories', 'categories_category_id', 0),
+                                (3, 7,  'contacts_categories', 'contacts_category_id', 0),
                                 (4, 37, 'traffic', 'traffic_article_id', 0),
-                                (5, 37, 'traffic_categories', 'categories_category_id', 0),
+                                (5, 37, 'traffic_categories', 'traffic_category_id', 0),
                                 (6, 38, 'news', 'news_article_id', 0),
                                 (7, 40, 'questions', 'questions_question_id', 0),
                                 (8, 40, 'questions_categories', 'questions_category_id', 0),
                                 (9, 43, 'about', 'about_article_id', 0),
-                                (10, 43, 'about_categories', 'categories_category_id', 0),
+                                (10, 43, 'about_categories', 'about_category_id', 0),
                                 (11, 45, 'press', 'press_article_id', 0),
                                 (12, 36, 'districts', 'districts_district_id', 0);";
 
@@ -334,7 +336,7 @@ class AddMultilingual extends Migration
     public function down()
     {
         $this->_queries = "UPDATE `pages` SET `title` = 'Components', `slug` = 'components', `link_url` = 'option=com_languages&view=components' WHERE `pages_page_id` = '23';";
-        $this->_queries .= "UPDATE `pages_closures` SET `ancestor_id` = '4' WHERE `ancestor_id` = '9' AND `descendant_id` IN ('15', '22', '23') AND `level` = '1';";
+        $this->_queries .= "UPDATE `pages_closures` SET `ancestor_id` = '4' WHERE `ancestor_id` = '9' AND `descendant_id` IN ('15', '22', '23');";
         $this->_queries .= "UPDATE `pages_orderings` SET `custom` = '00000000009' WHERE `pages_page_id` IN ('15');";
 
         // Move about_categories to categories
