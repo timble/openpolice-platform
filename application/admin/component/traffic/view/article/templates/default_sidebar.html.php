@@ -33,7 +33,7 @@
                 $jQuery('#start_on').datetimepicker({
                     format:'d-m-Y',
                     timepicker:false,
-                    lang: '<?= helper('com:police.string.language') ?>',
+                    lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
                     dayOfWeekStart: '1'
                 });
             });
@@ -53,7 +53,7 @@
                             this.setOptions({
                                 minDate:$jQuery('#start_on').val()?$jQuery('#start_on').val():false,
                                 formatDate: 'd-m-Y',
-                                lang: '<?= helper('com:police.string.language') ?>',
+                                lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
                                 dayOfWeekStart: '1'
                             })
                         },
