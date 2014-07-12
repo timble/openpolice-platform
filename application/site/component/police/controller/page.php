@@ -42,7 +42,7 @@ class PoliceControllerPage extends Library\ControllerView
                     }
                 }
 
-                $this->getObject('component')->redirect('http://'.$href);
+                $this->getObject('component')->redirect('http://'.$url->getHost().$href);
                 return true;
             }
 
@@ -57,7 +57,7 @@ class PoliceControllerPage extends Library\ControllerView
                 $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
                 $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
 
-                $this->getObject('component')->redirect('http://'.$href);
+                $this->getObject('component')->redirect('http://'.$url->getHost().$href);
                 return true;
             }
         }
