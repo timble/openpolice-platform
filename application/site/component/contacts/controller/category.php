@@ -15,7 +15,7 @@ use Nooku\Library;
  * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
  * @package Component\Contacts
  */
-class ContactsControllerCategory extends Library\ControllerModel
+class ContactsControllerCategory extends PoliceControllerLanguage
 {
     public function getRequest()
     {
