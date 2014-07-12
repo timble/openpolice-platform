@@ -17,6 +17,30 @@ class PoliceControllerPage extends Library\ControllerView
 
         $url = clone($context->request->getUrl());
 
+        $site       = $this->getObject('application')->getSite();
+        $languages  = $this->getObject('application.languages');
+
+        $route = $url->getPath();
+        $route = str_replace($site, '', $route);
+        $route = ltrim($route, '/');
+
+        $language  = $languages->find(array('slug' => strtok($route, '/')));
+
+        if(!count($language))
+        {
+            foreach($this->getObject('request')->getLanguages() as $language)
+            {
+                if(in_array($language, $languages->slug, true))
+                {
+                    // Redirect to browser language
+                    return $this->getObject('component')->redirect('/'.$site.'/'.$language);
+                } else {
+                    // Redirect to primary language
+                    return $this->getObject('component')->redirect('/'.$site.'/'.$languages->getActive()->slug);
+                }
+            }
+        }
+
         if (isset($url->query['language']) && $context->request->getFormat() == 'html')
         {
             $config = array(
