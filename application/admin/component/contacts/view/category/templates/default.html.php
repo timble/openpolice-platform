@@ -1,3 +1,5 @@
+<? $disabled = $this->getObject('user')->getRole() < 25 ?>
+
 <?= helper('behavior.validator') ?>
 
 <!--
@@ -23,10 +25,10 @@
 
     <div class="main">
         <div class="title">
-            <input disabled class="required" type="text" name="title" maxlength="255" value="<?= $category->title; ?>" placeholder="<?= translate( 'Title' ); ?>" />
+            <input <?= $disabled ? 'disabled' : '' ?> class="required" type="text" name="title" maxlength="255" value="<?= $category->title; ?>" placeholder="<?= translate( 'Title' ); ?>" />
             <div class="slug">
                 <span class="add-on"><?= translate('Slug'); ?></span>
-                <input disabled type="text" name="slug" maxlength="255" value="<?= $category->slug ?>" />
+                <input <?= $disabled ? 'disabled' : '' ?> type="text" name="slug" maxlength="255" value="<?= $category->slug ?>" />
             </div>
         </div>
         <?= object('com:ckeditor.controller.editor')->render(array('name' => 'description', 'text' => $category->description, 'toolbar' => 'basic')) ?>
