@@ -35,10 +35,10 @@ class PoliceControllerPage extends Library\ControllerView
                     if(in_array($language, $languages->slug, true))
                     {
                         // Redirect to browser language
-                        $href = $site.'/'.$language;
+                        $href = '/'.$site.'/'.$language;
                     } else {
                         // Redirect to primary language
-                        $href = $site.'/'.$languages->getActive()->slug;
+                        $href = '/'.$site.'/'.$languages->getActive()->slug;
                     }
                 }
 
