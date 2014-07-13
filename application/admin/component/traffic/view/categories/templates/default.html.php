@@ -17,7 +17,7 @@
     <table>
         <thead>
         <tr>
-            <? if($sortable) : ?>
+            <? if(isset($sortable)) : ?>
                 <th class="handle"></th>
             <? endif ?>
             <th width="1">
@@ -49,7 +49,7 @@
         <tbody<? if(isset($sortable)) : ?> class="sortable"<? endif ?>>
         <? foreach( $categories as $category) :  ?>
             <tr>
-                <? if($sortable) : ?>
+                <? if(isset($sortable)) : ?>
                     <td class="handle">
                         <span class="text-small data-order"><?= $category->ordering ?></span>
                     </td>
