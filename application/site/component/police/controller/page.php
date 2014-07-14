@@ -19,34 +19,21 @@ class PoliceControllerPage extends Library\ControllerView
         $host   = $url->getHost();
         $path   = $url->getPath();
 
-        $site   = $this->getObject('application')->getSite();
-
         $languages  = $this->getObject('application.languages');
-        $language    = $languages->getPrimary()->slug;
-
-        $domains = array(
-            'www.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'live'),
-            'www.policelocale.be'   => array('language' => 'fr', 'access' => 'live'),
-            'www.lokalepolizei.be'  => array('language' => 'de', 'access' => 'live'),
-            'p.pol-nl.be'           => array('language' => 'nl', 'access' => 'production'),
-            'p.pol-fr.be'           => array('language' => 'fr', 'access' => 'production'),
-            'p.pol-de.be'           => array('language' => 'de', 'access' => 'production'),
-            's.pol-nl.be'           => array('language' => 'nl', 'access' => 'staging'),
-            's.pol-fr.be'           => array('language' => 'fr', 'access' => 'staging'),
-            's.pol-de.be'           => array('language' => 'de', 'access' => 'staging'),
-        );
+        $language   = $languages->getPrimary()->slug;
 
         $redirect = false;
 
         if($context->request->getFormat() == 'html')
         {
+            $site = $this->getObject('application')->getSite();
+
             // Are we dealing with a multilingual site?
             if(count($languages) > '1')
             {
                 $route = str_replace($site, '', $path);
                 $route = ltrim($route, '/');
-
-                $route  = $languages->find(array('slug' => strtok($route, '/')))->top();
+                $route = $languages->find(array('slug' => strtok($route, '/')))->top();
 
                 // Do we have language information in the route?
                 if(isset($route))
@@ -68,19 +55,19 @@ class PoliceControllerPage extends Library\ControllerView
 
                     $redirect = true;
                 }
-            }
 
-            // Make sure we are using the proper domain name
-            if(array_key_exists($host, $domains))
-            {
-                if($domains[$host]['language'] != $language)
-                {
-                    $needle = array('language' => $language, 'access' => $domains[$host]['access']);
-
-                    $host = array_search($needle, $domains);
+                // Redirect to the selected language
+                if(isset($url->query['language'])) {
+                    $path = '/'.$site.'/'.$url->query['language'];
+                    $language = $url->query['language'];
 
                     $redirect = true;
                 }
+            }
+
+            if($return = $this->getObject('com:police.controller.language')->redirectHost($host, $language))
+            {
+                $host = $return;
             }
 
             if($redirect)
@@ -89,7 +76,6 @@ class PoliceControllerPage extends Library\ControllerView
                 return true;
             }
         }
-
 
         return $page;
     }
