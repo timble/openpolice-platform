@@ -68,6 +68,7 @@ class PoliceControllerPage extends Library\ControllerView
             if($return = $this->getObject('com:police.controller.language')->redirectHost($host, $language))
             {
                 $host = $return;
+                $redirect = true;
             }
 
             if($redirect)
