@@ -28,76 +28,71 @@ class PoliceControllerPage extends Library\ControllerView
             'www.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'live'),
             'www.policelocale.be'   => array('language' => 'fr', 'access' => 'live'),
             'www.lokalepolizei.be'  => array('language' => 'de', 'access' => 'live'),
-            'p.pol-nl.be' => array('language' => 'nl', 'access' => 'production'),
-            'p.pol-fr.be' => array('language' => 'fr', 'access' => 'production'),
-            'p.pol-de.be' => array('language' => 'de', 'access' => 'production'),
-            's.pol-nl.be' => array('language' => 'nl', 'access' => 'staging'),
-            's.pol-fr.be' => array('language' => 'fr', 'access' => 'staging'),
-            's.pol-de.be' => array('language' => 'de', 'access' => 'staging'),
+            'p.pol-nl.be'           => array('language' => 'nl', 'access' => 'production'),
+            'p.pol-fr.be'           => array('language' => 'fr', 'access' => 'production'),
+            'p.pol-de.be'           => array('language' => 'de', 'access' => 'production'),
+            's.pol-nl.be'           => array('language' => 'nl', 'access' => 'staging'),
+            's.pol-fr.be'           => array('language' => 'fr', 'access' => 'staging'),
+            's.pol-de.be'           => array('language' => 'de', 'access' => 'staging'),
         );
 
         $redirect = false;
 
-        if(count($languages) > '1')
+        if($context->request->getFormat() == 'html')
         {
-            $site   = $this->getObject('application')->getSite();
-
-            $route = $url->getPath();
-            $route = str_replace($site, '', $route);
-            $route = ltrim($route, '/');
-
-            $language  = $languages->find(array('slug' => strtok($route, '/')));
-
-            if(!count($language))
+            // Are we dealing with a multilingual site?
+            if(count($languages) > '1')
             {
-                foreach($this->getObject('request')->getLanguages() as $language)
+                $site   = $this->getObject('application')->getSite();
+
+                $route = $url->getPath();
+                $route = str_replace($site, '', $route);
+                $route = ltrim($route, '/');
+
+                $language  = $languages->find(array('slug' => strtok($route, '/')))->top();
+
+                if(isset($language))
                 {
-                    if(in_array($language, $languages->slug, true))
-                    {
-                        // Redirect to browser language
-                        $href = '/'.$language;
-                    } else {
-                        // Redirect to primary language
-                        $href = '/'.$primary->slug;
-                    }
+                    $language = $language->slug;
                 }
+                else
+                {
+                    foreach($this->getObject('request')->getLanguages() as $browser_language)
+                    {
+                        if(in_array($browser_language, $languages->slug, true))
+                        {
+                            // Redirect to browser language
+                            $language = $browser_language;
+                        } else {
+                            // Redirect to primary language
+                            $language = $primary->slug;
+                        }
+                    }
 
-                $redirect = true;
+                    $redirect = true;
+                }
             }
 
-            if (isset($url->query['language']) && $context->request->getFormat() == 'html')
+            // Make sure we are using the proper domain name
+            if(array_key_exists($host, $domains))
             {
-                $config = array(
-                    'package'   => null,
-                    'category'  => null,
-                    'language'  => $url->query['language']
-                );
+                if($domains[$host]['language'] != $language)
+                {
+                    $needle = array('language' => $language, 'access' => $domains[$host]['access']);
 
-                $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
-                $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
+                    $host = array_search($needle, $domains);
 
-                $redirect = true;
+                    $redirect = true;
+                }
             }
-        }
 
-        // Check if the domain language equals the primary language
-        if(array_key_exists($host, $domains))
-        {
-            if($domains[$host]['language'] != $primary->slug)
+            if($redirect)
             {
-                $needle = array('language' => $primary->slug, 'access' => $domains[$host]['access']);
-
-                $host = array_search($needle, $domains);
-
-                $redirect = true;
+                $this->getObject('component')->redirect('http://'.$host.'/'.$site.isset($language) ? '/'.$language : '');
+                return true;
             }
         }
 
-        if($redirect)
-        {
-            $this->getObject('component')->redirect('http://'.$host.'/'.$site.$href);
-            return true;
-        }
 
         return $page;
     }
