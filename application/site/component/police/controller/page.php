@@ -15,11 +15,31 @@ class PoliceControllerPage extends Library\ControllerView
     {
         $page = parent::_actionRender($context);
 
-        $languages = $this->getObject('application.languages');
+        $url    = clone($context->request->getUrl());
+        $host   = $url->getHost();
+        $href   = '';
+
+        $site   = $this->getObject('application')->getSite();
+
+        $languages  = $this->getObject('application.languages');
+        $primary    = $languages->getPrimary();
+
+        $domains = array(
+            'www.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'live'),
+            'www.policelocale.be'   => array('language' => 'fr', 'access' => 'live'),
+            'www.lokalepolizei.be'  => array('language' => 'de', 'access' => 'live'),
+            'p.pol-nl.be' => array('language' => 'nl', 'access' => 'production'),
+            'p.pol-fr.be' => array('language' => 'fr', 'access' => 'production'),
+            'p.pol-de.be' => array('language' => 'de', 'access' => 'production'),
+            's.pol-nl.be' => array('language' => 'nl', 'access' => 'staging'),
+            's.pol-fr.be' => array('language' => 'fr', 'access' => 'staging'),
+            's.pol-de.be' => array('language' => 'de', 'access' => 'staging'),
+        );
+
+        $redirect = false;
 
         if(count($languages) > '1')
         {
-            $url    = clone($context->request->getUrl());
             $site   = $this->getObject('application')->getSite();
 
             $route = $url->getPath();
@@ -35,15 +55,14 @@ class PoliceControllerPage extends Library\ControllerView
                     if(in_array($language, $languages->slug, true))
                     {
                         // Redirect to browser language
-                        $href = '/'.$site.'/'.$language;
+                        $href = '/'.$language;
                     } else {
                         // Redirect to primary language
-                        $href = '/'.$site.'/'.$languages->getActive()->slug;
+                        $href = '/'.$primary->slug;
                     }
                 }
 
-                $this->getObject('component')->redirect('http://'.$url->getHost().$href);
-                return true;
+                $redirect = true;
             }
 
             if (isset($url->query['language']) && $context->request->getFormat() == 'html')
@@ -57,9 +76,27 @@ class PoliceControllerPage extends Library\ControllerView
                 $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
                 $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
 
-                $this->getObject('component')->redirect('http://'.$url->getHost().$href);
-                return true;
+                $redirect = true;
             }
+        }
+
+        // Check if the domain language equals the primary language
+        if(array_key_exists($host, $domains))
+        {
+            if($domains[$host]['language'] != $primary->slug)
+            {
+                $needle = array('language' => $primary->slug, 'access' => $domains[$host]['access']);
+
+                $host = array_search($needle, $domains);
+
+                $redirect = true;
+            }
+        }
+
+        if($redirect)
+        {
+            $this->getObject('component')->redirect('http://'.$host.'/'.$site.$href);
+            return true;
         }
 
         return $page;

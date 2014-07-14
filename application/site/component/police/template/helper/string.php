@@ -28,11 +28,10 @@ class TemplateHelperString extends Library\TemplateHelperDefault
         ));
 
         $page = $this->getObject('application.pages')->getActive();
-        $site = $this->getObject('application')->getCfg('site' );
 
         $language = $languages->find(array('slug' => $config->language))->top();
 
-        $result = '/'.$site.'/'.$language->slug;
+        $result = '/'.$language->slug;
 
         if($config->package)
         {

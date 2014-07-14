@@ -20,6 +20,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
         if (isset($url->query['language']) && $context->request->getFormat() == 'html' && count($this->getObject('application.languages')) > '1')
         {
             $model = $this->getModel();
+            $site   = $this->getObject('application')->getSite();
 
             $config = array(
                 'package'   => $this->getIdentifier()->package,
@@ -30,7 +31,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
             $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
             $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
 
-            $this->getObject('component')->redirect('http://'.$url->getHost().$href);
+            $this->getObject('component')->redirect('http://'.$url->getHost().'/'.$site.$href);
             return true;
         }
 
@@ -46,6 +47,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
         if (isset($url->query['language']) && $context->request->getFormat() == 'html' && count($this->getObject('application.languages')) > '1')
         {
             $model = $this->getModel();
+            $site   = $this->getObject('application')->getSite();
 
             $config = array(
                 'package'   => $this->getIdentifier()->package,
@@ -57,7 +59,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
             $template = Library\ObjectManager::getInstance()->getObject('com:pages.view.page')->getTemplate();
             $href = $this->getObject('com:police.template.helper.string', array('template' => $template))->languages($config);
 
-            $this->getObject('component')->redirect('http://'.$url->getHost().$href);
+            $this->getObject('component')->redirect('http://'.$url->getHost().'/'.$site.$href);
             return true;
         }
 
