@@ -17,12 +17,12 @@ class PoliceControllerPage extends Library\ControllerView
 
         $url    = clone($context->request->getUrl());
         $host   = $url->getHost();
-        $href   = '';
+        $path   = $url->getPath();
 
         $site   = $this->getObject('application')->getSite();
 
         $languages  = $this->getObject('application.languages');
-        $primary    = $languages->getPrimary();
+        $language    = $languages->getPrimary()->slug;
 
         $domains = array(
             'www.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'live'),
@@ -43,17 +43,15 @@ class PoliceControllerPage extends Library\ControllerView
             // Are we dealing with a multilingual site?
             if(count($languages) > '1')
             {
-                $site   = $this->getObject('application')->getSite();
-
-                $route = $url->getPath();
-                $route = str_replace($site, '', $route);
+                $route = str_replace($site, '', $path);
                 $route = ltrim($route, '/');
 
-                $language  = $languages->find(array('slug' => strtok($route, '/')))->top();
+                $route  = $languages->find(array('slug' => strtok($route, '/')))->top();
 
-                if(isset($language))
+                // Do we have language information in the route?
+                if(isset($route))
                 {
-                    $language = $language->slug;
+                    $language = $route->slug;
                 }
                 else
                 {
@@ -62,10 +60,9 @@ class PoliceControllerPage extends Library\ControllerView
                         if(in_array($browser_language, $languages->slug, true))
                         {
                             // Redirect to browser language
+                            $path = rtrim($path, '/');
+                            $path = $path.'/'.$browser_language;
                             $language = $browser_language;
-                        } else {
-                            // Redirect to primary language
-                            $language = $primary->slug;
                         }
                     }
 
@@ -88,7 +85,7 @@ class PoliceControllerPage extends Library\ControllerView
 
             if($redirect)
             {
-                $this->getObject('component')->redirect('http://'.$host.'/'.$site.isset($language) ? '/'.$language : '');
+                $this->getObject('component')->redirect('http://'.$host.$path);
                 return true;
             }
         }
