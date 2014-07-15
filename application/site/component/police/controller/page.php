@@ -80,8 +80,6 @@ class PoliceControllerPage extends Library\ControllerView
 
             if($redirect)
             {
-                var_dump($host); die;
-
                 $this->getObject('component')->redirect('http://'.$host.$path);
                 return true;
             }
