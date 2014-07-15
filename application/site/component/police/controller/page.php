@@ -22,6 +22,9 @@ class PoliceControllerPage extends Library\ControllerView
         $languages  = $this->getObject('application.languages');
 
         $redirect = false;
+        $language = false;
+
+        $host = 's.pol-fr.be';
 
         if($context->request->getFormat() == 'html')
         {
@@ -59,13 +62,13 @@ class PoliceControllerPage extends Library\ControllerView
 
                     $redirect = true;
                 }
+            }
 
-                // Still no language, use the primary
-                if(!$language)
-                {
-                    $language = $languages->getPrimary()->slug;
-                    $redirect = true;
-                }
+            // Still no language, use the primary
+            if(!$language)
+            {
+                $language = $languages->getPrimary()->slug;
+                $redirect = true;
             }
 
             // Check if to correct domain name is used for the language
@@ -77,6 +80,8 @@ class PoliceControllerPage extends Library\ControllerView
 
             if($redirect)
             {
+                var_dump($host); die;
+
                 $this->getObject('component')->redirect('http://'.$host.$path);
                 return true;
             }
