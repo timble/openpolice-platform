@@ -24,8 +24,6 @@ class PoliceControllerPage extends Library\ControllerView
         $redirect = false;
         $language = false;
 
-        $host = 's.pol-fr.be';
-
         if($context->request->getFormat() == 'html')
         {
             $site = $this->getObject('application')->getSite();
