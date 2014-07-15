@@ -20,7 +20,6 @@ class PoliceControllerPage extends Library\ControllerView
         $path   = $url->getPath();
 
         $languages  = $this->getObject('application.languages');
-        $language   = $languages->getPrimary()->slug;
 
         $redirect = false;
 
@@ -31,25 +30,22 @@ class PoliceControllerPage extends Library\ControllerView
             // Are we dealing with a multilingual site?
             if(count($languages) > '1')
             {
-                $route = str_replace($site, '', $path);
-                $route = ltrim($route, '/');
-                $route = $languages->find(array('slug' => strtok($route, '/')))->top();
+                // Do we have language information in the path?
+                $language = str_replace($site, '', $path);
+                $language = ltrim($language, '/');
+                $language = rtrim($language, '/');
 
-                // Do we have language information in the route?
-                if(isset($route))
-                {
-                    $language = $route->slug;
-                }
-                else
+                // No language found, fallback on the browser
+                if(!$language)
                 {
                     foreach($this->getObject('request')->getLanguages() as $browser_language)
                     {
                         if(in_array($browser_language, $languages->slug, true))
                         {
                             // Redirect to browser language
-                            $path = rtrim($path, '/');
-                            $path = $path.'/'.$browser_language;
+                            $path = '/'.$site.'/'.$browser_language;
                             $language = $browser_language;
+                            break;
                         }
                     }
 
@@ -63,8 +59,15 @@ class PoliceControllerPage extends Library\ControllerView
 
                     $redirect = true;
                 }
+
+                // Still no language, use the primary
+                if(!$language)
+                {
+                    $language = $languages->getPrimary()->slug;
+                }
             }
 
+            // Check if to correct domain name is used for the language
             if($return = $this->getObject('com:police.controller.language')->redirectHost($host, $language))
             {
                 $host = $return;
