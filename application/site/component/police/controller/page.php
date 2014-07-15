@@ -64,6 +64,7 @@ class PoliceControllerPage extends Library\ControllerView
                 if(!$language)
                 {
                     $language = $languages->getPrimary()->slug;
+                    $redirect = true;
                 }
             }
 
