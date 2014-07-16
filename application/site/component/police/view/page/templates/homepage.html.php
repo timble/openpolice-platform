@@ -13,7 +13,7 @@
 <div class="clearfix">
     <div class="homepage__sticky">
         <? $stickies = object('com:news.model.articles')->sticky(true)->getRowset();
-            $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->getRowset()->top(); ?>
+            $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('ordering_date')->direction('DESC')->published(true)->getRowset()->top(); ?>
         <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
         <article>
             <header class="article__header">
