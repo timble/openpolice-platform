@@ -109,7 +109,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
             }
         }
 
-        if($return = $this->redirectHost($host, $language->slug))
+        if($return = $this->redirectHost($host, $language->slug, $languages))
         {
             $host = $return;
         }
@@ -120,10 +120,10 @@ class PoliceControllerLanguage extends Library\ControllerModel
         return true;
     }
 
-    public function redirectHost($host, $language)
+    public function redirectHost($host, $language, $languages)
     {
         // Make sure we are using the proper domain name
-        if(array_key_exists($host, $this->_domains))
+        if(array_key_exists($host, $this->_domains) && count($languages) == '1')
         {
             if($this->_domains[$host]['language'] != $language)
             {
