@@ -98,7 +98,7 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
                     <div class="footer__districts">
                         <h3><?= translate('Your district officer') ?></h3>
                         <p><?= translate('You know the responsible district officer in your area? He or she is your first contact with the police.') ?></p>
-                        <a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
+                        <a href="/<?= $site ?><?= count($languages) > '1' ? '/'.$active->slug : '' ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
                     </div>
                 <?php endif; ?>
             </div>
