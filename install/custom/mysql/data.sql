@@ -66,7 +66,7 @@ VALUES
 
 INSERT INTO `pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
 VALUES
-	(1,1,0,'Home','home','option=com_police&view=page&layout=homepage',NULL,'component',1,1,1,41,1,NULL,NULL,NULL,NULL,NULL,0,'page_title=\"Politie Leuven\"'),
+	(1,1,0,'Home','home','option=com_police&view=page&layout=homepage',NULL,'component',1,1,1,41,1,NULL,NULL,NULL,NULL,NULL,0,'page_title=\"Open Police\"'),
 	(2,2,0,'Dashboard','dashboard','option=com_dashboard&view=dashboard',NULL,'component',1,0,0,35,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(3,2,1,'Pages','pages','option=com_pages&view=pages',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(4,2,0,'Content','content',NULL,NULL,'separator',1,0,0,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
