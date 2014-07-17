@@ -23,9 +23,9 @@ class ContactsDatabaseBehaviorOrderableFlat extends Pages\DatabaseBehaviorOrdera
 
         if ($this->getMixer()->getIdentifier()->name == 'contact')
         {
-            $query->where('categories_category_id = :category')
+            $query->where('contacts_category_id = :category')
                 ->where('published >= :published')
-                ->bind(array('category' => $this->categories_category_id, 'published' => 0));
+                ->bind(array('category' => $this->contacts_category_id, 'published' => 0));
 
         }
     }
