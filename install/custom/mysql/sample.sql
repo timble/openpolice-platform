@@ -26,7 +26,7 @@ VALUES
 	(3, 1, 0, 'Sollicitudin Ipsum Justo Quam', 'sollicitudin-ipsum-justo-quam', '<p>Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>\r\n\r\n<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus.</p>\r\n', 1, 1, '2014-01-31 13:14:12', NULL, NULL, NULL, NULL, 0, NULL);
 
 
-INSERT INTO `questions_categories` (`categories_category_id`, `parent_id`, `attachments_attachment_id`, `title`, `slug`, `image`, `description`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `access`, `params`)
+INSERT INTO `questions_categories` (`questions_category_id`, `parent_id`, `attachments_attachment_id`, `title`, `slug`, `image`, `description`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `access`, `params`)
 VALUES
 	(1, 0, 0, 'Ornare', 'ornare', '', '', 1, 1, '2014-01-31 13:13:20', NULL, NULL, NULL, NULL, 1, 0, ''),
 	(2, 0, 0, 'Mollis', 'mollis', '', '', 1, 1, '2014-01-31 13:13:26', NULL, NULL, NULL, NULL, 2, 0, '');
