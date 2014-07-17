@@ -793,7 +793,8 @@ textarea {
 textarea,
 input[type="text"],
 input[type="number"],
-input[type="search"] {
+input[type="search"],
+input[type="email"] {
   background-color: white;
   border: 1px solid #cccccc;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -807,7 +808,8 @@ input[type="search"] {
   textarea:focus,
   input[type="text"]:focus,
   input[type="number"]:focus,
-  input[type="search"]:focus {
+  input[type="search"]:focus,
+  input[type="email"]:focus {
     border-color: rgba(82, 168, 236, 0.8);
     outline: 0;
     outline: thin dotted \9;
