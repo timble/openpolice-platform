@@ -39,6 +39,33 @@ CREATE TABLE `about` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `about_categories`;
+
+CREATE TABLE `about_categories` (
+  `about_category_id` int(11) NOT NULL auto_increment,
+  `parent_id` int(11) NOT NULL default '0',
+  `attachments_attachment_id` int(11) unsigned NOT NULL default '0',
+  `title` varchar(255) NOT NULL default '',
+  `slug` varchar(255) NOT NULL default '',
+  `image` varchar(255) NOT NULL default '',
+  `description` text NOT NULL,
+  `published` tinyint(1) NOT NULL default '0',
+  `created_by` int(10) unsigned default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(10) unsigned default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(10) unsigned default NULL,
+  `locked_on` datetime default NULL,
+  `ordering` int(11) NOT NULL default '0',
+  `access` tinyint(3) unsigned NOT NULL default '0',
+  `params` text NOT NULL,
+  PRIMARY KEY  (`about_category_id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `cat_idx` (`published`,`access`),
+  KEY `idx_access` (`access`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 --
 -- Table structure data for table `activities`
 --
@@ -143,38 +170,6 @@ CREATE TABLE `attachments_relations` (
 
 
 --
--- Table structure data for table `categories`
---
-
-DROP TABLE IF EXISTS `categories`;
-
-CREATE TABLE `categories` (
-  `categories_category_id` int(11) NOT NULL AUTO_INCREMENT,
-  `parent_id` int(11) NOT NULL DEFAULT '0',
-  `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
-  `title` varchar(255) NOT NULL DEFAULT '',
-  `slug` varchar(255) NOT NULL DEFAULT '',
-  `image` varchar(255) NOT NULL DEFAULT '',
-  `table` varchar(50) NOT NULL DEFAULT '',
-  `description` text NOT NULL,
-  `published` tinyint(1) NOT NULL DEFAULT '0',
-  `created_by` int(10) unsigned DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `modified_by` int(10) unsigned DEFAULT NULL,
-  `modified_on` datetime DEFAULT NULL,
-  `locked_by` int(10) unsigned DEFAULT NULL,
-  `locked_on` datetime DEFAULT NULL,
-  `ordering` int(11) NOT NULL DEFAULT '0',
-  `access` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `params` text NOT NULL,
-  PRIMARY KEY (`categories_category_id`),
-  UNIQUE KEY `slug` (`slug`,`table`),
-  KEY `cat_idx` (`table`,`published`,`access`),
-  KEY `idx_access` (`access`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
---
 -- Table structure data for table `comments`
 --
 
@@ -230,6 +225,33 @@ CREATE TABLE `contacts` (
   `mobile` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`contacts_contact_id`),
   KEY `category` (`categories_category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `contacts_categories`;
+
+CREATE TABLE `contacts_categories` (
+  `contacts_category_id` int(11) NOT NULL auto_increment,
+  `parent_id` int(11) NOT NULL default '0',
+  `attachments_attachment_id` int(11) unsigned NOT NULL default '0',
+  `title` varchar(255) NOT NULL default '',
+  `slug` varchar(255) NOT NULL default '',
+  `image` varchar(255) NOT NULL default '',
+  `description` text NOT NULL,
+  `published` tinyint(1) NOT NULL default '0',
+  `created_by` int(10) unsigned default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(10) unsigned default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(10) unsigned default NULL,
+  `locked_on` datetime default NULL,
+  `ordering` int(11) NOT NULL default '0',
+  `access` tinyint(3) unsigned NOT NULL default '0',
+  `params` text NOT NULL,
+  PRIMARY KEY  (`contacts_category_id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `cat_idx` (`published`,`access`),
+  KEY `idx_access` (`access`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -678,6 +700,33 @@ CREATE TABLE `questions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `questions_categories`;
+
+CREATE TABLE `questions_categories` (
+  `questions_category_id` int(11) NOT NULL auto_increment,
+  `parent_id` int(11) NOT NULL default '0',
+  `attachments_attachment_id` int(11) unsigned NOT NULL default '0',
+  `title` varchar(255) NOT NULL default '',
+  `slug` varchar(255) NOT NULL default '',
+  `image` varchar(255) NOT NULL default '',
+  `description` text NOT NULL,
+  `published` tinyint(1) NOT NULL default '0',
+  `created_by` int(10) unsigned default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(10) unsigned default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(10) unsigned default NULL,
+  `locked_on` datetime default NULL,
+  `ordering` int(11) NOT NULL default '0',
+  `access` tinyint(3) unsigned NOT NULL default '0',
+  `params` text NOT NULL,
+  PRIMARY KEY  (`questions_category_id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `cat_idx` (`published`,`access`),
+  KEY `idx_access` (`access`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 --
 -- Table structure data for table `revisions`
 --
@@ -757,6 +806,33 @@ CREATE TABLE `traffic` (
   `locked_by` int(11) DEFAULT NULL,
   `locked_on` datetime DEFAULT NULL,
   PRIMARY KEY (`traffic_article_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `traffic_categories`;
+
+CREATE TABLE `traffic_categories` (
+  `traffic_category_id` int(11) NOT NULL auto_increment,
+  `parent_id` int(11) NOT NULL default '0',
+  `attachments_attachment_id` int(11) unsigned NOT NULL default '0',
+  `title` varchar(255) NOT NULL default '',
+  `slug` varchar(255) NOT NULL default '',
+  `image` varchar(255) NOT NULL default '',
+  `description` text NOT NULL,
+  `published` tinyint(1) NOT NULL default '0',
+  `created_by` int(10) unsigned default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(10) unsigned default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(10) unsigned default NULL,
+  `locked_on` datetime default NULL,
+  `ordering` int(11) NOT NULL default '0',
+  `access` tinyint(3) unsigned NOT NULL default '0',
+  `params` text NOT NULL,
+  PRIMARY KEY  (`traffic_category_id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `cat_idx` (`published`,`access`),
+  KEY `idx_access` (`access`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
