@@ -232,21 +232,31 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row = $this->getObject('com:news.database.row.article');
                 $row->id = $item['id'];
 
-                $row->title = $item['title'];
-                $row->slug = $item['alias'];
-                $row->introtext = stripslashes($item['introtext']);
-                $row->fulltext = stripslashes($item['fulltext']);
-                $row->created_on = $item['created'];
-                $row->created_by = '1';
-                $row->modified_on = $item['modified'];
-                $row->modified_by = $item['modified_by'];
-                $row->published = $item['state'];
-
                 // Only save the attachments when the row is new
                 if(!$row->load())
                 {
+                    $row->title = $item['title'];
+                    $row->slug = $item['alias'];
+                    $row->introtext = stripslashes($item['introtext']);
+                    $row->fulltext = stripslashes($item['fulltext']);
+                    $row->created_on = $item['created'];
+                    $row->created_by = '1';
+                    $row->modified_on = $item['modified'];
+                    $row->modified_by = $item['modified_by'];
+                    $row->published = $item['state'];
+
                     $this->_clean($row, 'news', true);
                 } else {
+                    $row->title = $item['title'];
+                    $row->slug = $item['alias'];
+                    $row->introtext = stripslashes($item['introtext']);
+                    $row->fulltext = stripslashes($item['fulltext']);
+                    $row->created_on = $item['created'];
+                    $row->created_by = '1';
+                    $row->modified_on = $item['modified'];
+                    $row->modified_by = $item['modified_by'];
+                    $row->published = $item['state'];
+
                     $this->_clean($row, 'news', false);
                 }
                 
