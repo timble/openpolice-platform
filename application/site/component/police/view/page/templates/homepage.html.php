@@ -14,7 +14,7 @@ $zone = object('com:police.model.zone')->id($site)->getRow();
 $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
 
-$path = '/'.$site.'/';
+$path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
 ?>
 

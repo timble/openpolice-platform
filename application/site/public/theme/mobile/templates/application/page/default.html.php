@@ -16,7 +16,7 @@ $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'fals
 
 $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
 
-$path = '/'.$site.'/';
+$path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
 ?>
 
