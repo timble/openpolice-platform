@@ -7,14 +7,22 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
-<? $site = object('application')->getCfg('site') ?>
-<? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
+<?
+$site = object('application')->getCfg('site');
+$zone = object('com:police.model.zone')->id($site)->getRow();
+
+$languages  = $this->getObject('application.languages');
+$active     = $languages->getActive();
+
+$path = '/'.$site.'/';
+$path .= count($languages) > '1' ? '/'.$active->slug : '';
+?>
 
 <div class="clearfix">
     <div class="homepage__sticky">
         <? $stickies = object('com:news.model.articles')->sticky(true)->getRowset();
             $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('ordering_date')->direction('DESC')->published(true)->getRowset()->top(); ?>
-        <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
+        <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
         <article>
             <header class="article__header">
                 <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
@@ -65,7 +73,7 @@
             <ul class="nav nav--list">
                 <? foreach(object('com:pages.model.pages')->menu('1')->published('true')->hidden('false')->getRowset() as $page) : ?>
                     <? if($page->level == '2') : ?>
-                    <li><a href="/<?= $site ?>/contact/<?= $page->slug ?>"><?= $page->title ?><?= $page->ancestor_id ?></a></li>
+                    <li><a href="<?= $path ?>/contact/<?= $page->slug ?>"><?= $page->title ?><?= $page->ancestor_id ?></a></li>
                     <? endif ?>
                 <? endforeach ?>
             </ul>
