@@ -42,14 +42,13 @@ class DatabaseRowTable extends Library\DatabaseRowTable
                     $database->execute($query);
                     
                     // Copy content of original table into the language specific one.
-                    $query = $this->getObject('lib:atabase.query.insert')
+                    $query = $this->getObject('lib:database.query.insert')
                         ->table($table)
                         ->values($this->getObject('lib:database.query.select')->table($this->name));
                     $database->execute($query);
                     
                     $status   = DatabaseRowTranslation::STATUS_MISSING;
                     $original = 0;
-                            
                 }
                 else
                 {
@@ -63,6 +62,7 @@ class DatabaseRowTable extends Library\DatabaseRowTable
                         'iso_code'  => ':iso_code',
                         'table'     => ':table',
                         'row'       => $this->unique_column,
+                        'slug'      => 'slug',
                         'status'    => ':status',
                         'original'  => ':original'
                     ))
@@ -76,7 +76,7 @@ class DatabaseRowTable extends Library\DatabaseRowTable
                 
                 $query = $this->getObject('lib:database.query.insert')
                     ->table('languages_translations')
-                    ->columns(array('iso_code', 'table', 'row', 'status', 'original'))
+                    ->columns(array('iso_code', 'table', 'row', 'slug', 'status', 'original'))
                     ->values($select);
                 
                 $database->execute($query);

@@ -19,6 +19,7 @@ class DatabaseTableQuestions extends Library\DatabaseTableAbstract
             'behaviors'    =>  array(
                 'sluggable', 'lockable', 'creatable', 'modifiable',
                 'com:attachments.database.behavior.attachable',
+                'com:languages.database.behavior.translatable'
             ),
           	'filters' => array(
           	    'text'   => array('html', 'tidy')

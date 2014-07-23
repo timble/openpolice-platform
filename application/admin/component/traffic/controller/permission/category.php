@@ -1,6 +1,6 @@
 <?php
 /**
- * Belgian Police Web Platform - About Component
+ * Belgian Police Web Platform - Traffic Component
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class TrafficControllerPermissionCategory extends CategoriesControllerPermissionCategory
+class TrafficControllerPermissionCategory extends ApplicationControllerPermissionAbstract
 {
 
 }

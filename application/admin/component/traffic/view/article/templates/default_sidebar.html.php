@@ -1,9 +1,9 @@
-<? if(!$article->categories_category_id) : ?>
+<? if(!$article->traffic_category_id) : ?>
 <script>
     // Set default value for categories radiolist
     $jQuery(document).ready(
         function(){
-            $jQuery('fieldset[name=categories_category_id] label:first-of-type input:radio').prop('checked', true);
+            $jQuery('fieldset[name=traffic_category_id] label:first-of-type input:radio').prop('checked', true);
         }
     );
 </script>
@@ -33,7 +33,7 @@
                 $jQuery('#start_on').datetimepicker({
                     format:'d-m-Y',
                     timepicker:false,
-                    lang: '<?= helper('com:police.string.language') ?>',
+                    lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
                     dayOfWeekStart: '1'
                 });
             });
@@ -53,7 +53,7 @@
                             this.setOptions({
                                 minDate:$jQuery('#start_on').val()?$jQuery('#start_on').val():false,
                                 formatDate: 'd-m-Y',
-                                lang: '<?= helper('com:police.string.language') ?>',
+                                lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
                                 dayOfWeekStart: '1'
                             })
                         },
@@ -67,7 +67,7 @@
 
 <fieldset>
     <legend><?= translate('Category') ?></legend>
-    <?= helper('com:categories.radiolist.categories', array('row' => $article, 'uncategorised' => false)) ?>
+    <?= helper('com:questions.radiolist.categories', array('row' => $article, 'package' => 'traffic', 'name' => 'traffic_category_id')) ?>
 </fieldset>
 
 <? if($article->isStreetable()) : ?>

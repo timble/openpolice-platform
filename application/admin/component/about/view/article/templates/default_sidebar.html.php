@@ -8,12 +8,12 @@
  */
 ?>
 
-<? if(!$article->categories_category_id) : ?>
+<? if(!$article->about_category_id) : ?>
 <script>
     // Set default value for categories radiolist
     $jQuery(document).ready(
         function(){
-            $jQuery('fieldset[name=categories_category_id] label:first-of-type input:radio').prop('checked', true);
+            $jQuery('fieldset[name=about_category_id] label:first-of-type input:radio').prop('checked', true);
         }
     );
 </script>
@@ -30,7 +30,7 @@
 
 <fieldset>
     <legend><?= translate('Category') ?></legend>
-    <?= helper('com:categories.radiolist.categories', array('row' => $article)) ?>
+    <?= helper('com:questions.radiolist.categories', array('row' => $article, 'package' => 'about', 'name' => 'about_category_id')) ?>
 </fieldset>
 
 <? if($article->isAttachable()) : ?>

@@ -12,6 +12,23 @@
   width: 100%;
 }
 
+.container__breadcrumb {
+  font-size: 0.85em;
+  line-height: 1.5em;
+
+  padding: 10px 10px 5px;
+  margin: 0;
+  background-color: $wellBackground;
+  border-bottom: 1px solid #eee;
+
+  @include clearfix();
+
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+}
+
 .container__content {
   padding-top: $grid-padding;
   padding-bottom: $grid-padding;

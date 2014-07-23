@@ -29,6 +29,7 @@ class DatabaseTableContacts extends Library\DatabaseTableAbstract
                     'strategy' => 'flat'
                 ),
                 'com:attachments.database.behavior.attachable',
+                'com:languages.database.behavior.translatable',
             ),
              'filters' => array(
                  'misc'     => array('html', 'tidy'),

@@ -66,34 +66,34 @@ VALUES
 
 INSERT INTO `pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
 VALUES
-	(1,1,0,'Home','home','option=com_police&view=page&layout=homepage',NULL,'component',1,1,1,41,1,NULL,NULL,NULL,NULL,NULL,0,'page_title=\"Politie Leuven\"'),
+	(1,1,0,'Home','home','option=com_police&view=page&layout=homepage',NULL,'component',1,1,1,41,1,NULL,NULL,NULL,NULL,NULL,0,'page_title=\"Open Police\"'),
 	(2,2,0,'Dashboard','dashboard','option=com_dashboard&view=dashboard',NULL,'component',1,0,0,35,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(3,2,2,'Pages','pages','option=com_pages&view=pages',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(3,2,1,'Pages','pages','option=com_pages&view=pages',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(4,2,0,'Content','content',NULL,NULL,'separator',1,0,0,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(5,2,0,'Files','files','option=com_files&view=files',NULL,'component',1,0,0,19,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(6,2,0,'Users','users','option=com_users&view=users',NULL,'component',1,0,0,31,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(7,2,2,'Extensions','extensions',NULL,NULL,'separator',1,0,0,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(8,2,2,'Settings','settings','option=com_extensions&view=settings',NULL,'component',1,0,0,28,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(6,2,1,'Users','users','option=com_users&view=users',NULL,'component',1,0,0,31,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(7,2,1,'Extensions','extensions',NULL,NULL,'separator',1,0,0,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(8,2,1,'Settings','settings','option=com_extensions&view=settings',NULL,'component',1,0,0,28,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(9,2,0,'Tools','tools',NULL,NULL,'separator',1,0,0,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(10,2,0,'Activity Logs','activity-logs','option=com_activities&view=activities',NULL,'component',1,0,0,34,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(11,2,2,'Clean Cache','clean-cache','option=com_cache&view=items',NULL,'component',1,0,0,32,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(12,2,0,'Articles','articles','option=com_articles&view=articles',NULL,'component',1,0,0,20,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(11,2,1,'Clean Cache','clean-cache','option=com_cache&view=items',NULL,'component',1,0,0,32,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(12,2,1,'Articles','articles','option=com_articles&view=articles',NULL,'component',1,0,0,20,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(14,2,0,'Contacts','contacts','option=com_contacts&view=contacts',NULL,'component',1,0,0,7,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(15,2,2,'Languages','languages','option=com_languages&view=languages',NULL,'component',1,0,0,23,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(16,2,0,'Articles','articles','option=com_articles&view=articles',NULL,'component',1,0,0,20,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(17,2,2,'Categories','categories','option=com_articles&view=categories',NULL,'component',1,0,0,20,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(15,2,1,'Languages','languages','option=com_languages&view=languages',NULL,'component',1,0,0,23,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(16,2,1,'Articles','articles','option=com_articles&view=articles',NULL,'component',1,0,0,20,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(17,2,1,'Categories','categories','option=com_articles&view=categories',NULL,'component',1,0,0,20,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(20,2,0,'Contacts','contacts','option=com_contacts&view=contacts',NULL,'component',1,0,0,7,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(21,2,2,'Categories','categories','option=com_contacts&view=categories',NULL,'component',1,0,0,7,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(22,2,2,'Languages','languages','option=com_languages&view=languages',NULL,'component',1,0,0,23,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(23,2,2,'Components','components','option=com_languages&view=components',NULL,'component',1,0,0,23,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(24,2,2,'Pages','pages','option=com_pages&view=pages',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(25,2,2,'Menus','menus','option=com_pages&view=menus',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(26,2,2,'Modules','modules','option=com_pages&view=modules',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(21,2,1,'Categories','categories','option=com_contacts&view=categories',NULL,'component',1,0,0,7,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(22,2,1,'Languages','languages','option=com_languages&view=languages',NULL,'component',1,0,0,23,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(23,2,1,'Components','components','option=com_languages&view=components',NULL,'component',1,0,0,23,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(24,2,1,'Pages','pages','option=com_pages&view=pages',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(25,2,1,'Menus','menus','option=com_pages&view=menus',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(26,2,1,'Modules','modules','option=com_pages&view=modules',NULL,'component',1,0,0,25,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(27,2,0,'Users','users','option=com_users&view=users',NULL,'component',1,0,0,31,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(28,2,0,'Groups','groups','option=com_users&view=groups',NULL,'component',1,0,0,31,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(29,2,2,'Items','items','option=com_cache&view=items',NULL,'component',1,0,0,32,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(30,2,2,'Groups','groups','option=com_cache&view=groups',NULL,'component',1,0,0,32,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
-	(31,2,2,'Terms','terms','option=com_articles&view=terms',NULL,'component',1,0,0,20,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(29,2,1,'Items','items','option=com_cache&view=items',NULL,'component',1,0,0,32,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(30,2,1,'Groups','groups','option=com_cache&view=groups',NULL,'component',1,0,0,32,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
+	(31,2,1,'Terms','terms','option=com_articles&view=terms',NULL,'component',1,0,0,20,1,NULL,NULL,NULL,NULL,NULL,0,NULL),
 	(32,2,0,'Questions','questions','option=com_questions&view=questions',NULL,'component',1,0,0,40,1,'2013-04-28 19:35:06',NULL,NULL,NULL,NULL,0,''),
 	(33,2,0,'Questions','questions','option=com_questions&view=questions',NULL,'component',1,0,0,40,1,'2013-04-28 19:35:47',NULL,NULL,NULL,NULL,0,''),
 	(34,2,0,'Categories','categories','option=com_questions&view=categories',NULL,'component',1,0,0,40,1,'2013-04-28 19:36:02',NULL,NULL,NULL,NULL,0,''),
@@ -338,7 +338,8 @@ VALUES
 
 INSERT INTO `users` (`users_user_id`, `name`, `email`, `enabled`, `send_email`, `users_role_id`, `last_visited_on`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `activation`, `params`, `uuid`)
 VALUES
-	(1,'Administrator','admin@localhost.home',1,1,25,'2013-11-05 14:23:08',NULL,NULL,1,'2013-11-05 14:23:08',NULL,NULL,'','timezone=\n\n','3b8abc10-b038-11e2-9296-102175e93138');
+	(1,'Administrator','admin@example.com',1,1,25,'2013-11-05 14:23:08',NULL,NULL,1,'2013-11-05 14:23:08',NULL,NULL,'','timezone=\n\n','3b8abc10-b038-11e2-9296-102175e93138'),
+	(2,'Demo','demo@example.com',1,1,24,'2013-11-05 14:23:08',NULL,NULL,1,'2013-11-05 14:23:08',NULL,NULL,'','timezone=\n\n','d6557afc-e5f6-4371-8cf8-c6ca1a55f674');
 
 
 --
@@ -347,8 +348,7 @@ VALUES
 
 INSERT INTO `users_groups` (`users_group_id`, `name`, `description`)
 VALUES
-	(1,'Webmasters',''),
-	(2,'Super Administrators','');
+	(1,'Super Administrators','');
 
 
 --
@@ -357,7 +357,7 @@ VALUES
 
 INSERT INTO `users_groups_users` (`users_group_id`, `users_user_id`)
 VALUES
-	(2,1);
+	(1,1);
 
 
 --
@@ -366,7 +366,8 @@ VALUES
 
 INSERT INTO `users_passwords` (`email`, `expiration`, `hash`, `reset`)
 VALUES
-	('admin@localhost.home',NULL,'$2y$10$UT7uLipGnbJbTcjZ6D.OAeVByFn.2ZpPmd.thZ5e5xHLwKXAxdvNG','');
+	('admin@example.com',NULL,'$2y$10$j6EOjAGYAVYACaMsq3XXIOBt6B78vAsRChA7P83MACnBPM7wSxqPC',''),
+  ('demo@example.com',NULL,'$2y$10$j6EOjAGYAVYACaMsq3XXIOBt6B78vAsRChA7P83MACnBPM7wSxqPC','');
 
 
 --

@@ -18,6 +18,12 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+<? if($contacts->isTranslatable()) : ?>
+<ktml:module position="actionbar" content="append">
+    <?= helper('com:languages.listbox.languages') ?>
+</ktml:module>
+<? endif ?>
+
 <ktml:module position="sidebar">
 	<?= import('default_sidebar.html'); ?>
 </ktml:module>
@@ -39,6 +45,11 @@
 			<th>
 			    <?= helper('grid.sort', array('column' => 'name')); ?>
 			</th>
+            <? if($contacts->isTranslatable()) : ?>
+            <th width="70">
+                <?= translate('Translation') ?>
+            </th>
+            <? endif ?>
 		</tr>		
 	</thead>
 
@@ -72,6 +83,15 @@
 	   			    <span class="label label-important"><?= translate('Registered') ?></span>
 	   			<? endif; ?>
 			</td>
+            <? if($contact->isTranslatable()) : ?>
+            <td>
+                <?= helper('com:languages.grid.status', array(
+                    'status'   => $contact->translation_status,
+                    'original' => $contact->translation_original,
+                    'deleted'  => $contact->translation_deleted));
+                ?>
+            </td>
+            <? endif ?>
 		</tr>
 	<? endforeach; ?>
 	</tbody>	

@@ -23,7 +23,8 @@ class ContactsControllerContact extends Library\ControllerModel
         	'behaviors' => array(
                 'editable',
                 'com:activities.controller.behavior.loggable',
-                'com:attachments.controller.behavior.attachable'
+                'com:attachments.controller.behavior.attachable',
+                'com:languages.controller.behavior.translatable'
             ),
         ));
     

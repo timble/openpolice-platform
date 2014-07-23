@@ -51,3 +51,8 @@ RENAME TABLE `pol_content` TO `news`;
 UPDATE `pol_content_frontpage` AS `frontpage`, `pol_content` AS `content`
 SET `content`.`catid` = '1', `content`.`sectionid` = '1'
 WHERE `content`.`id` = `frontpage`.`content_id` AND `content`.`catid` = '0';
+
+
+-- Remove articles that are not published on the frontpage
+DELETE FROM `pol_content`
+WHERE `id` NOT IN (SELECT `content_id` FROM `pol_content_frontpage`);

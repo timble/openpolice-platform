@@ -17,6 +17,12 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+<? if($article->isTranslatable()) : ?>
+<ktml:module position="actionbar" content="append">
+    <?= helper('com:languages.listbox.languages', array('attribs' => array('disabled' => 'true'))) ?>
+</ktml:module>
+<? endif ?>
+
 <!--
 <script src="assets://js/koowa.js" />
 -->

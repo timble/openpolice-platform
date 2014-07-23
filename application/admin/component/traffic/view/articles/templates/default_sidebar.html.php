@@ -9,4 +9,4 @@
 ?>
 
 <h3><?= translate('Categories') ?></h3>
-<?= import('com:categories.view.categories.list.html', array('categories' => object('com:traffic.model.categories')->sort('title')->table('traffic')->getRowset())); ?>
+<?= import('com:categories.view.categories.list.html', array('categories' => object('com:traffic.model.categories')->sort('title')->getRowset())); ?>

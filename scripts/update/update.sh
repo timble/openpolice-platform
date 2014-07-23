@@ -7,11 +7,13 @@
 
 ## Variable initialization
 repo=$(cd "$(dirname $0)/../.."; pwd -P)
-branch="0.9"
+branch="feature/337-multilanguage"
 temp="/tmp/police-$RANDOM"
 
 dirs=(
   "application/admin/component/about"
+  "application/admin/component/announcements"
+  "application/admin/component/bin"
   "application/admin/component/contacts"
   "application/admin/component/districts"
   "application/admin/component/news"
@@ -27,6 +29,7 @@ dirs=(
   "application/admin/public/theme/default/templates"
   "application/manager"
   "application/site/component/about"
+  "application/site/component/bin"
   "application/site/component/contacts"
   "application/site/component/districts"
   "application/site/component/news"
@@ -37,8 +40,10 @@ dirs=(
   "application/site/component/traffic"
   "application/site/component/trafficinfo"
   "application/site/public/theme/mobile"
-  "application/site/public/theme/splash"
+  "application/site/public/theme/portal"
   "component/about"
+  "component/announcements"
+  "component/bin"
   "component/contacts"
   "component/districts"
   "component/elasticsearch"
@@ -56,8 +61,6 @@ dirs=(
   "component/trafficinfo"
   "component/uploads"
   "install/custom"
-  "tests/casperjs"
-  "vendor/jlong"
 )
 
 files=(
@@ -72,6 +75,7 @@ files=(
   "application/site/component/application/resources/language/fr-FR.ini"
   "application/site/component/files/resources/language/nl-NL.ini"
   "application/site/component/files/resources/language/fr-FR.ini"
+  "component/ckeditor/resources/assets/ckeditor/config.js"
 )
 
 ## Function definitions
@@ -125,7 +129,7 @@ mkdir -p "$HOME/.git-cache"
 
 if test ! -d "$HOME/.git-cache/nooku-framework"
 then
-  git clone --quiet git@git.assembla.com:nooku-framework.git $HOME/.git-cache/nooku-framework
+  git clone --quiet git@github.com:nooku/nooku-framework.git $HOME/.git-cache/nooku-framework
 fi
 
 cd "$HOME/.git-cache/nooku-framework"

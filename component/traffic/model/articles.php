@@ -38,7 +38,7 @@ class ModelArticles extends Library\ModelTable
         parent::_buildQueryJoins($query);
         $state = $this->getState();
 
-        $query->join(array('categories'  => 'categories'), 'categories.categories_category_id = tbl.categories_category_id')
+        $query->join(array('categories'  => 'traffic_categories'), 'categories.traffic_category_id = tbl.traffic_category_id')
               ->join(array('creator'  => 'users'), 'creator.users_user_id = tbl.created_by');
 
         if($state->street)
@@ -61,7 +61,7 @@ class ModelArticles extends Library\ModelTable
         }
 
         if(is_numeric($state->category)) {
-            $query->where('tbl.categories_category_id = :category')->bind(array('category' => $state->category));
+            $query->where('tbl.traffic_category_id = :category')->bind(array('category' => $state->category));
         }
 		
 		if (is_numeric($state->published)) {

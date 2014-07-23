@@ -26,6 +26,7 @@ class AboutControllerArticle extends Library\ControllerModel
                 'editable',
                 'com:activities.controller.behavior.loggable',
                 'com:attachments.controller.behavior.attachable',
+                'com:languages.controller.behavior.translatable'
             )
         ));
 
