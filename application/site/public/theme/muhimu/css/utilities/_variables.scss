@@ -1,0 +1,27 @@
+// Colors
+// -------------------------
+$color-main-blue:       #26338c;
+$color-main-turquoise:  #8ac7cb;
+$color-main-orange:     #db5c1e;
+
+
+// Breakpoints
+// -------------------------
+$breakpoint-alpha: 400px;
+$breakpoint-beta: 600px;
+$breakpoint-charlie: 768px;
+$breakpoint-delta: 1024px;
+
+$font-size: 16px;
+$font-family: Helvetica, sans-serif;
+$line-height: 1.5em;
+
+$gutter-width: 3em;
+$grid-padding: 25px;
+
+// Susy grid
+$susy: (
+  gutters: $gutter-width/4em,
+  gutter-position: before
+);
+
