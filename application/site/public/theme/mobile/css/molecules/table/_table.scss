@@ -43,7 +43,6 @@ table {
 
 @include respond-min($breakpoint-charlie) {
   .table {
-    background-color: $tableBackground;
     margin-bottom: $line-height;
     border: 0 none; // Override default style
 

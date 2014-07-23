@@ -2,11 +2,11 @@
 .table--striped {
   tbody {
     tr {
-      border-top: 1px solid $tableBorder;
+      border-top: 1px solid $color-border;
     }
 
     > tr:nth-child(odd) {
-      background-color: $tableBackgroundAccent;
+      background-color: $color-background-table-accent;
     }
   }
 }

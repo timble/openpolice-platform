@@ -1,6 +1,3 @@
-/*
- * Bootstrap variables
- */
 article,
 aside,
 details,
@@ -163,9 +160,6 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
-/*
- * Bootstrap variables
- */
 .container__header .slogan,
 .container__content .sidebar,
 .is-hidden,
@@ -229,11 +223,11 @@ textarea {
 
 #wrap {
   background-color: white;
-  max-width: 940px;
+  max-width: 1024px;
   margin: 0 auto; }
 
 #copyright {
-  max-width: 940px;
+  max-width: 1024px;
   margin: 0 auto; }
 
 .splash {
@@ -1060,7 +1054,7 @@ input[type="submit"].button {
 @media screen and (orientation: landscape), screen and (orientation: portrait) {
   .button--hamburger:hover {
     text-decoration: none; } }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .button--hamburger:after {
     content: "";
     content: none; }
@@ -1453,7 +1447,7 @@ input[type="submit"].button {
     float: left;
     padding: 0.3em 1em;
     text-decoration: none;
-    border: 1px solid #dddddd;
+    border: 1px solid #eeeeee;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px; }
@@ -1485,7 +1479,7 @@ input[type="submit"].button {
   text-align: center; }
   .pagination ul {
     width: auto;
-    border: 1px solid #dddddd;
+    border: 1px solid #eeeeee;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px; }
@@ -1494,7 +1488,7 @@ input[type="submit"].button {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    border-right: 1px solid #dddddd; }
+    border-right: 1px solid #eeeeee; }
   .pagination ul > li:first-child a {
     -webkit-border-radius: 5px 0 0 5px;
     -moz-border-radius: 5px 0 0 5px;
@@ -1540,7 +1534,6 @@ table {
     display: none; }
 
 .table {
-  background-color: transparent;
   margin-bottom: 1.5em;
   border: 0 none; }
   .table tr {
@@ -1564,7 +1557,7 @@ table {
     border-top: 0; }
 
 .table--striped tbody tr {
-  border-top: 1px solid #dddddd; }
+  border-top: 1px solid #eeeeee; }
 .table--striped tbody > tr:nth-child(odd) {
   background-color: #f9f9f9; }
 

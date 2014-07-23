@@ -9,13 +9,13 @@
   vertical-align: middle;
   cursor: pointer;
   @include border-radius($border-radius);
-  border: 1px solid $border-color-input;
+  border: 1px solid $color-border-input;
   background-color: $white;
 
   // in these cases the gradient won't cover the background, so we override
   &:hover, &:focus, &:active, &.active, &.disabled, &[disabled], &.pseudo-class-hover, &.pseudo-class-active, &.pseudo-class-disabled {
     background-color: $grayLighter;
-    border-color: darken($border-color-input, 10%);
+    border-color: darken($color-border-input, 10%);
   }
 
   // Hover/focus state

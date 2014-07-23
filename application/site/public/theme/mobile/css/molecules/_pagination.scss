@@ -25,7 +25,7 @@
     float: left; // Collapse white-space
     padding: 0.3em 1em;
     text-decoration: none;
-    border: 1px solid $paginationBorder;
+    border: 1px solid $color-border;
     @include border-radius(5px);
   }
 
@@ -71,14 +71,14 @@
 
     ul {
       width: auto;
-      border: 1px solid $paginationBorder;
+      border: 1px solid $color-border;
       @include border-radius(5px);
     }
 
     ul > li > a {
       border: 0 none;
       @include border-radius(0);
-      border-right: 1px solid $paginationBorder;
+      border-right: 1px solid $color-border;
     }
 
     ul > li:first-child a {

@@ -38,23 +38,21 @@ $white: #fff !default;
 // -------------------------
 $breakpoint-alpha: 400px;
 $breakpoint-beta: 600px;
-$breakpoint-charlie: 767px;
-$breakpoint-delta: 998px;
+$breakpoint-charlie: 768px;
+$breakpoint-delta: 1024px;
 
-/*
- * Bootstrap variables
- */
 
 $font-size: 16px;
-$line-height: 1.5em;
 $font-family: Helvetica, sans-serif;
+$line-height: 1.5em;
 
 $color-background-well: #F8F8F8;
 $color-background-body: $grayLighter;
+$color-background-table-accent: #f9f9f9 !default;
 
 $color-border: #eee;
 $color-border-well: $color-border;
-$border-color-input: #ccc !default;
+$color-border-input: #ccc !default;
 
 $color-text: $grayDarker;
 
@@ -62,25 +60,6 @@ $color-link: $blue;
 $color-link-hover: darken($color-link, 15%) !default;
 
 $border-radius: 4px !default;
-
-
-// Pagination
-// -------------------------
-$paginationBackground: #fff !default;
-$paginationBorder: #ddd !default;
-$paginationActiveBackground: #f5f5f5 !default;
-
-
-// Tables
-// -------------------------
-$tableBackground: transparent !default;
-// overall background-color
-$tableBackgroundAccent: #f9f9f9 !default;
-// for striping
-$tableBackgroundHover: #f5f5f5 !default;
-// for hover
-$tableBorder: #ddd !default;
-// table and cell border
 
 
 // Navbar

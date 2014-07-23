@@ -160,9 +160,6 @@ textarea {
   h2,
   h3 {
     page-break-after: avoid; } }
-/*
- * Bootstrap variables
- */
 .container__header .slogan,
 .container__content .sidebar,
 .is-hidden,
@@ -226,11 +223,11 @@ textarea {
 
 #wrap {
   background-color: white;
-  max-width: 940px;
+  max-width: 1024px;
   margin: 0 auto; }
 
 #copyright {
-  max-width: 940px;
+  max-width: 1024px;
   margin: 0 auto; }
 
 .splash {
@@ -306,7 +303,7 @@ textarea {
   .clearfix:after, .homepage__news:after, form:after, .article:after, .header:after, .header .organization:after {
     clear: both; }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   #wrap {
     border-bottom: 1px solid gainsboro; }
 
@@ -385,14 +382,14 @@ textarea {
     margin-bottom: 12.5px;
     border-bottom: 1px solid #eeeeee;
     padding-bottom: 12.5px; } }
-  @media screen and (min-width: 767px) and (min-width: 767px) {
+  @media screen and (min-width: 768px) and (min-width: 768px) {
     .quicklink__item_1.quicklink__item_3,
     .quicklink__item_2.quicklink__item_3,
     .quicklink__item_3.quicklink__item_3 {
       margin-bottom: 0;
       border-bottom: none;
       padding-bottom: 0; } }
-  @media screen and (min-width: 767px) and (min-width: 998px) {
+  @media screen and (min-width: 768px) and (min-width: 1024px) {
     .quicklink__item_1,
     .quicklink__item_2,
     .quicklink__item_3 {
@@ -400,17 +397,17 @@ textarea {
       border-bottom: none;
       padding-bottom: 0; } }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .container__footer {
     padding-top: 1.5em;
     background-color: #f8f8f8; }
     .container__footer .footer__districts {
       margin-top: 25px; } }
-    @media screen and (min-width: 767px) and (min-width: 767px) {
+    @media screen and (min-width: 768px) and (min-width: 768px) {
       .container__footer .footer__districts {
         margin-top: 0; } }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .container.container__footer_menu {
     padding-left: 14px;
     padding-right: 14px; }
@@ -437,7 +434,7 @@ textarea {
     border-top: 0 none; }
     .container__copyright .copyright--right {
       text-align: right; } }
-@media screen and (min-width: 998px) {
+@media screen and (min-width: 1024px) {
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -521,7 +518,7 @@ you can use the generic selector below, but it's slower:
   text-align: center;
   margin: 3em 0; }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .container {
     max-width: 100%;
     margin-left: auto;
@@ -627,7 +624,7 @@ you can use the generic selector below, but it's slower:
     width: 22.22222%;
     float: left;
     margin-left: 0; } }
-@media screen and (min-width: 998px) {
+@media screen and (min-width: 1024px) {
   .homepage__sticky .media {
     width: 48.14815%;
     float: left;
@@ -697,7 +694,7 @@ body {
   background-color: #eeeeee;
   margin: 0; }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   body {
     font-size: 0.9375em; } }
 figure {
@@ -870,7 +867,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
   -moz-column-count: 2;
   column-count: 2; }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   ul.column--double {
     -webkit-column-count: 2;
     -moz-column-count: 2;
@@ -906,7 +903,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
     width: 40%;
     max-width: 200px;
     margin: 0 0 1.5em 1.5em; } }
-@media screen and (min-width: 998px) {
+@media screen and (min-width: 1024px) {
   .banner__image {
     height: 110px;
     border: 1px solid #505050;
@@ -935,7 +932,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
 
   .banner__image--5888 {
     background: url("../images/banners/5888.jpg"); } }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .container__breadcrumb {
     padding: 5px 25px 0; } }
 
@@ -961,7 +958,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
     color: #999999; }
   .breadcrumb li::first-letter {
     text-transform: uppercase; }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     .breadcrumb {
       border: 1px solid #eeeeee;
       -webkit-border-radius: 4px;
@@ -1069,7 +1066,7 @@ input[type="submit"].button {
 @media screen and (orientation: landscape), screen and (orientation: portrait) {
   .button--hamburger:hover {
     text-decoration: none; } }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .button--hamburger:after {
     content: "";
     content: none; }
@@ -1186,7 +1183,7 @@ input[type="submit"].button {
   .header .organization__name {
     float: left; }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .header {
     background: none;
     border-bottom: 0px none; }
@@ -1238,7 +1235,7 @@ input[type="submit"].button {
       text-align: center; }
       .header .slogan a {
         text-decoration: none; } }
-@media screen and (min-width: 998px) {
+@media screen and (min-width: 1024px) {
   .header {
     margin-bottom: 20px; }
     .header .organization {
@@ -1346,7 +1343,7 @@ input[type="submit"].button {
     overflow: auto;
     clip: auto;
     position: static; } }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .js-enabled .navbar {
     margin: 0;
     padding: 0;
@@ -1462,7 +1459,7 @@ input[type="submit"].button {
     float: left;
     padding: 0.3em 1em;
     text-decoration: none;
-    border: 1px solid #dddddd;
+    border: 1px solid #eeeeee;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px; }
@@ -1490,12 +1487,12 @@ input[type="submit"].button {
   .pagination .pagination__offset {
     display: none; }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .pagination {
     text-align: center; }
     .pagination ul {
       width: auto;
-      border: 1px solid #dddddd;
+      border: 1px solid #eeeeee;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px; }
@@ -1504,7 +1501,7 @@ input[type="submit"].button {
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
-      border-right: 1px solid #dddddd; }
+      border-right: 1px solid #eeeeee; }
     .pagination ul > li:first-child a {
       -webkit-border-radius: 5px 0 0 5px;
       -moz-border-radius: 5px 0 0 5px;
@@ -1548,9 +1545,8 @@ table {
   .table thead tr {
     display: none; }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .table {
-    background-color: transparent;
     margin-bottom: 1.5em;
     border: 0 none; }
     .table tr {
@@ -1573,7 +1569,7 @@ table {
     .table thead tr td {
       border-top: 0; } }
 .table--striped tbody tr {
-  border-top: 1px solid #dddddd; }
+  border-top: 1px solid #eeeeee; }
 .table--striped tbody > tr:nth-child(odd) {
   background-color: #f9f9f9; }
 
@@ -1586,7 +1582,7 @@ table {
 .table--openinghours td:nth-child(n+2) {
   display: block; }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .table--openinghours th,
   .table--openinghours td {
     padding: 0.5em; }
