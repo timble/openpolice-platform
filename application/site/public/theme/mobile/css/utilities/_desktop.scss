@@ -30,7 +30,7 @@
     border: 1px solid #eee;
     margin: 5px $grid-padding;
     padding: 6px 10px 6px;
-    @include border-radius($borderRadiusSmall);
+    @include border-radius($border-radius);
   }
 
   .container__content {

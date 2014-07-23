@@ -19,7 +19,6 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
 $path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
 ?>
-
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"">
 

@@ -18,7 +18,7 @@
 
   padding: 10px 10px 5px;
   margin: 0;
-  background-color: $wellBackground;
+  background-color: $color-background-well;
   border-bottom: 1px solid #eee;
 
   @include clearfix();
@@ -26,6 +26,10 @@
   ul {
     margin: 0;
     list-style: none;
+  }
+
+  @include respond-min($breakpoint-charlie) {
+    padding: 5px $grid-padding 0;
   }
 }
 
