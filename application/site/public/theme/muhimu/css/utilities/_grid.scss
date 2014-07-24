@@ -48,11 +48,11 @@
   }
 
   .quick_links {
-    @include span(first 6 of 12);
+    @include span(first 8 of 12);
   }
 
   .my_police {
-    @include span(6 of 12);
+    @include span(4 of 12);
   }
 
   .articles {

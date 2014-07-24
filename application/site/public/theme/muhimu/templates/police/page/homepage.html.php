@@ -18,7 +18,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <ktml:module position="breadcrumbs">
     <div class="container__header">
         <div class="quick_links">
-            <p class="phone_numbers">Bel <strong>101</strong> voor dringende politiehulp. Geen spoed, wél politie? Bel <strong>016 21 06 11</strong>.</p>
+            <p class="phone_numbers"><span>Bel <strong>101</strong></span> voor dringende politiehulp. Geen spoed, wél politie? <span>Bel <strong>016 21 06 11</strong></span>.</p>
             <ul>
                 <li><a href="#">Aangifte of melding doen</a></li>
                 <li><a href="#">Je wijkinspecteur zoeken</a></li>
@@ -28,9 +28,13 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <div class="my_police">
             <h2 class="my_police__header">Mijn<span>Politie</span></h2>
             <p>Gepersonaliseerd politienieuws en verkeersinformatie uit jouw buurt.</p>
-            <p><a href="#" class="my_police__button">Voer nu je straatnaam in</a></p>
             <p class="margin-zero"><a href="#">Meer informatie over “mijn politie”</a></p>
         </div>
+
+        <div class="my_police_wrapper">
+            Hello
+        </div>
+
     </div>
 </ktml:module>
 

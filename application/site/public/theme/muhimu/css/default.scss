@@ -219,18 +219,21 @@ img {
   padding-top: 20px;
   padding-bottom: 20px;
 
-  @include respond-min($breakpoint-charlie) {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-
-  @include respond-min($breakpoint-delta) {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
 }
 
 .container__header {
+  position: relative;
+
+  @include respond-min($breakpoint-charlie) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @include respond-min($breakpoint-delta) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   li {
     display: block;
     font-size: 20px;
@@ -257,6 +260,10 @@ img {
 
 .phone_numbers {
   margin-bottom: 15px;
+
+  span {
+    white-space: nowrap;
+  }
 }
 
 .breadcrumb {
@@ -277,6 +284,14 @@ img {
 }
 
 .my_police {
+  margin-top: 20px;
+  background: rgba(palette(blue, dark), .7);
+  padding: 2em;
+
+  @include respond-min($breakpoint-charlie) {
+    margin-top: 0;
+  }
+
   &__header {
     font-family: $sans;
     color: #fff;
@@ -317,6 +332,17 @@ img {
 }
 
 
+.my_police_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: palette(blue);
+  display: none;
+}
+
+
 /* ==========================================================================
    Sections
    ========================================================================== */
@@ -331,7 +357,8 @@ img {
 
   h1 {
     font-size: 1.25em;
-    color: palette(blue)
+    color: palette(blue);
+    margin-bottom: .25em;
   }
 }
 
