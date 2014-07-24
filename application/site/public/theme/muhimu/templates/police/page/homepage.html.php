@@ -39,7 +39,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     <? if($page->level == '1' && $page->hidden == false) : ?>
     <section class="section">
         <h1><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></h1>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet.</p>
+        <p><?= $page->getParams('page')->get('description') ?></p>
     </section>
     <? endif ?>
 <? endforeach ?>
