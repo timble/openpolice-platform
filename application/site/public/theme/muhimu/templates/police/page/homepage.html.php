@@ -3,7 +3,7 @@ $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
 
 $site = object('application')->getCfg('site');
-$pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
+$pages = object('com:pages.model.pages')->menu('1')->sort('title')->direction('ASC')->published('true')->getRowset();
 
 $path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
