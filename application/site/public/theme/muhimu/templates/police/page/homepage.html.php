@@ -45,40 +45,19 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <hr class="divider" />
 
 <div class="container__news">
+<? foreach(object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->getRowset() as $article) : ?>
     <section class="news">
         <div class="news__image">
-            <div class="news__image__content"></div>
+            <div class="news__image__content">
+                <?= helper('com:attachments.image.thumbnail', array(
+                'attachment' => $article->attachments_attachment_id,
+                'attribs' => array('width' => '400', 'height' => '300'))) ?>
+            </div>
         </div>
         <div class="news__content">
-            <h2>Koester je buren</h2>
-            <p>Tijdens de zomerse dagen kom je mekaar sneller tegen en is een vriendelijke goedendag en praatje met de buren best aangenaam.</p>
+            <h2><?= $article->title ?></h2>
+            <p><?= $article->introtext ?></p>
         </div>
     </section>
-    <section class="news">
-        <div class="news__image">
-            <div class="news__image__content"></div>
-        </div>
-        <div class="news__content">
-            <h2>Koester je buren</h2>
-            <p>Tijdens de zomerse dagen kom je mekaar sneller tegen en is een vriendelijke goedendag en praatje met de buren best aangenaam.</p>
-        </div>
-    </section>
-    <section class="news">
-        <div class="news__image">
-            <div class="news__image__content"></div>
-        </div>
-        <div class="news__content">
-            <h2>Koester je buren</h2>
-            <p>Tijdens de zomerse dagen kom je mekaar sneller tegen en is een vriendelijke goedendag en praatje met de buren best aangenaam.</p>
-        </div>
-    </section>
-    <section class="news">
-        <div class="news__image">
-            <div class="news__image__content"></div>
-        </div>
-        <div class="news__content">
-            <h2>Koester je buren</h2>
-            <p>Tijdens de zomerse dagen kom je mekaar sneller tegen en is een vriendelijke goedendag en praatje met de buren best aangenaam.</p>
-        </div>
-    </section>
+<? endforeach ?>
 </div>
