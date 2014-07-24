@@ -45,13 +45,29 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.organization, .organization a, .container__news, .news {
+.container__top,
+.container__header,
+.container__sections,
+.container__news,
+.container__copyright, .organization, .organization a, .news {
   *zoom: 1; }
-  .organization:before, .organization a:before, .container__news:before, .news:before, .organization:after, .organization a:after, .container__news:after, .news:after {
+  .container__top:before,
+  .container__header:before,
+  .container__sections:before,
+  .container__news:before,
+  .container__copyright:before, .organization:before, .organization a:before, .news:before, .container__top:after,
+  .container__header:after,
+  .container__sections:after,
+  .container__news:after,
+  .container__copyright:after, .organization:after, .organization a:after, .news:after {
     display: table;
     content: "";
     line-height: 0; }
-  .organization:after, .organization a:after, .container__news:after, .news:after {
+  .container__top:after,
+  .container__header:after,
+  .container__sections:after,
+  .container__news:after,
+  .container__copyright:after, .organization:after, .organization a:after, .news:after {
     clear: both; }
 
 /**
@@ -80,19 +96,11 @@ table {
 .container__sections,
 .container__news,
 .container__copyright {
-  max-width: 1280px;
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+  max-width: 1280px;
   padding-left: 20px;
   padding-right: 20px; }
-  .container__top:after,
-  .container__header:after,
-  .container__sections:after,
-  .container__news:after,
-  .container__copyright:after {
-    content: " ";
-    display: block;
-    clear: both; }
 
 @media screen and (min-width: 37.5em) {
   .organization {
@@ -175,16 +183,6 @@ table {
     margin-left: 0; }
 
   .my_police {
-    width: 48.14815%;
-    float: left;
-    margin-left: 3.7037%; }
-
-  .copyright--left {
-    width: 48.14815%;
-    float: left;
-    margin-left: 0; }
-
-  .copyright--right {
     width: 48.14815%;
     float: left;
     margin-left: 3.7037%; } }
@@ -597,7 +595,7 @@ img {
   max-width: 100%;
   height: auto; }
 
-.divider {
+.divide {
   margin: 10px 20px;
   padding: 0;
   border: none;
@@ -606,7 +604,7 @@ img {
   background: #d7e2e0;
   max-width: 1240px; }
   @media screen and (min-width: 80em) {
-    .divider {
+    .divide {
       margin-left: auto;
       margin-right: auto; } }
 
@@ -625,12 +623,14 @@ img {
       color: #3142b4; }
   .organization__logo, .organization__name {
     display: block;
-    margin-top: 8px;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
+    @media screen and (min-width: 37.5em) {
+      .organization__logo, .organization__name {
+        margin-top: 8px; } }
     @media screen and (min-width: 48em) {
       .organization__logo, .organization__name {
         margin-top: 4px; } }
@@ -736,6 +736,18 @@ img {
 .phone_numbers {
   margin-bottom: 15px; }
 
+.breadcrumb {
+  margin-left: 20px;
+  margin-right: 20px; }
+  .breadcrumb li, .breadcrumb .divider {
+    display: inline-block;
+    margin-right: 5px;
+    color: #d7e2e0; }
+  .breadcrumb .divider {
+    color: #8ac7cb; }
+  .breadcrumb a {
+    color: #fff; }
+
 /* ==========================================================================
    Sections
    ========================================================================== */
@@ -793,8 +805,25 @@ img {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center; }
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 64em) {
+    .container__copyright {
+      display: table;
+      width: 100%; }
+    .copyright--left, .copyright--right {
+      display: table-cell;
+      width: auto; }
     .copyright--left {
       text-align: left; }
+      .copyright--left a {
+        margin-left: 0; }
     .copyright--right {
-      text-align: right; } }
+      text-align: right; }
+      .copyright--right a:last-child {
+        margin-right: 0; } }
+  .copyright a {
+    display: inline-block;
+    margin: 0 10px; }
+    .copyright a.active {
+      color: #67b6bb;
+      font-weight: 700;
+      text-decoration: none; }

@@ -76,19 +76,18 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <? if($zone->twitter) : ?>
                 <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
             <? endif ?>
-            <?= $zone->twitter && $zone->facebook ? '&nbsp;|&nbsp;' : '' ?>
             <? if($zone->facebook) : ?>
                 <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
             <? endif ?>
             <? foreach($pages as $page) : ?>
                 <? if($page->id == '89' || $page->id == '101') : ?>
-                    &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
+                    <a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>
         </div>
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
-            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a> -
+            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a>
             <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/privacy.html">Privacy</a>
             <a href=#" class="active">NL</a> - <a href="#">FR</a>
         </div>

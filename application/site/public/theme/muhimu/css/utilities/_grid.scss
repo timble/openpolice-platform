@@ -5,7 +5,10 @@
 .container__sections,
 .container__news,
 .container__copyright {
-  @include container;
+  @extend %clearfix;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $max-width-page;
   padding-left: $grid-padding;
   padding-right: $grid-padding;
 }
@@ -49,14 +52,6 @@
   }
 
   .my_police {
-    @include span(6 of 12);
-  }
-
-  .copyright--left {
-    @include span(first 6 of 12);
-  }
-
-  .copyright--right {
     @include span(6 of 12);
   }
 }

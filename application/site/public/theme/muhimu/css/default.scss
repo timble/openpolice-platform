@@ -47,7 +47,7 @@ img {
   height: auto;
 }
 
-.divider {
+.divide {
   margin: 10px 20px;
   padding: 0;
   border: none;
@@ -66,6 +66,10 @@ img {
 /* ==========================================================================
    Organization
    ========================================================================== */
+
+.container__top {
+  @extend %clearfix;
+}
 
 .organization {
   @extend %clearfix;
@@ -87,8 +91,11 @@ img {
   &__logo,
   &__name {
     display: block;
-    margin-top: 8px;
     @include transition;
+
+    @include respond-min($breakpoint-beta) {
+      margin-top: 8px;
+    }
 
     @include respond-min($breakpoint-charlie) {
       margin-top: 4px;
@@ -230,6 +237,25 @@ img {
   margin-bottom: 15px;
 }
 
+.breadcrumb {
+  margin-left: 20px;
+  margin-right: 20px;
+
+  li, .divider {
+    display: inline-block;
+    margin-right: 5px;
+    color: palette(turquoise, light)
+  }
+
+  .divider {
+    color: palette(turquoise);
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
 
 /* ==========================================================================
    Sections
@@ -304,12 +330,44 @@ img {
   padding-bottom: 20px;
   text-align: center;
 
-  @include respond-min($breakpoint-charlie) {
+  @include respond-min($breakpoint-delta) {
+
+    @at-root .container__copyright {
+      display: table;
+      width: 100%;
+    }
+
+    &--left,
+    &--right {
+      display: table-cell;
+      width: auto;
+    }
+
     &--left {
       text-align: left;
+
+      a {
+        margin-left: 0;
+      }
     }
+
     &--right {
       text-align: right;
+
+      a:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    margin: 0 10px;
+
+    &.active {
+      color: palette(turquoise, dark);
+      font-weight: 700;
+      text-decoration: none;
     }
   }
 }

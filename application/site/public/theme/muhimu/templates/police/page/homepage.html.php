@@ -42,7 +42,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <? endforeach ?>
 </div>
 
-<hr class="divider" />
+<hr class="divide" />
 
 <div class="container__news">
 <? foreach(object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->getRowset() as $article) : ?>
