@@ -86,10 +86,12 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <? endforeach ?>
         </div>
         <div class="copyright--right">
-            © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
-            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a>
-            <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/privacy.html">Privacy</a>
-            <a href=#" class="active">NL</a> - <a href="#">FR</a>
+            © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?>
+            <div class="copyright__menu">
+                <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a>
+                <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/privacy.html">Privacy</a>
+                <a href=#" class="active">NL</a> - <a href="#">FR</a>
+            </div>
         </div>
     </div>
 </footer>

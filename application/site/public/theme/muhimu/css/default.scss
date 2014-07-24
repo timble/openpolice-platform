@@ -48,7 +48,8 @@ a {
 
   &:hover,
   &:focus {
-    color: palette(blue, dark)
+    color: palette(blue, dark);
+    text-decoration: none;
   }
 
   &:visited {
@@ -271,7 +272,8 @@ img {
   li, .divider {
     display: inline-block;
     margin-right: 5px;
-    color: palette(turquoise, light)
+    color: palette(turquoise, light);
+    font-weight: 300;
   }
 
   .divider {
@@ -280,6 +282,7 @@ img {
 
   a {
     color: #fff;
+    font-weight: 400;
   }
 }
 
@@ -436,7 +439,15 @@ img {
   padding-bottom: 20px;
   text-align: center;
 
-  @include respond-min($breakpoint-delta) {
+  .copyright__menu {
+    display: inline-block;
+  }
+
+  a {
+    color: palette(blue);
+  }
+
+  @include respond-min($breakpoint-charlie) {
 
     @at-root .container__copyright {
       display: table;
@@ -451,6 +462,7 @@ img {
 
     &--left {
       text-align: left;
+      padding-right: 10px;
 
       a {
         margin-left: 0;
@@ -459,6 +471,7 @@ img {
 
     &--right {
       text-align: right;
+      padding-left: 10px;
 
       a:last-child {
         margin-right: 0;

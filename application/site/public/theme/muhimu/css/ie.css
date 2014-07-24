@@ -606,7 +606,8 @@ strong {
 a {
   color: #3142b4; }
   a:hover, a:focus {
-    color: #1b2464; }
+    color: #1b2464;
+    text-decoration: none; }
   a:visited {
     color: #6c3b7f; }
 
@@ -755,11 +756,13 @@ img {
 .breadcrumb li, .breadcrumb .divider {
   display: inline-block;
   margin-right: 5px;
-  color: #d7e2e0; }
+  color: #d7e2e0;
+  font-weight: 300; }
 .breadcrumb .divider {
   color: #8ac7cb; }
 .breadcrumb a {
-  color: #fff; }
+  color: #fff;
+  font-weight: 400; }
 
 .my_police {
   margin-top: 20px;
@@ -866,6 +869,10 @@ img {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center; }
+  .copyright .copyright__menu {
+    display: inline-block; }
+  .copyright a {
+    color: #26338c; }
   .container__copyright {
     display: table;
     width: 100%; }
@@ -873,11 +880,13 @@ img {
     display: table-cell;
     width: auto; }
   .copyright--left {
-    text-align: left; }
+    text-align: left;
+    padding-right: 10px; }
     .copyright--left a {
       margin-left: 0; }
   .copyright--right {
-    text-align: right; }
+    text-align: right;
+    padding-left: 10px; }
     .copyright--right a:last-child {
       margin-right: 0; }
   .copyright a {
