@@ -47,27 +47,27 @@ table {
 
 .container__top,
 .container__header,
-.container__sections,
-.container__news,
-.container__copyright, .organization, .organization a, .news {
+.container__content,
+.breadcrumb,
+.container__copyright, .organization, .organization a, .container__sections, .container__news, .news {
   *zoom: 1; }
   .container__top:before,
   .container__header:before,
-  .container__sections:before,
-  .container__news:before,
-  .container__copyright:before, .organization:before, .organization a:before, .news:before, .container__top:after,
+  .container__content:before,
+  .breadcrumb:before,
+  .container__copyright:before, .organization:before, .organization a:before, .container__sections:before, .container__news:before, .news:before, .container__top:after,
   .container__header:after,
-  .container__sections:after,
-  .container__news:after,
-  .container__copyright:after, .organization:after, .organization a:after, .news:after {
+  .container__content:after,
+  .breadcrumb:after,
+  .container__copyright:after, .organization:after, .organization a:after, .container__sections:after, .container__news:after, .news:after {
     display: table;
     content: "";
     line-height: 0; }
   .container__top:after,
   .container__header:after,
-  .container__sections:after,
-  .container__news:after,
-  .container__copyright:after, .organization:after, .organization a:after, .news:after {
+  .container__content:after,
+  .breadcrumb:after,
+  .container__copyright:after, .organization:after, .organization a:after, .container__sections:after, .container__news:after, .news:after {
     clear: both; }
 
 /**
@@ -93,8 +93,8 @@ table {
  */
 .container__top,
 .container__header,
-.container__sections,
-.container__news,
+.container__content,
+.breadcrumb,
 .container__copyright {
   margin-right: auto;
   margin-left: auto;
@@ -185,7 +185,17 @@ table {
   .my_police {
     width: 48.14815%;
     float: left;
-    margin-left: 3.7037%; } }
+    margin-left: 3.7037%; }
+
+  .articles {
+    width: 74.07407%;
+    float: left;
+    margin-left: 0; } }
+@media screen and (min-width: 64em) {
+  .articles {
+    width: 65.4321%;
+    float: left;
+    margin-left: 0; } }
 /* Magnific Popup CSS */
 .mfp-bg {
   top: 0;
@@ -583,30 +593,35 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25em;
   color: #3142b4; }
 
+h1 {
+  font-size: 2em;
+  margin-bottom: .5em; }
+
+p {
+  margin: 0 0 1.5em; }
+
 strong {
   font-weight: 700; }
 
 a {
   color: #3142b4; }
-  a:hover {
+  a:hover, a:focus {
     color: #1b2464; }
+  a:visited {
+    color: #6c3b7f; }
 
 img {
   max-width: 100%;
   height: auto; }
 
 .divide {
-  margin: 10px 20px;
+  margin: 10px auto;
   padding: 0;
   border: none;
   outline: none;
   height: 5px;
   background: #d7e2e0;
-  max-width: 1240px; }
-  @media screen and (min-width: 80em) {
-    .divide {
-      margin-left: auto;
-      margin-right: auto; } }
+  max-width: 1280px; }
 
 /* ==========================================================================
    Organization
@@ -736,17 +751,14 @@ img {
 .phone_numbers {
   margin-bottom: 15px; }
 
-.breadcrumb {
-  margin-left: 20px;
-  margin-right: 20px; }
-  .breadcrumb li, .breadcrumb .divider {
-    display: inline-block;
-    margin-right: 5px;
-    color: #d7e2e0; }
-  .breadcrumb .divider {
-    color: #8ac7cb; }
-  .breadcrumb a {
-    color: #fff; }
+.breadcrumb li, .breadcrumb .divider {
+  display: inline-block;
+  margin-right: 5px;
+  color: #d7e2e0; }
+.breadcrumb .divider {
+  color: #8ac7cb; }
+.breadcrumb a {
+  color: #fff; }
 
 /* ==========================================================================
    Sections
@@ -764,7 +776,7 @@ img {
    ========================================================================== */
 .news {
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   clear: both; }
   .news__image {
     position: relative;
@@ -798,6 +810,18 @@ img {
       clear: none; } }
 
 /* ==========================================================================
+   Content
+   ========================================================================== */
+.container__content {
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  @media screen and (min-width: 64em) {
+    .container__content .articles {
+      max-width: 42em;
+      padding-top: 30px;
+      padding-bottom: 30px; } }
+
+/* ==========================================================================
    Copyright
    ========================================================================== */
 .copyright {
@@ -824,6 +848,6 @@ img {
     display: inline-block;
     margin: 0 10px; }
     .copyright a.active {
-      color: #67b6bb;
+      color: #00637c;
       font-weight: 700;
       text-decoration: none; }

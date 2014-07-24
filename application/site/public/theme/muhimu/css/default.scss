@@ -30,6 +30,15 @@ h1, h2, h3, h4, h5, h6 {
   color: palette(blue, light);
 }
 
+h1 {
+  font-size: 2em;
+  margin-bottom: .5em;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
 strong {
   font-weight: 700;
 }
@@ -37,8 +46,13 @@ strong {
 a {
   color: palette(blue, light);
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: palette(blue, dark)
+  }
+
+  &:visited {
+    color: palette(purple, light);
   }
 }
 
@@ -48,18 +62,13 @@ img {
 }
 
 .divide {
-  margin: 10px 20px;
+  margin: 10px auto;
   padding: 0;
   border: none;
   outline: none;
   height: 5px;
   background: palette(turquoise, light);
-  max-width: ($max-width-page)-($grid-padding*2);
-
-  @include respond-min($breakpoint-echo) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  max-width: $max-width-page;
 }
 
 
@@ -238,8 +247,6 @@ img {
 }
 
 .breadcrumb {
-  margin-left: 20px;
-  margin-right: 20px;
 
   li, .divider {
     display: inline-block;
@@ -262,6 +269,7 @@ img {
    ========================================================================== */
 
 .container__sections {
+  @extend %clearfix;
   padding-top: 20px;
 
   .section {
@@ -286,7 +294,7 @@ img {
 .news {
   @extend %clearfix;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   clear: both;
 
   &__image {
@@ -316,6 +324,24 @@ img {
 
   @include respond-min($breakpoint-beta) {
     clear: none;
+  }
+}
+
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.container__content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .articles {
+    @include respond-min($breakpoint-delta) {
+      max-width: 42em;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
   }
 }
 

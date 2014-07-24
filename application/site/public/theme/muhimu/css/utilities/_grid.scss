@@ -2,8 +2,8 @@
 
 .container__top,
 .container__header,
-.container__sections,
-.container__news,
+.container__content,
+.breadcrumb,
 .container__copyright {
   @extend %clearfix;
   margin-right: auto;
@@ -53,5 +53,15 @@
 
   .my_police {
     @include span(6 of 12);
+  }
+
+  .articles {
+    @include span(first 9 of 12)
+  }
+}
+
+@include respond-min($breakpoint-delta) {
+  .articles {
+    @include span(first 8 of 12)
   }
 }

@@ -56,7 +56,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
         <div class="news__content">
             <h2><a href="#"><?= $article->title ?></a></h2>
-            <p><?= $article->introtext ?></p>
+            <?= $article->introtext ?>
         </div>
     </section>
 <? endforeach ?>
