@@ -1,4 +1,4 @@
 // Clearing floats
-.clearfix {
+%clearfix {
   @include clearfix();
 }

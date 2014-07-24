@@ -45,28 +45,36 @@ module.exports = function(grunt) {
                 }
             },
 
-            livereloadmobile: {
+            livereload: {
                 // Here we watch the files the sass task will compile to
                 // These files are sent to the live reload server after sass compiles to them
+                files: [
+                    'application/site/public/theme/mobile/css/default.css',
+                    'application/site/public/theme/muhimu/css/default.css'
+                ],
                 options: {
                     livereload: true
-                },
-                files: ['application/site/public/theme/mobile/css/default.css']
-            },
+                }
+            }
+        },
 
-            livereloadmuhimu: {
-                // Here we watch the files the sass task will compile to
-                // These files are sent to the live reload server after sass compiles to them
-                options: {
-                    livereload: true
-                },
-                files: ['application/site/public/theme/muhimu/css/default.css']
+        // Concurrently tasking
+        concurrent: {
+            options: {
+                logConcurrentOutput: true
+            },
+            mobile: {
+                tasks: ["watch:cssmobile", "watch:livereload"]
+            },
+            muhimu: {
+                tasks: ["watch:cssmuhimu", "watch:livereload"]
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-concurrent');
 
     // The default task will show the usage
     grunt.registerTask('default', 'Prints usage', function () {
@@ -79,6 +87,6 @@ module.exports = function(grunt) {
         grunt.log.writeln('* run "grunt muhimu" for platform v3.');
     });
 
-    grunt.registerTask('mobile', ['watch:cssmobile','watch:livereloadmobile']);
-    grunt.registerTask('muhimu', ['watch:cssmuhimu','watch:livereloadmuhimu']);
+    grunt.registerTask('mobile', ['concurrent:mobile']);
+    grunt.registerTask('muhimu', ['concurrent:muhimu']);
 };

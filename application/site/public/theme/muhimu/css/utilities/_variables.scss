@@ -4,6 +4,42 @@ $color-main-blue:       #26338c;
 $color-main-turquoise:  #8ac7cb;
 $color-main-orange:     #db5c1e;
 
+$palettes: (
+    blue: (
+        base:   $color-main-blue,
+        light:  lighten($color-main-blue, 10%),
+        dark:   darken($color-main-blue, 10%)
+    ),
+    turquoise: (
+        base:  $color-main-turquoise,
+        light: #d7e2e0,
+        dark: darken($color-main-turquoise, 10%)
+    ),
+    orange: (
+        base:  $color-main-orange,
+        light: lighten($color-main-orange, 10%),
+        dark: darken($color-main-orange, 10%)
+    )
+);
+
+@function palette($palette, $tone: 'base') {
+  @return map-get(map-get($palettes, $palette), $tone);
+}
+
+
+
+
+
+
+
+// Transition
+// -------------------------
+$default-transition: all .2s ease-in-out;
+
+
+
+
+
 
 // Breakpoints
 // -------------------------
@@ -17,11 +53,10 @@ $font-family: Helvetica, sans-serif;
 $line-height: 1.5em;
 
 $gutter-width: 3em;
-$grid-padding: 25px;
+$grid-padding: 20px;
 
 // Susy grid
 $susy: (
   gutters: $gutter-width/4em,
   gutter-position: before
 );
-

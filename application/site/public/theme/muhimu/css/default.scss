@@ -1,2 +1,272 @@
-@import 'illusion';
+@import 'illusion/basics';
+@import 'illusion/ie';
+@import 'utilities/reset';
+@import 'utilities/clearfix';
+@import 'utilities/variables';
+@import 'utilities/mixins';
+@import 'utilities/grid';
 @import '../components/magnific-popup/src/css/main';
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+  line-height: 1.25em;
+  color: palette(blue, light);
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  color: palette(blue, light);
+
+  &:hover {
+    color: palette(blue, dark)
+  }
+}
+
+.divider {
+  margin: 10px 20px;
+  padding: 0;
+  border: none;
+  outline: none;
+  height: 5px;
+  background: palette(turquoise, light);
+}
+
+
+/* ==========================================================================
+   Organization
+   ========================================================================== */
+
+.organization {
+  @extend %clearfix;
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+  a {
+    @extend %clearfix;
+    display: inline-block;
+  }
+
+  &__logo,
+  &__name {
+    display: block;
+    float: left;
+    margin-top: 8px;
+    @include transition;
+
+    @include respond-min($breakpoint-charlie) {
+      margin-top: 4px;
+    }
+  }
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+    background: url("../images/avatar.png");
+    background-size: cover;
+
+    @include respond-min($breakpoint-charlie) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__name {
+    font-weight: 300;
+    padding-left: 15px;
+    color: $color-main-blue;
+
+    @include respond-min($breakpoint-charlie) {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 1.25em;
+      padding-right: .5em;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Search
+   ========================================================================== */
+
+.search {
+  margin-bottom: 15px;
+  position: relative;
+
+  @include respond-min($breakpoint-beta) {
+    margin-top: 15px;
+  }
+
+  input {
+    margin: 0;
+    width: 100%;
+    display: block;
+    padding: 5px;
+    border: 1px solid palette(blue);
+    color: #777;
+    font-style: italic;
+    font-size: 1em;
+    height: 40px;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 40px;
+    background: palette(blue);
+    color: #fff;
+    font-weight: 700;
+
+    &:before {
+      content: "`";
+      position: absolute;
+      top: 17px;
+      right: 4px;
+      font-size: 34px;
+    }
+
+    &:after {
+      content: "o";
+      position: absolute;
+      top: 2px;
+      left: 11px;
+      font-size: 24px;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   Header / Breadcrumb
+   ========================================================================== */
+
+.container__breadcrumb {
+  background: palette(blue);
+  color: #fff;
+  border-top: 4px solid palette(turquoise);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container__header {
+  li {
+    display: block;
+    font-size: 20px;
+    line-height: 48px;
+    font-weight: 300;
+
+    &:before {
+      display: inline-block;
+      padding-right: 15px;
+      content: ">";
+      color: palette(turquoise);
+      font-weight: 700;
+    }
+
+    a {
+      color: #fff;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.phone_numbers {
+  margin-bottom: 15px;
+}
+
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+.container__sections {
+  padding-top: 20px;
+
+  .section {
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 1.25em;
+    color: palette(blue)
+  }
+}
+
+
+/* ==========================================================================
+   News
+   ========================================================================== */
+
+.container__news {
+  @extend %clearfix;
+}
+
+.news {
+  @extend %clearfix;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  clear: both;
+
+  &__image {
+    @include ratio(75%, '&__content');
+    margin-bottom: 20px;
+
+    &__content {
+      background: palette(turquoise) url("../images/avatar--white.png") no-repeat center;
+      background-size: 50%;
+    }
+
+    @include respond-min-max($breakpoint-alpha, $breakpoint-beta) {
+      width: 33%;
+      float: left;
+    }
+  }
+
+  &__content {
+    @include respond-min-max($breakpoint-alpha, $breakpoint-beta) {
+      margin-left: 40%;
+    }
+  }
+
+  @include respond-min($breakpoint-beta) {
+    clear: none;
+  }
+}
+
+
+/* ==========================================================================
+   Copyright
+   ========================================================================== */
+
+.container__copyright {
+  background: palette(turquoise, light);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}

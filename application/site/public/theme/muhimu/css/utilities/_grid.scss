@@ -1,1 +1,75 @@
 @import 'susy';
+
+.container__top,
+.container__header,
+.container__sections,
+.container__news,
+.container__copyright {
+  @include container;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
+  max-width: 1280px;
+}
+
+@include respond-min($breakpoint-beta) {
+
+  .organization {
+    @include span(first 3 of 6);
+  }
+
+  .search {
+    @include span(3 of 6);
+  }
+
+  .news,
+  .section {
+    &:nth-child(odd) {
+      @include span(first 3 of 6);
+      clear: left;
+    }
+
+    @include span(3 of 6);
+  }
+}
+
+@include respond-min($breakpoint-charlie) {
+
+  .organization {
+    @include span(first 8 of 12);
+  }
+
+  .search {
+    @include span(4 of 12);
+  }
+
+  .section {
+    &:nth-child(odd), & {
+      @include span(4 of 12);
+      clear: none;
+    }
+
+    &:nth-child(3n+1) {
+      @include span(first 4 of 12);
+      clear: left;
+    }
+  }
+
+  .news {
+    &:nth-child(odd), & {
+      @include span(3 of 12);
+      clear: none;
+    }
+
+    &:first-child {
+      @include span(first 3 of 12);
+    }
+  }
+
+  .quick_links {
+    @include span(first 6 of 12);
+  }
+
+  .mijn_politie {
+    @include span(6 of 12);
+  }
+}
