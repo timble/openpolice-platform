@@ -857,6 +857,7 @@ img {
         left: 0;
         display: block;
         width: 100%;
+        height: 100%;
         text-align: center;
         color: #fff;
         cursor: pointer;
@@ -864,11 +865,14 @@ img {
         -moz-transition: all 0.2s ease-in-out;
         -ms-transition: all 0.2s ease-in-out;
         -o-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out; }
+        transition: all 0.2s ease-in-out;
+        background: rgba(38, 51, 140, 0);
+        line-height: 200px; }
       .news__image__content:hover {
         background-position: center -300px; }
         .news__image__content:hover:after {
-          top: 50%; }
+          background: rgba(38, 51, 140, 0.8);
+          top: 0; }
   .news__content h2 {
     margin-bottom: .5em; }
 

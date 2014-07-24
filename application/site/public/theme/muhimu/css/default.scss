@@ -392,17 +392,21 @@ img {
         left: 0;
         display: block;
         width: 100%;
+        height: 100%;
         text-align: center;
         color: #fff;
         cursor: pointer;
         @include transition;
+        background: rgba(palette(blue), 0);
+        line-height: 150px;
       }
 
       &:hover {
         background-position: center -300px;
 
         &:after {
-          top: 50%;
+          background: rgba(palette(blue), .8);
+          top: 0;
         }
       }
     }
