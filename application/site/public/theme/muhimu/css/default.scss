@@ -383,6 +383,28 @@ img {
     &__content {
       background: palette(turquoise) url("../images/avatar--white.png") no-repeat center;
       background-size: 50%;
+      @include transition;
+
+      &:after {
+        content: "Lees meer";
+        position: absolute;
+        top: 300px;
+        left: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+        @include transition;
+      }
+
+      &:hover {
+        background-position: center -300px;
+
+        &:after {
+          top: 50%;
+        }
+      }
     }
 
     @include respond-min-max($breakpoint-alpha, $breakpoint-beta) {
