@@ -52,19 +52,5 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <hr class="divide" />
 
 <div class="container__news">
-<? foreach(object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->getRowset() as $article) : ?>
-    <section class="news">
-        <div class="news__image">
-            <div class="news__image__content">
-                <?= helper('com:attachments.image.thumbnail', array(
-                'attachment' => $article->attachments_attachment_id,
-                'attribs' => array('width' => '400', 'height' => '300'))) ?>
-            </div>
-        </div>
-        <div class="news__content">
-            <h2><a href="#"><?= $article->title ?></a></h2>
-            <?= $article->introtext ?>
-        </div>
-    </section>
-<? endforeach ?>
+    <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->getRowset())) ?>
 </div>
