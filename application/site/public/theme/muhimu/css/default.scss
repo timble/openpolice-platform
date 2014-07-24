@@ -67,7 +67,7 @@ img {
   padding: 0;
   border: none;
   outline: none;
-  height: 5px;
+  height: 2px;
   background: palette(turquoise, light);
   max-width: $max-width-page;
 }
@@ -354,10 +354,6 @@ img {
   @extend %clearfix;
   padding-top: 20px;
 
-  .section {
-    padding-bottom: 30px;
-  }
-
   h1 {
     font-size: 1.25em;
     color: palette(blue);
@@ -376,7 +372,7 @@ img {
 
 .news {
   @extend %clearfix;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 20px;
   clear: both;
 

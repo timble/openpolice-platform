@@ -620,7 +620,7 @@ img {
   padding: 0;
   border: none;
   outline: none;
-  height: 5px;
+  height: 2px;
   background: #d7e2e0;
   max-width: 1280px; }
 
@@ -830,8 +830,6 @@ img {
    ========================================================================== */
 .container__sections {
   padding-top: 20px; }
-  .container__sections .section {
-    padding-bottom: 30px; }
   .container__sections h1 {
     font-size: 1.25em;
     color: #26338c;
@@ -841,7 +839,7 @@ img {
    News
    ========================================================================== */
 .news {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom: 20px;
   clear: both; }
   .news__image {
