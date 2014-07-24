@@ -1,3 +1,14 @@
+<?
+$languages  = $this->getObject('application.languages');
+$active     = $languages->getActive();
+
+$site = object('application')->getCfg('site');
+$pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
+
+$path = '/'.$site;
+$path .= count($languages) > '1' ? '/'.$active->slug : '';
+?>
+
 <style type="text/css">
     .breadcrumb {
         display: none;
@@ -21,42 +32,14 @@
 </ktml:module>
 
 <div class="container__sections">
+<? foreach($pages as $page) : ?>
+    <? if($page->level == '1' && $page->hidden == false) : ?>
     <section class="section">
-        <h1><a href="#">Aanvragen</a></h1>
+        <h1><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></h1>
         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Lorem ipsum dolor sit amet.</p>
     </section>
-    <section class="section">
-        <h1><a href="#">Diefstal, inbraak of verlies</a></h1>
-        <p>Donec ullamcorper nulla non metus auctor fringilla.</p>
-    </section>
-    <section class="section">
-        <h1><a href="#">Verkeer</a></h1>
-        <p>Aenean lacinia bibendum nulla sed consectetur.</p>
-    </section>
-    <section class="section">
-        <h1><a href="#">Overlast</a></h1>
-        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    </section>
-    <section class="section">
-        <h1><a href="#">Preventie</a></h1>
-        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-    </section>
-    <section class="section">
-        <h1><a href="#">Over ons</a></h1>
-        <p>Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-    </section>
-    <section class="section">
-        <h1><a href="#">Aangifte of melding doen</a></h1>
-        <p>Vestibulum id ligula porta felis euismod semper.</p>
-    </section>
-    <section class="section">
-        <h1><a href="#">Je wijkinspecteur</a></h1>
-        <p>Donec ullamcorper nulla non metus auctor fringilla.</p>
-    </section>
-    <section class="section">
-        <h1><a href="#">Contacteer ons</a></h1>
-        <p>Sed posuere consectetur est at lobortis.</p>
-    </section>
+    <? endif ?>
+<? endforeach ?>
 </div>
 
 <hr class="divider" />
