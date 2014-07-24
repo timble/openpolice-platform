@@ -80,12 +80,11 @@ table {
 .container__sections,
 .container__news,
 .container__copyright {
-  max-width: 100%;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
-  padding-right: 20px;
-  max-width: 1280px; }
+  padding-right: 20px; }
   .container__top:after,
   .container__header:after,
   .container__sections:after,
@@ -108,14 +107,18 @@ table {
 .news,
 .section {
   width: 46.15385%;
-  float: left;
-  margin-left: 7.69231%; }
-  .news:nth-child(odd),
-  .section:nth-child(odd) {
-    width: 46.15385%;
-    float: left;
+  float: left; }
+  .news:nth-child(2n + 1),
+  .section:nth-child(2n + 1) {
     margin-left: 0;
-    clear: left; }
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0; }
+  .news:nth-child(2n + 2),
+  .section:nth-child(2n + 2) {
+    margin-left: 53.84615%;
+    margin-right: -100%;
+    clear: none; }
 
 .organization {
   width: 65.4321%;
@@ -127,26 +130,43 @@ table {
   float: left;
   margin-left: 3.7037%; }
 
-.section:nth-child(odd), .section {
+.section {
   width: 30.8642%;
-  float: left;
-  margin-left: 3.7037%;
-  clear: none; }
-.section:nth-child(3n+1) {
-  width: 30.8642%;
-  float: left;
-  margin-left: 0;
-  clear: left; }
+  float: left; }
+  .section:nth-child(3n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0; }
+  .section:nth-child(3n + 2) {
+    margin-left: 34.5679%;
+    margin-right: -100%;
+    clear: none; }
+  .section:nth-child(3n + 3) {
+    margin-left: 69.1358%;
+    margin-right: -100%;
+    clear: none; }
 
-.news:nth-child(odd), .news {
+.news {
   width: 22.22222%;
-  float: left;
-  margin-left: 3.7037%;
-  clear: none; }
-.news:first-child {
-  width: 22.22222%;
-  float: left;
-  margin-left: 0; }
+  float: left; }
+  .news:nth-child(4n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0; }
+  .news:nth-child(4n + 2) {
+    margin-left: 25.92593%;
+    margin-right: -100%;
+    clear: none; }
+  .news:nth-child(4n + 3) {
+    margin-left: 51.85185%;
+    margin-right: -100%;
+    clear: none; }
+  .news:nth-child(4n + 4) {
+    margin-left: 77.77778%;
+    margin-right: -100%;
+    clear: none; }
 
 .quick_links {
   width: 48.14815%;
@@ -565,19 +585,24 @@ a {
   border: none;
   outline: none;
   height: 5px;
-  background: #d7e2e0; }
+  background: #d7e2e0;
+  max-width: 1240px; }
 
 /* ==========================================================================
    Organization
    ========================================================================== */
 .organization {
   margin-top: 15px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  position: relative; }
   .organization a {
-    display: inline-block; }
+    display: inline-block;
+    text-decoration: none;
+    max-width: 100%; }
+    .organization a:hover {
+      color: #3142b4; }
   .organization__logo, .organization__name {
     display: block;
-    float: left;
     margin-top: 8px;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -586,6 +611,9 @@ a {
     transition: all 0.2s ease-in-out;
     margin-top: 4px; }
   .organization__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 24px;
     height: 24px;
     background: url("../images/avatar.png");
@@ -594,10 +622,15 @@ a {
     height: 32px; }
   .organization__name {
     font-weight: 300;
-    padding-left: 15px;
     color: #26338c;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    padding-left: 39px;
     font-size: 24px;
-    line-height: 32px; }
+    line-height: 32px;
+    padding-left: 47px; }
     .organization__name span {
       font-weight: 700;
       font-size: 1.25em;
@@ -648,7 +681,7 @@ a {
    Header / Breadcrumb
    ========================================================================== */
 .container__breadcrumb {
-  background: #26338c;
+  background: #26338c url("../images/graphic_line.png") no-repeat right bottom;
   color: #fff;
   border-top: 4px solid #8ac7cb;
   padding-top: 20px;
@@ -714,7 +747,7 @@ a {
 /* ==========================================================================
    Copyright
    ========================================================================== */
-.container__copyright {
+.copyright {
   background: #d7e2e0;
   padding-top: 20px;
   padding-bottom: 20px;

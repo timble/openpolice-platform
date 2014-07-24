@@ -37,16 +37,22 @@ $palettes: (
 $default-transition: all .2s ease-in-out;
 
 
+// Widths
+// -------------------------
+$max-width-page: 1280px;
 
 
 
 
 // Breakpoints
 // -------------------------
-$breakpoint-alpha: 400px;
-$breakpoint-beta: 600px;
-$breakpoint-charlie: 768px;
-$breakpoint-delta: 1024px;
+$breakpoint-alpha:      25em;     // 400px
+$breakpoint-beta:       37.5em;   // 600px  Small tablets
+$breakpoint-charlie:    48em;     // 768px  Portrait bigger tablets
+$breakpoint-delta:      64em;     // 1024px Landscape bigger tablets
+$breakpoint-echo:       80em;     // 1200px Laptops
+$breakpoint-foxtrot:    90em;     // 1440px Desktop
+$breakpoint-golf:       100em;    // 1600px Extra wide
 
 $font-size: 16px;
 $font-family: Helvetica, sans-serif;
@@ -58,5 +64,6 @@ $grid-padding: 20px;
 // Susy grid
 $susy: (
   gutters: $gutter-width/4em,
-  gutter-position: before
+  gutter-position: before,
+  container: $max-width-page
 );

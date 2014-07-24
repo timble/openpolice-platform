@@ -44,6 +44,12 @@ a {
   outline: none;
   height: 5px;
   background: palette(turquoise, light);
+  max-width: ($max-width-page)-($grid-padding*2);
+
+  @include respond-min($breakpoint-echo) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 
@@ -55,16 +61,22 @@ a {
   @extend %clearfix;
   margin-top: 15px;
   margin-bottom: 10px;
+  position: relative;
 
   a {
     @extend %clearfix;
     display: inline-block;
+    text-decoration: none;
+    max-width: 100%;
+
+    &:hover {
+      color: palette(blue, light)
+    }
   }
 
   &__logo,
   &__name {
     display: block;
-    float: left;
     margin-top: 8px;
     @include transition;
 
@@ -74,6 +86,9 @@ a {
   }
 
   &__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 24px;
     height: 24px;
     background: url("../images/avatar.png");
@@ -87,12 +102,17 @@ a {
 
   &__name {
     font-weight: 300;
-    padding-left: 15px;
     color: $color-main-blue;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    padding-left: 15px + 24px;
 
     @include respond-min($breakpoint-charlie) {
       font-size: 24px;
       line-height: 32px;
+      padding-left: 15px + 32px;
     }
 
     span {
@@ -164,7 +184,7 @@ a {
    ========================================================================== */
 
 .container__breadcrumb {
-  background: palette(blue);
+  background: palette(blue) url("../images/graphic_line.png") no-repeat right bottom;
   color: #fff;
   border-top: 4px solid palette(turquoise);
   padding-top: 20px;
@@ -264,7 +284,7 @@ a {
    Copyright
    ========================================================================== */
 
-.container__copyright {
+.copyright {
   background: palette(turquoise, light);
   padding-top: 20px;
   padding-bottom: 20px;

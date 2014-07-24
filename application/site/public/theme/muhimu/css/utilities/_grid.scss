@@ -8,7 +8,6 @@
   @include container;
   padding-left: $grid-padding;
   padding-right: $grid-padding;
-  max-width: 1280px;
 }
 
 @include respond-min($breakpoint-beta) {
@@ -23,12 +22,7 @@
 
   .news,
   .section {
-    &:nth-child(odd) {
-      @include span(first 3 of 6);
-      clear: left;
-    }
-
-    @include span(3 of 6);
+    @include gallery(3 of 6);
   }
 }
 
@@ -43,26 +37,11 @@
   }
 
   .section {
-    &:nth-child(odd), & {
-      @include span(4 of 12);
-      clear: none;
-    }
-
-    &:nth-child(3n+1) {
-      @include span(first 4 of 12);
-      clear: left;
-    }
+    @include gallery(4 of 12);
   }
 
   .news {
-    &:nth-child(odd), & {
-      @include span(3 of 12);
-      clear: none;
-    }
-
-    &:first-child {
-      @include span(first 3 of 12);
-    }
+    @include gallery(3 of 12);
   }
 
   .quick_links {
