@@ -173,7 +173,17 @@ table {
   float: left;
   margin-left: 0; }
 
-.mijn_politie {
+.my_police {
+  width: 48.14815%;
+  float: left;
+  margin-left: 3.7037%; }
+
+.copyright--left {
+  width: 48.14815%;
+  float: left;
+  margin-left: 0; }
+
+.copyright--right {
   width: 48.14815%;
   float: left;
   margin-left: 3.7037%; }
@@ -564,6 +574,10 @@ img.mfp-img {
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
+  background: #d7e2e0;
+  min-height: 100%; }
+
+#wrapper {
   background: #fff; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -578,6 +592,10 @@ a {
   color: #3142b4; }
   a:hover {
     color: #1b2464; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 .divider {
   margin: 10px 20px;
@@ -739,10 +757,12 @@ a {
       right: 0;
       bottom: 0;
       left: 0;
-      overflow: auto; }
+      overflow: hidden; }
     .news__image__content {
       background: #8ac7cb url("../images/avatar--white.png") no-repeat center;
       background-size: 50%; }
+  .news__content h2 {
+    margin-bottom: .5em; }
 
 /* ==========================================================================
    Copyright
@@ -752,3 +772,7 @@ a {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center; }
+  .copyright--left {
+    text-align: left; }
+  .copyright--right {
+    text-align: right; }

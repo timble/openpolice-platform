@@ -16,6 +16,11 @@
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
+  background: palette(turquoise, light);
+  min-height: 100%;
+}
+
+#wrapper {
   background: #fff;
 }
 
@@ -35,6 +40,11 @@ a {
   &:hover {
     color: palette(blue, dark)
   }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .divider {
@@ -254,7 +264,7 @@ a {
   clear: both;
 
   &__image {
-    @include ratio(75%, '&__content');
+    @include ratio(75%, '&__content', hidden);
     margin-bottom: 20px;
 
     &__content {
@@ -271,6 +281,10 @@ a {
   &__content {
     @include respond-min-max($breakpoint-alpha, $breakpoint-beta) {
       margin-left: 40%;
+    }
+
+    h2 {
+      margin-bottom: .5em;
     }
   }
 
@@ -289,4 +303,13 @@ a {
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
+
+  @include respond-min($breakpoint-charlie) {
+    &--left {
+      text-align: left;
+    }
+    &--right {
+      text-align: right;
+    }
+  }
 }

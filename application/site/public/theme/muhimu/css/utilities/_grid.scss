@@ -48,7 +48,15 @@
     @include span(first 6 of 12);
   }
 
-  .mijn_politie {
+  .my_police {
+    @include span(6 of 12);
+  }
+
+  .copyright--left {
+    @include span(first 6 of 12);
+  }
+
+  .copyright--right {
     @include span(6 of 12);
   }
 }

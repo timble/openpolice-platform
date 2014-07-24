@@ -25,7 +25,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <li><a href="#">Contacteer ons</a></li>
             </ul>
         </div>
-        <div class="mijn_politie">
+        <div class="my_police">
             Mijn politie
         </div>
     </div>
@@ -55,7 +55,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             </div>
         </div>
         <div class="news__content">
-            <h2><?= $article->title ?></h2>
+            <h2><a href="#"><?= $article->title ?></a></h2>
             <p><?= $article->introtext ?></p>
         </div>
     </section>

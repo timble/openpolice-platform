@@ -25,7 +25,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <body id="page">
 <script data-inline type="text/javascript" pagespeed_no_defer>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
-<div id="page">
+<div id="wrapper">
     <div class="container__top">
         <div class="organization" itemscope itemtype="http://schema.org/Organization">
             <a itemprop="url" href="<?= $path ?>">
