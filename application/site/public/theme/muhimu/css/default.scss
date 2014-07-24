@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: $sans;
   line-height: 1.5em;
   background: palette(turquoise, light);
   min-height: 100%;
@@ -25,7 +25,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+  font-family: $serif;
   line-height: 1.25em;
   color: palette(blue, light);
 }
@@ -71,6 +71,9 @@ img {
   max-width: $max-width-page;
 }
 
+.margin-zero {
+  margin: 0;
+}
 
 /* ==========================================================================
    Organization
@@ -215,6 +218,16 @@ img {
   border-top: 4px solid palette(turquoise);
   padding-top: 20px;
   padding-bottom: 20px;
+
+  @include respond-min($breakpoint-charlie) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include respond-min($breakpoint-delta) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .container__header {
@@ -260,6 +273,46 @@ img {
 
   a {
     color: #fff;
+  }
+}
+
+.my_police {
+  &__header {
+    font-family: $sans;
+    color: #fff;
+    font-size: 1.5em;
+    line-height: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1em;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  a {
+    color: #fff;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.my_police__button {
+      border-radius: 4px;
+      border: 1px solid #fff;
+      box-shadow: inset 0 0 1px palette(turquoise, dark);
+      display: inline-block;
+      padding: 10px 20px;
+      background: palette(turquoise);
+      color: #000;
+      text-decoration: none;
+      @include transition;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
