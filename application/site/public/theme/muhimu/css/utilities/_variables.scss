@@ -1,5 +1,6 @@
 // Colors
 // -------------------------
+$color-main-text:       #2c2c2c;
 $color-main-blue:       #26338c;
 $color-main-turquoise:  #8ac7cb;
 $color-main-orange:     #db5c1e;
@@ -7,6 +8,10 @@ $color-main-orange:     #db5c1e;
 $color-sub-purple:      #5d336e;
 
 $palettes: (
+  text: (
+    base:   $color-main-text,
+    light:  lighten($color-main-text, 10%)
+  ),
   blue: (
     base:   $color-main-blue,
     light:  lighten($color-main-blue, 10%),

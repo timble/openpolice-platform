@@ -52,3 +52,58 @@
        -o-transition: $transition;
           transition: $transition;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Image hovers
+ */
+
+@mixin hover_background($content: attr(data-content), $padding: 0, $background: palette(blue), $color: #fff, $opacity: .8 ) {
+  &:before {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: $padding;
+    left: 0;
+    display: block;
+    content: " ";
+    width: 100%;
+    background: rgba($background, 0);
+    cursor: pointer;
+    @include transition;
+  }
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    content: $content;
+    text-align: center;
+    color: $color;
+    @include transition;
+  }
+
+  &:hover {
+    &:before {
+      background: rgba($background, $opacity);
+      top: $padding;
+      bottom: $padding;
+    }
+
+    &:after {
+      top: 50%;
+      margin-top: -.5em;
+    }
+  }
+}

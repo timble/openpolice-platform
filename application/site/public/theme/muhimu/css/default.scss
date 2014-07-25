@@ -18,6 +18,7 @@ body {
   line-height: 1.5em;
   background: palette(turquoise, light);
   min-height: 100%;
+  color: $color-main-text;
 }
 
 #wrapper {
@@ -370,7 +371,7 @@ img {
   @extend %clearfix;
 }
 
-.news {
+.news_grid {
   @extend %clearfix;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -385,30 +386,7 @@ img {
       background-size: 50%;
       @include transition;
 
-      &:after {
-        content: "Lees meer";
-        position: absolute;
-        top: 300px;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        color: #fff;
-        cursor: pointer;
-        @include transition;
-        background: rgba(palette(blue), 0);
-        line-height: 150px;
-      }
-
-      &:hover {
-        background-position: center -300px;
-
-        &:after {
-          background: rgba(palette(blue), .8);
-          top: 0;
-        }
-      }
+      @include hover_background;
     }
 
     @include respond-min-max($breakpoint-alpha, $breakpoint-beta) {
@@ -441,15 +419,63 @@ img {
   padding-top: 20px;
   padding-bottom: 20px;
 
-  .articles {
-    @include respond-min($breakpoint-delta) {
-      max-width: 42em;
-      padding-top: 30px;
-      padding-bottom: 30px;
+  .component.articles,
+  .component.news {
+
+    article {
+      @include respond-min($breakpoint-delta) {
+        max-width: 42em;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+
+    header {
+      margin-bottom: 1.5em;
+    }
+
+    time {
+      font-size: 1.25em;
+      color: palette(blue, light);
+      font-weight: 300;
     }
   }
 }
 
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+.sidebar section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include respond-min($breakpoint-delta) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    font-family: $sans;
+    font-weight: 300;
+    color: palette(text, light);
+  }
+
+  .article__thumbnail {
+    line-height: 0;
+    display: block;
+    margin-bottom: 20px;
+    background: #fff;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+
+    @include hover_background($padding: 4px);
+  }
+}
 
 /* ==========================================================================
    Copyright

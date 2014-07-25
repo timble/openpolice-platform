@@ -24,21 +24,28 @@
 
 <title content="replace"><?= $article->title ?></title>
 
+
+<ktml:module position="sidebar">
+    <section>
+        <h1 class="attachments">Bijlagen</h1>
+        <? if($article->attachments_attachment_id) : ?>
+        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" data-content="Vergroten" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
+            <?= helper('com:attachments.image.thumbnail', array(
+                'attachment' => $article->attachments_attachment_id,
+                'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
+            <? endif ?>
+        </a>
+    </section>
+</ktml:module>
+
+
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
         <h1 itemprop="name"><?= $article->title ?></h1>
         <time class="text--small" itemprop="datePublished" datetime="<?= $published_on ?>">
-            <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
+            <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('j F Y - H:i'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
-
-    <? if($article->attachments_attachment_id) : ?>
-    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
-        <?= helper('com:attachments.image.thumbnail', array(
-            'attachment' => $article->attachments_attachment_id,
-            'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
-        <? endif ?>
-    </a>
 
     <div itemprop="articleBody">
         <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>

@@ -52,18 +52,18 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </ktml:modules>
 
     <div class="container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
-        <ktml:modules position="left">
-            <aside class="sidebar">
-                <ktml:modules:content>
-            </aside>
-        </ktml:modules>
-
         <? if(!$singleColumn) : ?>
         <div class="component <?= $extension ?>">
             <? endif ?>
             <ktml:content>
                 <? if(!$singleColumn) : ?>
         </div>
+
+        <ktml:modules position="sidebar">
+            <aside class="sidebar">
+                <ktml:modules:content>
+            </aside>
+        </ktml:modules>
     <? endif ?>
     </div>
 
