@@ -137,13 +137,17 @@ img {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 100%;
-    padding-left: 15px + 24px;
+    margin-left: 15px + 24px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom-color: palette(turquoise);
+    }
 
     @include respond-min($breakpoint-charlie) {
       font-size: 24px;
       line-height: 32px;
-      padding-left: 15px + 32px;
+      margin-left: 15px + 32px;
     }
 
     span {
@@ -461,21 +465,48 @@ img {
     color: palette(text, light);
   }
 
-  .article__thumbnail {
-    line-height: 0;
-    display: block;
-    margin-bottom: 20px;
-    background: #fff;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    position: relative;
-    overflow: hidden;
+  .news_list {
+    li {
+      margin-bottom: .75em;
 
-    @include hover_background($padding: 4px);
+      &:before {
+        display: block;
+        float: left;
+        content: ">";
+        color: palette(turquoise);
+        font-weight: 700;
+      }
+
+      a {
+        display: block;
+        margin-left: 1.5em;
+      }
+    }
   }
 }
+
+
+/* ==========================================================================
+   Thumbs
+   ========================================================================== */
+
+.article__thumbnail {
+  line-height: 0;
+  display: block;
+  margin-bottom: 20px;
+  background: #fff;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  overflow: hidden;
+
+  @include hover_background($padding: 4px);
+}
+
+
+
 
 /* ==========================================================================
    Copyright

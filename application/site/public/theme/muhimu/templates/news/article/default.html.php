@@ -27,14 +27,22 @@
 
 <ktml:module position="sidebar">
     <section>
-        <h1 class="attachments">Bijlagen</h1>
         <? if($article->attachments_attachment_id) : ?>
+        <h1 class="attachments">Bijlagen</h1>
         <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" data-content="Vergroten" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
             <?= helper('com:attachments.image.thumbnail', array(
                 'attachment' => $article->attachments_attachment_id,
                 'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
             <? endif ?>
         </a>
+    </section>
+    <section>
+        <h1 class="attachments">Gerelateerd nieuws</h1>
+        <ul class="news_list">
+            <li><a href="#">Tien bestuurders met glas teveel op</a></li>
+            <li><a href="#">Bestuurder zwaar gewond in Wilsele</a></li>
+            <li><a href="#">Hogere onmiddellijke inningen voor dronken rijden</a></li>
+        </ul>
     </section>
 </ktml:module>
 

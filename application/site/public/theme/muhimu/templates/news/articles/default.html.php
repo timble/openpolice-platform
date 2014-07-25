@@ -19,7 +19,7 @@
         </header>
 
         <? if($article->attachments_attachment_id): ?>
-            <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+            <a class="article__thumbnail" tabindex="-1" data-content="Lees meer" href="<?= $link ?>">
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
                     'attribs' => array('width' => '400', 'height' => '300'))) ?>

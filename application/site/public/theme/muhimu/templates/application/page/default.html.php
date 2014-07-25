@@ -55,8 +55,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <? if(!$singleColumn) : ?>
         <div class="component <?= $extension ?>">
             <? endif ?>
-            <ktml:content>
-                <? if(!$singleColumn) : ?>
+                <ktml:content>
+            <? if(!$singleColumn) : ?>
         </div>
 
         <ktml:modules position="sidebar">
