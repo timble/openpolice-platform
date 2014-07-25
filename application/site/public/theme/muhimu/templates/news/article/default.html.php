@@ -27,17 +27,7 @@
 
 <ktml:module position="sidebar">
     <section>
-        <? if($article->attachments_attachment_id) : ?>
-        <h1 class="attachments">Bijlagen</h1>
-        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" data-content="Vergroten" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
-            <?= helper('com:attachments.image.thumbnail', array(
-                'attachment' => $article->attachments_attachment_id,
-                'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
-            <? endif ?>
-        </a>
-    </section>
-    <section>
-        <h1 class="attachments">Gerelateerd nieuws</h1>
+        <h1 class="attachments"><?= @translate('Related news') ?></h1>
         <ul class="news_list">
             <li><a href="#">Tien bestuurders met glas teveel op</a></li>
             <li><a href="#">Bestuurder zwaar gewond in Wilsele</a></li>
@@ -56,6 +46,14 @@
     </header>
 
     <div itemprop="articleBody">
+        <? if($article->attachments_attachment_id) : ?>
+        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" data-content="Vergroten" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
+            <?= helper('com:attachments.image.thumbnail', array(
+                'attachment' => $article->attachments_attachment_id,
+                'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
+        </a>
+        <? endif ?>
+
         <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>
             <?= $article->introtext ?>
         </div>

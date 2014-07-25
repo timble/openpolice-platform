@@ -497,12 +497,19 @@ img {
   background: #fff;
   padding-top: 4px;
   padding-bottom: 4px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
   position: relative;
   overflow: hidden;
 
   @include hover_background($padding: 4px);
+}
+
+@include respond-min($breakpoint-alpha) {
+  .article__thumbnail {
+    float: right;
+    width: 40%;
+    max-width: 200px;
+    margin: 0 0 $line-height $line-height;
+  }
 }
 
 
