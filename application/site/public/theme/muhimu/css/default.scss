@@ -4,7 +4,11 @@
 @import 'utilities/clearfix';
 @import 'utilities/variables';
 @import 'utilities/mixins';
+@import 'utilities/functions';
 @import 'utilities/grid';
+
+@import "molecules/media";
+
 @import '../components/magnific-popup/src/css/main';
 
 * {
@@ -373,45 +377,6 @@ img {
 
 .container__news {
   @extend %clearfix;
-}
-
-.news_grid {
-  @extend %clearfix;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  clear: both;
-
-  &__image {
-    @include ratio(75%, '&__content', hidden);
-    margin-bottom: 20px;
-
-    &__content {
-      background: palette(turquoise) url("../images/avatar--white.png") no-repeat center;
-      background-size: 50%;
-      @include transition;
-
-      @include hover_background;
-    }
-
-    @include respond-min-max($breakpoint-alpha, $breakpoint-beta) {
-      width: 33%;
-      float: left;
-    }
-  }
-
-  &__content {
-    @include respond-min-max($breakpoint-alpha, $breakpoint-beta) {
-      margin-left: 40%;
-    }
-
-    h2 {
-      margin-bottom: .5em;
-    }
-  }
-
-  @include respond-min($breakpoint-beta) {
-    clear: none;
-  }
 }
 
 

@@ -1,0 +1,75 @@
+.media {
+  @extend %clearfix;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  clear: both;
+
+  @include respond-min($breakpoint-beta) {
+    clear: none;
+  }
+}
+
+.media__title {
+  font-size: 1.25em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.media__image {
+  @include ratio(75%, '&__inner', hidden);
+}
+
+.media__image__inner {
+  background: palette(turquoise) url("../images/avatar--white.png") no-repeat center;
+  background-size: 50%;
+  @include transition;
+  @include hover_background;
+}
+
+.media--small {
+  .media__image {
+    width: 30%;
+    float: left;
+
+    margin-bottom: 20px;
+  }
+
+  .media__content {
+    margin-left: 35%;
+  }
+}
+
+.media--large {
+  .media__title {
+    margin-top: 1em;
+  }
+}
+
+@include respond-min-max($breakpoint-beta, $breakpoint-charlie - em(1px)) {
+  .media--small {
+    .media__image {
+      width: 100%;
+      float: none;
+    }
+
+    .media__content {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+
+  .media--large {
+    .media__image {
+      width: 48.14815%;
+      float: right;
+    }
+
+    .media__content {
+      margin-right: 53%;
+    }
+
+    .media__title {
+      margin-top: .5em;
+    }
+  }
+}

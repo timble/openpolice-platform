@@ -23,9 +23,14 @@
     @include span(3 of 6);
   }
 
-  .news_grid,
   .section {
     @include gallery(3 of 6);
+  }
+}
+
+@include respond-min-max($breakpoint-beta, $breakpoint-charlie - em(1px)) {
+  .news__other .media {
+    @include gallery(6 of 12);
   }
 }
 
@@ -43,10 +48,6 @@
     @include gallery(4 of 12);
   }
 
-  .news_grid {
-    @include gallery(3 of 12);
-  }
-
   .quick_links {
     @include span(first 8 of 12);
   }
@@ -61,6 +62,11 @@
 
   .component {
     @include span(first 8 of 12)
+  }
+
+  .news__featured,
+  .news__other {
+    @include gallery(6 of 12);
   }
 }
 

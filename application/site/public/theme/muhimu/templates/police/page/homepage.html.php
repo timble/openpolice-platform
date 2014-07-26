@@ -52,5 +52,25 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <hr class="divide" />
 
 <div class="container__news">
-    <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->getRowset())) ?>
+    <? $stickies = object('com:news.model.articles')->sticky(true)->getRowset();
+    $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('ordering_date')->direction('DESC')->published(true)->getRowset()->top(); ?>
+    <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
+    <div class="news__featured">
+        <section class="media media--large">
+            <div class="media__image">
+                <a class="media__image__inner" data-content="Lees meer" href="<?= $link ?>">
+                    <?= helper('com:attachments.image.thumbnail', array(
+                        'attachment' => $article->attachments_attachment_id,
+                        'attribs' => array('width' => '560', 'height' => '420'))) ?>
+                </a>
+            </div>
+            <div class="media__content">
+                <h1 class="media__title"><a href="<?= $link ?>"><?= $article->title ?></a></h1>
+                <?= $article->introtext ?>
+            </div>
+        </section>
+    </div>
+    <div class="news__other">
+        <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->exclude($article->id)->getRowset())) ?>
+    </div>
 </div>
