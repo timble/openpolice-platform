@@ -218,9 +218,12 @@ table {
       clear: none; } }
 
 .media__title {
-  font-size: 1.25em;
-  margin-top: .5em;
-  margin-bottom: .5em; }
+  font-size: 1em; }
+  @media screen and (min-width: 25em) {
+    .media__title {
+      font-size: 1.25em;
+      margin-top: .5em;
+      margin-bottom: .5em; } }
 
 .media__image {
   position: relative;

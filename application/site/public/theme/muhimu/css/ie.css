@@ -203,6 +203,7 @@ table {
   clear: none; }
 
 .media__title {
+  font-size: 1em;
   font-size: 1.25em;
   margin-top: .5em;
   margin-bottom: .5em; }
