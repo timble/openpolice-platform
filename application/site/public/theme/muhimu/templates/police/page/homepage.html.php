@@ -56,7 +56,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('ordering_date')->direction('DESC')->published(true)->getRowset()->top(); ?>
     <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
     <div class="news__featured">
-        <section class="media media--large">
+        <section class="media">
             <div class="media__image">
                 <a class="media__image__inner" data-content="Lees meer" href="<?= $link ?>">
                     <?= helper('com:attachments.image.thumbnail', array(

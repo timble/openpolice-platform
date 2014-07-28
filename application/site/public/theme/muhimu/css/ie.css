@@ -159,6 +159,15 @@ table {
     margin-right: -100%;
     clear: none; }
 
+.news__featured .media__image {
+  width: 22.22222%;
+  float: left;
+  margin-left: 0; }
+.news__featured .media__content {
+  width: 74.07407%;
+  float: left;
+  margin-left: 3.7037%; }
+
 .organization {
   width: 65.4321%;
   float: left;
@@ -295,7 +304,6 @@ table {
 .media__image__inner {
   background: #8ac7cb url("../images/avatar--white.png") no-repeat center;
   background-size: 50%;
-  font-size: .8125em;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -337,6 +345,9 @@ table {
   .media__image__inner:hover:after {
     top: 50%;
     margin-top: -.75em; }
+
+.news__other .media__image__inner {
+  font-size: .8125em; }
 
 /* Magnific Popup CSS */
 .mfp-bg {
@@ -958,6 +969,7 @@ img {
    Sections
    ========================================================================== */
 .container__sections {
+  padding-top: 10px;
   padding-top: 20px; }
   .container__sections h1 {
     font-size: 1.25em;
@@ -967,13 +979,22 @@ img {
 /* ==========================================================================
    News
    ========================================================================== */
-.news__featured h1 {
-  font-size: 1.125em;
-  margin: 1em 0 .5em 0;
-  font-size: 1.25em;
-  margin-top: 0;
-  margin-top: 1em;
-  margin-top: 0; }
+.news__featured {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-top: 0;
+  padding-bottom: 20px; }
+  .news__featured h1 {
+    font-size: 1.125em;
+    margin: 1em 0 .5em 0;
+    font-size: 1.25em;
+    margin-top: 0;
+    margin-top: 1em;
+    margin-top: 0; }
+  .news__featured p {
+    margin: 0; }
 
 .news__other h1 {
   font-size: 1em;

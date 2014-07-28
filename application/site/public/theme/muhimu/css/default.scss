@@ -361,7 +361,11 @@ img {
 
 .container__sections {
   @extend %clearfix;
-  padding-top: 20px;
+  padding-top: 10px;
+
+  @include respond-min($breakpoint-beta) {
+    padding-top: 20px;
+  }
 
   h1 {
     font-size: 1.25em;
@@ -380,6 +384,19 @@ img {
 }
 
 .news__featured {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @include respond-min($breakpoint-beta) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @include respond-min($breakpoint-charlie) {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
   h1 {
     font-size: 1.125em;
     margin: 1em 0 .5em 0;
@@ -396,6 +413,10 @@ img {
     @include respond-min($breakpoint-delta) {
       margin-top: 0;
     }
+  }
+
+  p {
+    margin: 0;
   }
 }
 

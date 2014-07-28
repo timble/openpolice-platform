@@ -57,6 +57,16 @@
       @include gallery(3 of 6)
     }
   }
+
+  .news__featured {
+    .media__image {
+      @include span(first 3 of 12);
+    }
+
+    .media__content {
+      @include span(9 of 12);
+    }
+  }
 }
 
 

@@ -26,7 +26,12 @@
 .media__image__inner {
   background: palette(turquoise) url("../images/avatar--white.png") no-repeat center;
   background-size: 50%;
-  font-size: .8125em;
   @include transition;
   @include hover_background;
+}
+
+.news__other {
+  .media__image__inner {
+    font-size: .8125em;
+  }
 }
