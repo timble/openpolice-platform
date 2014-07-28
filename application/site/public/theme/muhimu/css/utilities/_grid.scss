@@ -90,11 +90,11 @@
 
   .news__featured {
     .media__image {
-      @include span(first 6 of 12);
+      @include span(first 4 of 12);
     }
 
     .media__content {
-      @include span(6 of 12);
+      @include span(8 of 12);
     }
   }
 

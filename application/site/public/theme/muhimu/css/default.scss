@@ -415,6 +415,7 @@ img {
 
     @include respond-min($breakpoint-delta) {
       margin-top: 0;
+      font-size: 1.5em;
     }
   }
 
