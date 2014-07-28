@@ -999,6 +999,10 @@ img {
 /* ==========================================================================
    News
    ========================================================================== */
+@media screen and (min-width: 48em) {
+  .container__news {
+    padding-top: 20px; } }
+
 .news__featured {
   padding-top: 10px;
   padding-bottom: 10px; }
