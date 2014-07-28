@@ -1,9 +1,10 @@
 .divide {
-  margin: 10px auto;
+
+  margin: ($spacing-xxs - $one-px) auto;
   padding: 0;
   border: none;
   outline: none;
-  height: 2px;
+  height: ($one-px * 2);
   background: palette(turquoise, light);
   max-width: $max-width-page;
 }

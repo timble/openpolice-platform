@@ -3,12 +3,9 @@
    ========================================================================== */
 
 .search {
-  margin-bottom: 15px;
+  margin-top: $spacing-xs;
+  margin-bottom: $spacing-xs;
   position: relative;
-
-  @include respond-min($breakpoint-beta) {
-    margin-top: 15px;
-  }
 
   input {
     margin: 0;
@@ -19,7 +16,7 @@
     color: #777;
     font-style: italic;
     font-size: 1em;
-    height: 40px;
+    height: ($spacing-s * 2);
   }
 
   button {
@@ -27,8 +24,10 @@
     right: 0;
     top: 0;
     border: none;
-    height: 40px;
-    width: 40px;
+    display: block;
+    font-size: 1em;
+    height: ($spacing-s * 2);
+    width: ($spacing-s * 2);
     background: palette(blue);
     color: #fff;
     font-weight: 700;

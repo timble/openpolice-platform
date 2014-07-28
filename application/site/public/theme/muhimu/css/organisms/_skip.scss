@@ -13,16 +13,16 @@
 
   a {
     display: block;
-    padding: 0 10px;
     float: left;
+    padding: 0 $spacing-xxs;
     color: #fff;
     height: 0;
     overflow: hidden;
     @include transition(all .1s);
 
     &:focus {
-      margin: 10px;
-      height: auto;
+      margin: $spacing-xxs;
+      height: $spacing;
       overflow: visible;
     }
 

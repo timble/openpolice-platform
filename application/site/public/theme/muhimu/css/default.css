@@ -661,10 +661,10 @@ body *:focus {
   outline: 5px solid #ffcc32; }
 
 body {
+  min-height: 100%;
+  background: #d7e2e0;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
-  background: #d7e2e0;
-  min-height: 100%;
   color: #2c2c2c; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -672,12 +672,33 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.25em;
   color: #3142b4; }
 
+h1, h2, h3 {
+  margin-bottom: 0.75em; }
+
+h4, h5, h6 {
+  margin-bottom: 1em; }
+
 h1 {
-  font-size: 2em;
-  margin-bottom: .5em; }
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.8em; }
+
+h3 {
+  font-size: 1.6em; }
+
+h4 {
+  font-size: 1.4em; }
+
+h5 {
+  font-size: 1.2em; }
+
+h6 {
+  font-size: 1em; }
 
 p {
-  margin: 0 0 1.5em; }
+  margin: 0 0 1.5em;
+  line-height: 1.5em; }
 
 a {
   color: #3142b4; }
@@ -778,11 +799,11 @@ img {
   background: #fff; }
 
 .divide {
-  margin: 10px auto;
+  margin: 0.6875em auto;
   padding: 0;
   border: none;
   outline: none;
-  height: 2px;
+  height: 0.125em;
   background: #d7e2e0;
   max-width: 1280px; }
 
@@ -866,8 +887,8 @@ img {
     margin: 0 auto; }
   .skip a {
     display: block;
-    padding: 0 10px;
     float: left;
+    padding: 0 0.75em;
     color: #fff;
     height: 0;
     overflow: hidden;
@@ -877,8 +898,8 @@ img {
     -o-transition: all 0.1s;
     transition: all 0.1s; }
     .skip a:focus {
-      margin: 10px;
-      height: auto;
+      margin: 0.75em;
+      height: 1.5em;
       overflow: visible; }
     .skip a:visited {
       color: #fff; }
@@ -887,9 +908,19 @@ img {
    Organization
    ========================================================================== */
 .organization {
-  margin-top: 15px;
-  margin-bottom: 10px;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  height: 1.5em;
   position: relative; }
+  @media screen and (min-width: 37.5em) {
+    .organization {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em; } }
+  @media screen and (min-width: 48em) {
+    .organization {
+      margin-top: 1.25em;
+      margin-bottom: 1.25em;
+      height: 2em; } }
   .organization a {
     display: inline-block;
     text-decoration: none;
@@ -903,51 +934,43 @@ img {
     -ms-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
-    @media screen and (min-width: 37.5em) {
-      .organization__logo, .organization__name {
-        margin-top: 8px; } }
-    @media screen and (min-width: 48em) {
-      .organization__logo, .organization__name {
-        margin-top: 4px; } }
   .organization__logo {
     position: absolute;
     top: 0;
     left: 0;
-    width: 24px;
-    height: 24px;
+    width: 1.5em;
+    height: 1.5em;
     background: url("../images/avatar.png");
     background-size: cover; }
     @media screen and (min-width: 48em) {
       .organization__logo {
-        width: 32px;
-        height: 32px; } }
+        width: 2em;
+        height: 2em; } }
   .organization__name {
     font-weight: 300;
     color: #26338c;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-left: 39px;
+    margin-left: 2.25em;
+    line-height: 1.4375em;
     border-bottom: 1px solid transparent; }
     @media screen and (min-width: 48em) {
       .organization__name {
-        font-size: 24px;
-        line-height: 32px;
-        margin-left: 47px; } }
+        font-size: 1.25em;
+        line-height: 1.5em; } }
     .organization__name span {
       font-weight: 700;
       font-size: 1.25em;
-      padding-right: .5em; }
+      padding-right: 0.5em; }
 
 /* ==========================================================================
    Search
    ========================================================================== */
 .search {
-  margin-bottom: 15px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   position: relative; }
-  @media screen and (min-width: 37.5em) {
-    .search {
-      margin-top: 15px; } }
   .search input {
     margin: 0;
     width: 100%;
@@ -957,14 +980,16 @@ img {
     color: #777;
     font-style: italic;
     font-size: 1em;
-    height: 40px; }
+    height: 2.5em; }
   .search button {
     position: absolute;
     right: 0;
     top: 0;
     border: none;
-    height: 40px;
-    width: 40px;
+    display: block;
+    font-size: 1em;
+    height: 2.5em;
+    width: 2.5em;
     background: #26338c;
     color: #fff;
     font-weight: 700; }
