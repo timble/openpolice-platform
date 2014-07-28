@@ -379,6 +379,13 @@ img {
   @extend %clearfix;
 }
 
+.news__other,
+.news__featured {
+  h1 {
+    margin: 0;
+  }
+}
+
 
 /* ==========================================================================
    Content

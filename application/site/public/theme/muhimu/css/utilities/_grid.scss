@@ -13,6 +13,31 @@
   padding-right: $grid-padding;
 }
 
+// Default
+.news__other {
+  .media__image {
+    @include span(first 2 of 6);
+  }
+
+  .media__content {
+    @include span(4 of 6);
+  }
+}
+
+// Alpha
+@include respond-min($breakpoint-alpha) {
+  .news__featured {
+    .media__image {
+      @include span(first 2 of 6);
+    }
+
+    .media__content {
+      @include span(4 of 6);
+    }
+  }
+}
+
+// Beta
 @include respond-min($breakpoint-beta) {
 
   .organization {
@@ -26,14 +51,16 @@
   .section {
     @include gallery(3 of 6);
   }
-}
 
-@include respond-min-max($breakpoint-beta, $breakpoint-charlie - em(1px)) {
-  .news__other .media {
-    @include gallery(6 of 12);
+  .news__other {
+    .media {
+      @include gallery(3 of 6)
+    }
   }
 }
 
+
+// Charlie
 @include respond-min($breakpoint-charlie) {
 
   .organization {
@@ -64,14 +91,51 @@
     @include span(first 8 of 12)
   }
 
-  .news__featured,
+  .news__featured {
+    @include span(first 6 of 12);
+
+    .media__image,
+    .media__content {
+      @include span(first 1 of 1);
+    }
+  }
+
   .news__other {
-    @include gallery(6 of 12);
+    @include span(6 of 12);
+
+    .media {
+      @include gallery(1 of 1);
+    }
+
+    .media.media {
+      clear: left;
+    }
   }
 }
 
+// Delta
 @include respond-min($breakpoint-delta) {
   .articles {
     @include span(first 8 of 12)
+  }
+
+  .news__featured {
+    @include span(first 6 of 12);
+
+    .media__image {
+      @include span(first 3 of 6);
+    }
+
+    .media__content {
+      @include span(3 of 6);
+    }
+  }
+
+  .news__other {
+    @include span(6 of 12);
+
+    .media {
+      @include gallery(3 of 6);
+    }
   }
 }
