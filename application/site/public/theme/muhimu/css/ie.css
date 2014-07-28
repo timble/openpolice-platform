@@ -1002,9 +1002,22 @@ img {
 .container__breadcrumb {
   background: #26338c url("../images/graphic_line.png") no-repeat right bottom;
   color: #fff;
-  border-top: 4px solid #8ac7cb;
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  border-top: 0.25em solid #8ac7cb;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
+  padding-top: 1.125em;
+  padding-bottom: 1.125em;
+  margin-bottom: 0.5em; }
+  .container__breadcrumb .breadcrumb li, .container__breadcrumb .breadcrumb .divider {
+    display: inline-block;
+    margin-right: 5px;
+    color: #d7e2e0;
+    font-weight: 300; }
+  .container__breadcrumb .breadcrumb .divider {
+    color: #8ac7cb; }
+  .container__breadcrumb .breadcrumb a {
+    color: #fff;
+    font-weight: 400; }
 
 .container__header {
   position: relative;
@@ -1032,17 +1045,6 @@ img {
   margin-bottom: 15px; }
   .phone_numbers span {
     white-space: nowrap; }
-
-.breadcrumb li, .breadcrumb .divider {
-  display: inline-block;
-  margin-right: 5px;
-  color: #d7e2e0;
-  font-weight: 300; }
-.breadcrumb .divider {
-  color: #8ac7cb; }
-.breadcrumb a {
-  color: #fff;
-  font-weight: 400; }
 
 .my_police {
   margin-top: 20px;

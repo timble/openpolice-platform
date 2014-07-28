@@ -5,10 +5,34 @@
 .container__breadcrumb {
   background: palette(blue) url("../images/graphic_line.png") no-repeat right bottom;
   color: #fff;
-  border-top: 4px solid palette(turquoise);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  border-top: ($spacing-xs / 4) solid palette(turquoise);
+  padding-top: $spacing-xxs - ($spacing-xs/8);
+  padding-bottom: $spacing-xxs - ($spacing-xs/8);
 
+  @include respond-min($breakpoint-charlie) {
+    padding-top: $spacing-s - ($spacing-xs/8);
+    padding-bottom: $spacing-s - ($spacing-xs/8);
+    margin-bottom: $spacing-xs / 2;
+  }
+
+  .breadcrumb {
+
+    li, .divider {
+      display: inline-block;
+      margin-right: 5px;
+      color: palette(turquoise, light);
+      font-weight: 300;
+    }
+
+    .divider {
+      color: palette(turquoise);
+    }
+
+    a {
+      color: #fff;
+      font-weight: 400;
+    }
+  }
 }
 
 .container__header {
@@ -53,25 +77,6 @@
 
   span {
     white-space: nowrap;
-  }
-}
-
-.breadcrumb {
-
-  li, .divider {
-    display: inline-block;
-    margin-right: 5px;
-    color: palette(turquoise, light);
-    font-weight: 300;
-  }
-
-  .divider {
-    color: palette(turquoise);
-  }
-
-  a {
-    color: #fff;
-    font-weight: 400;
   }
 }
 
