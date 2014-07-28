@@ -379,13 +379,36 @@ img {
   @extend %clearfix;
 }
 
-.news__other,
 .news__featured {
   h1 {
-    margin: 0;
+    font-size: 1.125em;
+    margin: 1em 0 .5em 0;
+
+    @include respond-min($breakpoint-alpha) {
+      font-size: 1.25em;
+      margin-top: 0;
+    }
+
+    @include respond-min($breakpoint-charlie) {
+      margin-top: 1em;
+    }
+
+    @include respond-min($breakpoint-delta) {
+      margin-top: 0;
+    }
   }
 }
 
+.news__other {
+  h1 {
+    font-size: 1em;
+    margin: 0;
+
+    @include respond-min($breakpoint-alpha) {
+      font-size: 1.125em;
+    }
+  }
+}
 
 /* ==========================================================================
    Content
@@ -471,7 +494,6 @@ img {
   padding-bottom: 4px;
   position: relative;
   overflow: hidden;
-
   @include hover_background($padding: 4px);
 }
 

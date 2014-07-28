@@ -295,6 +295,7 @@ table {
 .media__image__inner {
   background: #8ac7cb url("../images/avatar--white.png") no-repeat center;
   background-size: 50%;
+  font-size: .8125em;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
@@ -335,7 +336,7 @@ table {
     bottom: 0; }
   .media__image__inner:hover:after {
     top: 50%;
-    margin-top: -.5em; }
+    margin-top: -.75em; }
 
 /* Magnific Popup CSS */
 .mfp-bg {
@@ -966,9 +967,18 @@ img {
 /* ==========================================================================
    News
    ========================================================================== */
-.news__other h1,
 .news__featured h1 {
-  margin: 0; }
+  font-size: 1.125em;
+  margin: 1em 0 .5em 0;
+  font-size: 1.25em;
+  margin-top: 0;
+  margin-top: 1em;
+  margin-top: 0; }
+
+.news__other h1 {
+  font-size: 1em;
+  margin: 0;
+  font-size: 1.125em; }
 
 /* ==========================================================================
    Content
@@ -1061,7 +1071,7 @@ img {
     bottom: 4px; }
   .article__thumbnail:hover:after {
     top: 50%;
-    margin-top: -.5em; }
+    margin-top: -.75em; }
 
 .article__thumbnail {
   float: right;
