@@ -49,17 +49,17 @@ table {
 .container__header,
 .container__content,
 .breadcrumb,
-.container__copyright, .media, .organization, .organization a, .container__sections, .container__news {
+.container__copyright, .media, .skip .container__skip, .organization, .organization a, .container__sections, .container__news {
   *zoom: 1; }
   .container__top:before,
   .container__header:before,
   .container__content:before,
   .breadcrumb:before,
-  .container__copyright:before, .media:before, .organization:before, .organization a:before, .container__sections:before, .container__news:before, .container__top:after,
+  .container__copyright:before, .media:before, .skip .container__skip:before, .organization:before, .organization a:before, .container__sections:before, .container__news:before, .container__top:after,
   .container__header:after,
   .container__content:after,
   .breadcrumb:after,
-  .container__copyright:after, .media:after, .organization:after, .organization a:after, .container__sections:after, .container__news:after {
+  .container__copyright:after, .media:after, .skip .container__skip:after, .organization:after, .organization a:after, .container__sections:after, .container__news:after {
     display: table;
     content: "";
     line-height: 0; }
@@ -67,7 +67,7 @@ table {
   .container__header:after,
   .container__content:after,
   .breadcrumb:after,
-  .container__copyright:after, .media:after, .organization:after, .organization a:after, .container__sections:after, .container__news:after {
+  .container__copyright:after, .media:after, .skip .container__skip:after, .organization:after, .organization a:after, .container__sections:after, .container__news:after {
     clear: both; }
 
 /**
@@ -718,6 +718,9 @@ img.mfp-img {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+*:focus {
+  outline: 5px solid #ffcc32 !important; }
+
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
@@ -768,6 +771,31 @@ img {
   margin: 0; }
 
 /* ==========================================================================
+   Skip
+   ========================================================================== */
+.skip {
+  background: #1b2464; }
+  .skip .container__skip {
+    max-width: 1280px;
+    margin: 0 auto; }
+  .skip a {
+    display: block;
+    padding: 0 10px;
+    float: left;
+    color: #fff;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    .skip a:focus {
+      margin: 10px;
+      height: auto;
+      overflow: visible; }
+
+/* ==========================================================================
    Organization
    ========================================================================== */
 .organization {
@@ -778,8 +806,10 @@ img {
     display: inline-block;
     text-decoration: none;
     max-width: 100%; }
-    .organization a:hover {
-      color: #3142b4; }
+    .organization a:hover .organization__name, .organization a:focus .organization__name {
+      border-bottom-color: #8ac7cb; }
+    .organization a:focus {
+      outline: 5px solid #ffcc32; }
   .organization__logo, .organization__name {
     display: block;
     -webkit-transition: all 0.2s ease-in-out;
@@ -810,8 +840,6 @@ img {
     font-size: 24px;
     line-height: 32px;
     margin-left: 47px; }
-    .organization__name:hover {
-      border-bottom-color: #8ac7cb; }
     .organization__name span {
       font-weight: 700;
       font-size: 1.25em;
@@ -834,6 +862,8 @@ img {
     font-style: italic;
     font-size: 1em;
     height: 40px; }
+    .search input:focus {
+      outline: 5px solid #ffcc32; }
   .search button {
     position: absolute;
     right: 0;

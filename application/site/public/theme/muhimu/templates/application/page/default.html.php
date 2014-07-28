@@ -26,6 +26,11 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <script data-inline type="text/javascript" pagespeed_no_defer>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
 <div id="wrapper">
+    <div class="skip">
+        <div class="container__skip">
+            <a href="#content">Skip to main content</a>
+        </div>
+    </div>
     <div class="container__top">
         <div class="organization" itemscope itemtype="http://schema.org/Organization">
             <a itemprop="url" href="<?= $path ?>">
@@ -51,7 +56,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
     </ktml:modules>
 
-    <div class="container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
+    <div id="content" class="container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
         <? if(!$singleColumn) : ?>
         <div class="component <?= $extension ?>">
             <? endif ?>

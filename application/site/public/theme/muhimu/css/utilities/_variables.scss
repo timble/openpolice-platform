@@ -6,6 +6,7 @@ $color-main-turquoise:  #8ac7cb;
 $color-main-orange:     #db5c1e;
 
 $color-sub-purple:      #5d336e;
+$color-sub-yellow:      #ffcc32;
 
 $palettes: (
   text: (
@@ -31,6 +32,9 @@ $palettes: (
   purple: (
     base:  $color-sub-purple,
     light:  lighten($color-sub-purple, 5%)
+  ),
+  yellow: (
+    base:  $color-sub-yellow
   )
 );
 

@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: 5px solid palette(yellow) !important;
+}
+
 body {
   font-family: $sans;
   line-height: 1.5em;
@@ -82,6 +86,37 @@ img {
 }
 
 /* ==========================================================================
+   Skip
+   ========================================================================== */
+
+.skip {
+  background: palette(blue, dark);
+
+  .container__skip {
+    @extend %clearfix;
+    max-width: $max-width-page;
+    margin: 0 auto;
+  }
+
+  a {
+    display: block;
+    padding: 0 10px;
+    float: left;
+    color: #fff;
+    height: 0;
+    overflow: hidden;
+    @include transition;
+
+    &:focus {
+      margin: 10px;
+      height: auto;
+      overflow: visible;
+    }
+  }
+}
+
+
+/* ==========================================================================
    Organization
    ========================================================================== */
 
@@ -101,8 +136,15 @@ img {
     text-decoration: none;
     max-width: 100%;
 
-    &:hover {
-      color: palette(blue, light)
+    &:hover,
+    &:focus {
+      .organization__name {
+        border-bottom-color: palette(turquoise);
+      }
+    }
+
+    &:focus {
+      outline: 5px solid palette(yellow);
     }
   }
 
@@ -144,10 +186,6 @@ img {
     margin-left: 15px + 24px;
     border-bottom: 1px solid transparent;
 
-    &:hover {
-      border-bottom-color: palette(turquoise);
-    }
-
     @include respond-min($breakpoint-charlie) {
       font-size: 24px;
       line-height: 32px;
@@ -185,6 +223,10 @@ img {
     font-style: italic;
     font-size: 1em;
     height: 40px;
+
+    &:focus {
+      outline: 5px solid palette(yellow);
+    }
   }
 
   button {
