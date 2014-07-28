@@ -4,8 +4,8 @@
 
 .container__content {
   @extend %clearfix;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: $spacing;
+  padding-bottom: $spacing;
 
   .component.articles,
   .component.news {
@@ -13,13 +13,12 @@
     article {
       @include respond-min($breakpoint-delta) {
         max-width: 42em;
-        padding-top: 30px;
         padding-bottom: 30px;
       }
     }
 
     header {
-      margin-bottom: 1.5em;
+      margin-bottom: $spacing;
     }
 
     time {

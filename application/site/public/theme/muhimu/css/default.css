@@ -679,7 +679,9 @@ h4, h5, h6 {
   margin-bottom: 1em; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 0.6875em; }
 
 h2 {
   font-size: 1.8em; }
@@ -1170,13 +1172,12 @@ img {
    Content
    ========================================================================== */
 .container__content {
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-top: 1.5em;
+  padding-bottom: 1.5em; }
   @media screen and (min-width: 64em) {
     .container__content .component.articles article,
     .container__content .component.news article {
       max-width: 42em;
-      padding-top: 30px;
       padding-bottom: 30px; } }
   .container__content .component.articles header,
   .container__content .component.news header {

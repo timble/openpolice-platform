@@ -13,7 +13,9 @@ h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: $spacing-l;
+  line-height: $spacing-xs;
+  margin-bottom: $spacing-xxs - $one-px;
 }
 
 h2 {
