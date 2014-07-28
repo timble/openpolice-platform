@@ -24,19 +24,6 @@
   }
 }
 
-// Alpha
-@include respond-min($breakpoint-alpha) {
-  .news__featured {
-    .media__image {
-      @include span(first 2 of 6);
-    }
-
-    .media__content {
-      @include span(4 of 6);
-    }
-  }
-}
-
 // Beta
 @include respond-min($breakpoint-beta) {
 
@@ -102,23 +89,18 @@
   }
 
   .news__featured {
-    @include span(first 6 of 12);
+    .media__image {
+      @include span(first 6 of 12);
+    }
 
-    .media__image,
     .media__content {
-      @include span(first 1 of 1);
+      @include span(6 of 12);
     }
   }
 
   .news__other {
-    @include span(6 of 12);
-
     .media {
-      @include gallery(1 of 1);
-    }
-
-    .media.media {
-      clear: left;
+      @include gallery(6 of 12);
     }
   }
 }
@@ -130,22 +112,26 @@
   }
 
   .news__featured {
-    @include span(first 6 of 12);
+    @include span(first 8 of 12);
 
     .media__image {
-      @include span(first 3 of 6);
+      @include span(first 4 of 8);
     }
 
     .media__content {
-      @include span(3 of 6);
+      @include span(4 of 8);
     }
   }
 
   .news__other {
-    @include span(6 of 12);
+    @include span(4 of 12);
 
     .media {
-      @include gallery(3 of 6);
+      @include gallery(1 of 1);
+    }
+
+    .media.media {
+      clear: left;
     }
   }
 }

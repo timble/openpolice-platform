@@ -71,6 +71,6 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </section>
     </div>
     <div class="news__other">
-        <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('4')->exclude($article->id)->getRowset())) ?>
+        <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->exclude($article->id)->getRowset())) ?>
     </div>
 </div>
