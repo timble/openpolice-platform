@@ -238,13 +238,13 @@ table {
   float: left;
   margin-left: 0; }
   .news__featured .media__image {
-    width: 47.16981%;
+    width: 30%;
     float: left;
     margin-left: 0; }
   .news__featured .media__content {
-    width: 47.16981%;
+    width: 65%;
     float: left;
-    margin-left: 5.66038%; }
+    margin-left: 5%; }
 
 .news__other {
   width: 30.8642%;
@@ -980,6 +980,7 @@ img {
     margin: 1em 0 .5em 0;
     font-size: 1.25em;
     margin-top: 0;
+    font-size: 1.375em;
     margin-top: 0;
     font-size: 1.5em; }
   .news__featured p {

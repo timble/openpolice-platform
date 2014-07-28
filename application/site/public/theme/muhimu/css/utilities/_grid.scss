@@ -115,11 +115,11 @@
     @include span(first 8 of 12);
 
     .media__image {
-      @include span(first 4 of 8);
+      @include span(first 3 of 9);
     }
 
     .media__content {
-      @include span(4 of 8);
+      @include span(6 of 9);
     }
   }
 

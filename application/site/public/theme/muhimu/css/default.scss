@@ -413,6 +413,10 @@ img {
       margin-top: 0;
     }
 
+    @include respond-min($breakpoint-charlie) {
+      font-size: 1.375em;
+    }
+
     @include respond-min($breakpoint-delta) {
       margin-top: 0;
       font-size: 1.5em;
