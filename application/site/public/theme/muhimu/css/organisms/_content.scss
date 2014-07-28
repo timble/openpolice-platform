@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.container__content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .component.articles,
+  .component.news {
+
+    article {
+      @include respond-min($breakpoint-delta) {
+        max-width: 42em;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+
+    header {
+      margin-bottom: 1.5em;
+    }
+
+    time {
+      font-size: 1.25em;
+      color: palette(blue, light);
+      font-weight: 300;
+    }
+  }
+}

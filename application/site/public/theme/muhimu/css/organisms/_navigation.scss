@@ -1,0 +1,18 @@
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.container__navigation {
+  @extend %clearfix;
+  padding-top: 10px;
+
+  @include respond-min($breakpoint-beta) {
+    padding-top: 20px;
+  }
+
+  h1 {
+    font-size: 1.25em;
+    color: palette(blue);
+    margin-bottom: .25em;
+  }
+}

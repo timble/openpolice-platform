@@ -38,10 +38,10 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </div>
 </ktml:module>
 
-<div class="container__sections">
+<div class="container__navigation">
 <? foreach($pages as $page) : ?>
     <? if($page->level == '1' && $page->hidden == false) : ?>
-    <section class="section">
+    <section class="navigation__item">
         <h1><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></h1>
         <p><?= $page->getParams('page')->get('description') ?></p>
     </section>

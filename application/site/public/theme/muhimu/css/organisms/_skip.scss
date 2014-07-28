@@ -1,0 +1,33 @@
+/* ==========================================================================
+   The (hidden) skip link on top of the document
+   ========================================================================== */
+
+.skip {
+  background: palette(blue, dark);
+
+  .container__skip {
+    @extend %clearfix;
+    max-width: $max-width-page;
+    margin: 0 auto;
+  }
+
+  a {
+    display: block;
+    padding: 0 10px;
+    float: left;
+    color: #fff;
+    height: 0;
+    overflow: hidden;
+    @include transition(all .1s);
+
+    &:focus {
+      margin: 10px;
+      height: auto;
+      overflow: visible;
+    }
+
+    &:visited {
+      color: #fff;
+    }
+  }
+}

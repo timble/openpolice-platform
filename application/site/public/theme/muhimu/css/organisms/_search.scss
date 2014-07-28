@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Search
+   ========================================================================== */
+
+.search {
+  margin-bottom: 15px;
+  position: relative;
+
+  @include respond-min($breakpoint-beta) {
+    margin-top: 15px;
+  }
+
+  input {
+    margin: 0;
+    width: 100%;
+    display: block;
+    padding: 5px;
+    border: 1px solid palette(blue);
+    color: #777;
+    font-style: italic;
+    font-size: 1em;
+    height: 40px;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    height: 40px;
+    width: 40px;
+    background: palette(blue);
+    color: #fff;
+    font-weight: 700;
+
+    &:before {
+      content: "`";
+      position: absolute;
+      top: 17px;
+      right: 4px;
+      font-size: 34px;
+    }
+
+    &:after {
+      content: "o";
+      position: absolute;
+      top: 2px;
+      left: 11px;
+      font-size: 24px;
+    }
+  }
+}

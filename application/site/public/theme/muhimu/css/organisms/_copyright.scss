@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Copyright
+   ========================================================================== */
+
+.copyright {
+  background: palette(turquoise, light);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+
+  .copyright__menu {
+    display: inline-block;
+  }
+
+  a {
+    color: palette(blue);
+  }
+
+  @include respond-min($breakpoint-charlie) {
+
+    @at-root .container__copyright {
+      display: table;
+      width: 100%;
+    }
+
+    &--left,
+  &--right {
+  display: table-cell;
+    width: auto;
+  }
+
+    &--left {
+  text-align: left;
+    padding-right: 10px;
+
+    a {
+      margin-left: 0;
+    }
+  }
+
+  &--right {
+text-align: right;
+  padding-left: 10px;
+
+  a:last-child {
+    margin-right: 0;
+  }
+}
+}
+
+a {
+  display: inline-block;
+  margin: 0 10px;
+
+  &.active {
+    color: palette(turquoise, dark);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+}

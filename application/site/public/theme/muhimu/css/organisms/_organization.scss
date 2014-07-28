@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Organization
+   ========================================================================== */
+
+.container__top {
+  @extend %clearfix;
+}
+
+.organization {
+  @extend %clearfix;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  position: relative;
+
+  a {
+    @extend %clearfix;
+    display: inline-block;
+    text-decoration: none;
+    max-width: 100%;
+
+    &:hover,
+    &:focus {
+      .organization__name {
+        border-bottom-color: palette(turquoise);
+      }
+    }
+  }
+
+  &__logo,
+  &__name {
+    display: block;
+    @include transition;
+
+    @include respond-min($breakpoint-beta) {
+      margin-top: 8px;
+    }
+
+    @include respond-min($breakpoint-charlie) {
+      margin-top: 4px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: url("../images/avatar.png");
+    background-size: cover;
+
+    @include respond-min($breakpoint-charlie) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__name {
+    font-weight: 300;
+    color: $color-main-blue;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 15px + 24px;
+    border-bottom: 1px solid transparent;
+
+    @include respond-min($breakpoint-charlie) {
+      font-size: 24px;
+      line-height: 32px;
+      margin-left: 15px + 32px;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 1.25em;
+      padding-right: .5em;
+    }
+  }
+}

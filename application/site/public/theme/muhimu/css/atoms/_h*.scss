@@ -1,0 +1,10 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif;
+  line-height: 1.25em;
+  color: palette(blue, light);
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: .5em;
+}

@@ -1,0 +1,18 @@
+.news_list {
+  li {
+    margin-bottom: .75em;
+
+    &:before {
+      display: block;
+      float: left;
+      content: ">";
+      color: palette(turquoise);
+      font-weight: 700;
+    }
+
+    a {
+      display: block;
+      margin-left: 1.5em;
+    }
+  }
+}

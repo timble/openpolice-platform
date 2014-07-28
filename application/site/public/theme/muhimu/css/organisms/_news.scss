@@ -1,0 +1,63 @@
+/* ==========================================================================
+   News
+   ========================================================================== */
+
+.container__news {
+  @extend %clearfix;
+
+  @include respond-min($breakpoint-charlie) {
+    padding-top: 20px;
+  }
+}
+
+.news__featured {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @include respond-min($breakpoint-beta) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @include respond-min($breakpoint-charlie) {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.125em;
+    margin: 1em 0 .5em 0;
+
+    @include respond-min($breakpoint-alpha) {
+      font-size: 1.25em;
+    }
+
+    @include respond-min($breakpoint-beta) {
+      margin-top: 0;
+    }
+
+    @include respond-min($breakpoint-charlie) {
+      font-size: 1.375em;
+    }
+
+    @include respond-min($breakpoint-delta) {
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.news__other {
+  h1 {
+    font-size: 1em;
+    margin: 0;
+
+    @include respond-min($breakpoint-alpha) {
+      font-size: 1.125em;
+    }
+  }
+}

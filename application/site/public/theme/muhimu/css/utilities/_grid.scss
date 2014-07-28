@@ -35,7 +35,7 @@
     @include span(3 of 6);
   }
 
-  .section {
+  .navigation__item {
     @include gallery(3 of 6);
   }
 
@@ -68,7 +68,7 @@
     @include span(4 of 12);
   }
 
-  .section {
+  .navigation__item {
     @include gallery(4 of 12);
   }
 

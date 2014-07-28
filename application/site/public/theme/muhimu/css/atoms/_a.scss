@@ -1,0 +1,13 @@
+a {
+  color: palette(blue, light);
+
+  &:hover,
+  &:focus {
+    color: palette(blue, dark);
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: palette(purple, light);
+  }
+}
