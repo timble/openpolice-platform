@@ -1049,34 +1049,41 @@ img {
 .container__header {
   position: relative;
   padding-top: 10px;
-  padding-bottom: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-bottom: 14px;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em; }
   .container__header li {
     display: block;
-    font-size: 20px;
-    line-height: 48px;
-    font-weight: 300; }
+    font-size: 1.25em;
+    line-height: 1.2em;
+    font-weight: 300;
+    padding-top: .6em;
+    padding-bottom: .6em;
+    position: relative; }
     .container__header li:before {
-      display: inline-block;
-      padding-right: 15px;
+      display: block;
       content: ">";
       color: #8ac7cb;
-      font-weight: 700; }
+      font-weight: 700;
+      position: absolute;
+      top: .75em;
+      left: 0; }
     .container__header li a {
-      color: #fff; }
+      color: #fff;
+      padding-left: 30px;
+      display: inline-block; }
       .container__header li a:hover {
         text-decoration: none; }
 
 .phone_numbers {
-  margin-bottom: 15px; }
+  margin-bottom: 0.75em; }
   .phone_numbers span {
     white-space: nowrap; }
 
 .my_police {
-  margin-top: 20px;
+  margin-top: 1.5em;
   background: rgba(27, 36, 100, 0.7);
-  padding: 2em;
+  padding: 1.5em;
   margin-top: 0; }
   .my_police__header {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;

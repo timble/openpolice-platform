@@ -36,33 +36,37 @@
 
 .container__header {
   position: relative;
-
-  @include respond-min($breakpoint-charlie) {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+  padding-top: 10px;
+  padding-bottom: 14px;
 
   @include respond-min($breakpoint-delta) {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: $spacing;
+    padding-bottom: $spacing;
   }
 
   li {
     display: block;
-    font-size: 20px;
-    line-height: 48px;
+    font-size: 1.25em;
+    line-height: 1.2em;
     font-weight: 300;
+    padding-top: .6em;
+    padding-bottom: .6em;
+    position: relative;
 
     &:before {
-      display: inline-block;
-      padding-right: 15px;
+      display: block;
       content: ">";
       color: palette(turquoise);
       font-weight: 700;
+      position: absolute;
+      top: .75em;
+      left: 0;
     }
 
     a {
       color: #fff;
+      padding-left: 30px;
+      display: inline-block;
 
       &:hover {
         text-decoration: none;
@@ -72,7 +76,7 @@
 }
 
 .phone_numbers {
-  margin-bottom: 15px;
+  margin-bottom: $spacing-xxs;
 
   span {
     white-space: nowrap;
@@ -80,9 +84,9 @@
 }
 
 .my_police {
-  margin-top: 20px;
+  margin-top: $spacing;
   background: rgba(palette(blue, dark), .7);
-  padding: 2em;
+  padding: $spacing;
 
   @include respond-min($breakpoint-charlie) {
     margin-top: 0;
