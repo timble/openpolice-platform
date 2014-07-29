@@ -16,7 +16,7 @@ class AttachmentsRelations extends Migration
 
         $this->_queries .= "UPDATE `attachments_relations` AS `attachment`, `contacts_categories` AS `category`
                             SET `attachment`.`table` = 'contacts_categories'
-                            WHERE `attachment`.`row` = `category`.`contact_category_id` AND `attachment`.`table` = 'categories';";
+                            WHERE `attachment`.`row` = `category`.`contacts_category_id` AND `attachment`.`table` = 'categories';";
 
         $this->_queries .= "UPDATE `attachments_relations` AS `attachment`, `questions_categories` AS `category`
                             SET `attachment`.`table` = 'questions_categories'
