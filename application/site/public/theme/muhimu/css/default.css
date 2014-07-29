@@ -948,6 +948,10 @@ img {
 .pagination {
   clear: both; }
 
+.search button {
+  background: #26338c url("../images/icon--search.png") no-repeat static center;
+  background: #26338c url("../images/icon--search@2x.png") center center/50% 50% no-repeat; }
+
 /* ==========================================================================
    The (hidden) skip link on top of the document
    ========================================================================== */
@@ -1061,21 +1065,8 @@ img {
     font-size: 1em;
     height: 2.5em;
     width: 2.5em;
-    background: #26338c;
     color: #fff;
     font-weight: 700; }
-    .search button:before {
-      content: "`";
-      position: absolute;
-      top: 17px;
-      right: 4px;
-      font-size: 34px; }
-    .search button:after {
-      content: "o";
-      position: absolute;
-      top: 2px;
-      left: 11px;
-      font-size: 24px; }
 
 /* ==========================================================================
    Header / Breadcrumb

@@ -27,7 +27,7 @@
 
 <ktml:module position="sidebar">
     <section>
-        <h1 class="attachments"><?= @translate('Related news') ?></h1>
+        <h1 class="attachments"><?= @translate('Latest news') ?></h1>
         <ul class="news_list">
             <li><a href="#">Tien bestuurders met glas teveel op</a></li>
             <li><a href="#">Bestuurder zwaar gewond in Wilsele</a></li>

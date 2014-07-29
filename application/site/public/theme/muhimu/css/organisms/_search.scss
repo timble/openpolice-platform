@@ -28,24 +28,8 @@
     font-size: 1em;
     height: ($spacing-s * 2);
     width: ($spacing-s * 2);
-    background: palette(blue);
     color: #fff;
     font-weight: 700;
-
-    &:before {
-      content: "`";
-      position: absolute;
-      top: 17px;
-      right: 4px;
-      font-size: 34px;
-    }
-
-    &:after {
-      content: "o";
-      position: absolute;
-      top: 2px;
-      left: 11px;
-      font-size: 24px;
-    }
+    @extend %icon--search;
   }
 }
