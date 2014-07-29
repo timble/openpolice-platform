@@ -6,17 +6,9 @@
   @extend %clearfix;
   padding-top: $spacing-xxs;
 
-  @include respond-min($breakpoint-beta) {
-    padding-top: $spacing;
-  }
-
-  h1 {
-    @extend %h3style;
+  h2 {
+    @extend %h4style;
     color: palette(blue);
     margin-bottom: 0.54545454545455em; // 12px
-
-    @include respond-min($breakpoint-beta) {
-      margin-bottom: .5em;
-    }
   }
 }

@@ -684,7 +684,7 @@ body {
   color: #2c2c2c; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.25em;
   color: #3142b4;
   vertical-align: bottom; }
@@ -692,7 +692,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 1.5em;
   line-height: 1em;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  color: #26338c; }
   @media screen and (min-width: 25em) {
     h1 {
       font-size: 1.875em;
@@ -714,20 +715,25 @@ h2 {
       line-height: 1.2em;
       margin-bottom: 0.8em; } }
 
-h3, .container__navigation h1, .attachments {
+h3, .attachments {
   font-size: 1.375em;
   line-height: 1.09090909090909em;
   margin-bottom: 1.09090909090909em; }
   @media screen and (min-width: 37.5em) {
-    h3, .container__navigation h1, .attachments {
+    h3, .attachments {
       font-size: 1.5em;
       line-height: 1em;
       margin-bottom: 1em; } }
 
-h4 {
-  font-size: 1.375em;
-  line-height: 1.09090909090909em;
-  margin-bottom: 1.09090909090909em; }
+h4, .container__navigation h2 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin-bottom: 1.2em; }
+  @media screen and (min-width: 37.5em) {
+    h4, .container__navigation h2 {
+      font-size: 1.375em;
+      line-height: 1.09090909090909em;
+      margin-bottom: 1.09090909090909em; } }
 
 h5 {
   font-size: 1.25em;
@@ -842,7 +848,7 @@ img {
   background: #fff; }
 
 .divide {
-  margin: 0.6875em auto;
+  margin: 0.6875em auto 1.5em;
   padding: 0;
   border: none;
   outline: none;
@@ -1161,23 +1167,13 @@ img {
    ========================================================================== */
 .container__navigation {
   padding-top: 0.75em; }
-  @media screen and (min-width: 37.5em) {
-    .container__navigation {
-      padding-top: 1.5em; } }
-  .container__navigation h1 {
+  .container__navigation h2 {
     color: #26338c;
     margin-bottom: 0.54545454545455em; }
-    @media screen and (min-width: 37.5em) {
-      .container__navigation h1 {
-        margin-bottom: .5em; } }
 
 /* ==========================================================================
    News
    ========================================================================== */
-@media screen and (min-width: 48em) {
-  .container__news {
-    padding-top: 20px; } }
-
 .news__featured {
   padding-top: 10px;
   padding-bottom: 10px; }
@@ -1226,8 +1222,7 @@ img {
   padding-bottom: 1.5em; }
   @media screen and (min-width: 48em) {
     .container__content {
-      padding-top: 2.25em;
-      padding-bottom: 2.25em; } }
+      padding-top: 2.25em; } }
   @media screen and (min-width: 64em) {
     .container__content .component.articles article,
     .container__content .component.news article {

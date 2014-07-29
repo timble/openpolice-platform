@@ -38,11 +38,12 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </div>
 </ktml:module>
 
+<h1>Diensten en informatie</h1>
 <div class="container__navigation">
 <? foreach($pages as $page) : ?>
     <? if($page->level == '1' && $page->hidden == false) : ?>
     <section class="navigation__item">
-        <h1><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></h1>
+        <h2><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></h2>
         <p><?= $page->getParams('page')->get('description') ?></p>
     </section>
     <? endif ?>
@@ -50,6 +51,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 </div>
 
 <hr class="divide" />
+
+<h1>Nieuws</h1>
 
 <div class="container__news">
     <? $stickies = object('com:news.model.articles')->sticky(true)->getRowset();

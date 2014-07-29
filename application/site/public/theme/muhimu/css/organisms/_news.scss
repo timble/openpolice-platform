@@ -4,10 +4,6 @@
 
 .container__news {
   @extend %clearfix;
-
-  @include respond-min($breakpoint-charlie) {
-    padding-top: 20px;
-  }
 }
 
 .news__featured {

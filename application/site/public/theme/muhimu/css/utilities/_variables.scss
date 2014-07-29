@@ -52,6 +52,7 @@ $palettes: (
 // -------------------------
 $sans: "Open Sans", Helvetica, Arial, sans-serif;
 $serif: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
+$serif: $sans;
 
 
 // Transition
@@ -70,7 +71,7 @@ $spacing-xs: 1em;                 // 16px based on 16px
 $spacing-s: 1.25em;               // 20px based on 16px
 $spacing: 1.5em;                  // 24px based on 16px
 $spacing-l: 2em;                  // 32px based on 16px
-$spacing-xl: 2.25em;              // 36px based on 16px
+$spacing-xl: 2.25em;              // px based on 16px
 $spacing-xxl: 3em;                // 48px based on 16px
 $one-px: 1em/16;                  // 1px based on 16px
 

@@ -9,7 +9,6 @@
 
   @include respond-min($breakpoint-charlie) {
     padding-top: $spacing-xl;
-    padding-bottom: $spacing-xl;
   }
 
   .component.articles,
