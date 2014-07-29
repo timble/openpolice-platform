@@ -739,7 +739,7 @@ h5 {
   line-height: 1.2em;
   margin-bottom: 1.2em; }
 
-h6 {
+h6, .media__title {
   font-size: 1.125em;
   line-height: 1.33333333333333em;
   margin-bottom: 1.33333333333333em; }
@@ -767,14 +767,13 @@ img {
    A media container for news
    ========================================================================== */
 .media {
-  margin-top: 10px;
-  margin-bottom: 10px; }
+  margin-top: 0.75em;
+  margin-bottom: 0.75em; }
 
 .media__title {
-  font-size: 1em;
   font-size: 1.25em;
-  margin-top: .5em;
-  margin-bottom: .5em; }
+  line-height: 1.2em;
+  margin-bottom: 1.2em; }
 
 .media__image {
   position: relative;

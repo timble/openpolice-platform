@@ -4,17 +4,17 @@
 
 .media {
   @extend %clearfix;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: $spacing-xxs;
+  margin-bottom: $spacing-xxs;
 }
 
 .media__title {
-  font-size: 1em;
+  @extend %h6style;
 
   @include respond-min($breakpoint-alpha) {
-    font-size: 1.25em;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    font-size: 1.25em; // 20px
+    line-height: 1.2em; // 24px
+    margin-bottom: 1.2em; // 24px
   }
 }
 
