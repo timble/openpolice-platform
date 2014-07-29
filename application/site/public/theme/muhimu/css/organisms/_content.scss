@@ -7,6 +7,11 @@
   padding-top: $spacing;
   padding-bottom: $spacing;
 
+  @include respond-min($breakpoint-charlie) {
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+  }
+
   .component.articles,
   .component.news {
 
@@ -22,7 +27,9 @@
     }
 
     time {
+      display: block;
       font-size: 1.25em;
+      line-height: 1.2em;
       color: palette(blue, light);
       font-weight: 300;
     }

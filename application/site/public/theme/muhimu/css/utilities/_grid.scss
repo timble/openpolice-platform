@@ -9,8 +9,18 @@
   margin-right: auto;
   margin-left: auto;
   max-width: $max-width-page;
-  padding-left: $grid-padding;
-  padding-right: $grid-padding;
+  padding-left: $spacing-s;
+  padding-right: $spacing-s;
+
+  @include respond-min($breakpoint-charlie) {
+    padding-left: $spacing;
+    padding-right: $spacing;
+  }
+
+  @include respond-min($breakpoint-delta) {
+    padding-left: $spacing-l;
+    padding-right: $spacing-l;
+  }
 }
 
 // Default

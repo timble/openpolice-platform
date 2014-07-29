@@ -13,27 +13,61 @@ h4, h5, h6 {
 }
 
 h1 {
-  font-size: $spacing-l;
-  line-height: $spacing-xs;
-  margin-bottom: $spacing-xxs - $one-px;
+  font-size: 1.5em; // 24px
+  line-height: 1em; // 24px
+  margin-bottom: 1em; // 24px
+
+  @include respond-min($breakpoint-alpha) {
+    font-size: 1.875em; // 30px
+    line-height: 1.2em; // 36px
+    margin-bottom: 0.8em; // 24px
+  }
+
+  @include respond-min($breakpoint-charlie) {
+    font-size: 2.25em; // 36px
+    line-height: 1em; //36px
+    margin-bottom: 0.66666666666667em; //24px
+  }
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 1.375em; // 22px
+  line-height: 1.09090909090909em; // 24px
+  margin-bottom: 1.09090909090909em; // 24px
+
+  @include respond-min($breakpoint-beta) {
+    font-size: 1.875em; // 30px
+    line-height: 1.2em; // 36px
+    margin-bottom: 0.8em; // 24px
+  }
 }
 
 h3 {
-  font-size: 1.6em;
+  font-size: 1.375em; // 22px
+  line-height: 1.09090909090909em; // 24px
+  margin-bottom: 1.09090909090909em; // 24px
+
+  @include respond-min($breakpoint-beta) {
+    font-size: 1.5em; // 24px
+    line-height: 1em; // 24px
+    margin-bottom: 1em; // 24px
+  }
 }
 
 h4 {
-  font-size: 1.4em;
+  font-size: 1.375em; // 22px
+  line-height: 1.09090909090909em; // 24px
+  margin-bottom: 1.09090909090909em; // 24px
 }
 
 h5 {
-  font-size: 1.2em;
+  font-size: 1.25em; // 20px
+  line-height: 1.2em; // 24px
+  margin-bottom: 1.2em; // 24px
 }
 
 h6 {
-  font-size: 1em;
+  font-size: 1.125em; // 20px
+  line-height: 1.33333333333333em; // 24px
+  margin-bottom: 1.33333333333333em; // 24px
 }
