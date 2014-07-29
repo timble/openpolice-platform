@@ -95,7 +95,11 @@
   }
 
   .component {
-    @include span(first 8 of 12)
+    @include span(first 8 of 12);
+
+    &.overview {
+      @include span(first 12 of 12);
+    }
   }
 
   .news__featured {
@@ -110,6 +114,12 @@
 
   .news__other {
     .media {
+      @include gallery(6 of 12);
+    }
+  }
+
+  .news.overview {
+    article {
       @include gallery(6 of 12);
     }
   }

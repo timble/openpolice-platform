@@ -11,10 +11,16 @@
     padding-top: $spacing-xl;
   }
 
+  .component {
+    @extend %clearfix;
+  }
+
   .component.articles,
   .component.news {
 
     article {
+      @extend %clearfix;
+
       @include respond-min($breakpoint-delta) {
         max-width: 42em;
       }

@@ -465,17 +465,20 @@ table {
 .container__header,
 .container__content,
 .breadcrumb,
-.container__copyright, .media, .skip .container__skip, .organization, .organization a, .container__navigation, .container__news {
+.container__copyright, .media, .pagination, .skip .container__skip, .organization, .organization a, .container__navigation, .container__news, .container__content .component, .container__content .component.articles article,
+.container__content .component.news article {
   *zoom: 1; }
   .container__top:before,
   .container__header:before,
   .container__content:before,
   .breadcrumb:before,
-  .container__copyright:before, .media:before, .skip .container__skip:before, .organization:before, .organization a:before, .container__navigation:before, .container__news:before, .container__top:after,
+  .container__copyright:before, .media:before, .pagination:before, .skip .container__skip:before, .organization:before, .organization a:before, .container__navigation:before, .container__news:before, .container__content .component:before, .container__content .component.articles article:before,
+  .container__content .component.news article:before, .container__top:after,
   .container__header:after,
   .container__content:after,
   .breadcrumb:after,
-  .container__copyright:after, .media:after, .skip .container__skip:after, .organization:after, .organization a:after, .container__navigation:after, .container__news:after {
+  .container__copyright:after, .media:after, .pagination:after, .skip .container__skip:after, .organization:after, .organization a:after, .container__navigation:after, .container__news:after, .container__content .component:after, .container__content .component.articles article:after,
+  .container__content .component.news article:after {
     display: table;
     content: "";
     line-height: 0; }
@@ -483,7 +486,8 @@ table {
   .container__header:after,
   .container__content:after,
   .breadcrumb:after,
-  .container__copyright:after, .media:after, .skip .container__skip:after, .organization:after, .organization a:after, .container__navigation:after, .container__news:after {
+  .container__copyright:after, .media:after, .pagination:after, .skip .container__skip:after, .organization:after, .organization a:after, .container__navigation:after, .container__news:after, .container__content .component:after, .container__content .component.articles article:after,
+  .container__content .component.news article:after {
     clear: both; }
 
 .container__top,
@@ -614,6 +618,10 @@ table {
     width: 65.4321%;
     float: left;
     margin-left: 0; }
+    .component.overview {
+      width: 100%;
+      float: left;
+      margin-left: 0; }
 
   .news__featured .media__image {
     width: 30.8642%;
@@ -633,6 +641,19 @@ table {
       clear: both;
       margin-left: 0; }
     .news__other .media:nth-child(2n + 2) {
+      margin-left: 51.85185%;
+      margin-right: -100%;
+      clear: none; }
+
+  .news.overview article {
+    width: 48.14815%;
+    float: left; }
+    .news.overview article:nth-child(2n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    .news.overview article:nth-child(2n + 2) {
       margin-left: 51.85185%;
       margin-right: -100%;
       clear: none; } }
@@ -926,6 +947,9 @@ img {
     width: 40%;
     max-width: 200px;
     margin: 0 0 1.5em 1.5em; } }
+.pagination {
+  clear: both; }
+
 /* ==========================================================================
    The (hidden) skip link on top of the document
    ========================================================================== */
