@@ -18,7 +18,6 @@
     article {
       @include respond-min($breakpoint-delta) {
         max-width: 42em;
-        padding-bottom: 30px;
       }
     }
 

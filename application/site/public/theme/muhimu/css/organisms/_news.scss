@@ -61,3 +61,8 @@
     }
   }
 }
+
+.attachments {
+  margin-top: 0.54545454545455em;
+  @extend %h3style;
+}

@@ -674,13 +674,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Slab", Georgia, "Times New Roman", Times, serif;
   line-height: 1.25em;
-  color: #3142b4; }
-
-h1, h2, h3 {
-  margin-bottom: 0.75em; }
-
-h4, h5, h6 {
-  margin-bottom: 1em; }
+  color: #3142b4;
+  vertical-align: bottom; }
 
 h1 {
   font-size: 1.5em;
@@ -701,7 +696,7 @@ h2 {
   line-height: 1.2em;
   margin-bottom: 0.8em; }
 
-h3 {
+h3, .container__navigation h1, .attachments {
   font-size: 1.375em;
   line-height: 1.09090909090909em;
   margin-bottom: 1.09090909090909em;
@@ -1129,12 +1124,12 @@ img {
    Navigation
    ========================================================================== */
 .container__navigation {
-  padding-top: 10px;
-  padding-top: 20px; }
+  padding-top: 0.75em;
+  padding-top: 1.5em; }
   .container__navigation h1 {
-    font-size: 1.25em;
     color: #26338c;
-    margin-bottom: .25em; }
+    margin-bottom: 0.54545454545455em;
+    margin-bottom: .5em; }
 
 /* ==========================================================================
    News
@@ -1165,6 +1160,9 @@ img {
   margin: 0;
   font-size: 1.125em; }
 
+.attachments {
+  margin-top: 0.54545454545455em; }
+
 /* ==========================================================================
    Content
    ========================================================================== */
@@ -1175,8 +1173,7 @@ img {
   padding-bottom: 2.25em; }
   .container__content .component.articles article,
   .container__content .component.news article {
-    max-width: 42em;
-    padding-bottom: 30px; }
+    max-width: 42em; }
   .container__content .component.articles header,
   .container__content .component.news header {
     margin-bottom: 1.5em; }

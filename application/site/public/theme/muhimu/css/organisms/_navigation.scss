@@ -4,15 +4,19 @@
 
 .container__navigation {
   @extend %clearfix;
-  padding-top: 10px;
+  padding-top: $spacing-xxs;
 
   @include respond-min($breakpoint-beta) {
-    padding-top: 20px;
+    padding-top: $spacing;
   }
 
   h1 {
-    font-size: 1.25em;
+    @extend %h3style;
     color: palette(blue);
-    margin-bottom: .25em;
+    margin-bottom: 0.54545454545455em; // 12px
+
+    @include respond-min($breakpoint-beta) {
+      margin-bottom: .5em;
+    }
   }
 }
