@@ -31,5 +31,6 @@
     color: #fff;
     font-weight: 700;
     @extend %icon--search;
+    background-color: palette(blue);
   }
 }

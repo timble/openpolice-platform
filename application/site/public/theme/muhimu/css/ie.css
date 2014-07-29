@@ -860,9 +860,12 @@ img {
   .news_list li:before {
     display: block;
     float: left;
-    content: ">";
-    color: #8ac7cb;
-    font-weight: 700; }
+    content: " ";
+    width: 7px;
+    height: 0;
+    overflow: hidden;
+    padding-top: 1.5em;
+    vertical-align: middle; }
   .news_list li a {
     display: block;
     margin-left: 1.5em; }
@@ -927,8 +930,14 @@ img {
 
 .search button {
   background: #26338c url("../images/icon--search.png") no-repeat static center;
-  background: #26338c url("../images/icon--search@2x.png") center center/50% 50% no-repeat; }
+  background: transparent url("../images/icon--search@2x.png") center center/50% 50% no-repeat; }
 
+.container__breadcrumb .breadcrumb .divider, .container__header li:before {
+  background: #26338c url("../images/icon--arrow--blue.png") no-repeat static center; }
+.news_list li:before {
+  background: #26338c url("../images/icon--arrow--white.png") no-repeat static center; }
+.container__breadcrumb .breadcrumb .divider, .container__header li:before, .news_list li:before {
+  background: transparent url("../images/icon--arrow@2x.png") center center/7px 12px no-repeat; }
 /* ==========================================================================
    The (hidden) skip link on top of the document
    ========================================================================== */
@@ -1035,7 +1044,8 @@ img {
     height: 2.5em;
     width: 2.5em;
     color: #fff;
-    font-weight: 700; }
+    font-weight: 700;
+    background-color: #26338c; }
 
 /* ==========================================================================
    Header / Breadcrumb
@@ -1054,7 +1064,12 @@ img {
     color: #d7e2e0;
     font-weight: 300; }
   .container__breadcrumb .breadcrumb .divider {
-    color: #8ac7cb; }
+    display: inline-block;
+    width: 8px;
+    height: 0;
+    overflow: hidden;
+    padding-top: 1.5em;
+    vertical-align: middle; }
   .container__breadcrumb .breadcrumb a {
     color: #fff;
     font-weight: 400; }
@@ -1074,16 +1089,19 @@ img {
     padding-bottom: .6em;
     position: relative; }
     .container__header li:before {
-      display: block;
-      content: ">";
-      color: #8ac7cb;
-      font-weight: 700;
       position: absolute;
-      top: .75em;
-      left: 0; }
+      top: .5em;
+      left: 0;
+      display: inline-block;
+      content: " ";
+      width: 7px;
+      height: 0;
+      overflow: hidden;
+      padding-top: 1.5em;
+      vertical-align: middle; }
     .container__header li a {
       color: #fff;
-      padding-left: 30px;
+      padding-left: 1.5em;
       display: inline-block; }
       .container__header li a:hover {
         text-decoration: none; }

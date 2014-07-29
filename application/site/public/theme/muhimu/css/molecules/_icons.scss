@@ -1,4 +1,25 @@
 %icon--search {
   background: palette(blue) url("../images/icon--search.png") no-repeat static center;
-  background: palette(blue) url("../images/icon--search@2x.png") center center / 50% 50% no-repeat; // Background-size capable
+  background: transparent url("../images/icon--search@2x.png") center center / 50% 50% no-repeat; // Background-size capable
+}
+
+%icon--arrow {
+
+  &--blue {
+    background: palette(blue) url("../images/icon--arrow--blue.png") no-repeat static center;
+  }
+
+  &--white {
+    background: palette(blue) url("../images/icon--arrow--white.png") no-repeat static center;
+  }
+
+  &--blue,
+  &--white {
+    background: transparent url("../images/icon--arrow@2x.png") center center / 7px 12px no-repeat; // Background-size capable
+  }
+
+  &--large {
+    background: transparent url("../images/icon--arrow--large@2x.png") center center / 14px 24px no-repeat; // Background-size capable
+  }
+
 }

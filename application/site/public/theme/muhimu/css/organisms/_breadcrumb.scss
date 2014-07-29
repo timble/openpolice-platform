@@ -24,7 +24,13 @@
     }
 
     .divider {
-      color: palette(turquoise);
+      display: inline-block;
+      width: 8px;
+      height: 0;
+      overflow: hidden;
+      padding-top: 1.5em;
+      vertical-align: middle;
+      @extend %icon--arrow--blue;
     }
 
     a {
@@ -54,18 +60,22 @@
     position: relative;
 
     &:before {
-      display: block;
-      content: ">";
-      color: palette(turquoise);
-      font-weight: 700;
       position: absolute;
-      top: .75em;
+      top: .5em;
       left: 0;
+      display: inline-block;
+      content: " ";
+      width: 7px;
+      height: 0;
+      overflow: hidden;
+      padding-top: 1.5em;
+      vertical-align: middle;
+      @extend %icon--arrow--blue;
     }
 
     a {
       color: #fff;
-      padding-left: 30px;
+      padding-left: $spacing;
       display: inline-block;
 
       &:hover {
