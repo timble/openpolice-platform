@@ -77,18 +77,17 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <footer class="copyright">
     <div class="container__copyright">
         <div class="copyright--left">
-            <a href="#">Contact</a>
+            <? foreach($pages as $page) : ?>
+                <? if($page->id == '89' || $page->id == '101' || $page->id == '41') : ?>
+                    <a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
+                <? endif ?>
+            <? endforeach ?>
             <? if($zone->twitter) : ?>
                 <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
             <? endif ?>
             <? if($zone->facebook) : ?>
                 <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
             <? endif ?>
-            <? foreach($pages as $page) : ?>
-                <? if($page->id == '89' || $page->id == '101') : ?>
-                    <a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
-                <? endif ?>
-            <? endforeach ?>
         </div>
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?>
