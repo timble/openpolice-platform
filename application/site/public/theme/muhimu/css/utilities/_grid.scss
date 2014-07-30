@@ -97,7 +97,8 @@
   .component {
     @include span(first 8 of 12);
 
-    &.articles {
+    // A full span on certain pages
+    &.news.articles {
       @include span(first 12 of 12);
     }
   }
