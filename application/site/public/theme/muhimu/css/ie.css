@@ -626,6 +626,14 @@ table {
     width: 100%;
     float: left;
     margin-left: 0; }
+  .component.contacts.contacts {
+    width: 48.14815%;
+    float: left;
+    margin-left: 0; }
+    .component.contacts.contacts + aside {
+      width: 48.14815%;
+      float: left;
+      margin-left: 3.7037%; }
 
 .news__featured .media__image {
   width: 30.8642%;

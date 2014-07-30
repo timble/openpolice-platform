@@ -101,6 +101,15 @@
     &.news.articles {
       @include span(first 12 of 12);
     }
+
+    // Half span
+    &.contacts.contacts {
+      @include span(first 6 of 12);
+
+      & + aside {
+        @include span(6 of 12);
+      }
+    }
   }
 
   .news__featured {
