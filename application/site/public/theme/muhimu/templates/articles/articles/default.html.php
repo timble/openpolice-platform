@@ -6,7 +6,7 @@
     <link href="<?= route('format=rss') ?>" rel="alternate" type="application/rss+xml" />
 <? endif; ?>
 
-<ul class="nav nav--pills nav--visited">
+<ul class="categories_wrapper">
     <? foreach(object('com:articles.model.categories')->category($category->id)->getRowset() as $article) : ?>
         <li>
             <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= highlight($article->title) ?></a>

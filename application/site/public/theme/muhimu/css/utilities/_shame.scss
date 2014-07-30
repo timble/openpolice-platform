@@ -1,0 +1,20 @@
+.adr {
+  margin-bottom: $spacing;
+}
+
+.table--openinghours {
+  display: table;
+  clear: both;
+  width: 100%;
+
+  caption {
+    @extend %h4style;
+    text-align: left;
+    margin-top: $spacing;
+    color: palette(blue, light);
+  }
+
+  td:first-child {
+    width: 33% !important;
+  }
+}

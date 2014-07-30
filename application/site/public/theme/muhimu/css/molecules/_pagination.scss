@@ -1,14 +1,11 @@
-.pagination {
-  clear: both;
-  @extend %clearfix;
-}
-
 //
 // Pagination (multiple pages)
 // --------------------------------------------------
 
 // Space out pagination from surrounding content
 .pagination {
+  clear: both;
+  @extend %clearfix;
   margin: $spacing 0 0 0;
 
   ul {
@@ -26,7 +23,6 @@
   }
 
   ul > li > a,
-  ul > li > a:visited,
   ul > li > span {
     float: left; // Collapse white-space
     padding: 0.3em 1em;
@@ -45,7 +41,6 @@
   }
 
   ul > .active > a,
-  ul > .active > a:visited,
   ul > .active > span,
   ul > .active > a:hover,
   ul > .active > a:focus {
@@ -54,6 +49,7 @@
     font-weight: 600;
     cursor: default;
     background-color: #fff;
+    border-color: #ccc;
   }
 
   ul > .disabled > span,
@@ -87,8 +83,7 @@
       border: 1px solid #ccc;
     }
 
-    ul > li > a,
-    ul > li > a:visited {
+    ul > li > a {
       border: 0 none;
       border-right: 1px solid #ccc;
     }

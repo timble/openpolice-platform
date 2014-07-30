@@ -2,21 +2,6 @@
   li {
     margin-bottom: .75em;
 
-    &:before {
-      display: block;
-      float: left;
-      content:  " ";
-      width: 10px;
-      height: 0;
-      overflow: hidden;
-      padding-top: 1.5em;
-      vertical-align: middle;
-      @extend %icon--arrow--white--large;
-    }
-
-    a {
-      display: block;
-      margin-left: 1.5em;
-    }
+    @extend %white--arrow;
   }
 }

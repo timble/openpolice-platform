@@ -55,13 +55,13 @@
         <? endif; ?>
         <?if ($contact->email_to) :?>
             <li>
-                <span><?= translate('Email') ?></span>:
+                <span class="type"><?= translate('Email') ?></span>:
                 <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>
             </li>
         <? endif; ?>
         <?if ($contact->url) :?>
             <li>
-                <span><?= translate('Website') ?></span>:
+                <span class="type"><?= translate('Website') ?></span>:
                 <a class="url" href="<?= $contact->url ?>"><?= str_replace('http://', '', $contact->url); ?></a>
             </li>
         <? endif; ?>

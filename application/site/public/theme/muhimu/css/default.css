@@ -490,6 +490,23 @@ table {
   .component.news article:after {
     clear: both; }
 
+.news_list li, .categories_wrapper li {
+  position: relative; }
+  .news_list li:before, .categories_wrapper li:before {
+    display: block;
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 0;
+    overflow: hidden;
+    padding-top: 1.5em;
+    vertical-align: middle; }
+  .news_list li a, .categories_wrapper li a {
+    display: inline-block;
+    margin-left: 1.5em; }
+
 .container__top,
 .container__header,
 .container__content,
@@ -755,12 +772,12 @@ h3, .attachments {
       line-height: 1em;
       margin-bottom: 1em; } }
 
-h4, .container__navigation h2 {
+h4, .container__navigation h2, .table--openinghours caption {
   font-size: 1.25em;
   line-height: 1.2em;
   margin-bottom: 1.2em; }
   @media screen and (min-width: 37.5em) {
-    h4, .container__navigation h2 {
+    h4, .container__navigation h2, .table--openinghours caption {
       font-size: 1.375em;
       line-height: 1.09090909090909em;
       margin-bottom: 1.09090909090909em; } }
@@ -899,18 +916,6 @@ address .type {
 
 .news_list li {
   margin-bottom: .75em; }
-  .news_list li:before {
-    display: block;
-    float: left;
-    content: " ";
-    width: 10px;
-    height: 0;
-    overflow: hidden;
-    padding-top: 1.5em;
-    vertical-align: middle; }
-  .news_list li a {
-    display: block;
-    margin-left: 1.5em; }
 
 /* ==========================================================================
    Thumbs
@@ -968,9 +973,7 @@ address .type {
     max-width: 200px;
     margin: 0 0 1.5em 1.5em; } }
 .pagination {
-  clear: both; }
-
-.pagination {
+  clear: both;
   margin: 1.5em 0 0 0; }
   .pagination ul {
     display: inline-block;
@@ -983,7 +986,6 @@ address .type {
   .pagination ul > li {
     display: inline; }
   .pagination ul > li > a,
-  .pagination ul > li > a:visited,
   .pagination ul > li > span {
     float: left;
     padding: 0.3em 1em;
@@ -998,7 +1000,6 @@ address .type {
     border-color: #1b2464;
     color: #fff; }
   .pagination ul > .active > a,
-  .pagination ul > .active > a:visited,
   .pagination ul > .active > span,
   .pagination ul > .active > a:hover,
   .pagination ul > .active > a:focus {
@@ -1006,7 +1007,8 @@ address .type {
     text-decoration: none;
     font-weight: 600;
     cursor: default;
-    background-color: #fff; }
+    background-color: #fff;
+    border-color: #ccc; }
   .pagination ul > .disabled > span,
   .pagination ul > .disabled > a,
   .pagination ul > .disabled > a:hover,
@@ -1027,8 +1029,7 @@ address .type {
     .pagination ul {
       width: auto;
       border: 1px solid #ccc; }
-    .pagination ul > li > a,
-    .pagination ul > li > a:visited {
+    .pagination ul > li > a {
       border: 0 none;
       border-right: 1px solid #ccc; }
     .pagination ul > li:last-child a {
@@ -1046,12 +1047,15 @@ address .type {
   background: #26338c url("../images/icon--arrow--blue.png") no-repeat center; }
   .container__header li:before {
     background: #26338c url("../images/icon--arrow--blue--large.png") no-repeat center; }
-  .news_list li:before {
+  .news_list li:before, .categories_wrapper li:before {
     background: #26338c url("../images/icon--arrow--white--large.png") no-repeat center; }
 .container__breadcrumb .breadcrumb .divider {
   background: transparent url("../images/icon--arrow@2x.png") center center/7px 12px no-repeat; }
-  .container__header li:before, .news_list li:before {
+  .container__header li:before, .news_list li:before, .categories_wrapper li:before {
     background: transparent url("../images/icon--arrow--large@2x.png") center center/10px 16px no-repeat; }
+
+.categories_wrapper li {
+  margin-bottom: 0.75em; }
 
 /* ==========================================================================
    The (hidden) skip link on top of the document
@@ -1404,3 +1408,17 @@ address .type {
       color: #00637c;
       font-weight: 700;
       text-decoration: none; }
+
+.adr {
+  margin-bottom: 1.5em; }
+
+.table--openinghours {
+  display: table;
+  clear: both;
+  width: 100%; }
+  .table--openinghours caption {
+    text-align: left;
+    margin-top: 1.5em;
+    color: #3142b4; }
+  .table--openinghours td:first-child {
+    width: 33% !important; }

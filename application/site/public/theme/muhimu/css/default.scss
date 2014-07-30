@@ -14,7 +14,7 @@
 
 // Reset
 @import 'utilities/reset';
-@import 'utilities/clearfix';
+@import 'utilities/placeholders';
 
 // Grid layout
 @import 'utilities/grid';
@@ -38,6 +38,7 @@
 @import "molecules/thumbs";
 @import "molecules/pagination";
 @import "molecules/icons";
+@import "molecules/categories";
 
 // Organisms
 @import "organisms/skip";
@@ -51,7 +52,7 @@
 
 
 
-
+@import "utilities/shame";
 
 
 
