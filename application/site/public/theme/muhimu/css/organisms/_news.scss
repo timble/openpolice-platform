@@ -64,8 +64,25 @@
 }
 
 .component.news.articles {
+
+  .media {
+    margin-bottom: $spacing;
+    padding-bottom: $spacing;
+    border-bottom: 2px solid palette(turquoise, light);
+
+    @include respond-min($breakpoint-charlie) {
+      padding-bottom: 0;
+      border: none;
+    }
+  }
+
   h1 {
+    margin-top: $spacing;
     margin-bottom: 0;
+
+    @include respond-min($breakpoint-alpha) {
+      margin-top: 0;
+    }
   }
   time {
     font-size: 1em;

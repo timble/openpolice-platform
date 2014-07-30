@@ -531,6 +531,15 @@ table {
   float: left;
   margin-left: 7.69231%; }
 
+.news.articles .media__image {
+  width: 30.8642%;
+  float: left;
+  margin-left: 0; }
+.news.articles .media__content {
+  width: 65.4321%;
+  float: left;
+  margin-left: 3.7037%; }
+
 .organization {
   width: 46.15385%;
   float: left;
@@ -1308,8 +1317,16 @@ article ul {
 .attachments {
   margin-top: 0.54545454545455em; }
 
+.component.news.articles .media {
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 2px solid #d7e2e0;
+  padding-bottom: 0;
+  border: none; }
 .component.news.articles h1 {
-  margin-bottom: 0; }
+  margin-top: 1.5em;
+  margin-bottom: 0;
+  margin-top: 0; }
 .component.news.articles time {
   font-size: 1em;
   margin: 0.6em 0 0; }

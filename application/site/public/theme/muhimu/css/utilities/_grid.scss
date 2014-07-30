@@ -34,6 +34,19 @@
   }
 }
 
+// Alpha
+@include respond-min($breakpoint-alpha) {
+  .news.articles {
+    .media__image {
+      @include span(first 4 of 12);
+    }
+
+    .media__content {
+      @include span(8 of 12);
+    }
+  }
+}
+
 // Beta
 @include respond-min($breakpoint-beta) {
 

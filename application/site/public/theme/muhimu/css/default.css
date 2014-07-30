@@ -543,6 +543,15 @@ table {
   float: left;
   margin-left: 7.69231%; }
 
+@media screen and (min-width: 25em) {
+  .news.articles .media__image {
+    width: 30.8642%;
+    float: left;
+    margin-left: 0; }
+  .news.articles .media__content {
+    width: 65.4321%;
+    float: left;
+    margin-left: 3.7037%; } }
 @media screen and (min-width: 37.5em) {
   .organization {
     width: 46.15385%;
@@ -1359,8 +1368,20 @@ article ul {
 .attachments {
   margin-top: 0.54545454545455em; }
 
+.component.news.articles .media {
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 2px solid #d7e2e0; }
+  @media screen and (min-width: 48em) {
+    .component.news.articles .media {
+      padding-bottom: 0;
+      border: none; } }
 .component.news.articles h1 {
+  margin-top: 1.5em;
   margin-bottom: 0; }
+  @media screen and (min-width: 25em) {
+    .component.news.articles h1 {
+      margin-top: 0; } }
 .component.news.articles time {
   font-size: 1em;
   margin: 0.6em 0 0; }
