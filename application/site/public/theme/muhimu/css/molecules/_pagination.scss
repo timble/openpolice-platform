@@ -26,12 +26,14 @@
   }
 
   ul > li > a,
+  ul > li > a:visited,
   ul > li > span {
     float: left; // Collapse white-space
     padding: 0.3em 1em;
     text-decoration: underline;
     background-color: #eee;
     border: 1px solid #ccc;
+    color: palette(text);
   }
 
   ul > li > a:hover,
@@ -43,6 +45,7 @@
   }
 
   ul > .active > a,
+  ul > .active > a:visited,
   ul > .active > span,
   ul > .active > a:hover,
   ul > .active > a:focus {
@@ -84,7 +87,8 @@
       border: 1px solid #ccc;
     }
 
-    ul > li > a {
+    ul > li > a,
+    ul > li > a:visited {
       border: 0 none;
       border-right: 1px solid #ccc;
     }
