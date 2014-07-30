@@ -2,3 +2,104 @@
   clear: both;
   @extend %clearfix;
 }
+
+//
+// Pagination (multiple pages)
+// --------------------------------------------------
+
+// Space out pagination from surrounding content
+.pagination {
+  margin: $spacing 0 0 0;
+
+  ul {
+    // Allow for text-based alignment
+    display: inline-block;
+    @include ie7-inline-block();
+    // Reset default ul styles
+    margin-left: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  ul > li {
+    display: inline; // Remove list-style and block-level defaults
+  }
+
+  ul > li > a,
+  ul > li > span {
+    float: left; // Collapse white-space
+    padding: 0.3em 1em;
+    text-decoration: underline;
+    background-color: #eee;
+    border: 1px solid #ccc;
+  }
+
+  ul > li > a:hover,
+  ul > li > a:focus {
+    text-decoration: none;
+    background-color: palette(blue);
+    border-color: palette(blue, dark);
+    color: #fff;
+  }
+
+  ul > .active > a,
+  ul > .active > span,
+  ul > .active > a:hover,
+  ul > .active > a:focus {
+    color: palette(text);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    background-color: #fff;
+  }
+
+  ul > .disabled > span,
+  ul > .disabled > a,
+  ul > .disabled > a:hover,
+  ul > .disabled > a:focus {
+    color: #eee;
+    background-color: transparent;
+    cursor: default;
+  }
+
+  .pagination__previous {
+    float: left;
+  }
+
+  .pagination__next {
+    float: right;
+  }
+
+  .pagination__offset {
+    display: none;
+  }
+}
+
+@include respond-min($breakpoint-charlie) {
+  .pagination {
+    text-align: center;
+
+    ul {
+      width: auto;
+      border: 1px solid #ccc;
+    }
+
+    ul > li > a {
+      border: 0 none;
+      border-right: 1px solid #ccc;
+    }
+
+    ul > li:last-child a {
+      border-right: 0 none;
+    }
+
+    .pagination__next,
+    .pagination__previous {
+      float: none;
+    }
+
+    .pagination__offset {
+      display: inline;
+    }
+  }
+}

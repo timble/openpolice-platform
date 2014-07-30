@@ -128,7 +128,7 @@
 
 // Delta
 @include respond-min($breakpoint-delta) {
-  .article {
+  .articles.article {
     @include span(first 8 of 12)
   }
 
@@ -153,6 +153,16 @@
 
     .media.media {
       clear: left;
+    }
+  }
+
+  .news.articles {
+    .media__image {
+      @include span(first 4 of 12);
+    }
+
+    .media__content {
+      @include span(8 of 12);
     }
   }
 }

@@ -9,28 +9,29 @@
 ?>
 
 <? foreach ($articles as $article) : ?>
-    <article class="article">
-        <? $link = helper('route.article', array('row' => $article)); ?>
-        <header class="article__header">
-            <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
-            <div class="text--small">
-                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
-            </div>
-        </header>
-
-        <? if($article->attachments_attachment_id): ?>
-            <a class="article__thumbnail" tabindex="-1" data-content="Lees meer" href="<?= $link ?>">
+    <? $link = helper('route.article', array('row' => $article)); ?>
+    <article class="media">
+        <div class="media__image">
+            <a class="media__image__inner" data-content="Lees meer" href="<?= $link ?>">
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('width' => '400', 'height' => '300'))) ?>
+                    'attribs' => array('width' => '560', 'height' => '420'))) ?>
             </a>
-        <? endif; ?>
+        </div>
+        <div class="media__content">
+            <header>
+                <h1 class="media__title"><a href="<?= $link ?>"><?= $article->title ?></a></h1>
+                <time class="text--small">
+                    <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('j F Y - H:i'), 'attribs' => array('class' => 'published'))) ?>
+                </time>
+            </header>
 
-        <?= $article->introtext ?>
+            <?= $article->introtext ?>
 
-        <? if ($article->fulltext) : ?>
-            <a href="<?= $link ?>"><?= translate('Read more') ?></a>
-        <? endif; ?>
+            <? if ($article->fulltext) : ?>
+                <a href="<?= $link ?>"><?= translate('Read more') ?></a>
+            <? endif; ?>
+        </div>
     </article>
 <? endforeach; ?>
 
