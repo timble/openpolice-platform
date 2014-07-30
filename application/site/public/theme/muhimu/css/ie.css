@@ -763,6 +763,11 @@ img {
   max-width: 100%;
   height: auto; }
 
+address span {
+  display: inline-block;
+  min-width: 33%;
+  font-weight: 600; }
+
 /* ==========================================================================
    A media container for news
    ========================================================================== */
@@ -843,6 +848,9 @@ img {
 #wrapper {
   background: #fff; }
 
+.nowrap {
+  white-space: nowrap; }
+
 .divide {
   margin: 0.6875em auto 1.5em;
   padding: 0;
@@ -851,6 +859,8 @@ img {
   height: 0.125em;
   background: #d7e2e0;
   max-width: 1280px; }
+  .divide--large {
+    margin: 1.9375em auto 2em; }
 
 .margin-zero {
   margin: 0; }

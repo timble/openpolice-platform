@@ -1,5 +1,4 @@
 .divide {
-
   margin: ($spacing-xxs - $one-px) auto $spacing;
   padding: 0;
   border: none;
@@ -7,4 +6,8 @@
   height: ($one-px * 2);
   background: palette(turquoise, light);
   max-width: $max-width-page;
+
+  &--large {
+    margin: ($spacing-l - $one-px) auto $spacing-l;
+  }
 }
