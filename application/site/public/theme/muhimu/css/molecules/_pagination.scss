@@ -6,7 +6,7 @@
 .pagination {
   clear: both;
   @extend %clearfix;
-  margin: $spacing 0 0 0;
+  padding: $spacing 0 0 0;
 
   ul {
     // Allow for text-based alignment

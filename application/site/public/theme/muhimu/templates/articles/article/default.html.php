@@ -17,7 +17,7 @@
         <hr class="divide divide--large" />
 
         <h2>Preventie</h2>
-        <ul>
+        <ul class="categories_wrapper">
             <li><a href="#">Lorem ipsum dolor</a></li>
             <li><a href="#">Sit amet consectetuer adipiscing elit</a></li>
             <li><a href="#">Lorem ipsum dolor</a></li>

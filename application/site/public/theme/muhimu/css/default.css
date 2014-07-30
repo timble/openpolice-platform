@@ -490,9 +490,9 @@ table {
   .component.news article:after {
     clear: both; }
 
-.news_list li, .categories_wrapper li {
+.categories_wrapper li {
   position: relative; }
-  .news_list li:before, .categories_wrapper li:before {
+  .categories_wrapper li:before {
     display: block;
     content: " ";
     position: absolute;
@@ -503,7 +503,7 @@ table {
     overflow: hidden;
     padding-top: 1.5em;
     vertical-align: middle; }
-  .news_list li a, .categories_wrapper li a {
+  .categories_wrapper li a {
     display: inline-block;
     margin-left: 1.5em; }
 
@@ -816,6 +816,19 @@ address .type {
   min-width: 33%;
   font-weight: 600; }
 
+th {
+  text-align: left;
+  font-weight: 600; }
+
+th, td {
+  padding: 3px 0; }
+
+article ul {
+  margin-bottom: 1.5em; }
+  article ul li {
+    list-style: circle;
+    margin-left: 1.5em; }
+
 /* ==========================================================================
    A media container for news
    ========================================================================== */
@@ -914,9 +927,6 @@ address .type {
 .margin-zero {
   margin: 0; }
 
-.news_list li {
-  margin-bottom: .75em; }
-
 /* ==========================================================================
    Thumbs
    ========================================================================== */
@@ -974,7 +984,7 @@ address .type {
     margin: 0 0 1.5em 1.5em; } }
 .pagination {
   clear: both;
-  margin: 1.5em 0 0 0; }
+  padding: 1.5em 0 0 0; }
   .pagination ul {
     display: inline-block;
     *display: inline;
@@ -1047,11 +1057,11 @@ address .type {
   background: #26338c url("../images/icon--arrow--blue.png") no-repeat center; }
   .container__header li:before {
     background: #26338c url("../images/icon--arrow--blue--large.png") no-repeat center; }
-  .news_list li:before, .categories_wrapper li:before {
+  .categories_wrapper li:before {
     background: #26338c url("../images/icon--arrow--white--large.png") no-repeat center; }
 .container__breadcrumb .breadcrumb .divider {
   background: transparent url("../images/icon--arrow@2x.png") center center/7px 12px no-repeat; }
-  .container__header li:before, .news_list li:before, .categories_wrapper li:before {
+  .container__header li:before, .categories_wrapper li:before {
     background: transparent url("../images/icon--arrow--large@2x.png") center center/10px 16px no-repeat; }
 
 .categories_wrapper li {
