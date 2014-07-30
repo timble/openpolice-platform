@@ -12,7 +12,7 @@
 
 <ktml:module position="sidebar">
     <section>
-        <?= import('com:contacts.view.contact.default.html', array('contact' => object('com:contacts.model.contact')->id('4')->getRow())); ?>
+        <?= import('com:contacts.view.contact.simple.html', array('contact' => object('com:contacts.model.contact')->id('4')->getRow())); ?>
 
         <hr class="divide divide--large" />
 

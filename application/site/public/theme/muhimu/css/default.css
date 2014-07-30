@@ -785,7 +785,7 @@ img {
   max-width: 100%;
   height: auto; }
 
-address span {
+address .type {
   display: inline-block;
   min-width: 33%;
   font-weight: 600; }
