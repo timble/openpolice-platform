@@ -36,6 +36,7 @@ class ViewPageHtml extends ViewHtml
         //Set the component and layout information
         $this->extension = $this->getObject('component')->getIdentifier()->package;
         $this->layout    = $this->getObject('component')->getController()->getView()->getLayout();
+        $this->view      = $this->getObject('component')->getController()->getView()->getName();
 
         return parent::render();
     }

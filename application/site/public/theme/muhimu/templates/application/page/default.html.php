@@ -58,7 +58,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
     <div id="content" class="container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
         <? if(!$singleColumn) : ?>
-        <div class="component <?= $extension ?>">
+        <div class="component <?= $extension ?> <?= $view ?>">
             <? endif ?>
                 <ktml:content>
             <? if(!$singleColumn) : ?>
