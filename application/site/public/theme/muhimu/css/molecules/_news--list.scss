@@ -6,12 +6,12 @@
       display: block;
       float: left;
       content:  " ";
-      width: 7px;
+      width: 10px;
       height: 0;
       overflow: hidden;
       padding-top: 1.5em;
       vertical-align: middle;
-      @extend %icon--arrow--white;
+      @extend %icon--arrow--white--large;
     }
 
     a {

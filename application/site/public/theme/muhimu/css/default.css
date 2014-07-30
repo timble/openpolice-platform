@@ -894,7 +894,7 @@ address span {
     display: block;
     float: left;
     content: " ";
-    width: 7px;
+    width: 10px;
     height: 0;
     overflow: hidden;
     padding-top: 1.5em;
@@ -965,12 +965,17 @@ address span {
   background: #26338c url("../images/icon--search.png") no-repeat static center;
   background: transparent url("../images/icon--search@2x.png") center center/50% 50% no-repeat; }
 
-.container__breadcrumb .breadcrumb .divider, .container__header li:before {
-  background: #26338c url("../images/icon--arrow--blue.png") no-repeat static center; }
-.news_list li:before {
-  background: #26338c url("../images/icon--arrow--white.png") no-repeat static center; }
-.container__breadcrumb .breadcrumb .divider, .container__header li:before, .news_list li:before {
+.container__breadcrumb .breadcrumb .divider {
+  background: #26338c url("../images/icon--arrow--blue.png") no-repeat center; }
+  .container__header li:before {
+    background: #26338c url("../images/icon--arrow--blue--large.png") no-repeat center; }
+  .news_list li:before {
+    background: #26338c url("../images/icon--arrow--white--large.png") no-repeat center; }
+.container__breadcrumb .breadcrumb .divider {
   background: transparent url("../images/icon--arrow@2x.png") center center/7px 12px no-repeat; }
+  .container__header li:before, .news_list li:before {
+    background: transparent url("../images/icon--arrow--large@2x.png") center center/10px 16px no-repeat; }
+
 /* ==========================================================================
    The (hidden) skip link on top of the document
    ========================================================================== */
@@ -1139,7 +1144,7 @@ address span {
       left: 0;
       display: inline-block;
       content: " ";
-      width: 7px;
+      width: 10px;
       height: 0;
       overflow: hidden;
       padding-top: 1.5em;

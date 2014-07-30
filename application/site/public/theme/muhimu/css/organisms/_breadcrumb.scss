@@ -65,12 +65,12 @@
       left: 0;
       display: inline-block;
       content: " ";
-      width: 7px;
+      width: 10px;
       height: 0;
       overflow: hidden;
       padding-top: 1.5em;
       vertical-align: middle;
-      @extend %icon--arrow--blue;
+      @extend %icon--arrow--blue--large;
     }
 
     a {

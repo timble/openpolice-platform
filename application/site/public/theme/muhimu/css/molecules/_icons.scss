@@ -6,20 +6,29 @@
 %icon--arrow {
 
   &--blue {
-    background: palette(blue) url("../images/icon--arrow--blue.png") no-repeat static center;
+    background: palette(blue) url("../images/icon--arrow--blue.png") no-repeat center;
+
+    &--large {
+      background: palette(blue) url("../images/icon--arrow--blue--large.png") no-repeat center;
+    }
   }
 
   &--white {
-    background: palette(blue) url("../images/icon--arrow--white.png") no-repeat static center;
+    background: palette(blue) url("../images/icon--arrow--white.png") no-repeat center;
+
+    &--large {
+      background: palette(blue) url("../images/icon--arrow--white--large.png") no-repeat center;
+    }
   }
 
   &--blue,
   &--white {
     background: transparent url("../images/icon--arrow@2x.png") center center / 7px 12px no-repeat; // Background-size capable
+
+    &--large {
+      background: transparent url("../images/icon--arrow--large@2x.png") center center / 10px 16px no-repeat; // Background-size capable
+    }
   }
 
-  &--large {
-    background: transparent url("../images/icon--arrow--large@2x.png") center center / 14px 24px no-repeat; // Background-size capable
-  }
 
 }
