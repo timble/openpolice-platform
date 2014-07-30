@@ -12,21 +12,7 @@
 
 <ktml:module position="sidebar">
     <section>
-        <h2>Fietsendienst &amp; stallingsplaats</h2>
-        <address>
-            <p>
-                De Vunt 2<br />
-                3220 Holsbeek<br />
-            </p>
-            <p>
-                <span>Telefoon:</span> 016 21 09 90<br />
-                <span>Fax:</span> 016 21 09 89<br />
-                <span>E-mail:</span> <a href="mailto:stalling@politieleuven.be">stalling@politieleuven.be</a>
-            </p>
-        </address>
-        <p>
-            Graveren van fietsen enkel op woensdag van <strong class="nowrap">13 tot 15.30</strong> uur en op donderdag van <strong class="nowrap">17 tot 19.30</strong> uur.
-        </p>
+        <?= import('com:contacts.view.contact.default.html', array('contact' => object('com:contacts.model.contact')->id('4')->getRow())); ?>
 
         <hr class="divide divide--large" />
 
