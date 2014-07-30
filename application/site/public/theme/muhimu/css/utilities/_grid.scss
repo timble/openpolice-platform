@@ -97,7 +97,7 @@
   .component {
     @include span(first 8 of 12);
 
-    &.overview {
+    &.articles {
       @include span(first 12 of 12);
     }
   }
@@ -118,7 +118,7 @@
     }
   }
 
-  .news.overview {
+  .news.articles {
     article {
       @include gallery(6 of 12);
     }
@@ -127,7 +127,7 @@
 
 // Delta
 @include respond-min($breakpoint-delta) {
-  .articles {
+  .article {
     @include span(first 8 of 12)
   }
 
