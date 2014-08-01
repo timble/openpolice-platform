@@ -946,6 +946,9 @@ ul.column--double, ul.column--triple, ul.column--quad {
     box-sizing: border-box;
     background: url("../images/banners/default.jpg"); }
 
+  .banner__image--5283 {
+    background: url("../images/banners/5283.jpg"); }
+
   .banner__image--5317 {
     background: url("../images/banners/5317.jpg"); }
 
@@ -960,6 +963,9 @@ ul.column--double, ul.column--triple, ul.column--quad {
 
   .banner__image--5396 {
     background: url("../images/banners/5396.jpg"); }
+
+  .banner__image--5430 {
+    background: url("../images/banners/5430.jpg"); }
 
   .banner__image--5443 {
     background: url("../images/banners/5443.jpg"); }
