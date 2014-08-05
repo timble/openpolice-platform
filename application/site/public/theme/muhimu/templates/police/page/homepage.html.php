@@ -28,7 +28,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <div class="my_police">
             <h2 class="my_police__header">Mijn<span>Politie</span></h2>
             <p>Gepersonaliseerd politienieuws en verkeersinformatie uit jouw buurt.</p>
-            <p class="margin-zero"><a href="#">Meer informatie over “mijn politie”</a></p>
+            <p class="margin-zero"><a href="#">Meer informatie.</a></p>
         </div>
 
         <div class="my_police_wrapper">

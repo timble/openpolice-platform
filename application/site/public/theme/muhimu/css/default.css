@@ -1179,6 +1179,7 @@ article ul {
   margin-bottom: 1em;
   position: relative; }
   .search input {
+    -webkit-appearance: none;
     margin: 0;
     width: 100%;
     display: block;
@@ -1442,7 +1443,7 @@ article ul {
         margin-right: 0; } }
   .copyright a {
     display: inline-block;
-    margin: 0 10px; }
+    margin: 0 5px; }
     .copyright a.active {
       color: #00637c;
       font-weight: 700;

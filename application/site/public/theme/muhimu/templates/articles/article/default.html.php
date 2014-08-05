@@ -13,17 +13,6 @@
 <ktml:module position="sidebar">
     <section>
         <?= import('com:contacts.view.contact.simple.html', array('contact' => object('com:contacts.model.contact')->id('4')->getRow())); ?>
-
-        <hr class="divide divide--large" />
-
-        <h2>Preventie</h2>
-        <ul class="categories_wrapper">
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Sit amet consectetuer adipiscing elit</a></li>
-            <li><a href="#">Lorem ipsum dolor</a></li>
-            <li><a href="#">Sit amet consectetuer adipiscing elit</a></li>
-        </ul>
-    </section>
 </ktml:module>
 
 <article <?= !$article->published ? 'class="article-unpublished"' : '' ?>>
