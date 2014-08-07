@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class QuestionsControllerQuestion extends Library\ControllerModel
+class QuestionsControllerQuestion extends PoliceControllerLanguage
 {
     public function getRequest()
     {

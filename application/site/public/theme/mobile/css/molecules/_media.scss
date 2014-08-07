@@ -2,18 +2,18 @@
 // --------------------------------------------------
 
 .media {
-    @include clearfix();
-    margin-bottom: $grid-padding;
+  @include clearfix();
+  margin-bottom: $grid-padding;
 }
 
 .media__heading {
-    margin: 0 0 5px;
+  margin: 0 0 5px;
 }
 
 .media__object {
-    margin-right: 1em;
-    float: left;
-    display: block;
-    width: 64px;
-    height: 48px;
+  margin-right: 1em;
+  float: left;
+  display: block;
+  width: 64px;
+  height: 48px;
 }

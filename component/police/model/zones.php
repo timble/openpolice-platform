@@ -12,6 +12,15 @@ use Nooku\Library;
 
 class ModelZones extends Library\ModelTable
 {
+    public function __construct(Library\ObjectConfig $config)
+    {
+        parent::__construct($config);
+
+        $this->getState()
+            ->insert('platform' , 'int')
+            ->insert('language' , 'int');
+    }
+
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
 	{
 		parent::_buildQueryWhere($query);
@@ -20,5 +29,13 @@ class ModelZones extends Library\ModelTable
 		if ($state->search) {
 			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
 		}
+
+        if (is_numeric($state->platform)) {
+            $query->where('tbl.platform = :platform')->bind(array('platform' => $state->platform));
+        }
+
+        if (is_numeric($state->language)) {
+            $query->where('tbl.language = :language')->bind(array('language' => $state->language));
+        }
 	}
 }

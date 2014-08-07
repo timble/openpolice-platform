@@ -8,7 +8,7 @@
  */
 use Nooku\Library;
 
-class TrafficControllerArticle extends Library\ControllerModel
+class TrafficControllerArticle extends PoliceControllerLanguage
 {
     public function getRequest()
 	{

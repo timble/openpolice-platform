@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    require: 'susy'
+                    require: ['susy', 'illusion']
                 },
                 files: {
                     'application/site/public/theme/mobile/css/default.css': 'application/site/public/theme/mobile/css/default.scss',

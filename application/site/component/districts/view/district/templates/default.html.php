@@ -27,6 +27,9 @@
 <? else : ?>
 <h2><?= translate('No neighbourhood officer found') ?></h2>
 <? endif ?>
+
+<? if($contact->id) : ?>
 <div class="districts__contact">
-    <?= import('default_contact.html', array('contact' => object('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow())); ?>
+    <?= import('default_contact.html', array('contact' => $contact)); ?>
 </div>
+<? endif ?>

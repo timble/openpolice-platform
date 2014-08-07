@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class QuestionsControllerPermissionCategory extends CategoriesControllerPermissionCategory
+class QuestionsControllerPermissionCategory extends ApplicationControllerPermissionAbstract
 {
 
 }

@@ -20,9 +20,9 @@
 </ktml:module>
 
 <? if($article->isTranslatable()) : ?>
-    <ktml:module position="actionbar" content="append">
-        <?= helper('com:languages.listbox.languages') ?>
-    </ktml:module>
+<ktml:module position="actionbar" content="append">
+    <?= helper('com:languages.listbox.languages') ?>
+</ktml:module>
 <? endif ?>
 
 <form action="" method="post" id="article-form" class="-koowa-form">

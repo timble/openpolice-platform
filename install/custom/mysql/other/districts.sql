@@ -102,33 +102,46 @@ ALTER TABLE `districts_relations` ADD CONSTRAINT `districts_relations__districts
 
 ALTER TABLE `traffic_streets` ADD CONSTRAINT `traffic_streets__traffic_article_id` FOREIGN KEY (`traffic_article_id`) REFERENCES `traffic` (`traffic_article_id`) ON UPDATE CASCADE ON DELETE CASCADE;
 
+-----
 -- New import of National Streets from ISLP
+-----
+
+-- Set gfem for all postcodes
+UPDATE `streets_islp`, `streets_postcodes`
+SET `streets_postcodes`.`fgem` = `streets_islp`.`fgem`
+WHERE `streets_islp`.`postcode` = `streets_postcodes`.`streets_postcode_id` AND `streets_postcodes`.`fgem` IS NULL;
+
+-- Set missing postcodes
+UPDATE `streets_islp`, `streets_postcodes`
+SET `streets_islp`.`postcode` = `streets_postcodes`.`streets_postcode_id`
+WHERE `streets_islp`.`fgem` = `streets_postcodes`.`fgem` AND `streets_islp`.`postcode` = '';
+
 -- Set city ID
 UPDATE `streets_islp`, `streets_postcodes`
 SET `streets_islp`.`streets_city_id` = `streets_postcodes`.`streets_city_id`
 WHERE `streets_islp`.`postcode` = `streets_postcodes`.`streets_postcode_id`;
 
-
 -- Set ISLP code in streets table
 UPDATE `streets`, `streets_islp`
-SET `streets`.`islp` = `streets_islp`.`islp`
-WHERE `streets`.`title` = `streets_islp`.`title` AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+SET `streets`.`islp` = `streets_islp`.`straat`
+WHERE `streets_islp`.`benaming` = `streets`.`title`  AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
 
 UPDATE `streets`, `streets_islp`
-SET `streets`.`islp` = `streets_islp`.`islp`
-WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, '-', ' ') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+SET `streets`.`islp` = `streets_islp`.`straat`
+WHERE `streets_islp`.`benaming` LIKE replace(`streets`.`title`, '-', ' ') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
 
 UPDATE `streets`, `streets_islp`
-SET `streets`.`islp` = `streets_islp`.`islp`
-WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, ' ', '-') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+SET `streets`.`islp` = `streets_islp`.`straat`
+WHERE `streets_islp`.`benaming` LIKE replace(`streets`.`title`, ' ', '-') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
 
 UPDATE `streets`, `streets_islp`
-SET `streets`.`islp` = `streets_islp`.`islp`
-WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, ' ', '_') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+SET `streets`.`islp` = `streets_islp`.`straat`
+WHERE `streets_islp`.`benaming` LIKE replace(`streets`.`title`, ' ', '_') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
 
 UPDATE `streets`, `streets_islp`
-SET `streets`.`islp` = `streets_islp`.`islp`
-WHERE `streets_islp`.`title` LIKE replace(`streets`.`title`, ' ', '_') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+SET `streets`.`islp` = `streets_islp`.`straat`
+WHERE `streets_islp`.`benaming` LIKE replace(`streets`.`title`, ' ', '_') AND `streets`.`streets_city_id` = `streets_islp`.`streets_city_id` AND `streets`.`islp` IS NULL;
+
 
 -- Update traffic_streets to use agiv
 UPDATE `traffic_streets`, `streets`
@@ -153,3 +166,8 @@ WHERE `attachments_relations`.`row` = `districts_officers`.`old_id` AND `attachm
 -- Add SHA1 to streets
 UPDATE `districts_relations`
 SET `districts_relations`.`districts_relation_id` = SHA(CONCAT(`districts_district_id`, `islp`, `range_start`, `range_end`, `range_parity`));
+
+-- Find AGIV IDs based on streetname
+UPDATE `data`.`streets` AS `streets`, `districts_streets`
+SET `districts_streets`.`streets_street_id` = `streets`.`streets_street_id`
+WHERE `districts_streets`.`title` = `streets`.`title` AND `districts_streets`.`streets_city_id` = `streets`.`streets_city_id`;

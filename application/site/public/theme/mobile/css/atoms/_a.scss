@@ -1,12 +1,12 @@
 a {
-    color: $linkColor;
-    text-decoration: underline;
+  color: $color-link;
+  text-decoration: underline;
 }
 
 a:hover,
 a:focus {
-    color: $linkColorHover;
-    text-decoration: underline;
+  color: $color-link-hover;
+  text-decoration: underline;
 }
 
 // Anchors don't have an 'href' property

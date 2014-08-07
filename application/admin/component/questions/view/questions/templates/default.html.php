@@ -19,6 +19,12 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+<? if($questions->isTranslatable()) : ?>
+<ktml:module position="actionbar" content="append">
+    <?= helper('com:languages.listbox.languages') ?>
+</ktml:module>
+<? endif ?>
+
 <ktml:module position="sidebar">
     <?= import('default_sidebar.html'); ?>
 </ktml:module>
@@ -28,7 +34,7 @@
 	<table>
 	<thead>
 		<tr>
-            <? if($sortable) : ?>
+            <? if(isset($sortable)) : ?>
                 <th class="handle"></th>
             <? endif ?>
             <th width="10">
@@ -38,6 +44,11 @@
 			<th>
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
+            <? if($questions->isTranslatable()) : ?>
+            <th width="70">
+                <?= translate('Translation') ?>
+            </th>
+            <? endif ?>
 		</tr>
 	</thead>
 	<tfoot>
@@ -47,10 +58,10 @@
 			</td>
 		</tr>
 	</tfoot>
-	<tbody<?= $sortable ? ' class="sortable"' : '' ?>>
+	<tbody<?= isset($sortable) ? ' class="sortable"' : '' ?>>
 		<? foreach ($questions as $question) : ?>
 		<tr>
-            <? if($sortable) : ?>
+            <? if(isset($sortable)) : ?>
                 <td class="handle">
                     <span class="text-small data-order"><?= $question->ordering ?></span>
                 </td>
@@ -66,6 +77,15 @@
 					<?= $question->title ?>
 				</a>
 			</td>
+            <? if($question->isTranslatable()) : ?>
+            <td>
+                <?= helper('com:languages.grid.status', array(
+                    'status'   => $question->translation_status,
+                    'original' => $question->translation_original,
+                    'deleted'  => $question->translation_deleted));
+                ?>
+            </td>
+            <? endif ?>
 		</tr>
 		<? endforeach; ?>
 	</tbody>

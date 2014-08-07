@@ -21,7 +21,7 @@ class AboutTemplateHelperRoute extends PagesTemplateHelperRoute
 
         $article = $config->row;
 
-        $category = $this->getObject('com:categories.model.category')->id($article->categories_category_id)->getRow();
+        $category = $this->getObject('com:about.model.category')->id($article->about_category_id)->getRow();
 
         $route = array(
             'view'     => 'article',

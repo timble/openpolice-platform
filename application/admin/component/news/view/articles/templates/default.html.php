@@ -17,6 +17,12 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+<? if($articles->isTranslatable()) : ?>
+<ktml:module position="actionbar" content="append">
+    <?= helper('com:languages.listbox.languages') ?>
+</ktml:module>
+<? endif ?>
+
 <form action="" method="get" class="-koowa-grid">
 	<?= import('default_scopebar.html'); ?>
 	<table>
@@ -32,6 +38,11 @@
             <th>
                 <?= helper('grid.sort', array('column' => 'ordering_date', 'title' => 'Created on')) ?>
             </th>
+            <? if($articles->isTranslatable()) : ?>
+            <th width="70">
+                <?= translate('Translation') ?>
+            </th>
+            <? endif ?>
 		</tr>
 	</thead>
 	<tfoot>
@@ -61,6 +72,15 @@
             <td>
                 <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'D d/m/Y - G:i')) ?>
             </td>
+            <? if($article->isTranslatable()) : ?>
+            <td>
+                <?= helper('com:languages.grid.status', array(
+                    'status'   => $article->translation_status,
+                    'original' => $article->translation_original,
+                    'deleted'  => $article->translation_deleted));
+                ?>
+            </td>
+            <? endif ?>
 		</tr>
 		<? endforeach; ?>
 	</tbody>

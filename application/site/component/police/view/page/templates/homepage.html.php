@@ -7,39 +7,46 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
-<? $site = object('application')->getCfg('site') ?>
-<? $zone = object('com:police.model.zone')->id($site)->getRow() ?>
+<?
+$site = object('application')->getCfg('site');
+$zone = object('com:police.model.zone')->id($site)->getRow();
+
+$languages  = $this->getObject('application.languages');
+$active     = $languages->getActive();
+
+$path = '/'.$site;
+$path .= count($languages) > '1' ? '/'.$active->slug : '';
+?>
 
 <div class="clearfix">
     <div class="homepage__sticky">
-        <? $articles = object('com:news.controller.article')->sticky(true)->browse()->count() ? object('com:news.controller.article')->sticky(true)->limit('1')->browse() : object('com:news.controller.article')->limit('1')->browse(); ?>
-        <? foreach ($articles as $article) : ?>
-            <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
-            <article>
-                <header class="article__header">
-                    <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
-                    <span class="text--small">
-                        <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'))) ?>
-                    </span>
-                </header>
+        <? $stickies = object('com:news.model.articles')->sticky(true)->getRowset();
+            $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('ordering_date')->direction('DESC')->published(true)->getRowset()->top(); ?>
+        <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
+        <article>
+            <header class="article__header">
+                <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
+                <span class="text--small">
+                    <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'))) ?>
+                </span>
+            </header>
 
-                <div class="clearfix">
-                    <? if($article->attachments_attachment_id) : ?>
-                        <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-                            <?= helper('com:attachments.image.thumbnail', array(
-                                'attachment' => $article->attachments_attachment_id,
-                                'attribs' => array('width' => '400', 'height' => '300'))) ?>
-                        </a>
-                    <? endif ?>
+            <div class="clearfix">
+                <? if($article->attachments_attachment_id) : ?>
+                    <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
+                        <?= helper('com:attachments.image.thumbnail', array(
+                            'attachment' => $article->attachments_attachment_id,
+                            'attribs' => array('width' => '400', 'height' => '300'))) ?>
+                    </a>
+                <? endif ?>
 
-                    <?= $article->introtext ?>
+                <?= $article->introtext ?>
 
-                    <? if ($article->fulltext) : ?>
-                        <a href="<?= $link ?>"><?= translate('Read more') ?></a>
-                    <? endif; ?>
-                </div>
-            </article>
-        <? endforeach; ?>
+                <? if ($article->fulltext) : ?>
+                    <a href="<?= $link ?>"><?= translate('Read more') ?></a>
+                <? endif; ?>
+            </div>
+        </article>
         <div class="homepage__news">
             <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->exclude($article->id)->getRowset())) ?>
         </div>
@@ -64,14 +71,11 @@
             </div>
 
             <ul class="nav nav--list">
-                <? if($site != '5888') : ?>
-                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Your district officer') ?></a></li>
-                <? endif ?>
-                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Stations')) ?>"><?= translate('Stations') ?></a></li>
-                <? if($site != '5888') : ?>
-                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Services')) ?>"><?= translate('Services') ?></a></li>
-                <? endif ?>
-                <li><a href="/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Emergency numbers')) ?>"><?= translate('Emergency numbers') ?></a></li>
+                <? foreach(object('com:pages.model.pages')->menu('1')->published('true')->hidden('false')->getRowset() as $page) : ?>
+                    <? if($page->level == '2') : ?>
+                    <li><a href="<?= $path ?>/contact/<?= $page->slug ?>"><?= $page->title ?><?= $page->ancestor_id ?></a></li>
+                    <? endif ?>
+                <? endforeach ?>
             </ul>
         </div>
     </div>

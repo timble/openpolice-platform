@@ -7,16 +7,6 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 -- Dumping sample data for table `news`
 --
 
-INSERT INTO `categories` (`categories_category_id`, `parent_id`, `attachments_attachment_id`, `title`, `slug`, `image`, `table`, `description`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `access`, `params`)
-VALUES
-	(1, 0, 0, 'Ornare', 'ornare', '', 'questions', '', 1, 1, '2014-01-31 13:13:20', NULL, NULL, NULL, NULL, 1, 0, ''),
-	(2, 0, 0, 'Mollis', 'mollis', '', 'questions', '', 1, 1, '2014-01-31 13:13:26', NULL, NULL, NULL, NULL, 2, 0, '');
-
-
---
--- Dumping sample data for table `news`
---
-
 INSERT INTO `news` (`news_article_id`, `attachments_attachment_id`, `title`, `slug`, `introtext`, `fulltext`, `sticky`, `published`, `created_on`, `created_by`, `modified_on`, `modified_by`, `locked_by`, `locked_on`, `publish_on`, `unpublish_on`, `params`)
 VALUES
 	(1, 0, 'Sit Mattis Cursus', 'sit-mattis-cursus', '<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus.</p>\r\n\r\n<p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu leo quam.</p>', '<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\r\n\r\n<p>Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vestibulum id ligula porta felis euismod semper.</p>', NULL, 1, '2014-01-31 13:07:00', 1, NULL, 0, NULL, NULL, '2014-01-31 13:08:09', NULL, NULL),
@@ -29,12 +19,17 @@ VALUES
 -- Dumping sample data for table `questions`
 --
 
-INSERT INTO `questions` (`questions_question_id`, `categories_category_id`, `attachments_attachment_id`, `title`, `slug`, `text`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `params`)
+INSERT INTO `questions` (`questions_question_id`, `questions_category_id`, `attachments_attachment_id`, `title`, `slug`, `text`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `params`)
 VALUES
 	(1, 2, 0, 'Euismod Sollicitudin Magna Nibh', 'euismod-sollicitudin-magna-nibh', '<p>Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>\r\n\r\n<p>Nulla vitae elit libero, a pharetra augue. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>\r\n', 1, 1, '2014-01-31 13:13:42', NULL, NULL, NULL, NULL, 0, NULL),
 	(2, 2, 0, 'Amet Mollis Malesuada', 'amet-mollis-malesuada', '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas sed diam eget risus varius blandit sit amet non magna. Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>\r\n', 1, 1, '2014-01-31 13:13:54', NULL, NULL, NULL, NULL, 0, NULL),
 	(3, 1, 0, 'Sollicitudin Ipsum Justo Quam', 'sollicitudin-ipsum-justo-quam', '<p>Sed posuere consectetur est at lobortis. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas faucibus mollis interdum. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>\r\n\r\n<p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida at eget metus.</p>\r\n', 1, 1, '2014-01-31 13:14:12', NULL, NULL, NULL, NULL, 0, NULL);
 
+
+INSERT INTO `questions_categories` (`questions_category_id`, `parent_id`, `attachments_attachment_id`, `title`, `slug`, `image`, `description`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `access`, `params`)
+VALUES
+	(1, 0, 0, 'Ornare', 'ornare', '', '', 1, 1, '2014-01-31 13:13:20', NULL, NULL, NULL, NULL, 1, 0, ''),
+	(2, 0, 0, 'Mollis', 'mollis', '', '', 1, 1, '2014-01-31 13:13:26', NULL, NULL, NULL, NULL, 2, 0, '');
 
 --
 -- Dumping sample data for table `support_tickets`
@@ -51,10 +46,9 @@ VALUES
 --
 -- Update creation date to today (this very moment)
 --
-UPDATE `categories` SET `created_on` = now();
 UPDATE `news` SET `created_on` = now();
 UPDATE `questions` SET `created_on` = now();
-
+UPDATE `questions_categories` SET `created_on` = now();
 UPDATE `support_tickets` SET `created_on` = now();
 
 

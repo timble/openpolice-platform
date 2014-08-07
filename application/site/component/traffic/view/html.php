@@ -13,7 +13,7 @@ class TrafficViewHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $this->categories = $this->getObject('com:traffic.model.categories')->table('traffic')->published(true)->sort('title')->getRowset();
+        $this->categories = $this->getObject('com:traffic.model.categories')->published(true)->sort('title')->getRowset();
 
         return parent::render();
     }

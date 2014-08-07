@@ -1,9 +1,9 @@
-<? if(!$question->categories_category_id) : ?>
+<? if(!$question->questions_category_id) : ?>
 <script>
     // Set default value for categories radiolist
     $jQuery(document).ready(
         function(){
-            $jQuery('fieldset[name=categories_category_id] label:first-of-type input:radio').prop('checked', true);
+            $jQuery('fieldset[name=questions_category_id] label:first-of-type input:radio').prop('checked', true);
         }
     );
 </script>
@@ -21,7 +21,7 @@
 
 <fieldset>
     <legend><?= translate('Category') ?></legend>
-    <?= helper('com:categories.radiolist.categories', array('row' => $question, 'uncategorised' => false)) ?>
+    <?= helper('com:questions.radiolist.categories', array('row' => $question)) ?>
 </fieldset>
 
 <? if($question->isAttachable()) : ?>

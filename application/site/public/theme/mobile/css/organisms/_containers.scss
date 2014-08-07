@@ -1,41 +1,61 @@
 .container__header .slogan,
-.container__banner,
 .container__content .sidebar,
 .is-hidden,
 .hidden-phone {
-    display: none;
+  display: none;
 }
 
 .container__header {
-    margin-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.container__breadcrumb {
+  font-size: 0.85em;
+  line-height: 1.5em;
+
+  padding: 10px 10px 5px;
+  margin: 0;
+  background-color: $color-background-well;
+  border-bottom: 1px solid #eee;
+
+  @include clearfix();
+
+  ul {
+    margin: 0;
+    list-style: none;
+  }
+
+  @include respond-min($breakpoint-charlie) {
+    padding: 5px $grid-padding 0;
+  }
 }
 
 .container__content {
-    padding-top: $grid-padding;
-    padding-bottom: $grid-padding;
-    padding-left: 20px;
-    padding-right: 20px;
+  padding-top: $grid-padding;
+  padding-bottom: $grid-padding;
+  padding-left: 20px;
+  padding-right: 20px;
 
-    &.homepage {
-      padding-left: 0px;
-      padding-right: 0px;
-      padding-bottom: 0px;
-    }
+  &.homepage {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+  }
 }
 
 .container__copyright {
-    padding-top: 13px;
-    padding-bottom: 13px;
-    text-align: center;
-    border-top: 1px solid darken($grayLighter, 7%);
-    font-size: $fontSizeSmall;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-align: center;
+  border-top: 1px solid darken($color-border, 7%);
+  font-size: 0.85em;
 
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }
 
 .container__footer {
@@ -44,8 +64,8 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: $gutter-width / 2;
-  background-color: $wellBackground;
-  border-top: 1px solid darken($grayLighter, 7%);
+  background-color: $color-background-well;
+  border-top: 1px solid darken($color-border, 7%);
 
   .container__quicklinks {
     div {
@@ -59,7 +79,7 @@
 }
 
 .container__footer_menu {
-  border-top: 1px solid darken($grayLighter, 7%);
+  border-top: 1px solid darken($color-border, 7%);
 
   ul {
     margin: 0;

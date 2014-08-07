@@ -1,54 +1,125 @@
-.container__header {
+.header {
+  @extend .clearfix;
+
+  background-color: $navbarBackground;
+  border-bottom: 1px solid darken($blue, 10%);
+
+  .organization {
+    @extend .clearfix;
+
+    padding: 10px 10px 2px;
+    border-bottom: 1px solid $blue;
+
+    a {
+      display: inline-block;
+      line-height: 36px;
+      color: $white;
+      text-decoration: none;
+
+      &:hover .organization__name {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .organization__logo {
+    height: 36px;
+    width: 24px;
+    background-image: url("../images/avatar.png");
+    background-position: left center;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    margin-right: 6px;
+
+    float: left;
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .organization__logo {
+      background-image: url("../images/avatar@2x.png");
+    }
+  }
+
+  .organization__name {
+    float: left;
+  }
+}
+
+@include respond-min($breakpoint-charlie) {
+  .header {
+    background: none;
+    border-bottom: 0px none;
+
+    .text--strong {
+      font-size: 1.15em;
+    }
+
+    .button--hamburger {
+      display: none;
+    }
+
     .organization {
-        display: none;
+      padding: 26px 0 0 0;
+      text-decoration: none;
+      color: $color-link;
+      border-bottom: 0px none;
+      text-align: center;
+
+      a {
+        &:hover .organization__name {
+          color: $color-link;
+        }
+      }
     }
+
+    .organization__logo {
+      float: none;
+      width: 160px;
+      height: 42px;
+      vertical-align: bottom;
+      margin-left: 10px;
+      background-size: 160px 42px;
+    }
+
+    $languages: 'en', 'nl', 'fr', 'de';
+
+    @each $language in $languages {
+      .organization__logo--#{$language} {
+        background-image: url("../images/logo-#{$language}.png");
+      }
+    }
+
+    .organization__name {
+      margin-left: 57px;
+      margin-top: 6px;
+      font-size: 0.9em;
+      color: $color-link;
+      line-height: 1em;
+
+      span {
+        @include visually-hidden;
+      }
+    }
+
+    .slogan {
+      margin: 25px 0 10px;
+      display: block;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
-@include respond-min($navbarCollapseWidth) {
-    .container__header {
-        position: relative;
-        margin-bottom: 20px;
+@include respond-min($breakpoint-delta) {
+  .header {
+    margin-bottom: 20px;
 
-        .text--strong {
-            font-size: $fontSizeLarge;
-        }
-
-        .organization {
-            padding-top: 26px;
-            text-decoration: none;
-            color: $linkColor;
-            display: block;
-
-            a {
-                text-decoration: none;
-            }
-
-            a:hover {
-                text-decoration: underline;
-            }
-        }
-
-        .organization__logo {
-            width: 160px;
-            vertical-align: bottom;
-            margin-left: 10px;
-        }
-
-        .organization__name {
-            margin-left: 57px;
-            margin-top: 3px;
-            font-size: 0.9em;
-        }
-
-        .slogan {
-            margin: 25px 0 10px;
-            display: block;
-            text-align: center;
-
-            a {
-                text-decoration: none;
-            }
-        }
+    .organization {
+      text-align: left;
     }
+  }
 }
-
