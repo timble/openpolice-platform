@@ -127,7 +127,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
     {
         $url    = $context->request->getUrl();
         $host   = $url->getHost();
-        $path   = $url->getHost();
+        $path   = $url->getPath();
 
         $languages  = $this->getObject('application.languages');
         $active     = $languages->getActive();
