@@ -17,6 +17,13 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+<? if($contact->isTranslatable()) : ?>
+<ktml:module position="actionbar" content="append">
+    <?= helper('com:languages.listbox.languages', array('attribs' => array('disabled' => 'true'))) ?>
+</ktml:module>
+<? endif ?>
+
+
 <form action="" method="post" id="contact-form" class="-koowa-form">
     <input type="hidden" name="id" value="<?= $contact->id; ?>" />
     <input type="hidden" name="access" value="0" />

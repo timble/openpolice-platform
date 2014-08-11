@@ -26,7 +26,7 @@
 
 <ktml:module position="sidebar">
     <h3><?= translate('Categories') ?></h3>
-    <?= import('com:categories.view.categories.list.html', array('categories' => object('com:categories.model.categories')->sort('title')->table('about')->getRowset())); ?>
+    <?= import('com:categories.view.categories.list.html', array('categories' => object('com:about.model.categories')->sort('title')->getRowset())); ?>
 </ktml:module>
 
 <form action="" method="get" class="-koowa-grid">
@@ -35,7 +35,7 @@
         <thead>
         <tr>
             <? if($sortable) : ?>
-                <th class="handle"></th>
+            <th class="handle"></th>
             <? endif ?>
             <th width="1">
                 <?= helper('grid.checkall') ?>
@@ -45,9 +45,9 @@
                 <?= helper('grid.sort', array('column' => 'title')) ?>
             </th>
             <? if($articles->isTranslatable()) : ?>
-                <th width="70">
-                    <?= translate('Translation') ?>
-                </th>
+            <th width="70">
+                <?= translate('Translation') ?>
+            </th>
             <? endif ?>
         </tr>
         </thead>
@@ -85,13 +85,13 @@
                     <? endif; ?>
                 </td>
                 <? if($article->isTranslatable()) : ?>
-                    <td>
-                        <?= helper('com:languages.grid.status', array(
-                            'status'   => $article->translation_status,
-                            'original' => $article->translation_original,
-                            'deleted'  => $article->translation_deleted));
-                        ?>
-                    </td>
+                <td>
+                    <?= helper('com:languages.grid.status', array(
+                        'status'   => $article->translation_status,
+                        'original' => $article->translation_original,
+                        'deleted'  => $article->translation_deleted));
+                    ?>
+                </td>
                 <? endif ?>
             </tr>
         <? endforeach ?>

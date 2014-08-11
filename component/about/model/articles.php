@@ -26,7 +26,7 @@ class ModelArticles extends Library\ModelTable
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('categories'  => 'categories'), 'categories.categories_category_id = tbl.categories_category_id');
+        $query->join(array('categories'  => 'about_categories'), 'categories.about_category_id = tbl.about_category_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -47,7 +47,7 @@ class ModelArticles extends Library\ModelTable
         }
 
         if (is_numeric($state->category)) {
-            $query->where('tbl.categories_category_id = :category')->bind(array('category' => $state->category));
+            $query->where('tbl.about_category_id = :category')->bind(array('category' => $state->category));
         }
     }
 }

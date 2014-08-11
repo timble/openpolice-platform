@@ -32,8 +32,7 @@ class TrafficViewArticlesHtml extends TrafficViewHtml
     public function getCategory()
     {
         //Get the category
-        $category = $this->getObject('com:categories.model.categories')
-            ->table('traffic')
+        $category = $this->getObject('com:traffic.model.categories')
             ->slug($this->getModel()->getState()->category)
             ->getRow();
 

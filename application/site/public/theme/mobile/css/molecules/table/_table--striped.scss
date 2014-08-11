@@ -1,12 +1,12 @@
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
 .table--striped {
-    tbody {
-        tr {
-            border-top: 1px solid $tableBorder;
-        }
-
-        > tr:nth-child(odd) {
-            background-color: $tableBackgroundAccent;
-        }
+  tbody {
+    tr {
+      border-top: 1px solid $color-border;
     }
+
+    > tr:nth-child(odd) {
+      background-color: $color-background-table-accent;
+    }
+  }
 }

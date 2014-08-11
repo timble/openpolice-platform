@@ -3,116 +3,68 @@
 // Inner for background effects
 // Gradient is applied to its own element because overflow visible is not honored by IE when filter is present
 .navbar {
-    min-height: $navbarHeight / 2;
-    width: 100%;
-    background-color: $navbarBackground;
-    border-bottom: 1px solid darken($blue, 10%);
+  min-height: $navbarHeight / 2;
+  width: 100%;
+  background-color: $navbarBackground;
 
-    // Prevent floats from breaking the navbar
-    @include clearfix();
-
-    color: $white;
-
-    ul {
-        margin: 0;
-        text-align: left;
-        width: 100%;
-    }
-
-    // Links
-    ul li a {
-        color: $navbarLinkColor;
-        text-decoration: none;
-        display: block;
-        border-bottom: 1px solid $blue;
-        padding: 13px 20px;
-        font-weight: bold;
-        color: $navbarLinkColor;
-    }
-
-    // Hover/focus
-    ul li a:focus,
-    ul li a:hover {
-        background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
-        color: $navbarLinkColorHover;
-        text-decoration: none;
-    }
-
-    // Active nav items
-    ul .active a,
-    ul .active a:hover,
-    ul .active a:focus {
-        color: $navbarLinkColorActive;
-        text-decoration: none;
-        background-color: $navbarLinkBackgroundActive;
-        @include box-shadow(inset 0 3px 8px rgba(0, 0, 0, .125));
-        font-weight: bold;
-    }
-}
-
-.navbar__handlebar {
-  @extend .clearfix;
-  border-bottom: 1px solid $blue;
-  padding: 10px 10px;
-}
-
-.navbar__logo {
-  line-height: 36px;
-  text-decoration: none;
-  float: left;
+  // Prevent floats from breaking the navbar
+  @include clearfix();
 
   color: $white;
-  zoom: 1;
 
-  &:hover {
-    color: $white;
+  ul {
+    margin: 0;
+    text-align: left;
+    width: 100%;
   }
-}
 
-.navbar__avatar {
-  width: 24px;
-  height: 24px;
-}
+  // Links
+  ul li a {
+    color: $navbarLinkColor;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid $blue;
+    padding: 13px 20px;
+    font-weight: bold;
+    color: $navbarLinkColor;
+  }
 
-.navbar__handle {
-  float: right;
-  padding: 5px 12px;
-  color: $linkColor;
-  text-decoration: none;
-  text-align: center;
-  border: 1px solid darken($navbarBackground, 5%);
-  border-radius: 8px;
-  background-color: #fff;
+  // Hover/focus
+  ul li a:focus,
+  ul li a:hover {
+    background-color: $navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
+    color: $navbarLinkColorHover;
+    text-decoration: none;
+  }
 
-  &:after {
-    display: inline-block;
-    font-size: 30px;
-    content: '\2630';
-    vertical-align: text-bottom;
-    padding-left: 6px;
+  // Active nav items
+  ul .active a,
+  ul .active a:hover,
+  ul .active a:focus {
+    color: $navbarLinkColorActive;
+    text-decoration: none;
+    background-color: $navbarLinkBackgroundActive;
+    @include box-shadow(inset 0 3px 8px rgba(0, 0, 0, .125));
+    font-weight: bold;
   }
 }
 
 // JS dependencies
 .js-enabled {
-    .navbar {
-        // Hide the navbar
-        #navigation {
-            @include visually-hidden;
-        }
+  // Hide the navbar
+  .navbar {
+    @include visually-hidden;
+  }
 
-        // Show the navbar when the handle is clicked
-        #navigation.is-shown {
-            @include visually-shown;
-        }
-    }
+  // Show the navbar when the handle is clicked
+  .navbar.is-shown {
+    @include visually-shown;
+  }
 }
 
-@include respond-min(600px) {
-  .navbar__handlebar {
-    #button {
-      display: none;
-    }
+@include respond-min($breakpoint-beta) {
+  .button--hamburger {
+    display: none;
   }
 
   .navbar {
@@ -133,35 +85,41 @@
   }
 
   // Always show the navbar on non-mobile screen
-  .js-enabled .navbar #navigation {
+  .js-enabled .navbar {
     @include visually-shown;
   }
 }
 
-// Prevent underline on touch devices
-@media screen and (orientation:landscape), screen and (orientation:portrait) {
-  .navbar__handle:hover {
-    text-decoration: none;
-  }
-}
-
-@include respond-min($navbarCollapseWidth) {
+@include respond-min($breakpoint-charlie) {
+  // JS dependencies
+  .js-enabled {
+    // Hide the navbar
     .navbar {
-        border-bottom: 0 none;
-        border: 1px solid $navbarBorder;
-        @include border-radius($baseBorderRadius);
-
-        /* Customize the navbar links to be fill the entire space of the .navbar */
-        ul li a {
-            padding: 5px 15px;
-        }
-        ul li:first-child a {
-            border-left: 0;
-            @include border-radius($baseBorderRadius 0 0 $baseBorderRadius);
-        }
-        ul li:last-child a {
-            border-right: 0;
-            @include border-radius(0 $baseBorderRadius $baseBorderRadius 0);
-        }
+      @include visually-shown;
     }
+
+    // Show the navbar when the handle is clicked
+    .navbar.is-shown {
+      @include visually-shown;
+    }
+  }
+
+  .navbar {
+    border-bottom: 0 none;
+    border: 1px solid $navbarBorder;
+    @include border-radius($border-radius);
+
+    /* Customize the navbar links to be fill the entire space of the .navbar */
+    ul li a {
+      padding: 5px 15px;
+    }
+    ul li:first-child a {
+      border-left: 0;
+      @include border-radius($border-radius 0 0 $border-radius);
+    }
+    ul li:last-child a {
+      border-right: 0;
+      @include border-radius(0 $border-radius $border-radius 0);
+    }
+  }
 }

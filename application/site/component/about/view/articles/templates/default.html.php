@@ -16,6 +16,7 @@
 
 <? foreach ($articles as $article) : ?>
     <? if(count($articles) == '1') : ?>
+        <? $article->attachments_attachment_id = $article->attachments_attachment_id ? $article->attachments_attachment_id : $category->attachments_attachment_id ?>
         <?= import('com:about.view.article.default.html', array('article' => $article)) ?>
     <? else : ?>
 

@@ -1,82 +1,81 @@
 table {
-    border-spacing: 0;
-    border-collapse: collapse;
-    border: 1px solid $grayLighter;
-    width: 100% !important;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid $color-border;
+  width: 100% !important;
 
-    th, td {
-        padding: 0.75em;
-    }
+  th, td {
+    padding: 0.75em;
+  }
 
-    caption {
-        font-size: 1.20em;
-        text-align: left;
-        margin-bottom: 1em;
-    }
+  caption {
+    font-size: 1.20em;
+    text-align: left;
+    margin-bottom: 1em;
+  }
 }
 
 .table {
-    max-width: 100%;
-    width: 100%;
-    border: 0 none;
+  max-width: 100%;
+  width: 100%;
+  border: 0 none;
 
-    tr {
-        display: block;
-        padding: 0.75em 0.75em 0;
-    }
+  tr {
+    display: block;
+    padding: 0.75em 0.75em 0;
+  }
 
-    th, td {
-        display: block;
-        border: none;
-        padding: 0 0 0.75em 0;
-    }
+  th, td {
+    display: block;
+    border: none;
+    padding: 0 0 0.75em 0;
+  }
 
-    td:nth-child(n+2) {
-        display: none;
-    }
+  td:nth-child(n+2) {
+    display: none;
+  }
 
-    /* Hide table headers */
-    thead tr {
-        display: none;
-    }
+  /* Hide table headers */
+  thead tr {
+    display: none;
+  }
 }
 
-@include respond-min($navbarCollapseWidth) {
-    .table {
-        background-color: $tableBackground;
-        margin-bottom: $baseLineHeight;
-        border: 0 none; // Override default style
+@include respond-min($breakpoint-charlie) {
+  .table {
+    margin-bottom: $line-height;
+    border: 0 none; // Override default style
 
-        tr {
-            display: table-row;
-            padding: 0;
-        }
-
-        // Cells
-        th,
-        td {
-            display: table-cell !important;
-            line-height: $baseLineHeight;
-            text-align: left;
-            vertical-align: top;
-            padding: 0.75em;
-        }
-
-        th {
-            font-weight: bold;
-        }
-        // Show thead
-        thead tr {
-            display: table-row;
-        }
-        // Bottom align for column headings
-        thead th {
-            vertical-align: bottom;
-        }
-        // Remove top border from thead by default
-        thead tr th,
-        thead tr td {
-            border-top: 0;
-        }
+    tr {
+      display: table-row;
+      padding: 0;
     }
+
+    // Cells
+    th,
+    td {
+      display: table-cell !important;
+      line-height: $line-height;
+      text-align: left;
+      vertical-align: top;
+      padding: 0.75em;
+    }
+
+    th {
+      font-weight: bold;
+    }
+    // Show thead
+    thead tr {
+      display: table-row;
+    }
+    // Bottom align for column headings
+    thead th {
+      vertical-align: bottom;
+    }
+    // Remove top border from thead by default
+    thead tr th,
+    thead tr td {
+      border-top: 0;
+    }
+  }
 }

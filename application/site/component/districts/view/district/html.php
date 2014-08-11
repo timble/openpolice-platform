@@ -22,6 +22,8 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
         //setcookie ("district_street", $state->street, time()+3600*24*(2), '/5388' );
         //setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
 
+        $this->contact = $this->getObject('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow();
+
         return parent::render();
     }
 }

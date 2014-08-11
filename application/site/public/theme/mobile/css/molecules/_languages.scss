@@ -1,0 +1,15 @@
+.languages {
+  list-style: none;
+  float: right;
+}
+
+.languages__item {
+  float: left;
+  text-transform: uppercase;
+
+  &:first-child {
+    border-right: 1px solid #eee;
+    margin-right: 5px;
+    padding-right: 5px;
+  }
+}

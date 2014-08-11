@@ -6,26 +6,26 @@
 // -------------------------
 
 p {
-    margin: 0 0 $baseLineHeight 0;
+  margin: 0 0 $line-height 0;
 }
 
 // Emphasis & misc
 // -------------------------
 
 small {
-    font-size: $fontSizeSmall;
+  font-size: 0.85em;
 }
 
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 em {
-    font-style: italic;
+  font-style: italic;
 }
 
 cite {
-    font-style: normal;
+  font-style: normal;
 }
 
 // MISC
@@ -33,8 +33,8 @@ cite {
 
 // Horizontal rules
 hr {
-    margin: $baseLineHeight 0;
-    border: 0;
-    border-top: 1px solid $hrBorder;
-    border-bottom: 1px solid $white;
+  margin: $line-height 0;
+  border: 0;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $white;
 }

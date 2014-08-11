@@ -15,7 +15,7 @@ class DatabaseTableRelations extends Library\DatabaseTableAbstract
     public function  _initialize(Library\ObjectConfig $config)
     {        
         $config->append(array(
-               'behaviors' =>  array('lockable', 'creatable', 'modifiable', 'com:streets.database.behavior.streetable')
+               'behaviors' =>  array('lockable', 'creatable', 'modifiable')
            ));
         
            parent::_initialize($config);

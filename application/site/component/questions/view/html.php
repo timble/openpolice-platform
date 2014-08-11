@@ -13,7 +13,7 @@ class QuestionsViewHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $this->categories = $this->getObject('com:questions.model.categories')->table('questions')->published(true)->sort('title')->getRowset();
+        $this->categories = $this->getObject('com:questions.model.categories')->published(true)->sort('title')->getRowset();
 
         return parent::render();
     }

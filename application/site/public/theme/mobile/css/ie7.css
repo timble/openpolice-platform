@@ -1,6 +1,3 @@
-/*
- * Bootstrap variables
- */
 body {
   width: 600px;
   margin: 0 auto; }
@@ -32,7 +29,7 @@ form {
   width: 100%;
   height: 100%; }
 
-.navbar__handlebar #button {
+.button--hamburger {
   display: none; }
 
 .navbar ul li {
@@ -43,7 +40,7 @@ form {
   font-weight: normal;
   padding: 10px 30px; }
 
-.js-enabled .navbar #navigation {
+.js-enabled .navbar {
   margin: 0;
   padding: 0;
   width: auto;

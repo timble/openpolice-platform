@@ -17,11 +17,32 @@
 <article class="article">
     <h1 class="article__header"><?= escape($question->title); ?></h1>
 
+    <? if($question->attachments_attachment_id) : ?>
+    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
     <?= helper('com:attachments.image.thumbnail', array(
         'attachment' => $question->attachments_attachment_id,
-        'attribs' => array('width' => '400', 'height' => '300', 'class' => 'article__thumbnail'))) ?>
+        'attribs' => array('width' => '400', 'height' => '300'))) ?>
+    </a>
+    <? endif ?>
 
     <?= $question->text ?>
+    <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($question->attachments_attachment_id))) ?>
 </article>
 
+<? if(object('application')->getCfg('site') != '5396') : ?>
 <?= import('com:questions.view.questions.default_contact.html') ?>
+<? endif ?>
+
+<script src="assets://application/components/jquery/dist/jquery.min.js" />
+<script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
+<script data-inline>
+    $(document).ready(function() {
+        // This will create a single gallery from all elements that have class data-gallery="enabled"
+        $('[data-gallery="enabled"]').magnificPopup({
+            type: 'image',
+            gallery:{
+                enabled:true
+            }
+        });
+    });
+</script>

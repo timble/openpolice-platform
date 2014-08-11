@@ -17,7 +17,8 @@ class TrafficControllerArticle extends Library\ControllerModel
         	'behaviors' => array(
                 'editable',
                 'com:activities.controller.behavior.loggable',
-                'com:streets.controller.behavior.streetable'
+                'com:streets.controller.behavior.streetable',
+                'com:languages.controller.behavior.translatable'
             ),
         ));
 

@@ -20,7 +20,7 @@
         <label for="created_on"><?= translate('Created on') ?></label>
         <div class="controls">
             <input id="created_on" type="text" name="created_on" value="<?= helper('date.format', array('date'=> $article->created_on, 'format' => 'd-m-Y H:i')) ?>" />
-            <script data-inline> $jQuery("#created_on").datetimepicker({format:'d-m-Y H:i'}); </script>
+            <script data-inline> $jQuery("#created_on").datetimepicker({format:'d-m-Y H:i', lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>', dayOfWeekStart: '1'}); </script>
         </div>
     </div>
 </fieldset>

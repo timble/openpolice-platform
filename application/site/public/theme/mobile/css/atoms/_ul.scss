@@ -1,34 +1,34 @@
 // Unordered and Ordered lists
 ul, ol {
-    padding: 0;
-    margin: 0 0 $baseLineHeight 2em;
+  padding: 0;
+  margin: 0 0 $line-height 2em;
 }
 
 ul ul,
 ul ol,
 ol ol,
 ol ul {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 ul {
-    &.column--double,
-    &.column--triple,
-    &.column--quad {
-        @include column-count(2);
-    }
+  &.column--double,
+  &.column--triple,
+  &.column--quad {
+    @include column-count(2);
+  }
 }
 
-@include respond-min($navbarCollapseWidth) {
-    ul {
-        &.column--double {
-            @include column-count(2);
-        }
-        &.column--triple {
-            @include column-count(3);
-        }
-        &.column--quad {
-            @include column-count(4);
-        }
+@include respond-min($breakpoint-charlie) {
+  ul {
+    &.column--double {
+      @include column-count(2);
     }
+    &.column--triple {
+      @include column-count(3);
+    }
+    &.column--quad {
+      @include column-count(4);
+    }
+  }
 }

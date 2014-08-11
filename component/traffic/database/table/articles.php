@@ -18,7 +18,8 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
             'name'         => 'traffic',
             'behaviors'    =>  array(
                 'sluggable', 'lockable', 'creatable', 'modifiable',
-                'com:streets.database.behavior.streetable'
+                'com:streets.database.behavior.streetable',
+                'com:languages.database.behavior.translatable'
             ),
             'filters' => array(
                 'text'   => array('html', 'tidy')

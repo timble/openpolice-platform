@@ -30,6 +30,11 @@ class QuestionsViewQuestionHtml extends QuestionsViewHtml
             $this->attachments($question->getAttachments());
         }
 
+        //Get the thumbnail
+        if ($question->attachments_attachment_id) {
+            $this->thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $question->attachments_attachment_id)->load()->path;
+        }
+
         return parent::render();
     }
 
@@ -37,7 +42,6 @@ class QuestionsViewQuestionHtml extends QuestionsViewHtml
     {
         //Get the category
         $category = $this->getObject('com:questions.model.categories')
-            ->table('questions')
             ->slug($this->getModel()->getState()->category)
             ->getRow();
 

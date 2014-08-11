@@ -18,9 +18,10 @@ class ModelStreets extends Library\ModelTable
 
 		$this->getState()
 		    ->insert('city' , 'int')
-            ->insert('islp' , 'int')
+            ->insert('islp' , 'string')
             ->insert('no_islp' , 'int')
-            ->insert('no_district' , 'int');
+            ->insert('no_district' , 'int')
+            ->insert('sort'      , 'cmd', 'title');
 	}
 
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)

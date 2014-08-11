@@ -5,22 +5,21 @@
 // -----------------
 // Margin to space out fieldsets
 .form__group {
-    margin-bottom: $baseLineHeight / 2;
+  margin-bottom: $line-height / 2;
 }
 
-
 .form__left {
-    margin-right: 8em;
+  margin-right: 8em;
 }
 
 .form__right {
-    width: 7em;
-    float: right;
-    .button {
-        width: 100%;
-    }
+  width: 7em;
+  float: right;
+  .button {
+    width: 100%;
+  }
 }
 
 .has-error {
-    @include form-control-validation(#a94442, #a94442, #f2dede);
+  @include form-control-validation(#a94442, #a94442, #f2dede);
 }

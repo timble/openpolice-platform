@@ -18,6 +18,12 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+<? if($article->isTranslatable()) : ?>
+<ktml:module position="actionbar" content="append">
+    <?= helper('com:languages.listbox.languages', array('attribs' => array('disabled' => 'true'))) ?>
+</ktml:module>
+<? endif ?>
+
 <form action="" method="post" id="article-form" class="-koowa-form">
 	<input type="hidden" name="published" value="0" />
     <input type="hidden" name="sticky" value="0" />
