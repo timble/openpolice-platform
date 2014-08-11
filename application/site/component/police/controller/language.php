@@ -37,6 +37,20 @@ class PoliceControllerLanguage extends Library\ControllerModel
             return $this->setRedirect($context);
         }
 
+        $url    = $context->request->getUrl();
+        $host   = $url->getHost();
+
+        $languages  = $this->getObject('application.languages');
+        $active     = $languages->getActive();
+
+        // Check if to correct domain name is used for the language
+        if($return = $this->getObject('com:police.controller.language')->redirectHost($host, $active->slug, $languages))
+        {
+            $this->getObject('component')->redirect('http://'.$return.$url->getPath());
+
+            return true;
+        }
+
         return $rows;
     }
 
@@ -47,6 +61,20 @@ class PoliceControllerLanguage extends Library\ControllerModel
         if (isset($context->request->getUrl()->query['language']) && $context->request->getFormat() == 'html' && count($this->getObject('application.languages')) > '1')
         {
             return $this->setRedirect($context, $row);
+        }
+
+        $url    = $context->request->getUrl();
+        $host   = $url->getHost();
+
+        $languages  = $this->getObject('application.languages');
+        $active     = $languages->getActive();
+
+        // Check if to correct domain name is used for the language
+        if($return = $this->getObject('com:police.controller.language')->redirectHost($host, $active->slug, $languages))
+        {
+            $this->getObject('component')->redirect('http://'.$return.$url->getPath());
+
+            return true;
         }
 
         return $row;
@@ -109,7 +137,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
             }
         }
 
-        if($return = $this->redirectHost($host, $language->slug, $languages))
+        if($return = $this->redirectHost($host, $language->slug, $languages, $site))
         {
             $host = $return;
         }
