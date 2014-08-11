@@ -11,6 +11,8 @@
 $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
 
+$domains = array('nl' => 'http://www.lokalepolitie.be', 'fr' => 'http://www.policelocale.be', 'de' => 'http://www.lokalepolizei.be');
+
 $zone = object('com:police.model.zone')->id($site)->getRow();
 $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
 
@@ -33,7 +35,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <a itemprop="url" href="<?= $path ?>">
                     <div class="organization__logo organization__logo--<?= $active->slug; ?>"></div>
                     <div class="organization__name"><span><?= translate('Police') ?></span> <?= escape($zone->title); ?></div>
-                    <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
+                    <meta itemprop="logo" content="<?= $domains[$active->slug] ?>/theme/mobile/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
                 </a>
                 <button id="hamburger" class="button--hamburger" aria-hidden="true" aria-pressed="false" aria-controls="navigation" onclick="apollo.toggleClass(document.getElementById('navigation'), 'is-shown');apollo.toggleClass(document.getElementById('hamburger'), 'close');hamburger()">MENU <span class="lines"></span></button>
             </div>
@@ -137,8 +139,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
-            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a> -
-            <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/privacy.html">Privacy</a> -
+            <a style="margin-left: 10px" target="_blank" href="<?= $domains[$active->slug] ?>/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a> -
+            <a target="_blank" href="<?= $domains[$active->slug] ?>/portal/<?= $active->slug ?>/privacy.html">Privacy</a> -
             <a href="http://www.belgium.be/<?= $active->slug ?>">Belgium.be</a>
         </div>
     </div>
