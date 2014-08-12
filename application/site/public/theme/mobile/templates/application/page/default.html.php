@@ -11,7 +11,7 @@
 $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
 
-$domains = array('nl' => 'http://www.lokalepolitie.be', 'fr' => 'http://www.policelocale.be', 'de' => 'http://www.lokalepolizei.be');
+$domains = array('nl' => 'http://www.lokalepolitie.be', 'fr' => 'http://www.policelocale.be', 'de' => 'http://www.lokalepolizei.be', 'en' => 'http://www.police.be');
 
 $zone = object('com:police.model.zone')->id($site)->getRow();
 $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
