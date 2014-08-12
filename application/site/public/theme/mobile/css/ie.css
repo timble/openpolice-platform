@@ -242,11 +242,11 @@ textarea {
 
 #wrap {
   background-color: white;
-  max-width: 1024px;
+  max-width: 940px;
   margin: 0 auto; }
 
 #copyright {
-  max-width: 1024px;
+  max-width: 940px;
   margin: 0 auto; }
 
 .splash {
@@ -934,6 +934,9 @@ ul.column--quad {
   box-sizing: border-box;
   background: url("../images/banners/default.jpg"); }
 
+.banner__image--5283 {
+  background: url("../images/banners/5283.jpg"); }
+
 .banner__image--5317 {
   background: url("../images/banners/5317.jpg"); }
 
@@ -948,6 +951,9 @@ ul.column--quad {
 
 .banner__image--5396 {
   background: url("../images/banners/5396.jpg"); }
+
+.banner__image--5430 {
+  background: url("../images/banners/5430.jpg"); }
 
 .banner__image--5443 {
   background: url("../images/banners/5443.jpg"); }
