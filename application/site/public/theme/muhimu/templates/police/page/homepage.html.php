@@ -27,8 +27,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
         <div class="my_police">
             <h2 class="my_police__header">Mijn<span>Politie</span></h2>
-            <p>Gepersonaliseerd politienieuws en verkeersinformatie uit jouw buurt.</p>
-            <p class="margin-zero"><a href="#">Meer informatie.</a></p>
+            <p>Nieuws en verkeersinformatie uit jouw buurt.</p>
+            <p class="margin-zero"><a href="#">Stationsstraat, Geel.</a></p>
         </div>
 
         <div class="my_police_wrapper">
@@ -38,7 +38,6 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </div>
 </ktml:module>
 
-<h1>Diensten en informatie</h1>
 <div class="container__navigation">
 <? foreach($pages as $page) : ?>
     <? if($page->level == '1' && $page->hidden == false) : ?>
