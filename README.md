@@ -113,6 +113,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [Bower](http://bower.io/)
 * [Capistrano](http://www.capistranorb.com)
 * [Composer](http://getcomposer.org)
+* [datetimepicker](https://github.com/xdan/datetimepicker)
 * [Elasticsearch](http://www.elasticsearch.org/)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [Git](http://git-scm.com)
