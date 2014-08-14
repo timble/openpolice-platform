@@ -163,7 +163,7 @@ class DatabaseQuerySelect extends DatabaseQueryAbstract
         settype($table, 'array');
 
         $translate = $this->getObject('com:languages.database.row.table');
-        $translate->name = current($table);
+        $translate->name    = current($table);
         $translate->enabled = '1';
 
         if($translate->load()) {
