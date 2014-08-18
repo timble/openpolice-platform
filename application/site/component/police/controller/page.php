@@ -69,7 +69,7 @@ class PoliceControllerPage extends Library\ControllerView
             }
 
             // Check if to correct domain name is used for the language
-            if($return = $this->getObject('com:police.controller.language')->findHost($host, $language, $languages))
+            if($return = $this->getObject('com:police.controller.language')->findHost($host, $language))
             {
                 $host = $return;
                 $redirect = true;
