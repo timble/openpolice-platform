@@ -112,7 +112,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
             }
         }
 
-        if($return = $this->findHost($host, $language->slug, $languages))
+        if($return = $this->findHost($host, $language->slug))
         {
             $host = $return;
         }
@@ -133,7 +133,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
         $active     = $languages->getActive();
 
         // Check if host and language are in sync
-        if($return = $this->findHost($host, $active->slug, $languages))
+        if($return = $this->findHost($host, $active->slug))
         {
             $this->getObject('component')->redirect('http://'.$return.$path);
 
@@ -141,10 +141,10 @@ class PoliceControllerLanguage extends Library\ControllerModel
         }
     }
 
-    public function findHost($host, $language, $languages)
+    public function findHost($host, $language)
     {
         // Make sure the given host exists
-        if(array_key_exists($host, $this->_domains) && count($languages) == '1')
+        if(array_key_exists($host, $this->_domains))
         {
             // Check if host and language are in sync
             if($this->_domains[$host]['language'] != $language)
