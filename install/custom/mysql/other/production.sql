@@ -32,3 +32,19 @@ UPDATE `questions` set `text` = replace(`text`, 'http://p.pol-de.be/', '/');
 UPDATE `traffic` set `text` = replace(`text`, 'http://p.pol-nl.be/', '/');
 UPDATE `traffic` set `text` = replace(`text`, 'http://p.pol-fr.be/', '/');
 UPDATE `traffic` set `text` = replace(`text`, 'http://p.pol-de.be/', '/');
+
+-- Format phone numbers
+UPDATE `contacts` set `telephone` = replace(`telephone`, '/', ' ');
+UPDATE `contacts` set `telephone` = replace(`telephone`, '.', ' ');
+
+UPDATE `contacts` set `fax` = replace(`fax`, '/', ' ');
+UPDATE `contacts` set `fax` = replace(`fax`, '.', ' ');
+
+UPDATE `contacts` set `mobile` = replace(`mobile`, '/', ' ');
+UPDATE `contacts` set `mobile` = replace(`mobile`, '.', ' ');
+
+UPDATE `districts_officers` set `mobile` = replace(`mobile`, '/', ' ');
+UPDATE `districts_officers` set `mobile` = replace(`mobile`, '.', ' ');
+
+UPDATE `districts_officers` set `phone` = replace(`phone`, '/', ' ');
+UPDATE `districts_officers` set `phone` = replace(`phone`, '.', ' ');
