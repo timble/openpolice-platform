@@ -30,7 +30,7 @@ foreach ($cities as $city)
 
     if (!$crab_city->GemeenteId)
     {
-        trigger_error($city->title . ' not found in CRAB database! (#' . $city->id . ')');
+        echo "Warning: " . $city->title . ' not found in CRAB database! (#' . $city->id . ')';
         continue;
     }
 
