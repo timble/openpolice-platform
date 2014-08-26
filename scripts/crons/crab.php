@@ -68,20 +68,21 @@ foreach ($cities as $city)
     $results      = $client->ListStraatnamenByGemeenteId($requestParams);
     $crab_streets = $manager->getObject('com:streets.database.rowset.soap', array('data' => (array) $results->ListStraatnamenByGemeenteIdResult->StraatnaamItem));
 
+    $table   = $manager->getObject('com:streets.database.table.streets');
     $query  = $manager->getObject('lib:database.query.select')
                 ->where('tbl.streets_city_id = :city')
                 ->bind(array('city' => $city->id));
+    $streets = $table->select($query);
 
-    $streets = $manager->getObject('com:streets.database.table.streets')->select($query);
-
+    // Loop over all the remote streets and check if anything has been added or changed.
     foreach ($crab_streets as $crab_street)
     {
         $street = $streets->find(array('id' => $crab_street->StraatnaamId))->top();
 
-        if ($street->isNew())
+        if (is_null($street))
         {
             $data = array(
-                'streets_street_id' => $crab_street->StraatnaamId,
+                'id'                => $crab_street->StraatnaamId,
                 'title'             => $crab_street->StraatnaamLabel,
                 'language'          => $crab_street->TaalCode,
                 'title2'            => $crab_street->StraatnaamTweedeTaal,
@@ -90,7 +91,8 @@ foreach ($cities as $city)
                 'created_on'        => gmdate('Y-m-d H:i:s')
             );
 
-            $street->setData($data)->save();
+            $street = $table->getRow(array('data' => $data));
+            $street->save();
 
             $manager->getObject('com:streets.database.table.logs')->getRow(array(
                 'data' => array(
@@ -146,6 +148,31 @@ foreach ($cities as $city)
 
                 $statistics->streets->updated++;
             }
+        }
+    }
+
+    // Finally, check if we have streets in our database that should be removed
+    foreach ($streets as $street)
+    {
+        $crab_street = $crab_streets->find(array('StraatnaamId' => $street->id))->top();
+
+        if (is_null($crab_street))
+        {
+            $data = $street->toArray();
+
+            $street->delete();
+
+            $manager->getObject('com:streets.database.table.logs')->getRow(array(
+                'data' => array(
+                    'type'      => 'street',
+                    'row'       => $street->id,
+                    'action'    => 'delete',
+                    'name'      => $street->title,
+                    'fields'    => array('old' => $data, 'new' => array())
+                )
+            ))->save();
+
+            $statistics->streets->deleted++;
         }
     }
 }
