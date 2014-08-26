@@ -54,13 +54,13 @@ $manager->getObject('lib:bootstrapper.application', array(
 // Disable error handler when we are running in CLI mode:
 $config = new Library\ObjectConfig(array(
     'object_manager' => Library\ObjectManager::getInstance(),
-    'object_identifier' => new Library\ObjectIdentifier('com:debug.event.dispatcher.debug'),
+    'object_identifier' => new Library\ObjectIdentifier('lib:event.dispatcher'),
     'catch_exceptions'  => false,
     'catch_user_errors' => false,
     'catch_core_errors' => false
 ));
 
-$instance  = new Nooku\Component\Debug\EventDispatcherDebug($config);
-$manager->setObject('com:debug.event.dispatcher.debug', $instance);
+$instance  = new Nooku\Library\EventDispatcher($config);
+$manager->setObject('lib:event.dispatcher', $instance);
 
-$manager->registerAlias('event.dispatcher', 'com:debug.event.dispatcher.debug');
+$manager->registerAlias('event.dispatcher', 'lib:event.dispatcher');
