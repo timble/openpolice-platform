@@ -14,9 +14,7 @@ foreach (array(1, 2, 3) as $region)
         'GewestId'    => $region
     );
 
-//  $results = $client->ListGemeentenByGewestId($requestParams);
-//  file_put_contents('/tmp/listgemeenten'.$region.'.in', serialize($results));
-    $results = unserialize(file_get_contents('/tmp/listgemeenten'.$region.'.in'));
+    $results = $client->ListGemeentenByGewestId($requestParams);
 
     $crab_cities->addRow((array) $results->ListGemeentenByGewestIdResult->GemeenteItem);
 }
