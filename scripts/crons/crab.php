@@ -1,7 +1,19 @@
 <?php
 require_once '_bootstrap.php';
 
-$client = new SoapClient('http://crab.agiv.be/wscrab/WsCrab.svc?wsdl');
+require_once JPATH_ROOT.'/config/config.php';
+$config = new \JConfig();
+
+$options = array();
+if ($proxy = $config->http_proxy)
+{
+    $url = $manager->getObject('lib:http.url', array('url' => $proxy));
+
+    $options['proxy_host'] = $url->getHost();
+    $options['proxy_port'] = $url->getPort();
+}
+
+$client = new SoapClient('http://crab.agiv.be/wscrab/WsCrab.svc?wsdl', $options);
 
 echo "Synchronizing streets database with CRAB database:".PHP_EOL.PHP_EOL;
 
