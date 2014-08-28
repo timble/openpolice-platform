@@ -38,7 +38,7 @@ $statistics = (object) array('cities' => (object) array('updated' => 0), 'street
 
 foreach ($cities as $city)
 {
-    $crab_city = $crab_cities->find(array('NISGemeenteCode' => $city->id, 'TaalCode' => $city->language))->top();
+    $crab_city = $crab_cities->find(array('NISGemeenteCode' => $city->id, 'TaalCodeGemeenteNaam' => $city->language))->top();
 
     if (!$crab_city->GemeenteId)
     {
