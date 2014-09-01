@@ -12,6 +12,7 @@
 ### Administrator Enhancements
 
 * Finalised multi-lingual support
+* Automated CRAB synchronisation (weekly)
 * Better handling of large images
 * You can now filter streets for missing CRAB IDs
 * Added width/height properties to inline images so PageSpeed can handle resizing
