@@ -74,9 +74,9 @@ Release of:
 
 ### Other
 * Vagrant box is now hosted on [vagrantcloud.com](http://www.vagrantcloud.com/belgianpolice)
-* Added a [product blog](http://belgianpolice.github.io/blog/)
+* Added a [product blog](http://www.openpolice.be/blog/)
 * Updated some libraries: Nooku (v0.9.1), Apollo (v1.7.0), Select2 (v3.4.8), jQuery (v2.1.1), Susy (v2.1.2)
-* Documentation is now available [online](http://belgianpolice.github.io/documentation/)
+* Documentation is now available [online](http://www.openpolice.be/documentation/)
 * Added Grunt to compile Sass
 * Added Bower to install dependencies
 
