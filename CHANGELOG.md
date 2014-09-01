@@ -4,7 +4,7 @@
 
 ### Site Enhancements
 
-* Now the domain name matches the sites language
+* Now the domain name matches the site's language
 * Improved structured data (schema.org)
 * Streets are now ordered by title instead of city
 * Re-use the category image on the article page when the category contains only one article and the article doesn't have an image attached
