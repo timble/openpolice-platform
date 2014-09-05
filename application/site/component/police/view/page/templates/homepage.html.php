@@ -20,7 +20,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
 <div class="clearfix">
     <div class="homepage__sticky">
-        <? $stickies = object('com:news.model.articles')->sticky(true)->getRowset();
+        <? $stickies = object('com:news.model.articles')->sticky(true)->published(true)->getRowset();
             $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('publish_on')->direction('DESC')->published(true)->getRowset()->top(); ?>
         <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
         <article>
