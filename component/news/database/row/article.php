@@ -27,12 +27,6 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         $text    = str_replace('<br>', '<br />', $this->text);
         $pattern = '#<hr\s+id=("|\')system-readmore("|\')\s*\/*>#i';
 
-        // If created_on is modified then convert it to GMT/UTC
-        if ($this->isModified('created_on') && !$this->isNew())
-        {
-            $this->created_on = gmdate('Y-m-d H:i:s', strtotime($this->created_on));
-        }
-
         if(preg_match($pattern, $text))
         {
             list($introtext, $fulltext) = preg_split($pattern, $text, 2);
@@ -44,18 +38,6 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         	$this->fulltext = '';
         }
 
-        //Add publish_on date if not set
-        if(empty($this->publish_on))
-        {
-            $this->publish_on = gmdate('Y-m-d H:i:s');
-        }
-        
-        // Unpublish article if publish_on date is set to future
-        if($this->publish_on > gmdate('Y-m-d H:i:s'))
-        {
-            $this->published = '0';
-        }
-        
         $result   = parent::save();
 
         return $result;
