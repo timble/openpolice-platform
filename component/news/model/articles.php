@@ -29,7 +29,6 @@ class ModelArticles extends Library\ModelTable
 		$query->columns(array(
 			'thumbnail'         => 'thumbnails.thumbnail',
             'path'              => 'attachments.path',
-            'ordering_date'     => 'IF(tbl.publish_on, tbl.publish_on, tbl.created_on)',
             'created_by_name'   => 'creator.name'
 		));
 	}
