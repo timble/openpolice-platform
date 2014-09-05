@@ -17,7 +17,7 @@ use Nooku\Library;
  * Auto publishes/un-publishes items.
  *
  * @author  Arunas Mazeika <http://nooku.assembla.com/profile/arunasmazeika>
- * @package Nooku\Component\Articles
+ * @package Nooku\Component\News
  */
 class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
 {
@@ -25,7 +25,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
      * Track updated status
      *
      * Variable keeps track of the updated status of the items table. A value of true indicates that items are
-     * already up to date, i.e. published and unpublished according with the current timestamp.
+     * already up to date, i.e. published according with the current timestamp.
      *
      * @var bool
      */
@@ -68,8 +68,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
 
         if ($data instanceof Library\DatabaseRowsetInterface && !$this->_uptodate)
         {
-            $this->_publishItems();
-            $this->_unpublishItems();
+            $this->_publishItems($context);
 
             $this->_uptodate = true;
         }
@@ -85,7 +84,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
     {
         $data = $context->data;
 
-        // If publish_on is modified then convert it to GMT/UTC or when empty set it
+        // If publish_on is modified then convert it to GMT/UTC
         if($data->isModified('publish_on') && !$data->isNew())
         {
             $data->publish_on = gmdate('Y-m-d H:i:s', strtotime($data->publish_on));
@@ -106,7 +105,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
     /**
      * Publishes items given a date.
      */
-    protected function _publishItems()
+    protected function _publishItems($context)
     {
         $query = $this->_getQuery();
 
@@ -116,23 +115,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
                 'published' => 0,
                 'value'     => 1));
 
-        $this->getMixer()->getAdapter()->update($query);
-    }
-
-    /**
-     * Un-publishes items given a date.
-     */
-    protected function _unpublishItems()
-    {
-        $query = $this->_getQuery();
-
-        $query->where('unpublish_on <= :date')->where('published = :published')->where('unpublish_on IS NOT NULL')
-            ->values('published = :value')
-            ->bind(array('date'      => $this->_date->format('Y-m-d H:i:s'),
-                'published' => 1,
-                'value'     => 0));
-
-        $this->getMixer()->getAdapter()->update($query);
+        $context->data->getTable()->getAdapter()->update($query);
     }
 
     /**
