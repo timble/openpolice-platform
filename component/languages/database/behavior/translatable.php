@@ -389,7 +389,7 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
 
         }
     }
-    
+
     protected function _beforeAdapterDelete(Library\CommandContext $context)
     {
         $languages = $this->getObject('application.languages');
@@ -404,7 +404,7 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
             }
         }
     }
-    
+
     protected function _afterAdapterDelete(Library\CommandContext $context)
     {
         if($context->affected)

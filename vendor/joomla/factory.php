@@ -233,6 +233,7 @@ class JFactory
     {
         jimport('joomla.language.language');
 
+        //Get the active language
         $languages  = $this->getObject('application.languages');
         $active     = $languages->getActive()->iso_code;
 

@@ -1060,10 +1060,7 @@ DROP TABLE IF EXISTS `data`.`police_zones`;
 CREATE TABLE `data`.`police_zones` (
   `police_zone_id` int(11) unsigned NOT NULL,
   `platform` int(11) default NULL,
-  `title-old` varchar(250) NOT NULL default '',
-  `title_nl` varchar(250) NOT NULL default '',
-  `title_fr` varchar(250) NOT NULL default '',
-  `title_de` varchar(250) NOT NULL default '',
+  `titles` TEXT NOT NULL default '',
   `language` int(11) NOT NULL,
   `phone_emergency` varchar(250) default NULL,
   `phone_information` varchar(250) default NULL,

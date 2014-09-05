@@ -81,8 +81,8 @@ For more information, please refer to the [Phpmig GitHub page](https://github.co
 * The example admin application is available at [http://police.dev/administrator/9999](http://police.dev/administrator/9999).
 
     ```
-    email: admin@localhost.home
-    password: admin
+    email: admin@example.com
+    password: police
     ```
 * MailCatcher is available at [http://police.dev:1080/](http://police.dev:1080/)
 
