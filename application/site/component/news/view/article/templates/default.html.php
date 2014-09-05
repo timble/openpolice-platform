@@ -20,6 +20,7 @@
 <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
 <? endif ?>
 
+<meta content="article" property="og:type" />
 <meta content="<?= $published_on ?>" property="article:published_time" />
 
 <ktml:module position="left">
