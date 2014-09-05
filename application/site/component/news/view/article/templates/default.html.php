@@ -8,11 +8,11 @@
  */
 ?>
 
-<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" name="author" />
 <? if($zone->twitter) : ?>
 <meta content="summary" name="twitter:card" />
 <meta content="@<?= $zone->twitter ?>" name="twitter:site" />
 <? endif ?>
+<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" property="og:site_name" />
 <meta content="<?= url(); ?>" property="og:url" />
 <meta content="<?= $article->title ?>" property="og:title" />
 <meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
@@ -20,7 +20,11 @@
 <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
 <? endif ?>
 
+<meta content="article" property="og:type" />
 <meta content="<?= $publish_on ?>" property="article:published_time" />
+<? if($zone->facebook) : ?>
+<meta content="https://www.facebook.com/<?= $zone->facebook ?>" property="article:publisher" />
+<? endif ?>
 
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
