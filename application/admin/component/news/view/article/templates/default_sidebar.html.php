@@ -25,7 +25,7 @@
     <div>
         <label for="publish_on"><?= translate('Publish on') ?></label>
         <div class="controls">
-            <input id="publish_on" type="text" name="publish_on" value="<?= $article->publish_on ? helper('date.format', array('date'=> $article->publish_on, 'format' => 'd-m-Y H:i')) : '' ?>" />
+            <input id="publish_on" type="text" name="publish_on" value="<?= $article->publish_on ? helper('date.format', array('date'=> $article->publish_on, 'format' => 'd-m-Y H:i')) : '' ?>" <?= $article->published ? 'disabled="disabled"' : '' ?> />
             <script data-inline>
                 $jQuery("#publish_on").datetimepicker({
                     format:'d-m-Y H:i',
