@@ -68,8 +68,10 @@
                 <a href="<?= route( 'view=article&task=edit&id='.$article->id ); ?>">
 					<?= $article->title ?>
 				</a>
-                <span class="label label-important"><?= strtotime($article->publish_on) > $now ? translate('planned') : '' ?></span>
-			</td>
+                <? if(strtotime($article->publish_on) > $now) : ?>
+                <span class="label label-important"><?= translate('planned') ?></span>
+			    <? endif ?>
+            </td>
             <td>
                 <?= helper('date.format', array('date'=> $article->publish_on, 'format' => 'D d/m/Y - G:i')) ?>
             </td>
