@@ -8,7 +8,6 @@
  */
 ?>
 
-<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" property="author" />
 <? if($zone->twitter) : ?>
 <meta content="summary" name="twitter:card" />
 <meta content="@<?= $zone->twitter ?>" name="twitter:site" />
@@ -22,6 +21,9 @@
 
 <meta content="article" property="og:type" />
 <meta content="<?= $published_on ?>" property="article:published_time" />
+<? if($zone->facebook) : ?>
+<meta content="https://www.facebook.com/<?= $zone->facebook ?>" property="article:publisher" />
+<? endif ?>
 
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
