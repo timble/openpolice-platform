@@ -15,7 +15,7 @@ class NewsViewArticlesHtml extends Library\ViewHtml
     {
         $date = new Library\Date(array('timezone' => 'GMT'));
 
-        $this->now = $date->getTimestamp();
+        $this->now = $date->format('Y-m-d H:i:s');
 
         return parent::render();
     }
