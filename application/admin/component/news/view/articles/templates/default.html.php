@@ -68,7 +68,7 @@
                 <a href="<?= route( 'view=article&task=edit&id='.$article->id ); ?>">
 					<?= $article->title ?>
 				</a>
-                <? if(strtotime($article->publish_on) > $now) : ?>
+                <? if($article->publish_on > $now) : ?>
                 <span class="label label-important"><?= translate('planned') ?></span>
 			    <? endif ?>
             </td>
