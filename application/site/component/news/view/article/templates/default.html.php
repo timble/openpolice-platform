@@ -8,7 +8,7 @@
  */
 ?>
 
-<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" name="author" />
+<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" property="author" />
 <? if($zone->twitter) : ?>
 <meta content="summary" name="twitter:card" />
 <meta content="@<?= $zone->twitter ?>" name="twitter:site" />
