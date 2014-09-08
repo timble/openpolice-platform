@@ -138,8 +138,11 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
-            <a style="margin-left: 10px" target="_blank" href="<?= $domains[$active->slug] ?>/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a> -
-            <a target="_blank" href="<?= $domains[$active->slug] ?>/portal/<?= $active->slug ?>/privacy.html">Privacy</a> -
+            <? foreach($pages as $page) : ?>
+                <? if($page->id == '106' || $page->id == '107') : ?>
+                    &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
+                <? endif ?>
+            <? endforeach ?> |
             <a href="http://www.belgium.be/<?= $active->slug ?>">Belgium.be</a>
         </div>
     </div>
