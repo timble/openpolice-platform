@@ -114,6 +114,10 @@ class ModelAnnouncements extends Library\ModelAbstract
             return ($a > $b) ? -1 : 1;
         });
 
+        foreach ($data as $key => $value) {
+            $data[$key]['identifier'] = md5($value['date'] . $value['title']);
+        }
+
         return $data;
     }
 }
