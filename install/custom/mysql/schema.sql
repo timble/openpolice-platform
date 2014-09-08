@@ -527,7 +527,7 @@ CREATE TABLE `news` (
   `introtext` mediumtext NOT NULL,
   `fulltext` mediumtext NOT NULL,
   `sticky` tinyint(1) DEFAULT NULL,
-  `published` tinyint(1) DEFAULT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0';,
   `created_on` datetime DEFAULT NULL,
   `created_by` int(11) unsigned NOT NULL DEFAULT '0',
   `modified_on` datetime DEFAULT NULL,

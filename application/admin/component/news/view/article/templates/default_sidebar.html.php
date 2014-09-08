@@ -23,10 +23,18 @@
         </div>
     </div>
     <div>
-        <label for="created_on"><?= translate('Created on') ?></label>
+        <label for="publish_on"><?= translate('Publish on') ?></label>
         <div class="controls">
-            <input id="created_on" type="text" name="created_on" value="<?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'd-m-Y H:i')) ?>" />
-            <script data-inline> $jQuery("#created_on").datetimepicker({format:'d-m-Y H:i', lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>', dayOfWeekStart: '1'}); </script>
+            <input id="publish_on" type="text" name="publish_on" value="<?= $article->publish_on ? helper('date.format', array('date'=> $article->publish_on, 'format' => 'd-m-Y H:i')) : '' ?>" <?= $article->published ? 'disabled="disabled"' : '' ?> />
+            <script data-inline>
+                $jQuery("#publish_on").datetimepicker({
+                    format:'d-m-Y H:i',
+                    lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
+                    dayOfWeekStart: '1',
+                    minDate: '0',
+                    minTime: '0'
+                });
+            </script>
         </div>
     </div>
 </fieldset>
@@ -40,3 +48,10 @@
         <?= import('com:attachments.view.attachments.upload.html') ?>
     </fieldset>
 <? endif ?>
+
+<script data-inline>
+    $jQuery("input[name=published]").click(function()
+    {
+        $jQuery("input[name=publish_on]").attr('disabled', this.checked)
+    });
+</script>

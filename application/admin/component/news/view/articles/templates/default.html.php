@@ -25,7 +25,7 @@
 
 <form action="" method="get" class="-koowa-grid">
 	<?= import('default_scopebar.html'); ?>
-	<table>
+    <table>
 	<thead>
 		<tr>
 			<th width="10">
@@ -36,7 +36,7 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'ordering_date', 'title' => 'Created on')) ?>
+                <?= helper('grid.sort', array('column' => 'publish_on', 'title' => 'Published on')) ?>
             </th>
             <? if($articles->isTranslatable()) : ?>
             <th width="70">
@@ -68,9 +68,12 @@
                 <a href="<?= route( 'view=article&task=edit&id='.$article->id ); ?>">
 					<?= $article->title ?>
 				</a>
-			</td>
+                <? if($article->publish_on > $now) : ?>
+                <span class="label label-important"><?= translate('planned') ?></span>
+			    <? endif ?>
+            </td>
             <td>
-                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'D d/m/Y - G:i')) ?>
+                <?= helper('date.format', array('date'=> $article->publish_on, 'format' => 'D d/m/Y - G:i')) ?>
             </td>
             <? if($article->isTranslatable()) : ?>
             <td>
