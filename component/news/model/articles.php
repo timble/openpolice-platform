@@ -30,7 +30,7 @@ class ModelArticles extends Library\ModelTable
 			'thumbnail'         => 'thumbnails.thumbnail',
             'path'              => 'attachments.path',
             'created_by_name'   => 'creator.name',
-            'publish_on'        => 'IF(tbl.publish_on, tbl.publish_on, tbl.created_on)',
+            'ordering_date'     => 'IF(tbl.publish_on, tbl.publish_on, tbl.created_on)'
 		));
 	}
     

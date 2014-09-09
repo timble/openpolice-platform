@@ -37,7 +37,7 @@ class NewsControllerArticle extends Library\ControllerModel
     {
         $request = parent::getRequest();
 
-        $request->query->sort = 'publish_on';
+        $request->query->sort = 'ordering_date';
         $request->query->direction   = 'DESC';
 
         return $request;
