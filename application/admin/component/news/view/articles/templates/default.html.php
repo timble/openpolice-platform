@@ -73,8 +73,8 @@
 			    <? endif ?>
             </td>
             <td>
-                <? if($article->publish_on) : ?>
-                <?= helper('date.format', array('date'=> $article->publish_on, 'format' => 'D d/m/Y - G:i')) ?>
+                <? if($article->publish_on || $article->published_on) : ?>
+                <?= helper('date.format', array('date'=> $article->publish_on ? $article->publish_on : $article->published_on, 'format' => 'D d/m/Y - G:i')) ?>
                 <? endif ?>
             </td>
             <? if($article->isTranslatable()) : ?>
