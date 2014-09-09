@@ -69,7 +69,7 @@
 					<?= $article->title ?>
 				</a>
                 <? if($article->publish_on > $now) : ?>
-                <span class="label label-important"><?= translate('planned') ?></span>
+                <span class="label label-warning"><?= translate('Planned') ?></span>
 			    <? endif ?>
             </td>
             <td>

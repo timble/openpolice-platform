@@ -62,11 +62,9 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         parent::_initialize($config);
     }
 
-    protected function _afterTableSelect(Library\CommandContext $context)
+    protected function _beforeTableSelect(Library\CommandContext $context)
     {
-        $data = $context->data;
-
-        if ($data instanceof Library\DatabaseRowsetInterface && !$this->_uptodate)
+        if (!$this->_uptodate)
         {
             $this->_publishItems($context);
 
@@ -115,7 +113,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
                 'published' => 0,
                 'value'     => 1));
 
-        $context->data->getTable()->getAdapter()->update($query);
+        $this->getMixer()->getAdapter()->update($query);
     }
 
     /**
