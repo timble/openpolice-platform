@@ -96,7 +96,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         // Set publish_on to current date when the field is empty and row is published
         if ($data->published && !strtotime($data->publish_on))
         {
-            $data->publish_on = $this->_date->getTimestamp();
+            $data->publish_on = gmdate('Y-m-d H:i:s', $this->_date->getTimestamp());
         }
     }
 
