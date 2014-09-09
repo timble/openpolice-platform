@@ -21,13 +21,13 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <div class="clearfix">
     <div class="homepage__sticky">
         <? $stickies = object('com:news.model.articles')->sticky(true)->published(true)->getRowset();
-            $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('publish_on')->direction('DESC')->published(true)->getRowset()->top(); ?>
+            $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('published_on')->direction('DESC')->published(true)->getRowset()->top(); ?>
         <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
         <article>
             <header class="article__header">
                 <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
                 <span class="text--small">
-                    <?= helper('date.format', array('date'=> $article->publish_on, 'format' => translate('DATE_FORMAT_LC5'))) ?>
+                    <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?>
                 </span>
             </header>
 
@@ -48,7 +48,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             </div>
         </article>
         <div class="homepage__news">
-            <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('publish_on')->direction('DESC')->published(true)->limit('2')->exclude($article->id)->getRowset())) ?>
+            <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('published_on')->direction('DESC')->published(true)->limit('2')->exclude($article->id)->getRowset())) ?>
         </div>
     </div>
     <div class="homepage__contact">

@@ -19,7 +19,7 @@ class NewsControllerArticle extends PoliceControllerLanguage
         $request->query->published = 1;
         $request->query->limit     = '3';
 
-        $request->query->sort = 'publish_on';
+        $request->query->sort = 'published_on';
         $request->query->direction   = 'DESC';
 
         return $request;

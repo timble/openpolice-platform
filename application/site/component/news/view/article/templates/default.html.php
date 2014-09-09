@@ -21,7 +21,7 @@
 <? endif ?>
 
 <meta content="article" property="og:type" />
-<meta content="<?= $publish_on ?>" property="article:published_time" />
+<meta content="<?= $published_on ?>" property="article:published_time" />
 <? if($zone->facebook) : ?>
 <meta content="https://www.facebook.com/<?= $zone->facebook ?>" property="article:publisher" />
 <? endif ?>
@@ -42,8 +42,8 @@
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
         <h1 itemprop="name"><?= $article->title ?></h1>
-        <time class="text--small" itemprop="datePublished" datetime="<?= $publish_on ?>">
-            <?= helper('date.format', array('date'=> $article->publish_on, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
+        <time class="text--small" itemprop="datePublished" datetime="<?= $published_on ?>">
+            <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
 

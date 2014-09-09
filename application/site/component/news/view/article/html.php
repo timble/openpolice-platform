@@ -33,8 +33,8 @@ class NewsViewArticleHtml extends Library\ViewHtml
             $this->attachments($article->getAttachments());
         }
 
-        $publish_on = new DateTime($article->publish_on);
-        $this->publish_on = $publish_on->format('c');
+        $published_on = new DateTime($article->published_on);
+        $this->published_on = $published_on->format('c');
 
         return parent::render();
     }
