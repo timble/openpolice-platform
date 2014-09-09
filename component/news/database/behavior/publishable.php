@@ -83,7 +83,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         $data = $context->data;
 
         // If publish_on is modified then convert it to GMT/UTC
-        if($data->isModified('publish_on') && !$data->isNew())
+        if($data->isModified('publish_on') && !$data->isNew() && $data->publish_on)
         {
             $data->publish_on = gmdate('Y-m-d H:i:s', strtotime($data->publish_on));
         }
