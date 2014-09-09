@@ -94,9 +94,9 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         }
 
         // Set publish_on to current date when the field is empty and row is published
-        if ($data->published && !strtotime($data->publish_on))
+        if ($data->published && !strtotime($data->published_on))
         {
-            $data->publish_on = gmdate('Y-m-d H:i:s', $this->_date->getTimestamp());
+            $data->published_on = gmdate('Y-m-d H:i:s', $this->_date->getTimestamp());
         }
     }
 
@@ -108,7 +108,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         $query = $this->_getQuery();
 
         $query->where('publish_on <= :date')->where('published = :published')->where('publish_on IS NOT NULL')
-            ->values('published = :value')
+            ->values(array('published = :value', 'published_on = publish_on', 'publish_on = NULL'))
             ->bind(array('date'      => $this->_date->format('Y-m-d H:i:s'),
                 'published' => 0,
                 'value'     => 1));
