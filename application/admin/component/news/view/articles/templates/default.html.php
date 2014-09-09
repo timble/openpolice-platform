@@ -36,7 +36,7 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'publish_on', 'title' => 'Published on')) ?>
+                <?= helper('grid.sort', array('column' => 'ordering_date', 'title' => 'Published on')) ?>
             </th>
             <? if($articles->isTranslatable()) : ?>
             <th width="70">
@@ -73,7 +73,9 @@
 			    <? endif ?>
             </td>
             <td>
+                <? if($article->publish_on) : ?>
                 <?= helper('date.format', array('date'=> $article->publish_on, 'format' => 'D d/m/Y - G:i')) ?>
+                <? endif ?>
             </td>
             <? if($article->isTranslatable()) : ?>
             <td>
