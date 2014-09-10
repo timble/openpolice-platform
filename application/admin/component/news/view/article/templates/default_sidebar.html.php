@@ -31,8 +31,7 @@
                     format:'d-m-Y H:i',
                     lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
                     dayOfWeekStart: '1',
-                    minDate: '0',
-                    minTime: '0'
+                    minDate: '0'
                 });
             </script>
         </div>
