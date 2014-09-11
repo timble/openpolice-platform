@@ -152,14 +152,18 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 case 'odd-even':
                 case 'Even+Oneven':
                 case 'Even/Oneven':
+                case 'Pair+Impair':
+                case 'Pair/Impair':
                     $parity = 'odd-even';
                     break;
                 case 'even':
                 case 'Even':
+                case 'Pair':
                     $parity = 'even';
                     break;
                 case 'odd':
                 case 'Oneven':
+                case 'Impair':
                     $parity = 'odd';
                     break;
             }
