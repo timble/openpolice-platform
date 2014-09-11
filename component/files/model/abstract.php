@@ -26,7 +26,7 @@ abstract class ModelAbstract extends Library\ModelAbstract
         $this->getState()
             ->insert('limit'    , 'int')
             ->insert('offset'   , 'int')
-            ->insert('sort'     , 'cmd')
+            ->insert('sort'     , 'cmd',  'name')
             ->insert('direction', 'word', 'asc')
             ->insert('search'   , 'string')
 
