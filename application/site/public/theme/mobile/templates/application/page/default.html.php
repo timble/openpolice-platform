@@ -97,7 +97,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <div class="row">
                 <div class="footer__news">
                     <h3><?= translate('Latest news') ?></h3>
-                    <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('publish_on')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
+                    <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('published_on')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
                 </div>
                 <div class="footer__districts">
                     <h3><?= translate('Your district officer') ?></h3>
