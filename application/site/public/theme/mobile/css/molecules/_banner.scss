@@ -1,7 +1,7 @@
 @include respond-min($breakpoint-delta) {
   .banner__image {
     height: 110px;
-    border: 1px solid $gray;
+    border: 1px solid $grayLight;
     @include border-radius($border-radius);
     @include box-sizing(border-box);
     background: url("../images/banners/default.jpg");
