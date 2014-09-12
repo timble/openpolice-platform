@@ -44,8 +44,8 @@
                 )) ?>
                 <?= $article->fulltext ?>
             ]]></description>
-            <pubDate><?= helper('date.format', array('date' => $article->created_on)) ?></pubDate>
-            <dc:date><?= helper('date.format', array('date' => $article->created_on)) ?></dc:date>
+            <pubDate><?= helper('date.format', array('date' => $article->published_on)) ?></pubDate>
+            <dc:date><?= helper('date.format', array('date' => $article->published_on)) ?></dc:date>
         </item>
         <? endforeach; ?>
     </channel>

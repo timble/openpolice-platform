@@ -68,7 +68,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
     </ktml:modules>
 
-    <div class="container container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
+    <div class="container container__content <?= $extension ?> <?= $layout ?>">
         <ktml:modules position="left">
             <aside class="sidebar">
                 <ktml:modules:content>
@@ -97,7 +97,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <div class="row">
                 <div class="footer__news">
                     <h3><?= translate('Latest news') ?></h3>
-                    <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('publish_on')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
+                    <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('published_on')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
                 </div>
                 <div class="footer__districts">
                     <h3><?= translate('Your district officer') ?></h3>
@@ -138,8 +138,11 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
-            <a style="margin-left: 10px" target="_blank" href="<?= $domains[$active->slug] ?>/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a> -
-            <a target="_blank" href="<?= $domains[$active->slug] ?>/portal/<?= $active->slug ?>/privacy.html">Privacy</a> -
+            <? foreach($pages as $page) : ?>
+                <? if($page->id == '106' || $page->id == '107') : ?>
+                    &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
+                <? endif ?>
+            <? endforeach ?> |
             <a href="http://www.belgium.be/<?= $active->slug ?>">Belgium.be</a>
         </div>
     </div>

@@ -62,11 +62,9 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         parent::_initialize($config);
     }
 
-    protected function _afterTableSelect(Library\CommandContext $context)
+    protected function _beforeTableSelect(Library\CommandContext $context)
     {
-        $data = $context->data;
-
-        if ($data instanceof Library\DatabaseRowsetInterface && !$this->_uptodate)
+        if (!$this->_uptodate)
         {
             $this->_publishItems($context);
 
@@ -85,7 +83,7 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         $data = $context->data;
 
         // If publish_on is modified then convert it to GMT/UTC
-        if($data->isModified('publish_on') && !$data->isNew())
+        if($data->isModified('publish_on') && !$data->isNew() && $data->publish_on)
         {
             $data->publish_on = gmdate('Y-m-d H:i:s', strtotime($data->publish_on));
         }
@@ -96,9 +94,9 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         }
 
         // Set publish_on to current date when the field is empty and row is published
-        if ($data->published && !strtotime($data->publish_on))
+        if ($data->published && !strtotime($data->published_on))
         {
-            $data->publish_on = $this->_date->getTimestamp();
+            $data->published_on = gmdate('Y-m-d H:i:s', $this->_date->getTimestamp());
         }
     }
 
@@ -110,12 +108,12 @@ class DatabaseBehaviorPublishable extends Library\DatabaseBehaviorAbstract
         $query = $this->_getQuery();
 
         $query->where('publish_on <= :date')->where('published = :published')->where('publish_on IS NOT NULL')
-            ->values('published = :value')
+            ->values(array('published = :value', 'published_on = publish_on', 'publish_on = NULL'))
             ->bind(array('date'      => $this->_date->format('Y-m-d H:i:s'),
                 'published' => 0,
                 'value'     => 1));
 
-        $context->data->getTable()->getAdapter()->update($query);
+        $this->getMixer()->getAdapter()->update($query);
     }
 
     /**

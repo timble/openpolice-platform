@@ -36,7 +36,7 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'publish_on', 'title' => 'Published on')) ?>
+                <?= helper('grid.sort', array('column' => 'ordering_date', 'title' => 'Published on')) ?>
             </th>
             <? if($articles->isTranslatable()) : ?>
             <th width="70">
@@ -69,11 +69,13 @@
 					<?= $article->title ?>
 				</a>
                 <? if($article->publish_on > $now) : ?>
-                <span class="label label-important"><?= translate('planned') ?></span>
+                <span class="label label-warning"><?= translate('Planned') ?></span>
 			    <? endif ?>
             </td>
             <td>
-                <?= helper('date.format', array('date'=> $article->publish_on, 'format' => 'D d/m/Y - G:i')) ?>
+                <? if($article->publish_on || $article->published_on) : ?>
+                <?= helper('date.format', array('date'=> $article->publish_on ? $article->publish_on : $article->published_on, 'format' => 'D d/m/Y - G:i')) ?>
+                <? endif ?>
             </td>
             <? if($article->isTranslatable()) : ?>
             <td>
