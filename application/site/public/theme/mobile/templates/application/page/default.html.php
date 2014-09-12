@@ -55,11 +55,13 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
     </div>
 
+    <? if($zone->banner) : ?>
     <div class="container container__banner">
         <div class="banner__image banner__image--<?= $site ?>">
 
         </div>
     </div>
+    <? endif ?>
 
     <ktml:modules position="breadcrumbs">
         <div class="container container__breadcrumb">
