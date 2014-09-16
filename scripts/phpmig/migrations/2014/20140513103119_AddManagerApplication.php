@@ -47,6 +47,11 @@ CREATE TABLE `manager`.`languages` (
   PRIMARY KEY (`languages_language_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO `manager`.`languages` (`languages_language_id`, `application`, `name`, `native_name`, `iso_code`, `slug`, `enabled`, `primary`)
+VALUES
+	(1, 'admin', 'English (United Kingdom)', 'English (United Kingdom)', 'en-GB', 'en', 1, 1),
+	(2, 'site', 'English (United Kingdom)', 'English (United Kingdom)', 'en-GB', 'en', 1, 1);
+
 DROP TABLE IF EXISTS `manager`.`languages_tables`;
 CREATE TABLE `manager`.`languages_tables` (
   `languages_table_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,

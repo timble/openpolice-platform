@@ -527,7 +527,7 @@ CREATE TABLE `news` (
   `introtext` mediumtext NOT NULL,
   `fulltext` mediumtext NOT NULL,
   `sticky` tinyint(1) DEFAULT NULL,
-  `published` tinyint(1) DEFAULT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
   `created_on` datetime DEFAULT NULL,
   `created_by` int(11) unsigned NOT NULL DEFAULT '0',
   `modified_on` datetime DEFAULT NULL,
@@ -1059,22 +1059,21 @@ DROP TABLE IF EXISTS `data`.`police_zones`;
 
 CREATE TABLE `data`.`police_zones` (
   `police_zone_id` int(11) unsigned NOT NULL,
-  `title` varchar(250) NOT NULL DEFAULT '',
+  `platform` int(11) default NULL,
+  `titles` TEXT NOT NULL default '',
   `language` int(11) NOT NULL,
-  `phone_emergency` varchar(250) DEFAULT NULL,
-  `phone_information` varchar(250) DEFAULT NULL,
-  `email` varchar(250) DEFAULT NULL,
-  `chief_name` varchar(250) NOT NULL,
-  `chief_email` varchar(250) NOT NULL,
-  `twitter` varchar(250) DEFAULT NULL,
-  `facebook` varchar(250) DEFAULT NULL,
-  `created_by` int(11) NOT NULL DEFAULT '0',
-  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(11) NOT NULL DEFAULT '0',
-  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `locked_by` int(11) NOT NULL DEFAULT '0',
-  `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`police_zone_id`)
+  `phone_emergency` varchar(250) default NULL,
+  `phone_information` varchar(250) default NULL,
+  `email` varchar(250) default NULL,
+  `twitter` varchar(250) default NULL,
+  `facebook` varchar(250) default NULL,
+  `created_by` int(11) NOT NULL default '0',
+  `created_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  `modified_by` int(11) NOT NULL default '0',
+  `modified_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  `locked_by` int(11) NOT NULL default '0',
+  `locked_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`police_zone_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 

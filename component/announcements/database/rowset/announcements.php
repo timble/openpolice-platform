@@ -8,7 +8,7 @@ class DatabaseRowsetAnnouncements extends Library\DatabaseRowsetAbstract
     protected function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
-            'identity_column' => 'title'
+            'identity_column' => 'identifier'
         ));
 
         parent::_initialize($config);

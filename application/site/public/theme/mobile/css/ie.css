@@ -794,7 +794,7 @@ ul.column--quad {
 
 .banner__image {
   height: 110px;
-  border: 1px solid #505050;
+  border: 1px solid #999999;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -806,6 +806,9 @@ ul.column--quad {
 .banner__image--5283 {
   background: url("../images/banners/5283.jpg"); }
 
+.banner__image--5288 {
+  background: url("../images/banners/5288.jpg"); }
+
 .banner__image--5317 {
   background: url("../images/banners/5317.jpg"); }
 
@@ -815,11 +818,17 @@ ul.column--quad {
 .banner__image--5370 {
   background: url("../images/banners/5370.jpg"); }
 
+.banner__image--5372 {
+  background: url("../images/banners/5372.jpg"); }
+
 .banner__image--5388 {
   background: url("../images/banners/5388.jpg"); }
 
 .banner__image--5396 {
   background: url("../images/banners/5396.jpg"); }
+
+.banner__image--5421 {
+  background: url("../images/banners/5421.jpg"); }
 
 .banner__image--5430 {
   background: url("../images/banners/5430.jpg"); }

@@ -81,8 +81,8 @@ For more information, please refer to the [Phpmig GitHub page](https://github.co
 * The example admin application is available at [http://police.dev/administrator/9999](http://police.dev/administrator/9999).
 
     ```
-    email: admin@localhost.home
-    password: admin
+    email: admin@example.com
+    password: police
     ```
 * MailCatcher is available at [http://police.dev:1080/](http://police.dev:1080/)
 
@@ -113,6 +113,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [Bower](http://bower.io/)
 * [Capistrano](http://www.capistranorb.com)
 * [Composer](http://getcomposer.org)
+* [datetimepicker](https://github.com/xdan/datetimepicker)
 * [Elasticsearch](http://www.elasticsearch.org/)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [Git](http://git-scm.com)

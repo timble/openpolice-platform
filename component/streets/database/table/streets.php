@@ -13,12 +13,20 @@ use Nooku\Library;
 class DatabaseTableStreets extends Library\DatabaseTableAbstract
 {    
     public function  _initialize(Library\ObjectConfig $config)
-    {        
+    {
+        $behaviors = array('sluggable');
+
+        // @TODO: /scripts/crons/_bootstrap.php does not dispatch an application.
+        // This means that no user session has been created yet. The $this->getObject('user') call
+        // will throw errors when we call it from CLI.
+        // To work around this, only include these behaviors when we're not in CLI context.
+        if (php_sapi_name() != 'cli') {
+            $behaviors = array_merge($behaviors, array('lockable', 'creatable', 'modifiable'));
+        }
+
         $config->append(array(
             'name'      => 'data.streets',
-            'behaviors' =>  array(
-                'lockable', 'creatable', 'modifiable', 'sluggable'
-            )
+            'behaviors' =>  $behaviors
         ));
      
         parent::_initialize($config);

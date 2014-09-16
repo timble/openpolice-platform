@@ -14,9 +14,9 @@
 
 <title content="replace"><?= $article->title ?></title>
 
-<div class="article vevent">
+<div class="article" itemprop="event" itemscope itemtype="http://schema.org/Event">
     <header class="article__header">
-        <h1 class="summary"><?= $article->title ?></h1>
+        <h1 itemprop="name"><?= $article->title ?></h1>
         <div class="timestamp">
             <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
         </div>
@@ -40,6 +40,6 @@
     <? endif ?>
 
     <? if($article->text) : ?>
-        <?= $article->text ?>
+        <span itemprop="description"><?= $article->text ?></span>
     <? endif ?>
 </div>

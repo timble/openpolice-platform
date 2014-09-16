@@ -8,11 +8,11 @@
  */
 ?>
 
-<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" name="author" />
 <? if($zone->twitter) : ?>
 <meta content="summary" name="twitter:card" />
 <meta content="@<?= $zone->twitter ?>" name="twitter:site" />
 <? endif ?>
+<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" property="og:site_name" />
 <meta content="<?= url(); ?>" property="og:url" />
 <meta content="<?= $article->title ?>" property="og:title" />
 <meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
@@ -20,7 +20,11 @@
 <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
 <? endif ?>
 
+<meta content="article" property="og:type" />
 <meta content="<?= $published_on ?>" property="article:published_time" />
+<? if($zone->facebook) : ?>
+<meta content="https://www.facebook.com/<?= $zone->facebook ?>" property="article:publisher" />
+<? endif ?>
 
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
@@ -39,7 +43,7 @@
     <header class="article__header">
         <h1 itemprop="name"><?= $article->title ?></h1>
         <time class="text--small" itemprop="datePublished" datetime="<?= $published_on ?>">
-            <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
+            <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
 
