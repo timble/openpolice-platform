@@ -125,6 +125,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <div id="copyright">
     <div class="container container__copyright">
         <div class="copyright--left">
+            <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss"><i class="icon-feed"></i> RSS</a> |
             <? if($zone->twitter) : ?>
                 <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
             <? endif ?>
