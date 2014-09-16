@@ -2,6 +2,25 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        // Iconfont
+        webfont: {
+            icons: {
+                src: 'application/site/public/theme/mobile/images/icons/*.svg',
+                dest: 'application/site/public/theme/mobile/fonts/icons',
+                destCss: 'application/site/public/theme/mobile/css/utilities',
+                options: {
+                    font: 'police-icons',
+                    hashes: false,
+                    stylesheet: 'scss',
+                    relativeFontPath: '../fonts/icons/',
+                    template: 'application/site/public/theme/mobile/fonts/icons/template.css',
+                    htmlDemo: false
+                }
+            }
+        },
+
+        // Sass
         sass: {
             dist: {
                 options: {
@@ -14,12 +33,25 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        // Watch
         watch: {
             css: {
                 files: '**/*.scss',
                 tasks: ['sass'],
                 options: {
+                    interrupt: false,
                     atBegin: true
+                }
+            },
+            fontcustom: {
+                files: [
+                    'application/site/public/theme/mobile/images/icons/*.svg'
+                ],
+                tasks: ['webfont'],
+                options: {
+                    interrupt: false,
+                    atBegin: false
                 }
             },
             livereload: {
@@ -34,6 +66,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-webfont');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['watch']);
