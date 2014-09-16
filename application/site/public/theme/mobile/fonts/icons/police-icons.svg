@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20120731 at Tue Sep 16 17:33:16 2014
+ By Tom Janssens
+Created by Tom Janssens with FontForge 2.0 (http://fontforge.sf.net)
+</metadata>
+<defs>
+<font id="police-icons" horiz-adv-x="512" >
+  <font-face 
+    font-family="police-icons"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 -64.0714 512.071 448"
+    underline-thickness="25"
+    underline-position="-52"
+    unicode-range="U+F101-F107"
+  />
+<missing-glyph horiz-adv-x="187" 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="187" 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="170" 
+ />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" horiz-adv-x="239" 
+d="M-128 448zM160 -64h-96v256h-64v88h64v52q0 59 22 87.5t82 28.5h71v-88h-44q-23 0 -29 -8t-6 -28v-44h79l-9 -88h-70v-256z" />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" 
+d="M68 73q28 0 48 -20.5t20 -48.5t-19.5 -47.5t-48.5 -19.5t-48.5 19.5t-19.5 47.5t20 48.5t48 20.5zM0 274q140 0 239 -99t99 -239h-99q0 100 -70 170t-169 70v98zM0 448q104 0 198.5 -40.5t163.5 -109.5t109.5 -163.5t40.5 -198.5h-98q0 171 -121.5 292.5t-292.5 121.5v98
+z" />
+    <glyph glyph-name="uniF103" unicode="&#xf103;" horiz-adv-x="480" 
+d="M432 448q20 0 34 -14t14 -34v-416q0 -20 -14 -34t-34 -14h-384q-20 0 -34 14t-14 34v416q0 20 14 34t34 14h384zM416 0v384h-352v-384h352zM128 224h224v-32h-224v32zM128 160h224v-32h-224v32zM128 96h224v-32h-224v32zM128 288h224v-32h-224v32z" />
+    <glyph glyph-name="uniF104" unicode="&#xf104;" 
+d="M0 288h512l-32 -320h-448zM464 352l16 -32h-448l32 64h176l16 -32h208z" />
+    <glyph glyph-name="uniF105" unicode="&#xf105;" 
+d="M416 -32h-416l96 256h416zM64 256l-64 -288v416h144l64 -64h208v-64h-352z" />
+    <glyph glyph-name="uniF106" unicode="&#xf106;" 
+d="M496 12q15 -14 16 -32t-12 -32q-14 -13 -32 -12t-32 16l-103 121q-16 19 -16 37q-54 -46 -125 -46q-80 0 -136 56t-56 136t56 136t136 56t136 -56t56 -136q0 -71 -46 -125q18 0 37 -16zM192 128q53 0 90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5t-90.5 -37.5t-37.5 -90.5
+t37.5 -90.5t90.5 -37.5z" />
+    <glyph glyph-name="uniF107" unicode="&#xf107;" 
+d="M512 351q-23 -34 -52 -55v-13q0 -72 -33.5 -139t-103.5 -113.5t-162 -46.5q-89 0 -161 47q8 -1 25 -1q73 0 131 45q-34 1 -61.5 21t-37.5 52q12 -2 20 -2q15 0 28 3q-36 8 -60 36.5t-24 66.5v2q20 -11 47 -13q-47 32 -47 87q0 26 15 53q84 -104 216 -110q-3 12 -3 24
+q0 43 30.5 74t74.5 31q46 0 77 -33q39 8 67 25q-12 -38 -46 -58q30 4 60 17z" />
+  </font>
+</defs></svg>
