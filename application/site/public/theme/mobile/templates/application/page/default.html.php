@@ -125,14 +125,13 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <div id="copyright">
     <div class="container container__copyright">
         <div class="copyright--left">
-            <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss"><i class="icon-feed"></i> RSS</a> |
             <? if($zone->twitter) : ?>
-                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
+                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>&nbsp;&nbsp;|&nbsp;
             <? endif ?>
-            <?= $zone->twitter && $zone->facebook ? '&nbsp;|&nbsp;' : '' ?>
             <? if($zone->facebook) : ?>
-                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
+                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>&nbsp;&nbsp;|&nbsp;
             <? endif ?>
+            <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss"><i class="icon-feed"></i> RSS</a>
             <? foreach($pages as $page) : ?>
                 <? if($page->id == '89' || $page->id == '101') : ?>
                     &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
@@ -145,8 +144,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <? if($page->id == '106' || $page->id == '107') : ?>
                     &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
-            <? endforeach ?> |
-            <a href="http://www.belgium.be/<?= $active->slug ?>">Belgium.be</a>
+            <? endforeach ?>
         </div>
     </div>
 </div>
