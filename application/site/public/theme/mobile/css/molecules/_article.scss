@@ -5,6 +5,14 @@
   p img[align="right"] {
     margin: 0 0 $line-height $line-height;
   }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
 }
 
 .article__header {

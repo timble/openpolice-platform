@@ -773,6 +773,10 @@ ul.column--quad {
   margin-bottom: 3em; }
   .article p img[align="right"] {
     margin: 0 0 1.5em 1.5em; }
+  .article ul {
+    list-style: disc; }
+  .article ol {
+    list-style: decimal; }
 
 .article__header {
   margin-bottom: 0.65em; }
