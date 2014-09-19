@@ -26,6 +26,6 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano (= 2.15.5)
-  illusion
+  illusion (= 0.5.3)
   newrelic_rpm
   susy
