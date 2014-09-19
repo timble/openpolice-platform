@@ -37,7 +37,7 @@
                 <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
                     <?= helper('com:attachments.image.thumbnail', array(
                         'attachment' => $article->attachments_attachment_id,
-                        'attribs' => array('width' => '200', 'height' => '150'))) ?>
+                        'attribs' => array('width' => '400', 'height' => '300'))) ?>
                 </a>
             <? else : ?>
                 <?= helper('com:attachments.image.thumbnail', array(
