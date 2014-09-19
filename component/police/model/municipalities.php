@@ -28,7 +28,7 @@ class ModelMunicipalities extends Library\ModelTable
 		$query->columns(array(
 			'city_title'  => 'municipality.title',
             'city_postcode'  => 'municipality.postcode',
-            'zone_title'  => 'zone.title',
+            'zone_title'  => 'zone.titles',
 		));
 	}
 	

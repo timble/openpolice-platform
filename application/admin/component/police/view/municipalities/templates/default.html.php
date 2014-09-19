@@ -66,7 +66,7 @@
 				<?= escape($municipality->city_title); ?> <?= $municipality->city_postcode ? '('.escape($municipality->city_postcode).')' : ''; ?>
 			</td>
 			<td>
-				<?= escape($municipality->police_zone_id); ?> - <?= escape($municipality->zone_title); ?>
+				<?= escape($municipality->police_zone_id); ?> - <?= escape(reset($municipality->zone_title)); ?>
 			</td>
 		</tr>
 		<? endforeach; ?>

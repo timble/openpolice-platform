@@ -74,7 +74,7 @@ $language_short = $language_short[0];
 <div id="wrap">
     <div class="container container__content">
         <div class="splash">
-            <div class="splash__logo"><img src="assets://application/images/logo-<?= $language_short ?>.png" /></div>
+            <div class="splash__logo"><img src="assets://application/images/logo-<?= $language_short ?>.jpg" /></div>
             <div class="splash__search">
                 <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
                     <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Search your city') ?> ..." name="id" style="width: 100%">
@@ -96,16 +96,6 @@ $language_short = $language_short[0];
                 <a href="#">Police On Web</a>
                 <a href="#">eCops</a>
             </div>
-        </div>
-    </div>
-</div>
-
-<div id="copyright">
-    <div class="container container__copyright">
-        <div class="copyright--right">
-            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/disclaimer.html">Disclaimer</a> -
-            <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $language_short ?>/privacy.html">Privacy</a> -
-            <a href="http://www.belgium.be">Belgium.be</a>
         </div>
     </div>
 </div>
