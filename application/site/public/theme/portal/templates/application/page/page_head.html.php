@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name=”mobile-web-app-capable” content=”yes” />
 
-    <link rel="shortcut icon" type="image/ico" href="assets://application/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="/theme/mobile/images/favicon.ico" />
 
     <ktml:title>
     <ktml:meta>
@@ -25,9 +25,9 @@
     <ktml:style>
     <ktml:script>
 
-    <style src="assets://application/css/default.css" />
-    <style src="assets://application/css/ie.css" condition="if IE 8" />
-    <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
+    <style src="/theme/mobile/css/default.css" />
+    <style src="/theme/mobile/css/ie.css" condition="if IE 8" />
+    <style src="/theme/mobile/css/ie7.css" condition="if lte IE 7" />
 
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
         <script>

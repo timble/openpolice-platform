@@ -8,11 +8,11 @@
  */
 ?>
 
-<style src="http://www.lokalepolitie.be/theme/mobile/components/select2/select2.css" />
+<style src="/theme/mobile/components/select2/select2.css" />
 
-<script src="http://www.lokalepolitie.be/theme/mobile/components/jquery/dist/jquery.min.js" />
-<script src="http://www.lokalepolitie.be/theme/mobile/components/select2/select2.js" />
-<script src="http://www.lokalepolitie.be/theme/mobile/js/ie7.js" condition="if lte IE 7" />
+<script src="/theme/mobile/components/jquery/dist/jquery.min.js" />
+<script src="/theme/mobile/components/select2/select2.js" />
+<script src="/theme/mobile/js/ie7.js" condition="if lte IE 7" />
 
 <script>
     $(document).ready(function() {
@@ -38,17 +38,6 @@
                     return {results: results};
                 }
             },
-            initSelection: function(element, callback) {
-                // the input tag has a value attribute preloaded that points to a preselected movie's id
-                // this function resolves that id attribute to an object that select2 can render
-                // using its formatResult renderer - that way the movie name is shown preselected
-                var id=$(element).val();
-                if (id!=="") {
-                    $.ajax("/<?= $site ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>?view=street&format=json&id="+id, {
-                        dataType: "json"
-                    }).done(function(data) { callback(data.item); });
-                }
-            },
             formatResult: format, // omitted for brevity, see the source of this page
             formatSelection: format, // omitted for brevity, see the source of this page
             dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
@@ -65,7 +54,7 @@ $language_short = $language_short[0];
 ?>
 
 <!DOCTYPE HTML>
-<html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"">
+<html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 
 <?= import('page_head.html') ?>
 <body id="page" class="no-js">
@@ -79,7 +68,7 @@ $language_short = $language_short[0];
                 <form action="<?= route( 'option=com_police&view=municipality' ); ?>" method="get" class="-koowa-grid">
                     <input type="text" class="bigdrop" id="municipality" placeholder="<?= translate('Search your city') ?> ..." name="id" style="width: 100%">
                     <div class="splash__toolbar">
-                        <button class="button button--primary">Go to site</button>
+                        <button class="button button--primary"><?= translate('Go to site') ?></button>
                     </div>
                 </form>
             </div>
