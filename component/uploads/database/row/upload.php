@@ -248,7 +248,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_on = $item['modified'];
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
-                    $row->publish_on = $item['publish_up'];
+                    $row->published_on = $item['publish_up'];
 
                     $this->_clean($row, 'news', true);
                 } else {
@@ -261,7 +261,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_on = $item['modified'];
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
-                    $row->publish_on = $item['publish_up'];
+                    $row->published_on = $item['publish_up'];
 
                     $this->_clean($row, 'news', false);
                 }
@@ -428,6 +428,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             if(empty($html)) {
                 continue;
             }
+
+            $pattern = "/<a href=\"mailto:[a-z0-9\"' =:&;]+>(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)<\/a>/i";
+            $html    = preg_replace($pattern, '<a href="mailto:$1">$1</a>', $html);
 
             $config = array(
                 'indent'         => true,
