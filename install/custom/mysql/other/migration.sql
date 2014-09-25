@@ -55,3 +55,7 @@ WHERE `id` NOT IN (SELECT `content_id` FROM `pol_content_frontpage`);
 UPDATE `pol_content_frontpage` AS `frontpage`, `pol_content_copy` AS `content`
 SET `content`.`catid` = '1', `content`.`sectionid` = '1'
 WHERE `content`.`id` = `frontpage`.`content_id`;
+
+
+-- Update links in quicklinks
+UPDATE `5353`.`pages_modules` set `content` = replace(`content`, '5388', '5353');
