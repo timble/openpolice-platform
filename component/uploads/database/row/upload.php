@@ -248,7 +248,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_on = $item['modified'];
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
-                    $row->publish_on = $item['publish_up'];
+                    $row->published_on = $item['publish_up'];
 
                     $this->_clean($row, 'news', true);
                 } else {
@@ -261,7 +261,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_on = $item['modified'];
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
-                    $row->publish_on = $item['publish_up'];
+                    $row->published_on = $item['publish_up'];
 
                     $this->_clean($row, 'news', false);
                 }
