@@ -429,6 +429,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 continue;
             }
 
+            $pattern = "/<a href=\"mailto:[a-z0-9\"' =:&;]+>(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)<\/a>/i";
+            $html    = preg_replace($pattern, '<a href="mailto:$1">$1</a>', $html);
+
             $config = array(
                 'indent'         => true,
                 'output-xhtml'   => true,
