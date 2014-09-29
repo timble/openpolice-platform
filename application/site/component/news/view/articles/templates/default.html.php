@@ -23,7 +23,7 @@
     <article class="article">
         <? $link = helper('route.article', array('row' => $article)); ?>
         <header class="article__header">
-            <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
+            <h1><a href="<?= $link ?>"><?= escape($article->title) ?></a></h1>
             <div class="text--small">
                 <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
             </div>

@@ -41,10 +41,10 @@
     
     <div class="main">
         <div class="title">
-            <input class="required" type="text" name="title" maxlength="255" value="<?= $article->title ?>" placeholder="<?= translate('Title') ?>" />
+            <input class="required" type="text" name="title" maxlength="255" value="<?= escape($article->title) ?>" placeholder="<?= translate('Title') ?>" />
             <div class="slug">
                 <span class="add-on"><?= translate('Slug') ?></span>
-                <input type="text" name="slug" maxlength="255" value="<?= $article->slug ?>" />
+                <input type="text" name="slug" maxlength="255" value="<?= escape($article->slug) ?>" />
             </div>
         </div>
         <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text)) ?>

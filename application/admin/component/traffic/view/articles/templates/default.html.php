@@ -67,7 +67,7 @@
             </td>
 			<td style="white-space:nowrap;">
 				<a href="<?= route( 'view=article&task=edit&id='.$article->id ); ?>">
-					<?= $article->title ?>
+					<?= escape($article->title) ?>
 				</a>
 			</td>
 			<td>

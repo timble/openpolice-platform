@@ -21,7 +21,7 @@
             </a>
         <? endif; ?>
         <div class="media__body">
-            <a class="media__heading" href="<?= $link ?>"><?= $article->title ?></a>
+            <a class="media__heading" href="<?= $link ?>"><?= escape($article->title) ?></a>
             <div class="text--small">
                 <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?>
             </div>

@@ -27,7 +27,7 @@
             <? endif ?>
 
             <small>
-                <?= $article->title ?>
+                <?= escape($article->title) ?>
             </small>
         </h3>
         <?= $article->text ?>
