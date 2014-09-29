@@ -12,10 +12,10 @@
     <?= import('com:categories.view.categories.list.html') ?>
 </ktml:module>
 
-<title content="replace"><?= $article->title ?></title>
+<title content="replace"><?= escape($article->title) ?></title>
 
 <article class="article">
-    <h1><?= $article->title ?></h1>
+    <h1><?= escape($article->title) ?></h1>
     <? if($article->attachments_attachment_id) : ?>
         <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
             <?= helper('com:attachments.image.thumbnail', array(

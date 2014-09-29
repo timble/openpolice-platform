@@ -25,10 +25,10 @@
         <h1 class="article__header">
             <? if($article->fulltext) : ?>
                 <a href="<?= $link ?>">
-                    <?= $article->title ?>
+                    <?= escape($article->title) ?>
                 </a>
             <? else : ?>
-                <?= $article->title ?>
+                <?= escape($article->title) ?>
             <? endif; ?>
         </h1>
 

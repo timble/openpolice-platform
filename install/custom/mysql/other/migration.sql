@@ -59,3 +59,34 @@ WHERE `content`.`id` = `frontpage`.`content_id`;
 
 -- Update links in quicklinks
 UPDATE `5353`.`pages_modules` set `content` = replace(`content`, '5388', '5353');
+
+
+-- Add some sample questions and category
+INSERT INTO `questions_categories` (`questions_category_id`, `parent_id`, `attachments_attachment_id`, `title`, `slug`, `image`, `description`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `access`, `params`)
+VALUES
+	(1, 0, 0, 'Aangifte', 'aangifte', '', '', 1, 1, now(), NULL, NULL, NULL, NULL, 1, 0, ''),
+	(2, 0, 0, 'Verlies of diefstal', 'verlies-of-diefstal', '', '', 1, 1, now(), NULL, NULL, NULL, NULL, 2, 0, ''),
+	(3, 0, 0, 'Vergunningen', 'vergunningen', '', '', 1, 1, now(), NULL, NULL, NULL, NULL, 3, 0, ''),
+	(4, 0, 0, 'Preventie', 'preventie', '', '', 1, 1, now(), NULL, NULL, NULL, NULL, 4, 0, '');
+
+INSERT INTO `questions` (`questions_question_id`, `questions_category_id`, `attachments_attachment_id`, `title`, `slug`, `text`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `params`)
+VALUES
+	(1, 1, 0, 'Hoe aangifte doen?', 'hoe-aangifte-doen', '<p>Placeholder</p>', 1, 1, now(), NULL, NULL, NULL, NULL, 1, ''),
+	(2, 4, 0, 'Hoe afwezigheidstoezicht aanvragen?', 'hoe-afwezigheidstoezicht-aanvragen', '<p>Placeholder</p>', 1, 1, now(), NULL, NULL, NULL, NULL, 1, ''),
+	(3, 2, 0, 'Ik ben iets kwijt, wat nu?', 'ik-ben-iets-kwijt-wat-nu', '<p>Placeholder</p>', 1, 1, now(), NULL, NULL, NULL, NULL, 1, '');
+
+
+-- Add some sample questions and category
+INSERT INTO `questions_categories` (`questions_category_id`, `parent_id`, `attachments_attachment_id`, `title`, `slug`, `image`, `description`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `access`, `params`)
+VALUES
+	(1, 0, 0, 'Déclaration', 'declaration', '', '', 1, 1, now(), NULL, NULL, NULL, NULL, 1, 0, ''),
+	(2, 0, 0, 'Perte ou vol', 'perte-ou-vol', '', '', 1, 1, now(), NULL, NULL, NULL, NULL, 2, 0, ''),
+	(3, 0, 0, 'Autorisation', 'autorisation', '', '', 1, 1, now(), NULL, NULL, NULL, NULL, 3, 0, ''),
+	(4, 0, 0, 'Prévention', 'prevention', '', '', 1, 1, now(), NULL, NULL, NULL, NULL, 4, 0, '');
+
+INSERT INTO `questions` (`questions_question_id`, `questions_category_id`, `attachments_attachment_id`, `title`, `slug`, `text`, `published`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `ordering`, `params`)
+VALUES
+	(1, 1, 0, 'Comment déposer plainte?', 'comment-deposer-plainte', '<p>Placeholder</p>', 1, 1, now(), NULL, NULL, NULL, NULL, 1, ''),
+	(2, 4, 0, 'Comment demander une surveillance habitation pendant ses vacances?', 'comment-demander-une-surveillance-habitation-pendant-ses-vacances', '<p>Placeholder</p>', 1, 1, now(), NULL, NULL, NULL, NULL, 1, ''),
+	(3, 2, 0, 'Objets perdus', 'objets-perdus', '<p>Placeholder</p>', 1, 1, now(), NULL, NULL, NULL, NULL, 1, '');
+

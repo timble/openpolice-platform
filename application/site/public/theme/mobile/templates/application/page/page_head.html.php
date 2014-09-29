@@ -46,5 +46,17 @@
         ga('create', '<?= $analytics ?>', 'auto');
         ga('send', 'pageview');
     </script>
+
+    <script>
+        var _prum = [['id', '5424324aabe53dc401d78375'],
+            ['mark', 'firstbyte', (new Date()).getTime()]];
+        (function() {
+            var s = document.getElementsByTagName('script')[0]
+                , p = document.createElement('script');
+            p.async = 'async';
+            p.src = '//rum-static.pingdom.net/prum.min.js';
+            s.parentNode.insertBefore(p, s);
+        })();
+    </script>
     <?php endif; ?>
 </head>

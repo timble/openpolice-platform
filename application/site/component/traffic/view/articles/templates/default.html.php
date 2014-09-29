@@ -21,7 +21,7 @@
     <? foreach ($articles as $article) : ?>
         <tr>
             <td>
-                <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= $article->title ?></a>
+                <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a>
                 <span style="float: right; white-space: nowrap"><?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?></span><br />
                 <small>
                     <? if($streets = $this->getObject('com:traffic.model.streets')->article($article->id)->getRowset()->street) : ?>
