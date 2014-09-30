@@ -10,7 +10,7 @@ class AddHiddenCategories extends Migration
     public function up()
     {
         $this->_queries = "ALTER TABLE `contacts_categories` ADD `hidden` TINYINT(1)  NOT NULL  DEFAULT '0'  AFTER `published`;";
-        $this->_queries = "UPDATE `contacts_categories` SET `hidden` = '1' WHERE `contacts_category_id` IN ('24', '34');";
+        $this->_queries .= "UPDATE `contacts_categories` SET `hidden` = '1' WHERE `contacts_category_id` IN ('24', '34');";
 
         parent::up();
 
@@ -18,7 +18,7 @@ class AddHiddenCategories extends Migration
         $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "ALTER TABLE `fr-fr_contacts_categories` ADD `hidden` TINYINT(1)  NOT NULL  DEFAULT '0'  AFTER `published`;";
-        $this->_queries = "UPDATE `fr-fr_contacts_categories` SET `hidden` = '1' WHERE `contacts_category_id` IN ('24', '34');";
+        $this->_queries .= "UPDATE `fr-fr_contacts_categories` SET `hidden` = '1' WHERE `contacts_category_id` IN ('24', '34');";
 
         parent::up();
     }
