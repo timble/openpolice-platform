@@ -28,7 +28,7 @@ class AddHiddenCategories extends Migration
      */
     public function down()
     {
-        $this->_query = "ALTER TABLE `contacts_categories` DROP `hidden`;";
+        $this->_queries = "ALTER TABLE `contacts_categories` DROP `hidden`;";
 
         parent::down();
 
