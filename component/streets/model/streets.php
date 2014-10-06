@@ -21,6 +21,7 @@ class ModelStreets extends Library\ModelTable
             ->insert('islp' , 'string')
             ->insert('no_islp' , 'int')
             ->insert('no_district' , 'int')
+            ->insert('district' , 'int')
             ->insert('sort'      , 'cmd', 'title');
 	}
 
@@ -41,7 +42,7 @@ class ModelStreets extends Library\ModelTable
         $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
 
         // Only include joins when we want to list the streets that have no districts_relations
-        if ($state->no_district)
+        if ($state->no_district || $state->district)
         {
             $subquery = $this->getObject('lib:database.query.select')
                 ->columns(array('streets_street_id', 'district_count' => 'COUNT(DISTINCT districts_district_id)'))
@@ -82,6 +83,10 @@ class ModelStreets extends Library\ModelTable
 
         if ($state->no_district == '1') {
             $query->where('content.district_count IS NULL');
+        }
+
+        if ($state->district == '1') {
+            $query->where('content.district_count IS NOT NULL');
         }
 
         $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
