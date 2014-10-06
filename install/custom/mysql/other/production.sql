@@ -48,15 +48,25 @@ UPDATE `traffic_categories` set `description` = replace(`description`, 'http://p
 -- Format phone numbers
 UPDATE `contacts` set `telephone` = replace(`telephone`, '/', ' ');
 UPDATE `contacts` set `telephone` = replace(`telephone`, '.', ' ');
+UPDATE `contacts` set `telephone` = replace(`telephone`, '   ', ' ');
+UPDATE `contacts` set `telephone` = replace(`telephone`, '  ', ' ');
 
 UPDATE `contacts` set `fax` = replace(`fax`, '/', ' ');
 UPDATE `contacts` set `fax` = replace(`fax`, '.', ' ');
+UPDATE `contacts` set `fax` = replace(`fax`, '   ', ' ');
+UPDATE `contacts` set `fax` = replace(`fax`, '  ', ' ');
 
 UPDATE `contacts` set `mobile` = replace(`mobile`, '/', ' ');
 UPDATE `contacts` set `mobile` = replace(`mobile`, '.', ' ');
+UPDATE `contacts` set `mobile` = replace(`mobile`, '   ', ' ');
+UPDATE `contacts` set `mobile` = replace(`mobile`, '  ', ' ');
 
 UPDATE `districts_officers` set `mobile` = replace(`mobile`, '/', ' ');
 UPDATE `districts_officers` set `mobile` = replace(`mobile`, '.', ' ');
+UPDATE `districts_officers` set `mobile` = replace(`mobile`, '   ', ' ');
+UPDATE `districts_officers` set `mobile` = replace(`mobile`, '  ', ' ');
 
 UPDATE `districts_officers` set `phone` = replace(`phone`, '/', ' ');
 UPDATE `districts_officers` set `phone` = replace(`phone`, '.', ' ');
+UPDATE `districts_officers` set `phone` = replace(`phone`, '   ', ' ');
+UPDATE `districts_officers` set `phone` = replace(`phone`, '  ', ' ');
