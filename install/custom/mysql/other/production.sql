@@ -34,9 +34,9 @@ UPDATE `press` set `text` = replace(`text`, 'http://p.pol-de.be/', '/');
 UPDATE `questions` set `text` = replace(`text`, 'http://p.pol-nl.be/', '/');
 UPDATE `questions` set `text` = replace(`text`, 'http://p.pol-fr.be/', '/');
 UPDATE `questions` set `text` = replace(`text`, 'http://p.pol-de.be/', '/');
-UPDATE `news_categories` set `description` = replace(`description`, 'http://p.pol-nl.be/', '/');
-UPDATE `news_categories` set `description` = replace(`description`, 'http://p.pol-fr.be/', '/');
-UPDATE `news_categories` set `description` = replace(`description`, 'http://p.pol-de.be/', '/');
+UPDATE `questions_categories` set `description` = replace(`description`, 'http://p.pol-nl.be/', '/');
+UPDATE `questions_categories` set `description` = replace(`description`, 'http://p.pol-fr.be/', '/');
+UPDATE `questions_categories` set `description` = replace(`description`, 'http://p.pol-de.be/', '/');
 
 UPDATE `traffic` set `text` = replace(`text`, 'http://p.pol-nl.be/', '/');
 UPDATE `traffic` set `text` = replace(`text`, 'http://p.pol-fr.be/', '/');
