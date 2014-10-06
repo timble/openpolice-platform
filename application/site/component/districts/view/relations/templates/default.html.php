@@ -23,7 +23,7 @@
             placeholder: "<?= translate('Search your street') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "?view=streets&format=json&has_district=1",
+                url: "?view=streets&format=json&no_district=1",
                 dataType: 'json',
                 data: function (term) {
                     return {
