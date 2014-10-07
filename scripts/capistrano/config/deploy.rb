@@ -19,9 +19,6 @@ set :deploy_via, :remote_cache
 set :copy_exclude, [".git"]
 set :keep_releases, 3
 
-# Set the username correctly for use in the New Relic deployment log
-set :newrelic_user, `git config user.name`
-
 # Repository settings.
 set :repository, "https://github.com/belgianpolice/internet-platform.git"
 set :scm, :git
