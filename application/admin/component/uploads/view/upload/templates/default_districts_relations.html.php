@@ -3,8 +3,8 @@
     <table class="table">
         <thead>
         <tr>
-            <th>islp</th>
-            <th>districts_district_id</th>
+            <th>street_id</th>
+            <th>district_id</th>
             <th>range_start</th>
             <th>range_end</th>
             <th>range_parity</th>

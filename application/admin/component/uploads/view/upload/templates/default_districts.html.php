@@ -3,7 +3,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th>districts_district_id</th>
+            <th>id</th>
             <th>title</th>
         </tr>
         </thead>

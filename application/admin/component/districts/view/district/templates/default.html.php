@@ -29,14 +29,6 @@
 			<fieldset>
 				<legend><?= translate( 'District' ); ?></legend>
                 <div>
-                    <label for="id">
-                        <?= translate( 'ID' ); ?>
-                    </label>
-                    <div>
-                        <input type="text" name="id" maxlength="250" class="required" value="<?= $district->id; ?>" />
-                    </div>
-                </div>
-                <div>
 				    <label for="contacts_contact_id">
 				    	<?= translate( 'Contact' ); ?>
 				    </label>
@@ -53,6 +45,14 @@
                         <script data-inline> $jQuery(".select-officers").select2(); </script>
                     </div>
 				</div>
+                <div>
+                    <label for="id">
+                        <?= translate( 'ISLP ID' ); ?>
+                    </label>
+                    <div>
+                        <input type="text" name="islp" maxlength="250" class="required" value="<?= $district->islp; ?>" />
+                    </div>
+                </div>
 			</fieldset>
 		</div>
 	</div>

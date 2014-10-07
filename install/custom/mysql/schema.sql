@@ -319,8 +319,9 @@ CREATE TABLE `contacts_hours` (
 DROP TABLE IF EXISTS `districts`;
 
 CREATE TABLE `districts` (
-  `districts_district_id` varchar(250) NOT NULL DEFAULT '',
+  `districts_district_id` int(250) NOT NULL AUTO_INCREMENT,
   `contacts_contact_id` int(11) NOT NULL,
+  `islp` varchar(250) DEFAULT NULL,
   `title` varchar(250) NOT NULL DEFAULT '',
   `slug` varchar(255) NOT NULL DEFAULT '',
   `created_by` int(11) NOT NULL DEFAULT '0',
@@ -330,7 +331,8 @@ CREATE TABLE `districts` (
   `locked_by` int(11) NOT NULL DEFAULT '0',
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`districts_district_id`),
-  UNIQUE KEY `slug` (`slug`)
+  UNIQUE KEY `slug` (`slug`),
+  UNIQUE KEY `islp` (`islp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -341,7 +343,7 @@ CREATE TABLE `districts` (
 DROP TABLE IF EXISTS `districts_districts_officers`;
 
 CREATE TABLE `districts_districts_officers` (
-  `districts_district_id` varchar(250) NOT NULL DEFAULT '',
+  `districts_district_id` int(11) NOT NULL,
   `districts_officer_id` int(11) unsigned NOT NULL,
   PRIMARY KEY (`districts_district_id`,`districts_officer_id`),
   KEY `districts_districts_officers__districts_officer_id` (`districts_officer_id`),
@@ -357,24 +359,19 @@ CREATE TABLE `districts_districts_officers` (
 DROP TABLE IF EXISTS `districts_officers`;
 
 CREATE TABLE `districts_officers` (
-  `districts_officer_id` int(11) unsigned NOT NULL,
-  `attachments_attachment_id` int(11) unsigned DEFAULT NULL,
+  `districts_officer_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `firstname` varchar(250) NOT NULL,
   `lastname` varchar(250) NOT NULL DEFAULT '',
   `slug` varchar(255) NOT NULL DEFAULT '',
-  `position` varchar(250) NOT NULL,
   `phone` varchar(250) NOT NULL,
   `mobile` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
-  `show_image` tinyint(1) NOT NULL DEFAULT '0',
   `created_by` int(11) NOT NULL DEFAULT '0',
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_by` int(11) NOT NULL DEFAULT '0',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `locked_by` int(11) NOT NULL DEFAULT '0',
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `params` text NOT NULL,
-  `old_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`districts_officer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -387,7 +384,7 @@ DROP TABLE IF EXISTS `districts_relations`;
 
 CREATE TABLE `districts_relations` (
   `districts_relation_id` varchar(40) NOT NULL DEFAULT '',
-  `districts_district_id` varchar(10) NOT NULL DEFAULT '',
+  `districts_district_id` int(10) NOT NULL,
   `streets_street_id` int(11) DEFAULT NULL,
   `range_start` int(11) NOT NULL DEFAULT '1',
   `range_end` int(11) NOT NULL DEFAULT '9999',
