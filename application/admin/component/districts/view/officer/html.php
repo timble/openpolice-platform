@@ -25,7 +25,6 @@ class DistrictsViewOfficerHtml extends Library\ViewHtml
         } else $districts = null;
 
         $this->districts($districts);
-        $this->params($officer->params);
 
         return parent::render();
     }
