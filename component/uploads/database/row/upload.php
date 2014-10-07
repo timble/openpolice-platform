@@ -68,7 +68,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         foreach($data as $item)
         {
             $row = $this->getObject('com:districts.database.row.district');
-            $row->id = $item['districts_district_id'];
+            $row->islp = $item['district_id'];
 
             if(!$row->load())
             {
@@ -135,7 +135,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         {
             if(!array_key_exists('streets_street_id', $item))
             {
-                $street = $this->getObject('com:streets.model.streets')->islp($item['islp'])->getRowset();
+                $street = $this->getObject('com:streets.model.streets')->islp($item['street_id'])->getRowset();
 
                 if(count($street))
                 {
@@ -168,8 +168,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     break;
             }
 
+            $item['districts_district_id'] = $this->getObject('com:districts.model.district')->islp($item['district_id'])->getRow()->id;
+
             $item['range_parity'] = $parity;
-            $item['id'] = sha1($item['districts_district_id'].$item['islp'].$item['streets_street_id'].$item['range_start'].$item['range_end'].$item['range_parity']);
+            $item['id'] = sha1($item['districts_district_id'].$item['street_id'].$item['streets_street_id'].$item['range_start'].$item['range_end'].$item['range_parity']);
 
             // Add row to districts_relations table when ID is unique
             $row = $this->getObject('com:districts.database.row.relation');
