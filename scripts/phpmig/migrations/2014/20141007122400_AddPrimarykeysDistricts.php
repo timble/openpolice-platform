@@ -50,6 +50,39 @@ class AddPrimarykeysDistricts extends Migration
      */
     public function down()
     {
+        $this->_queries = "UPDATE `attachments_relations` AS `relation`, `districts_officers` AS `officer` SET `relation`.`row` = `officer`.`temp` WHERE `relation`.`row` = `officer`.`districts_officer_id` AND `relation`.`table` = 'districts_officers';";
+        $this->_queries .= "UPDATE `activities` AS `activity`, `districts_officers` AS `officer` SET `activity`.`row` = `officer`.`temp` WHERE `activity`.`row` = `officer`.`districts_officer_id` AND `activity`.`name` = 'officer';";
+        $this->_queries .= "UPDATE `activities` AS `activity`, `districts` AS `district` SET `activity`.`row` = `district`.`islp` WHERE `activity`.`row` = `district`.`districts_district_id` AND `activity`.`name` = 'district';";
+
+        $this->_queries .= "ALTER TABLE `districts_officers` ADD `old_id` VARCHAR(250)  NULL  DEFAULT NULL;";
+        $this->_queries .= "ALTER TABLE `districts_officers` ADD `show_image` VARCHAR(250)  NULL  DEFAULT NULL;";
+        $this->_queries .= "ALTER TABLE `districts_officers` ADD `params` VARCHAR(250)  NULL  DEFAULT NULL;";
+        $this->_queries .= "ALTER TABLE `districts_officers` ADD `position` VARCHAR(250)  NULL  DEFAULT NULL;";
+
+        $this->_queries .= "ALTER TABLE `districts_districts_officers` DROP FOREIGN KEY `districts_districts_officers__districts_district_id`;";
+        $this->_queries .= "ALTER TABLE `districts_districts_officers` DROP PRIMARY KEY;";
+        $this->_queries .= "ALTER TABLE `districts_districts_officers` CHANGE `districts_district_id` `districts_district_id` VARCHAR(250)  NOT NULL;";
+
+        $this->_queries .= "ALTER TABLE `districts_relations` DROP FOREIGN KEY `districts_relations__districts_district_id`;";
+        $this->_queries .= "ALTER TABLE `districts_relations` DROP INDEX `districts_relations__districts_district_id`;";
+        $this->_queries .= "ALTER TABLE `districts_relations` CHANGE `districts_district_id` `districts_district_id` VARCHAR(250)  NOT NULL;";
+
+        $this->_queries .= "UPDATE `districts_districts_officers` AS `relation`, `districts` AS `district` SET `relation`.`districts_district_id` = `district`.`islp` WHERE `relation`.`districts_district_id` = `district`.`districts_district_id`;";
+        $this->_queries .= "UPDATE `districts_relations` AS `relation`, `districts` AS `district` SET `relation`.`districts_district_id` = `district`.`islp` WHERE `relation`.`districts_district_id` = `district`.`districts_district_id`;";
+
+        $this->_queries .= "ALTER TABLE `districts_officers` CHANGE `districts_officer_id` `districts_officer_id` INT(11)  UNSIGNED  NOT NULL;";
+        $this->_queries .= "UPDATE `districts_officers` SET `districts_officer_id` = `temp`;";
+        $this->_queries .= "ALTER TABLE `districts_officers` DROP `temp`;";
+
+        $this->_queries .= "ALTER TABLE `districts` CHANGE `districts_district_id` `districts_district_id` VARCHAR(250)  NOT NULL;";
+        $this->_queries .= "UPDATE `districts` SET `districts_district_id` = `islp`;";
+        $this->_queries .= "ALTER TABLE `districts` DROP `islp`;";
+
+        $this->_queries .= "ALTER TABLE `districts_relations` ADD CONSTRAINT `districts_relations__districts_district_id` FOREIGN KEY (`districts_district_id`) REFERENCES `districts` (`districts_district_id`) ON DELETE CASCADE ON UPDATE CASCADE;";
+
+        $this->_queries .= "ALTER TABLE `districts_districts_officers` ADD PRIMARY KEY (`districts_district_id`, `districts_officer_id`);";
+        $this->_queries .= "ALTER TABLE `districts_districts_officers` ADD CONSTRAINT `districts_districts_officers__districts_district_id` FOREIGN KEY (`districts_district_id`) REFERENCES `districts` (`districts_district_id`) ON DELETE CASCADE ON UPDATE CASCADE;";
+
         parent::down();
     }
 }
