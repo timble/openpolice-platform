@@ -23,12 +23,12 @@ ALTER TABLE `districts_districts_officers` DROP PRIMARY KEY;
 
 ALTER TABLE `districts_officers` ADD `islp` VARCHAR(250)  NULL  DEFAULT NULL AFTER `districts_officer_id`;
 UPDATE `districts_officers` SET `islp` = `districts_officer_id`;
-SET @value :=0; UPDATE districts_officers SET districts_officer_id = (@value := @value + 1);
+SET @value :=0; UPDATE `districts_officers` SET `districts_officer_id` = (@value := @value + 1);
 
 ALTER TABLE `districts` ADD `islp` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `contacts_contact_id`;
 UPDATE `districts` SET `islp` = `districts_district_id`;
 ALTER TABLE `districts` ADD UNIQUE INDEX (`islp`);
-SET @value :=0; UPDATE districts SET districts_district_id = (@value := @value + 1);
+SET @value :=0; UPDATE `districts` SET `districts_district_id` = (@value := @value + 1);
 
 UPDATE `districts_relations` AS `relation`, `districts` AS `district` SET `relation`.`districts_district_id` = `district`.`districts_district_id` WHERE `relation`.`districts_district_id` = `district`.`islp`;
 UPDATE `districts_districts_officers` AS `relation`, `districts` AS `district` SET `relation`.`districts_district_id` = `district`.`districts_district_id` WHERE `relation`.`districts_district_id` = `district`.`islp`;
