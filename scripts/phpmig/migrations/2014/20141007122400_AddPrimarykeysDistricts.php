@@ -42,9 +42,6 @@ class AddPrimarykeysDistricts extends Migration
         $this->_queries .= "UPDATE `activities` AS `activity`, `districts_officers` AS `officer` SET `activity`.`row` = `officer`.`districts_officer_id` WHERE `activity`.`row` = `officer`.`temp` AND `activity`.`name` = 'officer';";
         $this->_queries .= "UPDATE `activities` AS `activity`, `districts` AS `district` SET `activity`.`row` = `district`.`districts_district_id` WHERE `activity`.`row` = `district`.`islp` AND `activity`.`name` = 'district';";
 
-        // If the temp column is removed all queries were executed
-        $this->_queries .= "ALTER TABLE `districts_officers` DROP `temp`;";
-
         parent::up();
     }
 
