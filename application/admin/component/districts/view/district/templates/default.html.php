@@ -53,6 +53,14 @@
                         <script data-inline> $jQuery(".select-officers").select2(); </script>
                     </div>
 				</div>
+                <div>
+                    <label for="email">
+                        <?= translate( 'E-mail' ); ?>
+                    </label>
+                    <div>
+                        <input type="email" name="email" maxlength="250" class="validate-email" value="<?= $district->email; ?>" />
+                    </div>
+                </div>
 			</fieldset>
 		</div>
 	</div>
