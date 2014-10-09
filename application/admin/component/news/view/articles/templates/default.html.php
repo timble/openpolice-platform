@@ -71,6 +71,9 @@
                 <? if($article->publish_on > $now) : ?>
                 <span class="label label-warning"><?= translate('Planned') ?></span>
 			    <? endif ?>
+                <? if($article->draft) : ?>
+                <span class="label label-info"><?= translate('Draft') ?></span>
+                <? endif ?>
             </td>
             <td>
                 <? if($article->publish_on || $article->published_on) : ?>
