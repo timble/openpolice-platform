@@ -27,8 +27,7 @@ class ModelArticles extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 	
 		$query->columns(array(
-			'thumbnail'         => 'thumbnails.thumbnail',
-            'path'              => 'attachments.path',
+			'thumbnail'         => 'attachments.path',
             'created_by_name'   => 'creator.name',
             'ordering_date'     => 'IF(tbl.published_on, tbl.published_on, tbl.publish_on)',
             'draft'             => 'IF(tbl.published_on OR tbl.publish_on, 0, 1)'
@@ -40,7 +39,6 @@ class ModelArticles extends Library\ModelTable
         parent::_buildQueryJoins($query);
 
         $query->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id')
-              ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path')
               ->join(array('creator'  => 'users'), 'creator.users_user_id = tbl.created_by');
     }
 	
