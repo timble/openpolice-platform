@@ -8,6 +8,8 @@
  */
 ?>
 
+<?= import('com:news.view.article.metadata.html') ?>
+
 <ktml:module position="left">
     <?= import('com:categories.view.categories.list.html') ?>
 </ktml:module>
