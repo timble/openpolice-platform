@@ -20,7 +20,7 @@
                href="files/<?= $this->getObject('application')->getSite() ?>/attachments/<?= $item->path ?>"
                rel="{handler: 'image'}"><?= escape($item->name) ?></a>
         <? else : ?>
-            <a class="attachment" href="attachments://<?= $item->path; ?>" download="<?= escape($item->name) ?>"><?= escape($item->name) ?></a>
+            <a class="attachment" href="files/<?= $this->getObject('application')->getSite() ?>/attachments/<?= $item->path ?>" download="<?= escape($item->name) ?>"><?= escape($item->name) ?></a>
         <? endif ?>
     <? endforeach ?>
 <? endif ?>
