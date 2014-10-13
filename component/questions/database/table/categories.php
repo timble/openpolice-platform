@@ -17,7 +17,8 @@ class DatabaseTableCategories extends Library\DatabaseTableAbstract
         $config->append(array(
             'behaviors'  => array(
                 'creatable', 'modifiable', 'lockable', 'sluggable',
-                'com:languages.database.behavior.translatable'
+                'com:languages.database.behavior.translatable',
+                'deletable'
             ),
             'filters' => array(
                 'description'   => array('html', 'tidy')
