@@ -22,8 +22,8 @@ class AddStreetsToManager extends Migration
                                 (5, 1, 0, 'Streets', 'streets', 'option=com_streets&view=streets', NULL, 'component', 1, 0, 0, 5, 1, now(), NULL, NULL, NULL, NULL, 0, NULL),
                                 (6, 1, 0, 'Cities', 'cities', 'option=com_streets&view=cities', NULL, 'component', 1, 0, 0, 5, 1, now(), NULL, NULL, NULL, NULL, 0, NULL),
                                 (7, 1, 0, 'Postcodes', 'postcodes', 'option=com_streets&view=postcodes', NULL, 'component', 1, 0, 0, 5, 1, now(), NULL, NULL, NULL, NULL, 0, NULL),
-                                (8, 1, 0, 'Municipalities', 'municipalities', 'option=com_streets&view=municipalities', NULL, 'component', 1, 0, 0, 5, 1, now(), NULL, NULL, NULL, NULL, 0, NULL);
-                                (9, 1, 0, 'Logs', 'logs', 'option=com_streets&view=logs', NULL, 'component', 1, 0, 0, 5, 1, now(), NULL, NULL, NULL, NULL, 0, NULL),
+                                (8, 1, 0, 'Municipalities', 'municipalities', 'option=com_streets&view=municipalities', NULL, 'component', 1, 0, 0, 5, 1, now(), NULL, NULL, NULL, NULL, 0, NULL),
+                                (9, 1, 0, 'Logs', 'logs', 'option=com_streets&view=logs', NULL, 'component', 1, 0, 0, 5, 1, now(), NULL, NULL, NULL, NULL, 0, NULL);
                             ";
 
         $this->_queries .= "INSERT INTO `pages_closures` (`ancestor_id`, `descendant_id`, `level`)
