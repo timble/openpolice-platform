@@ -31,4 +31,20 @@ class DatabaseRowZone extends Library\DatabaseRowTable
 
         return parent::__get($column);
     }
+
+    /**
+     * Saves the zone to the database.
+     *
+     * @return boolean	If successfull return TRUE, otherwise FALSE
+     */
+    public function save()
+    {
+        if ($this->isModified('titles'))
+        {
+            $this->titles = array_filter($this->_data['titles']);
+            $this->titles = json_encode($this->titles);
+        }
+
+        return parent::save();
+    }
 }

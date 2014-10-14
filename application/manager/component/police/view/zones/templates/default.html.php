@@ -34,6 +34,9 @@
 			<th>
 				<?= helper('grid.sort', array('column' => 'language')) ?>
 			</th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'platform')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -58,6 +61,9 @@
 			<td>
 				<?= helper('com:police.grid.language', array('language' => $zone->language)) ?>
 			</td>
+            <td>
+                <?= $zone->platform ? $zone->platform : translate('External') ?>
+            </td>
 		</tr>
 		<? endforeach; ?>
 	</tbody>
