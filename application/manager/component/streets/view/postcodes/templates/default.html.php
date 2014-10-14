@@ -40,7 +40,7 @@
         <? foreach ($postcodes as $postcode) : ?>
             <tr>
                 <td>
-                    <a href="<?= route( 'view=postcode&task=edit&id='. $postcode->id ); ?>"><?= escape($postcode->title); ?></a>
+                    <?= escape($postcode->title); ?>
                 </td>
                 <td>
                     <?= $postcode->id ?>
