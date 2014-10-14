@@ -89,6 +89,8 @@ class ModelStreets extends Library\ModelTable
             $query->where('content.district_count IS NOT NULL');
         }
 
-        $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
+        if($this->getObject('application')->getSite() != 'default') {
+            $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
+        }
 	}
 }

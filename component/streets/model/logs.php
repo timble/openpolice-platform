@@ -10,14 +10,15 @@
 namespace Nooku\Component\Streets;
 use Nooku\Library;
 
-class ModelCities extends Library\ModelTable
+class ModelLogs extends Library\ModelTable
 {
     public function __construct(Library\ObjectConfig $config)
     {
         parent::__construct($config);
 
         $this->getState()
-            ->insert('zone' , 'int');
+            ->insert('type' , 'string')
+            ->insert('action' , 'string');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -26,11 +27,15 @@ class ModelCities extends Library\ModelTable
         $state = $this->getState();
 
         if ($state->search) {
-            $query->where('tbl.title LIKE :search OR tbl.streets_city_id LIKE :search OR tbl.police_zone_id LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+            $query->where('tbl.name LIKE :search OR tbl.row LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
         }
 
-        if($this->getObject('application')->getSite() != 'default') {
-            $query->where('tbl.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
+        if ($state->type) {
+            $query->where('tbl.type = :type')->bind(array('type' => $state->type));
+        }
+
+        if ($state->action) {
+            $query->where('tbl.action = :action')->bind(array('action' => $state->action));
         }
     }
 }

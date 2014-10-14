@@ -13,22 +13,11 @@
 <style src="assets://css/koowa.css" />
 -->
 
-<ktml:module position="actionbar">
-    <ktml:toolbar type="actionbar">
-</ktml:module>
-
-<ktml:module position="sidebar">
-	<?= import('default_sidebar.html'); ?>
-</ktml:module>
-
 <form action="" method="get" class="-koowa-grid">
 	<?= import('default_scopebar.html'); ?>
 	<table>
 	<thead>
 		<tr>
-			<th width="10">
-				<?= helper( 'grid.checkall'); ?>
-			</th>
 			<th>
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
@@ -53,11 +42,8 @@
 	<tbody>
 		<? foreach ($municipalities as $municipality) : ?>
 		<tr>
-			<td align="center">
-				<?= helper('grid.checkbox', array('row' => $municipality))?>
-			</td>
 			<td>
-				<a href="<?= route( 'view=municipality&task=edit&id='. $municipality->id ); ?>"><?= escape($municipality->title); ?></a>
+				<?= escape($municipality->title); ?>
 			</td>
 			<td>
 				<?= escape($municipality->postcode); ?>
@@ -66,7 +52,7 @@
 				<?= escape($municipality->city_title); ?> <?= $municipality->city_postcode ? '('.escape($municipality->city_postcode).')' : ''; ?>
 			</td>
 			<td>
-				<?= escape($municipality->police_zone_id); ?> - <?= escape($municipality->zone_title); ?>
+				<?= escape($municipality->police_zone_id); ?>
 			</td>
 		</tr>
 		<? endforeach; ?>

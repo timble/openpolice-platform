@@ -7,7 +7,7 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
-namespace Nooku\Component\Police;
+namespace Nooku\Component\Streets;
 use Nooku\Library;
 
 class ModelMunicipalities extends Library\ModelTable
@@ -26,16 +26,17 @@ class ModelMunicipalities extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 	
 		$query->columns(array(
-			'city_title'  => 'municipality.title',
-            'city_postcode'  => 'municipality.postcode',
-            'zone_title'  => 'zone.title',
+			'city_title'    => 'municipality.title',
+            'city_postcode' => 'municipality.postcode',
+            'police_zone_id' => 'city.police_zone_id',
 		));
 	}
 	
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
-		$query->join(array('municipality' => 'data.police_municipalities'), 'tbl.parent_id = municipality.police_municipality_id');
-        $query->join(array('zone' => 'data.police_zones'), 'tbl.police_zone_id = zone.police_zone_id');
+		$query->join(array('municipality' => 'data.streets_municipalities'), 'tbl.parent_id = municipality.streets_municipality_id')
+              ->join(array('postcode' => 'data.streets_postcodes'), 'tbl.postcode = postcode.streets_postcode_id')
+              ->join(array('city' => 'data.streets_cities'), 'postcode.streets_city_id = city.streets_city_id');
 	}
 	
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -48,7 +49,7 @@ class ModelMunicipalities extends Library\ModelTable
 		}
         
 		if ($state->zone) {
-			$query->where('tbl.police_zone_id = :zone')->bind(array('zone' => $state->zone));
+			$query->where('city.police_zone_id = :zone')->bind(array('zone' => $state->zone));
 		}
         
         if (is_numeric($state->parent_id)) {        
