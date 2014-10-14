@@ -7,18 +7,16 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
-namespace Nooku\Component\Streets;
 use Nooku\Library;
 
-class DatabaseTableCities extends Library\DatabaseTableAbstract
-{    
-    public function  _initialize(Library\ObjectConfig $config)
-    {        
+class StreetsControllerStreet extends Library\ControllerModel
+{ 
+    protected function _initialize(Library\ObjectConfig $config)
+    {
         $config->append(array(
-            'name'      => 'data.streets_cities',
-            'behaviors' => 'lockable', 'creatable', 'modifiable'
+        	'behaviors' => array('editable'),
         ));
-     
+    
         parent::_initialize($config);
-     }
+    }
 }
