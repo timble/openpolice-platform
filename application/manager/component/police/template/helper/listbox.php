@@ -49,14 +49,40 @@ class PoliceTemplateHelperListbox extends Library\TemplateHelperListbox
 	    
 	    $options = array();
 	    
-	    $options[] = $this->option(array('text' => $this->translate( 'NL' ), 'value' => '1'));
-	    $options[] = $this->option(array('text' => $this->translate( 'FR' ) , 'value' => '2' ));
-	    $options[] = $this->option(array('text' => $this->translate( 'NL & FR' ), 'value' => '3' ));
-	    $options[] = $this->option(array('text' => $this->translate( 'DE' ), 'value' => '4' ));
+	    $options[] = $this->option(array('label' => $this->translate( 'Dutch' ), 'value' => '1'));
+	    $options[] = $this->option(array('label' => $this->translate( 'French' ) , 'value' => '2' ));
+	    $options[] = $this->option(array('label' => $this->translate( 'Dutch & French' ), 'value' => '3' ));
+	    $options[] = $this->option(array('label' => $this->translate( 'German' ), 'value' => '4' ));
 	
 	    //Add the options to the config object
 	    $config->options = $options;
 	    
 	    return $this->optionlist($config);
 	}
+
+    public function platform($config = array())
+    {
+        $config = new Library\ObjectConfig($config);
+        $config->append(array(
+            'name'      => 'platform',
+            'attribs'   => array(),
+            'prompt'    => 'External'
+        ))->append(array(
+            'selected'  => $config->{$config->name}
+        ));
+
+        $options = array();
+
+        if($config->deselect) {
+            $options[] = $this->option(array('label' => $this->translate($config->prompt)));
+        }
+
+        $options[] = $this->option(array('label' => '1', 'value' => '1'));
+        $options[] = $this->option(array('label' => '2', 'value' => '2' ));
+
+        //Add the options to the config object
+        $config->options = $options;
+
+        return $this->optionlist($config);
+    }
 }
