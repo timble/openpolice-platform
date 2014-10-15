@@ -47,7 +47,7 @@
 				</div>
 				<div>
 				    <label for="officers">
-				    	<?= translate( 'Officers' ); ?>
+				    	<?= translate( 'District officer' ); ?>
 				    </label>
 				    <div>
 				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers required', 'style' => 'width:100%;'))); ?>
