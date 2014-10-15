@@ -30,11 +30,12 @@
 				<legend><?= translate( 'District' ); ?></legend>
                 <div>
 				    <label for="contacts_contact_id">
-				    	<?= translate( 'Contact' ); ?>
+				    	<?= translate( 'Police station' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('com:contacts.listbox.contacts', array('autocomplete' => true, 'name' => 'contacts_contact_id', 'selected' => $district->contacts_contact_id)) ?>
-				    </div>
+                        <?= helper('com:contacts.listbox.contacts', array('name' => 'contacts_contact_id', 'selected' => $district->contacts_contact_id, 'deselect' => false, 'filter' => array('category' => '1'), 'attribs' => array('class' => 'select-contacts required', 'style' => 'width:100%;'))); ?>
+                        <script data-inline> $jQuery(".select-contacts").select2(); </script>
+                    </div>
 				</div>
 				<div>
 				    <label for="officers">
