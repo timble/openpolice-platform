@@ -67,20 +67,6 @@
                         <input type="text" name="number" maxlength="255" value="<?= $contact->number;?>" />
                     </div>
                 </div>
-                <? if($this->getObject('user')->getRole() == '25') : ?>
-                <div>
-                    <label for="address"><?= translate( 'Address' ); ?></label>
-                    <div>
-                        <input type="text" name="address" maxlength="255" value="<?= $contact->address;?>" />
-                    </div>
-                </div>
-                <div>
-                    <label for="suburb"><?= translate( 'Suburb' ); ?></label>
-                    <div>
-                        <input type="text" name="suburb" maxlength="255" value="<?= $contact->suburb;?>" />
-                    </div>
-                </div>
-                <? endif ?>
                 <div>
                     <label for="postcode"><?= translate( 'Postal Code/ZIP' ); ?></label>
                     <div>

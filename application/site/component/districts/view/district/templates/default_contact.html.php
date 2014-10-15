@@ -9,8 +9,6 @@
     <div class="adr">
         <? if ($contact->street || $contact->number) : ?>
             <span itemprop="streetAddress"><?= $contact->street ?> <?= $contact->number?></span><br />
-        <? elseif ($contact->address) : ?>
-            <span itemprop="streetAddress"><?= $contact->address ?></span><br />
         <? endif; ?>
         <?if ($contact->postcode) : ?>
             <span class="postal-code"><?= $contact->postcode?></span>
