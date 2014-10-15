@@ -18,7 +18,7 @@ class AddStreetsToContacts extends Migration
         $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "ALTER TABLE `fr-fr_contacts` ADD `streets_street_id` INT(11)  NULL  DEFAULT NULL  AFTER `contacts_category_id`;";
-        $this->_queries .= "ALTER TABLE `contacts` ADD `number` VARCHAR(100)  NULL  DEFAULT NULL  AFTER `position`;";
+        $this->_queries .= "ALTER TABLE `fr-fr_contacts` ADD `number` VARCHAR(100)  NULL  DEFAULT NULL  AFTER `position`;";
 
         parent::up();
     }
