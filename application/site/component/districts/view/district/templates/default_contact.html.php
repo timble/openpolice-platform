@@ -7,14 +7,18 @@
         <h2 class="title"><?= $contact->con_position?></h2>
     <? endif;?>
     <div class="adr">
-        <? if ($contact->address) : ?>
-            <div class="street-address"><?= $contact->address?></div>
+        <? if ($contact->street || $contact->number) : ?>
+            <span itemprop="streetAddress"><?= $contact->street ?> <?= $contact->number?></span><br />
+        <? elseif ($contact->address) : ?>
+            <span itemprop="streetAddress"><?= $contact->address ?></span><br />
         <? endif; ?>
         <?if ($contact->postcode) : ?>
             <span class="postal-code"><?= $contact->postcode?></span>
         <? endif; ?>
-        <? if ( $contact->suburb) : ?>
-            <span class="locality"><?= $contact->suburb?></span>
+        <? if ($contact->city) : ?>
+            <span itemprop="addressLocality"><?= $contact->city?></span>
+        <? elseif ($contact->suburb) : ?>
+            <span itemprop="addressLocality"><?= $contact->suburb ?></span><br />
         <? endif; ?>
         <? if ($contact->country) : ?>
             <div class="country-name"><?= $contact->country?></div>

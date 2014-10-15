@@ -24,14 +24,18 @@
         <? endforeach ?>
     <? endif ?>
     <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        <? if ($contact->address) : ?>
-            <span itemprop="streetAddress"><?= $contact->address?></span><br />
+        <? if ($contact->street || $contact->number) : ?>
+            <span itemprop="streetAddress"><?= $contact->street ?> <?= $contact->number?></span><br />
+        <? elseif ($contact->address) : ?>
+            <span itemprop="streetAddress"><?= $contact->address ?></span><br />
         <? endif; ?>
         <?if ($contact->postcode) : ?>
             <span itemprop="postalCode"><?= $contact->postcode?></span>
         <? endif; ?>
-        <? if ( $contact->suburb) : ?>
-            <span itemprop="addressLocality"><?= $contact->suburb?></span>
+        <? if ($contact->city) : ?>
+            <span itemprop="addressLocality"><?= $contact->city?></span>
+        <? elseif ($contact->suburb) : ?>
+            <span itemprop="addressLocality"><?= $contact->suburb ?></span><br />
         <? endif; ?>
     </div>
     <ul>

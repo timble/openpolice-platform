@@ -54,21 +54,37 @@
                     </div>
                 </div>
                 <div>
-                    <label for="address"><?= translate( 'Street Address' ); ?></label>
+                    <label for="streets_street_id">
+                        <?= translate( 'Street' ); ?>
+                    </label>
+                    <div>
+                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => $contact->streets_street_id)); ?>
+                    </div>
+                </div>
+                <div>
+                    <label for="number"><?= translate( 'Number' ); ?></label>
+                    <div>
+                        <input type="text" name="number" maxlength="255" value="<?= $contact->number;?>" />
+                    </div>
+                </div>
+                <? if($this->getObject('user')->getRole() == '25') : ?>
+                <div>
+                    <label for="address"><?= translate( 'Address' ); ?></label>
                     <div>
                         <input type="text" name="address" maxlength="255" value="<?= $contact->address;?>" />
                     </div>
                 </div>
                 <div>
+                    <label for="suburb"><?= translate( 'Suburb' ); ?></label>
+                    <div>
+                        <input type="text" name="suburb" maxlength="255" value="<?= $contact->suburb;?>" />
+                    </div>
+                </div>
+                <? endif ?>
+                <div>
                     <label for="postcode"><?= translate( 'Postal Code/ZIP' ); ?></label>
                     <div>
                         <input type="text" name="postcode" maxlength="100" value="<?= $contact->postcode; ?>" />
-                    </div>
-                </div>
-                <div>
-                    <label for="suburb"><?= translate( 'Town/Suburb' ); ?></label>
-                    <div>
-                        <input type="text" name="suburb" maxlength="100" value="<?= $contact->suburb;?>" />
                     </div>
                 </div>
                 <div>
