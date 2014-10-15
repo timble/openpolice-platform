@@ -26,8 +26,6 @@
     <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <? if ($contact->street || $contact->number) : ?>
             <span itemprop="streetAddress"><?= $contact->street ?> <?= $contact->number?></span><br />
-        <? elseif ($contact->address) : ?>
-            <span itemprop="streetAddress"><?= $contact->address ?></span><br />
         <? endif; ?>
         <?if ($contact->postcode) : ?>
             <span itemprop="postalCode"><?= $contact->postcode?></span>
