@@ -14,8 +14,8 @@
     <meta content="http://<?= $url ?>attachments://<?= $article->thumbnail ?>" property="og:image" />
 <? endif ?>
     <meta content="article" property="og:type" />
-<? if(isset($article->published_on)) : ?>
-    <meta content="<?= $article->published_on ?>" property="article:published_time" />
+<? if(isset($article->published_on_utc)) : ?>
+    <meta content="<?= $article->published_on_utc ?>" property="article:published_time" />
 <? endif ?>
 <? if($zone->facebook) : ?>
     <meta content="https://www.facebook.com/<?= $zone->facebook ?>" property="article:publisher" />

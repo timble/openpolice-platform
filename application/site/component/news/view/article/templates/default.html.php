@@ -26,7 +26,7 @@
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
         <h1 itemprop="name"><?= escape($article->title) ?></h1>
-        <time class="text--small" itemprop="datePublished" datetime="<?= $article->published_on ?>">
+        <time class="text--small" itemprop="datePublished" datetime="<?= $article->published_on_utc ?>">
             <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
