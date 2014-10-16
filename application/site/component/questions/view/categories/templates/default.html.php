@@ -11,3 +11,7 @@
         </li>
     <? endforeach ?>
 </ul>
+
+<? if($zone->id != '5396') : ?>
+    <?= import('com:questions.view.questions.default_contact.html') ?>
+<? endif ?>

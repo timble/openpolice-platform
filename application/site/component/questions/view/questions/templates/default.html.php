@@ -32,7 +32,7 @@
 
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 
-<? if(object('application')->getCfg('site') != '5396') : ?>
+<? if($zone->id != '5396') : ?>
 <?= import('default_contact.html') ?>
 <? endif ?>
 
