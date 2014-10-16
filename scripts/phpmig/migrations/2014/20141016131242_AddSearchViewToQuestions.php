@@ -23,6 +23,8 @@ class AddSearchViewToQuestions extends Migration
                                 (108, 00000000001, 00000000001);
                             ";
 
+        $this->_queries .= "UPDATE `pages` SET `link_url` = 'option=com_questions&view=categories' WHERE `pages_page_id` = '36';";
+
         parent::up();
 
         // All the French speaking zones.
@@ -40,6 +42,8 @@ class AddSearchViewToQuestions extends Migration
                                 (108, 1, 0, 'Recherche', 'recherche', 'option=com_questions&view=questions&layout=search', NULL, 'component', 1, 1, 0, 40, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"');
                             ";
 
+        $this->_queries .= "UPDATE `fr-fr_pages` SET `link_url` = 'option=com_questions&view=categories' WHERE `pages_page_id` = '36';";
+
         parent::up();
     }
 
@@ -48,14 +52,18 @@ class AddSearchViewToQuestions extends Migration
      */
     public function down()
     {
-        $this->_queries .= "DELETE FROM `pages` WHERE `pages_page_id` IN ('108');";
+        $this->_queries = "DELETE FROM `pages` WHERE `pages_page_id` IN ('108');";
+
+        $this->_queries .= "UPDATE `pages` SET `link_url` = 'option=com_questions&view=questions' WHERE `pages_page_id` = '36';";
 
         parent::down();
 
         // All the multilingual zones.
         $this->getZones()->reset()->where('language', '=', 3);
 
-        $this->_queries .= "DELETE FROM `fr-fr_pages` WHERE `pages_page_id` IN ('108');";
+        $this->_queries = "DELETE FROM `fr-fr_pages` WHERE `pages_page_id` IN ('108');";
+
+        $this->_queries .= "UPDATE `fr-fr_pages` SET `link_url` = 'option=com_questions&view=questions' WHERE `pages_page_id` = '36';";
 
         parent::down();
     }
