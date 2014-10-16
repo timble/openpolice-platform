@@ -28,7 +28,7 @@ class NewsViewArticleHtml extends Library\ViewHtml
         }
 
         $published_on = new DateTime($article->published_on);
-        $article->published_on = $published_on->format('c');
+        $article->published_on_utc = $published_on->format('c');
 
         return parent::render();
     }
