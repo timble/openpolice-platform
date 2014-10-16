@@ -78,7 +78,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </ktml:modules>
 
         <? if(!$singleColumn) : ?>
-        <div class="component <?= $extension ?>">
+        <div class="component <?= $extension ?> <?= $view ?> <?= $layout ?>">
             <? endif ?>
             <ktml:content>
                 <? if(!$singleColumn) : ?>
