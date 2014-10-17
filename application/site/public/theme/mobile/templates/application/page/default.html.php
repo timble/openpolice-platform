@@ -27,7 +27,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
 <?= import('page_head.html') ?>
 <body id="page" class="no-js">
-<?php if( extension_loaded('newrelic') ) { echo newrelic_get_browser_timing_header(); } ?>
+<?php if( extension_loaded('newrelic') ) { echo '<script data-inline type="text/javascript" pagespeed_no_defer="">'.newrelic_get_browser_timing_header(false).'</script>'; } ?>
 <script data-inline type="text/javascript" pagespeed_no_defer="">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.getElementById("page");var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg,"js-enabled")}</script>
 
 <div id="wrap">
@@ -150,6 +150,6 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </div>
 </div>
 
-<?php if( extension_loaded('newrelic') ) { echo newrelic_get_browser_timing_footer(); } ?>
+<?php if( extension_loaded('newrelic') ) { echo '<script data-inline type="text/javascript" pagespeed_no_defer="">'.newrelic_get_browser_timing_footer(false).'</script>'; } ?>
 </body>
 </html>
