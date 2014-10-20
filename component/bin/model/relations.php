@@ -27,7 +27,7 @@ class ModelRelations extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 
 		$query->columns(array(
-			'street'    => 'street.title',
+			'street' 	=> "CONCAT(street.title, ' (', city.title, ')')",
             'district'  => 'district.title'
         ));
 	}
@@ -35,6 +35,7 @@ class ModelRelations extends Library\ModelTable
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
 		$query->join(array('street' => 'data.streets'), 'street.streets_street_id = tbl.streets_street_id')
+			  ->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = street.streets_city_id')
               ->join(array('district'   => 'bin_districts'), 'district.bin_district_id = tbl.bin_district_id');
 	}
 
