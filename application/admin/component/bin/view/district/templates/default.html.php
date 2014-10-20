@@ -24,18 +24,10 @@
 		<div class="title">
 		    <input id="title" class="required" type="text" name="title" size="32" maxlength="250" value="<?= $district->title; ?>" />
 		</div>
-		
+
 		<div class="scrollable">
 			<fieldset>
 				<legend><?= translate( 'District' ); ?></legend>
-                <div>
-                    <label for="id">
-                        <?= translate( 'ID' ); ?>
-                    </label>
-                    <div>
-                        <input type="text" name="id" maxlength="250" class="required" value="<?= $district->id; ?>" />
-                    </div>
-                </div>
                 <div>
                     <label for="">
                         <?= translate( 'Twitter' ); ?>
