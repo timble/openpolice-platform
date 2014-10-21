@@ -199,7 +199,7 @@ EOF;
     public function runComposer()
     {
         $this->out('Installing dependencies via Composer');
-        $output = `cd $this->www/install/custom; composer --no-interaction install`;
+        $output = `cd $this->www; composer --no-interaction install`;
     }
 
     public function runPhpmig()
