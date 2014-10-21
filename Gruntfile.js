@@ -1,7 +1,9 @@
 module.exports = function(grunt) {
 
+    // load time-grunt and all grunt plugins found in the package.json
+    require( 'load-grunt-tasks' )( grunt );
+
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
 
         // Iconfont
         webfont: {
@@ -64,10 +66,6 @@ module.exports = function(grunt) {
             }
         }
     });
-
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-webfont');
-    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['watch']);
 };
