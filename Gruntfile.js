@@ -64,6 +64,22 @@ module.exports = function(grunt) {
                 },
                 files: ['application/site/public/theme/mobile/css/default.css']
             }
+        },
+
+        // Shell commands
+        shell: {
+            composerInstall: {
+                command: [
+                    'cd application/site/public/theme/mobile/',
+                    'composer install'
+                ].join('&&')
+            },
+            composerUpdate: {
+                command: [
+                    'cd application/site/public/theme/mobile/',
+                    'composer update'
+                ].join('&&')
+            }
         }
     });
 
