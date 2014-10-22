@@ -3,5 +3,9 @@
         "swiftmailer/swiftmailer": "5.0.*",
         "imagine/imagine": "0.4.*",
         "firebase/php-jwt": "dev-master"
+        "ivaynberg/select2": "3.5.1"
+    },
+    "config": {
+        "component-dir": "application/site/public/theme/mobile/components"
     }
 }
