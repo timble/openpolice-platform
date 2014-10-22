@@ -35,6 +35,7 @@ Note: Linux users need to install NFS (Network File System) manually, see [help.
 * Go to the repository folder where the README is located
 * Install project dependencies with ```npm install```
 * Run Grunt with ```grunt```
+* Theme components (think jQuery) are managed using Composer, run ```grunt composer```
 
 ### Live Reload
 
