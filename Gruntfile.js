@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 
         // Shell commands
         shell: {
-            composerInstall: {
+            composer: {
                 command: [
                     'cd application/site/public/theme/mobile/',
                     'composer install'
@@ -84,4 +84,6 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', ['watch']);
+    grunt.registerTask('composer', ['shell:composerInstall']);
+    grunt.registerTask('composer-update', ['shell:composerUpdate']);
 };
