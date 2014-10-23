@@ -50,7 +50,7 @@
 		<? foreach ($streets as $street) : ?>
 		<tr>
 			<td>
-				<?= escape($street->title); ?>
+				<a href="<?= route( 'view=street&task=edit&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
 			</td>
             <td>
                 <?= $street->id ?>
