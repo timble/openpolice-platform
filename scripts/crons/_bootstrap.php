@@ -5,7 +5,8 @@ use Nooku\Library;
 $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
 $_SERVER['SERVER_PORT'] = 80;
 
-define('JPATH_ROOT'         , realpath(dirname(__FILE__).'/../../'));
+define('JPATH_CRON'         , realpath(dirname(__FILE__)));
+define('JPATH_ROOT'         , JPATH_CRON.'/../../');
 define('JPATH_APPLICATION'  , JPATH_ROOT.'/application/admin');
 define('JPATH_VENDOR'       , JPATH_ROOT.'/vendor');
 define('JPATH_SITES'        , JPATH_ROOT.'/sites');
@@ -44,6 +45,8 @@ Library\ClassLoader::getInstance()->getLocator('com')->registerNamespaces(
     )
 );
 
+Library\ClassLoader::getInstance()->getLocator('lib')->registerNamespace('Nooku\Cli', JPATH_CRON.'/library');
+
 Library\ClassLoader::getInstance()->addApplication('admin', JPATH_ROOT.'/application/admin');
 
 $manager = Library\ObjectManager::getInstance();
@@ -53,7 +56,7 @@ $manager->getObject('lib:bootstrapper.application', array(
 
 // Disable error handler when we are running in CLI mode:
 $config = new Library\ObjectConfig(array(
-    'object_manager' => Library\ObjectManager::getInstance(),
+    'object_manager' => $manager,
     'object_identifier' => new Library\ObjectIdentifier('lib:event.dispatcher'),
     'catch_exceptions'  => false,
     'catch_user_errors' => false,
@@ -64,3 +67,18 @@ $instance  = new Nooku\Library\EventDispatcher($config);
 $manager->setObject('lib:event.dispatcher', $instance);
 
 $manager->registerAlias('event.dispatcher', 'lib:event.dispatcher');
+
+// Register our custom UserSessionCli object
+require_once JPATH_CRON.DS.'library'.DS.'user'.DS.'session'.DS.'cli.php';
+
+$config = new Library\ObjectConfig(array(
+    'object_manager'    => $manager,
+    'object_identifier' => new Library\ObjectIdentifier('lib:user.session.cli')
+));
+
+$session = new Nooku\Cli\UserSessionCli($config);
+
+$manager->setObject('lib:user.session.cli', $session);
+$manager->registerAlias('user.session', 'lib:user.session.cli');
+
+
