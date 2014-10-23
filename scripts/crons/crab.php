@@ -187,8 +187,8 @@ foreach ($cities as $city)
     }
 }
 
-echo "Updated " . $statistics->cities->updated . " cities." . PHP_EOL.PHP_EOL;
-echo "Added " . $statistics->streets->added . " streets." . PHP_EOL;
+echo "Updated " . $statistics->cities->updated  . " cities."  . PHP_EOL.PHP_EOL;
+echo "Added "   . $statistics->streets->added   . " streets." . PHP_EOL;
 echo "Updated " . $statistics->streets->updated . " streets." . PHP_EOL;
 echo "Deleted " . $statistics->streets->deleted . " streets." . PHP_EOL;
 

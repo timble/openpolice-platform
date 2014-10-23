@@ -35,6 +35,7 @@ Note: Linux users need to install NFS (Network File System) manually, see [help.
 * Go to the repository folder where the README is located
 * Install project dependencies with ```npm install```
 * Run Grunt with ```grunt```
+* Theme components (think jQuery) are managed using Composer, run ```grunt composer```
 
 ### Live Reload
 
@@ -126,6 +127,7 @@ We simply just want to say thank you to the following projects for helping us ou
 * [Magnific-Popup](https://github.com/dimsemenov/Magnific-Popup)
 * [MailCatcher](https://github.com/sj26/mailcatcher)
 * [MooTools](http://mootools.net)
+* [MySQL](http://www.mysql.com)
 * [nginx](http://nginx.org)
 * [Nooku](http://www.nooku.org)
 * [PageSpeed](http://developers.google.com/speed/pagespeed)
