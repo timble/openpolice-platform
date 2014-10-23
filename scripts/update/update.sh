@@ -65,6 +65,8 @@ dirs=(
 
 files=(
   ".gitignore"
+  "composer.json"
+  "composer.lock"
   "README.md"
   "Vagrantfile"
   "vendor/.gitignore"
@@ -183,5 +185,5 @@ git add -A
 
 # Composer
 printf "$(tput bold)%s$(tput sgr0)\n" "Running custom composer..."
-cd "$repo/install/custom"
+cd "$repo"
 composer install
