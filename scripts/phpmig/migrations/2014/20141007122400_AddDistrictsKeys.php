@@ -53,6 +53,10 @@ UPDATE `attachments_relations` AS `relation`, `districts_officers` AS `officer` 
 UPDATE `activities` AS `activity`, `districts_officers` AS `officer` SET `activity`.`row` = `officer`.`districts_officer_id` WHERE `activity`.`row` = `officer`.`islp` AND `activity`.`name` = 'officer';
 UPDATE `activities` AS `activity`, `districts` AS `district` SET `activity`.`row` = `district`.`districts_district_id` WHERE `activity`.`row` = `district`.`islp` AND `activity`.`name` = 'district';
 END;
+
+        // The migration is not working because of unknown issue with phpmig, let's do it by hand
+        $this->_queries = "";
+
         parent::up();
     }
 
@@ -102,6 +106,9 @@ ALTER TABLE `districts_districts_officers` ADD CONSTRAINT `districts_districts_o
 
 ALTER TABLE `districts_relations` ADD CONSTRAINT `districts_relations__districts_district_id` FOREIGN KEY (`districts_district_id`) REFERENCES `districts` (`districts_district_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 END;
+
+        // The migration is not working because of unknown issue with phpmig, let's do it by hand
+        $this->_queries = "";
 
         parent::down();
     }
