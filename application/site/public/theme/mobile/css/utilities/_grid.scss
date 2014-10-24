@@ -21,6 +21,11 @@
     @include span(first 12 of 12);
   }
 
+  // Questions categories view doesn't have a sidebar
+  .component.questions.categories {
+    @include span(first 12 of 12);
+  }
+
   .footer__districts {
     @include span(5 of 12);
   }

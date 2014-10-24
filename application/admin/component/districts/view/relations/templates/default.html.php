@@ -80,7 +80,7 @@
 				<?= escape($relation->range_end); ?>
 			</td>
 			<td>
-				<?= escape($relation->range_parity); ?>
+				<?= translate(escape($relation->range_parity)); ?>
 			</td>
             <td>
                 <?= escape($relation->streets_street_id); ?>

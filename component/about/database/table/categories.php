@@ -19,6 +19,7 @@ class DatabaseTableCategories extends Library\DatabaseTableAbstract
                 'creatable', 'modifiable', 'lockable', 'sluggable',
                 'com:attachments.database.behavior.attachable',
                 'com:languages.database.behavior.translatable',
+                'deletable',
                 'orderable' => array(
                     'strategy' => 'flat'
                 ),

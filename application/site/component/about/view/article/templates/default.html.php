@@ -8,6 +8,8 @@
  */
 ?>
 
+<?= import('com:news.view.article.metadata.html') ?>
+
 <ktml:module position="left">
     <?= import('com:categories.view.categories.list.html') ?>
 </ktml:module>
@@ -41,7 +43,7 @@
     <? endif ?>
 </article>
 
-<script src="assets://application/components/jquery/dist/jquery.min.js" />
+<script src="assets://application/components/jquery/jquery.min.js" />
 <script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
 <script data-inline>
     $(document).ready(function() {

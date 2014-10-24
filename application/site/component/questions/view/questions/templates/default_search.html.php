@@ -9,7 +9,7 @@
 ?>
 
 <div class="well">
-    <form action="<?=route('option=com_questions&view=questions&Itemid=36')?>" method="get">
+    <form action="<?=route('option=com_questions&view=questions&layout=search&Itemid=108')?>" method="get">
         <div class="form__right">
             <button type="submit" class="button button--primary" tabindex="2"><?= translate('Search') ?></button>
         </div>

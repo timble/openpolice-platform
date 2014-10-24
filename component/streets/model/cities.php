@@ -26,9 +26,11 @@ class ModelCities extends Library\ModelTable
         $state = $this->getState();
 
         if ($state->search) {
-            $query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+            $query->where('tbl.title LIKE :search OR tbl.streets_city_id LIKE :search OR tbl.police_zone_id LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
         }
 
-        $query->where('tbl.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
+        if($this->getObject('application')->getSite() != 'default') {
+            $query->where('tbl.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
+        }
     }
 }

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "components/jquery": "2.1.1",
+        "ivaynberg/select2": "3.5.1"
+    }
+}

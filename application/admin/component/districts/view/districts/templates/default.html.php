@@ -29,10 +29,10 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
 			<th>
-				<?= helper('grid.sort', array('column' => 'contact')) ?>
+				<?= helper('grid.sort', array('column' => 'contact', 'title' => 'Police station')) ?>
 			</th>
 			<th>
-				<?= translate('Officers') ?>
+				<?= translate('District officer') ?>
 			</th>
 		</tr>
 	</thead>

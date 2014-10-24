@@ -27,7 +27,7 @@ class ModelZones extends Library\ModelTable
 		$state = $this->getState();
 
 		if ($state->search) {
-			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+			$query->where('tbl.titles LIKE :search OR tbl.police_zone_id LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
 		}
 
         if (is_numeric($state->platform)) {

@@ -1,7 +1,9 @@
 module.exports = function(grunt) {
 
+    // load time-grunt and all grunt plugins found in the package.json
+    require( 'load-grunt-tasks' )( grunt );
+
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
 
         // Iconfont
         webfont: {
@@ -62,12 +64,26 @@ module.exports = function(grunt) {
                 },
                 files: ['application/site/public/theme/mobile/css/default.css']
             }
+        },
+
+        // Shell commands
+        shell: {
+            composer: {
+                command: [
+                    'cd application/site/public/theme/mobile/',
+                    'composer install'
+                ].join('&&')
+            },
+            composerUpdate: {
+                command: [
+                    'cd application/site/public/theme/mobile/',
+                    'composer update'
+                ].join('&&')
+            }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-webfont');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-
     grunt.registerTask('default', ['watch']);
+    grunt.registerTask('composer', ['shell:composerInstall']);
+    grunt.registerTask('composer-update', ['shell:composerUpdate']);
 };
