@@ -24,7 +24,7 @@
 		<div class="title">
 		    <input id="title" class="required" type="text" name="title" size="32" maxlength="250" value="<?= $district->title; ?>" />
 		</div>
-		
+
 		<div class="scrollable">
 			<fieldset>
 				<legend><?= translate( 'District' ); ?></legend>
@@ -47,22 +47,13 @@
                     </div>
 				</div>
                 <div>
-                    <label for="email">
-                        <?= translate( 'E-mail' ); ?>
-                    </label>
-                    <div>
-                        <input type="email" name="email" maxlength="250" class="validate-email" value="<?= $district->email; ?>" />
-                    </div>
-                </div>
-<div>
-                    <label for="id">
+                    <label for="islp">
                         <?= translate( 'ISLP ID' ); ?>
                     </label>
                     <div>
-                        <input type="text" name="islp" maxlength="250" class="required" value="<?= $district->islp; ?>" />
+                        <input type="text" name="islp" maxlength="250" value="<?= $district->islp; ?>" />
                     </div>
                 </div>
-
 			</fieldset>
 		</div>
 	</div>
