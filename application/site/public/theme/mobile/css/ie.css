@@ -546,6 +546,11 @@ textarea {
   float: left;
   margin-left: 0; }
 
+.component.questions.categories {
+  width: 100%;
+  float: left;
+  margin-left: 0; }
+
 .footer__districts {
   width: 39.50617%;
   float: left;
@@ -867,6 +872,19 @@ ol ul {
   margin-bottom: 0; }
 
 ul.column--double, ul.column--triple, ul.column--quad {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1; }
+
+ul.column--double {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2; }
+ul.column--triple {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2; }
+ul.column--quad {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2; }
@@ -956,6 +974,9 @@ ul.column--quad {
 
 .banner__image--5446 {
   background: url("../images/banners/5446.jpg"); }
+
+.banner__image--5449 {
+  background: url("../images/banners/5449.jpg"); }
 
 .banner__image--5888 {
   background: url("../images/banners/5888.jpg"); }

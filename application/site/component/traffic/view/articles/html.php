@@ -26,6 +26,9 @@ class TrafficViewArticlesHtml extends TrafficViewHtml
             $this->getObject('application')->getPathway()->addItem($category->title, '');
         }
 
+        $this->url  = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
+        $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getSite())->getRow();
+
         return parent::render();
     }
 

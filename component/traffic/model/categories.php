@@ -26,9 +26,20 @@ class ModelCategories extends Library\ModelTable
             ->insert('sort'      , 'cmd', 'ordering');
     }
 
+    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
+    {
+        parent::_buildQueryColumns($query);
+
+        $query->columns(array(
+            'thumbnail'         => 'attachments.path'
+        ));
+    }
+
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
         $state = $this->getState();
+
+        $query->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id');
 
         //Exclude joins if counting records
         if(!$query->isCountQuery())

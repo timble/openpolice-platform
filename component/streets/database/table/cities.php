@@ -15,7 +15,8 @@ class DatabaseTableCities extends Library\DatabaseTableAbstract
     public function  _initialize(Library\ObjectConfig $config)
     {        
         $config->append(array(
-            'name'      => 'data.streets_cities'
+            'name'      => 'data.streets_cities',
+            'behaviors' => 'lockable', 'creatable', 'modifiable'
         ));
      
         parent::_initialize($config);

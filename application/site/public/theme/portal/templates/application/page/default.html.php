@@ -10,7 +10,7 @@
 
 <style src="http://www.lokalepolitie.be/theme/mobile/components/select2/select2.css" />
 
-<script src="http://www.lokalepolitie.be/theme/mobile/components/jquery/dist/jquery.min.js" />
+<script src="http://www.lokalepolitie.be/theme/mobile/components/jquery/jquery.min.js" />
 <script src="http://www.lokalepolitie.be/theme/mobile/components/select2/select2.js" />
 <script src="http://www.lokalepolitie.be/theme/mobile/js/ie7.js" condition="if lte IE 7" />
 
@@ -21,7 +21,7 @@
             placeholder: "<?= translate('Search your city') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "?view=municipalities&format=json",
+                url: "?option=com_streets&view=municipalities&format=json",
                 dataType: 'json',
                 data: function (term) {
                     return {
