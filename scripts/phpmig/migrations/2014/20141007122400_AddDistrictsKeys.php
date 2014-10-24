@@ -55,7 +55,7 @@ UPDATE `activities` AS `activity`, `districts` AS `district` SET `activity`.`row
 END;
 
         // The migration is not working because of unknown issue with phpmig, let's do it by hand
-        $this->_queries = "";
+        $this->_queries = "SELECT 1;";
 
         parent::up();
     }
@@ -108,7 +108,7 @@ ALTER TABLE `districts_relations` ADD CONSTRAINT `districts_relations__districts
 END;
 
         // The migration is not working because of unknown issue with phpmig, let's do it by hand
-        $this->_queries = "";
+        $this->_queries = "SELECT 1;";
 
         parent::down();
     }
