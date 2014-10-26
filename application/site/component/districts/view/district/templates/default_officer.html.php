@@ -11,12 +11,11 @@
 <meta content="noimageindex" name="robots" />
 
 <h2 class="article__header"><?= $officer->title ?></h2>
-
-<? if($officer->phone || $officer->mobile || $officer->email) : ?>
+<? if($officer->phone || $officer->mobile || $officer->email || $district->email) : ?>
 <ul>
     <? if($officer->phone) : ?><li><?= translate('Phone') ?>: <?= $officer->phone ?></li><? endif ?>
     <? if($officer->mobile) : ?><li><?= translate('Mobile') ?>: <?= $officer->mobile ?></li><? endif ?>
-    <? if($officer->email) : ?><li><?= translate('Email') ?>: <a href="mailto:<?= $officer->email ?>"><?= $officer->email ?></a></li><? endif ?>
+    <? if($officer->email || $district->email) : ?><li><?= translate('Email') ?>: <a href="mailto:<?= $officer->email ? $officer->email : $district->email ?>"><?= $officer->email ? $officer->email : $district->email ?></a></li><? endif ?>
 </ul>
 <? endif ?>
 
