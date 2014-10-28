@@ -27,7 +27,7 @@
 
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= translate( 'District' ); ?></legend>
+				<legend><?= translate( 'Required' ); ?></legend>
                 <div>
 				    <label for="contacts_contact_id">
 				    	<?= translate( 'Police station' ); ?>
@@ -46,6 +46,9 @@
                         <script data-inline> $jQuery(".select-officers").select2(); </script>
                     </div>
 				</div>
+			</fieldset>
+            <fieldset>
+                <legend><?= translate( 'Optional' ); ?></legend>
                 <div>
                     <label for="islp">
                         <?= translate( 'ISLP ID' ); ?>
@@ -54,7 +57,15 @@
                         <input type="text" name="islp" maxlength="250" value="<?= $district->islp; ?>" />
                     </div>
                 </div>
-			</fieldset>
+                <div>
+                    <label for="email">
+                        <?= translate( 'Email' ); ?>
+                    </label>
+                    <div>
+                        <input type="text" name="email" maxlength="250" value="<?= $district->email; ?>" />
+                    </div>
+                </div>
+            </fieldset>
 		</div>
 	</div>
 </form>
