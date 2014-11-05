@@ -17,13 +17,12 @@
         <title><![CDATA[<?= escape($params->get('page_title')).' - '.translate('police').' '.$zone->title;  ?>]]></title>
         <description><![CDATA[<?= escape($params->get('page_title')).' - '.translate('police').' '.$zone->title;  ?>]]></description>
         <link><?= route(array('format' => 'html')) ?></link>
+        <pubDate><?= helper('date.format') ?></pubDate>
         <lastBuildDate><?= helper('date.format') ?></lastBuildDate>
-        <generator>http://www.nooku.org?v=<?= \Nooku::VERSION ?></generator>
-        <language><?= JFactory::getLanguage()->getTag() ?></language>
+        <generator>http://www.openpolice.be</generator>
+        <language><?= $this->getObject('application.languages')->getActive()->iso_code; ?></language>
 
-        <dc:language><?= JFactory::getLanguage()->getTag() ?></dc:language>
         <dc:rights>Copyright <?= helper('date.format', array('format' => 'Y')) ?></dc:rights>
-        <dc:date><?= helper('date.format') ?></dc:date>
 
         <sy:updatePeriod><?= $update_period ?></sy:updatePeriod>
         <sy:updateFrequency><?= $update_frequency ?></sy:updateFrequency>
@@ -38,14 +37,14 @@
             <guid isPermaLink="false"><?= helper('route.article', array('row' => $article)) ?></guid>
             <description><![CDATA[
                 <?= $article->introtext ?>
-                <?= helper('com:attachments.image.thumbnail', array(
+                <?= helper('com:police.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('width' => '400', 'height' => '300')
+                    'attribs' => array('width' => '400', 'height' => '300'),
+                    'url' => 'absolute'
                 )) ?>
                 <?= $article->fulltext ?>
             ]]></description>
             <pubDate><?= helper('date.format', array('date' => $article->published_on)) ?></pubDate>
-            <dc:date><?= helper('date.format', array('date' => $article->published_on)) ?></dc:date>
         </item>
         <? endforeach; ?>
     </channel>

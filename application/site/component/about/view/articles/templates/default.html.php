@@ -35,12 +35,12 @@
         <? if($article->attachments_attachment_id): ?>
             <? if($article->fulltext) : ?>
                 <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-                    <?= helper('com:attachments.image.thumbnail', array(
+                    <?= helper('com:police.image.thumbnail', array(
                         'attachment' => $article->attachments_attachment_id,
                         'attribs' => array('width' => '400', 'height' => '300'))) ?>
                 </a>
             <? else : ?>
-                <?= helper('com:attachments.image.thumbnail', array(
+                <?= helper('com:police.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
                     'attribs' => array('class' => 'article__thumbnail', 'width' => '400', 'height' => '300'))) ?>
             <? endif; ?>
