@@ -13,7 +13,7 @@
 
 <address itemscope itemtype="<?= $category->id == '1' ? 'http://schema.org/PoliceStation' : 'http://schema.org/CivicStructure' ?>">
     <h1 class="article__header" itemprop="name"><?= $contact->title?></h1>
-    <? if($contact->name) : ?>
+    <? if($contact->name && $category->id == '2') : ?>
     <h2><?= $contact->name?></h2>
     <? endif ?>
     <? if($contact->isAttachable()) : ?>
