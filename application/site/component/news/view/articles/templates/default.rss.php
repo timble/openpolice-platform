@@ -38,9 +38,10 @@
             <guid isPermaLink="false"><?= helper('route.article', array('row' => $article)) ?></guid>
             <description><![CDATA[
                 <?= $article->introtext ?>
-                <?= helper('com:attachments.image.thumbnail', array(
+                <?= helper('com:police.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('width' => '400', 'height' => '300')
+                    'attribs' => array('width' => '400', 'height' => '300'),
+                    'url' => 'absolute'
                 )) ?>
                 <?= $article->fulltext ?>
             ]]></description>

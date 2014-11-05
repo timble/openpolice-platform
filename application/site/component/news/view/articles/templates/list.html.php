@@ -15,7 +15,7 @@
     <div class="media">
         <? if($article->attachments_attachment_id): ?>
             <a tabindex="-1" class="thumbnail media__object" href="<?= $link ?>">
-                <?= helper('com:attachments.image.thumbnail', array(
+                <?= helper('com:police.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
                     'attribs' => array('width' => '64', 'height' => '48'))) ?>
             </a>
