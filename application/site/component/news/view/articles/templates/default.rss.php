@@ -17,8 +17,8 @@
         <title><![CDATA[<?= escape($params->get('page_title')).' - '.translate('police').' '.$zone->title;  ?>]]></title>
         <description><![CDATA[<?= escape($params->get('page_title')).' - '.translate('police').' '.$zone->title;  ?>]]></description>
         <link><?= route(array('format' => 'html')) ?></link>
-        <pubDate><?= helper('date.format') ?></pubDate>
-        <lastBuildDate><?= helper('date.format') ?></lastBuildDate>
+        <pubDate><?= date ('r') ?></pubDate>
+        <lastBuildDate><?= date ('r') ?></lastBuildDate>
         <generator>http://www.openpolice.be</generator>
         <language><?= $this->getObject('application.languages')->getActive()->iso_code; ?></language>
 
@@ -44,7 +44,7 @@
                 )) ?>
                 <?= $article->fulltext ?>
             ]]></description>
-            <pubDate><?= helper('date.format', array('date' => $article->published_on)) ?></pubDate>
+            <pubDate><?= date ('r', strtotime($article->published_on)) ?></pubDate>
         </item>
         <? endforeach; ?>
     </channel>
