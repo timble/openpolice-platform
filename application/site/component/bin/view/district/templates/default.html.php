@@ -14,8 +14,10 @@
     <?= escape($district->title) ?>
 </h1>
 
-<div class="districts__coordinators">
-    <div class="districts__coordinator">
-        <?= import('com:bin.view.district.default_coordinator.html', array('coordinator' => $district)); ?>
-    </div>
+<div class="bin__coordinator">
+    <?= import('com:bin.view.district.default_coordinator.html', array('coordinator' => $district)); ?>
+</div>
+
+<div class="bin__responsible">
+    <?= import('com:bin.view.district.default_coordinator.html', array('coordinator' => $district)); ?>
 </div>
