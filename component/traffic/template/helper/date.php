@@ -7,9 +7,10 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
+namespace Nooku\Component\Traffic;
 use Nooku\Library;
 
-class TrafficTemplateHelperDate extends Library\TemplateHelperDate
+class TemplateHelperDate extends Library\TemplateHelperDate
 {
     public function timestamp($config = array())
     {
@@ -19,10 +20,10 @@ class TrafficTemplateHelperDate extends Library\TemplateHelperDate
             'end_on'     => null
         ));
 
-        $start_on = new DateTime($config->start_on);
+        $start_on = new \DateTime($config->start_on);
         $start_on = $start_on->format('c');
 
-        $end_on = new DateTime($config->end_on);
+        $end_on = new \DateTime($config->end_on);
         $end_on = $end_on->format('c');
 
         $html = array();
