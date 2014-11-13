@@ -25,7 +25,7 @@
   margin-bottom: $line-height / 2;
 }
 
-@include respond-min($breakpoint-alpha) {
+@include breakpoint($breakpoint-alpha) {
   .article__thumbnail {
     float: right;
     width: 40%;
