@@ -27,8 +27,6 @@ class BinControllerRelation extends Library\ControllerModel
                         $url->query['view'] = 'district';
                         $url->query['option'] = 'com_bin';
                         $url->query['id'] = $district->getSlug();
-                        unset($url->query['street']);
-                        unset($url->query['number']);
 
                         $this->getObject('application')->getRouter()->build($url);
 
