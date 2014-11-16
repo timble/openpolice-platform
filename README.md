@@ -67,7 +67,7 @@ First use the Vagrant command-line interface to access the Secure Shell, see abo
 
 ## Database migrations
 
-Database migrations are being managed using [Phpmig](https://github.com/davedevelopment/phpmig). 
+Database migrations are being managed using [Phpmig](https://github.com/davedevelopment/phpmig).
 
 The vagrant box will setup everything for you. To make sure you have applied the latest database changes, browse to ```cd <repo>/scripts/phpmig``` and execute ```bin/phpmig migrate```.
 
@@ -106,40 +106,7 @@ For more information, please refer to the [Phpmig GitHub page](https://github.co
 
 ## Built on Open Source software
 
-The Police Internet Platform is built on open source software and wouldn't be as productive without these open source projects around.
-We simply just want to say thank you to the following projects for helping us out:
-
-* [Apollo](https://github.com/toddmotto/apollo)
-* [Bootstrap](http://getbootstrap.com)
-* [Bower](http://bower.io/)
-* [Capistrano](http://www.capistranorb.com)
-* [Composer](http://getcomposer.org)
-* [datetimepicker](https://github.com/xdan/datetimepicker)
-* [Elasticsearch](http://www.elasticsearch.org/)
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
-* [Git](http://git-scm.com)
-* [Grunt](http://gruntjs.com/)
-* [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
-* [Imagine](https://github.com/avalanche123/Imagine)
-* [Joomla](http://www.joomla.org)
-* [jQuery](http://jquery.com)
-* [Linux](http://linux.org)
-* [Magnific-Popup](https://github.com/dimsemenov/Magnific-Popup)
-* [MailCatcher](https://github.com/sj26/mailcatcher)
-* [MooTools](http://mootools.net)
-* [MySQL](http://www.mysql.com)
-* [nginx](http://nginx.org)
-* [Nooku](http://www.nooku.org)
-* [PageSpeed](http://developers.google.com/speed/pagespeed)
-* [PHP](http://php.net)
-* [PHP-JWT](http://github.com/firebase/php-jwt)
-* [Phpmig](https://github.com/davedevelopment/phpmig)
-* [Placeholders.js](https://github.com/jamesallardice/Placeholders.js/)
-* [Sass](http://sass-lang.com)
-* [Select2](http://ivaynberg.github.io/select2)
-* [Susy](http://susy.oddbird.net/)
-* [Vagrant](http://www.vagrantup.com)
-* [VirtualBox](http://www.virtualbox.org)
+The Police Internet Platform is purely built on [an open source software stack](http://www.openpolice.be/stack/) and wouldn't be as productive without these projects around.
 
 
 ## Open Data resources
