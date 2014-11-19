@@ -1,6 +1,6 @@
 @import "susy";
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-charlie) {
   .container {
     // page acts as a container for our grid.
     @include container;
@@ -90,7 +90,7 @@
   }
 }
 
-@include respond-min($breakpoint-delta) {
+@include breakpoint($breakpoint-delta) {
   .homepage__sticky .media {
     @include span(6 of 12);
     &:first-child {

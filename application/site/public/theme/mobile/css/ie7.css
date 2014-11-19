@@ -1,3 +1,127 @@
+/**
+ * Mixin for setting columns with vendor prefixes
+ *
+ * @param {number} $count - The amount of columns
+ *
+ * @group Basics
+ */
+/**
+ * Mixin for setting clearfix to an element
+ *
+ * @group Basics
+ */
+/**
+ * Hacky CSS to set inline-block and zoom to IE7
+ *
+ * @group Basics
+ */
+/**
+ * Set outlines for focus on an element
+ *
+ * @group Basics
+ */
+/**
+ * Set border-radius to element including vendor prefixes
+ *
+ * @param {string} $radius - desired border-radius (shorthand)
+ *
+ * @group Basics
+ */
+/**
+ * Set box-sizing to element including vendor prefixes
+ *
+ * @param {string} $boxmodel - desired box-model (shorthand)
+ *
+ * @group Basics
+ */
+/**
+ * Set box-shadow to element including vendor prefixes
+ *
+ * @param {string} $shadow - desired box-shadow (shorthand)
+ *
+ * @group Basics
+ */
+/**
+ * Set transition to element including vendor prefixes
+ *
+ * @param {string} $transition - desired transition (shorthand)
+ *
+ * @group Basics
+ */
+/**
+ * Set transition-delay to element including vendor prefixes
+ *
+ * @param {string} $transition-delay - desired transition-delay either in s or ms
+ *
+ * @example
+ * transition-delay(.2s);
+ *
+ * @example
+ * transition-delay(.50ms);
+ *
+ * @group Basics
+ */
+/**
+ * Set transition-duration to element including vendor prefixes
+ *
+ * @param {string} $transition-duration - desired transition-duration either in s or ms
+ *
+ * @example
+ * transition-duration(.2s);
+ *
+ * @example
+ * transition-duration(.50ms);
+ *
+ * @group Basics
+ */
+/**
+ * Set opacity with IE filter
+ *
+ * @param {number} $opacity - between 0 and 1
+ *
+ * @example
+ * opacity(.2);
+ *
+ * @group Basics
+ */
+/**
+ * Set font-size, font-weight and line-height in one go
+ *
+ * @param {string} $size ($base-font-size) - font-size
+ * @param {string} $weight (normal) - font-weight
+ * @param {string} $lineHeight ($baseLineHeight) - line-height
+ *
+ * @example
+ * font-shorthand(1em, 600, 1.5em);
+ *
+ * @group Basics
+ */
+/**
+ * Set input[placeholder] color with vendor prefixes
+ *
+ * @param {string} $color (#999) - The font color
+ *
+ * @group Basics
+ */
+/**
+ * Visually hide elements while still preserving screen reader visibility
+ *
+ * @group Basics
+ */
+/**
+ * Visually show elements when they have a visually-hidden style
+ *
+ * @group Basics
+ */
+/**
+ * Set form styling
+ *
+ * @param {string} $text-color (#555) - The font color
+ * @param {string} $border-color (#ccc) - The border color
+ * @param {string} $background-color (#f5f5f5) - The background color
+ *
+ * @group Basics
+ */
 body {
   width: 600px;
   margin: 0 auto; }
@@ -51,3 +175,5 @@ form {
 
 .container__footer_menu li {
   float: left; }
+
+/*# sourceMappingURL=ie7.css.map */

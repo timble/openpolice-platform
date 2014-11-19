@@ -46,7 +46,7 @@
   }
 }
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-charlie) {
   .header {
     background: none;
     border-bottom: 0px none;
@@ -114,7 +114,7 @@
   }
 }
 
-@include respond-min($breakpoint-delta) {
+@include breakpoint($breakpoint-delta) {
   .header {
     margin-bottom: 20px;
 
