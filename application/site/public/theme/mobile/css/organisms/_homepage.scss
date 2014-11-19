@@ -8,11 +8,6 @@
   margin: 20px 0 0;
   border-top: 1px solid $color-border;
   padding: 20px 0 0;
-
-  // Keeping the muted date on the same indent as the title
-  .thumbnail.media__object + .media__body {
-    padding-left: 86px;
-  }
 }
 
 .homepage__contact {
