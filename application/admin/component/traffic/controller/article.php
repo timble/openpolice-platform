@@ -30,8 +30,8 @@ class TrafficControllerArticle extends Library\ControllerModel
         $request = parent::getRequest();
 
         // Set the ordering
-        $request->query->sort = 'start_on';
-        $request->query->direction = 'ASC';
+        $request->query->sort       = 'start_on';
+        $request->query->direction  = 'DESC';
 
         return $request;
     }

@@ -38,8 +38,8 @@
     <? endforeach; ?>
     </tbody>
 </table>
-<? else : ?>
-<h2 class="text-center" style="padding-top: 20px"><?= @translate('No').' '.strtolower($category->title) ?></h2>
+<? elseif($category->count) : ?>
+    <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug) ?></h2>
 <? endif ?>
 
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>

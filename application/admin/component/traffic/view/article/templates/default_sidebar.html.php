@@ -44,7 +44,7 @@
             <?= translate('End on') ?>
         </label>
         <div>
-            <input type="text" name="end_on" id="end_on" class="required" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'd-m-Y')) ?>" />
+            <input type="text" name="end_on" id="end_on" value="<?= $article->end_on ? helper('date.format', array('date'=> $article->end_on, 'format' => 'd-m-Y')) : '' ?>" />
             <script date-inline>
                 $jQuery(function(){
                     $jQuery('#end_on').datetimepicker({
