@@ -15,25 +15,28 @@ class DistrictsControllerRelation extends Library\ControllerModel
     {
         $relations = parent::_actionBrowse($context);
 
-        if(count($relations) == '1') {
-            foreach($relations as $relation) {
-                // Redirect the user if the request doesn't include layout=form
-                if ($context->request->getFormat() == 'html')
-                {
-                    if ($relation->districts_district_id) {
-                        $district = $this->getObject('com:districts.model.district')->id($relation->districts_district_id)->getRow();
+        $data        = $context->request->data;
+        $street      = isset($context->request->getUrl()->query['street']) ? $context->request->getUrl()->query['street'] : false;
+        $number      = isset($context->request->getUrl()->query['number']) ? $context->request->getUrl()->query['number'] : false;
 
-                        $url = clone($context->request->getUrl());
-                        $url->query['view'] = 'district';
-                        $url->query['option'] = 'com_districts';
-                        $url->query['id'] = $district->getSlug();
-                        unset($url->query['street']);
-                        unset($url->query['number']);
+        // Street and number are required
+        if($number != '' && $street) {
+            $relation = $relations->top();
 
-                        $this->getObject('application')->getRouter()->build($url);
+            // Redirect the user if the request doesn't include layout=form
+            if ($context->request->getFormat() == 'html')
+            {
+                if ($relation->districts_district_id) {
+                    $district = $this->getObject('com:districts.model.district')->id($relation->districts_district_id)->getRow();
 
-                        return $this->getObject('component')->redirect($url);
-                    }
+                    $url = clone($context->request->getUrl());
+                    $url->query['view'] = 'district';
+                    $url->query['option'] = 'com_districts';
+                    $url->query['id'] = $district->getSlug();
+
+                    $this->getObject('application')->getRouter()->build($url);
+
+                    return $this->getObject('component')->redirect($url);
                 }
             }
         }

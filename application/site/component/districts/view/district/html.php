@@ -15,6 +15,7 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
     {
         //Get the article
         $district = $this->getModel()->getData();
+        $state = $this->getModel()->getState();
 
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($district->title, '');
@@ -23,6 +24,11 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
         //setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
 
         $this->contact = $this->getObject('com:contacts.model.contacts')->id($district->contacts_contact_id)->getRow();
+
+        if($relation = $this->getObject('com:bin.model.relations')->street($state->street)->number($state->number)->getRowset()->top())
+        {
+            $this->bin = $this->getObject('com:bin.model.districts')->id($relation->bin_district_id)->getRow();
+        }
 
         return parent::render();
     }

@@ -17,9 +17,7 @@ class ModelDistricts extends Library\ModelTable
         parent::__construct($config);
 
         $this->getState()
-            ->insert('sort' , 'string', 'title')
-            ->insert('street' , 'string')
-            ->insert('number' , 'string');
+            ->insert('sort' , 'string', 'title');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
