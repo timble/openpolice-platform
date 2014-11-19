@@ -867,8 +867,6 @@ button.closed {
   margin: 20px 0 0;
   border-top: 1px solid #eee;
   padding: 20px 0 0; }
-  .homepage__news .thumbnail.media__object + .media__body, .homepage__news .media__object.article__thumbnail + .media__body {
-    padding-left: 86px; }
 
 .homepage__contact {
   background-color: #0054ae;
