@@ -20,11 +20,11 @@ class DistrictsControllerRelation extends Library\ControllerModel
         $number      = isset($context->request->getUrl()->query['number']) ? $context->request->getUrl()->query['number'] : false;
 
         // Street and number are required
-        if($number != '' && $street) {
+        if($number != '' && $street && is_numeric($number)) {
             $relation = $relations->top();
 
             // Redirect the user if the request doesn't include layout=form
-            if ($context->request->getFormat() == 'html')
+            if ($context->request->getFormat() == 'html' && isset($relation))
             {
                 if ($relation->districts_district_id) {
                     $district = $this->getObject('com:districts.model.district')->id($relation->districts_district_id)->getRow();

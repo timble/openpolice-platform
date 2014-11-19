@@ -19,7 +19,7 @@ class ModelDistricts extends Library\ModelTable
         $this->getState()
             ->insert('islp' , 'string')
             ->insert('street' , 'string')
-            ->insert('number' , 'string');
+            ->insert('number' , 'int');
     }
 
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)

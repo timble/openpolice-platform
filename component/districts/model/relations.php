@@ -19,7 +19,7 @@ class ModelRelations extends Library\ModelTable
 		$this->getState()
 		    ->insert('district' , 'string')
 		    ->insert('street' , 'string', '0')
-		    ->insert('number' , 'string', '0')
+		    ->insert('number' , 'int', '0')
 		    ->insert('no_street' , 'int');
 	}
 
