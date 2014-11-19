@@ -21,7 +21,7 @@ class ModelArticles extends Library\ModelTable
 		    ->insert('published' , 'int')
             ->insert('category' , 'string')
             ->insert('type' , 'string')
-		    ->insert('date' , 'string');
+		    ->insert('date' , 'string', 'upcoming');
 	}
 
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)

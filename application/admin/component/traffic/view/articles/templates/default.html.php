@@ -71,8 +71,7 @@
 				</a>
 			</td>
 			<td>
-                <?= helper('date.format', array('date'=> $article->start_on, 'format' => translate('DATE_FORMAT_LC3'))) ?>
-                <?= $article->end_on ? ' - '.helper('date.format', array('date'=> $article->end_on, 'format' => translate('DATE_FORMAT_LC3'))) : ''; ?>
+                <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
             </td>
             <? if($article->isTranslatable()) : ?>
             <td>
