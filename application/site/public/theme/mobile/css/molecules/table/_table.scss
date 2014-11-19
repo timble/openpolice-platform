@@ -41,7 +41,7 @@ table {
   }
 }
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-charlie) {
   .table {
     margin-bottom: $line-height;
     border: 0 none; // Override default style

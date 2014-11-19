@@ -16,7 +16,7 @@
   }
 }
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-charlie) {
   .table--openinghours {
     th,
     td {

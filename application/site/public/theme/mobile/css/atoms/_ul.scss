@@ -19,7 +19,7 @@ ul {
   }
 }
 
-@include respond-min($breakpoint-beta) {
+@include breakpoint($breakpoint-beta) {
   ul {
     &.column--double {
       @include column-count(2);
@@ -33,7 +33,7 @@ ul {
   }
 }
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-charlie) {
   ul {
     &.column--double {
       @include column-count(2);
