@@ -16,6 +16,15 @@
 
 <h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
 
+<? if ($category->image || $category->description) : ?>
+<div class="clearfix">
+    <? if ($category->image) : ?>
+        <?= helper('com:categories.string.image', array('row' => $category)) ?>
+    <? endif; ?>
+    <?= $category->description; ?>
+</div>
+<? endif; ?>
+
 <style>
 .select2-offscreen[required], .select2-offscreen[required]:focus {
     width: inherit !important;
