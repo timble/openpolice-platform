@@ -16,15 +16,15 @@ class PoliceControllerLanguage extends Library\ControllerModel
         parent::__construct($config);
 
         $this->_domains = array(
-            'www.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'live'),
-            'www.policelocale.be'   => array('language' => 'fr', 'access' => 'live'),
-            'www.lokalepolizei.be'  => array('language' => 'de', 'access' => 'live'),
-            'p.pol-nl.be'           => array('language' => 'nl', 'access' => 'production'),
-            'p.pol-fr.be'           => array('language' => 'fr', 'access' => 'production'),
-            'p.pol-de.be'           => array('language' => 'de', 'access' => 'production'),
-            's.pol-nl.be'           => array('language' => 'nl', 'access' => 'staging'),
-            's.pol-fr.be'           => array('language' => 'fr', 'access' => 'staging'),
-            's.pol-de.be'           => array('language' => 'de', 'access' => 'staging'),
+            'www.lokalepolitie.be'      => array('language' => 'nl', 'access' => 'live'),
+            'www.policelocale.be'       => array('language' => 'fr', 'access' => 'live'),
+            'www.lokalepolizei.be'      => array('language' => 'de', 'access' => 'live'),
+            'new.lokalepolitie.be'      => array('language' => 'nl', 'access' => 'production'),
+            'new.policelocale.be'       => array('language' => 'fr', 'access' => 'production'),
+            'new.lokalepolizei.be'      => array('language' => 'de', 'access' => 'production'),
+            'staging.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'staging'),
+            'staging.policelocale.be'   => array('language' => 'fr', 'access' => 'staging'),
+            'staging.lokalepolizei.be'  => array('language' => 'de', 'access' => 'staging'),
         );
 
         $this->registerCallback('before.read'   , array($this, 'checkHost'));
