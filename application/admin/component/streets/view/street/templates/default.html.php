@@ -26,7 +26,7 @@
 	
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= translate( 'Information' ); ?>:</legend>
+                <legend><?= translate( 'Information' ); ?></legend>
                 <div>
                     <label for="streets_street_id">
                         <?= translate( 'CRAB' ); ?>
@@ -43,7 +43,30 @@
                         <input type="text" name="islp" class="required" value="<?= $street->islp ?>" />
                     </div>
                 </div>
-			</fieldset>
+            </fieldset>
+            <fieldset>
+                <legend><?= translate( 'Districts' ); ?></legend>
+                <table class="table table--striped">
+                    <thead>
+                        <tr>
+                            <th><?= translate('District') ?></th>
+                            <th><?= translate('Start') ?></th>
+                            <th><?= translate('End') ?></th>
+                            <th><?= translate('Parity') ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <? foreach($districts AS $district) : ?>
+                        <tr>
+                            <td><?= $district->district ?></td>
+                            <td><?= $district->range_start ?></td>
+                            <td><?= $district->range_end ?></td>
+                            <td><?= $district->range_parity ?></td>
+                        </tr>
+                        <? endforeach ?>
+                    </tbody>
+                </table>
+            </fieldset>
 		</div>
 	</div>
 </form>
