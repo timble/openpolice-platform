@@ -23,8 +23,8 @@ class AnalyticsViewAnalyticHtml extends Library\ViewHtml
         if($row->expires_on < time())
         {
             $ga = new GoogleAnalyticsAPI('service');
-            $ga->auth->setClientId(\JFactory::getConfig()->getValue('auth_client')); // From the APIs console
-            $ga->auth->setEmail(\JFactory::getConfig()->getValue('auth_email')); // From the APIs console
+            $ga->auth->setClientId(\JFactory::getConfig()->getValue('google_auth_client')); // From the APIs console
+            $ga->auth->setEmail(\JFactory::getConfig()->getValue('google_auth_email')); // From the APIs console
             $ga->auth->setPrivateKey(JPATH_ROOT.'/config/key.p12'); // Path to the .p12 file
 
             $auth = $ga->auth->getAccessToken();
