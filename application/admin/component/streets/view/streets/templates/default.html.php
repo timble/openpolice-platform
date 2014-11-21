@@ -40,6 +40,9 @@
             <th>
                 <?= helper('grid.sort', array('column' => 'modified_on', 'title' => 'Modified on')) ?>
             </th>
+            <th width="1">
+                <?= helper('grid.sort', array('column' => 'district_count', 'title' => 'Districts')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -73,6 +76,9 @@
                 <? if($street->modified_on) : ?>
                 <?= helper('date.format', array('date'=> $street->modified_on, 'format' => 'D d/m/Y')) ?>
                 <? endif ?>
+            </td>
+            <td align="center">
+                <?= $street->district_count ?>
             </td>
 		</tr>
 		<? endforeach; ?>

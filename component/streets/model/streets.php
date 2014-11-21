@@ -31,7 +31,8 @@ class ModelStreets extends Library\ModelTable
         $state = $this->getState();
 
         $query->columns(array(
-            'title' => "CONCAT(tbl.title, ' (', city.title, ')')"
+            'title' => "CONCAT(tbl.title, ' (', city.title, ')')",
+            'district_count' => 'content.district_count'
         ));
     }
 
@@ -41,16 +42,13 @@ class ModelStreets extends Library\ModelTable
 
         $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
 
-        // Only include joins when we want to list the streets that have no districts_relations
-        if ($state->no_district || $state->district)
-        {
-            $subquery = $this->getObject('lib:database.query.select')
-                ->columns(array('streets_street_id', 'district_count' => 'COUNT(DISTINCT districts_district_id)'))
-                ->table('districts_relations')
-                ->group('streets_street_id');
+        $subquery = $this->getObject('lib:database.query.select')
+            ->columns(array('streets_street_id', 'district_count' => 'COUNT(DISTINCT districts_district_id)'))
+            ->table('districts_relations')
+            ->group('streets_street_id');
 
-            $query->join(array('content' => $subquery), 'content.streets_street_id = tbl.streets_street_id');
-        }
+        $query->join(array('content' => $subquery), 'content.streets_street_id = tbl.streets_street_id');
+
 
         parent::_buildQueryJoins($query);
     }
