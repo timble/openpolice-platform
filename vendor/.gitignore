@@ -3,5 +3,6 @@
 
 # But not these
 !.gitignore
+!google-analytics-api-php
 !phpmailer
 !joomla
