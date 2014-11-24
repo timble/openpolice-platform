@@ -20,10 +20,6 @@ class TrafficViewArticlesHtml extends TrafficViewHtml
         if($this->getModel()->getState()->category) {
             $category = $this->getCategory();
             $this->category = $category;
-
-            $this->params->set('page_title', $category->title);
-
-            $this->getObject('application')->getPathway()->addItem($category->title, '');
         }
 
         $this->url  = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
@@ -36,7 +32,7 @@ class TrafficViewArticlesHtml extends TrafficViewHtml
     {
         //Get the category
         $category = $this->getObject('com:traffic.model.categories')
-            ->slug($this->getModel()->getState()->category)
+            ->id($this->getModel()->getState()->category)
             ->getRow();
 
         return $category;

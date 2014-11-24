@@ -10,11 +10,7 @@
 
 <?= import('com:news.view.article.metadata.html', array('article' => $category)) ?>
 
-<ktml:module position="left">
-    <?= import('com:categories.view.categories.list.html') ?>
-</ktml:module>
-
-<h1 class="article__header"><?= $category->title ?></h1>
+<h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
 
 <?= $category->description ?>
 
@@ -38,8 +34,13 @@
     <? endforeach; ?>
     </tbody>
 </table>
+
+<?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+
 <? elseif($category->count) : ?>
     <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug) ?></h2>
 <? endif ?>
 
-<?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+<? if($category->id == '19') : ?>
+<a href="./<?= $category->slug ?>/resultaten"><?= translate('Resultaten') ?></a>
+<? endif ?>
