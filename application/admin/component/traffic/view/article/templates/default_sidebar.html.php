@@ -78,7 +78,7 @@
 </fieldset>
 <? endif ?>
 
-<fieldset>
+<fieldset id="results">
     <legend><?= translate('Results') ?></legend>
     <div>
         <label for="controlled"><?= translate('Controlled') ?></label>
@@ -93,3 +93,15 @@
         </div>
     </div>
 </fieldset>
+
+<script data-inline>
+    $jQuery("input[name='traffic_category_id']").click(function()
+    {
+        if($jQuery('#traffic_category_id19').is(':checked'))
+        {
+            $jQuery( "#results" ).show();
+        } else {
+            $jQuery( "#results" ).hide();
+        }
+    });
+</script>
