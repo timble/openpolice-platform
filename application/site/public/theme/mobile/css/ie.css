@@ -1145,6 +1145,16 @@ button.closed {
   float: left;
   margin-left: 0; }
 
+.traffic__text {
+  width: 56.79012%;
+  float: left;
+  margin-left: 0; }
+
+.traffic__sidebar {
+  width: 39.50617%;
+  float: left;
+  margin-left: 3.7037%; }
+
 .copyright--left {
   width: 39.50617%;
   float: left;

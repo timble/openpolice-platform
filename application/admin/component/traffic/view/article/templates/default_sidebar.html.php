@@ -77,3 +77,19 @@
     <script data-inline> $jQuery(".select-streets").select2(); </script>
 </fieldset>
 <? endif ?>
+
+<fieldset>
+    <legend><?= translate('Results') ?></legend>
+    <div>
+        <label for="controlled"><?= translate('Controlled') ?></label>
+        <div>
+            <input type="number" name="controlled" value="<?= $article->controlled ?>" />
+        </div>
+    </div>
+    <div>
+        <label for="in_violation"><?= translate('In violation') ?></label>
+        <div>
+            <input type="number" name="in_violation" value="<?= $article->in_violation ?>" />
+        </div>
+    </div>
+</fieldset>

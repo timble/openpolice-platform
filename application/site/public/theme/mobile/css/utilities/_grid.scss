@@ -34,6 +34,14 @@
     @include span(first 7 of 12);
   }
 
+  .traffic__text {
+    @include span(first 7 of 12);
+  }
+
+  .traffic__sidebar {
+    @include span(5 of 12);
+  }
+
   .copyright--left {
     @include span(first 5 of 12);
   }
