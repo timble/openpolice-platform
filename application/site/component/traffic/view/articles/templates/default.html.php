@@ -41,7 +41,7 @@
     <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug) ?></h2>
 <? endif ?>
 
-<? if($category->id == '19' && count($this->getObject('com:traffic.model.articles')->results(true)->getRowset())) : ?>
+<? if($category->id == '19' && count($this->getObject('com:traffic.model.articles')->published(true)->results(true)->getRowset())) : ?>
 <p class="text-center">
     <a href="./<?= $category->slug ?>/<?= object('lib:filter.slug')->sanitize(translate('results')) ?>"><?= translate('Roadside safety check results') ?>.</a>
 </p>
