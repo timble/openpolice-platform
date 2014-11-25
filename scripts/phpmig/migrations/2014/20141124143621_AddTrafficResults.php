@@ -15,7 +15,7 @@ class AddTrafficResults extends Migration
                                 (111, 1, 0, 'Evenementen', 'evenementen', 'option=com_traffic&view=articles&category=21', NULL, 'component', 1, 0, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
                                 (112, 1, 0, 'Maatregelen', 'maatregelen', 'option=com_traffic&view=articles&category=22', NULL, 'component', 1, 0, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
                                 (113, 1, 0, 'Wegenwerken', 'wegenwerken', 'option=com_traffic&view=articles&category=20', NULL, 'component', 1, 0, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
-                                (114, 1, 0, 'Resultaten', 'resultaten', 'option=com_traffic&view=articles&category=19', NULL, 'component', 1, 1, 0, 37, 1, '2014-11-24 16:05:45', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"');";
+                                (114, 1, 0, 'Resultaten', 'resultaten', 'option=com_traffic&view=articles&category=19&layout=results&results=true', NULL, 'component', 1, 1, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"');";
 
         $this->_queries .= "INSERT INTO `pages_closures` (`ancestor_id`, `descendant_id`, `level`)
                             VALUES
@@ -66,6 +66,7 @@ class AddTrafficResults extends Migration
         $this->_queries .= "UPDATE `pages` SET `title` = 'Mesures', `slug` = 'mesures' WHERE `traffic_category_id` = '112';";
         $this->_queries .= "UPDATE `pages` SET `title` = 'Travaux routiers', `slug` = 'travaux-routiers' WHERE `traffic_category_id` = '113';";
         $this->_queries .= "UPDATE `pages` SET `title` = 'Résultats', `slug` = 'resultats' WHERE `traffic_category_id` = '114';";
+
         $this->_queries .= "UPDATE `pages`, `traffic_categories` SET `pages`.`published` = `traffic_categories`.`published` WHERE `pages`.`slug` = `traffic_categories`.`slug`;";
 
         parent::up();
@@ -79,7 +80,7 @@ class AddTrafficResults extends Migration
                                 (111, 1, 0, 'Événements', 'evenements', 'option=com_traffic&view=articles&category=21', NULL, 'component', 1, 0, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
                                 (112, 1, 0, 'Mesures', 'mesures', 'option=com_traffic&view=articles&category=22', NULL, 'component', 1, 0, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
                                 (113, 1, 0, 'Travaux routiers', 'travaux-routiers', 'option=com_traffic&view=articles&category=20', NULL, 'component', 1, 0, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
-                                (114, 1, 0, 'Résultats', 'resultats', 'option=com_traffic&view=articles&category=19', NULL, 'component', 1, 1, 0, 37, 1, '2014-11-24 16:05:45', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"');";
+                                (114, 1, 0, 'Résultats', 'resultats', 'option=com_traffic&view=articles&category=19&layout=results&results=true', NULL, 'component', 1, 1, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"');";
 
         $this->_queries .= "ALTER TABLE `fr-fr_traffic` ADD `controlled` INT  NULL  DEFAULT NULL  AFTER `end_on`;";
         $this->_queries .= "ALTER TABLE `fr-fr_traffic` ADD `in_violation` INT  NULL  DEFAULT NULL  AFTER `controlled`;";
@@ -94,12 +95,18 @@ class AddTrafficResults extends Migration
     {
         $this->_queries = "DELETE FROM `pages` WHERE `pages_page_id` IN ('110', '111', '112', '113', '114');";
 
+        $this->_queries .= "ALTER TABLE `traffic` DROP `controlled`;";
+        $this->_queries .= "ALTER TABLE `traffic` DROP `in_violation`;";
+
         parent::down();
 
         // All the Multilingual speaking zones.
         $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "DELETE FROM `fr-fr_pages` WHERE `pages_page_id` IN ('110', '111', '112', '113', '114');";
+
+        $this->_queries .= "ALTER TABLE `fr-fr_traffic` DROP `controlled`;";
+        $this->_queries .= "ALTER TABLE `fr-fr_traffic` DROP `in_violation`;";
 
         parent::down();
     }

@@ -69,6 +69,9 @@
 				<a href="<?= route( 'view=article&task=edit&id='.$article->id ); ?>">
 					<?= escape($article->title) ?>
 				</a>
+                <? if($article->controlled && $article->in_violation) : ?>
+                    <span class="label label-info"><?= translate('Results') ?></span>
+                <? endif ?>
 			</td>
 			<td>
                 <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>

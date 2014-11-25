@@ -10,7 +10,7 @@
 
 <?= import('com:news.view.article.metadata.html', array('article' => $category)) ?>
 
-<h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
+<h1 class="article__header"><?= $category->title ?></h1>
 
 <?= $category->description ?>
 
@@ -41,6 +41,8 @@
     <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug) ?></h2>
 <? endif ?>
 
-<? if($category->id == '19') : ?>
-<a href="./<?= $category->slug ?>/resultaten"><?= translate('Resultaten') ?></a>
+<? if($category->id == '19' && count($this->getObject('com:traffic.model.articles')->results(true)->getRowset())) : ?>
+<p class="text-center">
+    <a href="./<?= $category->slug ?>/<?= object('lib:filter.slug')->sanitize(translate('results')) ?>"><?= translate('Roadside safety check results') ?>.</a>
+</p>
 <? endif ?>

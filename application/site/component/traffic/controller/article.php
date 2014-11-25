@@ -21,7 +21,7 @@ class TrafficControllerArticle extends PoliceControllerLanguage
         $request->query->sort = 'start_on';
 		$request->query->direction = 'ASC';
 
-        if($request->query->get('layout', 'cmd', null) != 'results')
+        if($request->query->get('view', 'cmd', null) == 'articles' && $request->query->get('layout', 'cmd', 'default') == 'default')
         {
             // Only show upcoming articles
             $request->query->date = 'upcoming';
