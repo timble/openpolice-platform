@@ -716,7 +716,13 @@ class Http {
 		}
 		curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-		$data = curl_exec($curl);
+
+        $application = \Nooku\Library\ObjectManager::getInstance()->getObject('application');
+        if($proxy = $application->getCfg('http_proxy')) {
+            curl_setopt($curl, CURLOPT_PROXY, $proxy);
+        }
+
+        $data = curl_exec($curl);
 		$http_code = (int) curl_getinfo($curl, CURLINFO_HTTP_CODE);
 		// Add the status code to the json data, useful for error-checking
 		$data = preg_replace('/^{/', '{"http_code":'.$http_code.',', $data);

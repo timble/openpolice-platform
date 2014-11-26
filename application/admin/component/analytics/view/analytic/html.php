@@ -15,6 +15,7 @@ class AnalyticsViewAnalyticHtml extends Library\ViewHtml
     {
         require_once(JPATH_VENDOR . '/google-analytics-api-php/GoogleAnalyticsAPI.class.php'); // or wherever autoload.php is located
 
+        $application = $this->getObject('application');
         $row = $this->getObject('com:analytics.database.row.analytic')
             ->set('analytics_analytic_id', '1')
             ->load();
@@ -23,8 +24,8 @@ class AnalyticsViewAnalyticHtml extends Library\ViewHtml
         if($row->expires_on < time())
         {
             $ga = new GoogleAnalyticsAPI('service');
-            $ga->auth->setClientId(\JFactory::getConfig()->getValue('google_auth_client')); // From the APIs console
-            $ga->auth->setEmail(\JFactory::getConfig()->getValue('google_auth_email')); // From the APIs console
+            $ga->auth->setClientId($application->getCfg('google_auth_client')); // From the APIs console
+            $ga->auth->setEmail($application->getCfg('google_auth_email')); // From the APIs console
             $ga->auth->setPrivateKey(JPATH_ROOT.'/config/key.p12'); // Path to the .p12 file
 
             $auth = $ga->auth->getAccessToken();
