@@ -15,10 +15,6 @@
     }
 }
 
-@mixin animation($value) {
-    @include experimental(animation, $value, -webkit, -moz, -ms, -o, official);
-}
-
 @include keyframes(spinner) {
     0% {
         @include rotateZ(0deg);
@@ -31,7 +27,7 @@
 @mixin spinner($size: 32px, $color: $blueDark) {
     margin: auto; // align in center thanks to flexbox
 
-    @include animation(spinner 1250ms infinite linear);
+    animation: spin 1250ms infinite linear;
     border: ($size/4) solid $color;
     border-right-color: transparent;
     border-radius: ($size);
