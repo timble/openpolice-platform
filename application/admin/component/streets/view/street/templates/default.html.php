@@ -67,6 +67,29 @@
                     </tbody>
                 </table>
             </fieldset>
+            <fieldset>
+                <legend><?= translate( 'Neighborhood information network' ); ?></legend>
+                <table class="table table--striped">
+                    <thead>
+                    <tr>
+                        <th><?= translate('Neighborhood') ?></th>
+                        <th><?= translate('Start') ?></th>
+                        <th><?= translate('End') ?></th>
+                        <th><?= translate('Parity') ?></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <? foreach($bins AS $bin) : ?>
+                        <tr>
+                            <td><?= $bin->district ?></td>
+                            <td><?= $bin->range_start ?></td>
+                            <td><?= $bin->range_end ?></td>
+                            <td><?= $bin->range_parity ?></td>
+                        </tr>
+                    <? endforeach ?>
+                    </tbody>
+                </table>
+            </fieldset>
 		</div>
 	</div>
 </form>

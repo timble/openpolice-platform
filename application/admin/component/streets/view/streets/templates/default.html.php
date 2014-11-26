@@ -43,6 +43,9 @@
             <th width="1">
                 <?= helper('grid.sort', array('column' => 'district_count', 'title' => 'Districts')) ?>
             </th>
+            <th width="1">
+                <?= helper('grid.sort', array('column' => 'bin_count', 'title' => 'BINs')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -79,6 +82,9 @@
             </td>
             <td align="center">
                 <?= $street->district_count ?>
+            </td>
+            <td align="center">
+                <?= $street->bin_count ?>
             </td>
 		</tr>
 		<? endforeach; ?>
