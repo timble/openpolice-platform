@@ -23,7 +23,8 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
         //setcookie ("district_street", $state->street, time()+3600*24*(2), '/5388' );
         //setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
 
-        $this->contact = $this->getObject('com:contacts.model.contacts')->id($district->contacts_contact_id)->getRow();
+        $this->contact  = $this->getObject('com:contacts.model.contacts')->id($district->contacts_contact_id)->getRow();
+        $this->site     = $this->getObject('application')->getSite();
 
         if($relation = $this->getObject('com:bin.model.relations')->street($state->street)->number($state->number)->getRowset()->top())
         {
