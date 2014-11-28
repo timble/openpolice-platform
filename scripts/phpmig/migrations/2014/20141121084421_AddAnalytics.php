@@ -16,7 +16,7 @@ class AddAnalytics extends Migration
 
         $this->_queries .= "INSERT INTO `pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
                             VALUES
-                                (109, 2, 0, 'Analytics', 'analytics', 'option=com_analytics&view=analytic', NULL, 'component', 1, 0, 0, 47, 1, '2014-11-21 08:54:36', NULL, NULL, NULL, NULL, 0, '');
+                                (109, 2, 0, 'Analytics', 'analytics', 'option=com_analytics&view=analytic', NULL, 'component', 1, 0, 0, 47, 1, now(), NULL, NULL, NULL, NULL, 0, '');
                             ";
 
         $this->_queries .= "INSERT INTO `pages_closures` (`ancestor_id`, `descendant_id`, `level`)
@@ -37,7 +37,7 @@ class AddAnalytics extends Migration
 
         $this->_queries = "INSERT INTO `fr_fr-pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
                             VALUES
-                                (109, 2, 0, 'Analytics', 'analytics', 'option=com_analytics&view=analytic', NULL, 'component', 1, 0, 0, 47, 1, '2014-11-21 08:54:36', NULL, NULL, NULL, NULL, 0, '');
+                                (109, 2, 0, 'Analytics', 'analytics', 'option=com_analytics&view=analytic', NULL, 'component', 1, 0, 0, 47, 1, now(), NULL, NULL, NULL, NULL, 0, '');
                             ";
 
         parent::up();

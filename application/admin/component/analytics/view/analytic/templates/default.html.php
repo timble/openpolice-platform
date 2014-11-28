@@ -40,8 +40,8 @@
         <div id="pagePath"></div>
         <h2><?= translate('Landing Pages') ?></h2>
         <div id="landingPagePath"></div>
-        <h2><?= translate('Search Terms') ?></h2>
-        <div id="searchKeyword"></div>
+        <h2><?= translate('Acquisition') ?></h2>
+        <div id="acquisition"></div>
 
         <script>
             gapi.analytics.ready(function()
@@ -153,26 +153,26 @@
                     table.draw(data, options);
                 });
 
-                var searchKeyword = new gapi.analytics.googleCharts.DataChart({
+                var acquisition = new gapi.analytics.googleCharts.DataChart({
                     query: {
                         ids: '<?= $viewId ?>',
-                        dimensions: 'ga:searchKeyword',
+                        dimensions: 'ga:fullReferrer',
                         'start-date': '30daysAgo',
                         'end-date': 'yesterday',
                         'max-results': 10,
-                        metrics: 'ga:searchUniques',
+                        metrics: 'ga:sessions',
                         filters: 'ga:pagePath=@/<?= $site ?>',
-                        sort: '-ga:searchUniques'
+                        sort: '-ga:sessions'
                     },
                     chart: {
-                        container: 'searchKeyword',
+                        container: 'acquisition',
                         type: 'TABLE',
                         options: {
                             width: '100%'
                         }
                     }
                 });
-                searchKeyword.execute();
+                acquisition.execute();
             });
         </script>
     </div>
