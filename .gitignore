@@ -1,6 +1,5 @@
 config/config.php
-
 /.vagrant/
 /node_modules/
-
 *.css.map
+config/key.p12
