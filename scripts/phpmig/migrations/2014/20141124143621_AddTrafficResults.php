@@ -61,7 +61,7 @@ class AddTrafficResults extends Migration
         // All the French speaking zones.
         $this->getZones()->reset()->where('language', '=', 2);
 
-        $this->_queries .= "UPDATE `pages` SET `title` = 'Contrôles', `slug` = 'controles' WHERE `traffic_category_id` = '110';";
+        $this->_queries = "UPDATE `pages` SET `title` = 'Contrôles', `slug` = 'controles' WHERE `traffic_category_id` = '110';";
         $this->_queries .= "UPDATE `pages` SET `title` = 'Événements', `slug` = 'evenements' WHERE `traffic_category_id` = '111';";
         $this->_queries .= "UPDATE `pages` SET `title` = 'Mesures', `slug` = 'mesures' WHERE `traffic_category_id` = '112';";
         $this->_queries .= "UPDATE `pages` SET `title` = 'Travaux routiers', `slug` = 'travaux-routiers' WHERE `traffic_category_id` = '113';";
