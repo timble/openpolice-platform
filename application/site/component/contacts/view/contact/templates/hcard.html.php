@@ -16,7 +16,7 @@
     <? if($contact->name && $category->id == '2') : ?>
     <h2><?= $contact->name?></h2>
     <? endif ?>
-    <? if($thumbnail) : ?>
+    <? if(isset($thumbnail)) : ?>
         <img class="article__thumbnail" itemprop="photo" width="400" height="300"  align="right" src="attachments://<?= $thumbnail ?>" />
     <? endif ?>
     <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">

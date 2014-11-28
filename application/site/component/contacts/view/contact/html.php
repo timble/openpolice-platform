@@ -48,7 +48,7 @@ class ContactsViewContactHtml extends Library\ViewHtml
         if($contact->isAttachable()) {
             $attachment = $contact->getAttachments()->top();
 
-            if($attachment->file->isImage()) {
+            if(isset($attachment) && $attachment->file->isImage()) {
                 $this->thumbnail = $attachment->thumbnail;
             }
         }
