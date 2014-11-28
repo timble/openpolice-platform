@@ -43,8 +43,8 @@
     </h1>
     <p>Een buurtinformatienetwerk, of BIN, is een samenwerkingsverband tussen burgers en de politie binnen een bepaalde buurt. <a href="/<?= $site ?>/vragen/buurtinformatienetwerk">Meer informatie</a>.</p>
     <? if(isset($bin)) : ?>
-        <?= import('default_bin.html', array('bin' => $bin)); ?>
         <p>Neem contact op met je coordinator om je aan te sluiten.</p>
+        <?= import('default_bin.html', array('bin' => $bin)); ?>
     <? endif; ?>
     <? if(!isset($bin)) : ?>
     <p>Je straat maakt nog geen deel uit van een BIN. Neem contact op met je wijkinspecteur om een BIN op te starten.</p>
