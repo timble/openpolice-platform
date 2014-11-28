@@ -47,7 +47,10 @@
         <?= import('default_bin.html', array('bin' => $bin)); ?>
     <? endif; ?>
     <? if(!isset($bin)) : ?>
-    <p>Je straat maakt nog geen deel uit van een BIN. Neem contact op met je wijkinspecteur om een BIN op te starten.</p>
+        <? $email = str_replace("@", "&#64;", $zone->email) ?>
+        <? $email = str_replace(".", "&#46;", $email) ?>
+
+    <p>Je straat maakt nog geen deel uit van een BIN. Neem contact op met je wijkinspecteur of mail naar <a class="email" href="mailto:<?= $email ?>"><?= $email ?></a> om een BIN op te starten.</p>
     <? endif; ?>
     </div>
 <? endif ?>
