@@ -23,6 +23,13 @@ class StreetsViewStreetHtml extends Library\ViewHtml
 
         $this->districts($districts);
 
+        $bins = $this->getObject('com:bin.model.relations')
+            ->street($street->id)
+            ->number('')
+            ->getRowset();
+
+        $this->bins($bins);
+
         return parent::render();
     }
 }
