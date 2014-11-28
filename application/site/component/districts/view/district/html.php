@@ -13,12 +13,17 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
 {
     public function render()
     {
+        $application = $this->getObject('application');
+
         //Get the article
         $district = $this->getModel()->getData();
         $state = $this->getModel()->getState();
 
         //Set the pathway
-        $this->getObject('application')->getPathway()->addItem($district->title, '');
+        $application->getPathway()->addItem($district->title, '');
+
+        // Get the zone
+        $this->zone = $this->getObject('com:police.model.zone')->id($application->getCfg('site'))->getRow();
 
         //setcookie ("district_street", $state->street, time()+3600*24*(2), '/5388' );
         //setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
