@@ -44,7 +44,14 @@ if(count($list) > '1' || (count($list) == '1' && reset($exclude) == '0')) {
         <h2 id="#<?= strtolower(translate('Attachments')); ?>"><?= translate('Attachments'); ?></h2>
         <ul>
             <? foreach($documents as $item) : ?>
-            <li><a onClick="ga('send', 'event', 'Attachments', 'Download', '<?=escape($item->name)?>');" href="attachments://<?= $item->path; ?>"><?= escape($item->name) ?> (<?= helper('com:files.filesize.humanize', array('size' => $item->file->size));?>, <?= $item->file->extension ?>)</a></li>
+                <?
+                preg_match('/(.*)\.([^.]*)$/', $item->name, $matches);
+
+                if (count($matches) === 3) {
+                    $name = $matches[1];
+                } else $name = $item->name;
+                ?>
+                <li><a onClick="ga('send', 'event', 'Attachments', 'Download', '<?=escape($item->name)?>');" href="attachments://<?= $item->path; ?>"><?= escape($name) ?> (<?= $item->file->extension ?>, <?= helper('com:files.filesize.humanize', array('size' => $item->file->size));?>)</a></li>
             <? endforeach ?>
         </ul>
     </div>
