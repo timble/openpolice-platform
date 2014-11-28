@@ -24,24 +24,12 @@ class ModelArticles extends Library\ModelTable
 		    ->insert('date' , 'string');
 	}
 
-    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
-    {
-        parent::_buildQueryColumns($query);
-
-        $query->columns(array(
-            'created_by_name'   => 'creator.name',
-            'thumbnail'         => 'attachments.path'
-        ));
-    }
-
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
         parent::_buildQueryJoins($query);
         $state = $this->getState();
 
-        $query->join(array('categories'  => 'traffic_categories'), 'categories.traffic_category_id = tbl.traffic_category_id')
-              ->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = categories.attachments_attachment_id')
-              ->join(array('creator'  => 'users'), 'creator.users_user_id = tbl.created_by');
+        $query->join(array('categories'  => 'traffic_categories'), 'categories.traffic_category_id = tbl.traffic_category_id');
 
         if($state->street)
         {
