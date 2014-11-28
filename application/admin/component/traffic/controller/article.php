@@ -18,7 +18,8 @@ class TrafficControllerArticle extends Library\ControllerModel
                 'editable',
                 'com:activities.controller.behavior.loggable',
                 'com:streets.controller.behavior.streetable',
-                'com:languages.controller.behavior.translatable'
+                'com:languages.controller.behavior.translatable',
+                'com:attachments.controller.behavior.attachable'
             ),
         ));
 
