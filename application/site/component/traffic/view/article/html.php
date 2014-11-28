@@ -18,6 +18,11 @@ class TrafficViewArticleHtml extends Library\ViewHtml
         //Get the category
         $category = $this->getCategory();
 
+        //Get the attachments
+        if ($article->id && $article->isAttachable()) {
+            $this->attachments($article->getAttachments());
+        }
+
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($article->title, '');
 

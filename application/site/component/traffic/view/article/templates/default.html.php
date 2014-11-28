@@ -50,4 +50,20 @@
             <? endif ?>
         </div>
     <? endif ?>
+
+    <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array(false))) ?>
 </div>
+
+<script src="assets://application/components/jquery/jquery.min.js" />
+<script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
+<script data-inline>
+    $(document).ready(function() {
+        // This will create a single gallery from all elements that have class data-gallery="enabled"
+        $('[data-gallery="enabled"]').magnificPopup({
+            type: 'image',
+            gallery:{
+                enabled:true
+            }
+        });
+    });
+</script>
