@@ -10,24 +10,43 @@
 
 <? $list = (isset($row) && isset($table)) ? $attachments->find(array('row' => $row, 'table' => $table)) : $attachments ?>
 
-<? if(count($list) > '1' || (count($list) == '1' && reset($exclude) == '0')) : ?>
-    <ul class="gallery">
-        <? foreach($list as $item) : ?>
-            <? if($item->file->isImage() && !in_array($item->id, Nooku\Library\ObjectConfig::unbox($exclude))) : ?>
-                <li class="gallery__item">
-                    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="thumbnail" data-gallery="enabled" href="attachments://<?= $item->path; ?>">
-                        <img width="640px" src="attachments://<?= $item->thumbnail ?>" />
-                    </a>
-                </li>
-            <? endif ?>
-        <? endforeach ?>
-    </ul>
+<?
+if(count($list) > '1' || (count($list) == '1' && reset($exclude) == '0')) {
+    $images = array();
+    $documents = array();
 
-    <ul>
-        <? foreach($list as $item) : ?>
-            <? if(!$item->file->isImage()) : ?>
-                <li><a onClick="ga('send', 'event', 'Attachments', 'Download', '<?=escape($item->name)?>');" href="attachments://<?= $item->path; ?>"><?= escape($item->name) ?></a> (<?= helper('com:files.filesize.humanize', array('size' => $item->file->size));?>, <?= $item->file->extension ?>)</li>
-            <? endif ?>
+    foreach($list as $item) {
+        if($item->file->isImage() && !in_array($item->id, Nooku\Library\ObjectConfig::unbox($exclude)))
+        {
+            $images[] = $item;
+        } elseif (!$item->file->isImage()) {
+            $documents[] = $item;
+        }
+    }
+}
+?>
+
+<? if(count($list) > '1' || (count($list) == '1' && reset($exclude) == '0')) : ?>
+    <? if($images) : ?>
+    <ul class="gallery">
+        <? foreach($images as $item) : ?>
+        <li class="gallery__item">
+            <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="thumbnail" data-gallery="enabled" href="attachments://<?= $item->path; ?>">
+                <img width="640px" src="attachments://<?= $item->thumbnail ?>" />
+            </a>
+        </li>
         <? endforeach ?>
     </ul>
+    <? endif ?>
+
+    <? if($documents) : ?>
+    <div class="well">
+        <h2 id="#<?= strtolower(translate('Attachments')); ?>"><?= translate('Attachments'); ?></h2>
+        <ul>
+            <? foreach($documents as $item) : ?>
+            <li><a onClick="ga('send', 'event', 'Attachments', 'Download', '<?=escape($item->name)?>');" href="attachments://<?= $item->path; ?>"><?= escape($item->name) ?> (<?= helper('com:files.filesize.humanize', array('size' => $item->file->size));?>, <?= $item->file->extension ?>)</a></li>
+            <? endforeach ?>
+        </ul>
+    </div>
+    <? endif ?>
 <? endif ?>
