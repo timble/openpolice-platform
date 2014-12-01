@@ -61,11 +61,11 @@ class AddTrafficResults extends Migration
         // All the French speaking zones.
         $this->getZones()->reset()->where('language', '=', 2);
 
-        $this->_queries = "UPDATE `pages` SET `title` = 'Contrôles', `slug` = 'controles' WHERE `traffic_category_id` = '110';";
-        $this->_queries .= "UPDATE `pages` SET `title` = 'Événements', `slug` = 'evenements' WHERE `traffic_category_id` = '111';";
-        $this->_queries .= "UPDATE `pages` SET `title` = 'Mesures', `slug` = 'mesures' WHERE `traffic_category_id` = '112';";
-        $this->_queries .= "UPDATE `pages` SET `title` = 'Travaux routiers', `slug` = 'travaux-routiers' WHERE `traffic_category_id` = '113';";
-        $this->_queries .= "UPDATE `pages` SET `title` = 'Résultats', `slug` = 'resultats' WHERE `traffic_category_id` = '114';";
+        $this->_queries = "UPDATE `pages` SET `title` = 'Contrôles', `slug` = 'controles' WHERE `pages_page_id` = '110';";
+        $this->_queries .= "UPDATE `pages` SET `title` = 'Événements', `slug` = 'evenements' WHERE `pages_page_id` = '111';";
+        $this->_queries .= "UPDATE `pages` SET `title` = 'Mesures', `slug` = 'mesures' WHERE `pages_page_id` = '112';";
+        $this->_queries .= "UPDATE `pages` SET `title` = 'Travaux routiers', `slug` = 'travaux-routiers' WHERE `pages_page_id` = '113';";
+        $this->_queries .= "UPDATE `pages` SET `title` = 'Résultats', `slug` = 'resultats' WHERE `pages_page_id` = '114';";
 
         $this->_queries .= "UPDATE `pages`, `traffic_categories` SET `pages`.`published` = `traffic_categories`.`published` WHERE `pages`.`slug` = `traffic_categories`.`slug`;";
 
