@@ -27,9 +27,9 @@
     <? endif ?>
 
     <? if($streets || ($article->controlled && $article->in_violation)) : ?>
-        <div class="<?= $article->text ? 'traffic__sidebar' : '' ?>">
+        <div<?= $article->text ? ' class="traffic__sidebar"' : '' ?>>
             <? if($article->controlled && $article->in_violation) : ?>
-                <div class="<?= $article->text ? 'well' : '' ?>">
+                <div<?= $article->text ? ' class="well"' : '' ?>>
                     <strong><?= translate('Results') ?>:</strong>
                     <ul>
                         <li><?= translate('Controlled') ?>: <?= $article->controlled ?></li>
@@ -39,7 +39,7 @@
             <? endif ?>
 
             <? if(count($streets)) : ?>
-                <div class="<?= $article->text ? 'well' : '' ?>">
+                <div<?= $article->text ? ' class="well"' : '' ?>>
                     <strong><?= translate('Streets') ?>:</strong>
                     <ul>
                         <? foreach ($streets as $street) : ?>
