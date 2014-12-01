@@ -105,3 +105,14 @@
         }
     });
 </script>
+
+<? if($article->isAttachable()) : ?>
+<fieldset>
+    <legend><?= translate('Attachments') ?></legend>
+    <? if (!$article->isNew()) : ?>
+        <?= import('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments())) ?>
+    <? endif ?>
+    <?= import('com:attachments.view.attachments.upload.html') ?>
+</fieldset>
+<? endif ?>
+
