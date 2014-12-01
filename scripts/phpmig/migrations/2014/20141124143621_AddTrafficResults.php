@@ -50,8 +50,8 @@ class AddTrafficResults extends Migration
                                 (2, 114);
                             ";
 
-        $this->_queries .= "UPDATE `pages`, `traffic_categories` SET `pages`.`published` = `traffic_categories`.`published` WHERE `pages`.`slug` = `traffic_categories`.`slug`;";
         $this->_queries .= "UPDATE `traffic_categories` SET `title` = 'Controles', `slug` = 'controles' WHERE `traffic_category_id` = '19' AND `title`= 'Aangekondigde controles';";
+        $this->_queries .= "UPDATE `pages`, `traffic_categories` SET `pages`.`published` = `traffic_categories`.`published` WHERE `pages`.`slug` = `traffic_categories`.`slug`;";
 
         $this->_queries .= "ALTER TABLE `traffic` ADD `controlled` INT  NULL  DEFAULT NULL  AFTER `end_on`;";
         $this->_queries .= "ALTER TABLE `traffic` ADD `in_violation` INT  NULL  DEFAULT NULL  AFTER `controlled`;";
