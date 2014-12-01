@@ -82,7 +82,7 @@ class AddTrafficResults extends Migration
                                 (113, 1, 0, 'Travaux routiers', 'travaux-routiers', 'option=com_traffic&view=articles&category=20', NULL, 'component', 1, 0, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
                                 (114, 1, 0, 'Résultats', 'resultats', 'option=com_traffic&view=articles&category=19&layout=results&results=true', NULL, 'component', 1, 1, 0, 37, 1, now(), NULL, NULL, NULL, NULL, 0, 'page_title=\"\"');";
 
-        $this->_queries .= "UPDATE `fr-fr_pages`, `fr-fr_traffic_categories` SET `fr-fr_pages`.`published` = `fr-fr_traffic_categories`.`published` WHERE `pages`.`slug` = `traffic_categories`.`slug`;";
+        $this->_queries .= "UPDATE `fr-fr_pages`, `fr-fr_traffic_categories` SET `fr-fr_pages`.`published` = `fr-fr_traffic_categories`.`published` WHERE `fr-fr_pages`.`slug` = `fr-fr_traffic_categories`.`slug`;";
 
         $this->_queries .= "ALTER TABLE `fr-fr_traffic` ADD `controlled` INT  NULL  DEFAULT NULL  AFTER `end_on`;";
         $this->_queries .= "ALTER TABLE `fr-fr_traffic` ADD `in_violation` INT  NULL  DEFAULT NULL  AFTER `controlled`;";
