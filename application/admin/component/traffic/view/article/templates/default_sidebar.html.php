@@ -78,6 +78,34 @@
 </fieldset>
 <? endif ?>
 
+<fieldset id="results">
+    <legend><?= translate('Results') ?></legend>
+    <div>
+        <label for="controlled"><?= translate('Controlled') ?></label>
+        <div>
+            <input type="number" name="controlled" value="<?= $article->controlled ?>" />
+        </div>
+    </div>
+    <div>
+        <label for="in_violation"><?= translate('In violation') ?></label>
+        <div>
+            <input type="number" name="in_violation" value="<?= $article->in_violation ?>" />
+        </div>
+    </div>
+</fieldset>
+
+<script data-inline>
+    $jQuery("input[name='traffic_category_id']").click(function()
+    {
+        if($jQuery('#traffic_category_id19').is(':checked'))
+        {
+            $jQuery( "#results" ).show();
+        } else {
+            $jQuery( "#results" ).hide();
+        }
+    });
+</script>
+
 <? if($article->isAttachable()) : ?>
 <fieldset>
     <legend><?= translate('Attachments') ?></legend>
@@ -87,3 +115,4 @@
     <?= import('com:attachments.view.attachments.upload.html') ?>
 </fieldset>
 <? endif ?>
+

@@ -2283,6 +2283,9 @@ textarea + .help-block,
 
 /* line 463, _forms.scss */
 input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
 select {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

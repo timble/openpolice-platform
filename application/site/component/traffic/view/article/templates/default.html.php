@@ -10,10 +10,6 @@
 
 <?= import('com:news.view.article.metadata.html') ?>
 
-<ktml:module position="left">
-    <?= import('com:categories.view.categories.list.html') ?>
-</ktml:module>
-
 <title content="replace"><?= escape($article->title) ?></title>
 
 <div class="article" itemprop="event" itemscope itemtype="http://schema.org/Event">
@@ -24,25 +20,35 @@
         </div>
     </header>
 
-    <? if($article->isStreetable()) : ?>
-        <? if(count($streets = $article->getStreets())) : ?>
-            <? if($article->text) : ?>
-            <div class="well" style="float: right; margin-left: 30px">
-                <strong><?= translate('Streets') ?>:</strong>
-            <? endif ?>
-                <ul>
-                <? foreach ($streets as $street) : ?>
-                    <li><?= $street->street ?></li>
-                <? endforeach; ?>
-                </ul>
-            <? if($article->text) : ?>
-            </div>
-            <? endif ?>
-        <? endif ?>
+    <? if($article->text) : ?>
+        <div class="traffic__text">
+            <span itemprop="description"><?= $article->text ?></span>
+        </div>
     <? endif ?>
 
-    <? if($article->text) : ?>
-        <span itemprop="description"><?= $article->text ?></span>
+    <? if($streets || ($article->controlled && $article->in_violation)) : ?>
+        <div<?= $article->text ? ' class="traffic__sidebar"' : '' ?>>
+            <? if($article->controlled && $article->in_violation) : ?>
+                <div<?= $article->text ? ' class="well"' : '' ?>>
+                    <strong><?= translate('Results') ?>:</strong>
+                    <ul>
+                        <li><?= translate('Controlled') ?>: <?= $article->controlled ?></li>
+                        <li><?= translate('In violation') ?>: <?= $article->in_violation ?></li>
+                    </ul>
+                </div>
+            <? endif ?>
+
+            <? if(count($streets)) : ?>
+                <div<?= $article->text ? ' class="well"' : '' ?>>
+                    <strong><?= translate('Streets') ?>:</strong>
+                    <ul>
+                        <? foreach ($streets as $street) : ?>
+                            <li><?= $street->street ?></li>
+                        <? endforeach; ?>
+                    </ul>
+                </div>
+            <? endif ?>
+        </div>
     <? endif ?>
 
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array(false))) ?>

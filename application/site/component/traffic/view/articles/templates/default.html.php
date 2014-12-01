@@ -10,10 +10,6 @@
 
 <?= import('com:news.view.article.metadata.html', array('article' => $category)) ?>
 
-<ktml:module position="left">
-    <?= import('com:categories.view.categories.list.html') ?>
-</ktml:module>
-
 <h1 class="article__header"><?= $category->title ?></h1>
 
 <?= $category->description ?>
@@ -38,8 +34,15 @@
     <? endforeach; ?>
     </tbody>
 </table>
-<? elseif($category->count) : ?>
-    <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug) ?></h2>
-<? endif ?>
 
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+
+<? elseif($category->count) : ?>
+    <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug.' announced') ?></h2>
+<? endif ?>
+
+<? if($category->id == '19' && count($this->getObject('com:traffic.model.articles')->published(true)->results(true)->getRowset())) : ?>
+<p class="text-center">
+    <a href="./<?= $category->slug ?>/<?= object('lib:filter.slug')->sanitize(translate('results')) ?>"><?= translate('Roadside safety check results') ?>.</a>
+</p>
+<? endif ?>
