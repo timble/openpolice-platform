@@ -38,7 +38,7 @@
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 
 <? elseif($category->count) : ?>
-    <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug) ?></h2>
+    <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug.' announced') ?></h2>
 <? endif ?>
 
 <? if($category->id == '19' && count($this->getObject('com:traffic.model.articles')->published(true)->results(true)->getRowset())) : ?>
