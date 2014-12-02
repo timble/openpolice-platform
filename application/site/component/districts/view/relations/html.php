@@ -18,6 +18,8 @@ class DistrictsViewRelationsHtml extends Library\ViewHtml
 
         $this->params   = $params;
 
+        $this->category = $this->getObject('com:contacts.model.categories')->id('24')->getRow();
+
         return parent::render();
     }
 }

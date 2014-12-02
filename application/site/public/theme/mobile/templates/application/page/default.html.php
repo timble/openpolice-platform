@@ -105,7 +105,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <div class="footer__districts">
                     <h3><?= translate('Your district officer') ?></h3>
                     <p><?= translate('You know the responsible district officer in your area? He or she is your first contact with the police.') ?></p>
-                    <a href="<?= $path ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
+                    <a href="<?= $path ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district')) ?>"><?= translate('Contact your district officer') ?>.</a>
                 </div>
             </div>
         </div>

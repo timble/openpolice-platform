@@ -32,7 +32,8 @@ class ModelStreets extends Library\ModelTable
 
         $query->columns(array(
             'title' => "CONCAT(tbl.title, ' (', city.title, ')')",
-            'district_count' => 'content.district_count'
+            'district_count' => 'district.district_count',
+            'bin_count' => 'bin.district_count'
         ));
     }
 
@@ -43,11 +44,18 @@ class ModelStreets extends Library\ModelTable
         $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
 
         $subquery = $this->getObject('lib:database.query.select')
-            ->columns(array('streets_street_id', 'district_count' => 'COUNT(DISTINCT districts_district_id)'))
+            ->columns(array('streets_street_id', 'district_count' => 'COUNT(districts_district_id)'))
             ->table('districts_relations')
             ->group('streets_street_id');
 
-        $query->join(array('content' => $subquery), 'content.streets_street_id = tbl.streets_street_id');
+        $query->join(array('district' => $subquery), 'district.streets_street_id = tbl.streets_street_id');
+
+        $subquery = $this->getObject('lib:database.query.select')
+            ->columns(array('streets_street_id', 'district_count' => 'COUNT(bin_district_id)'))
+            ->table('bin_relations')
+            ->group('streets_street_id');
+
+        $query->join(array('bin' => $subquery), 'bin.streets_street_id = tbl.streets_street_id');
 
 
         parent::_buildQueryJoins($query);
@@ -80,11 +88,11 @@ class ModelStreets extends Library\ModelTable
         }
 
         if ($state->no_district == '1') {
-            $query->where('content.district_count IS NULL');
+            $query->where('district.district_count IS NULL');
         }
 
         if ($state->district == '1') {
-            $query->where('content.district_count IS NOT NULL');
+            $query->where('district.district_count IS NOT NULL');
         }
 
         if($this->getObject('application')->getSite() != 'default') {

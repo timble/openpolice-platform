@@ -10,7 +10,7 @@
 
 <meta content="noimageindex" name="robots" />
 
-<h2 class="article__header"><?= $officer->title ?></h2>
+<h<?= isset($heading) ? $heading + 2 : 2 ?> class="article__header"><?= $officer->title ?></h<?= isset($heading) ? $heading + 2 : 2 ?>>
 <? if($officer->phone || $officer->mobile || $officer->email || $district->email) : ?>
 <ul>
     <? if($officer->phone) : ?><li><?= translate('Phone') ?>: <?= $officer->phone ?></li><? endif ?>
