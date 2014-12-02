@@ -2,7 +2,7 @@
 
 use MyPhpmig\Police\Migration;
 
-class AddTrafficResults extends Migration
+class AddTrafficResultsFix extends Migration
 {
     /**
      * Do the migration
