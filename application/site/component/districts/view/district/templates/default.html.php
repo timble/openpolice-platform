@@ -36,7 +36,7 @@
     <? endif ?>
 </div>
 
-<? if(count($this->getObject('com:bin.model.relations')->getRowset())) : ?>
+<? if($state->street && $state->number && count($this->getObject('com:bin.model.relations')->getRowset())) : ?>
     <div class="article">
     <h1 class="article__header">
         <?= @translate('Your neighborhood information network') ?>

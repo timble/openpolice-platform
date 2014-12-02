@@ -104,7 +104,18 @@
 </div>
 
 <? if ($state->street && is_numeric($state->number)) : ?>
-    <? if(!count($relations)) : ?>
+    <? if(count($relations)) : ?>
+    <ul>
+        <? foreach ($relations as $relation) : ?>
+            <li>
+                <a href="<?= helper('route.district', array('row' => $relation, 'state' => $state)) ?>">
+                    <?= $relation->street ?> <?= helper('string.street', array('row' => $relation)) ?>
+                </a>
+            </li>
+        <? endforeach; ?>
+    </ul>
+    <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+    <? else : ?>
         <h2 role="alert" style="text-align: center;margin: 60px 0"><?= translate('No neighbourhood officer found') ?>.</h2>
         <? $zone = object('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow() ?>
         <? $email = str_replace("@", "&#64;", $zone->email) ?>
