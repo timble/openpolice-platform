@@ -1157,6 +1157,16 @@ button.closed {
     float: left;
     margin-left: 0; }
 
+  .traffic__text {
+    width: 56.79012%;
+    float: left;
+    margin-left: 0; }
+
+  .traffic__sidebar {
+    width: 39.50617%;
+    float: left;
+    margin-left: 3.7037%; }
+
   .copyright--left {
     width: 39.50617%;
     float: left;
@@ -1548,11 +1558,17 @@ ul.column--double, ul.column--triple, ul.column--quad {
   .banner__image--5288 {
     background: url("../images/banners/5288.jpg"); }
 
+  .banner__image--5304 {
+    background: url("../images/banners/5304.jpg"); }
+
   .banner__image--5317 {
     background: url("../images/banners/5317.jpg"); }
 
   .banner__image--5318 {
     background: url("../images/banners/5318.jpg"); }
+
+  .banner__image--5423 {
+    background: url("../images/banners/5423.jpg"); }
 
   .banner__image--5370 {
     background: url("../images/banners/5370.jpg"); }

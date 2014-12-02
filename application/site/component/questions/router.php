@@ -60,6 +60,7 @@ class QuestionsRouter extends Library\DispatcherRouter
         unset($query['layout']);
 
         unset($query['published']);
+        unset($query['published_category']);
         unset($query['limit']);
 
         return $segments;

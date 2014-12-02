@@ -6,7 +6,7 @@ set :default_stage, "staging"
 
 ## Application settings.
 set :application, "portal"
-set :app_symlinks, ["sites", "config/config.php"]
+set :app_symlinks, ["sites", "config/config.php", "config/key.p12"]
 
 # Server user settings.
 set :user, "deploy"

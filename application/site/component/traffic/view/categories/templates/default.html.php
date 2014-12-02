@@ -8,10 +8,6 @@
  */
 ?>
 
-<ktml:module position="left">
-    <?= import('com:categories.view.categories.list.html') ?>
-</ktml:module>
-
 <? foreach($categories as $category) : ?>
     <div class="article">
         <h1 class="article__header">
