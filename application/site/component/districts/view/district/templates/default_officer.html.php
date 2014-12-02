@@ -21,11 +21,10 @@
 
 <? if($officer->isAttachable()) : ?>
     <? if(count($officer->getAttachments())) : ?>
-    <? foreach($officer->getAttachments() as $item) : ?>
+        <? $item = $officer->getAttachments()->top() ?>
         <? if($item->file->isImage()) : ?>
             <img width="140" class="thumbnail" src="attachments://<?= $item->path ?>" />
         <? endif ?>
-    <? endforeach ?>
     <? else : ?>
         <img width="140" class="thumbnail" src="assets://districts/images/placeholder.png" />
     <? endif ?>
