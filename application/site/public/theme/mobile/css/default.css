@@ -1542,6 +1542,9 @@ ul.column--double, ul.column--triple, ul.column--quad {
     box-sizing: border-box;
     background: url("../images/banners/default.jpg"); }
 
+  .banner__image--5271 {
+    background: url("../images/banners/5271.jpg"); }
+
   .banner__image--5283 {
     background: url("../images/banners/5283.jpg"); }
 
