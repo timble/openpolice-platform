@@ -10,6 +10,7 @@ class AddTrafficResultsFix extends Migration
     public function up()
     {
         $this->_queries = "UPDATE `pages` AS `a`, `pages` AS `b`  SET `a`.`published` = `b`.`published` WHERE `a`.`pages_page_id` = '114' AND `b`.`pages_page_id` = '110';";
+        $this->_queries = "UPDATE `pages` AS `a`, `pages` AS `b`  SET `a`.`published` = `b`.`published` WHERE `a`.`pages_page_id` IN ('110', '111', '112', '113', '114') AND `b`.`pages_page_id` = '39' AND `b`.`published` = '0';";
 
         parent::up();
 
@@ -17,6 +18,7 @@ class AddTrafficResultsFix extends Migration
         $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "UPDATE `fr-fr_pages` AS `a`, `pages` AS `b`  SET `a`.`published` = `b`.`published` WHERE `a`.`pages_page_id` = '114' AND `b`.`pages_page_id` = '110';";
+        $this->_queries = "UPDATE `fr-fr_pages` AS `a`, `pages` AS `b`  SET `a`.`published` = `b`.`published` WHERE `a`.`pages_page_id` IN ('110', '111', '112', '113', '114') AND `b`.`pages_page_id` = '39' AND `b`.`published` = '0';";
 
         parent::up();
     }
