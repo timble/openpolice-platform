@@ -15,12 +15,11 @@ class DistrictsControllerRelation extends Library\ControllerModel
     {
         $relations = parent::_actionBrowse($context);
 
-        $data        = $context->request->data;
         $street      = isset($context->request->getUrl()->query['street']) ? $context->request->getUrl()->query['street'] : false;
         $number      = isset($context->request->getUrl()->query['number']) ? $context->request->getUrl()->query['number'] : false;
 
         // Street and number are required
-        if($number != '' && $street && is_numeric($number)) {
+        if(count($relations) == '1' && $number != '' && $street && is_numeric($number)) {
             $relation = $relations->top();
 
             // Redirect the user if the request doesn't include layout=form
