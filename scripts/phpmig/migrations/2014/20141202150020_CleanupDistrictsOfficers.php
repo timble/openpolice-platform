@@ -24,9 +24,9 @@ class CleanupDistrictsOfficers extends Migration
     public function down()
     {
         $this->_queries = "ALTER TABLE `districts_officers` ADD `islp` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `params`;";
-        $this->_queries = "ALTER TABLE `districts_officers` ADD `position` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `params`;";
-        $this->_queries = "ALTER TABLE `districts_officers` ADD `show_image` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `params`;";
-        $this->_queries = "ALTER TABLE `districts_officers` ADD `old_id` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `params`;";
+        $this->_queries .= "ALTER TABLE `districts_officers` ADD `position` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `params`;";
+        $this->_queries .= "ALTER TABLE `districts_officers` ADD `show_image` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `params`;";
+        $this->_queries .= "ALTER TABLE `districts_officers` ADD `old_id` VARCHAR(250)  NULL  DEFAULT NULL  AFTER `params`;";
 
         parent::down();
     }
