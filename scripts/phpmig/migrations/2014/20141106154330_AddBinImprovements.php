@@ -13,6 +13,8 @@ class AddBinImprovements extends Migration
         $this->_queries .= "UPDATE `pages` SET `title` = 'Je wijk', `slug` = 'je-wijk' WHERE `pages_page_id` = '43';";
         $this->_queries .= "UPDATE `contacts_categories` SET `title` = 'Je wijk', `slug` = 'je-wijk' WHERE `contacts_category_id` = '24';";
 
+        $this->_queries .= "UPDATE `news` set `introtext` = replace(`introtext`, '/contact/je-wijkinspecteur', '/contact/je-wijk');";
+        $this->_queries .= "UPDATE `news` set `fulltext` = replace(`fulltext`, '/contact/je-wijkinspecteur', '/contact/je-wijk');";
         $this->_queries .= "UPDATE `about` set `introtext` = replace(`introtext`, '/contact/je-wijkinspecteur', '/contact/je-wijk');";
         $this->_queries .= "UPDATE `about` set `fulltext` = replace(`fulltext`, '/contact/je-wijkinspecteur', '/contact/je-wijk');";
         $this->_queries .= "UPDATE `contacts` set `misc` = replace(`misc`, '/contact/je-wijkinspecteur', '/contact/je-wijk');";
@@ -53,6 +55,8 @@ class AddBinImprovements extends Migration
     {
         $this->_queries = "UPDATE `pages` SET `title` = 'Je wijkinspecteur', `slug` = 'je-wijkinspecteur' WHERE `pages_page_id` = '43';";
 
+        $this->_queries .= "UPDATE `news` set `introtext` = replace(`introtext`, '/contact/je-wijk', '/contact/je-wijkinspecteur');";
+        $this->_queries .= "UPDATE `news` set `fulltext` = replace(`fulltext`, '/contact/je-wijk', '/contact/je-wijkinspecteur');";
         $this->_queries .= "UPDATE `about` set `introtext` = replace(`introtext`, '/contact/je-wijk', '/contact/je-wijkinspecteur');";
         $this->_queries .= "UPDATE `about` set `fulltext` = replace(`fulltext`, '/contact/je-wijk', '/contact/je-wijkinspecteur');";
         $this->_queries .= "UPDATE `contacts` set `misc` = replace(`misc`, '/contact/je-wijk', '/contact/je-wijkinspecteur');";
