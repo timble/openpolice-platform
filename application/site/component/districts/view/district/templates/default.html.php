@@ -41,16 +41,16 @@
     <h1 class="article__header">
         <?= @translate('Your neighborhood information network') ?>
     </h1>
-    <p>Een buurtinformatienetwerk, of BIN, is een samenwerkingsverband tussen burgers en de politie binnen een bepaalde buurt. <a href="/<?= $site ?>/vragen/buurtinformatienetwerk">Meer informatie</a>.</p>
+    <p><?= translate('A neighborhood information network is a partnership between citizens and the police within a certain area'); ?>. <a href="/<?= $site ?>/<?= strtolower(translate('questions')) ?>/<?= translate('neighborhood-information-network') ?>"><?= translate('More information') ?></a>.</p>
     <? if(isset($bin)) : ?>
-        <p>Neem contact op met je coordinator om je aan te sluiten.</p>
+        <p><?= translate('Contact your coordinator to join') ?>.</p>
         <?= import('default_bin.html', array('bin' => $bin)); ?>
     <? endif; ?>
     <? if(!isset($bin)) : ?>
         <? $email = str_replace("@", "&#64;", $zone->email) ?>
         <? $email = str_replace(".", "&#46;", $email) ?>
 
-    <p>Je straat maakt nog geen deel uit van een BIN. Neem contact op met je wijkinspecteur of mail naar <a class="email" href="mailto:<?= $email ?>"><?= $email ?></a> om een BIN op te starten.</p>
+    <p><?= translate('Your street is not yet part of a neighborhood information network') ?>. <?= sprintf(JText::_('Contact your district officer or email us at %s to start a neighborhood information network'), '<a class="email" href="mailto:'.$email.'">'.$email.'</a>') ?>.</p>
     <? endif; ?>
     </div>
 <? endif ?>
