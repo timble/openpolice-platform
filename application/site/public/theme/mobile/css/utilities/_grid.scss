@@ -81,14 +81,6 @@
     @include span(7 of 12);
   }
 
-  .bin__coordinator {
-    @include span(first 6 of 12);
-  }
-
-  .bin__responsible {
-    @include span(6 of 12);
-  }
-
   .exception__message {
     @include span(first 7 of 12);
   }
