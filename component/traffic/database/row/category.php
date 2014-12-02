@@ -39,6 +39,22 @@ class DatabaseRowCategory extends Library\DatabaseRowTable
             ));
 
             $page->getTable()->getAdapter()->update($query);
+
+            // Also update the results menu item which is a descendant of pages_page_id 110
+            if($page->pages_page_id = '110')
+            {
+                $query = $this->getObject('lib:database.query.update')
+                    ->table(array('tbl' => $page->getTable()->getBase()))
+                    ->values(array('tbl.published = :published'))
+                    ->where('tbl.pages_page_id = :id');
+
+                $query->bind(array(
+                    'id' => '114',
+                    'published' => $this->published,
+                ));
+
+                $page->getTable()->getAdapter()->update($query);
+            }
         }
 
         return parent::save();
