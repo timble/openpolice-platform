@@ -14,7 +14,10 @@ class PoliceRouter extends Library\DispatcherRouter
     public function build(Library\HttpUrl $url)
     {
         $segments = array();
+        $query    = &$url->query;
 
+        unset($query['view']);
+        unset($query['layout']);
 
         return $segments;
     }
