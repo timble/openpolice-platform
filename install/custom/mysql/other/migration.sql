@@ -58,7 +58,7 @@ WHERE `content`.`id` = `frontpage`.`content_id`;
 
 
 -- Update links in quicklinks
-UPDATE `5353`.`pages_modules` set `content` = replace(`content`, '5388', '5353');
+UPDATE `pages_modules` set `content` = replace(`content`, '5388', '5353');
 
 
 -- Add some sample questions and category
