@@ -9,12 +9,14 @@
 
 use Nooku\Library;
 
-class ContactsViewHoursHtml extends Library\ViewHtml
+class ContactsViewHourHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $this->contacts = $this->getObject('com:contacts.model.contacts')->sort('title')->getRowset();
-        $this->categories = $this->getObject('com:contacts.model.categories')->sort('title')->hidden(false)->getRowset();
+        //Get the article
+        $hour = $this->getModel()->getData();
+
+        $this->closed = (is_null($hour->opening_time) || is_null($hour->closing_time)) && is_null($hour->appointment) && !$hour->isNew();
 
         return parent::render();
     }
