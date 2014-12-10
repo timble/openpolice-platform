@@ -52,9 +52,15 @@ class DatabaseRowHour extends Library\DatabaseRowTable
 
         if($this->closed == '1')
         {
-            $this->opening_time = null;
-            $this->closing_time = null;
-            $this->appointment = null;
+            $this->opening_time = '';
+            $this->closing_time = '';
+            $this->appointment = NULL;
+        }
+
+        if($this->appointment == '')
+        {
+            $this->opening_time = '';
+            $this->closing_time = '';
         }
 
         $result   = parent::save();
