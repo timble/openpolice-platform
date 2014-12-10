@@ -38,7 +38,7 @@
                         <? elseif($day_of_week == '2') : ?>
                         <?= translate('Tomorrow') ?>:
                         <? else : ?>
-                        <?= translate($date->format('l')).' '.$date->format('j').' '.$date->format('F') ?>:
+                        <?= translate($date->format('l')).' '.$date->format('j').' '.translate($date->format('F')) ?>:
                         <? endif ?>
                     </td>
                     <td>
