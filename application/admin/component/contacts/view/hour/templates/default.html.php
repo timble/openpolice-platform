@@ -93,7 +93,7 @@
 				    	<?= translate( 'Opening Time' ); ?>
 				    </label>
 				    <div>
-                        <input class="required" name="opening_time" type="text" value="<?= $hour->opening_time; ?>" id="opening_time" <?= $hour->appointment || $closed ? 'disabled' : '' ?> />
+                        <input class="required" name="opening_time" type="text" value="<?= $hour->opening_time ? helper('date.format', array('date'=> $hour->opening_time, 'format' => 'H:i')) : '' ?>" id="opening_time" <?= $hour->appointment || $closed ? 'disabled' : '' ?> />
                         <script data-inline> $jQuery("#opening_time").datetimepicker({datepicker:false, format:'H:i'}); </script>
 				    </div>
 				</div>
@@ -102,7 +102,7 @@
 				    	<?= translate( 'Closing Time' ); ?>
 				    </label>
 				    <div>
-				        <input class="required" name="closing_time" type="text" value="<?= $hour->closing_time; ?>" id="closing_time" <?= $hour->appointment || $closed ? 'disabled' : '' ?> />
+				        <input class="required" name="closing_time" type="text" value="<?= $hour->closing_time ? helper('date.format', array('date'=> $hour->closing_time, 'format' => 'H:i')) : '' ?>" id="closing_time" <?= $hour->appointment || $closed ? 'disabled' : '' ?> />
                         <script data-inline> $jQuery("#closing_time").datetimepicker({datepicker:false, format:'H:i'}); </script>
 				    </div>
 				</div>
