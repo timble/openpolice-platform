@@ -23,8 +23,6 @@
     <input type="hidden" name="published" value="0" />
     <input type="hidden" name="appointment" value="0" />
     <input type="hidden" name="closed" value="0" />
-    <input type="hidden" name="opening_time" value="" />
-    <input type="hidden" name="closing_time" value="" />
 
     <div class="main">
 		<div class="scrollable">
