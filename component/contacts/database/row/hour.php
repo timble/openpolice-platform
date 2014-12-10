@@ -52,15 +52,15 @@ class DatabaseRowHour extends Library\DatabaseRowTable
 
         if($this->closed == '1')
         {
-            $this->opening_time = gmdate('Y-m-d H:i:s', strtotime($this->opening_time));
-            $this->opening_time = gmdate('Y-m-d H:i:s', strtotime($this->closing_time));
+            $this->opening_time = '';
+            $this->closing_time = '';
             $this->appointment = NULL;
         }
 
         if($this->appointment == '1')
         {
-            $this->opening_time = gmdate('Y-m-d H:i:s', strtotime($this->opening_time));
-            $this->opening_time = gmdate('Y-m-d H:i:s', strtotime($this->closing_time));
+            $this->opening_time = '';
+            $this->closing_time = '';
         }
 
         $result   = parent::save();
