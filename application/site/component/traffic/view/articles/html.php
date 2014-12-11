@@ -23,7 +23,7 @@ class TrafficViewArticlesHtml extends Library\ViewHtml
         }
 
         $this->url  = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
-        $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getSite())->getRow();
+        $this->zone = $this->getObject('com:police.model.zones')->id($this->getObject('application')->getSite())->getRow();
 
         return parent::render();
     }

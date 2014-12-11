@@ -43,7 +43,7 @@
                     <strong><?= translate('Streets') ?>:</strong>
                     <ul>
                         <? foreach ($streets as $street) : ?>
-                            <li><?= $street->street ?></li>
+                            <li><?= $street->title ?></li>
                         <? endforeach; ?>
                     </ul>
                 </div>

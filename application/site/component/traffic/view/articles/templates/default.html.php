@@ -23,7 +23,7 @@
                 <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a>
                 <span style="float: right; white-space: nowrap"><?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?></span><br />
                 <small>
-                    <? if($streets = $this->getObject('com:traffic.model.streets')->article($article->id)->getRowset()->street) : ?>
+                    <? if($streets = $this->getObject('com:traffic.model.streets')->article($article->id)->getRowset()->title) : ?>
                         <?= implode(", ", $streets) ?>
                     <? else : ?>
                         <?= translate('Territory Police').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
