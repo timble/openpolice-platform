@@ -24,14 +24,18 @@ class ModelStreets extends Library\ModelTable
     {
         parent::_buildQueryColumns($query);
 
+        $cities = $this->getObject('com:police.model.zones')->id($this->getObject('application')->getSite())->getRow()->cities;
+
+        // Add city to street for multi-city zones
         $query->columns(array(
-            'street'    => 'street.title'
+            'title' => $cities == '1' ? 'street.title' : "CONCAT(street.title, ' (', city.title, ')')"
         ));
     }
 
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
-        $query->join(array('street' => 'data.streets'), 'street.streets_street_id = tbl.streets_street_id');
+        $query->join(array('street' => 'data.streets'), 'street.streets_street_id = tbl.streets_street_id')
+              ->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = street.streets_city_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
