@@ -37,6 +37,9 @@
             <th>
                 <?= helper('grid.sort', array('column' => 'platform')) ?>
             </th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'cities')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -63,6 +66,9 @@
 			</td>
             <td>
                 <?= $zone->platform ? $zone->platform : translate('External') ?>
+            </td>
+            <td>
+                <?= $zone->cities ?>
             </td>
 		</tr>
 		<? endforeach; ?>
