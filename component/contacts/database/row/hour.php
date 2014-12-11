@@ -21,14 +21,14 @@ class DatabaseRowHour extends Library\DatabaseRowTable
 {
     public function __get($column)
     {
-        if($column == 'opening_time')
+        if($column == 'opening_time' && $this->_data['opening_time'])
         {
             $date = new Library\Date(array('date' => $this->_data['opening_time'], 'timezone' => 'UTC'));
 
             $this->_data['opening_time'] = $date->format('H:i');
         }
 
-        if($column == 'closing_time')
+        if($column == 'closing_time' && $this->_data['closing_time'])
         {
             $date = new Library\Date(array('date' => $this->_data['closing_time'], 'timezone' => 'UTC'));
 
@@ -36,5 +36,35 @@ class DatabaseRowHour extends Library\DatabaseRowTable
         }
 
         return parent::__get($column);
+    }
+
+    public function save()
+    {
+        if($this->date && $this->exception == 'yes')
+        {
+            $date = new Library\Date(array('date' => $this->date, 'timezone' => 'UTC'));
+            $this->day_of_week = $date->format('N');
+        }
+        elseif($this->exception == 'no')
+        {
+            $this->date = null;
+        }
+
+        if($this->closed == '1')
+        {
+            $this->opening_time = '';
+            $this->closing_time = '';
+            $this->appointment = NULL;
+        }
+
+        if($this->appointment == '1')
+        {
+            $this->opening_time = '';
+            $this->closing_time = '';
+        }
+
+        $result   = parent::save();
+
+        return $result;
     }
 }
