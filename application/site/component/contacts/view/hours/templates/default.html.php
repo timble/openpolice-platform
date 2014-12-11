@@ -16,7 +16,7 @@
 <? if ($contact->params->get('open_24_7', false)) : ?>
     <h3><?= translate('Opening hours') ?></h3>
     <p>
-        <time itemprop="openingHours" datetime="Mo-Su">
+        <time>
             <?= translate('24 hours a day, 7 days a week') ?>
         </time>
     </p>
@@ -46,8 +46,7 @@
                             <? $i = '1' ?>
                             <? foreach ($list as $hour) : ?>
                                 <? if ($hour->opening_time && $hour->closing_time) : ?>
-                                    <time itemprop="openingHours"
-                                          datetime="<?= substr($date->format('l'), 0, 2) . ' ' . $hour->opening_time . '-' . $hour->closing_time ?>">
+                                    <time>
                                         <?= $hour->opening_time ?>
                                         <?= translate('till') ?>
                                         <?= $hour->closing_time ?>
