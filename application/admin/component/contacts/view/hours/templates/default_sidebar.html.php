@@ -8,12 +8,9 @@
  */
 ?>
 
+<h3><?= translate('Contacts') ?></h3>
+
 <ul class="navigation">
-    <li>
-        <a class="<?= $state->contact == null ? 'active' : ''; ?>" href="<?= route('contact=' ) ?>">
-            <?= 'All contacts' ?>
-        </a>
-    </li>
     <? foreach ($categories as $category) : ?>
     <h4><?= $category->title ?></h4>
     <? foreach ($contacts->find(array('contacts_category_id' => $category->id)) as $contact) : ?>
