@@ -40,12 +40,12 @@ class DatabaseRowHour extends Library\DatabaseRowTable
 
     public function save()
     {
-        if($this->date && $this->exception == 'yes')
+        if($this->date && $this->frequency == 'one-off')
         {
             $date = new Library\Date(array('date' => $this->date, 'timezone' => 'UTC'));
             $this->day_of_week = $date->format('N');
         }
-        elseif($this->exception == 'no')
+        elseif($this->frequency == 'weekly')
         {
             $this->date = null;
         }
