@@ -50,7 +50,7 @@
         <? $email = str_replace("@", "&#64;", $zone->email) ?>
         <? $email = str_replace(".", "&#46;", $email) ?>
 
-    <p><?= translate('Your street is not yet part of a neighborhood information network') ?>. <?= sprintf(translate('Contact your district officer or email us at %s to start a neighborhood information network'), '<a class="email" href="mailto:'.$email.'">'.$email.'</a>') ?>.</p>
+    <p><?= translate('Your street is not yet part of a neighborhood information network') ?>. <?= sprintf(translate('Contact your district officer or email us at %s to join an existing neighborhood information network or to start a new neighborhood information network'), '<a class="email" href="mailto:'.$email.'">'.$email.'</a>') ?>.</p>
     <? endif; ?>
     </div>
 <? endif ?>
