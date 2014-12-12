@@ -27,17 +27,17 @@
     <div class="main">
 		<div class="scrollable">
             <fieldset>
-                <legend><?= translate( 'Type' ); ?></legend>
+                <legend><?= translate( 'Day' ); ?> & <?= translate( 'Frequency' ); ?></legend>
                 <div>
-                    <label for="exception">
-                        <?= translate( 'Exception' ); ?>
+                    <label for="frequency">
+                        <?= translate( 'Frequency' ); ?>
                     </label>
                     <div>
                         <div class="switch switch-blue">
-                            <input type="radio" class="switch-input" name="exception" value="no" id="no" <?= !$hour->date ? 'checked' : '' ?>>
-                            <label for="no" class="switch-label switch-label-off">No</label>
-                            <input type="radio" class="switch-input" name="exception" value="yes" id="yes" <?= $hour->date ? 'checked' : '' ?>>
-                            <label for="yes" class="switch-label switch-label-on">Yes</label>
+                            <input type="radio" class="switch-input" name="frequency" value="weekly" id="input__weekly" <?= !$hour->date ? 'checked' : '' ?>>
+                            <label for="input__weekly" class="switch-label switch-label-left"><?= translate('Weekly') ?></label>
+                            <input type="radio" class="switch-input" name="frequency" value="one-off" id="input__one-off" <?= $hour->date ? 'checked' : '' ?>>
+                            <label for="input__one-off" class="switch-label switch-label-right"><?= translate('One-off') ?></label>
                             <span class="switch-selection"></span>
                         </div>
                     </div>
@@ -47,10 +47,10 @@
                         <?= translate( 'Day' ); ?>
                     </label>
                     <div class="controls">
-                        <div id="days" <?= $hour->date ? 'style="display: none"' :'' ?>>
+                        <div id="weekly" <?= $hour->date ? 'style="display: none"' :'' ?>>
                             <?= helper('listbox.days', array('name' => 'day_of_week', 'selected' => $hour->day_of_week)) ?>
                         </div>
-                        <div id="day" <?= !$hour->date ? 'style="display: none"' :'' ?>>
+                        <div id="one-off" <?= !$hour->date ? 'style="display: none"' :'' ?>>
                             <input id="date" type="text" name="date" value="<?= $hour->date ? helper('date.format', array('date'=> $hour->date, 'format' => 'd-m-Y')) : '' ?>" />
                             <script data-inline>
                                 $jQuery("#date").datetimepicker({
@@ -122,9 +122,9 @@
 </form>
 
 <script data-inline>
-    $jQuery('input:radio[name="exception"]').change(function(){
-        $jQuery("#day").toggle();
-        $jQuery("#days").toggle();
+    $jQuery('input:radio[name="frequency"]').change(function(){
+        $jQuery("#one-off").toggle();
+        $jQuery("#weekly").toggle();
     });
     $jQuery("input[name=appointment]").click(function(){
         $jQuery("input[name=opening_time]").attr('disabled', this.checked)

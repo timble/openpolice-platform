@@ -1,7 +1,7 @@
 .switch {
     position: relative;
     height: 26px;
-    width: 120px;
+    width: 200px;
     background: white;
     border-radius: 3px;
     border: 1px solid #ccc;
@@ -13,7 +13,7 @@
     position: relative;
     z-index: 2;
     float: left;
-    width: 58px;
+    width: 98px;
     text-align: center;
     cursor: pointer;
     padding-top: 3px;
@@ -27,11 +27,11 @@
     font-weight: bold;
 }
 
-.switch-label-off {
+.switch-label-left {
     padding-left: 2px;
 }
 
-.switch-label-on {
+.switch-label-right {
     padding-right: 2px;
 }
 
@@ -45,9 +45,9 @@
     color: white;
 }
 
-.switch-input:checked + .switch-label-on ~ .switch-selection {
+.switch-input:checked + .switch-label-right ~ .switch-selection {
     /* Note: left: 50% doesn't transition in WebKit */
-    left: 60px;
+    left: 100px;
 }
 
 .switch-selection {
@@ -56,7 +56,7 @@
     z-index: 1;
     top: 2px;
     left: 2px;
-    width: 58px;
+    width: 98px;
     height: 22px;
     border-radius: 3px;
     background: #3678ea;
