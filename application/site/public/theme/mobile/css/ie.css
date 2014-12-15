@@ -836,26 +836,28 @@ button.closed {
   margin: 0 auto; }
 
 .splash {
-  padding-top: 100px;
-  text-align: center; }
+  padding-top: 100px; }
 
 .splash__search {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto; }
+  .splash__search .municipalities {
+    margin-top: 30px; }
 
 .splash__logo {
-  margin-bottom: 50px; }
-
-.splash__toolbar {
-  margin-top: 25px; }
+  margin-bottom: 50px;
+  text-align: center; }
 
 .splash__languages {
-  margin: 50px 0 100px 0; }
+  margin: 50px 0 100px 0;
+  text-align: center; }
   .splash__languages a {
     margin: 0 10px; }
 
-.splash__external a {
-  margin: 0 10px; }
+.splash__external {
+  text-align: center; }
+  .splash__external a {
+    margin: 0 10px; }
 
 .homepage__sticky {
   padding-left: 20px;
