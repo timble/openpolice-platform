@@ -27,11 +27,11 @@
 	<tbody>
 		<tr>
 			<td class="detail-label"><?= translate('Name'); ?></td>
-			<td>[%=name%]</td>
+			<td id="file-name">[%=name%]</td>
 		</tr>
 		<tr>
 			<td class="detail-label"><?= translate('Size'); ?></td>
-			<td>[%=size.humanize()%]</td>
+			<td id="file-size">[%=size.humanize()%]</td>
 		</tr>
 	</tbody>
 </table>

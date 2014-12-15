@@ -67,12 +67,14 @@
             </td>
 			<td style="white-space:nowrap;">
 				<a href="<?= route( 'view=article&task=edit&id='.$article->id ); ?>">
-					<?= $article->title ?>
+					<?= escape($article->title) ?>
 				</a>
+                <? if($article->controlled && $article->in_violation) : ?>
+                    <span class="label label-info"><?= translate('Results') ?></span>
+                <? endif ?>
 			</td>
 			<td>
-                <?= helper('date.format', array('date'=> $article->start_on, 'format' => translate('DATE_FORMAT_LC3'))) ?>
-                <?= $article->end_on ? ' - '.helper('date.format', array('date'=> $article->end_on, 'format' => translate('DATE_FORMAT_LC3'))) : ''; ?>
+                <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
             </td>
             <? if($article->isTranslatable()) : ?>
             <td>

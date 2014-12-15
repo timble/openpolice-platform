@@ -15,11 +15,25 @@ ul {
   &.column--double,
   &.column--triple,
   &.column--quad {
-    @include column-count(2);
+    @include column-count(1);
   }
 }
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-beta) {
+  ul {
+    &.column--double {
+      @include column-count(2);
+    }
+    &.column--triple {
+      @include column-count(2);
+    }
+    &.column--quad {
+      @include column-count(2);
+    }
+  }
+}
+
+@include breakpoint($breakpoint-charlie) {
   ul {
     &.column--double {
       @include column-count(2);

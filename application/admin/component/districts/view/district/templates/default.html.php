@@ -24,29 +24,22 @@
 		<div class="title">
 		    <input id="title" class="required" type="text" name="title" size="32" maxlength="250" value="<?= $district->title; ?>" />
 		</div>
-		
+
 		<div class="scrollable">
 			<fieldset>
-				<legend><?= translate( 'District' ); ?></legend>
-                <div>
-                    <label for="id">
-                        <?= translate( 'ID' ); ?>
-                    </label>
-                    <div>
-                        <input type="text" name="id" maxlength="250" class="required" value="<?= $district->id; ?>" />
-                    </div>
-                </div>
+				<legend><?= translate( 'Required' ); ?></legend>
                 <div>
 				    <label for="contacts_contact_id">
-				    	<?= translate( 'Contact' ); ?>
+				    	<?= translate( 'Police station' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('com:contacts.listbox.contacts', array('autocomplete' => true, 'name' => 'contacts_contact_id', 'selected' => $district->contacts_contact_id)) ?>
-				    </div>
+                        <?= helper('com:contacts.listbox.contacts', array('name' => 'contacts_contact_id', 'selected' => $district->contacts_contact_id, 'deselect' => false, 'filter' => array('category' => '1'), 'attribs' => array('class' => 'select-contacts required', 'style' => 'width:100%;'))); ?>
+                        <script data-inline> $jQuery(".select-contacts").select2(); </script>
+                    </div>
 				</div>
 				<div>
 				    <label for="officers">
-				    	<?= translate( 'Officers' ); ?>
+				    	<?= translate( 'District officer' ); ?>
 				    </label>
 				    <div>
 				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers required', 'style' => 'width:100%;'))); ?>
@@ -54,6 +47,25 @@
                     </div>
 				</div>
 			</fieldset>
+            <fieldset>
+                <legend><?= translate( 'Optional' ); ?></legend>
+                <div>
+                    <label for="islp">
+                        <?= translate( 'ISLP ID' ); ?>
+                    </label>
+                    <div>
+                        <input type="text" name="islp" maxlength="250" value="<?= $district->islp; ?>" />
+                    </div>
+                </div>
+                <div>
+                    <label for="email">
+                        <?= translate( 'Email' ); ?>
+                    </label>
+                    <div>
+                        <input type="text" name="email" maxlength="250" value="<?= $district->email; ?>" />
+                    </div>
+                </div>
+            </fieldset>
 		</div>
 	</div>
 </form>

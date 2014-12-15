@@ -68,7 +68,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         foreach($data as $item)
         {
             $row = $this->getObject('com:districts.database.row.district');
-            $row->id = $item['districts_district_id'];
+            $row->islp = $item['district_id'];
 
             if(!$row->load())
             {
@@ -135,7 +135,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         {
             if(!array_key_exists('streets_street_id', $item))
             {
-                $street = $this->getObject('com:streets.model.streets')->islp($item['islp'])->getRowset();
+                $street = $this->getObject('com:streets.model.streets')->islp($item['street_id'])->getRowset();
 
                 if(count($street))
                 {
@@ -168,8 +168,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     break;
             }
 
+            $item['districts_district_id'] = $this->getObject('com:districts.model.district')->islp($item['district_id'])->getRow()->id;
+
             $item['range_parity'] = $parity;
-            $item['id'] = sha1($item['districts_district_id'].$item['islp'].$item['streets_street_id'].$item['range_start'].$item['range_end'].$item['range_parity']);
+            $item['id'] = sha1($item['districts_district_id'].$item['street_id'].$item['streets_street_id'].$item['range_start'].$item['range_end'].$item['range_parity']);
 
             // Add row to districts_relations table when ID is unique
             $row = $this->getObject('com:districts.database.row.relation');
@@ -236,7 +238,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row = $this->getObject('com:news.database.row.article');
                 $row->id = $item['id'];
 
-                // Only save the attachments when the row is new
+                // Only save when the row is new
                 if(!$row->load())
                 {
                     $row->title = $item['title'];
@@ -248,25 +250,12 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_on = $item['modified'];
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
-                    $row->publish_on = $item['publish_up'];
+                    $row->published_on = $item['publish_up'];
 
                     $this->_clean($row, 'news', true);
-                } else {
-                    $row->title = $item['title'];
-                    $row->slug = $item['alias'];
-                    $row->introtext = stripslashes($item['introtext']);
-                    $row->fulltext = stripslashes($item['fulltext']);
-                    $row->created_on = $item['created'];
-                    $row->created_by = '1';
-                    $row->modified_on = $item['modified'];
-                    $row->modified_by = $item['modified_by'];
-                    $row->published = $item['state'];
-                    $row->publish_on = $item['publish_up'];
 
-                    $this->_clean($row, 'news', false);
+                    $row->save();
                 }
-                
-                $row->save();
             }
         }
     }
@@ -428,6 +417,12 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             if(empty($html)) {
                 continue;
             }
+
+            $html = preg_replace("/<wbr ?>/", "", $html);
+            $html = preg_replace("/<wbr ?\/>/", "", $html);
+
+            $pattern = "/<a href=\"mailto:[a-z0-9\"' =:&;\-_%@]+>(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)<\/a>/i";
+            $html    = preg_replace($pattern, '<a href="mailto:$1">$1</a>', $html);
 
             $config = array(
                 'indent'         => true,

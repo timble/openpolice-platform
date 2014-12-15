@@ -13,16 +13,28 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
 {
     public function render()
     {
+        $application = $this->getObject('application');
+
         //Get the article
         $district = $this->getModel()->getData();
+        $state = $this->getModel()->getState();
 
         //Set the pathway
-        $this->getObject('application')->getPathway()->addItem($district->title, '');
+        $application->getPathway()->addItem($district->title, '');
+
+        // Get the zone
+        $this->zone = $this->getObject('com:police.model.zone')->id($application->getCfg('site'))->getRow();
 
         //setcookie ("district_street", $state->street, time()+3600*24*(2), '/5388' );
         //setcookie ("district_number", $state->number, time()+3600*24*(2), '/5388' );
 
-        $this->contact = $this->getObject('com:contacts.model.contact')->id($district->contacts_contact_id)->getRow();
+        $this->contact  = $this->getObject('com:contacts.model.contacts')->id($district->contacts_contact_id)->getRow();
+        $this->site     = $this->getObject('application')->getSite();
+
+        if($relation = $this->getObject('com:bin.model.relations')->street($state->street)->number($state->number)->getRowset()->top())
+        {
+            $this->bin = $this->getObject('com:bin.model.districts')->id($relation->bin_district_id)->getRow();
+        }
 
         return parent::render();
     }

@@ -31,10 +31,10 @@
     <style src="assets://application/css/ie.css" condition="if IE 8" />
     <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
 
-    <script src="assets://application/js/apollo.min.js" />
+    <script src="assets://application/components/apollo/apollo.min.js" />
     <script src="assets://application/js/hamburger.js" />
     <script src="assets://application/components/html5shiv/dist/html5shiv-printshiv.min.js" condition="if lte IE 8" />
-    <script src="assets://application/js/placeholder.js" condition="if lte IE 9" />
+    <script src="assets://application/components/placeholders/placeholder.js" condition="if lte IE 9" />
 
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
     <script>
@@ -45,6 +45,18 @@
 
         ga('create', '<?= $analytics ?>', 'auto');
         ga('send', 'pageview');
+    </script>
+
+    <script>
+        var _prum = [['id', '5424324aabe53dc401d78375'],
+            ['mark', 'firstbyte', (new Date()).getTime()]];
+        (function() {
+            var s = document.getElementsByTagName('script')[0]
+                , p = document.createElement('script');
+            p.async = 'async';
+            p.src = '//rum-static.pingdom.net/prum.min.js';
+            s.parentNode.insertBefore(p, s);
+        })();
     </script>
     <?php endif; ?>
 </head>

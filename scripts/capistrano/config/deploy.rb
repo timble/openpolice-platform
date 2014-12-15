@@ -6,7 +6,7 @@ set :default_stage, "staging"
 
 ## Application settings.
 set :application, "portal"
-set :app_symlinks, ["sites", "config/config.php"]
+set :app_symlinks, ["sites", "config/config.php", "config/key.p12"]
 
 # Server user settings.
 set :user, "deploy"
@@ -19,9 +19,6 @@ set :deploy_via, :remote_cache
 set :copy_exclude, [".git"]
 set :keep_releases, 3
 
-# Set the username correctly for use in the New Relic deployment log
-set :newrelic_user, `git config user.name`
-
 # Repository settings.
 set :repository, "https://github.com/belgianpolice/internet-platform.git"
 set :scm, :git
@@ -33,7 +30,7 @@ namespace :deploy do
     task :finalize_update, :roles => :app, :except => { :no_release => true } do
         run "chmod -R g+w #{release_path}" if fetch(:group_writable, true)
     end
-    
+
     desc "Create symbolic links for shared directories."
     task :symlink_shared, :roles => :app do
         if app_symlinks
@@ -58,7 +55,7 @@ namespace :deploy do
 
     desc "Run composer"
     task :composer, :roles => :app do
-        run "cd #{release_path}/install/custom/ && composer --no-progress install"
+        run "cd #{release_path}/ && composer --no-progress install"
     end
 
     desc "Restart the application."

@@ -1,5 +1,61 @@
 # Changelog
 
+## v2.7
+
+### Site Enhancements
+
+* Added personalised Privacy and Disclaimer page
+* Added RSS link in the
+* Added placeholder message when a Traffic category is empty
+* Breadcrumbs 'Home' element is now translated for all French sites
+* Improved Open Graph implementation
+* Improved the Questions landing page, removed duplicate categories listing
+* Only show streets in the autocomplete that have a district officer
+
+### Administrator Enhancements
+
+* Added city to streets listbox in Districts and BINs
+* Allow to backdate News articles
+* Schedule News articles
+
+* Added email address to District
+* Manage zones and streets from within the manager application
+* Added missing translations
+* Improved article ordering and introduced 'drafts' in News
+* Only empty categories in About and Questions can be removed
+* Added autocomplete listbox to attach a police station to a District
+* Added autocomplete listbox to attach a Street to a Contact
+* Inserting a file link now automatically adds the file size and extension
+
+
+
+### Bug Fixes
+
+* Too small article image on About pages
+* Double quotes issue in titles
+* Pagination broke filters in some views
+* Download of attachments in support tickets
+
+
+### Refactoring
+
+* The banner is now optional
+* Theme dependencies are now managed by Composer
+* Implemented auto-increment primary keys for Districts, Officers and BINs
+
+
+### Sites
+
+Release of:
+
+* [Police De Wavre](http://www.policelocale.be/5271)
+* [Police Mons-Quévy](http://www.policelocale.be/5324)
+* [Politie Heusden-Zolder](http://www.lokalepolitie.be/5375)
+* [Politie AMOW](http://www.lokalepolitie.be/5408)
+* [Politie Erpe-Mere/Lede](http://www.lokalepolitie.be/5441)
+* [Politie Dendermonde](http://www.lokalepolitie.be/5443)
+* [Politie Oostende](http://www.lokalepolitie.be/5449)
+
 ## v2.6
 
 ### Site Enhancements

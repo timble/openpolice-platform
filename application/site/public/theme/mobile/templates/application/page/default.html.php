@@ -27,6 +27,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
 <?= import('page_head.html') ?>
 <body id="page" class="no-js">
+<?php if( extension_loaded('newrelic') ) { echo '<script data-inline type="text/javascript" pagespeed_no_defer="">'.newrelic_get_browser_timing_header(false).'</script>'; } ?>
 <script data-inline type="text/javascript" pagespeed_no_defer="">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.getElementById("page");var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg,"js-enabled")}</script>
 
 <div id="wrap">
@@ -78,7 +79,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </ktml:modules>
 
         <? if(!$singleColumn) : ?>
-        <div class="component <?= $extension ?>">
+        <div class="component <?= $extension ?> <?= $view ?> <?= $layout ?>">
             <? endif ?>
             <ktml:content>
                 <? if(!$singleColumn) : ?>
@@ -101,11 +102,13 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                     <h3><?= translate('Latest news') ?></h3>
                     <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('published_on')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
                 </div>
+                <? if(count($pages->find(array('id' => '43')))) : ?>
                 <div class="footer__districts">
                     <h3><?= translate('Your district officer') ?></h3>
                     <p><?= translate('You know the responsible district officer in your area? He or she is your first contact with the police.') ?></p>
-                    <a href="<?= $path ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
+                    <a href="<?= $path ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district')) ?>"><?= translate('Contact your district officer') ?>.</a>
                 </div>
+                <? endif; ?>
             </div>
         </div>
     <?php endif; ?>
@@ -149,5 +152,6 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </div>
 </div>
 
+<?php if( extension_loaded('newrelic') ) { echo '<script data-inline type="text/javascript" pagespeed_no_defer="">'.newrelic_get_browser_timing_footer(false).'</script>'; } ?>
 </body>
 </html>

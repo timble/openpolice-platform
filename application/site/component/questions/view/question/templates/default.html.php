@@ -8,6 +8,8 @@
  */
 ?>
 
+<?= import('com:news.view.article.metadata.html', array('article' => $question)) ?>
+
 <ktml:module position="left">
     <?= import('com:categories.view.categories.list.html') ?>
 </ktml:module>
@@ -19,7 +21,7 @@
 
     <? if($question->attachments_attachment_id) : ?>
     <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
-    <?= helper('com:attachments.image.thumbnail', array(
+    <?= helper('com:police.image.thumbnail', array(
         'attachment' => $question->attachments_attachment_id,
         'attribs' => array('width' => '400', 'height' => '300'))) ?>
     </a>
@@ -33,7 +35,7 @@
 <?= import('com:questions.view.questions.default_contact.html') ?>
 <? endif ?>
 
-<script src="assets://application/components/jquery/dist/jquery.min.js" />
+<script src="assets://application/components/jquery/jquery.min.js" />
 <script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
 <script data-inline>
     $(document).ready(function() {

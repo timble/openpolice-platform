@@ -44,7 +44,7 @@
             <?= translate('End on') ?>
         </label>
         <div>
-            <input type="text" name="end_on" id="end_on" class="required" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'd-m-Y')) ?>" />
+            <input type="text" name="end_on" id="end_on" value="<?= $article->end_on ? helper('date.format', array('date'=> $article->end_on, 'format' => 'd-m-Y')) : '' ?>" />
             <script date-inline>
                 $jQuery(function(){
                     $jQuery('#end_on').datetimepicker({
@@ -77,3 +77,42 @@
     <script data-inline> $jQuery(".select-streets").select2(); </script>
 </fieldset>
 <? endif ?>
+
+<fieldset id="results">
+    <legend><?= translate('Results') ?></legend>
+    <div>
+        <label for="controlled"><?= translate('Controlled') ?></label>
+        <div>
+            <input type="number" name="controlled" value="<?= $article->controlled ?>" />
+        </div>
+    </div>
+    <div>
+        <label for="in_violation"><?= translate('In violation') ?></label>
+        <div>
+            <input type="number" name="in_violation" value="<?= $article->in_violation ?>" />
+        </div>
+    </div>
+</fieldset>
+
+<script data-inline>
+    $jQuery("input[name='traffic_category_id']").click(function()
+    {
+        if($jQuery('#traffic_category_id19').is(':checked'))
+        {
+            $jQuery( "#results" ).show();
+        } else {
+            $jQuery( "#results" ).hide();
+        }
+    });
+</script>
+
+<? if($article->isAttachable()) : ?>
+<fieldset>
+    <legend><?= translate('Attachments') ?></legend>
+    <? if (!$article->isNew()) : ?>
+        <?= import('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments())) ?>
+    <? endif ?>
+    <?= import('com:attachments.view.attachments.upload.html') ?>
+</fieldset>
+<? endif ?>
+

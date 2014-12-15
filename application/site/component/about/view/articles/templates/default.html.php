@@ -16,7 +16,7 @@
 
 <? foreach ($articles as $article) : ?>
     <? if(count($articles) == '1') : ?>
-        <? $article->attachments_attachment_id = $article->attachments_attachment_id ? $article->attachments_attachment_id : $category->attachments_attachment_id ?>
+        <?= import('com:news.view.article.metadata.html') ?>
         <?= import('com:about.view.article.default.html', array('article' => $article)) ?>
     <? else : ?>
 
@@ -25,22 +25,22 @@
         <h1 class="article__header">
             <? if($article->fulltext) : ?>
                 <a href="<?= $link ?>">
-                    <?= $article->title ?>
+                    <?= escape($article->title) ?>
                 </a>
             <? else : ?>
-                <?= $article->title ?>
+                <?= escape($article->title) ?>
             <? endif; ?>
         </h1>
 
         <? if($article->attachments_attachment_id): ?>
             <? if($article->fulltext) : ?>
                 <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-                    <?= helper('com:attachments.image.thumbnail', array(
+                    <?= helper('com:police.image.thumbnail', array(
                         'attachment' => $article->attachments_attachment_id,
-                        'attribs' => array('width' => '200', 'height' => '150'))) ?>
+                        'attribs' => array('width' => '400', 'height' => '300'))) ?>
                 </a>
             <? else : ?>
-                <?= helper('com:attachments.image.thumbnail', array(
+                <?= helper('com:police.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
                     'attribs' => array('class' => 'article__thumbnail', 'width' => '400', 'height' => '300'))) ?>
             <? endif; ?>

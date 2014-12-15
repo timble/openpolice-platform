@@ -30,8 +30,7 @@
                 $jQuery("#publish_on").datetimepicker({
                     format:'d-m-Y H:i',
                     lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
-                    dayOfWeekStart: '1',
-                    minDate: '0'
+                    dayOfWeekStart: '1'
                 });
             </script>
         </div>

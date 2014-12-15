@@ -19,13 +19,7 @@ class NewsViewArticleHtml extends Library\ViewHtml
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($article->title, '');
 
-        //Get the thumbnail
-        if ($article->attachments_attachment_id) {
-            $this->thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $article->attachments_attachment_id)->load()->path;
-        }
-
-        $this->url = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
-
+        $this->url  = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
         $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getSite())->getRow();
 
         //Get the attachments
@@ -34,7 +28,7 @@ class NewsViewArticleHtml extends Library\ViewHtml
         }
 
         $published_on = new DateTime($article->published_on);
-        $this->published_on = $published_on->format('c');
+        $article->published_on_utc = $published_on->format('c');
 
         return parent::render();
     }

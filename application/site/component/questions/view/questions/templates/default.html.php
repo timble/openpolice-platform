@@ -16,11 +16,6 @@
 
 <h1 class="article__header"><?= escape(translate($params->get('page_title'))); ?></h1>
 
-<? if(!$state->category) : ?>
-    <?= import('default_search.html') ?>
-<? endif ?>
-
-<? if($state->category OR $state->searchword) : ?>
 <? if(count($questions)) : ?>
 <ul class="nav nav--pills nav--visited">
 <? foreach ($questions as $question) : ?>
@@ -31,26 +26,13 @@
     </li>
 <? endforeach; ?>
 </ul>
-    <? else : ?>
-    <h2 id="no-results"><?= translate('No results found') ?>.</h2>
-    <? endif ?>
 <? else : ?>
-   <ul class="nav nav--pills column--double">
-        <? foreach ($categories as $category): ?>
-            <li>
-                <a href="<?= helper('route.category', array('row' => $category)) ?>">
-                    <?= $category->title ?>
-                </a>
-            </li>
-        <? endforeach ?>
-    </ul>
+<h2 id="no-results"><?= translate('No results found') ?>.</h2>
 <? endif ?>
 
-<? if($state->category OR $state->searchword) : ?>
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
-<? endif ?>
 
-<? if(object('application')->getCfg('site') != '5396') : ?>
+<? if($zone->id != '5396') : ?>
 <?= import('default_contact.html') ?>
 <? endif ?>
 

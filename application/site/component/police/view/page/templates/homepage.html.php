@@ -25,7 +25,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
         <article>
             <header class="article__header">
-                <h1><a href="<?= $link ?>"><?= $article->title ?></a></h1>
+                <h1><a href="<?= $link ?>"><?= escape($article->title) ?></a></h1>
                 <span class="text--small">
                     <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?>
                 </span>
@@ -34,7 +34,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <div class="clearfix">
                 <? if($article->attachments_attachment_id) : ?>
                     <a class="article__thumbnail" tabindex="-1" href="<?= $link ?>">
-                        <?= helper('com:attachments.image.thumbnail', array(
+                        <?= helper('com:police.image.thumbnail', array(
                             'attachment' => $article->attachments_attachment_id,
                             'attribs' => array('width' => '400', 'height' => '300'))) ?>
                     </a>
@@ -72,8 +72,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
             <ul class="nav nav--list">
                 <? foreach(object('com:pages.model.pages')->menu('1')->published('true')->hidden('false')->getRowset() as $page) : ?>
-                    <? if($page->level == '2') : ?>
-                    <li><a href="<?= $path ?>/contact/<?= $page->slug ?>"><?= $page->title ?><?= $page->ancestor_id ?></a></li>
+                    <? if(in_array($page->id, array('42', '43', '44', '66', '105'))) : ?>
+                    <li><a href="<?= $path ?>/contact/<?= $page->slug ?>"><?= $page->title ?></a></li>
                     <? endif ?>
                 <? endforeach ?>
             </ul>

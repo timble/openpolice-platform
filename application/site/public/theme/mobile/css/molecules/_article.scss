@@ -5,14 +5,6 @@
   p img[align="right"] {
     margin: 0 0 $line-height $line-height;
   }
-
-  ul {
-    list-style: disc;
-  }
-
-  ol {
-    list-style: decimal;
-  }
 }
 
 .article__header {
@@ -33,7 +25,7 @@
   margin-bottom: $line-height / 2;
 }
 
-@include respond-min($breakpoint-alpha) {
+@include breakpoint($breakpoint-alpha) {
   .article__thumbnail {
     float: right;
     width: 40%;

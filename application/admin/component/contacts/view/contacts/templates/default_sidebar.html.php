@@ -10,4 +10,4 @@
 
 <h3><?= translate('Categories') ?></h3>
 
-<?= import('com:categories.view.categories.list.html', array('categories' => object('com:contacts.model.categories')->sort('title')->getRowset())); ?>
+<?= import('com:categories.view.categories.list.html', array('categories' => object('com:contacts.model.categories')->sort('title')->hidden(false)->getRowset())); ?>

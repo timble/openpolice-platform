@@ -40,11 +40,17 @@
             <th>
                 <?= helper('grid.sort', array('column' => 'modified_on', 'title' => 'Modified on')) ?>
             </th>
+            <th width="1">
+                <?= helper('grid.sort', array('column' => 'district_count', 'title' => 'Districts')) ?>
+            </th>
+            <th width="1">
+                <?= helper('grid.sort', array('column' => 'bin_count', 'title' => 'BINs')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<td colspan="7">
+			<td colspan="8">
 				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
@@ -73,6 +79,12 @@
                 <? if($street->modified_on) : ?>
                 <?= helper('date.format', array('date'=> $street->modified_on, 'format' => 'D d/m/Y')) ?>
                 <? endif ?>
+            </td>
+            <td align="center">
+                <?= $street->district_count ?>
+            </td>
+            <td align="center">
+                <?= $street->bin_count ?>
             </td>
 		</tr>
 		<? endforeach; ?>
