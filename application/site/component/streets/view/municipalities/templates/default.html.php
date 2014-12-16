@@ -125,6 +125,7 @@ $external = array(
         <a href="http://<?= $domain ?>.policelocale.be">Français</a>
         <a href="http://<?= $domain ?>.lokalepolizei.be">Deutsch</a>
     </div>
+
     <div class="splash__external">
         <a href="<?= $external[$language]['federal']['url'] ?>"><?= $external[$language]['federal']['name'] ?></a>
         <a href="<?= $external[$language]['wanted']['url'] ?>"><?= $external[$language]['wanted']['name'] ?></a>

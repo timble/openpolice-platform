@@ -1,7 +1,3 @@
-.splash {
-  padding-top: 100px;
-}
-
 .splash__search {
   max-width: 600px;
   margin: 0 auto;
@@ -12,6 +8,7 @@
 }
 
 .splash__logo {
+  margin-top: 25px;
   margin-bottom: 50px;
   text-align: center;
 }
@@ -31,5 +28,11 @@
   a {
     margin: 0 10px;
     white-space: nowrap;
+  }
+}
+
+@include breakpoint($breakpoint-delta) {
+  .splash__logo {
+    margin-top: 100px;
   }
 }
