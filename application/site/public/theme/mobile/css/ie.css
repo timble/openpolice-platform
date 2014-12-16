@@ -842,7 +842,7 @@ button.closed {
   max-width: 600px;
   margin: 0 auto; }
   .splash__search .municipalities {
-    margin-top: 30px; }
+    margin-top: 0.75em; }
 
 .splash__logo {
   margin-bottom: 50px;
@@ -857,7 +857,8 @@ button.closed {
 .splash__external {
   text-align: center; }
   .splash__external a {
-    margin: 0 10px; }
+    margin: 0 10px;
+    white-space: nowrap; }
 
 .homepage__sticky {
   padding-left: 20px;
@@ -2320,6 +2321,20 @@ a.article__thumbnail:focus {
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25); }
+
+.search .button {
+  width: 100%;
+  margin-top: 0.75em; }
+
+.search {
+  display: table; }
+  .search .search__field {
+    display: table-cell;
+    width: 100%; }
+  .search .button {
+    margin-left: 0.75em;
+    margin-top: 0;
+    width: auto; }
 
 .nowrap {
   white-space: nowrap; }
