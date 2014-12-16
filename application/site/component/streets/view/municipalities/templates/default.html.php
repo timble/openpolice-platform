@@ -55,13 +55,6 @@ $notfound = array(
     'de' => '%s niet gevonden',
 );
 
-$commission = array(
-    'en' => 'Vaste Commissie',
-    'nl' => 'Vaste Commissie',
-    'fr' => 'Commission Permanente' ,
-    'de' => 'Vaste Commissie',
-);
-
 $localpolice = array(
     'en' => 'Local Police',
     'nl' => 'Lokale Politie',
@@ -74,19 +67,19 @@ $external = array(
     'en' => array(
         'federal' => array('name' => 'Federal Police', 'url' => 'http://www.polfed-fedpol.be/org/org_en.php'),
         'wanted' => array('name' => 'Wanted', 'url' => 'http://www.polfed-fedpol.be/ops/ops_en.php'),
-        'commission' => array('name' => 'Vaste Commissie', 'url' => 'http://www.lokalepolitie.be/portal/nl')),
+        'help' => array('name' => 'Emergency numbers', 'url' => 'http://www.polfed-fedpol.be/hulp_en.php')),
     'nl' => array(
         'federal' => array('name' => 'Federale Politie', 'url' => 'http://www.polfed-fedpol.be/home_nl.php'),
         'wanted' => array('name' => 'Opsporingen', 'url' => 'http://www.polfed-fedpol.be/ops/ops_nl.php'),
-        'commission' => array('name' => 'Vaste Commissie', 'url' => 'http://www.lokalepolitie.be/portal/nl')),
+        'help' => array('name' => 'Noodnummers', 'url' => 'http://www.polfed-fedpol.be/hulp_nl.php')),
     'fr' => array(
         'federal' => array('name' => 'Police fédérale', 'url' => 'http://www.polfed-fedpol.be/home_fr.php'),
         'wanted' => array('name' => 'Avis de recherche', 'url' => 'http://www.polfed-fedpol.be/ops/ops_fr.php'),
-        'commission' => array('name' => 'Commission Permanente', 'url' => 'http://www.policelocale.be/portal/fr')),
+        'commission' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.polfed-fedpol.be/hulp_fr.php')),
     'de' => array(
         'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polfed-fedpol.be/home_de.php'),
         'wanted' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polfed-fedpol.be/ops/ops_de.php'),
-        'commission' => array('name' => 'Vaste Commissie', 'url' => 'http://www.lokalepolitie.be/portal/nl')),
+        'help' => array('name' => 'Notrufnummern', 'url' => 'http://www.polfed-fedpol.be/hulp_de.php')),
 );
 ?>
 
@@ -127,10 +120,10 @@ $external = array(
     </div>
 
     <div class="splash__external">
-        <a href="<?= $external[$language]['federal']['url'] ?>"><?= $external[$language]['federal']['name'] ?></a>
+        <a href="<?= $external[$language]['help']['url'] ?>"><?= $external[$language]['help']['name'] ?></a>
         <a href="<?= $external[$language]['wanted']['url'] ?>"><?= $external[$language]['wanted']['name'] ?></a>
         <a href="https://policeonweb.belgium.be">Police On Web</a>
         <a href="https://www.ecops.be/">eCops</a>
-        <a href="<?= $external[$language]['commission']['url'] ?>"><?= $external[$language]['commission']['name'] ?></a>
+        <a href="<?= $external[$language]['federal']['url'] ?>"><?= $external[$language]['federal']['name'] ?></a>
     </div>
 </div>

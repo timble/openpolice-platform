@@ -835,6 +835,9 @@ button.closed {
   max-width: 940px;
   margin: 0 auto; }
 
+.splash {
+  padding-top: 100px; }
+
 .splash__search {
   max-width: 600px;
   margin: 0 auto; }
@@ -842,7 +845,6 @@ button.closed {
     margin-top: 0.75em; }
 
 .splash__logo {
-  margin-top: 25px;
   margin-bottom: 50px;
   text-align: center; }
 
@@ -857,9 +859,6 @@ button.closed {
   .splash__external a {
     margin: 0 10px;
     white-space: nowrap; }
-
-.splash__logo {
-  margin-top: 100px; }
 
 .homepage__sticky {
   padding-left: 20px;
