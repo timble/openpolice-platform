@@ -71,7 +71,7 @@
         </span>
     <? endif; ?>
 
-    <?= object('com:contacts.controller.hour')->contact($contact->id)->render(array('contact' => $contact)); ?>
+    <?= object('com:contacts.controller.hour')->contact($contact->id)->render(array('contact' => $contact, 'pagination' => true)); ?>
 </address>
 
 <script type="application/ld+json">

@@ -9,7 +9,7 @@
 ?>
 
 <?
-    $date = isset($_GET['date']) ? new DateTime($_GET['date']) : new DateTime('NOW');
+    $date = isset($_GET['date']) && !empty($_GET['date']) ? new DateTime($_GET['date']) : new DateTime('NOW');
     $today = new DateTime('NOW');
     $tomorrow = new DateTime('NOW');
     $tomorrow = $tomorrow->modify('+1 day');
@@ -70,11 +70,13 @@
             <? endfor ?>
             </tbody>
         </table>
-    <? endif ?>
-<? endif ?>
 
-<? if(isset($_GET['date']) && !empty($_GET['date'])) : ?>
-    <a href="?date="><?= translate('Previous 7 days') ?></a>
-<? else : ?>
-    <a href="?date=<?= $date->format('Y-m-d') ?>"><?= translate('Next 7 days') ?></a>
+        <? if(isset($pagination)) : ?>
+        <? if(isset($_GET['date']) && !empty($_GET['date'])) : ?>
+            <a href="<?= helper('route.contact', array('row' => $contact, 'date' => '')) ?>"><?= translate('Previous 7 days') ?></a>
+        <? else : ?>
+            <a href="<?= helper('route.contact', array('row' => $contact, 'date' => $date->format('Y-m-d'))) ?>"><?= translate('Next 7 days') ?></a>
+        <? endif ?>
+        <? endif ?>
+    <? endif ?>
 <? endif ?>
