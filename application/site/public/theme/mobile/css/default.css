@@ -848,7 +848,8 @@ button.closed {
 
 .splash__search {
   max-width: 600px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  text-align: left; }
   .splash__search .municipalities {
     margin-top: 0.75em; }
 
