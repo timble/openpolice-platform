@@ -130,8 +130,8 @@ $external = array(
     <div class="splash__external">
         <a href="<?= $external[$language_short]['federal']['url'] ?>"><?= $external[$language_short]['federal']['name'] ?></a>
         <a href="<?= $external[$language_short]['wanted']['url'] ?>"><?= $external[$language_short]['wanted']['name'] ?></a>
-        <a href="#">Police On Web</a>
-        <a href="#">eCops</a>
+        <a href="https://policeonweb.belgium.be">Police On Web</a>
+        <a href="https://www.ecops.be/">eCops</a>
         <a href="<?= $external[$language_short]['commission']['url'] ?>"><?= $external[$language_short]['commission']['name'] ?></a>
     </div>
 </div>
