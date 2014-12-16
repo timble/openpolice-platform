@@ -49,7 +49,7 @@
 				<?= escape($municipality->postcode); ?>
 			</td>
 			<td>
-				<?= escape($municipality->city_title); ?> <?= $municipality->city_postcode ? '('.escape($municipality->city_postcode).')' : ''; ?>
+				<?= escape($municipality->city_title); ?> <?= $municipality->city_postcode ? '('.escape($municipality->streets_city_id).')' : ''; ?>
 			</td>
 			<td>
 				<?= escape($municipality->police_zone_id); ?>
