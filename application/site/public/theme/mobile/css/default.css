@@ -837,9 +837,6 @@ button.closed {
   max-width: 940px;
   margin: 0 auto; }
 
-.splash {
-  padding-top: 100px; }
-
 .splash__search {
   max-width: 600px;
   margin: 0 auto; }
@@ -847,6 +844,7 @@ button.closed {
     margin-top: 0.75em; }
 
 .splash__logo {
+  margin-top: 25px;
   margin-bottom: 50px;
   text-align: center; }
 
@@ -862,6 +860,9 @@ button.closed {
     margin: 0 10px;
     white-space: nowrap; }
 
+@media screen and (min-width: 1024px) {
+  .splash__logo {
+    margin-top: 100px; } }
 .homepage__sticky {
   padding-left: 20px;
   padding-right: 20px; }
@@ -2096,11 +2097,9 @@ input[type="submit"].button {
   margin-bottom: 1.5em;
   list-style: none; }
   .nav li a {
-    display: block;
-    text-decoration: none; }
+    display: block; }
   .nav li a:hover,
   .nav li a:focus {
-    text-decoration: none;
     background-color: #ebf3f4; }
 
 .nav--visited a:visited {
@@ -2126,10 +2125,14 @@ input[type="submit"].button {
     padding-left: 12px;
     margin-right: 2px; }
 
+@media screen and (min-width: 400px) {
+  .nav--horizontal li {
+    display: inline-block; } }
 .nav--list li a {
   padding-top: 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid #eee;
+  text-decoration: none; }
 .nav--list li:last-child a {
   border-bottom: 0 none; }
 .nav--list .active a,

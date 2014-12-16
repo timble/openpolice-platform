@@ -114,16 +114,20 @@ $external = array(
     </div>
 
     <div class="splash__languages">
-        <a href="http://<?= $domain ?>.lokalepolitie.be">Nederlands</a>
-        <a href="http://<?= $domain ?>.policelocale.be">Français</a>
-        <a href="http://<?= $domain ?>.lokalepolizei.be">Deutsch</a>
+        <ul class="nav nav--pills nav--visited nav--horizontal">
+            <li><a href="http://<?= $domain ?>.lokalepolitie.be">Nederlands</a></li>
+            <li><a href="http://<?= $domain ?>.policelocale.be">Français</a></li>
+            <li><a href="http://<?= $domain ?>.lokalepolizei.be">Deutsch</a></li>
+        </ul>
     </div>
 
     <div class="splash__external">
-        <a href="<?= $external[$language]['help']['url'] ?>"><?= $external[$language]['help']['name'] ?></a>
-        <a href="<?= $external[$language]['wanted']['url'] ?>"><?= $external[$language]['wanted']['name'] ?></a>
-        <a href="https://policeonweb.belgium.be">Police On Web</a>
-        <a href="https://www.ecops.be/">eCops</a>
-        <a href="<?= $external[$language]['federal']['url'] ?>"><?= $external[$language]['federal']['name'] ?></a>
+        <ul class="nav nav--pills nav--visited nav--horizontal">
+            <li><a href="<?= $external[$language]['help']['url'] ?>"><?= $external[$language]['help']['name'] ?></a></li>
+            <li><a href="<?= $external[$language]['wanted']['url'] ?>"><?= $external[$language]['wanted']['name'] ?></a></li>
+            <li><a href="https://policeonweb.belgium.be">Police On Web</a></li>
+            <li><a href="https://www.ecops.be/">eCops</a></li>
+            <li><a href="<?= $external[$language]['federal']['url'] ?>"><?= $external[$language]['federal']['name'] ?></a></li>
+        </ul>
     </div>
 </div>
