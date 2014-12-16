@@ -27,13 +27,11 @@ $host   = $url->getHost();
 // Make sure the given host exists
 if(array_key_exists($host, $domains))
 {
-    $language_short = $domains[$host]['language'];
+    $language = $domains[$host]['language'];
     $domain = $domains[$host]['domain'];
-    $lang = $domains[$host]['lang'];
 } else {
-    $language_short = 'nl';
+    $language = 'nl';
     $domain = 'www';
-    $lang = 'en-GB';
 }
 
 $search = array(
@@ -92,19 +90,19 @@ $external = array(
 );
 ?>
 
-<title content="replace"><?= $localpolice[$language_short] ?></title>
+<title content="replace"><?= $localpolice[$language] ?></title>
 
 <div class="splash">
-    <div class="splash__logo"><img src="assets://application/images/logo-<?= $language_short ?>.jpg" /></div>
+    <div class="splash__logo"><img src="assets://application/images/logo-<?= $language ?>.jpg" /></div>
 
     <div class="well splash__search">
-        <form action="#" method="get" class="-koowa-grid">
-            <label for="municipality" class="muted"><?= $search[$language_short] ?>:</label>
-            <div class="form__right">
-                <button class="button button--primary"><?= $button[$language_short] ?></button>
-            </div>
-            <div class="form__left">
-                <input autofocus type="text" class="bigdrop" id="municipality" value="<?= $state->municipality ? $state->municipality : '' ?>" name="municipality" style="width: 100%">
+        <form action="#" method="get">
+            <label for="municipality" class="muted"><?= $search[$language] ?>:</label>
+            <div class="search">
+                <div class="search__field">
+                    <input autofocus type="text" class="bigdrop" id="municipality" value="<?= $state->municipality ? $state->municipality : '' ?>" name="municipality" style="width: 100%">
+                </div>
+                <button class="button button--primary"><?= $button[$language] ?></button>
             </div>
         </form>
 
@@ -115,7 +113,7 @@ $external = array(
                     <li><a href="?id=<?= $municipality->id ?>"><?= $municipality->title ?></a></li>
                 <? endforeach ?>
                 <? if(!count($municipalities)) : ?>
-                    <?= sprintf($notfound[$language_short], '<strong>'.$state->municipality.'</strong>') ?>
+                    <?= sprintf($notfound[$language], '<strong>'.$state->municipality.'</strong>') ?>
                 <? endif ?>
             </ul>
         </div>
@@ -128,10 +126,10 @@ $external = array(
         <a href="http://<?= $domain ?>.lokalepolizei.be">Deutsch</a>
     </div>
     <div class="splash__external">
-        <a href="<?= $external[$language_short]['federal']['url'] ?>"><?= $external[$language_short]['federal']['name'] ?></a>
-        <a href="<?= $external[$language_short]['wanted']['url'] ?>"><?= $external[$language_short]['wanted']['name'] ?></a>
+        <a href="<?= $external[$language]['federal']['url'] ?>"><?= $external[$language]['federal']['name'] ?></a>
+        <a href="<?= $external[$language]['wanted']['url'] ?>"><?= $external[$language]['wanted']['name'] ?></a>
         <a href="https://policeonweb.belgium.be">Police On Web</a>
         <a href="https://www.ecops.be/">eCops</a>
-        <a href="<?= $external[$language_short]['commission']['url'] ?>"><?= $external[$language_short]['commission']['name'] ?></a>
+        <a href="<?= $external[$language]['commission']['url'] ?>"><?= $external[$language]['commission']['name'] ?></a>
     </div>
 </div>
