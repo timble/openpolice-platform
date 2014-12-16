@@ -835,6 +835,15 @@ button.closed {
   max-width: 940px;
   margin: 0 auto; }
 
+#splash {
+  display: table;
+  height: 100%;
+  width: 100%; }
+  #splash #wrap {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle; }
+
 .splash__search {
   max-width: 600px;
   margin: 0 auto; }
@@ -857,9 +866,6 @@ button.closed {
   .splash__external a {
     margin: 0 10px;
     white-space: nowrap; }
-
-.splash__logo {
-  margin-top: 100px; }
 
 .homepage__sticky {
   padding-left: 20px;
@@ -1479,7 +1485,8 @@ h3 {
   font-size: 1.25em; }
 
 html {
-  font-size: 16px; }
+  font-size: 16px;
+  height: 100%; }
 
 time {
   white-space: nowrap; }
