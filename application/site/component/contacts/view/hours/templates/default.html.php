@@ -9,8 +9,10 @@
 ?>
 
 <?
-    $now = new DateTime('NOW');
-    $date = new DateTime('NOW');
+    $date = isset($_GET['date']) ? new DateTime($_GET['date']) : new DateTime('NOW');
+    $today = new DateTime('NOW');
+    $tomorrow = new DateTime('NOW');
+    $tomorrow = $tomorrow->modify('+1 day');
 ?>
 
 <? if ($contact->params->get('open_24_7', false)) : ?>
@@ -33,9 +35,9 @@
                 <? $closed = isset($list->top()->closed) ? $list->top()->closed : false ?>
                 <tr>
                     <td width="25%" nowrap>
-                        <? if($day_of_week == '1') : ?>
+                        <? if($date == $today) : ?>
                         <?= translate('Today') ?>:
-                        <? elseif($day_of_week == '2') : ?>
+                        <? elseif($date == $tomorrow) : ?>
                         <?= translate('Tomorrow') ?>:
                         <? else : ?>
                         <?= translate($date->format('l')).' '.$date->format('j').' '.translate($date->format('F')) ?>:
@@ -69,4 +71,10 @@
             </tbody>
         </table>
     <? endif ?>
+<? endif ?>
+
+<? if(isset($_GET['date']) && !empty($_GET['date'])) : ?>
+    <a href="?date="><?= translate('Previous 7 days') ?></a>
+<? else : ?>
+    <a href="?date=<?= $date->format('Y-m-d') ?>"><?= translate('Next 7 days') ?></a>
 <? endif ?>
