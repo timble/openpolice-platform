@@ -98,7 +98,7 @@ $external = array(
     <div class="splash__logo"><img src="assets://application/images/logo-<?= $language_short ?>.jpg" /></div>
 
     <div class="well splash__search">
-        <form action="<?= route( 'option=com_police&view=zone' ); ?>" method="get" class="-koowa-grid">
+        <form action="#" method="get" class="-koowa-grid">
             <label for="municipality" class="muted"><?= $search[$language_short] ?>:</label>
             <div class="form__right">
                 <button class="button button--primary"><?= $button[$language_short] ?></button>

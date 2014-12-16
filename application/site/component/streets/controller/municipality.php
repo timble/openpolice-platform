@@ -21,7 +21,7 @@ class StreetsControllerMunicipality extends Library\ControllerModel
             $municipality = $municipalities->top();
 
             if ($municipality->police_zone_id) {
-                $this->getObject('component')->redirect('http://www.lokalepolitie.be/'.$municipality->police_zone_id);
+                $this->getObject('component')->redirect('/'.$municipality->police_zone_id);
                 return true;
             }
         }
