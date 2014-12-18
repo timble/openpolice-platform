@@ -2292,7 +2292,7 @@ table {
 .table--openinghours tbody td:nth-child(n+2) {
   display: block; }
 .table--openinghours tfoot td {
-  padding-top: 1.5em;
+  padding-top: 1em;
   text-align: center; }
 
 .table--openinghours th,
