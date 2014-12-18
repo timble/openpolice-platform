@@ -19,7 +19,7 @@
 
     <? if (count($hours)) : ?>
         <table class="table table--striped table--openinghours">
-            <caption><?= translate('Opening hours') ?></caption>
+            <caption id="<?= object('lib:filter.slug')->sanitize(translate('Opening hours')) ?>"><?= translate('Opening hours') ?></caption>
             <tbody>
             <? for ($day_of_week = 1; $day_of_week <= 7; $date->modify( '+1 day' ), $day_of_week++) : ?>
                 <? $weekly = $hours->find(array('day_of_week' => $date->format('N'), 'date' => '')) ?>
@@ -63,6 +63,6 @@
             <? endfor ?>
             </tbody>
         </table>
-        <a href="<?= $pagination ?>"><?= !empty($query->date) ? translate('Previous 7 days') : translate('Next 7 days') ?></a>
+        <a href="<?= $pagination ?>#<?= object('lib:filter.slug')->sanitize(translate('Opening hours')) ?>"><?= !empty($query->date) ? translate('Previous 7 days') : translate('Next 7 days') ?></a>
     <? endif ?>
 <? endif ?>
