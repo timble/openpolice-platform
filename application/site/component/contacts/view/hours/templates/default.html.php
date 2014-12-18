@@ -62,7 +62,13 @@
                 </tr>
             <? endfor ?>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a href="<?= $pagination ?>#<?= object('lib:filter.slug')->sanitize(translate('Opening hours')) ?>"><?= !empty($query->date) ? translate('Previous 7 days') : translate('Next 7 days') ?></a>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
-        <a href="<?= $pagination ?>#<?= object('lib:filter.slug')->sanitize(translate('Opening hours')) ?>"><?= !empty($query->date) ? translate('Previous 7 days') : translate('Next 7 days') ?></a>
     <? endif ?>
 <? endif ?>

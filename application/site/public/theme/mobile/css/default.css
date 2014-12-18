@@ -2298,16 +2298,19 @@ table {
   padding: 0.5em 0.75em 0; }
 .table--openinghours td {
   padding: 0 0 0.5em 0; }
-.table--openinghours td:nth-child(1) {
+.table--openinghours tbody td:nth-child(1) {
   font-weight: bold; }
-.table--openinghours td:nth-child(n+2) {
+.table--openinghours tbody td:nth-child(n+2) {
   display: block; }
+.table--openinghours tfoot td {
+  padding-top: 1.5em;
+  text-align: center; }
 
 @media screen and (min-width: 768px) {
   .table--openinghours th,
   .table--openinghours td {
     padding: 0.5em; }
-  .table--openinghours td:nth-child(1) {
+  .table--openinghours tbody td:nth-child(1) {
     text-align: right; } }
 .thumbnail, .article__thumbnail {
   display: block;
