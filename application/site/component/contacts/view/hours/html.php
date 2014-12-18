@@ -31,7 +31,10 @@ class ContactsViewHoursHtml extends Library\ViewHtml
             $url = $this->getObject('http.url')->setQuery($arguments);
             $arguments = array_filter($url->getQuery(true));
 
-            $arguments['date'] = empty($this->query->date) ? $this->date->format('Y-m-d') : '';
+            $next = new DateTime('NOW');
+            $next->modify('+7 days');
+
+            $arguments['date'] = empty($this->query->date) ? $next->format('Y-m-d') : '';
             $url->setQuery($arguments);
 
             $this->pagination = (string) $url;
