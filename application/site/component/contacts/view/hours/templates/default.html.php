@@ -8,13 +8,6 @@
  */
 ?>
 
-<?
-    $date = isset($_GET['date']) && !empty($_GET['date']) ? new DateTime($_GET['date']) : new DateTime('NOW');
-    $today = new DateTime('NOW');
-    $tomorrow = new DateTime('NOW');
-    $tomorrow = $tomorrow->modify('+1 day');
-?>
-
 <? if ($contact->params->get('open_24_7', false)) : ?>
     <h3><?= translate('Opening hours') ?></h3>
     <p>
@@ -70,13 +63,6 @@
             <? endfor ?>
             </tbody>
         </table>
-
-        <? if(isset($pagination)) : ?>
-        <? if(isset($_GET['date']) && !empty($_GET['date'])) : ?>
-            <a href="<?= helper('route.contact', array('row' => $contact, 'date' => '')) ?>"><?= translate('Previous 7 days') ?></a>
-        <? else : ?>
-            <a href="<?= helper('route.contact', array('row' => $contact, 'date' => $date->format('Y-m-d'))) ?>"><?= translate('Next 7 days') ?></a>
-        <? endif ?>
-        <? endif ?>
+        <a href="<?= $pagination ?>"><?= !empty($query->date) ? translate('Previous 7 days') : translate('Next 7 days') ?></a>
     <? endif ?>
 <? endif ?>
