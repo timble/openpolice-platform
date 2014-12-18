@@ -8,11 +8,6 @@
  */
 ?>
 
-<?
-    $now = new DateTime('NOW');
-    $date = new DateTime('NOW');
-?>
-
 <? if ($contact->params->get('open_24_7', false)) : ?>
     <h3><?= translate('Opening hours') ?></h3>
     <p>
@@ -24,7 +19,7 @@
 
     <? if (count($hours)) : ?>
         <table class="table table--striped table--openinghours">
-            <caption><?= translate('Opening hours') ?></caption>
+            <caption id="<?= object('lib:filter.slug')->sanitize(translate('Opening hours')) ?>"><?= translate('Opening hours') ?></caption>
             <tbody>
             <? for ($day_of_week = 1; $day_of_week <= 7; $date->modify( '+1 day' ), $day_of_week++) : ?>
                 <? $weekly = $hours->find(array('day_of_week' => $date->format('N'), 'date' => '')) ?>
@@ -33,9 +28,9 @@
                 <? $closed = isset($list->top()->closed) ? $list->top()->closed : false ?>
                 <tr>
                     <td width="25%" nowrap>
-                        <? if($day_of_week == '1') : ?>
+                        <? if($date == $today) : ?>
                         <?= translate('Today') ?>:
-                        <? elseif($day_of_week == '2') : ?>
+                        <? elseif($date == $tomorrow) : ?>
                         <?= translate('Tomorrow') ?>:
                         <? else : ?>
                         <?= translate($date->format('l')).' '.$date->format('j').' '.translate($date->format('F')) ?>:
@@ -67,6 +62,13 @@
                 </tr>
             <? endfor ?>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <a href="<?= $pagination ?>#<?= object('lib:filter.slug')->sanitize(translate('Opening hours')) ?>"><?= !empty($query->date) ? translate('Previous 7 days') : translate('Next 7 days') ?></a>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     <? endif ?>
 <? endif ?>
