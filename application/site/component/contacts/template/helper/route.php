@@ -51,8 +51,7 @@ class ContactsTemplateHelperRoute extends PagesTemplateHelperRoute
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
             'layout'   => null,
-            'category' => null,
-            'date' => null
+            'category' => null
         ));
 
         $contact = $config->row;
@@ -66,8 +65,7 @@ class ContactsTemplateHelperRoute extends PagesTemplateHelperRoute
             'view'     => 'contact',
             'id'       => $contact->getSlug(),
             'layout'   => $config->layout,
-            'category' => $config->category,
-            'date'     => $config->date
+            'category' => $config->category
         );
 
 		if($item = $this->_findPage($needles)) {
