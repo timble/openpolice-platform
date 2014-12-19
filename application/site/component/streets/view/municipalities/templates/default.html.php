@@ -75,7 +75,7 @@ $external = array(
     'fr' => array(
         'federal' => array('name' => 'Police fédérale', 'url' => 'http://www.polfed-fedpol.be/home_fr.php'),
         'wanted' => array('name' => 'Avis de recherche', 'url' => 'http://www.polfed-fedpol.be/ops/ops_fr.php'),
-        'commission' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.polfed-fedpol.be/hulp_fr.php')),
+        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.polfed-fedpol.be/hulp_fr.php')),
     'de' => array(
         'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polfed-fedpol.be/home_de.php'),
         'wanted' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polfed-fedpol.be/ops/ops_de.php'),
