@@ -22,6 +22,9 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
 			<th>
+				<?= helper('grid.sort', array('column' => 'language')) ?>
+			</th>
+			<th>
 				<?= helper('grid.sort', array('column' => 'postcode', 'title' => 'Postcode')) ?>
 			</th>
 			<th>
@@ -44,6 +47,9 @@
 		<tr>
 			<td>
 				<?= escape($municipality->title); ?>
+			</td>
+			<td>
+				<?= escape($municipality->language); ?>
 			</td>
 			<td>
 				<?= escape($municipality->postcode); ?>
