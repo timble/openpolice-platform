@@ -11,6 +11,15 @@ use Nooku\Library;
 
 class StreetsControllerMunicipality extends Library\ControllerModel
 {
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        $request->query->sort = 'title';
+
+        return $request;
+    }
+
     public function _actionBrowse(Library\CommandContext $context)
     {
         $municipalities = parent::_actionBrowse($context);
