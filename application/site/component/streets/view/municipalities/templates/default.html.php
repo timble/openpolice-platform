@@ -93,20 +93,20 @@ $external = array(
             <label for="municipality" class="muted"><?= $search[$language] ?>:</label>
             <div class="search">
                 <div class="search__field">
-                    <input autofocus type="text" class="bigdrop" id="municipality" value="<?= $state->municipality ? $state->municipality : '' ?>" name="municipality" onfocus="this.value = this.value;">
+                    <input autofocus type="text" value="<?= $state->search ? $state->search : '' ?>" name="search" onfocus="this.value = this.value;">
                 </div>
                 <button class="button button--primary"><?= $button[$language] ?></button>
             </div>
         </form>
 
-        <? if($state->municipality) : ?>
+        <? if($state->search) : ?>
         <div class="municipalities">
             <ul class="nav nav--pills nav--visited column--double">
                 <? foreach ($municipalities as $municipality) : ?>
-                    <li><a href="?id=<?= $municipality->id ?>"><?= $municipality->title ?></a></li>
+                    <li><a href="?municipality=<?= $municipality->streets_municipality_id.'&language='.$municipality->language ?>"><?= $municipality->title ?></a></li>
                 <? endforeach ?>
                 <? if(!count($municipalities)) : ?>
-                    <?= sprintf($notfound[$language], '<strong>'.$state->municipality.'</strong>') ?>
+                    <?= sprintf($notfound[$language], '<strong>'.$state->search.'</strong>') ?>
                 <? endif ?>
             </ul>
         </div>
