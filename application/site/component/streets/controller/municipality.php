@@ -15,8 +15,10 @@ class StreetsControllerMunicipality extends Library\ControllerModel
     {
         $municipalities = parent::_actionBrowse($context);
 
+        $query = $this->getObject("request")->query;
+
         // Redirect the user if the request doesn't include layout=form
-        if ($context->request->getFormat() == 'html' && count($municipalities) == '1')
+        if ($context->request->getFormat() == 'html' && (count($municipalities) == '1' || is_numeric($query->search)))
         {
             $municipality = $municipalities->top();
 

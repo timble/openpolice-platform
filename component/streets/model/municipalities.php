@@ -42,16 +42,14 @@ class ModelMunicipalities extends Library\ModelTable
 		parent::_buildQueryWhere($query);
 		$state = $this->getState();
 
-		if ($state->search) {
+		if (!is_numeric($state->search)) {
 			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+		} else {
+			$query->where('tbl.postcode = :search')->bind(array('search' => $state->search));
 		}
 
-		if(is_numeric($state->municipality)){
-			$query->where('tbl.postcode = :municipality')->bind(array('municipality' => $state->municipality));
-		}
-
-		if(!is_numeric($state->municipality)){
-			$query->where('tbl.title LIKE :municipality')->bind(array('municipality' => '%'.$state->municipality.'%'));
+		if($state->municipality){
+			$query->where('tbl.streets_municipality_id = :municipality')->bind(array('municipality' => $state->municipality));
 		}
 
 		if ($state->zone) {
