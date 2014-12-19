@@ -19,6 +19,7 @@ class ModelMunicipalities extends Library\ModelTable
 		$this->getState()
 		    ->insert('zone' , 'int')
 			->insert('municipality', 'string')
+			->insert('language', 'string')
             ->insert('parent_id' , 'int');
 	}
 
@@ -50,6 +51,10 @@ class ModelMunicipalities extends Library\ModelTable
 
 		if($state->municipality){
 			$query->where('tbl.streets_municipality_id = :municipality')->bind(array('municipality' => $state->municipality));
+		}
+
+		if($state->language){
+			$query->where('tbl.language = :language')->bind(array('language' => $state->language));
 		}
 
 		if ($state->zone) {
