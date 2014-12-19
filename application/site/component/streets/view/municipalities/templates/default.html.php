@@ -105,10 +105,11 @@ $external = array(
                 <? foreach ($municipalities as $municipality) : ?>
                     <li><a href="?municipality=<?= $municipality->streets_municipality_id.'&language='.$municipality->language ?>"><?= $municipality->title ?></a></li>
                 <? endforeach ?>
-                <? if(!count($municipalities)) : ?>
-                    <?= sprintf($notfound[$language], '<strong>'.$state->search.'</strong>') ?>
-                <? endif ?>
             </ul>
+            <? if(!count($municipalities)) : ?>
+                <?= sprintf($notfound[$language], '<strong>'.$state->search.'</strong>') ?>
+            <? endif ?>
+            <?= helper('paginator.pagination', array('total' => $total, 'show_limit' => false, 'show_count' => false)); ?>
         </div>
         <? endif ?>
     </div>
