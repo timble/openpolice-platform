@@ -21,3 +21,13 @@ $fix-mqs: $breakpoint-delta;
     width: 188px;
   }
 }
+
+// Force height/width otherwise image gets stretched out
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery .gallery__item {
+  @include span(3 of 12 inside); // ie8 needs to switch to an 'inside' gutter system. It doesn't handle nth-child css
+}
