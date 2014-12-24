@@ -1002,7 +1002,7 @@ button.closed {
       margin-bottom: 0;
       border-bottom: none;
       padding-bottom: 0; } }
-  @media screen and (min-width: 768px) and (min-width: 1024px) {
+  @media screen and (min-width: 768px) and (min-width: 960px) {
     .quicklink__item_1,
     .quicklink__item_2,
     .quicklink__item_3 {
@@ -1047,7 +1047,7 @@ button.closed {
     border-top: 0 none; }
     .container__copyright .copyright--right {
       text-align: right; } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -1256,7 +1256,7 @@ button.closed {
       margin-left: 69.1358%;
       margin-right: -100%;
       clear: none; } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   .homepage__sticky .media {
     width: 48.14815%;
     float: left;
@@ -1571,7 +1571,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
     width: 40%;
     max-width: 200px;
     margin: 0 0 1.5em 1.5em; } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   .banner__image {
     height: 110px;
     border: 1px solid #999;
@@ -1930,7 +1930,7 @@ input[type="submit"].button {
       text-align: center; }
       .header .slogan a {
         text-decoration: none; } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   .header {
     margin-bottom: 20px; }
     .header .organization {
