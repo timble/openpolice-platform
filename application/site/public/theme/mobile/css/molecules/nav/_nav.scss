@@ -21,6 +21,11 @@
     text-decoration: none;
     background-color: $cyanLighter;
   }
+
+  ul {
+    list-style: none;
+    margin-left: 0;
+  }
 }
 
 .nav--visited a:visited {
@@ -40,5 +45,9 @@
     padding-right: 12px;
     padding-left: 12px;
     margin-right: 2px;
+  }
+
+  li li a {
+    padding-left: 24px;
   }
 }

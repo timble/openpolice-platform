@@ -1,0 +1,24 @@
+<?php
+/**
+ * Belgian Police Web Platform - wanted Component
+ *
+ * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
+ * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @link		https://github.com/belgianpolice/internet-platform
+ */
+
+namespace Nooku\Component\Wanted;
+
+use Nooku\Library;
+
+class ModelSections extends Library\ModelTable
+{
+    public function __construct(Library\ObjectConfig $config)
+    {
+        parent::__construct($config);
+
+        // Set the state
+        $this->getState()
+            ->insert('sort'      , 'cmd', 'ordering');
+    }
+}

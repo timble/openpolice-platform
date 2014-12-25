@@ -1,5 +1,11 @@
 @import "susy";
 
+@include breakpoint($breakpoint-alpha) {
+  .wanted-list .wanted-list__item {
+    @include gallery(6 of 12);
+  }
+}
+
 @include breakpoint($breakpoint-beta) {
   .gallery .gallery__item {
     @include gallery(6 of 12);
@@ -95,7 +101,8 @@
     @include span(5 of 12);
   }
 
-  .gallery .gallery__item {
+  .gallery .gallery__item,
+  .wanted-list .wanted-list__item {
     @include gallery(4 of 12);
   }
 }

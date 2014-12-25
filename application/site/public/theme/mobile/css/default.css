@@ -1115,6 +1115,19 @@ button.closed {
   text-align: center;
   margin: 3em 0; }
 
+@media screen and (min-width: 400px) {
+  .wanted-list .wanted-list__item {
+    width: 48.14815%;
+    float: left; }
+    .wanted-list .wanted-list__item:nth-child(2n + 1) {
+      margin-left: 0;
+      margin-right: -100%;
+      clear: both;
+      margin-left: 0; }
+    .wanted-list .wanted-list__item:nth-child(2n + 2) {
+      margin-left: 51.85185%;
+      margin-right: -100%;
+      clear: none; } }
 @media screen and (min-width: 600px) {
   .gallery .gallery__item {
     width: 48.14815%;
@@ -1240,19 +1253,23 @@ button.closed {
     float: left;
     margin-left: 3.7037%; }
 
-  .gallery .gallery__item {
+  .gallery .gallery__item,
+  .wanted-list .wanted-list__item {
     width: 30.8642%;
     float: left; }
-    .gallery .gallery__item:nth-child(3n + 1) {
+    .gallery .gallery__item:nth-child(3n + 1),
+    .wanted-list .wanted-list__item:nth-child(3n + 1) {
       margin-left: 0;
       margin-right: -100%;
       clear: both;
       margin-left: 0; }
-    .gallery .gallery__item:nth-child(3n + 2) {
+    .gallery .gallery__item:nth-child(3n + 2),
+    .wanted-list .wanted-list__item:nth-child(3n + 2) {
       margin-left: 34.5679%;
       margin-right: -100%;
       clear: none; }
-    .gallery .gallery__item:nth-child(3n + 3) {
+    .gallery .gallery__item:nth-child(3n + 3),
+    .wanted-list .wanted-list__item:nth-child(3n + 3) {
       margin-left: 69.1358%;
       margin-right: -100%;
       clear: none; } }
@@ -1909,6 +1926,14 @@ input[type="submit"].button {
       background-image: url("../images/logo-fr.png"); }
     .header .organization__logo--de {
       background-image: url("../images/logo-de.png"); }
+    .header .organization__logo--en.organization__logo--fed {
+      background-image: url("../images/logo-fed-en.png"); }
+    .header .organization__logo--nl.organization__logo--fed {
+      background-image: url("../images/logo-fed-nl.png"); }
+    .header .organization__logo--fr.organization__logo--fed {
+      background-image: url("../images/logo-fed-fr.png"); }
+    .header .organization__logo--de.organization__logo--fed {
+      background-image: url("../images/logo-fed-de.png"); }
     .header .organization__name {
       margin-left: 57px;
       margin-top: 6px;
@@ -2099,6 +2124,9 @@ input[type="submit"].button {
   .nav li a:focus {
     text-decoration: none;
     background-color: #ebf3f4; }
+  .nav ul {
+    list-style: none;
+    margin-left: 0; }
 
 .nav--visited a:visited {
   color: #609; }
@@ -2122,16 +2150,19 @@ input[type="submit"].button {
     padding-right: 12px;
     padding-left: 12px;
     margin-right: 2px; }
+  .nav--list li li a,
+  .nav--pills li li a {
+    padding-left: 24px; }
 
 .nav--list li a {
   padding-top: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #eee; }
-.nav--list li:last-child a {
+.nav--list > li:last-child a {
   border-bottom: 0 none; }
-.nav--list .active a,
-.nav--list .active a:hover,
-.nav--list .active a:focus {
+.nav--list .active > a,
+.nav--list .active > a:hover,
+.nav--list .active > a:focus {
   color: #505050;
   background-color: #ebf3f4;
   font-weight: bold; }
@@ -2368,6 +2399,34 @@ a.article__thumbnail:focus {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px; }
+
+.wanted-list {
+  list-style: none;
+  margin: 0; }
+
+.wanted-list__item {
+  text-align: center;
+  margin-bottom: 1.5em;
+  border: 1px solid #eee;
+  border-radius: 4px; }
+  .wanted-list__item img {
+    border-radius: 4px 4px 0 0; }
+  .wanted-list__item a {
+    display: inline-block;
+    text-decoration: none;
+    color: #222; }
+  .wanted-list__item a:hover,
+  .wanted-list__item a:focus {
+    color: #002852;
+    background-color: #ebf3f4; }
+
+.wanted-list__metadata {
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 12px; }
+
+.wanted-list__name {
+  font-weight: bold; }
 
 /* Magnific Popup CSS */
 .mfp-bg {
