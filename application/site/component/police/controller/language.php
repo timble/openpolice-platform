@@ -64,6 +64,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
         $site       = $this->getObject('application')->getSite();
         $package    = $this->getIdentifier()->package;
+        $section    = isset($model->getState()->section) ? $model->getState()->section : null;
         $category   = isset($model->getState()->category) ? $model->getState()->category : null;
         $item       = isset($row) ? $row->id : null;
 
@@ -84,6 +85,12 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
             $result .= '/'.$this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table('pages')->row($page->id)->getRowset()->top()->slug;
 
+            if($section && $package == 'wanted')
+            {
+                $current = $this->getObject('com:languages.model.translations')->iso_code($active->iso_code)->table($package.'_sections')->slug($section)->getRowset()->top();
+                $result .= '/'.$this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package.'_sections')->row($current->row)->getRowset()->top()->slug;
+            }
+
             if($category && $package != 'contacts')
             {
                 if(is_numeric($category))
@@ -101,7 +108,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
             {
                 $item = $this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package)->row($item)->getRowset()->top();
 
-                if($package == 'news' || $package == 'contacts')
+                if($package == 'news' || $package == 'contacts' || $package == 'wanted')
                 {
                     $result .= '/'.$item->row.'-'.$item->slug;
                 }
