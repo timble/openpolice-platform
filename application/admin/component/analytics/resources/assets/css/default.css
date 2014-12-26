@@ -1,0 +1,47 @@
+.google-visualization-table-tr-head td {
+    text-align: right !important;
+}
+.google-visualization-table-tr-head td:first-child {
+    text-align: left !important;
+}
+
+.google-visualization-table-th {
+    border: 0 none !important;
+    border-bottom: 1px solid #eee !important;
+    background: none !important;
+}
+
+.google-visualization-table-td {
+    border: 0 none !important;
+    padding: 8px 8px 7px !important;
+}
+
+h1 {
+    text-align: right;
+    font-size: 18px;
+}
+
+h2 {
+    margin: 60px 0 20px;
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+    font-size: 14px;
+}
+
+dl dt {
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    clear: left;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+dl dd {
+    margin-left: 180px;
+}

@@ -46,6 +46,13 @@ class AnalyticsViewAnalyticHtml extends Library\ViewHtml
         $this->accessToken  = $row->token;
         $this->viewId       = 'ga:40087352';
         $this->site         = $this->getObject('application')->getSite();
+        $this->filters      = 'ga:pagePath=~^\/'.$this->site.'(\/|$)';
+
+        $now = new DateTime();
+        $now->modify('-1 day');
+        $this->end_date     = $now->format('D j M Y');
+        $now->modify('-29 days');
+        $this->start_date   = $now->format('D j M Y');
 
         return parent::render();
     }
