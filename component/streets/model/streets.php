@@ -98,5 +98,9 @@ class ModelStreets extends Library\ModelTable
         if(!in_array($this->getObject('application')->getSite(), array('default', '5904'))) {
             $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
         }
+
+        if ($this->getObject('application')->getSite() == '5904') {
+            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5904', '5430', '5431')));
+        }
 	}
 }
