@@ -62,7 +62,7 @@
 				<?= helper('grid.checkbox', array('row' => $street))?>
 			</td>
 			<td>
-				<a href="<?= route( 'view=street&task=edit&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
+				<a href="<?= route( 'view=street&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
 			</td>
             <td>
                 <?= $street->id ?>

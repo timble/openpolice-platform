@@ -33,13 +33,17 @@ class ModelStreets extends Library\ModelTable
         $query->columns(array(
             'title' => "CONCAT(tbl.title, ' (', city.title, ')')",
             'district_count' => 'district.district_count',
-            'bin_count' => 'bin.district_count'
+            'bin_count' => 'bin.district_count',
+            'islp' => 'islps.islp'
         ));
     }
 
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
         $state = $this->getState();
+
+        // Join the ISLP ID
+        $query->join(array('islps' => 'data.streets_streets_islps'), 'islps.streets_street_id = tbl.identifier');
 
         $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
 
@@ -66,8 +70,12 @@ class ModelStreets extends Library\ModelTable
 		parent::_buildQueryWhere($query);
 		$state = $this->getState();
 
-		if ($state->search) {
-			$query->where('(tbl.title LIKE :search OR tbl.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%'.$state->search.'%'));
+        $languages = $this->getObject('application.languages');
+
+        $query->where('tbl.iso = :iso')->bind(array('iso' => $languages->getActive()->slug));
+
+        if ($state->search) {
+			$query->where('(tbl.title LIKE :search OR islps.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%'.$state->search.'%'));
 		}
 
         if ($state->title) {
