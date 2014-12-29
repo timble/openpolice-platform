@@ -63,7 +63,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     public function _importDistricts($data)
     {
         // Empty districts table
-        $this->getObject('com:districts.model.districts')->getRowset()->delete();
+        if($this->override)
+        {
+            $this->getObject('com:districts.model.districts')->getRowset()->delete();
+        }
 
         foreach($data as $item)
         {
@@ -111,7 +114,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     public function _importDistrictsofficers($data)
     {
         // Empty districts_districts_officers table
-        $this->getObject('com:districts.model.districts_officers')->getRowset()->delete();
+        if($this->override)
+        {
+            $this->getObject('com:districts.model.districts_officers')->getRowset()->delete();
+        }
 
         foreach($data as $item)
         {
@@ -129,7 +135,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     public function _importRelations($data)
     {
         // Empty districts_relations table
-        $this->getObject('com:districts.model.relations')->getRowset()->delete();
+        if($this->override)
+        {
+            $this->getObject('com:districts.model.relations')->getRowset()->delete();
+        }
 
         foreach($data as $item)
         {
