@@ -16,13 +16,26 @@
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form" enctype="multipart/form-data">
+    <input type="hidden" name="override" value="0" />
     <div class="main">
         <div class="scrollable">
             <fieldset>
                 <legend>Upload</legend>
                 <input type="hidden" name="table" value="<?= $state->table ?>" />
 
-                <input type="file" name="file" />
+                <div>
+                    <label for="file"><?= translate('File') ?></label>
+                    <div>
+                        <input type="file" name="file" />
+                    </div>
+                </div>
+
+                <div>
+                    <label for="override"><?= translate('Override') ?></label>
+                    <div>
+                        <input type="checkbox" name="override" value="1" />
+                    </div>
+                </div>
 
                 <div class="alert alert-error">
                     <strong>Filetype!</strong> We only accept <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV (wikipedia.com)</a> or <a href="https://en.wikipedia.org/wiki/XML">XML</a> files.<br />
