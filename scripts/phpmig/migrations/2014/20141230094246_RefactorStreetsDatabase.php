@@ -1,16 +1,11 @@
 <?php
-
 use MyPhpmig\Police\Migration;
 
 class RefactorStreetsDatabase extends Migration
 {
-    /**
-     * Do the migration
-     */
     public function up()
     {
-        $this->_queries = "<<<EOL
-
+        $this->_queries = <<<EOL
 CREATE TABLE `streets_relations` (
 `streets_street_id` bigint(20) unsigned NOT NULL,
 `row` bigint(20) unsigned NOT NULL,
@@ -19,12 +14,13 @@ PRIMARY KEY (`streets_street_id`,`row`,`table`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Relations table for streets';
 
 
-SET @value :=0; UPDATE `districts_relations` SET `districts_relation_id` = (@value := @value + 1);
+SET @value :=0;
+UPDATE `districts_relations` SET `districts_relation_id` = (@value := @value + 1);
 ALTER TABLE `districts_relations` CHANGE `districts_relation_id` `districts_relation_id` INT(11)  NOT NULL  AUTO_INCREMENT;
 
-SET @value :=0; UPDATE `bin_relations` SET `bin_relation_id` = (@value := @value + 1);
+SET @value :=0;
+UPDATE `bin_relations` SET `bin_relation_id` = (@value := @value + 1);
 ALTER TABLE `bin_relations` CHANGE `bin_relation_id` `bin_relation_id` INT(11)  NOT NULL  AUTO_INCREMENT;
-
 
 INSERT INTO `streets_relations` (`streets_street_id`, `row`)
 SELECT `streets_street_id`, `bin_relation_id`
@@ -51,7 +47,6 @@ ALTER TABLE `contacts` DROP `state`;
 ALTER TABLE `contacts` DROP `address`;
 ALTER TABLE `contacts` DROP `country`;
 
-
 INSERT INTO `streets_relations` (`streets_street_id`, `row`)
 SELECT `streets_street_id`, `districts_relation_id`
   FROM `districts_relations`
@@ -71,18 +66,19 @@ SELECT `streets_street_id`, `traffic_article_id`
 UPDATE `streets_relations` SET `table` = 'traffic' WHERE `table` = '';
 
 DROP TABLE `traffic_streets`;
-
-
-EOL;";
+EOL;
 
         parent::up();
     }
 
-    /**
-     * Undo the migration
-     */
     public function down()
     {
+        $this->_queries = <<<EOL
+DROP TABLE `streets_relations`;
+
+EOL;
+
+
         parent::down();
     }
 }
