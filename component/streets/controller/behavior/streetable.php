@@ -26,23 +26,28 @@ class ControllerBehaviorStreetable extends Library\BehaviorAbstract
         $table = $row->getTable()->getBase();
 
         // Remove all existing relations
-        if($row->id && $row->getTable()->getBase())
+        if($row->id && $table)
         {
-            $rows = $this->getObject('com:traffic.model.streets')
-                ->article($row->id)
+            $rows = $this->getObject('com:streets.model.relations')
+                ->row($row->id)
+                ->table($table)
                 ->getRowset();
 
             $rows->delete();
         }
 
-        if($row->streets)
+        // Force array
+        $streets = (array) $row->streets;
+
+        if($streets)
         {
             // Save streets as relations
-            foreach ($row->streets as $street)
+            foreach ($streets as $street)
             {
-                $relation = $this->getObject('com:traffic.database.row.street');
-                $relation->streets_street_id = $street;
-                $relation->traffic_article_id = $row->id;
+                $relation = $this->getObject('com:streets.database.row.relation');
+                $relation->streets_street_id    = $street;
+                $relation->row		            = $row->id;
+                $relation->table                = $table;
 
                 if(!$relation->load()) {
                     $relation->save();
@@ -61,5 +66,26 @@ class ControllerBehaviorStreetable extends Library\BehaviorAbstract
     protected function _afterControllerEdit(Library\CommandContext $context)
     {
         $this->_saveRelations($context);
+    }
+
+    protected function _afterControllerDelete(Library\CommandContext $context)
+    {
+        $status = $context->result->getStatus();
+
+        if($status == Library\Database::STATUS_DELETED || $status == 'trashed')
+        {
+            $id = $context->result->get('id');
+            $table = $context->result->getTable()->getBase();
+
+            if(!empty($id) && $id != 0)
+            {
+                $rows = $this->getObject('com:streets.model.relations')
+                    ->row($id)
+                    ->table($table)
+                    ->getRowset();
+
+                $rows->delete();
+            }
+        }
     }
 }

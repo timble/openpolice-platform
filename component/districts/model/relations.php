@@ -35,7 +35,8 @@ class ModelRelations extends Library\ModelTable
 
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
-		$query->join(array('street' => 'data.streets'), 'street.streets_street_id = tbl.streets_street_id')
+		$query->join(array('street_relation' => 'streets_relations'), "street_relation.row = tbl.districts_relation_id")
+              ->join(array('street' => 'data.streets'), 'street.streets_street_id = street_relation.streets_street_id')
 			  ->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = street.streets_city_id')
               ->join(array('district' => 'districts'), 'district.districts_district_id = tbl.districts_district_id');
 	}
@@ -45,7 +46,9 @@ class ModelRelations extends Library\ModelTable
 		parent::_buildQueryWhere($query);
 		$state = $this->getState();
 
-		if ($state->district) {
+        $query->where('street_relation.table = :table')->bind(array('table' => 'districts_relations'));
+
+        if ($state->district) {
 			$query->where('tbl.districts_district_id = :district')->bind(array('district' => $state->district));
 		}
 
@@ -72,7 +75,7 @@ class ModelRelations extends Library\ModelTable
         }
 
         if ($state->search) {
-            $query->where('street.title LIKE :search OR tbl.islp LIKE :search ')->bind(array('search' => '%'.$state->search.'%'));
+            $query->where('street.title LIKE :search OR street.islp LIKE :search ')->bind(array('search' => '%'.$state->search.'%'));
         }
 	}
 
