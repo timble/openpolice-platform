@@ -85,6 +85,8 @@ ALTER TABLE `streets` DROP INDEX `identifier`;
 
 ALTER TABLE `streets` DROP `sources_source_id`;
 ALTER TABLE `streets` DROP `identifier`;
+
+DROP TABLE `streets_streets_islps`;
 EOL;
 
         parent::down();
