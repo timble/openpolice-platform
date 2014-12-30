@@ -40,10 +40,10 @@ ALTER TABLE `streets` ADD `identifier` INT  NULL  DEFAULT NULL  AFTER `streets_c
 UPDATE `streets` SET `identifier` = `streets_street_id`;
 
 INSERT INTO `streets` (`streets_city_id`, `identifier`, `language`, `title`, `created_by`, `created_on`, `modified_by`, `modified_on`)
-       SELECT `streets_city_id`, `identifier`, `language2`, `title2`, `created_by`, `created_on`, `modified_by`, `modified_on` FROM streets WHERE language2 != '' AND language2 IS NOT NULL AND language2 != language;
+       SELECT `streets_city_id`, `identifier`, `language2`, `title2`, `created_by`, `created_on`, `modified_by`, `modified_on` FROM streets WHERE (language2 != '' AND language2 IS NOT NULL AND language2 != language) AND title2 IS NOT NULL AND title2 != '';
 
 INSERT INTO `streets` (`streets_city_id`, `identifier`, `language`, `title`, `created_by`, `created_on`, `modified_by`, `modified_on`)
-       SELECT `streets_city_id`, `identifier`, `language3`, `title3`, `created_by`, `created_on`, `modified_by`, `modified_on` FROM streets WHERE language3 != '' AND language3 IS NOT NULL AND language3 != language;
+       SELECT `streets_city_id`, `identifier`, `language3`, `title3`, `created_by`, `created_on`, `modified_by`, `modified_on` FROM streets WHERE (language3 != '' AND language3 IS NOT NULL AND language3 != language) AND title3 IS NOT NULL AND title3 != '';
 
 ALTER TABLE `streets` DROP `islp`;
 ALTER TABLE `streets` DROP `language2`;
@@ -70,11 +70,6 @@ END;
         $this->getZones()->set(array('data' => 'Data'));
 
         $this->_queries = <<<EOL
-ALTER TABLE `streets` DROP INDEX `identifier`;
-
-ALTER TABLE `streets` DROP `sources_source_id`;
-ALTER TABLE `streets` DROP `identifier`;
-
 ALTER TABLE `streets` CHANGE `iso` `language` VARCHAR(2)  CHARACTER SET utf8  NULL  DEFAULT NULL;
 
 ALTER TABLE `streets` DROP PRIMARY KEY,
@@ -85,6 +80,11 @@ ALTER TABLE `streets` ADD COLUMN `language2` varchar(2) DEFAULT NULL AFTER `titl
 ALTER TABLE `streets` ADD COLUMN `title2` varchar(80) DEFAULT NULL AFTER `language2`;
 ALTER TABLE `streets` ADD COLUMN `language3` varchar(2) DEFAULT NULL AFTER `title2`;
 ALTER TABLE `streets` ADD COLUMN `title3` varchar(80) DEFAULT NULL AFTER `language3`;
+
+ALTER TABLE `streets` DROP INDEX `identifier`;
+
+ALTER TABLE `streets` DROP `sources_source_id`;
+ALTER TABLE `streets` DROP `identifier`;
 EOL;
 
         parent::down();
