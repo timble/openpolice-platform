@@ -32,20 +32,28 @@ ALTER TABLE `streets_streets_islps` DROP `locked_on`;
 
 DELETE FROM `streets_streets_islps` WHERE `islp` IS NULL OR `islp` = '';
 
+ALTER TABLE `streets` DROP PRIMARY KEY;
+ALTER TABLE `streets` CHANGE `streets_street_id` `streets_street_id` INT(11)  UNSIGNED  NOT NULL  AUTO_INCREMENT  PRIMARY KEY;
+
+ALTER TABLE `streets` ADD `identifier` INT  NULL  DEFAULT NULL  AFTER `streets_city_id`;
+
+UPDATE `streets` SET `identifier` = `streets_street_id`;
+
+INSERT INTO `streets` (`streets_city_id`, `identifier`, `language`, `title`, `created_by`, `created_on`, `modified_by`, `modified_on`)
+       SELECT `streets_city_id`, `identifier`, `language2`, `title2`, `created_by`, `created_on`, `modified_by`, `modified_on` FROM streets WHERE language2 != '' AND language2 IS NOT NULL AND language2 != language;
+
+INSERT INTO `streets` (`streets_city_id`, `identifier`, `language`, `title`, `created_by`, `created_on`, `modified_by`, `modified_on`)
+       SELECT `streets_city_id`, `identifier`, `language3`, `title3`, `created_by`, `created_on`, `modified_by`, `modified_on` FROM streets WHERE language3 != '' AND language3 IS NOT NULL AND language3 != language;
+
 ALTER TABLE `streets` DROP `islp`;
 ALTER TABLE `streets` DROP `language2`;
 ALTER TABLE `streets` DROP `title2`;
 ALTER TABLE `streets` DROP `language3`;
 ALTER TABLE `streets` DROP `title3`;
 
-ALTER TABLE `streets` DROP PRIMARY KEY;
-ALTER TABLE `streets` CHANGE `streets_street_id` `streets_street_id` INT(11)  UNSIGNED  NOT NULL  AUTO_INCREMENT  PRIMARY KEY;
-
-ALTER TABLE `streets` ADD `identifier` INT  NULL  DEFAULT NULL  AFTER `streets_city_id`;
 ALTER TABLE `streets` CHANGE `language` `iso` VARCHAR(2)  CHARACTER SET utf8  NULL  DEFAULT NULL;
-ALTER TABLE `streets` ADD `sources_source_id` TINYINT(1)  NULL  DEFAULT NULL  AFTER `iso`;
 
-UPDATE `streets` SET `identifier` = `streets_street_id`;
+ALTER TABLE `streets` ADD `sources_source_id` TINYINT(1)  NULL  DEFAULT NULL  AFTER `iso`;
 UPDATE `streets` SET `sources_source_id` = 1;
 
 ALTER TABLE `streets` ADD UNIQUE INDEX `identifier` (`identifier`, `iso`, `sources_source_id`);
