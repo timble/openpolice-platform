@@ -7,18 +7,20 @@
  * @link		https://github.com/belgianpolice/internet-platform
  */
 
-namespace Nooku\Component\Districts;
 use Nooku\Library;
 
-class DatabaseRowRelation extends Library\DatabaseRowTable
+class DistrictsViewRelationHtml extends Library\ViewHtml
 {
-    public function save()
+    public function render()
     {
-        if(!$this->id)
+        $model      = $this->getModel();
+        $relation   = $model->getData();
+
+        if($relation->isLocatable())
         {
-            $this->id = sha1(time().$this->districts_district_id.$this->streets_street_id.$this->range_start.$this->range_end.$this->range_parity);
+            $this->street = $relation->getStreets()->top();
         }
 
-        return parent::save();
+        return parent::render();
     }
 }

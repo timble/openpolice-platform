@@ -12,9 +12,9 @@ namespace Nooku\Component\Streets;
 use Nooku\Library;
 
 /**
- * Streetable Database Behavior
+ * Locatable Database Behavior
  */
-class DatabaseBehaviorStreetable extends Library\DatabaseBehaviorAbstract
+class DatabaseBehaviorLocatable extends Library\DatabaseBehaviorAbstract
 {
     /**
      * Get a list of streets
@@ -24,11 +24,13 @@ class DatabaseBehaviorStreetable extends Library\DatabaseBehaviorAbstract
     public function getStreets()
     {
         // $this->getTable()->getName()
-        $model = $this->getObject('com:traffic.model.streets');
+        $model = $this->getObject('com:streets.model.streets');
 
         if(!$this->isNew())
         {
-            $streets = $model->article($this->id)->getRowset();
+            $streets = $model->row($this->id)
+                ->table($this->getTable()->getBase())
+                ->getRowset();
 
         } else $streets = $model->getRow();
 
