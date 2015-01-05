@@ -17,10 +17,13 @@ PRIMARY KEY (`streets_street_id`,`row`,`table`)
 SET @value :=0;
 UPDATE `districts_relations` SET `districts_relation_id` = (@value := @value + 1);
 ALTER TABLE `districts_relations` CHANGE `districts_relation_id` `districts_relation_id` INT(11)  NOT NULL  AUTO_INCREMENT;
+ALTER TABLE `districts_relations` AUTO_INCREMENT = 1;
 
 SET @value :=0;
 UPDATE `bin_relations` SET `bin_relation_id` = (@value := @value + 1);
 ALTER TABLE `bin_relations` CHANGE `bin_relation_id` `bin_relation_id` INT(11)  NOT NULL  AUTO_INCREMENT;
+ALTER TABLE `bin_relations` AUTO_INCREMENT = 1;
+
 
 INSERT INTO `streets_relations` (`streets_street_id`, `row`)
 SELECT `streets_street_id`, `bin_relation_id`
@@ -29,23 +32,12 @@ SELECT `streets_street_id`, `bin_relation_id`
 
 UPDATE `streets_relations` SET `table` = 'bin_relations' WHERE `table` = '';
 
-ALTER TABLE `bin_relations` DROP `streets_street_id`;
-ALTER TABLE `bin_relations` DROP `islp`;
-ALTER TABLE `bin_relations` AUTO_INCREMENT = 1;
-
-
 INSERT INTO `streets_relations` (`streets_street_id`, `row`)
 SELECT `streets_street_id`, `contacts_contact_id`
   FROM `contacts`
  WHERE `streets_street_id` != '';
 
 UPDATE `streets_relations` SET `table` = 'contacts' WHERE `table` = '';
-
-ALTER TABLE `contacts` DROP `streets_street_id`;
-ALTER TABLE `contacts` DROP `suburb`;
-ALTER TABLE `contacts` DROP `state`;
-ALTER TABLE `contacts` DROP `address`;
-ALTER TABLE `contacts` DROP `country`;
 
 INSERT INTO `streets_relations` (`streets_street_id`, `row`)
 SELECT `streets_street_id`, `districts_relation_id`
@@ -54,18 +46,24 @@ SELECT `streets_street_id`, `districts_relation_id`
 
 UPDATE `streets_relations` SET `table` = 'districts_relations' WHERE `table` = '';
 
-ALTER TABLE `districts_relations` DROP `streets_street_id`;
-ALTER TABLE `districts_relations` DROP `islp`;
-ALTER TABLE `districts_relations` AUTO_INCREMENT = 1;
-
-
 INSERT INTO `streets_relations` (`streets_street_id`, `row`)
 SELECT `streets_street_id`, `traffic_article_id`
   FROM `traffic_streets`;
 
 UPDATE `streets_relations` SET `table` = 'traffic' WHERE `table` = '';
 
+
 DROP TABLE `traffic_streets`;
+
+ALTER TABLE `bin_relations` DROP `streets_street_id`;
+ALTER TABLE `bin_relations` DROP `islp`;
+ALTER TABLE `districts_relations` DROP `streets_street_id`;
+ALTER TABLE `districts_relations` DROP `islp`;
+ALTER TABLE `contacts` DROP `streets_street_id`;
+ALTER TABLE `contacts` DROP `suburb`;
+ALTER TABLE `contacts` DROP `state`;
+ALTER TABLE `contacts` DROP `address`;
+ALTER TABLE `contacts` DROP `country`;
 EOL;
 
         parent::up();
