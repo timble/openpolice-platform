@@ -3,7 +3,7 @@
     // Set default value for categories radiolist
     $jQuery(document).ready(
         function(){
-            $jQuery('fieldset[name=traffic_category_id] label:first-of-type input:radio').prop('checked', true);
+            $jQuery('fieldset[name=traffic_category_id] label[for=traffic_category_id19] input:radio').prop('checked', true);
         }
     );
 </script>
@@ -83,25 +83,25 @@
     <div>
         <label for="controlled"><?= translate('Controlled') ?></label>
         <div>
-            <input type="number" name="controlled" value="<?= $article->controlled ?>" />
+            <input type="number" name="controlled" value="<?= $article->controlled ?>" <?= $article->id && $article->traffic_category_id != '19' ? 'disabled' : '' ?> />
         </div>
     </div>
     <div>
         <label for="in_violation"><?= translate('In violation') ?></label>
         <div>
-            <input type="number" name="in_violation" value="<?= $article->in_violation ?>" />
+            <input type="number" name="in_violation" value="<?= $article->in_violation ?>" <?= $article->id && $article->traffic_category_id != '19' ? 'disabled' : '' ?> />
         </div>
     </div>
 </fieldset>
 
 <script data-inline>
-    $jQuery("input[name='traffic_category_id']").click(function()
+    $jQuery("input[name=traffic_category_id]").click(function()
     {
         if($jQuery('#traffic_category_id19').is(':checked'))
         {
-            $jQuery( "#results" ).show();
+            $jQuery( "#results input").prop("disabled", false);
         } else {
-            $jQuery( "#results" ).hide();
+            $jQuery("#results input").prop("disabled", true);
         }
     });
 </script>
