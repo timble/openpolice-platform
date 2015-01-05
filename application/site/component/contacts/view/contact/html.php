@@ -54,9 +54,8 @@ class ContactsViewContactHtml extends Library\ViewHtml
         }
 
         // Get the street
-        if($contact->isLocatable())
+        if($contact->isLocatable() && $street = $contact->getStreets()->top())
         {
-            $street = $contact->getStreets()->top();
             $contact['street'] = $street->title_short;
             $contact['city'] = $street->city;
         }

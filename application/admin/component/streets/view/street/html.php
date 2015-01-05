@@ -17,7 +17,7 @@ class StreetsViewStreetHtml extends Library\ViewHtml
         $street    = $model->getData();
 
         $districts = $this->getObject('com:districts.model.relations')
-            ->street($street->identifier)
+            ->street($street->id)
             ->number('')
             ->getRowset();
 

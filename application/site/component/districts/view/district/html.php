@@ -31,9 +31,8 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
         $this->contact  = $this->getObject('com:contacts.model.contacts')->id($district->contacts_contact_id)->getRow();
 
         // Get the street
-        if($this->contact->isLocatable())
+        if($this->contact->isLocatable() && $street = $this->contact->getStreets()->top())
         {
-            $street = $this->contact->getStreets()->top();
             $this->contact['street'] = $street->title_short;
             $this->contact['city'] = $street->city;
         }

@@ -45,9 +45,9 @@ class ControllerBehaviorLocatable extends Library\BehaviorAbstract
             foreach ($streets as $street)
             {
                 $relation = $this->getObject('com:streets.database.row.relation');
-                $relation->streets_street_id    = $street;
-                $relation->row		            = $row->id;
-                $relation->table                = $table;
+                $relation->streets_street_identifier    = $street;
+                $relation->row                          = $row->id;
+                $relation->table                        = $table;
 
                 if(!$relation->load()) {
                     $relation->save();
