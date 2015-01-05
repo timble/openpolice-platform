@@ -5,9 +5,9 @@ require_once JPATH_ROOT.'/config/config.php';
 $config = new \JConfig();
 
 $options = array();
-if ($proxy = $config->http_proxy)
+if (isset($config->http_proxy))
 {
-    $url = $manager->getObject('lib:http.url', array('url' => $proxy));
+    $url = $manager->getObject('lib:http.url', array('url' => $config->http_proxy));
 
     $options['proxy_host'] = $url->getHost();
     $options['proxy_port'] = $url->getPort();
@@ -96,6 +96,10 @@ foreach ($cities as $city)
             $language = $crab_street->{$field};
             $title    = $field == 'TaalCodeTweedeTaal' ? $crab_street->StraatnaamTweedeTaal : $crab_street->StraatnaamLabel;
 
+            if (empty($title)) {
+                continue;
+            }
+
             $street = $streets->find(array('identifier' => $crab_street->StraatnaamId, 'iso' => $language))->top();
 
             if (is_null($street))
@@ -103,7 +107,8 @@ foreach ($cities as $city)
                 $data = array(
                     'identifier'        => $crab_street->StraatnaamId,
                     'title'             => $title,
-                    'language'          => $language,
+                    'iso'               => $language,
+                    'sources_source_id' => 1,
                     'streets_city_id'   => $city->id,
                     'created_on'        => gmdate('Y-m-d H:i:s')
                 );
@@ -126,8 +131,8 @@ foreach ($cities as $city)
             else
             {
                 $comparisons = array(
-                    'title'     => $field == 'TaalCodeTweedeTaal' ? 'StraatnaamTweedeTaal' : 'StraatnaamLabel',
-                    'language'  => $field,
+                    'title' => $field == 'TaalCodeTweedeTaal' ? 'StraatnaamTweedeTaal' : 'StraatnaamLabel',
+                    'iso'   => $field,
                 );
 
                 $old = array();
