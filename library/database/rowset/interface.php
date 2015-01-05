@@ -62,6 +62,21 @@ interface DatabaseRowsetInterface extends \IteratorAggregate, \ArrayAccess, \Cou
     public function addRow(array $rows, $status = null);
 
     /**
+     * Returns the status of this row.
+     *
+     * @return string The status value.
+     */
+    public function getStatus();
+
+    /**
+     * Set the status
+     *
+     * @param   string|null $status The status value or NULL to reset the status
+     * @return  DatabaseRowAbstract
+     */
+    public function setStatus($status);
+
+    /**
      * Returns the status message
      *
      * @return string The status message
