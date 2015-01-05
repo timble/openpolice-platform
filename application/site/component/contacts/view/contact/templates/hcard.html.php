@@ -20,14 +20,14 @@
         <img class="article__thumbnail" width="400" height="300" align="right" src="attachments://<?= $thumbnail ?>" />
     <? endif ?>
     <div>
-        <? if (isset($street) || $contact->number) : ?>
-            <span><?= $street->title ?> <?= $contact->number?></span><br />
+        <? if (isset($contact->street) || $contact->number) : ?>
+            <span><?= $contact->street ?> <?= $contact->number ?></span><br />
         <? endif; ?>
-        <?if (isset($street) && $contact->postcode) : ?>
-            <span><?= $contact->postcode?></span>
+        <?if (isset($contact->street) && $contact->postcode) : ?>
+            <span><?= $contact->postcode ?></span>
         <? endif; ?>
-        <? if (isset($street)) : ?>
-            <span><?= $street->city?></span>
+        <? if (isset($contact->street)) : ?>
+            <span><?= $contact->city ?></span>
         <? endif; ?>
     </div>
     <ul>
