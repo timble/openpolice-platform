@@ -35,10 +35,11 @@ class ModelStreets extends Library\ModelTable
         $cities = $this->getObject('com:police.model.zones')->id($this->getObject('application')->getSite())->getRow()->cities;
 
         $query->columns(array(
-            'title' => $cities == '1' ? 'tbl.title' : "CONCAT(tbl.title, ' (', city.title, ')')",
-            'district_count' => 'district.district_count',
-            'bin_count' => 'bin.district_count',
-            'city'      => 'city.title'
+            'title'             => $cities == '1' ? 'tbl.title' : "CONCAT(tbl.title,' (',city.title,')')",
+            'title_short'       => 'tbl.title',
+            'district_count'    => 'district.district_count',
+            'bin_count'         => 'bin.district_count',
+            'city'              => 'city.title'
         ));
     }
 

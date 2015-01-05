@@ -34,7 +34,7 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
         if($this->contact->isLocatable())
         {
             $street = $this->contact->getStreets()->top();
-            $this->contact['street'] = $street->title;
+            $this->contact['street'] = $street->title_short;
             $this->contact['city'] = $street->city;
         }
 
