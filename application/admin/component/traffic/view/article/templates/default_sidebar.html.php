@@ -70,7 +70,7 @@
     <?= helper('com:questions.radiolist.categories', array('row' => $article, 'package' => 'traffic', 'name' => 'traffic_category_id')) ?>
 </fieldset>
 
-<? if($article->isStreetable()) : ?>
+<? if($article->isLocatable()) : ?>
 <fieldset>
     <legend><?= translate('Streets') ?></legend>
     <?= helper('com:streets.listbox.streets', array('selected' => $article->getStreets()->id, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>

@@ -17,7 +17,7 @@ class DistrictsControllerRelation extends Library\ControllerModel
         	'behaviors' => array(
                 'editable',
                 'com:activities.controller.behavior.loggable',
-                'com:streets.controller.behavior.streetable',
+                'com:streets.controller.behavior.locatable',
             ),
         ));
     

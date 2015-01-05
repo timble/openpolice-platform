@@ -12,9 +12,9 @@ namespace Nooku\Component\Streets;
 use Nooku\Library;
 
 /**
- * Streetable Database Behavior
+ * Locatable Database Behavior
  */
-class DatabaseBehaviorStreetable extends Library\DatabaseBehaviorAbstract
+class DatabaseBehaviorLocatable extends Library\DatabaseBehaviorAbstract
 {
     /**
      * Get a list of streets

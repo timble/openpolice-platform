@@ -12,9 +12,9 @@ namespace Nooku\Component\Streets;
 use Nooku\Library;
 
 /**
- * Streetable Controller Behavior
+ * Locatable Controller Behavior
  */
-class ControllerBehaviorStreetable extends Library\BehaviorAbstract
+class ControllerBehaviorLocatable extends Library\BehaviorAbstract
 {
     protected function _saveRelations(Library\CommandContext $context)
     {

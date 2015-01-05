@@ -17,7 +17,7 @@ class DatabaseTableRelations extends Library\DatabaseTableAbstract
         $config->append(array(
                'behaviors' =>  array(
                    'lockable', 'creatable', 'modifiable',
-                   'com:streets.database.behavior.streetable',
+                   'com:streets.database.behavior.locatable',
                )
            ));
         

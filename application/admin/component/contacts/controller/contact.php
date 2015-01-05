@@ -25,7 +25,7 @@ class ContactsControllerContact extends Library\ControllerModel
                 'com:activities.controller.behavior.loggable',
                 'com:attachments.controller.behavior.attachable',
                 'com:languages.controller.behavior.translatable',
-                'com:streets.controller.behavior.streetable'
+                'com:streets.controller.behavior.locatable'
             ),
         ));
     

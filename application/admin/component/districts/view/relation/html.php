@@ -16,7 +16,7 @@ class DistrictsViewRelationHtml extends Library\ViewHtml
         $model      = $this->getModel();
         $relation    = $model->getData();
 
-        if($relation->isStreetable())
+        if($relation->isLocatable())
         {
             $this->street = $relation->getStreets()->top()->id;
         }

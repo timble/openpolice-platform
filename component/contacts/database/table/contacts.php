@@ -30,7 +30,7 @@ class DatabaseTableContacts extends Library\DatabaseTableAbstract
                 ),
                 'com:attachments.database.behavior.attachable',
                 'com:languages.database.behavior.translatable',
-                'com:streets.database.behavior.streetable'
+                'com:streets.database.behavior.locatable'
             ),
              'filters' => array(
                  'misc'     => array('html', 'tidy'),
