@@ -14,11 +14,11 @@ class DistrictsViewRelationHtml extends Library\ViewHtml
     public function render()
     {
         $model      = $this->getModel();
-        $relation    = $model->getData();
+        $relation   = $model->getData();
 
         if($relation->isLocatable())
         {
-            $this->street = $relation->getStreets()->top()->id;
+            $this->street = $relation->getStreets()->top();
         }
 
         return parent::render();
