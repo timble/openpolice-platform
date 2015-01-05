@@ -36,11 +36,11 @@ class ControllerBehaviorLocatable extends Library\BehaviorAbstract
             $rows->delete();
         }
 
-        // Force array
-        $streets = (array) $row->streets;
-
-        if($streets)
+        if($row->streets)
         {
+            // Force array
+            $streets = (array) $row->streets;
+
             // Save streets as relations
             foreach ($streets as $street)
             {
