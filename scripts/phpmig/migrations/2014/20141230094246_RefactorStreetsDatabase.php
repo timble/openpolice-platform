@@ -53,13 +53,13 @@ SELECT `streets_street_id`, `traffic_article_id`
 UPDATE `streets_relations` SET `table` = 'traffic' WHERE `table` = '';
 
 
-DROP TABLE `traffic_streets`;
+DROP TABLE IF EXISTS `traffic_streets`;
 
 ALTER TABLE `bin_relations` DROP `streets_street_id`;
-ALTER TABLE `bin_relations` DROP `islp`;
 ALTER TABLE `districts_relations` DROP `streets_street_id`;
-ALTER TABLE `districts_relations` DROP `islp`;
 ALTER TABLE `contacts` DROP `streets_street_id`;
+ALTER TABLE `bin_relations` DROP `islp`;
+ALTER TABLE `districts_relations` DROP `islp`;
 ALTER TABLE `contacts` DROP `suburb`;
 ALTER TABLE `contacts` DROP `state`;
 ALTER TABLE `contacts` DROP `address`;
@@ -72,10 +72,31 @@ EOL;
     public function down()
     {
         $this->_queries = <<<EOL
+
+CREATE TABLE `traffic_streets` (
+  `streets_street_id` int(11) unsigned NOT NULL,
+  `traffic_article_id` int(11) unsigned NOT NULL,
+  PRIMARY KEY (`streets_street_id`,`traffic_article_id`),
+  KEY `traffic_streets__traffic_article_id` (`traffic_article_id`),
+  CONSTRAINT `traffic_streets__traffic_article_id` FOREIGN KEY (`traffic_article_id`) REFERENCES `traffic` (`traffic_article_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Relations table for streets';
+
+INSERT INTO `traffic_streets` (`streets_street_id`, `traffic_article_id`)
+SELECT `streets_street_id`, `row`
+  FROM `streets_relations`
+  WHERE `table` = 'traffic';
+
+ALTER TABLE `districts_relations` ADD `streets_street_id` INT  NULL  DEFAULT NULL  AFTER `locked_on`;
+ALTER TABLE `bin_relations` ADD `streets_street_id` INT  NULL  DEFAULT NULL  AFTER `locked_on`;
+ALTER TABLE `contacts` ADD `streets_street_id` INT  NULL  DEFAULT NULL  AFTER `mobile`;
+
+UPDATE `districts_relations` AS `a`, `streets_relations` AS `street`  SET `a`.`streets_street_id` = `street`.`streets_street_id` WHERE `a`.`districts_relation_id` = `street`.`row` AND `street`.`table` = 'districts_relations';
+UPDATE `bin_relations` AS `a`, `streets_relations` AS `street`  SET `a`.`streets_street_id` = `street`.`streets_street_id` WHERE `a`.`bin_relation_id` = `street`.`row` AND `street`.`table` = 'bin_relations';
+UPDATE `contacts` AS `a`, `streets_relations` AS `street`  SET `a`.`streets_street_id` = `street`.`streets_street_id` WHERE `a`.`contacts_contact_id` = `street`.`row` AND `street`.`table` = 'contacts';
+
 DROP TABLE `streets_relations`;
 
 EOL;
-
 
         parent::down();
     }
