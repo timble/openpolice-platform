@@ -37,7 +37,7 @@ class ModelRelations extends Library\ModelTable
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('streets' => 'data.streets'), 'streets.streets_street_id = tbl.streets_street_id');
+        $query->join(array('streets' => 'data.streets'), 'streets.streets_street_identifier = tbl.streets_street_identifier');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

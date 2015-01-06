@@ -26,7 +26,7 @@ class DistrictsTemplateHelperRoute extends PagesTemplateHelperRoute
             'view'     => 'district',
             'id'       => $district->getSlug(),
             'layout'   => $config->layout,
-            'street'   => $relation->streets_street_id,
+            'street'   => $relation->streets_street_identifier,
             'number'   => $config->state->number
         );
 

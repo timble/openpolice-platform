@@ -24,6 +24,7 @@ class ModelStreets extends Library\ModelTable
             ->insert('district' , 'int')
             ->insert('row' , 'int')
             ->insert('table' , 'string')
+            ->insert('iso' , 'string')
             ->insert('sort'      , 'cmd', 'title');
 	}
 
@@ -39,7 +40,8 @@ class ModelStreets extends Library\ModelTable
             'title_short'       => 'tbl.title',
             'district_count'    => 'district.district_count',
             'bin_count'         => 'bin.district_count',
-            'city'              => 'city.title'
+            'city'              => 'city.title',
+            'islp'              => 'islps.islp'
         ));
     }
 
@@ -47,30 +49,33 @@ class ModelStreets extends Library\ModelTable
     {
         $state = $this->getState();
 
+        // Join the ISLP ID
+        $query->join(array('islps' => 'data.streets_streets_islps'), 'islps.streets_street_identifier = tbl.streets_street_identifier');
+
         if(!$state->isUnique() && $state->row && $state->table)
         {
-            $query->join(array('relations' => 'streets_relations'), 'relations.streets_street_id = tbl.streets_street_id');
+            $query->join(array('relations' => 'streets_relations'), 'relations.streets_street_identifier = tbl.streets_street_identifier');
         }
 
         $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
 
         $subquery = $this->getObject('lib:database.query.select')
-            ->columns(array('streets_street_id', 'district_count' => 'COUNT(row)'))
+            ->columns(array('streets_street_identifier', 'district_count' => 'COUNT(row)'))
             ->table('streets_relations')
             ->where('table = :table')
             ->bind(array('table' => 'districts_relations'))
-            ->group('streets_street_id');
+            ->group('streets_street_identifier');
 
-        $query->join(array('district' => $subquery), 'district.streets_street_id = tbl.streets_street_id');
+        $query->join(array('district' => $subquery), 'district.streets_street_identifier = tbl.streets_street_identifier');
 
         $subquery = $this->getObject('lib:database.query.select')
-            ->columns(array('streets_street_id', 'district_count' => 'COUNT(row)'))
+            ->columns(array('streets_street_identifier', 'district_count' => 'COUNT(row)'))
             ->table('streets_relations')
             ->where('table = :table')
             ->bind(array('table' => 'bin_relations'))
-            ->group('streets_street_id');
+            ->group('streets_street_identifier');
 
-        $query->join(array('bin' => $subquery), 'bin.streets_street_id = tbl.streets_street_id');
+        $query->join(array('bin' => $subquery), 'bin.streets_street_identifier = tbl.streets_street_identifier');
 
         parent::_buildQueryJoins($query);
     }
@@ -79,6 +84,14 @@ class ModelStreets extends Library\ModelTable
 	{
 		parent::_buildQueryWhere($query);
 		$state = $this->getState();
+
+        if ($state->iso) {
+            $query->where('tbl.iso = :iso')->bind(array('iso' => $state->iso));
+        }
+
+        if ($state->search) {
+            $query->where('(tbl.title LIKE :search OR islps.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%' . $state->search . '%'));
+        }
 
         if(!$state->isUnique() && $state->row && $state->table)
         {
@@ -91,10 +104,6 @@ class ModelStreets extends Library\ModelTable
             }
         }
 
-        if ($state->search) {
-			$query->where('(tbl.title LIKE :search OR tbl.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%'.$state->search.'%'));
-		}
-
         if ($state->title) {
             $query->where('tbl.title LIKE :title')->bind(array('title' => $state->title));
         }
@@ -105,11 +114,11 @@ class ModelStreets extends Library\ModelTable
 
         // com:uploads uses ISLP column to find a street
         if ($state->islp) {
-            $query->where('tbl.islp = :islp')->bind(array('islp' => $state->islp));
+            $query->where('islps.islp = :islp')->bind(array('islp' => $state->islp));
         }
 
         if ($state->no_islp) {
-            $query->where('tbl.islp IS NULL');
+            $query->where('islps.islp IS NULL');
         }
 
         if ($state->no_district == '1') {
@@ -134,7 +143,7 @@ class ModelStreets extends Library\ModelTable
         $state = $this->getState();
 
         if(!$state->isUnique() && $state->row && $state->table) {
-            $query->group('relations.streets_street_id');
+            $query->group('relations.streets_street_identifier');
         }
 
         return parent::_buildQueryGroup($query);

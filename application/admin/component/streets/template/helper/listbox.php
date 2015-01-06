@@ -16,7 +16,7 @@ class StreetsTemplateHelperListbox extends Library\TemplateHelperListbox
 	    $config = new Library\ObjectConfig($config);
 		$config->append(array(
 			'model'     => 'streets',
-            'value'		=> 'id',
+            'value'		=> 'streets_street_identifier',
             'label'		=> 'title',
 			'name'		=> 'streets[]',
             'prompt'    => false

@@ -29,15 +29,17 @@ class ModelRelations extends Library\ModelTable
 
 		$query->columns(array(
 			'street' 	=> "CONCAT(street.title, ' (', city.title, ')')",
-            'district'  => 'district.title'
+            'district'  => 'district.title',
+            'streets_street_identifier'  => 'street.streets_street_identifier'
         ));
 	}
 
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
 		$query->join(array('street_relation' => 'streets_relations'), 'street_relation.row = tbl.districts_relation_id')
-              ->join(array('street' => 'data.streets'), 'street.streets_street_id = street_relation.streets_street_id')
-			  ->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = street.streets_city_id')
+              ->join(array('street' => 'data.streets'), 'street.streets_street_identifier = street_relation.streets_street_identifier')
+			  ->join(array('islps' => 'data.streets_streets_islps'), 'islps.streets_street_identifier = street.streets_street_identifier')
+              ->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = street.streets_city_id')
               ->join(array('district' => 'districts'), 'district.districts_district_id = tbl.districts_district_id');
 	}
 
@@ -54,7 +56,7 @@ class ModelRelations extends Library\ModelTable
 
 		if ($state->street) {
             if(is_numeric($state->street)){
-                $query->where('street.streets_street_id = :street')->bind(array('street' => $state->street));
+                $query->where('street.streets_street_identifier = :street')->bind(array('street' => $state->street));
             }
 
             if(!is_numeric($state->street)){
@@ -71,11 +73,11 @@ class ModelRelations extends Library\ModelTable
 		}
 
         if ($state->no_street) {
-            $query->where('tbl.streets_street_id IS NULL');
+            $query->where('street.streets_street_identifier IS NULL');
         }
 
         if ($state->search) {
-            $query->where('street.title LIKE :search OR street.islp LIKE :search ')->bind(array('search' => '%'.$state->search.'%'));
+            $query->where('street.title LIKE :search OR islps.islp LIKE :search ')->bind(array('search' => '%'.$state->search.'%'));
         }
 	}
 

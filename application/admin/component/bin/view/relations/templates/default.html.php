@@ -83,7 +83,7 @@
 				<?= escape($relation->range_parity); ?>
 			</td>
             <td>
-                <?= escape($relation->streets_street_id); ?>
+                <?= escape($relation->streets_street_identifier); ?>
             </td>
             <td>
                 <?= escape($relation->islp); ?>

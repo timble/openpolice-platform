@@ -28,12 +28,22 @@ class ControllerBehaviorLocatable extends Library\BehaviorAbstract
         // Remove all existing relations
         if($row->id && $table)
         {
-            $rows = $this->getObject('com:streets.model.relations')
+            $streets = $this->getObject('com:streets.model.relations')
                 ->row($row->id)
                 ->table($table)
                 ->getRowset();
 
-            $rows->delete();
+            foreach ($streets as $street)
+            {
+                $relation = $this->getObject('com:streets.database.row.relation');
+                $relation->streets_street_identifier    = $street->streets_street_identifier;
+                $relation->row                          = $street->row;
+                $relation->table                        = $street->table;
+
+                if($relation->load()) {
+                    $relation->delete();
+                }
+            }
         }
 
         if($row->streets)
@@ -45,9 +55,9 @@ class ControllerBehaviorLocatable extends Library\BehaviorAbstract
             foreach ($streets as $street)
             {
                 $relation = $this->getObject('com:streets.database.row.relation');
-                $relation->streets_street_id    = $street;
-                $relation->row		            = $row->id;
-                $relation->table                = $table;
+                $relation->streets_street_identifier    = $street;
+                $relation->row                          = $row->id;
+                $relation->table                        = $table;
 
                 if(!$relation->load()) {
                     $relation->save();

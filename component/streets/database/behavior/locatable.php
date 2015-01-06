@@ -28,8 +28,11 @@ class DatabaseBehaviorLocatable extends Library\DatabaseBehaviorAbstract
 
         if(!$this->isNew())
         {
+            $languages = $this->getObject('application.languages');
+
             $streets = $model->row($this->id)
                 ->table($this->getTable()->getBase())
+                ->iso($languages->getActive()->slug)
                 ->getRowset();
 
         } else $streets = $model->getRow();

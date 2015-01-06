@@ -29,7 +29,7 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'id', 'title' => 'CRAB')) ?>
+                <?= helper('grid.sort', array('column' => 'streets_street_identifier', 'title' => 'CRAB')) ?>
             </th>
             <th>
                 <?= helper('grid.sort', array('column' => 'islp')) ?>
@@ -62,10 +62,10 @@
 				<?= helper('grid.checkbox', array('row' => $street))?>
 			</td>
 			<td>
-				<a href="<?= route( 'view=street&task=edit&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
+				<a href="<?= route( 'view=street&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
 			</td>
             <td>
-                <?= $street->id ?>
+                <?= $street->streets_street_identifier ?>
             </td>
             <td>
                 <?= $street->islp ?>
