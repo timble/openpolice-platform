@@ -63,6 +63,8 @@ UPDATE `streets` SET `sources_source_id` = 1;
 ALTER TABLE `streets` ADD UNIQUE INDEX `streets_street_identifier` (`streets_street_identifier`, `iso`, `sources_source_id`);
 
 ALTER TABLE `streets_relations` CHANGE `streets_street_id` `streets_street_identifier` BIGINT(20)  UNSIGNED  NOT NULL;
+ALTER TABLE `streets_streets_islps` CHANGE `streets_street_id` `streets_street_identifier` INT(11)  UNSIGNED  NOT NULL;
+
 
 END;
 
