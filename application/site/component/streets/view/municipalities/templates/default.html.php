@@ -83,7 +83,7 @@ $external = array(
         'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.policelocale.be/portal/fr')
     ),
     'de' => array(
-        'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polfed-fedpol.be/home_de.php'),
+        'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polfed-fedpol.be/org/org_de.php'),
         'wanted' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polfed-fedpol.be/ops/ops_de.php'),
         'help' => array('name' => 'Notrufnummern', 'url' => 'http://www.polfed-fedpol.be/hulp_de.php'),
         'vclp' => array('name' => 'Kommission', 'url' => 'http://www.lokalepolizei.be/portal/nl')
