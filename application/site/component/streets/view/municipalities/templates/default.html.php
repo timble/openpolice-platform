@@ -37,8 +37,8 @@ if(array_key_exists($host, $domains))
 $search = array(
     'en' => 'Seach your city',
     'nl' => 'Zoek jouw lokale politiezone via je woonplaats of postcode',
-    'fr' => 'Chercher votre ville',
-    'de' => 'Suchen Sie Ihre Stadt',
+    'fr' => 'Trouvez votre zone de police locale en saisissant votre ville ou code postal',
+    'de' => 'Finden Sie Ihren lokalen Polizei durch Ihre Wohnort oder Postleitzahl',
 );
 
 $button = array(
@@ -51,8 +51,8 @@ $button = array(
 $notfound = array(
     'en' => '%s not found',
     'nl' => '%s niet gevonden',
-    'fr' => '%s niet gevonden',
-    'de' => '%s niet gevonden',
+    'fr' => '%s pas trouvé',
+    'de' => '%s nicht gefunden',
 );
 
 $localpolice = array(
@@ -67,19 +67,27 @@ $external = array(
     'en' => array(
         'federal' => array('name' => 'Federal Police', 'url' => 'http://www.polfed-fedpol.be/org/org_en.php'),
         'wanted' => array('name' => 'Wanted', 'url' => 'http://www.polfed-fedpol.be/ops/ops_en.php'),
-        'help' => array('name' => 'Emergency numbers', 'url' => 'http://www.polfed-fedpol.be/hulp_en.php')),
+        'help' => array('name' => 'Emergency numbers', 'url' => 'http://www.polfed-fedpol.be/hulp_en.php'),
+        'vclp' => array('name' => 'Committee', 'url' => 'http://www.polfed-fedpol.be/hulp_en.php')
+    ),
     'nl' => array(
         'federal' => array('name' => 'Federale Politie', 'url' => 'http://www.polfed-fedpol.be/home_nl.php'),
         'wanted' => array('name' => 'Opsporingen', 'url' => 'http://www.polfed-fedpol.be/ops/ops_nl.php'),
-        'help' => array('name' => 'Noodnummers', 'url' => 'http://www.polfed-fedpol.be/hulp_nl.php')),
+        'help' => array('name' => 'Noodnummers', 'url' => 'http://www.polfed-fedpol.be/hulp_nl.php'),
+        'vclp' => array('name' => 'Vaste Commissie', 'url' => 'http://www.lokalepolitie.be/portal/nl')
+    ),
     'fr' => array(
         'federal' => array('name' => 'Police fédérale', 'url' => 'http://www.polfed-fedpol.be/home_fr.php'),
         'wanted' => array('name' => 'Avis de recherche', 'url' => 'http://www.polfed-fedpol.be/ops/ops_fr.php'),
-        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.polfed-fedpol.be/hulp_fr.php')),
+        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.polfed-fedpol.be/hulp_fr.php'),
+        'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.policelocale.be/portal/fr')
+    ),
     'de' => array(
         'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polfed-fedpol.be/home_de.php'),
         'wanted' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polfed-fedpol.be/ops/ops_de.php'),
-        'help' => array('name' => 'Notrufnummern', 'url' => 'http://www.polfed-fedpol.be/hulp_de.php')),
+        'help' => array('name' => 'Notrufnummern', 'url' => 'http://www.polfed-fedpol.be/hulp_de.php'),
+        'vclp' => array('name' => 'Kommission', 'url' => 'http://www.lokalepolizei.be/portal/nl')
+    ),
 );
 ?>
 
@@ -116,9 +124,9 @@ $external = array(
 
     <div class="splash__languages">
         <ul class="nav nav--pills nav--visited nav--horizontal">
-            <li><a href="http://<?= $domain ?>.lokalepolitie.be/default">Nederlands</a></li>
-            <li><a href="http://<?= $domain ?>.policelocale.be/default">Français</a></li>
-            <li><a href="http://<?= $domain ?>.lokalepolizei.be/default">Deutsch</a></li>
+            <li><a href="http://<?= $domain ?>.lokalepolitie.be/intro">Nederlands</a></li>
+            <li><a href="http://<?= $domain ?>.policelocale.be/intro">Français</a></li>
+            <li><a href="http://<?= $domain ?>.lokalepolizei.be/intro">Deutsch</a></li>
         </ul>
     </div>
 
@@ -129,6 +137,7 @@ $external = array(
             <li><a href="https://policeonweb.belgium.be">Police On Web</a></li>
             <li><a href="https://www.ecops.be/">eCops</a></li>
             <li><a href="<?= $external[$language]['federal']['url'] ?>"><?= $external[$language]['federal']['name'] ?></a></li>
+            <li><a href="<?= $external[$language]['vclp']['url'] ?>"><?= $external[$language]['vclp']['name'] ?></a></li>
         </ul>
     </div>
 </div>
