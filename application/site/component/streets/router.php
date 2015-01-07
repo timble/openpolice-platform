@@ -14,6 +14,11 @@ class StreetsRouter extends Library\DispatcherRouter
     public function build(Library\HttpUrl $url)
     {
         $segments = array();
+        $query    = &$url->query;
+
+        unset($query['view']);
+        unset($query['limit']);
+        unset($query['sort']);
 
         return $segments;
     }
