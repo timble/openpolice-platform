@@ -44,12 +44,6 @@
 			<th width="70">
 				<?= helper('grid.sort', array('column' => 'range_parity', 'title' => 'Parity')) ?>
 			</th>
-            <th width="70">
-                <?= helper('grid.sort', array('column' => 'streets_street_id', 'title' => 'CRAB')) ?>
-            </th>
-            <th width="70">
-                <?= helper('grid.sort', array('column' => 'islp', 'title' => 'ISLP')) ?>
-            </th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -82,12 +76,6 @@
 			<td>
 				<?= escape($relation->range_parity); ?>
 			</td>
-            <td>
-                <?= escape($relation->streets_street_id); ?>
-            </td>
-            <td>
-                <?= escape($relation->islp); ?>
-            </td>
 		</tr>
 		<? endforeach; ?>
 	</tbody>
