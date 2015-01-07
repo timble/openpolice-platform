@@ -75,6 +75,7 @@ files=(
   "application/admin/component/application/resources/language/fr-FR.ini"
   "application/site/component/application/resources/language/nl-NL.ini"
   "application/site/component/application/resources/language/fr-FR.ini"
+  "application/site/component/files/controller/directory.php"
   "application/site/component/files/resources/language/nl-NL.ini"
   "application/site/component/files/resources/language/fr-FR.ini"
   "component/ckeditor/resources/assets/ckeditor/config.js"

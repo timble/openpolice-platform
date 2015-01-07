@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class DistrictsControllerRelation extends Library\ControllerModel
+class DistrictsControllerRelation extends PoliceControllerLanguage
 {
     public function _actionBrowse(Library\CommandContext $context)
     {

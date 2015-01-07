@@ -19,8 +19,7 @@ class ModelRelations extends Library\ModelTable
 		$this->getState()
 		    ->insert('district' , 'string')
 		    ->insert('street' , 'string', '0')
-		    ->insert('number' , 'string', '0')
-		    ->insert('no_street' , 'int');
+		    ->insert('number' , 'string', '0');
 	}
 
 	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
@@ -28,9 +27,8 @@ class ModelRelations extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 
 		$query->columns(array(
-			'street' 	=> "CONCAT(street.title, ' (', city.title, ')')",
-            'district'  => 'district.title',
-            'streets_street_identifier'  => 'street.streets_street_identifier'
+			'street' 	        => "CONCAT(street.title, ' (', city.title, ')')",
+            'district'          => 'district.title'
         ));
 	}
 
@@ -71,11 +69,7 @@ class ModelRelations extends Library\ModelTable
                 $query->where('tbl.range_parity LIKE :range_parity')->bind(array('range_parity' => '%'.$parity.'%'));
             }
 		}
-
-        if ($state->no_street) {
-            $query->where('street.streets_street_identifier IS NULL');
-        }
-
+        
         if ($state->search) {
             $query->where('street.title LIKE :search OR islps.islp LIKE :search ')->bind(array('search' => '%'.$state->search.'%'));
         }
