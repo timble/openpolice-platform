@@ -35,9 +35,7 @@ class ModelContacts extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 		
 		$query->columns(array(
-			'category_title'    => 'categories.title',
-			'street'            => 'streets.title',
-			'city'              => 'cities.title'
+			'category_title'    => 'categories.title'
 		));
 	}
 
@@ -45,9 +43,7 @@ class ModelContacts extends Library\ModelTable
 	{
 		parent::_buildQueryJoins($query);
 		
-		$query->join(array('categories' => 'contacts_categories'), 'categories.contacts_category_id = tbl.contacts_category_id')
-              ->join(array('streets' => 'data.streets'), 'streets.streets_street_id = tbl.streets_street_id')
-              ->join(array('cities' => 'data.streets_cities'), 'cities.streets_city_id = streets.streets_city_id');
+		$query->join(array('categories' => 'contacts_categories'), 'categories.contacts_category_id = tbl.contacts_category_id');
 	}
 
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

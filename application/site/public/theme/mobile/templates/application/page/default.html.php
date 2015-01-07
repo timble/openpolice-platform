@@ -152,6 +152,11 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </div>
 </div>
 
+<script data-inline>
+    // Break out of an iframe
+    // http://css-tricks.com/snippets/javascript/break-out-of-iframe/
+    this.top.location !== this.location && (this.top.location = this.location);
+</script>
 <?php if( extension_loaded('newrelic') ) { echo '<script data-inline type="text/javascript" pagespeed_no_defer="">'.newrelic_get_browser_timing_footer(false).'</script>'; } ?>
 </body>
 </html>

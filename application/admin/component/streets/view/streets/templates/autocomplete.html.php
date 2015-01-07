@@ -43,4 +43,4 @@
     });
 </script>
 
-<input type="text" id="autocomplete__streets" placeholder="<?= @translate('Search the street') ?> ..." name="streets_street_id" value="<?= $selected ?>" style="width: 100%">
+<input type="text" id="autocomplete__streets" placeholder="<?= @translate('Search the street') ?> ..." name="streets" value="<?= $selected ?>" style="width: 100%">

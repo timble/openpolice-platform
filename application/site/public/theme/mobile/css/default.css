@@ -1013,7 +1013,7 @@ button.closed {
       margin-bottom: 0;
       border-bottom: none;
       padding-bottom: 0; } }
-  @media screen and (min-width: 768px) and (min-width: 1024px) {
+  @media screen and (min-width: 768px) and (min-width: 960px) {
     .quicklink__item_1,
     .quicklink__item_2,
     .quicklink__item_3 {
@@ -1058,7 +1058,7 @@ button.closed {
     border-top: 0 none; }
     .container__copyright .copyright--right {
       text-align: right; } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   #wrap {
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
@@ -1267,7 +1267,7 @@ button.closed {
       margin-left: 69.1358%;
       margin-right: -100%;
       clear: none; } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   .homepage__sticky .media {
     width: 48.14815%;
     float: left;
@@ -1583,7 +1583,7 @@ ul.column--double, ul.column--triple, ul.column--quad {
     width: 40%;
     max-width: 200px;
     margin: 0 0 1.5em 1.5em; } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   .banner__image {
     height: 110px;
     border: 1px solid #999;
@@ -1613,8 +1613,8 @@ ul.column--double, ul.column--triple, ul.column--quad {
   .banner__image--5318 {
     background: url("../images/banners/5318.jpg"); }
 
-  .banner__image--5423 {
-    background: url("../images/banners/5423.jpg"); }
+  .banner__image--5369 {
+    background: url("../images/banners/5369.jpg"); }
 
   .banner__image--5370 {
     background: url("../images/banners/5370.jpg"); }
@@ -1637,11 +1637,17 @@ ul.column--double, ul.column--triple, ul.column--quad {
   .banner__image--5421 {
     background: url("../images/banners/5421.jpg"); }
 
+  .banner__image--5423 {
+    background: url("../images/banners/5423.jpg"); }
+
   .banner__image--5427 {
     background: url("../images/banners/5427.jpg"); }
 
   .banner__image--5430 {
     background: url("../images/banners/5430.jpg"); }
+
+  .banner__image--5435 {
+    background: url("../images/banners/5435.jpg"); }
 
   .banner__image--5438 {
     background: url("../images/banners/5438.jpg"); }
@@ -1660,7 +1666,6 @@ ul.column--double, ul.column--triple, ul.column--quad {
 .breadcrumb {
   padding: 0;
   margin: 0;
-  clear: both;
   list-style: none; }
   .breadcrumb li {
     display: inline-block;
@@ -1943,14 +1948,15 @@ input[type="submit"].button {
       text-align: center; }
       .header .slogan a {
         text-decoration: none; } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
   .header {
     margin-bottom: 20px; }
     .header .organization {
       text-align: left; } }
 .languages {
   list-style: none;
-  float: right; }
+  float: right;
+  margin-left: 1em !important; }
 
 .languages__item {
   float: left;
