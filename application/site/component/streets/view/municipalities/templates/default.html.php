@@ -94,7 +94,7 @@ $external = array(
 <title content="replace"><?= $localpolice[$language] ?></title>
 
 <div class="splash">
-    <div class="splash__logo"><img src="assets://application/images/logo-<?= $language ?>.png" /></div>
+    <div class="splash__logo"><img src="assets://application/images/logo-<?= $language ?>.jpg" /></div>
 
     <div class="well splash__search">
         <form action="#" method="get">
