@@ -855,6 +855,8 @@ button.closed {
   margin-top: 25px;
   margin-bottom: 50px;
   text-align: center; }
+  .splash__logo img {
+    height: 74px; }
 
 .splash__languages {
   margin: 50px 0 100px 0;
