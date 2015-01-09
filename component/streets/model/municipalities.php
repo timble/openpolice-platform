@@ -37,7 +37,7 @@ class ModelMunicipalities extends Library\ModelTable
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
         $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id')
-			  ->join(array('parent' => 'data.streets_municipalities'), 'parent.streets_municipality_id = tbl.parent_id');
+			  ->join(array('parent' => 'data.streets_municipalities'), '(parent.streets_municipality_id = tbl.parent_id AND parent.language = tbl.language)');
 	}
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
