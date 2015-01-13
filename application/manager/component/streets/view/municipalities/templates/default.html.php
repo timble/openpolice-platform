@@ -22,6 +22,9 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
 			<th>
+				<?= helper('grid.sort', array('column' => 'language')) ?>
+			</th>
+			<th>
 				<?= helper('grid.sort', array('column' => 'postcode', 'title' => 'Postcode')) ?>
 			</th>
 			<th>
@@ -46,10 +49,13 @@
 				<?= escape($municipality->title); ?>
 			</td>
 			<td>
+				<?= escape($municipality->language); ?>
+			</td>
+			<td>
 				<?= escape($municipality->postcode); ?>
 			</td>
 			<td>
-				<?= escape($municipality->city_title); ?> <?= $municipality->city_postcode ? '('.escape($municipality->city_postcode).')' : ''; ?>
+				<?= escape($municipality->city_title); ?> <?= $municipality->city_postcode ? '('.escape($municipality->streets_city_id).')' : ''; ?>
 			</td>
 			<td>
 				<?= escape($municipality->police_zone_id); ?>

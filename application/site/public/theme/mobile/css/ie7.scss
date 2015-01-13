@@ -77,3 +77,16 @@ form {
     float: left;
   }
 }
+
+#splash {
+  display: block;
+  height: auto;
+  width: $breakpoint-beta;
+  margin: 0 auto;
+}
+
+#splash .nav--horizontal {
+  li {
+    display: inline-block;
+  }
+}

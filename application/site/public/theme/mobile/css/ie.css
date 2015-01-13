@@ -835,27 +835,40 @@ button.closed {
   max-width: 940px;
   margin: 0 auto; }
 
-.splash {
-  padding-top: 100px;
-  text-align: center; }
+#splash {
+  display: table;
+  height: 100%;
+  width: 100%; }
+  #splash #wrap {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle; }
 
 .splash__search {
-  max-width: 500px;
-  margin: 0 auto; }
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left; }
+  .splash__search .municipalities {
+    margin-top: 0.75em; }
 
 .splash__logo {
-  margin-bottom: 50px; }
-
-.splash__toolbar {
-  margin-top: 25px; }
+  margin-top: 25px;
+  margin-bottom: 50px;
+  text-align: center; }
+  .splash__logo img {
+    height: 74px; }
 
 .splash__languages {
-  margin: 50px 0 100px 0; }
+  margin: 50px 0 100px 0;
+  text-align: center; }
   .splash__languages a {
     margin: 0 10px; }
 
-.splash__external a {
-  margin: 0 10px; }
+.splash__external {
+  text-align: center; }
+  .splash__external a {
+    margin: 0 10px;
+    white-space: nowrap; }
 
 .homepage__sticky {
   padding-left: 20px;
@@ -1475,7 +1488,8 @@ h3 {
   font-size: 1.25em; }
 
 html {
-  font-size: 16px; }
+  font-size: 16px;
+  height: 100%; }
 
 time {
   white-space: nowrap; }
@@ -2088,11 +2102,9 @@ input[type="submit"].button {
   margin-bottom: 1.5em;
   list-style: none; }
   .nav li a {
-    display: block;
-    text-decoration: none; }
+    display: block; }
   .nav li a:hover,
   .nav li a:focus {
-    text-decoration: none;
     background-color: #ebf3f4; }
 
 .nav--visited a:visited {
@@ -2118,10 +2130,14 @@ input[type="submit"].button {
     padding-left: 12px;
     margin-right: 2px; }
 
+.nav--horizontal li {
+  display: inline-block; }
+
 .nav--list li a {
   padding-top: 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid #eee;
+  text-decoration: none; }
 .nav--list li:last-child a {
   border-bottom: 0 none; }
 .nav--list .active a,
@@ -2327,6 +2343,20 @@ a.article__thumbnail:focus {
   -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25); }
+
+.search .button {
+  width: 100%;
+  margin-top: 0.75em; }
+
+.search {
+  display: table; }
+  .search .search__field {
+    display: table-cell;
+    width: 100%; }
+  .search .button {
+    margin-left: 0.75em;
+    margin-top: 0;
+    width: auto; }
 
 .nowrap {
   white-space: nowrap; }

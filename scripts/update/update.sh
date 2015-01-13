@@ -40,7 +40,7 @@ dirs=(
   "application/site/component/traffic"
   "application/site/component/trafficinfo"
   "application/site/public/theme/mobile"
-  "application/site/public/theme/portal"
+  "application/site/public/theme/intro"
   "component/about"
   "component/announcements"
   "component/bin"

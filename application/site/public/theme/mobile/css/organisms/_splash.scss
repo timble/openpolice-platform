@@ -1,23 +1,38 @@
-.splash {
-  padding-top: 100px;
-  text-align: center;
+#splash {
+  display: table;
+  height: 100%;
+  width: 100%;
+  
+  #wrap {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
 }
 
 .splash__search {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
+  text-align: left;
+
+  .municipalities {
+    margin-top: $line-height / 2;
+  }
 }
 
 .splash__logo {
-  margin-bottom: 50px;
-}
-
-.splash__toolbar {
   margin-top: 25px;
+  margin-bottom: 50px;
+  text-align: center;
+
+  img {
+    height: 74px;
+  }
 }
 
 .splash__languages {
   margin: 50px 0 100px 0;
+  text-align: center;
 
   a {
     margin: 0 10px;
@@ -25,7 +40,10 @@
 }
 
 .splash__external {
+  text-align: center;
+
   a {
     margin: 0 10px;
+    white-space: nowrap;
   }
 }
