@@ -80,6 +80,14 @@
             <fieldset>
                 <legend><?= translate( 'Contact information' ); ?>:</legend>
                 <div>
+                    <label for="url">
+                        <?= translate( 'URL' ); ?>
+                    </label>
+                    <div>
+                        <input type="text" name="url" value="<?= $zone->url ?>" />
+                    </div>
+                </div>
+                <div>
                     <label for="phone_information">
                         <?= translate( 'Phone Information' ); ?>
                     </label>

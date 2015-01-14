@@ -29,13 +29,15 @@ class ModelMunicipalities extends Library\ModelTable
 
 		$query->columns(array(
 			'city_title'  => 'city.title',
-			'police_zone_id'  => 'city.police_zone_id'
+			'police_zone_id'  => 'city.police_zone_id',
+			'title' => "IF(tbl.parent_id, CONCAT(tbl.title,' (',parent.title,')'), tbl.title)"
 		));
 	}
 
 	protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
 	{
-        $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
+        $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id')
+			  ->join(array('parent' => 'data.streets_municipalities'), '(parent.streets_municipality_id = tbl.parent_id AND parent.language = tbl.language)');
 	}
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

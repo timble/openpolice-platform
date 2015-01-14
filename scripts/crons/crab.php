@@ -100,17 +100,17 @@ foreach ($cities as $city)
                 continue;
             }
 
-            $street = $streets->find(array('identifier' => $crab_street->StraatnaamId, 'iso' => $language))->top();
+            $street = $streets->find(array('streets_street_identifier' => $crab_street->StraatnaamId, 'iso' => $language))->top();
 
             if (is_null($street))
             {
                 $data = array(
-                    'identifier'        => $crab_street->StraatnaamId,
-                    'title'             => $title,
-                    'iso'               => $language,
-                    'sources_source_id' => 1,
-                    'streets_city_id'   => $city->id,
-                    'created_on'        => gmdate('Y-m-d H:i:s')
+                    'streets_street_identifier' => $crab_street->StraatnaamId,
+                    'title'                     => $title,
+                    'iso'                       => $language,
+                    'sources_source_id'         => 1,
+                    'streets_city_id'           => $city->id,
+                    'created_on'                => gmdate('Y-m-d H:i:s')
                 );
 
                 $street = $table->getRow(array('data' => $data));
@@ -175,7 +175,7 @@ foreach ($cities as $city)
     // Finally, check if we have streets in our database that should be removed
     foreach ($streets as $street)
     {
-        $crab_street = $crab_streets->find(array('StraatnaamId' => $street->identifier))->top();
+        $crab_street = $crab_streets->find(array('StraatnaamId' => $street->streets_street_identifier))->top();
 
         if (is_null($crab_street))
         {
