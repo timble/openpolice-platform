@@ -83,7 +83,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
             <ul class="nav nav--list">
                 <? foreach(object('com:pages.model.pages')->menu('1')->published('true')->hidden('false')->getRowset() as $page) : ?>
-                    <? if(in_array($page->id, array('42', '43', '44', '66', '105'))) : ?>
+                    <? if(in_array($page->id, array('42', '43', '44', '66'))) : ?>
                     <li><a href="<?= $path ?>/contact/<?= $page->slug ?>"><?= $page->title ?></a></li>
                     <? endif ?>
                 <? endforeach ?>
