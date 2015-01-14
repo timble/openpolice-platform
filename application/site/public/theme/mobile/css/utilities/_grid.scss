@@ -1,4 +1,4 @@
-@import "susy";
+@import "../../components/susy/sass/susy";
 
 @include breakpoint($breakpoint-beta) {
   .gallery .gallery__item {

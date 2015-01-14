@@ -1,0 +1,12 @@
+{
+  "name": "internet-platform",
+  "description": "",
+  "homepage": "",
+  "keywords": [],
+  "author": "",
+  "private": true,
+  "devDependencies": {
+    "illusion": "timble/illusion#master",
+    "susy": "ericam/susy#master"
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "name": "illusion",
+    "authors": [
+        "Timble CVBA <info@timble.net>"
+    ],
+    "description": "A thing that is or is likely to be wrongly perceived or interpreted by the senses.",
+    "dependencies": {
+        "apollo": "toddmotto/apollo#1.7.0"
+    },
+    "ignore": [
+        ".sass-cache",
+        "lib",
+        "pkg",
+        "test",
+        ".document",
+        ".gitignore",
+        "Gemfile",
+        "Gemfile.lock",
+        "illusion.gemspec",
+        "Rakefile",
+        "VERSION"
+    ]
+}

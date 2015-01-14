@@ -148,8 +148,7 @@ form {
     width: 100%;
     height: 100%; }
 
-.homepage__sticky .media__object img,
-.footer__news .media__object img {
+.homepage__sticky .media__object img, .footer__news .media__object img {
   width: 100%;
   height: 100%; }
 
@@ -184,5 +183,3 @@ form {
 
 #splash .nav--horizontal li {
   display: inline-block; }
-
-/*# sourceMappingURL=ie7.css.map */
