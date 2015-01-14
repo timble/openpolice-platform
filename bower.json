@@ -6,7 +6,10 @@
   "author": "",
   "private": true,
   "devDependencies": {
+    "html5shiv": "aFarkas/html5shiv#3.7.*",
     "illusion": "timble/illusion#master",
-    "susy": "ericam/susy#master"
+    "magnific-popup": "dimsemenov/Magnific-Popup#0.9.*",
+    "select2": "ivaynberg/select2#3.5.*",
+    "susy": "ericam/susy#2.2.*"
   }
 }

@@ -61,26 +61,8 @@ module.exports = function(grunt) {
                 },
                 files: ['application/site/public/theme/mobile/css/default.css']
             }
-        },
-
-        // Shell commands
-        shell: {
-            composer: {
-                command: [
-                    'cd application/site/public/theme/mobile/',
-                    'composer install'
-                ].join('&&')
-            },
-            composerUpdate: {
-                command: [
-                    'cd application/site/public/theme/mobile/',
-                    'composer update'
-                ].join('&&')
-            }
         }
     });
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('composer', ['shell:composerInstall']);
-    grunt.registerTask('composer-update', ['shell:composerUpdate']);
 };

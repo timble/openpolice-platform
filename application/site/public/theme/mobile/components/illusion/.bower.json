@@ -21,11 +21,11 @@
     "VERSION"
   ],
   "homepage": "https://github.com/timble/illusion",
-  "_release": "f234adc547",
+  "_release": "cfedfcb251",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "f234adc54778ddcef11dc6addb2778e176ed6ad0"
+    "commit": "cfedfcb2514e6a49e200c89fe43cab86bff99cfa"
   },
   "_source": "git://github.com/timble/illusion.git",
   "_target": "master",
