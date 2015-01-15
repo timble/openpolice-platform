@@ -25,9 +25,6 @@ module.exports = function(grunt) {
         // Sass
         sass: {
             dist: {
-                options: {
-                    require: ['susy', 'illusion']
-                },
                 files: {
                     'application/site/public/theme/mobile/css/default.css': 'application/site/public/theme/mobile/css/default.scss',
                     'application/site/public/theme/mobile/css/ie.css': 'application/site/public/theme/mobile/css/ie.scss',
@@ -64,26 +61,8 @@ module.exports = function(grunt) {
                 },
                 files: ['application/site/public/theme/mobile/css/default.css']
             }
-        },
-
-        // Shell commands
-        shell: {
-            composer: {
-                command: [
-                    'cd application/site/public/theme/mobile/',
-                    'composer install'
-                ].join('&&')
-            },
-            composerUpdate: {
-                command: [
-                    'cd application/site/public/theme/mobile/',
-                    'composer update'
-                ].join('&&')
-            }
         }
     });
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('composer', ['shell:composerInstall']);
-    grunt.registerTask('composer-update', ['shell:composerUpdate']);
 };
