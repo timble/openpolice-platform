@@ -20,9 +20,12 @@ class DatabaseRowStreet extends Library\DatabaseRowTable
             $islp = $this->getObject('com:streets.database.row.streets_islps');
             $islp->id    = $this->streets_street_identifier;
 
-
             if($islp->load())
             {
+                $islp->islp  = $this->islp;
+                $islp->save();
+            } else {
+                $islp->id    = $this->streets_street_identifier;
                 $islp->islp  = $this->islp;
                 $islp->save();
             }
