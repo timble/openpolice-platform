@@ -151,7 +151,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 {
                     $item['streets_street_identifier'] = $street->top()->streets_street_identifier;
                 } else {
-                    break;
+                    continue;
                 }
             }
 
