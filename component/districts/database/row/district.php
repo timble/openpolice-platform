@@ -39,7 +39,10 @@ class DatabaseRowDistrict extends Library\DatabaseRowTable
 	    			    ->delete();
 	    		}
 	    	}
-    	}
+    	} elseif($this->officers == '0') {
+			// Remove all officers
+			$this->getObject('com:districts.model.districts_officers')->districts_district_id($this->id)->getRowset()->delete();
+		}
        
         return $result;
     }

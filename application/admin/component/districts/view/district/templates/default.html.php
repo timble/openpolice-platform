@@ -20,7 +20,9 @@
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form">
-	<div class="main">
+    <input type="hidden" name="officers" value="0" />
+
+    <div class="main">
 		<div class="title">
 		    <input id="title" class="required" type="text" name="title" size="32" maxlength="250" value="<?= $district->title; ?>" />
 		</div>
