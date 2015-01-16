@@ -42,7 +42,7 @@
 				    	<?= translate( 'District officer' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers required', 'style' => 'width:100%;'))); ?>
+				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers', 'style' => 'width:100%;'))); ?>
                         <script data-inline> $jQuery(".select-officers").select2(); </script>
                     </div>
 				</div>
