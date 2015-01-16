@@ -28,6 +28,7 @@
     <ktml:script>
 
     <style src="assets://application/css/default.css" />
+    <style src="assets://application/css/grid.css" />
     <style src="assets://application/css/ie.css" condition="if lte IE 8" />
 
     <script src="assets://application/components/apollo/dist/apollo.min.js" />
