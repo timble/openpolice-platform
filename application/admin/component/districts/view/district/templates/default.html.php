@@ -20,9 +20,7 @@
 </ktml:module>
 
 <form action="" method="post" class="-koowa-form">
-    <input type="hidden" name="officers" value="0" />
-
-    <div class="main">
+	<div class="main">
 		<div class="title">
 		    <input id="title" class="required" type="text" name="title" size="32" maxlength="250" value="<?= $district->title; ?>" />
 		</div>
@@ -44,7 +42,7 @@
 				    	<?= translate( 'District officer' ); ?>
 				    </label>
 				    <div>
-				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers', 'style' => 'width:100%;'))); ?>
+				        <?= helper('listbox.officers', array('selected' => $officers, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-officers required', 'style' => 'width:100%;'))); ?>
                         <script data-inline> $jQuery(".select-officers").select2(); </script>
                     </div>
 				</div>
