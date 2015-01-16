@@ -27,8 +27,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'application/site/public/theme/mobile/css/default.css': 'application/site/public/theme/mobile/css/default.scss',
-                    'application/site/public/theme/mobile/css/ie.css': 'application/site/public/theme/mobile/css/ie.scss',
-                    'application/site/public/theme/mobile/css/ie7.css': 'application/site/public/theme/mobile/css/ie7.scss'
+                    'application/site/public/theme/mobile/css/ie.css': 'application/site/public/theme/mobile/css/ie.scss'
                 }
             }
         },

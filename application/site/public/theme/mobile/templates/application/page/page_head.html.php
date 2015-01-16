@@ -28,8 +28,7 @@
     <ktml:script>
 
     <style src="assets://application/css/default.css" />
-    <style src="assets://application/css/ie.css" condition="if IE 8" />
-    <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
+    <style src="assets://application/css/ie.css" condition="if lte IE 8" />
 
     <script src="assets://application/components/apollo/dist/apollo.min.js" />
     <script src="assets://application/components/illusion/js/hamburger.js" />
