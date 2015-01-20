@@ -96,7 +96,7 @@
         <? $email = str_replace(".", "&#46;", $email) ?>
 
         <div class="well well--small text-center">
-            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ? $zone->phone_information : $zone->phone_emergency ?></span>.
+            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a><? if($zone->phone_information) : ?> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ?></span><? endif ?>.
         </div>
     <? endif ?>
 <? endif ?>
