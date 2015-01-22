@@ -1,0 +1,20 @@
+{
+  "name": "sir-trevor-js",
+  "version": "0.4.3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "src/!(blocks)",
+    "spec",
+    "examples",
+    "website",
+    "BrowserRunner.html"
+  ],
+  "dependencies": {
+    "es5-shim": "~v4.0.3",
+    "es6-shim": "~0.21.0",
+    "Eventable": "~1.0.1",
+    "jquery": "~1.9.1"
+  }
+}

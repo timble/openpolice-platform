@@ -20,55 +20,17 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
             $this->_data['text'] = $this->fulltext ? $this->introtext.'<hr id="system-readmore" />'.$this->fulltext : $this->introtext;
         }
 
-        if($column == 'blocks' && !isset($this->_data['blocks'])) {
-            $this->_data['blocks'] = json_decode($this->introtext);
-        }
-
         return parent::__get($column);
     }
 
     public function save()
     {
-        //Set the introtext and the full text
-        $text    = str_replace('<br>', '<br />', $this->text);
-        $pattern = '#<hr\s+id=("|\')system-readmore("|\')\s*\/*>#i';
+//        var_dump($this->content); die;
 
         // If created_on is modified then convert it to GMT/UTC
         if ($this->isModified('created_on') && !$this->isNew())
         {
             $this->created_on = gmdate('Y-m-d H:i:s', strtotime($this->created_on));
-        }
-
-        /*
-         *  Next Generation Editor
-         */
-        if($this->content) {
-            include('simple_html_dom.php');
-
-            $html = str_get_html($this->content);
-            $data = array();
-            $i = '0';
-            foreach($html->find('div.block') as $block) {
-                $i++;
-
-                foreach($block->find('h2') as $h2) {
-                    $data[$i]['heading'] = $h2->innertext;
-                }
-
-                foreach($block->find('p') as $p) {
-                    $data[$i]['text'] = $p->innertext;
-                }
-
-                if(count($block->find('img'))) {
-                    foreach($block->find('img') as $img) {
-                        $data[$i]['attachments_attachment_id'] = $img->getAttribute('data-id');
-                    }
-                } else {
-                    $data[$i]['attachments_attachment_id'] = '0';
-                }
-            }
-
-            $this->introtext = json_encode($data);
         }
 
         //Add publish_on date if not set
