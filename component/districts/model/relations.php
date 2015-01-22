@@ -27,8 +27,9 @@ class ModelRelations extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 
 		$query->columns(array(
-			'street' 	        => "CONCAT(street.title, ' (', city.title, ')')",
-            'district'          => 'district.title'
+			'street' 	                => "CONCAT(street.title, ' (', city.title, ')')",
+            'district'                  => 'district.title',
+            'streets_street_identifier' => 'street.streets_street_identifier'
         ));
 	}
 
