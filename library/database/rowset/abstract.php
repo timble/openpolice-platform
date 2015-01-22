@@ -25,6 +25,16 @@ abstract class DatabaseRowsetAbstract extends ObjectSet implements DatabaseRowse
     protected $_identity_column;
 
     /**
+     * Tracks the status the row
+     *
+     * Available row status values are defined as STATUS_ constants in Database
+     *
+     * @var string
+     * @see Database
+     */
+    protected $_status = null;
+
+    /**
      * The status message
      *
      * @var string
@@ -61,6 +71,11 @@ abstract class DatabaseRowsetAbstract extends ObjectSet implements DatabaseRowse
         // Insert the data, if exists
         if (!empty($config->data)) {
             $this->addRow($config->data->toArray(), $config->status);
+        }
+
+        //Set the status
+        if (isset($config->status)) {
+            $this->setStatus($config->status);
         }
 
         //Set the status message
@@ -291,6 +306,40 @@ abstract class DatabaseRowsetAbstract extends ObjectSet implements DatabaseRowse
     }
 
     /**
+     * Returns the status
+     *
+     * @return string The status
+     */
+    public function getStatus()
+    {
+        return $this->_status;
+    }
+
+    /**
+     * Set the status
+     *
+     * @param   string|null  $status The status value or NULL to reset the status
+     * @return  DatabaseRowAbstract
+     */
+    public function setStatus($status)
+    {
+        if($status === Database::STATUS_CREATED) {
+            $this->__new = false;
+        }
+
+        if($status === Database::STATUS_DELETED) {
+            $this->__new = true;
+        }
+
+        if($status === Database::STATUS_LOADED) {
+            $this->__new = false;
+        }
+
+        $this->_status = $status;
+        return $this;
+    }
+
+    /**
      * Returns the status message
      *
      * @return string The status message
@@ -403,6 +452,8 @@ abstract class DatabaseRowsetAbstract extends ObjectSet implements DatabaseRowse
                     // Set current row status message as rowset status message.
                     $this->setStatusMessage($row->getStatusMessage());
                     $result = false;
+                } else {
+                    $this->setStatus(Database::STATUS_DELETED);
                 }
             }
         }

@@ -47,25 +47,28 @@
 		</tr>
 	</tfoot>
 	<tbody>
-		<? foreach ($hours as $hour) : ?>
-		<tr>
-			<td align="center">
-				<?= helper('grid.checkbox', array('row' => $hour))?>
-			</td>
-            <td align="center">
-                <?= helper('grid.enable', array('row' => $hour, 'field' => 'published')) ?>
-            </td>
-			<td>
-				<a href="<?= @route( 'view=hour&id='. $hour->id ); ?>"><?= helper('date.weekday', array('day_of_week' => $hour->day_of_week)) ?></a>
-			</td>
-            <td>
-                <?= $hour->appointment ? @translate('Appointment only') : $hour->opening_time ?>
-            </td>
-            <td>
-                <?= $hour->appointment ? @translate('Appointment only') : $hour->closing_time ?>
-            </td>
-		</tr>
+    <? $weekly = $hours->find(array('date' => '')) ?>
+    <? $exceptions = $hours->find(array('date' => true)) ?>
+        <? if(count($weekly)) : ?>
+            <tr>
+                <td colspan="5">
+                    <?= translate('Weekly') ?>
+                </td>
+            </tr>
+        <? endif ?>
+        <? foreach ($weekly as $hour) : ?>
+            <?= import('default_items.html', array('hour' => $hour)) ?>
 		<? endforeach; ?>
+        <? if(count($exceptions)) : ?>
+            <tr>
+                <td colspan="5">
+                    <?= translate('Exceptions') ?>
+                </td>
+            </tr>
+        <? endif ?>
+        <? foreach ($exceptions as $hour) : ?>
+            <?= import('default_items.html', array('hour' => $hour)) ?>
+        <? endforeach; ?>
 	</tbody>
 	</table>
 </form>

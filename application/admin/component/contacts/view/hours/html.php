@@ -14,7 +14,7 @@ class ContactsViewHoursHtml extends Library\ViewHtml
     public function render()
     {
         $this->contacts = $this->getObject('com:contacts.model.contacts')->sort('title')->getRowset();
-        $this->categories = $this->getObject('com:contacts.model.categories')->sort('title')->getRowset();
+        $this->categories = $this->getObject('com:contacts.model.categories')->sort('title')->hidden(false)->getRowset();
 
         return parent::render();
     }

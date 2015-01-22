@@ -1,4 +1,4 @@
-@import "illusion/basics";
+@import "illusion/mixins/basics";
 @import "utilities/_variables";
 
 body {
@@ -75,5 +75,18 @@ form {
 .container__footer_menu {
   li {
     float: left;
+  }
+}
+
+#splash {
+  display: block;
+  height: auto;
+  width: $breakpoint-beta;
+  margin: 0 auto;
+}
+
+#splash .nav--horizontal {
+  li {
+    display: inline-block;
   }
 }

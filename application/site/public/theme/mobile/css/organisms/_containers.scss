@@ -28,7 +28,7 @@
     list-style: none;
   }
 
-  @include respond-min($breakpoint-charlie) {
+  @include breakpoint($breakpoint-charlie) {
     padding: 5px $grid-padding 0;
   }
 }

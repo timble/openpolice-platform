@@ -17,34 +17,19 @@ class ModelArticles extends Library\ModelTable
 		parent::__construct($config);
 
 		$this->getState()
-		    ->insert('street' , 'int')
 		    ->insert('published' , 'int')
             ->insert('category' , 'string')
             ->insert('type' , 'string')
-		    ->insert('date' , 'string');
+		    ->insert('date' , 'string')
+            ->insert('results' , 'boolean');
 	}
-
-    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
-    {
-        parent::_buildQueryColumns($query);
-
-        $query->columns(array(
-            'created_by_name'   => 'creator.name'
-        ));
-    }
 
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
         parent::_buildQueryJoins($query);
         $state = $this->getState();
 
-        $query->join(array('categories'  => 'traffic_categories'), 'categories.traffic_category_id = tbl.traffic_category_id')
-              ->join(array('creator'  => 'users'), 'creator.users_user_id = tbl.created_by');
-
-        if($state->street)
-        {
-            $query->join(array('street' => 'traffic_streets'), 'street.traffic_article_id = tbl.traffic_article_id');
-        }
+        $query->join(array('categories'  => 'traffic_categories'), 'categories.traffic_category_id = tbl.traffic_category_id');
     }
 	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -76,18 +61,9 @@ class ModelArticles extends Library\ModelTable
             $query->where('(tbl.end_on >= :today OR tbl.end_on IS NULL)')->bind(array('today' => date('Y-m-d')));
 		}
 
-        if(is_numeric($state->street)) {
-            $query->where('street.streets_street_id = :street')->bind(array('street' => $state->street));
+        if ($state->results) {
+            $query->where('(tbl.controlled IS NOT NULL AND tbl.in_violation IS NOT NULL)');
+            $query->where('tbl.end_on < :past')->bind(array('past' => date('Y-m-d')));
         }
 	}
-
-    protected function _buildQueryGroup(Library\DatabaseQuerySelect $query)
-    {
-        $state = $this->getState();
-        if($state->street)
-        {
-            $query->distinct();
-            $query->group('tbl.traffic_article_id');
-        };
-    }
 }

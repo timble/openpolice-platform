@@ -24,7 +24,7 @@ class Zones
     {
         if(!$this->_list)
         {
-            $query = 'SELECT `police_zone_id`, `title-old` FROM `data`.`police_zones`';
+            $query = 'SELECT `police_zone_id`, `titles` FROM `data`.`police_zones`';
 
             if(is_array($this->_wheres) && count($this->_wheres))
             {
@@ -54,8 +54,16 @@ class Zones
             $rows = $this->_adapter->query($query);
 
             $zones = array();
-            while($row = $rows->fetch(\PDO::FETCH_ASSOC)) {
-                $zones[$row['police_zone_id']] = $row['title-old'];
+            while($row = $rows->fetch(\PDO::FETCH_ASSOC))
+            {
+                $title  = 'Unknown';
+                $titles = json_decode($row['titles'], true);
+
+                if (is_array($titles)) {
+                    $title = array_shift(array_values($titles));
+                }
+
+                $zones[$row['police_zone_id']] = $title;
             }
 
             $this->_list = $zones;

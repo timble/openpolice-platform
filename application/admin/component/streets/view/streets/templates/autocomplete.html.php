@@ -17,7 +17,7 @@
                     // since we are using custom formatting functions we do not need to alter remote JSON data
                     var results = [];
                     $jQuery.each(data.items, function(i, item) {
-                        results.push(item.data);
+                        results.push({"title": item.data.title, "id": item.data.streets_street_identifier});
                     });
                     return {results: results};
                 }
@@ -43,4 +43,4 @@
     });
 </script>
 
-<input type="text" id="autocomplete__streets" placeholder="<?= @translate('Search the street') ?> ..." name="streets_street_id" value="<?= $selected ?>" style="width: 100%">
+<input type="text" id="autocomplete__streets" placeholder="<?= @translate('Search the street') ?> ..." name="streets" value="<?= $selected ?>" style="width: 100%">

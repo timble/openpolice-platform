@@ -18,7 +18,7 @@
         <a class="<?= $state->no_islp ? 'active' : ''; ?>" href="<?= route($state->no_islp ? 'no_islp=' : 'no_islp=1' ) ?>">
             <?= 'Missing ISLP' ?>
         </a>
-        <a class="<?= $state->no_district ? 'active' : ''; ?>" href="<?= route($state->no_district ? 'no_district=' : 'no_district=1' ) ?>">
+        <a class="<?= $state->no_district ? 'active' : ''; ?>" href="<?= route(is_numeric($state->no_district) ? 'no_district=' : 'no_district=1' ) ?>">
             <?= @translate('No district officer') ?>
         </a>
     </div>

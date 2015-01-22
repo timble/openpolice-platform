@@ -16,8 +16,9 @@ class QuestionsControllerQuestion extends PoliceControllerLanguage
         $request = parent::getRequest();
 
         // Only return published items.
-        $request->query->published = 1;
-        
+        $request->query->published          = 1;
+        $request->query->published_category = 1;
+
         return $request;
     }
 }

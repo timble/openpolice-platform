@@ -8,10 +8,6 @@
  */
 ?>
 
-<ktml:module position="left">
-    <?= import('com:categories.view.categories.list.html') ?>
-</ktml:module>
-
 <? foreach($categories as $category) : ?>
     <div class="article">
         <h1 class="article__header">
@@ -22,7 +18,7 @@
 
         <? if($category->attachments_attachment_id) : ?>
         <a class="article__thumbnail" href="<?= helper('route.category', array('row' => $category)) ?>">
-            <?= helper('com:attachments.image.thumbnail', array(
+            <?= helper('com:police.image.thumbnail', array(
                 'attachment' => $category->attachments_attachment_id,
                 'attribs' => array('width' => '400', 'height' => '300'))) ?>
         </a>

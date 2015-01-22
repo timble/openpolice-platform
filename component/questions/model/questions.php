@@ -18,6 +18,7 @@ class ModelQuestions extends Library\ModelTable
 
 		$this->getState()
 		    ->insert('published' , 'int')
+			->insert('published_category' , 'int')
             ->insert('category' , 'string')
             ->insert('sort', 'cmd', 'title')
             ->insert('searchword', 'string');
@@ -49,6 +50,10 @@ class ModelQuestions extends Library\ModelTable
 		
 		if (is_numeric($state->published)) {
 			$query->where('tbl.published = :published')->bind(array('published' => $state->published));
+		}
+
+		if (is_numeric($state->published_category)) {
+			$query->where('categories.published = :published')->bind(array('published' => $state->published_category));
 		}
 
         if(!is_numeric($state->category) && !is_null($state->category)) {

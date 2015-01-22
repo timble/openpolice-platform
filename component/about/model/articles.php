@@ -22,11 +22,21 @@ class ModelArticles extends Library\ModelTable
             ->insert('sort'     , 'cmd', 'ordering');
     }
 
+    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
+    {
+        parent::_buildQueryColumns($query);
+
+        $query->columns(array(
+            'thumbnail'         => 'attachments.path'
+        ));
+    }
+
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('categories'  => 'about_categories'), 'categories.about_category_id = tbl.about_category_id');
+        $query->join(array('categories'  => 'about_categories'), 'categories.about_category_id = tbl.about_category_id')
+              ->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)

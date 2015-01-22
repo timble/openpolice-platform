@@ -10,11 +10,32 @@
 
 <style src="assets://application/components/select2/select2.css" />
 
-<script src="assets://application/components/jquery/dist/jquery.min.js" />
+<script src="assets://application/components/jquery/jquery.min.js" />
 <script src="assets://application/components/select2/select2.js" />
 <script src="assets://application/js/ie7.js" condition="if lte IE 7" />
 
 <h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
+
+<? if ($category->image || $category->description) : ?>
+<div class="clearfix">
+    <? if ($category->image) : ?>
+        <?= helper('com:categories.string.image', array('row' => $category)) ?>
+    <? endif; ?>
+    <?= $category->description; ?>
+</div>
+<? endif; ?>
+
+<style>
+.select2-offscreen[required], .select2-offscreen[required]:focus {
+    width: inherit !important;
+    height: inherit !important;
+    left: 0 !important;
+    top: 0px !important;
+}
+.contenedor-select2 {
+    position: relative;
+}
+</style>
 
 <script data-inline>
     $(document).ready(function() {
@@ -23,7 +44,7 @@
             placeholder: "<?= translate('Search your street') ?> ...",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-                url: "?view=streets&format=json",
+                url: "?view=streets&format=json&district=1",
                 dataType: 'json',
                 data: function (term) {
                     return {
@@ -66,14 +87,16 @@
         <div class="form__group<?= is_null($state->street) ? ' has-error' : '' ?>">
             <label class="form__label" for="street"><?= @translate('Street') ?><sup>*</sup>:</label>
             <div class="contenedor-select2">
-                <input type="text" class="bigdrop form__input" id="autocomplete__streets" placeholder="<?= @translate('Search your street') ?> ..." tabindex="1" name="street" value="<?= $state->street != '0' ? $state->street : '' ?>">
+                <input required type="text" class="bigdrop form__input" id="autocomplete__streets" placeholder="<?= @translate('Search your street') ?> ..." tabindex="1" name="street" value="<?= $state->street != '0' ? $state->street : '' ?>">
             </div>
         </div>
         <div class="form__group<?= !is_numeric($state->number) || is_null($state->number) ? ' has-error' : '' ?>">
             <label class="form__label" for="number"><?= @translate('Street number') ?><sup>*</sup>:</label>
-            <input class="form__input" type="number" min="1" placeholder="<?= @translate('Street number') ?>" tabindex="2" id="number" name="number" value="<?= $state->number != '0' ? $state->number : '' ?>">
-            <? if(!is_numeric($state->number) && !is_null($state->number)) : ?>
-            <span class="form__feedback"><?= @translate('Only numbers are allowed.') ?></span>
+            <input required class="form__input" type="number" min="1" placeholder="<?= @translate('Street number') ?>" tabindex="2" id="number" name="number" value="<?= $state->number != '0' ? $state->number : '' ?>">
+            <? if(is_null($state->number)) : ?>
+            <span class="form__feedback"><?= @translate('This field is required') ?>.</span>
+            <? elseif(!is_numeric($state->number)) : ?>
+            <span class="form__feedback"><?= @translate('Only numbers are allowed') ?>.</span>
             <? endif ?>
         </div>
         <button type="submit" class="button button--primary" tabindex="3"><?= translate('Search') ?></button>
@@ -81,25 +104,25 @@
 </div>
 
 <? if ($state->street && is_numeric($state->number)) : ?>
+    <? if(count($relations)) : ?>
     <ul>
         <? foreach ($relations as $relation) : ?>
-        <li>
-            <a href="<?= helper('route.district', array('row' => $relation)) ?>">
-                <?= $relation->street ?> <?= helper('string.street', array('row' => $relation)) ?>
-            </a>
-        </li>
+            <li>
+                <a href="<?= helper('route.district', array('row' => $relation, 'state' => $state)) ?>">
+                    <?= $relation->street ?> <?= helper('string.street', array('row' => $relation)) ?>
+                </a>
+            </li>
         <? endforeach; ?>
     </ul>
-    <? if(!count($relations)) : ?>
+    <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+    <? else : ?>
         <h2 role="alert" style="text-align: center;margin: 60px 0"><?= translate('No neighbourhood officer found') ?>.</h2>
         <? $zone = object('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow() ?>
         <? $email = str_replace("@", "&#64;", $zone->email) ?>
         <? $email = str_replace(".", "&#46;", $email) ?>
 
         <div class="well well--small text-center">
-            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ? $zone->phone_information : $zone->phone_emergency ?></span>.
+            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a><? if($zone->phone_information) : ?> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ?></span><? endif ?>.
         </div>
     <? endif ?>
-
-    <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 <? endif ?>

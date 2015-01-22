@@ -54,6 +54,11 @@ class DatabaseRowsetTable extends DatabaseRowsetAbstract
             $this->addRow($config->data->toArray(), $config->status);
         }
 
+        //Set the status
+        if (isset($config->status)) {
+            $this->setStatus($config->status);
+        }
+
         //Set the status message
         if (!empty($config->status_message)) {
             $this->setStatusMessage($config->status_message);

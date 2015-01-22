@@ -35,7 +35,7 @@ class ModelContacts extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 		
 		$query->columns(array(
-			'category_title' => 'categories.title'
+			'category_title'    => 'categories.title'
 		));
 	}
 

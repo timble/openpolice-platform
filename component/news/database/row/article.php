@@ -76,13 +76,13 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
         {
             $this->publish_on = gmdate('Y-m-d H:i:s');
         }
-        
+
         // Unpublish article if publish_on date is set to future
         if($this->publish_on > gmdate('Y-m-d H:i:s'))
         {
             $this->published = '0';
         }
-        
+
         $result   = parent::save();
 
         return $result;

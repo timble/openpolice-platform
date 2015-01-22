@@ -8,8 +8,5 @@
     <state>
         <name>Blog layout</name>
         <description>ARTICLES BLOG LAYOUT DESC</description>
-        <url addpath="/application/admin/component/categories/element">
-            <param name="category" type="category" table="questions" label="Category" description=""/>
-        </url>
     </state>
 </metadata>

@@ -25,7 +25,7 @@ class ModelHours extends Library\ModelTable
 
 		$this->getState()
             ->insert('published', 'boolean')
-            ->insert('contact' , 'int');
+            ->insert('contact' , 'int', $this->getObject('com:contacts.model.contacts')->sort('title')->category('1')->getRowset()->top()->id);
 	}
 	
 	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
@@ -63,6 +63,7 @@ class ModelHours extends Library\ModelTable
         $direction = strtoupper($state->direction);
         
         $query->order('contacts.ordering', 'ASC');
+        $query->order('tbl.date', $direction);
         $query->order('tbl.day_of_week', $direction);
         $query->order('tbl.opening_time', $direction);
     }

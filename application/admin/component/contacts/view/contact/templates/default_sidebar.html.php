@@ -31,7 +31,7 @@
 
 <fieldset>
     <legend><?= translate('Category') ?></legend>
-    <?= helper('com:questions.radiolist.categories', array('row' => $contact, 'name' => 'contacts_category_id', 'package' => 'contacts')) ?>
+    <?= helper('com:questions.radiolist.categories', array('row' => $contact, 'name' => 'contacts_category_id', 'package' => 'contacts', 'filter' => array('hidden' => false))) ?>
 </fieldset>
 
 <? if($contact->isAttachable()) : ?>

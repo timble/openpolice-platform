@@ -14,16 +14,37 @@ class DatabaseRowZone extends Library\DatabaseRowTable
 {
     public function __get($column)
     {
-        if($column == 'title' && !isset($this->_data['title'])) {
-
-            $site = $this->getObject('application')->getSite();
+        if($column == 'title' && !isset($this->_data['title']))
+        {
             $language = $this->getObject('application.languages')->getActive()->slug;
 
-            $zone = $this->getObject('com:police.database.row.zone')->set('id', $site)->load();
+            $titles = json_decode($this->_data['titles'], true);
 
-            $this->_data['title'] = $zone->{'title_'.$language};
+            if (is_array($titles))
+            {
+                if (isset($titles[$language])) {
+                    $this->_data['title'] = $titles[$language];
+                }
+                else $this->_data['title'] = array_shift(array_values($titles));
+            }
         }
 
         return parent::__get($column);
+    }
+
+    /**
+     * Saves the zone to the database.
+     *
+     * @return boolean	If successfull return TRUE, otherwise FALSE
+     */
+    public function save()
+    {
+        if ($this->isModified('titles'))
+        {
+            $this->titles = array_filter($this->_data['titles']);
+            $this->titles = json_encode($this->titles);
+        }
+
+        return parent::save();
     }
 }

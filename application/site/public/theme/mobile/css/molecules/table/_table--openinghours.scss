@@ -7,23 +7,28 @@
     padding: 0 0 0.5em 0;
   }
 
-  td:nth-child(1) {
+  tbody td:nth-child(1) {
     font-weight: bold;
   }
 
-  td:nth-child(n+2) {
+  tbody td:nth-child(n+2) {
     display: block;
+  }
+
+  tfoot td {
+    padding-top: 1em;
+    text-align: center;
   }
 }
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-charlie) {
   .table--openinghours {
     th,
     td {
       padding: 0.5em;
     }
 
-    td:nth-child(1) {
+    tbody td:nth-child(1) {
       text-align: right;
     }
   }

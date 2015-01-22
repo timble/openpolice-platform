@@ -29,7 +29,7 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'id', 'title' => 'CRAB')) ?>
+                <?= helper('grid.sort', array('column' => 'streets_street_identifier', 'title' => 'CRAB')) ?>
             </th>
             <th>
                 <?= helper('grid.sort', array('column' => 'islp')) ?>
@@ -40,11 +40,17 @@
             <th>
                 <?= helper('grid.sort', array('column' => 'modified_on', 'title' => 'Modified on')) ?>
             </th>
+            <th width="1">
+                <?= helper('grid.sort', array('column' => 'district_count', 'title' => 'Districts')) ?>
+            </th>
+            <th width="1">
+                <?= helper('grid.sort', array('column' => 'bin_count', 'title' => 'BINs')) ?>
+            </th>
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<td colspan="7">
+			<td colspan="8">
 				<?= helper('com:application.paginator.pagination', array('total' => $total)) ?>
 			</td>
 		</tr>
@@ -56,10 +62,10 @@
 				<?= helper('grid.checkbox', array('row' => $street))?>
 			</td>
 			<td>
-				<a href="<?= route( 'view=street&task=edit&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
+				<a href="<?= route( 'view=street&id='. $street->id ); ?>"><?= escape($street->title); ?></a>
 			</td>
             <td>
-                <?= $street->id ?>
+                <?= $street->streets_street_identifier ?>
             </td>
             <td>
                 <?= $street->islp ?>
@@ -73,6 +79,12 @@
                 <? if($street->modified_on) : ?>
                 <?= helper('date.format', array('date'=> $street->modified_on, 'format' => 'D d/m/Y')) ?>
                 <? endif ?>
+            </td>
+            <td align="center">
+                <?= $street->district_count ?>
+            </td>
+            <td align="center">
+                <?= $street->bin_count ?>
             </td>
 		</tr>
 		<? endforeach; ?>

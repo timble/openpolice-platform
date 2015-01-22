@@ -39,22 +39,6 @@
 					        <input type="text" name="lastname" maxlength="250" class="required" value="<?= $officer->lastname; ?>" />
 					    </div>
 					</div>
-                    <div>
-                        <label for="">
-                            <?= translate( 'Number' ); ?>
-                        </label>
-                        <div>
-                            <input type="text" name="id" maxlength="250" class="required validate-integer" value="<?= $officer->id; ?>" />
-                        </div>
-                    </div>
-					<div>
-					    <label for="">
-					    	<?= translate( 'Position' ); ?>
-					    </label>
-					    <div>
-					        <input type="text" name="position" maxlength="250" value="<?= $officer->position; ?>" />
-					    </div>
-					</div>
 					<div>
 					    <label for="">
 					    	<?= translate( 'Phone' ); ?>

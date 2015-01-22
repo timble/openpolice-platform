@@ -51,9 +51,9 @@ class DistrictsTemplateHelperListbox extends Library\TemplateHelperListbox
 	    
 	    $options = array();
 	    
-	    $options[] = $this->option(array('text' => $this->translate( 'Odd & Even' ), 'value' => 'odd-even'));
-	    $options[] = $this->option(array('text' => $this->translate( 'Odd' ) , 'value' => 'odd' ));
-	    $options[] = $this->option(array('text' => $this->translate( 'Even' ), 'value' => 'even' ));
+	    $options[] = $this->option(array('label' => $this->translate( 'Odd & Even' ), 'value' => 'odd-even'));
+	    $options[] = $this->option(array('label' => $this->translate( 'Odd' ) , 'value' => 'odd' ));
+	    $options[] = $this->option(array('label' => $this->translate( 'Even' ), 'value' => 'even' ));
 	
 	    //Add the options to the config object
 	    $config->options = $options;

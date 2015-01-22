@@ -8,19 +8,7 @@
  */
 ?>
 
-<meta content="<?= @translate('Police') ?> <?= $zone->title ?>" name="author" />
-<? if($zone->twitter) : ?>
-<meta content="summary" name="twitter:card" />
-<meta content="@<?= $zone->twitter ?>" name="twitter:site" />
-<? endif ?>
-<meta content="<?= url(); ?>" property="og:url" />
-<meta content="<?= $article->title ?>" property="og:title" />
-<meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
-<? if($article->attachments_attachment_id) : ?>
-<meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
-<? endif ?>
-
-<meta content="<?= $published_on ?>" property="article:published_time" />
+<?= import('com:news.view.article.metadata.html') ?>
 
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
@@ -33,19 +21,19 @@
     <? endforeach ?>
 </ktml:module>
 
-<title content="replace"><?= $article->title ?></title>
+<title content="replace"><?= escape($article->title) ?></title>
 
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
-        <h1 itemprop="name"><?= $article->title ?></h1>
-        <time class="text--small" itemprop="datePublished" datetime="<?= $published_on ?>">
-            <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
+        <h1 itemprop="name"><?= escape($article->title) ?></h1>
+        <time class="text--small" itemprop="datePublished" datetime="<?= $article->published_on_utc ?>">
+            <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
 
     <? if($article->attachments_attachment_id) : ?>
-    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
-        <?= helper('com:attachments.image.thumbnail', array(
+    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
+        <?= helper('com:police.image.thumbnail', array(
         'attachment' => $article->attachments_attachment_id,
         'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
     <? endif ?>
@@ -60,7 +48,7 @@
     </div>
 </article>
 
-<script src="assets://application/components/jquery/dist/jquery.min.js" />
+<script src="assets://application/components/jquery/jquery.min.js" />
 <script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
 <script data-inline>
     $(document).ready(function() {

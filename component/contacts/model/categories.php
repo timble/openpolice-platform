@@ -23,7 +23,8 @@ class ModelCategories extends Library\ModelTable
             ->insert('published' , 'boolean')
             ->insert('distinct'  , 'string')
             ->insert('category'  , 'int')
-            ->insert('sort'      , 'cmd', 'ordering');
+            ->insert('sort'      , 'cmd', 'ordering')
+            ->insert('hidden'    , 'boolean', true);
     }
 
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
@@ -68,6 +69,10 @@ class ModelCategories extends Library\ModelTable
         if (is_bool($state->published))
         {
             $query->where('tbl.published = :published')->bind(array('published' => (int) $state->published));
+        }
+
+        if(is_bool($state->hidden)) {
+            $query->where('tbl.hidden <= :hidden')->bind(array('hidden' => (int) $state->hidden));
         }
     }
 

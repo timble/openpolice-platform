@@ -17,8 +17,9 @@ class TrafficControllerArticle extends Library\ControllerModel
         	'behaviors' => array(
                 'editable',
                 'com:activities.controller.behavior.loggable',
-                'com:streets.controller.behavior.streetable',
-                'com:languages.controller.behavior.translatable'
+                'com:streets.controller.behavior.locatable',
+                'com:languages.controller.behavior.translatable',
+                'com:attachments.controller.behavior.attachable'
             ),
         ));
 
@@ -30,8 +31,8 @@ class TrafficControllerArticle extends Library\ControllerModel
         $request = parent::getRequest();
 
         // Set the ordering
-        $request->query->sort = 'start_on';
-        $request->query->direction = 'ASC';
+        $request->query->sort       = 'start_on';
+        $request->query->direction  = 'DESC';
 
         return $request;
     }

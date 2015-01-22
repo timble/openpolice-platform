@@ -15,15 +15,15 @@
     <div class="media">
         <? if($article->attachments_attachment_id): ?>
             <a tabindex="-1" class="thumbnail media__object" href="<?= $link ?>">
-                <?= helper('com:attachments.image.thumbnail', array(
+                <?= helper('com:police.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
                     'attribs' => array('width' => '64', 'height' => '48'))) ?>
             </a>
         <? endif; ?>
         <div class="media__body">
-            <a class="media__heading" href="<?= $link ?>"><?= $article->title ?></a>
+            <a class="media__heading" href="<?= $link ?>"><?= escape($article->title) ?></a>
             <div class="text--small">
-                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('DATE_FORMAT_LC5'))) ?>
+                <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?>
             </div>
         </div>
     </div>

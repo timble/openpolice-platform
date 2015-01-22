@@ -27,10 +27,10 @@ class ModelArticles extends Library\ModelTable
 		parent::_buildQueryColumns($query);
 	
 		$query->columns(array(
-			'thumbnail'         => 'thumbnails.thumbnail',
-            'path'              => 'attachments.path',
-            'ordering_date'     => 'IF(tbl.publish_on, tbl.created_on, tbl.created_on)',
-            'created_by_name'   => 'creator.name'
+			'thumbnail'         => 'attachments.path',
+            'created_by_name'   => 'creator.name',
+            'ordering_date'     => 'IF(tbl.published_on, tbl.published_on, tbl.publish_on)',
+            'draft'             => 'IF(tbl.published_on OR tbl.publish_on, 0, 1)'
 		));
 	}
     
@@ -39,7 +39,6 @@ class ModelArticles extends Library\ModelTable
         parent::_buildQueryJoins($query);
 
         $query->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id')
-              ->join(array('thumbnails'  => 'files_thumbnails'), 'thumbnails.filename = attachments.path')
               ->join(array('creator'  => 'users'), 'creator.users_user_id = tbl.created_by');
     }
 	
@@ -64,4 +63,17 @@ class ModelArticles extends Library\ModelTable
             $query->where('tbl.news_article_id != :news_article_id')->bind(array('news_article_id' => $state->exclude));
         }
 	}
+
+    protected function _buildQueryOrder(Library\DatabaseQuerySelect $query)
+    {
+        $state = $this->getState();
+
+        if ($state->sort == 'ordering_date')
+        {
+            $query->order('draft', 'DESC')
+                    ->order('ordering_date', 'DESC');
+        } else {
+            $query->order($state->sort, strtoupper($state->direction));
+        }
+    }
 }

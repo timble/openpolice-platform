@@ -1,6 +1,12 @@
 @import "susy";
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-beta) {
+  .gallery .gallery__item {
+    @include gallery(6 of 12);
+  }
+}
+
+@include breakpoint($breakpoint-charlie) {
   .container {
     // page acts as a container for our grid.
     @include container;
@@ -21,12 +27,25 @@
     @include span(first 12 of 12);
   }
 
+  // Questions categories view doesn't have a sidebar
+  .component.questions.categories {
+    @include span(first 12 of 12);
+  }
+
   .footer__districts {
     @include span(5 of 12);
   }
 
   .footer__news {
     @include span(first 7 of 12);
+  }
+
+  .traffic__text {
+    @include span(first 7 of 12);
+  }
+
+  .traffic__sidebar {
+    @include span(5 of 12);
   }
 
   .copyright--left {
@@ -77,15 +96,11 @@
   }
 
   .gallery .gallery__item {
-    @include span(3 of 12);
-  }
-
-  .gallery .gallery__item:first-child {
-    @include span(first 3 of 12);
+    @include gallery(4 of 12);
   }
 }
 
-@include respond-min($breakpoint-delta) {
+@include breakpoint($breakpoint-delta) {
   .homepage__sticky .media {
     @include span(6 of 12);
     &:first-child {
@@ -117,5 +132,9 @@
   // Override previous selector
   .quicklinks__item.one-third:nth-child(3) {
     @include span(4 of 12);
+  }
+
+  .gallery .gallery__item {
+    @include gallery(3 of 12);
   }
 }

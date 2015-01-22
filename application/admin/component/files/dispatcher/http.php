@@ -27,6 +27,33 @@ class FilesDispatcherHttp extends Library\DispatcherHttp
         // Return correct status code for plupload
         $this->getObject('application')->registerCallback('before.send', array($this, 'setStatusForPlupload'));
 	}
+
+    protected function _actionGet(Library\CommandContext $context)
+    {
+        $controller = $this->getController();
+
+        if($controller instanceof Library\ControllerModellable)
+        {
+            if(!$controller->getModel()->getState()->isUnique())
+            {
+                $limit = $controller->getModel()->getState()->limit;
+
+                //If limit is empty use default, except for the folders controller (allow 0).
+                if($controller->getIdentifier()->name != 'folder' && empty($limit)) {
+                    $limit = $this->getConfig()->limit->default;
+                }
+
+                //Force the maximum limit
+                if($limit > $this->getConfig()->limit->max) {
+                    $limit = $this->getConfig()->limit->max;
+                }
+
+                $controller->getModel()->getState()->limit = $limit;
+            }
+        }
+
+        return $controller->execute('render', $context);
+    }
 	
 	public function renderResponse(Library\CommandContext $context)
 	{

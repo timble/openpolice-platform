@@ -7,7 +7,7 @@
 
 ## Variable initialization
 repo=$(cd "$(dirname $0)/../.."; pwd -P)
-branch="feature/337-multilanguage"
+branch="master"
 temp="/tmp/police-$RANDOM"
 
 dirs=(
@@ -40,7 +40,7 @@ dirs=(
   "application/site/component/traffic"
   "application/site/component/trafficinfo"
   "application/site/public/theme/mobile"
-  "application/site/public/theme/portal"
+  "application/site/public/theme/intro"
   "component/about"
   "component/announcements"
   "component/bin"
@@ -65,6 +65,8 @@ dirs=(
 
 files=(
   ".gitignore"
+  "composer.json"
+  "composer.lock"
   "README.md"
   "Vagrantfile"
   "vendor/.gitignore"
@@ -73,6 +75,7 @@ files=(
   "application/admin/component/application/resources/language/fr-FR.ini"
   "application/site/component/application/resources/language/nl-NL.ini"
   "application/site/component/application/resources/language/fr-FR.ini"
+  "application/site/component/files/controller/directory.php"
   "application/site/component/files/resources/language/nl-NL.ini"
   "application/site/component/files/resources/language/fr-FR.ini"
   "component/ckeditor/resources/assets/ckeditor/config.js"
@@ -183,5 +186,5 @@ git add -A
 
 # Composer
 printf "$(tput bold)%s$(tput sgr0)\n" "Running custom composer..."
-cd "$repo/install/custom"
+cd "$repo"
 composer install

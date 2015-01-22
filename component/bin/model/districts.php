@@ -12,6 +12,14 @@ use Nooku\Library;
 
 class ModelDistricts extends Library\ModelTable
 {
+    public function __construct(Library\ObjectConfig $config)
+    {
+        parent::__construct($config);
+
+        $this->getState()
+            ->insert('sort' , 'string', 'title');
+    }
+
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
 	{
 		parent::_buildQueryWhere($query);

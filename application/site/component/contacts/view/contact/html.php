@@ -44,6 +44,22 @@ class ContactsViewContactHtml extends Library\ViewHtml
             $pathway->addItem($contact->title, '');
         }
 
+        //Get the top attachment (thumbnail)
+        if($contact->isAttachable()) {
+            $attachment = $contact->getAttachments()->top();
+
+            if(isset($attachment) && $attachment->file->isImage()) {
+                $this->thumbnail = $attachment->thumbnail;
+            }
+        }
+
+        // Get the street
+        if($contact->isLocatable() && $street = $contact->getStreets()->top())
+        {
+            $contact['street'] = $street->title_short;
+            $contact['city'] = $street->city;
+        }
+
         $this->params   = $params;
         $this->category = $category;
 
