@@ -143,9 +143,18 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
         foreach($data as $item)
         {
-            if(!array_key_exists('streets_street_identifier', $item))
+            if(array_key_exists('street_id', $item))
             {
                 $street = $this->getObject('com:streets.model.streets')->islp($item['street_id'])->getRowset();
+
+                if(count($street))
+                {
+                    $item['streets_street_identifier'] = $street->top()->streets_street_identifier;
+                } else {
+                    continue;
+                }
+            } elseif(array_key_exists('street_title', $item)) {
+                $street = $this->getObject('com:streets.model.streets')->title($item['street_title'])->getRowset();
 
                 if(count($street))
                 {
@@ -173,6 +182,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 case 'Oneven':
                 case 'Impair':
                     $parity = 'odd';
+                    break;
+                default:
+                    $parity = 'odd-even';
                     break;
             }
 

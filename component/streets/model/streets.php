@@ -25,6 +25,7 @@ class ModelStreets extends Library\ModelTable
             ->insert('row' , 'int')
             ->insert('table' , 'string')
             ->insert('iso' , 'string')
+            ->insert('title' , 'string')
             ->insert('sort'      , 'cmd', 'title');
 	}
 
