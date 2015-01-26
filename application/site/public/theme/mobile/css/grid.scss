@@ -1,4 +1,6 @@
-@import "../../components/susy/sass/susy";
+@import "../components/illusion/sass/illusion/mixins/breakpoint";
+@import "../components/susy/sass/susy";
+@import "utilities/variables";
 
 @include breakpoint($breakpoint-beta) {
   .gallery .gallery__item {
