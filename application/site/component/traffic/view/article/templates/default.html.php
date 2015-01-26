@@ -19,14 +19,13 @@
             <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
         </div>
     </header>
-
     <? if($article->text) : ?>
-        <div class="traffic__text">
+        <div<?= count($streets) || ($article->controlled && $article->in_violation) ? ' class="traffic__text"' : '' ?>>
             <span itemprop="description"><?= $article->text ?></span>
         </div>
     <? endif ?>
 
-    <? if($streets || ($article->controlled && $article->in_violation)) : ?>
+    <? if(count($streets) || ($article->controlled && $article->in_violation)) : ?>
         <div<?= $article->text ? ' class="traffic__sidebar"' : '' ?>>
             <? if($article->controlled && $article->in_violation) : ?>
                 <div<?= $article->text ? ' class="well"' : '' ?>>
