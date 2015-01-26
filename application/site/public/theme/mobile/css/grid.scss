@@ -1,0 +1,142 @@
+@import "../components/illusion/sass/illusion/mixins/breakpoint";
+@import "../components/susy/sass/susy";
+@import "utilities/variables";
+
+@include breakpoint($breakpoint-beta) {
+  .gallery .gallery__item {
+    @include gallery(6 of 12);
+  }
+}
+
+@include breakpoint($breakpoint-charlie) {
+  .container {
+    // page acts as a container for our grid.
+    @include container;
+    padding-left: $grid-padding;
+    padding-right: $grid-padding;
+  }
+
+  .sidebar {
+    @include span(first 3 of 12);
+  }
+
+  .component {
+    @include span(9 of 12);
+  }
+
+  // Files view doesn't have a sidebar
+  .component.files {
+    @include span(first 12 of 12);
+  }
+
+  // Questions categories view doesn't have a sidebar
+  .component.questions.categories {
+    @include span(first 12 of 12);
+  }
+
+  .footer__districts {
+    @include span(5 of 12);
+  }
+
+  .footer__news {
+    @include span(first 7 of 12);
+  }
+
+  .traffic__text {
+    @include span(first 7 of 12);
+  }
+
+  .traffic__sidebar {
+    @include span(5 of 12);
+  }
+
+  .copyright--left {
+    @include span(first 5 of 12);
+  }
+
+  .copyright--right {
+    @include span(7 of 12);
+  }
+
+  .quicklinks__item {
+    @include span(6 of 12);
+  }
+
+  .quicklinks__item:first-child, .quicklinks__item:nth-child(3) {
+    @include span(first 6 of 12);
+  }
+
+  .quicklinks__item.one-third {
+    @include span(4 of 12);
+  }
+
+  .quicklinks__item.one-third:first-child {
+    @include span(first 4 of 12);
+  }
+
+  .homepage__sticky {
+    @include span(first 10 of 14);
+  }
+  .homepage__contact {
+    @include span(4 of 14);
+  }
+
+  .districts__officers {
+    @include span(first 5 of 12);
+  }
+
+  .districts__contact {
+    @include span(7 of 12);
+  }
+
+  .exception__message {
+    @include span(first 7 of 12);
+  }
+
+  .exception__image {
+    @include span(5 of 12);
+  }
+
+  .gallery .gallery__item {
+    @include gallery(4 of 12);
+  }
+}
+
+@include breakpoint($breakpoint-delta) {
+  .homepage__sticky .media {
+    @include span(6 of 12);
+    &:first-child {
+      @include span(first 6 of 12);
+    }
+  }
+
+  .organization {
+    @include span(first 3 of 12);
+  }
+
+  .navigation {
+    @include span(9 of 12);
+  }
+
+  .quicklinks__item {
+    @include span(3 of 12);
+  }
+
+  // Override selector from previous media query, for IE8 combat keep it separate
+  .quicklinks__item:nth-child(3) {
+    @include span(3 of 12);
+  }
+
+  .quicklinks__item:first-child {
+    @include span(first 3 of 12);
+  }
+
+  // Override previous selector
+  .quicklinks__item.one-third:nth-child(3) {
+    @include span(4 of 12);
+  }
+
+  .gallery .gallery__item {
+    @include gallery(3 of 12);
+  }
+}
