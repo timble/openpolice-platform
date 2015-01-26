@@ -1602,10 +1602,18 @@ button.button, input[type="submit"].button {
   background-color: #0054ae;
   border-bottom: 1px solid #00346c; }
   .header .organization {
-    padding: 10px 10px 2px;
-    border-bottom: 1px solid #004D9F; }
+    padding: 10px 10px 8px;
+    border-bottom: 1px solid #004D9F;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex; }
     .header .organization a {
-      display: inline-block;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: flex;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      flex: 1;
       line-height: 36px;
       color: #fff;
       text-decoration: none; }
@@ -1620,13 +1628,32 @@ button.button, input[type="submit"].button {
     background-size: 24px 24px;
     background-repeat: no-repeat;
     margin-right: 6px;
-    float: left; }
+    float: left;
+    -webkit-flex-shrink: 0;
+    -moz-flex-shrink: 0;
+    flex-shrink: 0;
+    -webkit-flex-grow: 0;
+    -moz-flex-grow: 0;
+    flex-grow: 0; }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .header .organization__logo {
       background-image: url("../images/avatar@2x.png"); }
  }
   .header .organization__name {
-    float: left; }
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1; }
+  .header .button--hamburger {
+    -webkit-flex-shrink: 0;
+    -moz-flex-shrink: 0;
+    flex-shrink: 0;
+    -webkit-flex-grow: 0;
+    -moz-flex-grow: 0;
+    flex-grow: 0; }
 
 @media screen and (min-width: 768px) {
   .header {
@@ -1637,13 +1664,16 @@ button.button, input[type="submit"].button {
     .header .button--hamburger {
       display: none; }
     .header .organization {
+      display: block;
       padding: 26px 0 0 0;
       text-decoration: none;
       color: #004D9F;
       border-bottom: 0px none;
       text-align: center; }
-      .header .organization a:hover .organization__name {
-        color: #004D9F; }
+      .header .organization a {
+        display: inline-block; }
+        .header .organization a:hover .organization__name {
+          color: #004D9F; }
     .header .organization__logo {
       float: none;
       width: 160px;
