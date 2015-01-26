@@ -33,6 +33,20 @@ module.exports = function(grunt) {
             }
         },
 
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : 'application/site/public/theme/mobile/css/default.css'
+                },
+                options: {
+                    proxy: "police.dev",
+                    port: 7654, // POLI on phone keypad
+                    watchTask: true, // < VERY important
+                    notify: false
+                }
+            }
+        },
+
         // Watch
         watch: {
             css: {
@@ -52,17 +66,9 @@ module.exports = function(grunt) {
                     interrupt: false,
                     atBegin: false
                 }
-            },
-            livereload: {
-                // Here we watch the files the sass task will compile to
-                // These files are sent to the live reload server after sass compiles to them
-                options: {
-                    livereload: true
-                },
-                files: ['application/site/public/theme/mobile/css/default.css']
             }
         }
     });
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
 };
