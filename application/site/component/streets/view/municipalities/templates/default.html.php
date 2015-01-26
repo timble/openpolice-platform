@@ -10,15 +10,15 @@
 
 <?
 $domains = array(
-    'www.lokalepolitie.be'      => array('language' => 'nl', 'domain' => 'www', 'lang' => 'nl-NL'),
-    'www.policelocale.be'       => array('language' => 'fr', 'domain' => 'www', 'lang' => 'fr-FR'),
-    'www.lokalepolizei.be'      => array('language' => 'de', 'domain' => 'www', 'lang' => 'de-DE'),
-    'new.lokalepolitie.be'      => array('language' => 'nl', 'domain' => 'new', 'lang' => 'nl-NL'),
-    'new.policelocale.be'       => array('language' => 'fr', 'domain' => 'new', 'lang' => 'fr-FR'),
-    'new.lokalepolizei.be'      => array('language' => 'de', 'domain' => 'new', 'lang' => 'de-DE'),
-    'staging.lokalepolitie.be'  => array('language' => 'nl', 'domain' => 'staging', 'lang' => 'nl-NL'),
-    'staging.policelocale.be'   => array('language' => 'fr', 'domain' => 'staging', 'lang' => 'fr-FR'),
-    'staging.lokalepolizei.be'  => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-DE')
+    'www.lokalepolitie.be'      => array('language' => 'nl', 'domain' => 'www', 'lang' => 'nl-be'),
+    'www.policelocale.be'       => array('language' => 'fr', 'domain' => 'www', 'lang' => 'fr-be'),
+    'www.lokalepolizei.be'      => array('language' => 'de', 'domain' => 'www', 'lang' => 'de-be'),
+    'new.lokalepolitie.be'      => array('language' => 'nl', 'domain' => 'new', 'lang' => 'nl-be'),
+    'new.policelocale.be'       => array('language' => 'fr', 'domain' => 'new', 'lang' => 'fr-be'),
+    'new.lokalepolizei.be'      => array('language' => 'de', 'domain' => 'new', 'lang' => 'de-be'),
+    'staging.lokalepolitie.be'  => array('language' => 'nl', 'domain' => 'staging', 'lang' => 'nl-be'),
+    'staging.policelocale.be'   => array('language' => 'fr', 'domain' => 'staging', 'lang' => 'fr-be'),
+    'staging.lokalepolizei.be'  => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-be')
 );
 
 $url    = $this->getObject('application')->getRequest()->getUrl();
