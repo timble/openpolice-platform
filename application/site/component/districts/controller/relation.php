@@ -18,8 +18,11 @@ class DistrictsControllerRelation extends PoliceControllerLanguage
         $street      = isset($context->request->getUrl()->query['street']) ? $context->request->getUrl()->query['street'] : false;
         $number      = isset($context->request->getUrl()->query['number']) ? $context->request->getUrl()->query['number'] : false;
 
-        // Street and number are required
-        if(count($relations) == '1' && $number != '' && $street && is_numeric($number)) {
+        // Find unique streets
+        $streets    = array_unique($relations->streets_street_identifier);
+
+        // Street and number are required, if the street is unique we can redirect to the district
+        if(count($streets) == '1' && $number != '' && $street && is_numeric($number)) {
             $relation = $relations->top();
 
             // Redirect the user if the request doesn't include layout=form

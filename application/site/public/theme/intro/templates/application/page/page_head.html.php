@@ -26,8 +26,9 @@
     <ktml:script>
 
     <style src="/theme/mobile/css/default.css" />
-    <style src="/theme/mobile/css/ie.css" condition="if IE 8" />
-    <style src="/theme/mobile/css/ie7.css" condition="if lte IE 7" />
+    <style src="/theme/mobile/css/grid.css" />
+    <style src="/theme/mobile/css/ie.css" condition="if lte IE 8" />
+    <style src="/theme/mobile/css/ie9.css" condition="if lte IE 9" />
 
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
         <script>

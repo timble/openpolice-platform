@@ -19,14 +19,13 @@
             <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
         </div>
     </header>
-
     <? if($article->text) : ?>
-        <div class="traffic__text">
+        <div<?= count($streets) || ($article->controlled && $article->in_violation) ? ' class="traffic__text"' : '' ?>>
             <span itemprop="description"><?= $article->text ?></span>
         </div>
     <? endif ?>
 
-    <? if($streets || ($article->controlled && $article->in_violation)) : ?>
+    <? if(count($streets) || ($article->controlled && $article->in_violation)) : ?>
         <div<?= $article->text ? ' class="traffic__sidebar"' : '' ?>>
             <? if($article->controlled && $article->in_violation) : ?>
                 <div<?= $article->text ? ' class="well"' : '' ?>>
@@ -54,7 +53,7 @@
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array(false))) ?>
 </div>
 
-<script src="assets://application/components/jquery/jquery.min.js" />
+<script src="assets://application/components/jquery/dist/jquery.min.js" />
 <script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
 <script data-inline>
     $(document).ready(function() {

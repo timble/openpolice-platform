@@ -25,13 +25,25 @@ module.exports = function(grunt) {
         // Sass
         sass: {
             dist: {
-                options: {
-                    require: ['susy', 'illusion']
-                },
                 files: {
                     'application/site/public/theme/mobile/css/default.css': 'application/site/public/theme/mobile/css/default.scss',
+                    'application/site/public/theme/mobile/css/grid.css': 'application/site/public/theme/mobile/css/grid.scss',
                     'application/site/public/theme/mobile/css/ie.css': 'application/site/public/theme/mobile/css/ie.scss',
-                    'application/site/public/theme/mobile/css/ie7.css': 'application/site/public/theme/mobile/css/ie7.scss'
+                    'application/site/public/theme/mobile/css/ie9.css': 'application/site/public/theme/mobile/css/ie9.scss'
+                }
+            }
+        },
+
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : 'application/site/public/theme/mobile/css/default.css'
+                },
+                options: {
+                    proxy: "police.dev",
+                    port: 7654, // POLI on phone keypad
+                    watchTask: true, // < VERY important
+                    notify: false
                 }
             }
         },
@@ -55,35 +67,9 @@ module.exports = function(grunt) {
                     interrupt: false,
                     atBegin: false
                 }
-            },
-            livereload: {
-                // Here we watch the files the sass task will compile to
-                // These files are sent to the live reload server after sass compiles to them
-                options: {
-                    livereload: true
-                },
-                files: ['application/site/public/theme/mobile/css/default.css']
-            }
-        },
-
-        // Shell commands
-        shell: {
-            composer: {
-                command: [
-                    'cd application/site/public/theme/mobile/',
-                    'composer install'
-                ].join('&&')
-            },
-            composerUpdate: {
-                command: [
-                    'cd application/site/public/theme/mobile/',
-                    'composer update'
-                ].join('&&')
             }
         }
     });
 
-    grunt.registerTask('default', ['watch']);
-    grunt.registerTask('composer', ['shell:composerInstall']);
-    grunt.registerTask('composer-update', ['shell:composerUpdate']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
 };

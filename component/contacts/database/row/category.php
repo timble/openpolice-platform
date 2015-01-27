@@ -20,8 +20,7 @@ class DatabaseRowCategory extends Library\DatabaseRowTable
             '1'     => '42',
             '2'     => '44',
             '18'    => '66',
-            '24'    => '43',
-            '34'    => '105'
+            '24'    => '43'
         );
 
         $page = $this->getObject('com:pages.database.table.pages')->select($pages[$this->id], Library\Database::FETCH_ROW);
