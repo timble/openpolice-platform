@@ -1606,13 +1606,16 @@ button.button, input[type="submit"].button {
     border-bottom: 1px solid #004D9F;
     display: -webkit-flex;
     display: -moz-flex;
+    display: -ms-flex;
     display: flex; }
     .header .organization a {
       display: -webkit-flex;
       display: -moz-flex;
+      display: -ms-flex;
       display: flex;
       -webkit-flex: 1;
       -moz-flex: 1;
+      -ms-flex: 1;
       flex: 1;
       line-height: 36px;
       color: #fff;
@@ -1631,9 +1634,11 @@ button.button, input[type="submit"].button {
     float: left;
     -webkit-flex-shrink: 0;
     -moz-flex-shrink: 0;
+    -ms-flex-shrink: 0;
     flex-shrink: 0;
     -webkit-flex-grow: 0;
     -moz-flex-grow: 0;
+    -ms-flex-grow: 0;
     flex-grow: 0; }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .header .organization__logo {
@@ -1646,13 +1651,16 @@ button.button, input[type="submit"].button {
     float: left;
     -webkit-flex-grow: 1;
     -moz-flex-grow: 1;
+    -ms-flex-grow: 1;
     flex-grow: 1; }
   .header .button--hamburger {
     -webkit-flex-shrink: 0;
     -moz-flex-shrink: 0;
+    -ms-flex-shrink: 0;
     flex-shrink: 0;
     -webkit-flex-grow: 0;
     -moz-flex-grow: 0;
+    -ms-flex-grow: 0;
     flex-grow: 0; }
 
 @media screen and (min-width: 768px) {
