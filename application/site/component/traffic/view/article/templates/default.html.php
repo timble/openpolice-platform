@@ -15,7 +15,7 @@
 <div class="article" itemprop="event" itemscope itemtype="http://schema.org/Event">
     <header class="article__header">
         <h1 itemprop="name"><?= escape($article->title) ?></h1>
-        <div class="timestamp">
+        <div class="text--small">
             <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
         </div>
     </header>
