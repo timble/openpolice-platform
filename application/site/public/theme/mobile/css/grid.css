@@ -243,28 +243,6 @@
     
      }
 
-  .districts__officers {
-    
-    
-    
-    width: 39.5061728395%;
-    float: left;
-    margin-left: 0;
-    
-    
-     }
-
-  .districts__contact {
-    
-    
-    
-    width: 56.7901234568%;
-    float: left;
-    margin-left: 3.7037037037%;
-    
-    
-     }
-
   .exception__message {
     
     
@@ -359,6 +337,28 @@
     
     
     width: 74.0740740741%;
+    float: left;
+    margin-left: 3.7037037037%;
+    
+    
+     }
+
+  .districts__officers {
+    
+    
+    
+    width: 39.5061728395%;
+    float: left;
+    margin-left: 0;
+    
+    
+     }
+
+  .districts__contact {
+    
+    
+    
+    width: 56.7901234568%;
     float: left;
     margin-left: 3.7037037037%;
     
