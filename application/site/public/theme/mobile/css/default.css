@@ -1694,7 +1694,10 @@ button.button, input[type="submit"].button {
       margin-top: 6px;
       font-size: 0.9em;
       color: #004D9F;
-      line-height: 1em; }
+      line-height: 1em;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip; }
       .header .organization__name span {
         margin: -1px;
         padding: 0;

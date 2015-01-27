@@ -115,6 +115,11 @@
       color: $color-link;
       line-height: 1em;
 
+      // Override ellipsis
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+
       span {
         @include visually-hidden;
       }
