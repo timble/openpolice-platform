@@ -12,7 +12,7 @@
 
 <style src="assets://application/components/select2/select2.css" />
 
-<script src="assets://application/components/jquery/jquery.min.js" />
+<script src="assets://application/components/jquery/dist/jquery.min.js" />
 <script src="assets://application/components/select2/select2.js" />
 <script src="assets://application/js/ie7.js" condition="if lte IE 7" />
 
@@ -96,7 +96,7 @@
         <? $email = str_replace(".", "&#46;", $email) ?>
 
         <div class="well well--small text-center">
-            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ? $zone->phone_information : $zone->phone_emergency ?></span>.
+            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a><? if($zone->phone_information) : ?> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ?></span><? endif ?>.
         </div>
     <? endif ?>
 <? endif ?>

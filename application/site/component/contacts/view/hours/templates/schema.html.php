@@ -8,7 +8,7 @@
  */
 ?>
 
-<? $days = array('Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'); ?>
+<? $days = array('1' => 'Mo', '2' => 'Tu', '3' => 'We', '4' => 'Th', '5' => 'Fr', '6' => 'Sa', '7' => 'Su'); ?>
 
 <? if ($contact->params->get('open_24_7', false)) : ?>
     ,"openingHours": "Mo-Su"

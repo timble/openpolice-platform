@@ -10,8 +10,6 @@
 
 <title content="replace"><?= $category->title ?></title>
 
-<link href="<?= route('format=rss') ?>" rel="alternate" type="application/rss+xml" />
-
 <h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
 
 <? if ($category->image || $category->description) : ?>

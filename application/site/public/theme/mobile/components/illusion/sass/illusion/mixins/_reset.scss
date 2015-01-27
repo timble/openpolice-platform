@@ -1,0 +1,37 @@
+/**
+ * Reset properties of an element
+ *
+ * @param {string} $margin (true) - Set to false if you want to exclude
+ * @param {string} $padding (true) - Set to false if you want to exclude
+ * @param {string} $list-style (true) - Set to false if you want to exclude
+ * @param {string} $border (true) - Set to false if you want to exclude
+ * @param {string} $background (true) - Set to false if you want to exclude
+ *
+ * @example scss
+ * reset($padding: false);
+ * // Will not set padding to 0
+ *
+ * @example scss
+ * reset($padding: false, $background: false);
+ * // Will not set padding to '0'
+ * // Will not set background to 'none'
+ *
+ * @group Reset
+ */
+@mixin reset($margin: true, $padding: true, $list-style: true, $border: true, $background: true) {
+  @if $margin == true {
+    margin: 0;
+  }
+  @if $padding == true {
+    padding: 0;
+  }
+  @if $list-style == true {
+    list-style: none;
+  }
+  @if $border == true {
+    border: none;
+  }
+  @if $background == true {
+    background: transparent;
+  }
+}

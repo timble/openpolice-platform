@@ -12,22 +12,35 @@ use Nooku\Library;
 
 class DatabaseRowStreet extends Library\DatabaseRowTable
 {
-    public function save() {
-
+    public function save()
+    {
         $result = parent::save();
 
         if($this->islp) {
-            $islp = $this->getObject('com:streets.database.row.streets_islps');
-            $islp->id    = $this->streets_street_identifier;
-
-
-            if($islp->load())
+            if(is_numeric($this->islp) && !count($this->getObject('com:streets.model.streets_islps')->islp($this->islp)->getRowset()))
             {
-                $islp->islp  = $this->islp;
-                $islp->save();
+                $this->saveIslp();
+            } elseif(!is_numeric($this->islp)) {
+                $this->saveIslp();
             }
         }
 
         return $result;
+    }
+
+    public function saveIslp()
+    {
+        $islp = $this->getObject('com:streets.database.row.streets_islps');
+        $islp->id    = $this->streets_street_identifier;
+
+        if($islp->load())
+        {
+            $islp->islp  = $this->islp;
+            $islp->save();
+        } else {
+            $islp->id    = $this->streets_street_identifier;
+            $islp->islp  = $this->islp;
+            $islp->save();
+        }
     }
 }

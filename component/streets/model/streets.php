@@ -25,6 +25,7 @@ class ModelStreets extends Library\ModelTable
             ->insert('row' , 'int')
             ->insert('table' , 'string')
             ->insert('iso' , 'string')
+            ->insert('title' , 'string')
             ->insert('sort'      , 'cmd', 'title');
 	}
 
@@ -129,12 +130,8 @@ class ModelStreets extends Library\ModelTable
             $query->where('district.district_count IS NOT NULL');
         }
 
-        if(!in_array($this->getObject('application')->getSite(), array('default', '5904'))) {
+        if(!in_array($this->getObject('application')->getSite(), array('default'))) {
             $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
-        }
-
-        if ($this->getObject('application')->getSite() == '5904') {
-            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5904', '5430', '5431')));
         }
 	}
 

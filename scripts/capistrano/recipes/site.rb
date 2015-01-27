@@ -4,7 +4,7 @@ namespace :site do
         zone     = ''
         db_user  = 'fedpol'
         db_pass  = ''
-        language = 'nl-NL'
+        language = 'nl-be'
         title    = ''
 
         # Get the necessary info from the user
@@ -31,9 +31,9 @@ namespace :site do
         title = title.gsub(/"|'/, %q(\\\'))
 
         begin
-            language = Capistrano::CLI.ui.ask("Language [default: nl-NL] : ")
-            language = 'nl-NL' if language.empty?
-        end while ! ['nl-NL', 'fr-FR'].include? language
+            language = Capistrano::CLI.ui.ask("Language [default: nl-be] : ")
+            language = 'nl-be' if language.empty?
+        end while ! ['nl-be', 'fr-be'].include? language
 
         template = Capistrano::CLI.ui.ask("Database template [default: 5388] : ")
         template = '5388' if template.empty?
