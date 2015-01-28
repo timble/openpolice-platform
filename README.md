@@ -37,7 +37,7 @@ You can run the project easily with the supplied Vagrantfile - make sure you und
     ```192.168.52.10 police.dev phpmyadmin.police.dev```
 * You can now access the sample site at [police.dev/9999](http://police.dev/9999)
 
-## Access
+### Access
 
 * The example site application is available at [http://police.dev/9999](http://police.dev/9999).
 * The example admin application is available at [http://police.dev/administrator/9999](http://police.dev/administrator/9999).
@@ -48,7 +48,7 @@ You can run the project easily with the supplied Vagrantfile - make sure you und
     ```
 * MailCatcher is available at [http://police.dev:1080/](http://police.dev:1080/)
 
-## Theme development
+### Theme development
 
 We are using [Grunt](http://gruntjs.com/) to automate repetitive tasks like [Sass](http://sass-lang.com/) compilation, synchronised browser testing, etc.
 
@@ -57,7 +57,7 @@ We are using [Grunt](http://gruntjs.com/) to automate repetitive tasks like [Sas
 * Go to the repository folder and install the dependencies: ```npm install```
 * Finally run Grunt ```grunt```
 
-## Vagrant command-line interface
+### Vagrant command-line interface
 
 You can use the following commands to manage the server:
 
@@ -70,7 +70,7 @@ You can use the following commands to manage the server:
 
 More information about the Vagrant command-line interface can be found at [docs.vagrantup.com](http://docs.vagrantup.com/v2/cli/index.html).
 
-## Secure Shell
+### Secure Shell
 
 You can use the following commands to manage the platform:
 
@@ -78,7 +78,7 @@ You can use the following commands to manage the platform:
 
 First use the Vagrant command-line interface to access the Secure Shell: ```vagrant ssh```.
 
-## Database migrations
+### Database migrations
 
 Database migrations are being managed using [Phpmig](https://github.com/davedevelopment/phpmig).
 
