@@ -2,8 +2,7 @@
 
 # Belgian Police Internet Platform
 
-The Internet Platform is an open-source platform specifically built for the internet websites of the Belgian Police.
-It uses a component based architecture. Written in PHP 5.3, HTML, CSS and Javascript, and made by the passionate open source technologists of <a href="http://www.timble.net">Timble</a>.
+An **open government platform** specifically built for the internet websites of the Belgian Police that allows any Police zone to create an open data site. It uses a component based architecture. Written in PHP, HTML, CSS and Javascript. Made by [passionate open source technologists](http://www.timble.net/about/).
 
 Check an example website at [www.lokalepolitie.be/leuven](http://www.lokalepolitie.be/leuven) or visit the project's website at [www.openpolice.be](http://www.openpolice.be/).
 
