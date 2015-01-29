@@ -81,14 +81,6 @@
     @include span(4 of 14);
   }
 
-  .districts__officers {
-    @include span(first 5 of 12);
-  }
-
-  .districts__contact {
-    @include span(7 of 12);
-  }
-
   .exception__message {
     @include span(first 7 of 12);
   }
@@ -116,6 +108,14 @@
 
   .navigation {
     @include span(9 of 12);
+  }
+
+  .districts__officers {
+    @include span(first 5 of 12);
+  }
+
+  .districts__contact {
+    @include span(7 of 12);
   }
 
   .quicklinks__item {
