@@ -36,7 +36,7 @@
         <? foreach ($articles as $article) : ?>
             <tr>
                 <td><a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a></td>
-                <td nowrap><?= helper('date.format', array('date'=> $article->created_on, 'format' => translate('DATE_FORMAT_LC5'))) ?></td>
+                <td nowrap><?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?></td>
             </tr>
         <? endforeach; ?>
     </tbody>
