@@ -154,7 +154,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     continue;
                 }
             } elseif(array_key_exists('street_title', $item)) {
-                $street = $this->getObject('com:streets.model.streets')->title($item['street_title'])->getRowset();
+                $street = $this->getObject('com:streets.model.streets')->title($item['street_title'])->city($item['city_id'])->getRowset();
 
                 if(count($street))
                 {
@@ -169,6 +169,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 case 'odd-even':
                 case 'Even+Oneven':
                 case 'Even/Oneven':
+                case 'Even / Oneven':
                 case 'Pair+Impair':
                 case 'Pair/Impair':
                     $parity = 'odd-even';
