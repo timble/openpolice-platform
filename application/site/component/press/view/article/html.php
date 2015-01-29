@@ -24,8 +24,8 @@ class PressViewArticleHtml extends Library\ViewHtml
             $this->attachments($article->getAttachments());
         }
 
-        $created_on = new DateTime($article->created_on);
-        $this->created_on = $created_on->format('c');
+        $published_on = new DateTime($article->published_on);
+        $this->created_on = $published_on->format('c');
 
         return parent::render();
     }
