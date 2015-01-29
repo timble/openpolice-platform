@@ -19,6 +19,16 @@ class ModelArticles extends Library\ModelTable
 		$this->getState()
 		    ->insert('published' , 'int');
 	}
+
+	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
+	{
+		parent::_buildQueryColumns($query);
+
+		$query->columns(array(
+			'ordering_date'     => 'IF(tbl.published_on, tbl.published_on, tbl.publish_on)',
+			'draft'             => 'IF(tbl.published_on OR tbl.publish_on, 0, 1)'
+		));
+	}
 	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
 	{
