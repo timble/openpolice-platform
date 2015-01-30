@@ -45,7 +45,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <div class="navigation">
                 <span class="slogan">
                     <?= JText::sprintf('Call for urgent police assistance', '101') ?>.
-                    <? if($zone->phone_information || phone_emergency) : ?>
+                    <? if($zone->phone_information || $zone->phone_emergency) : ?>
                     <?= JText::sprintf('No emergency, just police', $zone->phone_information ? escape($zone->phone_information) : escape($zone->phone_emergency)) ?>.
                     <? endif ?>
                 </span>
