@@ -11,8 +11,6 @@
 <? $email = str_replace("@", "&#64;", $zone->email) ?>
 <? $email = str_replace(".", "&#46;", $email) ?>
 
-<? $phone = $zone->phone_information ? $zone->phone_information : $zone->phone_emergency ?>
-
 <div class="well well--small text-center">
-    <?= translate('Your question remains unanswered? Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('or') ?> <span class="nowrap"><?= $phone ?></span>.
+    <?= translate('Your question remains unanswered? Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a><? if($zone->phone_information) : ?> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ?></span><? endif ?>.
 </div>

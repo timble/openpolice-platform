@@ -10,6 +10,7 @@
 <?
 $site = object('application')->getCfg('site');
 $zone = object('com:police.model.zone')->id($site)->getRow();
+$cities = object('com:streets.model.cities')->zone($site)->getRowset()->title;
 
 $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
@@ -17,6 +18,16 @@ $active     = $languages->getActive();
 $path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
 ?>
+
+<? $description = translate('Website of the local Police zone').' '.$zone->title ?>
+
+<? if(count($cities) > '1') : ?>
+    <? $description .= ' ('; ?>
+    <? $description .= implode(", ", $cities) ?>
+    <? $description .= ')'; ?>
+<? endif ?>
+
+<meta content="<?= $description ?>." name="description" />
 
 <div class="clearfix">
     <div class="homepage__sticky">
@@ -72,7 +83,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
             <ul class="nav nav--list">
                 <? foreach(object('com:pages.model.pages')->menu('1')->published('true')->hidden('false')->getRowset() as $page) : ?>
-                    <? if(in_array($page->id, array('42', '43', '44', '66', '105'))) : ?>
+                    <? if(in_array($page->id, array('42', '43', '44', '66'))) : ?>
                     <li><a href="<?= $path ?>/contact/<?= $page->slug ?>"><?= $page->title ?></a></li>
                     <? endif ?>
                 <? endforeach ?>

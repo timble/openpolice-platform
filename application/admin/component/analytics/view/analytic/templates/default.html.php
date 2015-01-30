@@ -1,30 +1,7 @@
+<style src="assets://analytics/css/default.css" />
+
 <form action="" method="get" class="-koowa-grid scrollable" style="padding: 20px">
     <div>
-        <style>
-            .google-visualization-table-tr-head td {
-                text-align: right !important;
-            }
-            .google-visualization-table-tr-head td:first-child {
-                text-align: left !important;
-            }
-
-            .google-visualization-table-th {
-                border: 0 none !important;
-                border-bottom: 1px solid #eee !important;
-                background: none !important;
-            }
-
-            .google-visualization-table-td {
-                border: 0 none !important;
-                padding: 8px 8px 7px !important;
-            }
-
-            h2 {
-                margin: 60px 0 20px;
-                text-align: center;
-            }
-        </style>
-
         <script>
             (function(w,d,s,g,js,fs){
                 g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
@@ -35,13 +12,26 @@
         </script>
 
         <div id="embed-api-auth-container"></div>
+        <h1><?= $start_date ?> - <?= $end_date ?></h1>
         <div id="date"></div>
         <h2><?= translate('Pages') ?></h2>
+        <p class="description"><?= translate('The most visited pages') ?>.</p>
         <div id="pagePath"></div>
         <h2><?= translate('Landing Pages') ?></h2>
+        <p class="description"><?= translate('The pages through which visitors entered your site the most') ?>.</p>
         <div id="landingPagePath"></div>
         <h2><?= translate('Acquisition') ?></h2>
+        <p class="description"><?= translate('The top places users were before seeing your content, like a search engine or another website') ?>.</p>
         <div id="acquisition"></div>
+        <h2><?= translate('Legend') ?></h2>
+        <dl>
+            <dt><?= translate('Bounce Rate') ?></dt>
+            <dd><?= translate('Bounce Rate is the percentage of single-page visits, it indicates how often users exit your site from the entrance page without viewing another page') ?>.</dd>
+            <dt><?= translate('Exit Rate') ?></dt>
+            <dd><?= translate('Exit Rate indicates how often users exit from that page') ?>.</dd>
+            <dt><?= translate('Sessions') ?></dt>
+            <dd><?= translate('A session is the period time a user is actively engaged with your website') ?>.</dd>
+        </dl>
 
         <script>
             gapi.analytics.ready(function()
@@ -59,7 +49,7 @@
                         'start-date': '30daysAgo',
                         'end-date': 'yesterday',
                         metrics: 'ga:sessions',
-                        filters: 'ga:pagePath=@/<?= $site ?>'
+                        filters: '<?= $filters ?>'
                     },
                     chart: {
                         container: 'date',
@@ -78,8 +68,8 @@
                         'start-date': '30daysAgo',
                         'end-date': 'yesterday',
                         'max-results': 10,
-                        metrics: 'ga:pageviews, ga:bounceRate, ga:exitRate',
-                        filters: 'ga:pagePath=@/<?= $site ?>',
+                        metrics: 'ga:pageviews, ga:uniquePageviews, ga:bounceRate, ga:exitRate',
+                        filters: '<?= $filters ?>',
                         sort: '-ga:pageviews',
                         output: 'dataTable'
                     },
@@ -103,11 +93,12 @@
 
                     data.setColumnLabel(0, 'Page');
                     data.setColumnLabel(1, 'Pageviews');
-                    data.setColumnLabel(2, 'Bounce Rate');
-                    data.setColumnLabel(3, 'Exit Rate');
+                    data.setColumnLabel(2, 'Unique Pageviews');
+                    data.setColumnLabel(3, 'Bounce Rate');
+                    data.setColumnLabel(4, 'Exit Rate');
 
-                    formatter.format(data, 2);
                     formatter.format(data, 3);
+                    formatter.format(data, 4);
 
                     var table = new google.visualization.Table(document.getElementById('pagePath'));
                     table.draw(data, options);
@@ -121,7 +112,7 @@
                         'end-date': 'yesterday',
                         'max-results': 10,
                         metrics: 'ga:entrances, ga:bounceRate',
-                        filters: 'ga:pagePath=@/<?= $site ?>',
+                        filters: '<?= $filters ?>',
                         sort: '-ga:entrances',
                         output: 'dataTable'
                     },
@@ -161,7 +152,7 @@
                         'end-date': 'yesterday',
                         'max-results': 10,
                         metrics: 'ga:sessions',
-                        filters: 'ga:pagePath=@/<?= $site ?>',
+                        filters: '<?= $filters ?>',
                         sort: '-ga:sessions'
                     },
                     chart: {

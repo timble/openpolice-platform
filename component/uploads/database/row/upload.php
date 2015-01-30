@@ -63,7 +63,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     public function _importDistricts($data)
     {
         // Empty districts table
-        $this->getObject('com:districts.model.districts')->getRowset()->delete();
+        if($this->override)
+        {
+            $this->getObject('com:districts.model.districts')->getRowset()->delete();
+        }
 
         foreach($data as $item)
         {
@@ -111,7 +114,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     public function _importDistrictsofficers($data)
     {
         // Empty districts_districts_officers table
-        $this->getObject('com:districts.model.districts_officers')->getRowset()->delete();
+        if($this->override)
+        {
+            $this->getObject('com:districts.model.districts_officers')->getRowset()->delete();
+        }
 
         foreach($data as $item)
         {
@@ -129,22 +135,33 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     public function _importRelations($data)
     {
         // Empty districts_relations table
-        $this->getObject('com:districts.model.relations')->getRowset()->delete();
+        if($this->override)
+        {
+            $this->getObject('com:districts.model.relations')->getRowset()->delete();
+            $this->getObject('com:streets.model.relations')->table('districts_relations')->getRowset()->delete();
+        }
 
         foreach($data as $item)
         {
-            if(!array_key_exists('streets_street_id', $item))
+            if(array_key_exists('street_id', $item))
             {
                 $street = $this->getObject('com:streets.model.streets')->islp($item['street_id'])->getRowset();
 
                 if(count($street))
                 {
-                    $item['streets_street_id'] = $street->top()->id;
+                    $item['streets_street_identifier'] = $street->top()->streets_street_identifier;
                 } else {
-                    $item['streets_street_id'] = '';
+                    continue;
                 }
-            } else {
-                $item['islp'] = '';
+            } elseif(array_key_exists('street_title', $item)) {
+                $street = $this->getObject('com:streets.model.streets')->title($item['street_title'])->city($item['city_id'])->getRowset();
+
+                if(count($street))
+                {
+                    $item['streets_street_identifier'] = $street->top()->streets_street_identifier;
+                } else {
+                    continue;
+                }
             }
 
             $parity = null;
@@ -152,6 +169,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 case 'odd-even':
                 case 'Even+Oneven':
                 case 'Even/Oneven':
+                case 'Even / Oneven':
                 case 'Pair+Impair':
                 case 'Pair/Impair':
                     $parity = 'odd-even';
@@ -166,20 +184,27 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 case 'Impair':
                     $parity = 'odd';
                     break;
+                default:
+                    $parity = 'odd-even';
+                    break;
             }
 
             $item['districts_district_id'] = $this->getObject('com:districts.model.district')->islp($item['district_id'])->getRow()->id;
-
             $item['range_parity'] = $parity;
-            $item['id'] = sha1($item['districts_district_id'].$item['street_id'].$item['streets_street_id'].$item['range_start'].$item['range_end'].$item['range_parity']);
 
             // Add row to districts_relations table when ID is unique
             $row = $this->getObject('com:districts.database.row.relation');
-            $row->id = $item['id'];
-            if(!$row->load())
-            {
-                $row->setData($item);
-                $row->save();
+            $row->setData($item);
+            $row->save();
+
+            // Add row to streets_relations
+            $relation = $this->getObject('com:streets.database.row.relation');
+            $relation->streets_street_identifier    = $item['streets_street_identifier'];
+            $relation->row                          = $row->id;
+            $relation->table                        = 'districts_relations';
+
+            if(!$relation->load()) {
+                $relation->save();
             }
         }
     }
@@ -194,17 +219,15 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $city->load();
 
             //Get the street
-            $street = $this->getObject('com:streets.database.row.streets');
-            $street->title = $item['title'];
-            $street->streets_city_id = $city->streets_city_id;
+            $street = $this->getObject('com:streets.model.streets')->no_islp('1')->search($item['title'])->city($city->streets_city_id)->getRowset();
 
-            if($street->load()){
-                //Check if street does not have a islp value
-                if(!$street->islp) {
-                    //Set ISLP value and save
-                    $street->islp = $item['islp'];
-                    $street->save();
-                }
+            //Did we found a street with no ISLP number?
+            if($street)
+            {
+                $islp       = $this->getObject('com:streets.database.row.streets_islps');
+                $islp->id   = $street->streets_street_identifier;
+                $islp->islp = $item['islp'];
+                $islp->save();
             }
         }
     }

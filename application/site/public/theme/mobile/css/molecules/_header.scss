@@ -7,11 +7,14 @@
   .organization {
     @extend .clearfix;
 
-    padding: 10px 10px 2px;
+    padding: 10px 10px 8px;
     border-bottom: 1px solid $blue;
 
+    @include flex();
+
     a {
-      display: inline-block;
+      @include flex(1);
+
       line-height: 36px;
       color: $white;
       text-decoration: none;
@@ -33,6 +36,8 @@
     margin-right: 6px;
 
     float: left;
+    @include flex-shrink(0);
+    @include flex-grow(0);
   }
 
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -42,7 +47,17 @@
   }
 
   .organization__name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     float: left;
+    @include flex-grow(1);
+  }
+
+  .button--hamburger {
+    @include flex-shrink(0);
+    @include flex-grow(0);
   }
 }
 
@@ -60,6 +75,7 @@
     }
 
     .organization {
+      display: block;
       padding: 26px 0 0 0;
       text-decoration: none;
       color: $color-link;
@@ -67,6 +83,8 @@
       text-align: center;
 
       a {
+        display: inline-block;
+
         &:hover .organization__name {
           color: $color-link;
         }
@@ -102,6 +120,11 @@
       font-size: 0.9em;
       color: $color-link;
       line-height: 1em;
+
+      // Override ellipsis
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
 
       span {
         @include visually-hidden;

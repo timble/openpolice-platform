@@ -32,7 +32,7 @@ class ArticlesTemplateHelperDate extends Library\TemplateHelperDate
         $html = array();
 
         if ($config->show_create_date) {
-            $html[] = '<span class="timestamp">';
+            $html[] = '<span class="text--small">';
             $html[] = $this->format(array('date'=> $article->ordering_date, 'format' => $this->translate('DATE_FORMAT_LC5')));
         }
 

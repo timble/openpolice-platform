@@ -22,7 +22,6 @@
     "commit": "2ff1692b1b71e13ec8bf043f05abeead461ceb0d"
   },
   "_source": "git://github.com/dimsemenov/Magnific-Popup.git",
-  "_target": "~0.9.9",
-  "_originalSource": "magnific-popup",
-  "_direct": true
+  "_target": "0.9.*",
+  "_originalSource": "dimsemenov/Magnific-Popup"
 }

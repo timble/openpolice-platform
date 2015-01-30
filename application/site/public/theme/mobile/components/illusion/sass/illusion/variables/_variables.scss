@@ -1,0 +1,119 @@
+/**
+ * represents 399px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$alpha--min: 24.9375em;
+
+/**
+ * represents 400px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$alpha: 25em;
+
+/**
+ * represents 599px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$beta--min: 37.4375em;
+
+/**
+ * represents 600px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$beta: 37.5em;
+
+/**
+ * represents 767px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$charlie--min: 47.9375em;
+
+/**
+ * represents 768px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$charlie: 48em;
+
+/**
+ * represents 1023px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$delta--min: 63.9375em;
+
+/**
+ * represents 1024px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$delta: 64em;
+
+/**
+ * represents 1199px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$echo--min: 74.9375em;
+
+/**
+ * represents 1200px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$echo: 75em;
+
+/**
+ * represents 1439px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$foxtrot--min: 89.9375em;
+
+/**
+ * represents 1440px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$foxtrot: 90em;
+
+/**
+ * represents 1599px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$golf--min: 99.9375em;
+
+/**
+ * represents 1600px based on a 16px body font size
+ *
+ * @group Breakpoint
+ */
+$golf: 100em;
+
+/**
+ * The base font size for your project
+ *
+ * @group setup
+ */
+$base-font-size:        16px;
+
+/**
+ * A standard 1.5em baseline
+ *
+ * @group setup
+ */
+$base-line-height:      1.5em;
+
+
+/**
+ * A standard 1.5em spacing
+ *
+ * @group setup
+ */
+$base-spacing:      1.5em;

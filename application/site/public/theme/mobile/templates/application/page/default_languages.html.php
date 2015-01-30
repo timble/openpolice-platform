@@ -3,7 +3,7 @@
     <? foreach($languages as $language) : ?>
     <li class="languages__item">
         <? if($language->iso_code != $active->iso_code) : ?>
-        <a href="?language=<?= $language->slug ?>"><?= $language->slug ?></a>
+        <a rel="alternate" hreflang="<?= $language->iso_code ?>" href="?language=<?= $language->slug ?>"><?= $language->slug ?></a>
         <? else : ?>
         <?= $language->slug ?>
         <? endif ?>

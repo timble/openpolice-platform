@@ -106,7 +106,12 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
             if($item)
             {
-                $item = $this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package)->row($item)->getRowset()->top();
+                if($package == 'districts')
+                {
+                    $item = $this->getObject('com:districts.model.districts')->id($item)->getRowset()->top();
+                } else {
+                    $item = $this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package)->row($item)->getRowset()->top();
+                }
 
                 if($package == 'news' || $package == 'contacts' || $package == 'wanted')
                 {

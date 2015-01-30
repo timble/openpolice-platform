@@ -5,9 +5,9 @@ require_once JPATH_ROOT.'/config/config.php';
 $config = new \JConfig();
 
 $options = array();
-if ($proxy = $config->http_proxy)
+if (isset($config->http_proxy))
 {
-    $url = $manager->getObject('lib:http.url', array('url' => $proxy));
+    $url = $manager->getObject('lib:http.url', array('url' => $config->http_proxy));
 
     $options['proxy_host'] = $url->getHost();
     $options['proxy_port'] = $url->getPort();
@@ -87,76 +87,87 @@ foreach ($cities as $city)
     // Loop over all the remote streets and check if anything has been added or changed.
     foreach ($crab_streets as $crab_street)
     {
-        $street = $streets->find(array('id' => $crab_street->StraatnaamId))->top();
-
-        if (is_null($street))
+        foreach (array('TaalCode', 'TaalCodeTweedeTaal') as $field)
         {
-            $data = array(
-                'id'                => $crab_street->StraatnaamId,
-                'title'             => $crab_street->StraatnaamLabel,
-                'language'          => $crab_street->TaalCode,
-                'title2'            => $crab_street->StraatnaamTweedeTaal,
-                'language2'         => $crab_street->TaalCodeTweedeTaal,
-                'streets_city_id'   => $city->id,
-                'created_on'        => gmdate('Y-m-d H:i:s')
-            );
-
-            $street = $table->getRow(array('data' => $data));
-            $street->save();
-
-            $manager->getObject('com:streets.database.table.logs')->getRow(array(
-                'data' => array(
-                    'type'      => 'street',
-                    'row'       => $street->id,
-                    'action'    => 'add',
-                    'name'      => $street->title,
-                    'fields'    => array('old' => array(), 'new' => $data)
-                )
-            ))->save();
-
-            $statistics->streets->added++;
-        }
-        else
-        {
-            $comparisons = array(
-                'title'     => 'StraatnaamLabel',
-                'language'  => 'TaalCode',
-                'title2'     => 'StraatnaamTweedeTaal',
-                'language2'  => 'TaalCodeTweedeTaal'
-            );
-
-            $old = array();
-            $new = array();
-
-            foreach ($comparisons as $target => $source)
-            {
-                $value = $crab_street->get($source);
-
-                if ($street->get($target) != $value)
-                {
-                    $old[$target] = $street->get($target);
-                    $new[$target] = $value;
-
-                    $street->set($target, $value);
-                }
+            if (!isset($crab_street->{$field}) || empty($crab_street->{$field})) {
+                continue;
             }
 
-            if (count($new))
+            $language = $crab_street->{$field};
+            $title    = $field == 'TaalCodeTweedeTaal' ? $crab_street->StraatnaamTweedeTaal : $crab_street->StraatnaamLabel;
+
+            if (empty($title)) {
+                continue;
+            }
+
+            $street = $streets->find(array('streets_street_identifier' => $crab_street->StraatnaamId, 'iso' => $language))->top();
+
+            if (is_null($street))
             {
-                $street->modified_on = gmdate('Y-m-d H:i:s');
+                $data = array(
+                    'streets_street_identifier' => $crab_street->StraatnaamId,
+                    'title'                     => $title,
+                    'iso'                       => $language,
+                    'sources_source_id'         => 1,
+                    'streets_city_id'           => $city->id,
+                    'created_on'                => gmdate('Y-m-d H:i:s')
+                );
+
+                $street = $table->getRow(array('data' => $data));
                 $street->save();
 
                 $manager->getObject('com:streets.database.table.logs')->getRow(array(
                     'data' => array(
                         'type'      => 'street',
                         'row'       => $street->id,
-                        'action'    => 'edit',
+                        'action'    => 'add',
                         'name'      => $street->title,
-                        'fields'    => array('old' => $old, 'new' => $new)
+                        'fields'    => array('old' => array(), 'new' => $data)
                     )
                 ))->save();
 
-                $statistics->streets->updated++;
+                $statistics->streets->added++;
+            }
+            else
+            {
+                $comparisons = array(
+                    'title' => $field == 'TaalCodeTweedeTaal' ? 'StraatnaamTweedeTaal' : 'StraatnaamLabel',
+                    'iso'   => $field,
+                );
+
+                $old = array();
+                $new = array();
+
+                foreach ($comparisons as $target => $source)
+                {
+                    $value = $crab_street->get($source);
+
+                    if ($street->get($target) != $value)
+                    {
+                        $old[$target] = $street->get($target);
+                        $new[$target] = $value;
+
+                        $street->set($target, $value);
+                    }
+                }
+
+                if (count($new))
+                {
+                    $street->modified_on = gmdate('Y-m-d H:i:s');
+                    $street->save();
+
+                    $manager->getObject('com:streets.database.table.logs')->getRow(array(
+                        'data' => array(
+                            'type'      => 'street',
+                            'row'       => $street->id,
+                            'action'    => 'edit',
+                            'name'      => $street->title,
+                            'fields'    => array('old' => $old, 'new' => $new)
+                        )
+                    ))->save();
+
+                    $statistics->streets->updated++;
+                }
             }
         }
     }
@@ -164,7 +175,7 @@ foreach ($cities as $city)
     // Finally, check if we have streets in our database that should be removed
     foreach ($streets as $street)
     {
-        $crab_street = $crab_streets->find(array('StraatnaamId' => $street->id))->top();
+        $crab_street = $crab_streets->find(array('StraatnaamId' => $street->streets_street_identifier))->top();
 
         if (is_null($crab_street))
         {

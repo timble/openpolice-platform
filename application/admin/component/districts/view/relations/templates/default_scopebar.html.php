@@ -14,11 +14,6 @@
             <?= translate('All') ?>
         </a>
     </div>
-    <div class="scopebar__group">
-        <a class="<?= $state->no_street ? 'active' : ''; ?>" href="<?= route($state->no_street ? 'no_street=' : 'no_street=1' ) ?>">
-            <?= 'Missing CRAB' ?>
-        </a>
-    </div>
     <div class="scopebar__search">
         <?= helper('grid.search') ?>
     </div>

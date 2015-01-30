@@ -32,7 +32,7 @@
                         <?= translate( 'CRAB' ); ?>
                     </label>
                     <div>
-                        <input disabled class="required" type="text" name="streets_street_id" value="<?= $street->id ?>" />
+                        <input disabled class="required" type="text" name="streets_street_identifier" value="<?= $street->streets_street_identifier ?>" />
                     </div>
                 </div>
                 <div>
