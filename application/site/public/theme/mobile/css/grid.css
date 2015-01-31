@@ -159,7 +159,7 @@
     
     
     
-    width: 39.5061728395%;
+    width: 56.7901234568%;
     float: left;
     margin-left: 0;
     
@@ -170,7 +170,7 @@
     
     
     
-    width: 56.7901234568%;
+    width: 39.5061728395%;
     float: left;
     margin-left: 3.7037037037%;
     
@@ -265,14 +265,14 @@
     
      }
 
-  .gallery .gallery__item {
+  .gallery .gallery__item, .cards .card {
     width: 30.8641975309%;
     float: left;
     
     
     
      }
-    .gallery .gallery__item:nth-child(3n+1) {
+    .gallery .gallery__item:nth-child(3n+1), .cards .card:nth-child(3n+1) {
       
       
       margin-left: 0;
@@ -281,7 +281,7 @@
       
       clear: both;
       margin-left: 0; }
-    .gallery .gallery__item:nth-child(3n+2) {
+    .gallery .gallery__item:nth-child(3n+2), .cards .card:nth-child(3n+2) {
       
       
       margin-left: 34.5679012346%;
@@ -289,7 +289,7 @@
       
       
       clear: none; }
-    .gallery .gallery__item:nth-child(3n+3) {
+    .gallery .gallery__item:nth-child(3n+3), .cards .card:nth-child(3n+3) {
       
       
       margin-left: 69.1358024691%;

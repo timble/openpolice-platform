@@ -138,7 +138,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <? endif ?>
             <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss"><i class="icon-feed"></i> RSS</a>
             <? foreach($pages as $page) : ?>
-                <? if($page->id == '89' || $page->id == '101') : ?>
+                <? if($page->id == '89' || $page->id == '101' || $page->id == '118') : ?>
                     &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>

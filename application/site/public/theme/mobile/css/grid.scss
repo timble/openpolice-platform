@@ -51,11 +51,11 @@
   }
 
   .copyright--left {
-    @include span(first 5 of 12);
+    @include span(first 7 of 12);
   }
 
   .copyright--right {
-    @include span(7 of 12);
+    @include span(5 of 12);
   }
 
   .quicklinks__item {
@@ -89,7 +89,8 @@
     @include span(5 of 12);
   }
 
-  .gallery .gallery__item {
+  .gallery .gallery__item,
+  .cards .card {
     @include gallery(4 of 12);
   }
 }

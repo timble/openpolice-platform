@@ -1557,6 +1557,49 @@ button.button, input[type="submit"].button {
         transform: rotate3d(0, 0, 1, -45deg); }
  }
 
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.card {
+  text-align: center;
+  margin-bottom: 1.5em; }
+  .card img {
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #f6f6f6; }
+  .card a {
+    display: inline-block;
+    border: 1px solid #eee;
+    border-radius: 4px; }
+  .card a:hover, .card a:focus {
+    color: #002852;
+    background-color: #ebf3f4;
+    border-color: #004D9F;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25); }
+    .card a:hover img, .card a:focus img {
+      border-bottom: 1px solid #e1edee; }
+
+.card__metadata {
+  display: block;
+  padding: 0.75em;
+  width: 100%;
+  display: table; }
+
+.card__metadata--inner {
+  display: table-cell;
+  vertical-align: middle; }
+
+.card__name {
+  text-decoration: underline;
+  margin-bottom: 0.375em;
+  display: block; }
+
+.card__date {
+  display: block; }
+
 .form__group {
   margin-bottom: 0.75em; }
 
