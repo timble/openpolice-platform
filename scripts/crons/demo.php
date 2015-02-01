@@ -5,15 +5,13 @@
  * This script should run on production every night.
  */
 
-$path = realpath(dirname(__FILE__).'/../../config/config.php');
+$path = '/var/www/v2.lokalepolitie.be/private/db.php';
 
 if(!file_exists($path)) {
     exit('Could not find config file ('.$path.')');
 }
 
-require_once $path;
-
-$config = new \JConfig();
+$config = (include $path);
 
 echo "-- Drop demo database" . PHP_EOL;
 $cmd = 'mysqladmin -u'.escapeshellarg($config->user).' -p'.escapeshellarg($config->password).' -f drop demo;';

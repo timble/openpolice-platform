@@ -1,15 +1,13 @@
 <?php
 define('DS', DIRECTORY_SEPARATOR);
 
-$path = realpath(dirname(__FILE__).'/../../config/config.php');
+$path = '/var/www/v2.lokalepolitie.be/private/db.php';
 
 if(!file_exists($path)) {
     exit('Could not find config file ('.$path.')');
 }
 
-require_once $path;
-
-$config = new \JConfig();
+$config = (include $path);
 
 // Create the daily dumps
 $backup = new Backup('/var/backups/');
