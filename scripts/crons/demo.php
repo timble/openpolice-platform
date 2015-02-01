@@ -5,19 +5,15 @@
  * This script should run on production every night.
  */
 
-// Get the authentication credentials
-$authfile = '/var/www/v2.lokalepolitie.be/private/db.auth';
-if(!file_exists($authfile)) {
-    exit('Could not find MySQL credentials ('.$authfile.')');
+$path = realpath(dirname(__FILE__).'/../../config/config.php');
+
+if(!file_exists($path)) {
+    exit('Could not find config file ('.$path.')');
 }
 
-$config = new stdClass;
+require_once $path;
 
-$contents   = trim(file_get_contents($authfile));
-$values     = explode(':', $contents);
-
-$config->user = $values[0];
-$config->password = implode('', array_slice($values, 1));
+$config = new \JConfig();
 
 echo "-- Drop demo database" . PHP_EOL;
 $cmd = 'mysqladmin -u'.escapeshellarg($config->user).' -p'.escapeshellarg($config->password).' -f drop demo;';
