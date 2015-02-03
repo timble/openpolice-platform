@@ -12,7 +12,7 @@ class AddPagesTranslations extends Migration
         // All the Multilingual speaking zones.
         $this->getZones()->reset()->where('language', '=', 3);
 
-        $this->_queries = "<<<END
+        $this->_queries = <<<END
 
 INSERT INTO `languages_translations` (`languages_translation_id`, `iso_code`, `table`, `row`, `slug`, `status`, `original`, `deleted`)
 VALUES
@@ -37,7 +37,7 @@ VALUES
 
 	DELETE FROM `languages_translations` WHERE `row`= '105' AND `table` = 'pages';
 
-END;";
+END;
 
         parent::up();
     }
