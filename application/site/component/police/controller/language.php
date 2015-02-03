@@ -84,7 +84,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
             $result .= '/'.$this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table('pages')->row($page->id)->getRowset()->top()->slug;
 
-            if($category && $package != 'contacts')
+            if($category && !in_array($package, array('contacts', 'traffic')))
             {
                 if(is_numeric($category))
                 {
