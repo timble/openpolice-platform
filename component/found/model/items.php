@@ -29,7 +29,7 @@ class ModelItems extends Library\ModelTable
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('categories'  => 'found_categories'), 'categories.found_category_id = tbl.found_category_id');
+        $query->join(array('categories'  => 'data.found_categories'), 'categories.found_category_id = tbl.found_category_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
