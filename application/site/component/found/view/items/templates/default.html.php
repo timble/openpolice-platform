@@ -8,7 +8,9 @@
  */
 ?>
 
-<h1><?= escape($params->get('page_title')); ?></h1>
+<title content="replace"><?= translate('Found items') ?></title>
+
+<h1><?= translate('Found items') ?></h1>
 <ul class="cards clearfix">
     <? foreach ($items as $item) : ?>
         <li class="card">

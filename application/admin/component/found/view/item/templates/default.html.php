@@ -37,7 +37,40 @@
             </div>
         </div>
 
-        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $item->text, 'attribs' => array('class' => 'ckeditor-required'))) ?>
+        <div class="scrollable">
+            <fieldset>
+                <legend><?= translate('Information'); ?></legend>
+                <div>
+                    <label for="tracking_number"><?= translate('Tracking number') ?></label>
+                    <div>
+                        <input type="text" name="tracking_number" value="<?= $item->tracking_number ?>" class="required" />
+                    </div>
+                </div>
+                <div>
+                    <label for="found_on"><?= translate('Found on') ?></label>
+                    <div class="controls">
+                        <input id="found_on" type="text" name="found_on" value="<?= $item->found_on ? helper('date.format', array('date'=> $item->found_on, 'format' => 'd-m-Y')) : '' ?>" />
+                        <script data-inline>
+                            $jQuery("#found_on").datetimepicker({
+                                format:'d-m-Y',
+                                lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
+                                dayOfWeekStart: '1',
+                                timepicker: false
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div>
+                    <label for="streets_street_id">
+                        <?= translate( 'Street' ); ?>
+                    </label>
+                    <div>
+                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => !$item->isNew() && isset($street) ? $street->streets_street_identifier : '')); ?>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $item->text, 'toolbar' => 'none')) ?>
     </div>
     <div class="sidebar">
         <?= import('default_sidebar.html'); ?>

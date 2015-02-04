@@ -8,7 +8,7 @@
  */
 ?>
 
-<title content="replace"><?= escape($item->title) ?></title>
+<title content="replace"><?= escape($item->title) ?> - <?= translate('Found items') ?></title>
 
 <div class="article">
     <h1><?= escape($item->title) ?></h1>
@@ -20,13 +20,16 @@
         </a>
     <? endif ?>
 
-    <ul>
-        <li><?= translate('Date').': '.date(array('date' => $item->found_on, 'format' => 'd/m/y')) ?></li>
-        <li><?= translate('Find place') ?>: <?= $item->street ? $item->street : translate('Unknown') ?></li>
-        <li><?= translate('Tracking number').': '.$item->tracking_number ?></li>
-    </ul>
-
-    <?= $item->text ?>
+    <dl>
+        <dt><?= translate('Found on') ?>:</dt>
+        <dd><?= date(array('date' => $item->found_on, 'format' => 'd/m/y')) ?></dd>
+        <dt><?= translate('Find place') ?>:</dt>
+        <dd><?= $item->street ? $item->street : translate('Unknown') ?></dd>
+        <dt><?= translate('Tracking number') ?>:</dt>
+        <dd><?= $item->tracking_number ?></dd>
+        <dt><?= translate('Description') ?>:</dt>
+        <dd><?= $item->text ?></dd>
+    </dl>
 
     <? if($item->isAttachable()) : ?>
         <div class="entry-content-asset">

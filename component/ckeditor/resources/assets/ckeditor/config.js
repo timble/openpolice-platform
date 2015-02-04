@@ -78,7 +78,7 @@ CKEDITOR.editorConfig = function( config ) {
             { name: 'clipboard', items: [ 'PasteText', '-', 'Undo', 'Redo' ] },
             { name: 'document', items: [ 'Source' ] }
         ];
-    config.toolbar_title =
+    config.toolbar_none =
         [
             ['Undo','Redo']
         ];

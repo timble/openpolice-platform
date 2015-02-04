@@ -35,8 +35,8 @@ INSERT INTO `extensions` (`extensions_extension_id`, `title`, `name`, `params`, 
 
 INSERT INTO `pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
 VALUES
-	(115, 2, 0, 'Found', 'found', 'option=com_found&view=items', NULL, 'component', 1, 0, 0, 48, 1, '2015-01-30 15:15:12', NULL, NULL, NULL, NULL, 0, ''),
-	(116, 1, 0, 'Found', 'found-items', 'option=com_found&view=items', NULL, 'component', 1, 1, 0, 48, 1, '2015-01-30 15:48:04', NULL, NULL, NULL, NULL, 0, 'page_title=\"Gevonden voorwerpen\"');
+	(115, 2, 0, 'Found', 'found', 'option=com_found&view=items', NULL, 'component', 0, 0, 0, 48, 1, '2015-01-30 15:15:12', NULL, NULL, NULL, NULL, 0, ''),
+	(116, 1, 0, 'Found', 'found-items', 'option=com_found&view=items', NULL, 'component', 0, 1, 0, 48, 1, '2015-01-30 15:48:04', NULL, NULL, NULL, NULL, 0, '');
 
 INSERT INTO `pages_closures` (`ancestor_id`, `descendant_id`, `level`)
 VALUES
@@ -72,7 +72,6 @@ END;
         $this->_queries = "UPDATE `pages` SET `title` = 'Trouvés' WHERE `pages_page_id` IN ('115');";
         $this->_queries .= "UPDATE `pages` SET `title` = 'Trouvés' WHERE `pages_page_id` IN ('116');";
         $this->_queries .= "UPDATE `pages` SET `slug` = 'objects-trouves' WHERE `pages_page_id` IN ('116');";
-        $this->_queries .= "UPDATE `pages` SET `params` = 'page_title=\"Objects trouves\"' WHERE `pages_page_id` IN ('116');";
 
         parent::up();
 
@@ -84,8 +83,8 @@ END;
 
 INSERT INTO `fr-be_pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
 VALUES
-	(115, 2, 0, 'Trouvés', 'found', 'option=com_found&view=items', NULL, 'component', 1, 0, 0, 48, 1, '2015-01-30 15:15:12', NULL, NULL, NULL, NULL, 0, ''),
-	(116, 1, 0, 'Trouvés', 'objects-trouves', 'option=com_found&view=items', NULL, 'component', 1, 1, 0, 48, 1, '2015-01-30 15:48:04', NULL, NULL, NULL, NULL, 0, 'page_title=\"Objects trouves\"');
+	(115, 2, 0, 'Trouvés', 'found', 'option=com_found&view=items', NULL, 'component', 0, 0, 0, 48, 1, '2015-01-30 15:15:12', NULL, NULL, NULL, NULL, 0, ''),
+	(116, 1, 0, 'Trouvés', 'objects-trouves', 'option=com_found&view=items', NULL, 'component', 0, 1, 0, 48, 1, '2015-01-30 15:48:04', NULL, NULL, NULL, NULL, 0, '');
 
 INSERT INTO `languages_translations` (`languages_translation_id`, `iso_code`, `table`, `row`, `slug`, `status`, `original`, `deleted`)
 VALUES
