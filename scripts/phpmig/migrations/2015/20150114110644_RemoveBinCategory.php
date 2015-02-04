@@ -31,6 +31,6 @@ class RemoveBinCategory extends Migration
 
         $this->_queries = "SELECT 1;";
 
-        parent::up();
+        parent::down();
     }
 }
