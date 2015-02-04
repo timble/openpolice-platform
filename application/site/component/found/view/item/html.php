@@ -9,29 +9,22 @@
 
 use Nooku\Library;
 
-class FoundViewItemHtml extends FoundViewHtml
+class FoundViewItemHtml extends Library\ViewHtml
 {
     public function render()
     {
         //Get the article
         $item = $this->getModel()->getData();
 
-        $category = $this->getCategory();
-
         //Set the pathway
-        $this->getObject('application')->getPathway()->addItem($category->title, $this->getTemplate()->getHelper('route')->category(array('row' => $category)));
         $this->getObject('application')->getPathway()->addItem($item->title, '');
 
+        // Get the street
+        if($item->isLocatable() && $street = $item->getStreets()->top())
+        {
+            $item['street'] = $street->title;
+        }
+
         return parent::render();
-    }
-
-    public function getCategory()
-    {
-        //Get the category
-        $category = $this->getObject('com:found.model.categories')
-            ->slug($this->getModel()->getState()->category)
-            ->getRow();
-
-        return $category;
     }
 }

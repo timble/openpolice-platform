@@ -16,36 +16,14 @@ class FoundTemplateHelperRoute extends PagesTemplateHelperRoute
         $config   = new Library\ObjectConfig($config);
         $config->append(array(
             'layout'   => null,
-            'category' => null
         ));
 
         $item = $config->row;
 
-        $category = $this->getObject('com:found.model.category')->id($item->found_category_id)->getRow();
-
         $route = array(
             'view'     => 'article',
             'id'       => $item->getSlug(),
-            'layout'   => $config->layout,
-            'category' => $category->getSlug()
-        );
-
-        return $this->getTemplate()->getView()->getRoute($route);
-    }
-
-    public function category($config = array())
-    {
-        $config   = new Library\ObjectConfig($config);
-        $config->append(array(
-            'layout' => null
-        ));
-
-        $category = $config->row;
-
-        $route = array(
-            'view'          => 'articles',
-            'category'      => $category->getSlug(),
-            'layout'        => $config->layout
+            'layout'   => $config->layout
         );
 
         return $this->getTemplate()->getView()->getRoute($route);

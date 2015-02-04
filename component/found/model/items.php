@@ -18,18 +18,26 @@ class ModelItems extends Library\ModelTable
 
         $this->getState()
             ->insert('published' , 'int')
-            ->insert('published_category' , 'int')
             ->insert('category' , 'string')
             ->insert('sort', 'cmd', 'found_on')
             ->insert('direction', 'cmd', 'desc')
             ->insert('searchword', 'string');
     }
 
+    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
+    {
+        parent::_buildQueryColumns($query);
+
+        $query->columns(array(
+            'thumbnail'         => 'attachments.path'
+        ));
+    }
+
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
         parent::_buildQueryJoins($query);
 
-        $query->join(array('categories'  => 'data.found_categories'), 'categories.found_category_id = tbl.found_category_id');
+        $query->join(array('attachments'  => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -38,7 +46,7 @@ class ModelItems extends Library\ModelTable
         $state = $this->getState();
 
         if ($state->search) {
-            $query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+            $query->where('tbl.title LIKE :search OR tbl.tracking_number LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
         }
 
         if ($state->searchword) {
@@ -51,18 +59,6 @@ class ModelItems extends Library\ModelTable
 
         if (is_numeric($state->published)) {
             $query->where('tbl.published = :published')->bind(array('published' => $state->published));
-        }
-
-        if (is_numeric($state->published_category)) {
-            $query->where('categories.published = :published')->bind(array('published' => $state->published_category));
-        }
-
-        if(!is_numeric($state->category) && !is_null($state->category)) {
-            $query->where('categories.slug = :category')->bind(array('category' => $state->category));
-        }
-
-        if (is_numeric($state->category)) {
-            $query->where('tbl.questions_category_id = :category')->bind(array('category' => $state->category));
         }
     }
 }

@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class FoundViewItemsHtml extends FoundViewHtml
+class FoundViewItemsHtml extends Library\ViewHtml
 {
     public function render()
     {
@@ -18,25 +18,6 @@ class FoundViewItemsHtml extends FoundViewHtml
 
         $this->params   = $params;
 
-        $this->title = JText::_('Found items');
-
-        //Set the pathway
-        if($this->getModel()->getState()->category)
-        {
-            $category = $this->getCategory();
-            $this->getObject('application')->getPathway()->addItem($category->title, '');
-            $this->title .= ' - '.$category->title;
-        }
-
         return parent::render();
-    }
-
-    public function getCategory()
-    {
-        //Get the category
-        $category = $this->getObject('com:found.model.categories')
-            ->slug($this->getModel()->getState()->category)
-            ->getRow();
-        return $category;
     }
 }

@@ -2,9 +2,19 @@
 @import "../components/susy/sass/susy";
 @import "utilities/variables";
 
+@include breakpoint($breakpoint-alpha) {
+  .found .cards .card {
+    @include gallery(6 of 12);
+  }
+}
+
 @include breakpoint($breakpoint-beta) {
   .gallery .gallery__item {
     @include gallery(6 of 12);
+  }
+
+  .found .cards .card {
+    @include gallery(4 of 12);
   }
 }
 
@@ -25,7 +35,8 @@
   }
 
   // Files view doesn't have a sidebar
-  .component.files {
+  .component.files,
+  .component.found {
     @include span(first 12 of 12);
   }
 
@@ -90,8 +101,8 @@
   }
 
   .gallery .gallery__item,
-  .cards .card {
-    @include gallery(4 of 12);
+  .found .cards .card {
+    @include gallery(3 of 12);
   }
 }
 

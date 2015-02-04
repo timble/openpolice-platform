@@ -38,6 +38,9 @@
             <th>
                 <?= helper('grid.sort', array('column' => 'found_on', 'title' => 'Found on')) ?>
             </th>
+            <th>
+                <?= helper('grid.sort', array('column' => 'tracking_number', 'title' => 'Tracking number')) ?>
+            </th>
             <? if($items->isTranslatable()) : ?>
                 <th width="70">
                     <?= translate('Translation') ?>
@@ -68,6 +71,9 @@
                 </td>
                 <td>
                     <?= helper('date.format', array('date'=> $item->found_on, 'format' => 'D d/m/Y')) ?>
+                </td>
+                <td>
+                    <?= $item->tracking_number ?>
                 </td>
                 <? if($item->isTranslatable()) : ?>
                     <td>

@@ -32,6 +32,12 @@
 <fieldset>
     <legend><?= translate('Details') ?></legend>
     <div>
+        <label for="tracking_number"><?= translate('Tracking number') ?></label>
+        <div>
+            <input type="text" name="tracking_number" value="<?= $item->tracking_number ?>" class="required" />
+        </div>
+    </div>
+    <div>
         <label for="found_on"><?= translate('Found on') ?></label>
         <div class="controls">
             <input id="found_on" type="text" name="found_on" value="<?= $item->found_on ? helper('date.format', array('date'=> $item->found_on, 'format' => 'd-m-Y')) : '' ?>" />
@@ -53,11 +59,6 @@
             <?= import('com:streets.view.streets.autocomplete.html', array('selected' => !$item->isNew() && isset($street) ? $street->streets_street_identifier : '')); ?>
         </div>
     </div>
-</fieldset>
-
-<fieldset>
-    <legend><?= translate('Category') ?></legend>
-    <?= helper('com:questions.radiolist.categories', array('row' => $item, 'package' => 'found', 'name' => 'found_category_id')) ?>
 </fieldset>
 
 <? if($item->isAttachable()) : ?>

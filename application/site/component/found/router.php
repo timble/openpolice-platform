@@ -24,17 +24,6 @@ class FoundRouter extends Library\DispatcherRouter
 
         $view = $page->getLink()->query['view'];
 
-        if($view == 'categories')
-        {
-            if(isset($query['category'])) {
-                $segments[] = $query['category'];
-            }
-
-            if(isset($query['id'])) {
-                $segments[] = $query['id'];
-            }
-        }
-
         if($view == 'items')
         {
             if(isset($query['category'])) {
@@ -54,7 +43,6 @@ class FoundRouter extends Library\DispatcherRouter
             }
         }
 
-        unset($query['category']);
         unset($query['id']);
         unset($query['view']);
         unset($query['sort']);
@@ -77,15 +65,6 @@ class FoundRouter extends Library\DispatcherRouter
 
         if($view == 'items')
         {
-            if ($count)
-            {
-                $count--;
-                $segment = array_shift( $path );
-
-                $vars['category'] = $segment;
-                $vars['view'] = 'items';
-            }
-
             if ($count)
             {
                 $count--;

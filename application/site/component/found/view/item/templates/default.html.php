@@ -8,36 +8,35 @@
  */
 ?>
 
-<ktml:module position="left">
-    <?= import('com:categories.view.categories.list.html') ?>
-</ktml:module>
-
 <title content="replace"><?= escape($item->title) ?></title>
 
-<article class="article">
+<div class="article">
     <h1><?= escape($item->title) ?></h1>
     <? if($item->attachments_attachment_id) : ?>
-        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="item__thumbnail" href="attachments://<?= $item->thumbnail ?>" data-gallery="enabled">
+        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $item->thumbnail ?>" data-gallery="enabled">
             <?= helper('com:police.image.thumbnail', array(
                 'attachment' => $item->attachments_attachment_id,
                 'attribs' => array('width' => '400', 'height' => '300'))) ?>
         </a>
     <? endif ?>
 
-    <div class="item__introtext">
-        <?= $item->introtext ?>
-    </div>
+    <ul>
+        <li><?= translate('Date').': '.date(array('date' => $item->found_on, 'format' => 'd/m/y')) ?></li>
+        <li><?= translate('Find place') ?>: <?= $item->street ? $item->street : translate('Unknown') ?></li>
+        <li><?= translate('Tracking number').': '.$item->tracking_number ?></li>
+    </ul>
 
-    <?= $item->fulltext ?>
+    <?= $item->text ?>
 
     <? if($item->isAttachable()) : ?>
         <div class="entry-content-asset">
             <?= import('com:attachments.view.attachments.default.html', array('attachments' => $item->getAttachments(), 'exclude' => array($item->attachments_attachment_id))) ?>
         </div>
     <? endif ?>
-</article>
+</div>
 
-<script src="assets://application/components/jquery/jquery.min.js" />
+<? if($item->attachments_attachment_id) : ?>
+<script src="assets://application/components/jquery/dist/jquery.min.js" />
 <script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
 <script data-inline>
     $(document).ready(function() {
@@ -50,3 +49,4 @@
         });
     });
 </script>
+<? endif ?>

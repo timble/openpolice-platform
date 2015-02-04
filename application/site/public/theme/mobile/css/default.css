@@ -1598,7 +1598,8 @@ button.button, input[type="submit"].button {
   display: block; }
 
 .card__date {
-  display: block; }
+  display: block;
+  color: #222; }
 
 .form__group {
   margin-bottom: 0.75em; }
