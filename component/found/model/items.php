@@ -53,7 +53,7 @@ class ModelItems extends Library\ModelTable
             $words = explode(' ', $state->searchword);
 
             foreach($words AS $word) {
-                $query->where('(tbl.title LIKE :search OR tbl.text LIKE :search)')->bind(array('search' => '%' . $word . '%'));
+                $query->where('(tbl.title LIKE :search OR tbl.text LIKE :search OR tbl.tracking_number LIKE :search)')->bind(array('search' => '%' . $word . '%'));
             }
         }
 
