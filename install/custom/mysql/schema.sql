@@ -169,6 +169,53 @@ CREATE TABLE `attachments_relations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `bin_districts`;
+
+CREATE TABLE `bin_districts` (
+  `bin_district_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(250) NOT NULL DEFAULT '',
+  `slug` varchar(255) NOT NULL DEFAULT '',
+  `twitter` varchar(250) NOT NULL,
+  `facebook` varchar(250) NOT NULL,
+  `coordinator_firstname` varchar(250) NOT NULL,
+  `coordinator_lastname` varchar(250) NOT NULL DEFAULT '',
+  `coordinator_phone` varchar(250) NOT NULL,
+  `coordinator_mobile` varchar(250) NOT NULL,
+  `coordinator_address` varchar(250) NOT NULL,
+  `coordinator_suburb` varchar(250) NOT NULL,
+  `coordinator_postcode` varchar(250) NOT NULL,
+  `coordinator_email` varchar(250) NOT NULL,
+  `created_by` int(11) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(11) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `locked_by` int(11) NOT NULL DEFAULT '0',
+  `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`bin_district_id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `bin_relations`;
+
+CREATE TABLE `bin_relations` (
+  `bin_relation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `bin_district_id` int(11) NOT NULL,
+  `range_start` int(11) NOT NULL DEFAULT '1',
+  `range_end` int(11) NOT NULL DEFAULT '9999',
+  `range_parity` varchar(250) NOT NULL,
+  `created_by` int(11) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(11) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `locked_by` int(11) NOT NULL DEFAULT '0',
+  `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`bin_relation_id`),
+  KEY `bin_relations__bin_district_id` (`bin_district_id`),
+  CONSTRAINT `bin_relations__bin_district_id` FOREIGN KEY (`bin_district_id`) REFERENCES `bin_districts` (`bin_district_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Relations table for streets';
+
+
 --
 -- Table structure data for table `categories`
 --
@@ -230,32 +277,31 @@ CREATE TABLE `comments` (
 DROP TABLE IF EXISTS `contacts`;
 
 CREATE TABLE `contacts` (
-  `contacts_contact_id` int(11) NOT NULL AUTO_INCREMENT,
-  `contacts_category_id` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(255) NOT NULL DEFAULT '',
-  `slug` varchar(255) DEFAULT NULL,
-  `position` varchar(255) DEFAULT NULL,
-  `address` text,
-  `suburb` varchar(100) DEFAULT NULL,
-  `state` varchar(100) DEFAULT NULL,
-  `country` varchar(100) DEFAULT NULL,
-  `postcode` varchar(100) DEFAULT NULL,
-  `telephone` varchar(255) DEFAULT NULL,
-  `fax` varchar(255) DEFAULT NULL,
+  `contacts_contact_id` int(11) NOT NULL auto_increment,
+  `contacts_category_id` int(11) NOT NULL default '0',
+  `title` varchar(255) NOT NULL default '',
+  `slug` varchar(255) default NULL,
+  `name` varchar(255) default NULL,
+  `position` varchar(255) default NULL,
+  `number` varchar(100) default NULL,
+  `postcode` varchar(100) default NULL,
+  `telephone` varchar(255) default NULL,
+  `fax` varchar(255) default NULL,
   `misc` mediumtext,
-  `email_to` varchar(255) DEFAULT NULL,
-  `published` tinyint(1) unsigned NOT NULL DEFAULT '0',
-  `created_by` int(11) unsigned DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `modified_by` int(11) unsigned DEFAULT NULL,
-  `modified_on` datetime DEFAULT NULL,
-  `locked_by` int(11) unsigned DEFAULT NULL,
-  `locked_on` datetime DEFAULT NULL,
-  `ordering` int(11) NOT NULL DEFAULT '0',
+  `email_to` varchar(255) default NULL,
+  `url` varchar(255) default NULL,
+  `published` tinyint(1) unsigned NOT NULL default '0',
+  `created_by` int(11) unsigned default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) unsigned default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) unsigned default NULL,
+  `locked_on` datetime default NULL,
+  `ordering` int(11) NOT NULL default '0',
   `params` text NOT NULL,
-  `access` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `mobile` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`contacts_contact_id`),
+  `access` tinyint(3) unsigned NOT NULL default '0',
+  `mobile` varchar(255) NOT NULL default '',
+  PRIMARY KEY  (`contacts_contact_id`),
   KEY `category` (`contacts_category_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -271,6 +317,7 @@ CREATE TABLE `contacts_categories` (
   `image` varchar(255) NOT NULL default '',
   `description` text NOT NULL,
   `published` tinyint(1) NOT NULL default '0',
+  `hidden` tinyint(1) NOT NULL default '0',
   `created_by` int(10) unsigned default NULL,
   `created_on` datetime default NULL,
   `modified_by` int(10) unsigned default NULL,
@@ -291,12 +338,17 @@ CREATE TABLE `contacts_categories` (
 -- Table structure for table `contacts_hours`
 --
 
+DROP TABLE IF EXISTS `contacts_hours`;
+
 CREATE TABLE `contacts_hours` (
   `contacts_hour_id` int(11) NOT NULL AUTO_INCREMENT,
   `contacts_contact_id` int(11) NOT NULL DEFAULT '0',
   `day_of_week` tinyint(4) DEFAULT NULL,
+  `date` date DEFAULT NULL,
   `opening_time` time DEFAULT NULL,
   `closing_time` time DEFAULT NULL,
+  `appointment` tinyint(1) DEFAULT NULL,
+  `note` text,
   `published` tinyint(1) DEFAULT '0',
   `created_by` int(11) unsigned DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
@@ -319,18 +371,19 @@ CREATE TABLE `contacts_hours` (
 DROP TABLE IF EXISTS `districts`;
 
 CREATE TABLE `districts` (
-  `districts_district_id` int(250) NOT NULL AUTO_INCREMENT,
+  `districts_district_id` int(11) NOT NULL auto_increment,
   `contacts_contact_id` int(11) NOT NULL,
-  `islp` varchar(250) DEFAULT NULL,
-  `title` varchar(250) NOT NULL DEFAULT '',
-  `slug` varchar(255) NOT NULL DEFAULT '',
-  `created_by` int(11) NOT NULL DEFAULT '0',
-  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(11) NOT NULL DEFAULT '0',
-  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `locked_by` int(11) NOT NULL DEFAULT '0',
-  `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`districts_district_id`),
+  `islp` varchar(250) default NULL,
+  `title` varchar(250) NOT NULL default '',
+  `slug` varchar(255) NOT NULL default '',
+  `email` varchar(250) default NULL,
+  `created_by` int(11) NOT NULL default '0',
+  `created_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  `modified_by` int(11) NOT NULL default '0',
+  `modified_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  `locked_by` int(11) NOT NULL default '0',
+  `locked_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  PRIMARY KEY  (`districts_district_id`),
   UNIQUE KEY `slug` (`slug`),
   UNIQUE KEY `islp` (`islp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -685,20 +738,24 @@ CREATE TABLE `pages_orderings` (
 -- Table structure data for table `press`
 --
 
+DROP TABLE IF EXISTS `press`;
+
 CREATE TABLE `press` (
-  `press_article_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `press_article_id` int(11) unsigned NOT NULL auto_increment,
   `title` text NOT NULL,
-  `slug` varchar(250) DEFAULT NULL,
+  `slug` varchar(250) default NULL,
   `text` mediumtext NOT NULL,
-  `published` tinyint(1) DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `created_by` int(11) unsigned NOT NULL DEFAULT '0',
-  `modified_on` datetime DEFAULT NULL,
-  `modified_by` int(11) unsigned NOT NULL DEFAULT '0',
-  `locked_by` int(11) unsigned DEFAULT NULL,
-  `locked_on` datetime DEFAULT NULL,
+  `published` tinyint(1) NOT NULL default '0',
+  `published_on` datetime default NULL,
+  `created_on` datetime default NULL,
+  `created_by` int(11) unsigned NOT NULL default '0',
+  `modified_on` datetime default NULL,
+  `modified_by` int(11) unsigned NOT NULL default '0',
+  `locked_by` int(11) unsigned default NULL,
+  `locked_on` datetime default NULL,
+  `publish_on` datetime default NULL,
   `params` text,
-  PRIMARY KEY (`press_article_id`),
+  PRIMARY KEY  (`press_article_id`),
   KEY `idx_state` (`published`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -757,6 +814,16 @@ CREATE TABLE `questions_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+DROP TABLE IF EXISTS `streets_relations`;
+
+CREATE TABLE `streets_relations` (
+  `streets_street_identifier` bigint(20) unsigned NOT NULL,
+  `row` bigint(20) unsigned NOT NULL,
+  `table` varchar(255) NOT NULL,
+  PRIMARY KEY (`streets_street_identifier`,`row`,`table`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Relations table for streets';
+
+
 --
 -- Table structure data for table `revisions`
 --
@@ -772,6 +839,31 @@ CREATE TABLE `revisions` (
   `data` longtext NOT NULL COMMENT '@Filter("json")',
   `status` varchar(100) NOT NULL,
   PRIMARY KEY (`table`,`row`,`revision`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure data for table `support_tickets`
+--
+
+DROP TABLE IF EXISTS `support_tickets`;
+
+CREATE TABLE `support_tickets` (
+  `support_ticket_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `text` text NOT NULL,
+  `status` varchar(25) DEFAULT 'new',
+  `created_by` int(10) unsigned DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `modified_by` int(10) unsigned DEFAULT NULL,
+  `modified_on` datetime DEFAULT NULL,
+  `locked_by` int(11) DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  `last_commented_by` int(11) DEFAULT NULL,
+  `last_commented_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`support_ticket_id`),
+  KEY `created_on` (`created_on`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -822,12 +914,14 @@ DROP TABLE IF EXISTS `traffic`;
 
 CREATE TABLE `traffic` (
   `traffic_article_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `traffic_category_id` int(11) DEFAULT NULL,
+  `traffic_category_id` int(11) NOT NULL DEFAULT '0',
   `title` varchar(250) NOT NULL DEFAULT '',
   `slug` varchar(255) DEFAULT NULL,
   `text` text NOT NULL,
   `start_on` datetime DEFAULT NULL,
   `end_on` datetime DEFAULT NULL,
+  `controlled` int(11) DEFAULT NULL,
+  `in_violation` int(11) DEFAULT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0',
   `created_by` int(11) DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
@@ -836,7 +930,7 @@ CREATE TABLE `traffic` (
   `locked_by` int(11) DEFAULT NULL,
   `locked_on` datetime DEFAULT NULL,
   PRIMARY KEY (`traffic_article_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=748 DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `traffic_categories`;
@@ -1020,6 +1114,8 @@ CREATE DATABASE `data`;
 -- Table structure data for table `data`.`migrations`
 --
 
+DROP TABLE IF EXISTS `data`.`migrations`;
+
 CREATE TABLE `data`.`migrations` (
   `version` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -1046,7 +1142,7 @@ CREATE TABLE `data`.`police_municipalities` (
   `locked_by` int(11) NOT NULL DEFAULT '0',
   `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`police_municipality_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2775 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 --
@@ -1081,24 +1177,24 @@ CREATE TABLE `data`.`police_zones` (
 
 DROP TABLE IF EXISTS `data`.`streets`;
 
-CREATE TABLE `data`.`streets` (
-  `streets_street_id` int(11) unsigned NOT NULL,
-  `streets_city_id` int(5) DEFAULT NULL,
-  `title` varchar(80) DEFAULT NULL,
-  `slug` varchar(255) DEFAULT NULL,
-  `title2` varchar(80) DEFAULT NULL,
-  `language1` varchar(2) DEFAULT NULL,
-  `language2` varchar(2) DEFAULT NULL,
-  `language3` varchar(2) DEFAULT NULL,
-  `title0` varchar(80) DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `modified_by` int(11) DEFAULT NULL,
-  `modified_on` datetime DEFAULT NULL,
-  `locked_by` int(11) DEFAULT NULL,
-  `locked_on` datetime DEFAULT NULL,
-  PRIMARY KEY (`streets_street_id`),
-  KEY `title` (`title`)
+CREATE TABLE `streets` (
+  `streets_street_id` int(11) unsigned NOT NULL auto_increment,
+  `streets_city_id` int(5) default NULL,
+  `streets_street_identifier` int(11) default NULL,
+  `iso` varchar(2) default NULL,
+  `sources_source_id` tinyint(1) default NULL,
+  `title` varchar(80) default NULL,
+  `slug` varchar(255) default NULL,
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_street_id`),
+  UNIQUE KEY `streets_street_identifier` (`streets_street_identifier`,`iso`,`sources_source_id`),
+  KEY `title` (`title`),
+  KEY `streets_city_id` (`streets_city_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -1108,38 +1204,31 @@ CREATE TABLE `data`.`streets` (
 
 DROP TABLE IF EXISTS `data`.`streets_cities`;
 
-CREATE TABLE `data`.`streets_cities` (
+CREATE TABLE `streets_cities` (
   `streets_city_id` int(11) unsigned NOT NULL,
-  `title` varchar(40) DEFAULT NULL,
-  `language` varchar(2) DEFAULT NULL,
-  `police_zone_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`streets_city_id`)
+  `title` varchar(40) default NULL,
+  `language` varchar(2) default NULL,
+  `police_zone_id` int(11) default NULL,
+  `crab_city_id` int(11) NOT NULL default '0',
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_city_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
---
--- Table structure data for table `support_tickets`
---
+DROP TABLE IF EXISTS `data`.`streets_streets_islps`;
 
-DROP TABLE IF EXISTS `support_tickets`;
-
-CREATE TABLE `support_tickets` (
-  `support_ticket_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL,
-  `slug` varchar(255) DEFAULT NULL,
-  `text` text NOT NULL,
-  `status` varchar(25) DEFAULT 'new',
-  `created_by` int(10) unsigned DEFAULT NULL,
-  `created_on` datetime DEFAULT NULL,
-  `modified_by` int(10) unsigned DEFAULT NULL,
-  `modified_on` datetime DEFAULT NULL,
-  `locked_by` int(11) DEFAULT NULL,
-  `locked_on` datetime DEFAULT NULL,
-  `last_commented_by` int(11) DEFAULT NULL,
-  `last_commented_on` datetime DEFAULT NULL,
-  PRIMARY KEY (`support_ticket_id`),
-  KEY `created_on` (`created_on`)
+CREATE TABLE `data`.`streets_streets_islps` (
+  `streets_street_identifier` int(11) unsigned NOT NULL,
+  `islp` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`streets_street_identifier`),
+  KEY `islp` (`islp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET TIME_ZONE=@OLD_TIME_ZONE;
