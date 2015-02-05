@@ -35,7 +35,8 @@ class StreetsControllerMunicipality extends Library\ControllerModel
                 $url    = $this->getObject('application')->getRequest()->getUrl();
                 $host   = $url->getHost();
 
-                $this->getObject('component')->redirect('http://'.$host.'/'.$municipality->police_zone_id);
+                $this->getObject('component')->redirect('http://'.$host.'/'.$municipality->police_zone_id.'/');
+
                 return true;
             }
         }
