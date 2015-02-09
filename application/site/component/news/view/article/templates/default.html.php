@@ -36,8 +36,8 @@
         <?= helper('com:police.image.thumbnail', array(
         'attachment' => $article->attachments_attachment_id,
         'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
-    <? endif ?>
     </a>
+    <? endif ?>
 
     <div itemprop="articleBody">
         <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>
