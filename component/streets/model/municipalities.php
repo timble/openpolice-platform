@@ -46,9 +46,9 @@ class ModelMunicipalities extends Library\ModelTable
 		$state = $this->getState();
 
 		if (!is_numeric($state->search)) {
-			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.trim($state->search).'%'));
 		} else {
-			$query->where('tbl.postcode = :search')->bind(array('search' => $state->search));
+			$query->where('tbl.postcode = :search')->bind(array('search' => trim($state->search)));
 		}
 
 		if($state->municipality){
