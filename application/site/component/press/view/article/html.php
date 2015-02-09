@@ -25,7 +25,7 @@ class PressViewArticleHtml extends Library\ViewHtml
         }
 
         $published_on = new DateTime($article->published_on);
-        $this->created_on = $published_on->format('c');
+        $this->published_on = $published_on->format('c');
 
         return parent::render();
     }

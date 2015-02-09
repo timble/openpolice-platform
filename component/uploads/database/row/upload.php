@@ -16,6 +16,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 {
     public function save()
     {
+        // Server, give us some time, please
+        ini_set('max_execution_time', '600');
+
         $table  = $this->table;
 
         $file   = $this->getObject('lib:dispatcher.request')->files->file;

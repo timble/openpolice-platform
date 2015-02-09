@@ -106,7 +106,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
                     $item = $this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package)->row($item)->getRowset()->top();
                 }
 
-                if($package == 'news' || $package == 'contacts')
+                if(in_array($package, array('contacts', 'news', 'traffic')))
                 {
                     $result .= '/'.$item->row.'-'.$item->slug;
                 }
