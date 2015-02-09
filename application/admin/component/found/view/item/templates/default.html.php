@@ -70,7 +70,7 @@
                 </div>
             </fieldset>
         </div>
-        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $item->text, 'toolbar' => 'none')) ?>
+        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $item->text, 'toolbar' => 'basic')) ?>
     </div>
     <div class="sidebar">
         <?= import('default_sidebar.html'); ?>
