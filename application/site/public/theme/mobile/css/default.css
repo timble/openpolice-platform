@@ -2170,20 +2170,24 @@ a.thumbnail:hover, a.article__thumbnail:hover, a.thumbnail:focus, a.article__thu
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25); }
 
-.search .button {
+.search-box__button {
   width: 100%;
   margin-top: 0.75em; }
 
 @media screen and (min-width: 400px) {
-  .search {
+  .search-box {
     display: table; }
-    .search .search__field {
-      display: table-cell;
-      width: 100%; }
-    .search .button {
-      margin-left: 0.75em;
-      margin-top: 0;
-      width: auto; }
+
+  .search-box__input {
+    display: table-cell;
+    width: 100%; }
+
+  .search-box__button {
+    margin-left: 0.75em;
+    margin-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto; }
  }
 
 .nowrap {

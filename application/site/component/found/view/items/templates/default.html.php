@@ -13,13 +13,11 @@
 <h1><?= translate('Found items') ?></h1>
 
 <div class="well">
-    <form action="" method="get">
-        <div class="form__right">
-            <button type="submit" class="button button--primary" tabindex="2"><?= translate('Search') ?></button>
-        </div>
-        <div class="form__left">
+    <form class="search-box" action="" method="get">
+        <div class="search-box__input">
             <input name="searchword" type="search" value="<?=escape($state->searchword)?>" placeholder="<?=translate('Search')?> ..." tabindex="1"/>
         </div>
+        <button type="submit" class="button button--primary search-box__button" tabindex="2"><?= translate('Search') ?></button>
     </form>
 </div>
 
