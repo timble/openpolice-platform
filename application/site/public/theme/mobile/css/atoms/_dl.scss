@@ -1,16 +1,23 @@
-dl {
-  padding: 0.5em;
-}
-
 dt {
-  float: left;
-  clear: left;
-  width: 150px;
-  text-align: right;
   font-weight: bold;
 }
 
 dd {
-  margin: 0 0 0 160px;
+  margin: 0;
   padding: 0 0 $base-line-height / 4 0;
+}
+
+@include breakpoint($breakpoint-beta) {
+  dt {
+    float: left;
+    clear: left;
+    width: 150px;
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  dd {
+    margin: 0 0 0 160px;
+    padding: 0 0 $base-line-height / 4 0;
+  }
 }
