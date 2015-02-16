@@ -1111,19 +1111,25 @@ body {
     font-size: 0.9375em; }
  }
 
-dl {
-  padding: 0.5em; }
-
 dt {
-  float: left;
-  clear: left;
-  width: 150px;
-  text-align: right;
   font-weight: bold; }
 
 dd {
-  margin: 0 0 0 160px;
+  margin: 0;
   padding: 0 0 0.375em 0; }
+
+@media screen and (min-width: 600px) {
+  dt {
+    float: left;
+    clear: left;
+    width: 150px;
+    text-align: right;
+    font-weight: bold; }
+
+  dd {
+    margin: 0 0 0 160px;
+    padding: 0 0 0.375em 0; }
+ }
 
 figure {
   margin: 0; }

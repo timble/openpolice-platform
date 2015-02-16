@@ -19,6 +19,11 @@ class FoundViewItemHtml extends Library\ViewHtml
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($item->title, '');
 
+        //Get the attachments
+        if ($item->id && $item->isAttachable()) {
+            $this->attachments($item->getAttachments());
+        }
+
         // Get the street
         if($item->isLocatable() && $street = $item->getStreets()->top())
         {
