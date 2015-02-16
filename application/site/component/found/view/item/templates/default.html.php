@@ -12,13 +12,6 @@
 
 <div class="article">
     <h1><?= escape($item->title) ?></h1>
-    <? if($item->attachments_attachment_id) : ?>
-        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $item->thumbnail ?>" data-gallery="enabled">
-            <?= helper('com:police.image.thumbnail', array(
-                'attachment' => $item->attachments_attachment_id,
-                'attribs' => array('width' => '400', 'height' => '300'))) ?>
-        </a>
-    <? endif ?>
 
     <dl>
         <dt><?= translate('Found on') ?>:</dt>
@@ -31,11 +24,7 @@
         <dd><?= $item->text ?></dd>
     </dl>
 
-    <? if($item->isAttachable()) : ?>
-        <div class="entry-content-asset">
-            <?= import('com:attachments.view.attachments.default.html', array('attachments' => $item->getAttachments(), 'exclude' => array($item->attachments_attachment_id))) ?>
-        </div>
-    <? endif ?>
+    <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array(0))) ?>
 </div>
 
 <? if($item->attachments_attachment_id) : ?>
