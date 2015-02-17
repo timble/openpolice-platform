@@ -1,19 +1,13 @@
 <?php
 define('DS', DIRECTORY_SEPARATOR);
 
-// Get the authentication credentials
-$authfile = '/var/www/v2.lokalepolitie.be/private/db.auth';
-if(!file_exists($authfile)) {
-    exit('Could not find MySQL credentials ('.$authfile.')');
+$path = '/var/www/v2.lokalepolitie.be/private/db.php';
+
+if(!file_exists($path)) {
+    exit('Could not find config file ('.$path.')');
 }
 
-$config = new stdClass;
-
-$contents   = trim(file_get_contents($authfile));
-$values     = explode(':', $contents);
-
-$config->user = $values[0];
-$config->password = implode('', array_slice($values, 1));
+$config = (include $path);
 
 // Create the daily dumps
 $backup = new Backup('/var/backups/');

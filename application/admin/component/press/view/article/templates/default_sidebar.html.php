@@ -40,3 +40,10 @@
         <?= import('com:attachments.view.attachments.upload.html') ?>
     </fieldset>
 <? endif ?>
+
+<script data-inline>
+    $jQuery("input[name=published]").click(function()
+    {
+        $jQuery("input[name=publish_on]").attr('disabled', this.checked)
+    });
+</script>

@@ -43,7 +43,7 @@ You can run the project easily with the supplied Vagrantfile - make sure you und
 * The example admin application is available at [http://police.dev/administrator/9999](http://police.dev/administrator/9999).
 
     ```
-    email: admin@example.com
+    email: demo@example.com
     password: police
     ```
 * MailCatcher is available at [http://police.dev:1080/](http://police.dev:1080/)

@@ -3,7 +3,8 @@
 @import "utilities/variables";
 
 @include breakpoint($breakpoint-alpha) {
-  .wanted-list .wanted-list__item {
+  .wanted-list .wanted-list__item,
+  .found .cards .card {
     @include gallery(6 of 12);
   }
 }
@@ -11,6 +12,10 @@
 @include breakpoint($breakpoint-beta) {
   .gallery .gallery__item {
     @include gallery(6 of 12);
+  }
+
+  .found .cards .card {
+    @include gallery(4 of 12);
   }
 }
 
@@ -31,7 +36,8 @@
   }
 
   // Files view doesn't have a sidebar
-  .component.files {
+  .component.files,
+  .component.found {
     @include span(first 12 of 12);
   }
 
@@ -57,11 +63,11 @@
   }
 
   .copyright--left {
-    @include span(first 5 of 12);
+    @include span(first 7 of 12);
   }
 
   .copyright--right {
-    @include span(7 of 12);
+    @include span(5 of 12);
   }
 
   .quicklinks__item {
@@ -98,6 +104,10 @@
   .gallery .gallery__item,
   .wanted-list .wanted-list__item {
     @include gallery(4 of 12);
+  }
+
+  .found .cards .card {
+    @include gallery(3 of 12);
   }
 }
 

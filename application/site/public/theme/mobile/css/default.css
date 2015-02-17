@@ -1111,6 +1111,26 @@ body {
     font-size: 0.9375em; }
  }
 
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0;
+  padding: 0 0 0.375em 0; }
+
+@media screen and (min-width: 600px) {
+  dt {
+    float: left;
+    clear: left;
+    width: 150px;
+    text-align: right;
+    font-weight: bold; }
+
+  dd {
+    margin: 0 0 0 160px;
+    padding: 0 0 0.375em 0; }
+ }
+
 figure {
   margin: 0; }
 
@@ -1557,6 +1577,50 @@ button.button, input[type="submit"].button {
         transform: rotate3d(0, 0, 1, -45deg); }
  }
 
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.card {
+  text-align: center;
+  margin-bottom: 1.5em; }
+  .card img {
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #f6f6f6; }
+  .card a {
+    display: inline-block;
+    border: 1px solid #eee;
+    border-radius: 4px; }
+  .card a:hover, .card a:focus {
+    color: #002852;
+    background-color: #ebf3f4;
+    border-color: #004D9F;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+    box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25); }
+    .card a:hover img, .card a:focus img {
+      border-bottom: 1px solid #e1edee; }
+
+.card__metadata {
+  display: block;
+  padding: 0.75em;
+  width: 100%;
+  display: table; }
+
+.card__metadata--inner {
+  display: table-cell;
+  vertical-align: middle; }
+
+.card__name {
+  text-decoration: underline;
+  margin-bottom: 0.375em;
+  display: block; }
+
+.card__date {
+  display: block;
+  color: #222; }
+
 .form__group {
   margin-bottom: 0.75em; }
 
@@ -1697,6 +1761,14 @@ button.button, input[type="submit"].button {
       background-image: url("../images/logo-fr.png"); }
     .header .organization__logo--de {
       background-image: url("../images/logo-de.png"); }
+    .header .organization__logo--en.organization__logo--fed {
+      background-image: url("../images/logo-fed-en.png"); }
+    .header .organization__logo--nl.organization__logo--fed {
+      background-image: url("../images/logo-fed-nl.png"); }
+    .header .organization__logo--fr.organization__logo--fed {
+      background-image: url("../images/logo-fed-fr.png"); }
+    .header .organization__logo--de.organization__logo--fed {
+      background-image: url("../images/logo-fed-de.png"); }
     .header .organization__name {
       margin-left: 57px;
       margin-top: 6px;
@@ -1892,6 +1964,9 @@ button.button, input[type="submit"].button {
     display: block; }
   .nav li a:hover, .nav li a:focus {
     background-color: #ebf3f4; }
+  .nav ul {
+    list-style: none;
+    margin-left: 0; }
 
 .nav--visited a:visited {
   color: #609; }
@@ -1908,6 +1983,8 @@ button.button, input[type="submit"].button {
     padding-right: 12px;
     padding-left: 12px;
     margin-right: 2px; }
+  .nav--list li li a, .nav--pills li li a {
+    padding-left: 24px; }
 
 @media screen and (min-width: 400px) {
   .nav--horizontal li {
@@ -1919,9 +1996,9 @@ button.button, input[type="submit"].button {
   padding-bottom: 8px;
   border-bottom: 1px solid #eee;
   text-decoration: none; }
-.nav--list li:last-child a {
+.nav--list > li:last-child a {
   border-bottom: 0 none; }
-.nav--list .active a, .nav--list .active a:hover, .nav--list .active a:focus {
+.nav--list .active > a, .nav--list .active > a:hover, .nav--list .active > a:focus {
   color: #505050;
   background-color: #ebf3f4;
   font-weight: bold; }
@@ -2112,20 +2189,24 @@ a.thumbnail:hover, a.article__thumbnail:hover, a.thumbnail:focus, a.article__thu
   -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
   box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25); }
 
-.search .button {
+.search-box__button {
   width: 100%;
   margin-top: 0.75em; }
 
 @media screen and (min-width: 400px) {
-  .search {
+  .search-box {
     display: table; }
-    .search .search__field {
-      display: table-cell;
-      width: 100%; }
-    .search .button {
-      margin-left: 0.75em;
-      margin-top: 0;
-      width: auto; }
+
+  .search-box__input {
+    display: table-cell;
+    width: 100%; }
+
+  .search-box__button {
+    margin-left: 0.75em;
+    margin-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto; }
  }
 
 .nowrap {

@@ -32,7 +32,10 @@ class PoliceTemplateHelperImage extends Library\TemplateHelperDefault
 
             //Make sure the thumbnail exist
             if($thumbnail) {
-                $filename = ucfirst(preg_replace('#[-_\s\.]+#i', ' ', pathinfo($thumbnail->name, PATHINFO_FILENAME)));
+                if(!$config->attribs->alt)
+                {
+                    $config->attribs->alt = ucfirst(preg_replace('#[-_\s\.]+#i', ' ', pathinfo($thumbnail->name, PATHINFO_FILENAME)));
+                }
 
                 $src = '';
 
@@ -43,7 +46,7 @@ class PoliceTemplateHelperImage extends Library\TemplateHelperDefault
 
                 $src  .= 'attachments://'.$thumbnail->thumbnail;
 
-                return '<img alt="'.$filename.'" '.$this->buildAttributes($config->attribs).' src="'.$src.'" />';
+                return '<img '.$this->buildAttributes($config->attribs).' src="'.$src.'" />';
             }
         }
 

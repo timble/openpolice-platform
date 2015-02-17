@@ -1,5 +1,52 @@
 # Changelog
 
+## v2.8
+
+### Site Enhancements
+
+* Added ability to browse the Office Hours for the upcoming 14 days
+* Added city in Traffic for multi-city zones
+* Combined Districts & Neighbourhood Information Network
+* Redesigned Attachments listing
+* Decreased last breakpoint
+
+### Administrator Enhancements
+
+* Added one-off Office Hours
+* Added Traffic results
+* Added Districts list when browsing Streets
+* Added Attachments support to Traffic
+* Added simple Analytics dashboard
+* Allow empty end-date in Traffic
+
+### Bug Fixes
+
+* Questions search included unpublished articles
+* RSS feed is now valid
+* Unset URL parameters on the homepage
+* Fixed flexbox scroll issue on Firefox in the administrator
+* Limit Districts & Contacts to one thumbnail
+
+### Refactoring
+
+* Improved Districts database schema
+* Simplified domains for staging & development
+* Refactored structured data in Contacts to JSON-LD
+
+### Sites
+
+Release of:
+
+* [Police Condroz-Famenne](http://www.policelocale.be/5314)
+* [Police Haute Senne](http://www.policelocale.be/5328)
+* [Police Orneau-Mehaigne](http://www.policelocale.be/5304)
+* [Police Seraing-Neupré](http://www.policelocale.be/5278)
+* [Politie Meetjesland](http://www.lokalepolitie.be/5417)
+* [Politie Ninove](http://www.lokalepolitie.be/5442)
+* [Politie Sint-Truiden - Gingelom - Nieuwerkerken](http://www.lokalepolitie.be/5376)
+* [Politie Ronse](http://www.lokalepolitie.be/5427)
+
+
 ## v2.7
 
 ### Site Enhancements
@@ -27,8 +74,6 @@
 * Added autocomplete listbox to attach a Street to a Contact
 * Inserting a file link now automatically adds the file size and extension
 
-
-
 ### Bug Fixes
 
 * Too small article image on About pages
@@ -36,13 +81,11 @@
 * Pagination broke filters in some views
 * Download of attachments in support tickets
 
-
 ### Refactoring
 
 * The banner is now optional
 * Theme dependencies are now managed by Composer
 * Implemented auto-increment primary keys for Districts, Officers and BINs
-
 
 ### Sites
 
@@ -55,6 +98,7 @@ Release of:
 * [Politie Erpe-Mere/Lede](http://www.lokalepolitie.be/5441)
 * [Politie Dendermonde](http://www.lokalepolitie.be/5443)
 * [Politie Oostende](http://www.lokalepolitie.be/5449)
+
 
 ## v2.6
 
