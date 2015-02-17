@@ -144,7 +144,9 @@ END;
      */
     public function down()
     {
-        $this->_queries = "DROP TABLE IF EXISTS `found`;";
+        $this->_queries = "DROP TABLE IF EXISTS `wanted`;";
+        $this->_queries = "DROP TABLE IF EXISTS `wanted_categories`;";
+        $this->_queries = "DROP TABLE IF EXISTS `wanted_sections`;";
 
         $this->_queries .= "DELETE FROM `extensions` WHERE `extensions_extension_id` IN ('49');";
         $this->_queries .= "DELETE FROM `pages` WHERE `pages_page_id` IN ('117', '118');";
