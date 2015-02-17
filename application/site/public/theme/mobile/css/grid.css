@@ -29,14 +29,14 @@
  * @group Breakpoint
  */
 @media screen and (min-width: 400px) {
-  .found .cards .card {
+  .wanted .cards .card, .found .cards .card {
     width: 48.1481481481%;
     float: left;
     
     
     
      }
-    .found .cards .card:nth-child(2n+1) {
+    .wanted .cards .card:nth-child(2n+1), .found .cards .card:nth-child(2n+1) {
       
       
       margin-left: 0;
@@ -45,7 +45,7 @@
       
       clear: both;
       margin-left: 0; }
-    .found .cards .card:nth-child(2n+2) {
+    .wanted .cards .card:nth-child(2n+2), .found .cards .card:nth-child(2n+2) {
       
       
       margin-left: 51.8518518519%;
@@ -325,14 +325,14 @@
     
      }
 
-  .gallery .gallery__item, .found .cards .card {
-    width: 22.2222222222%;
+  .gallery .gallery__item, .wanted .cards .card {
+    width: 30.8641975309%;
     float: left;
     
     
     
      }
-    .gallery .gallery__item:nth-child(4n+1), .found .cards .card:nth-child(4n+1) {
+    .gallery .gallery__item:nth-child(3n+1), .wanted .cards .card:nth-child(3n+1) {
       
       
       margin-left: 0;
@@ -341,7 +341,40 @@
       
       clear: both;
       margin-left: 0; }
-    .gallery .gallery__item:nth-child(4n+2), .found .cards .card:nth-child(4n+2) {
+    .gallery .gallery__item:nth-child(3n+2), .wanted .cards .card:nth-child(3n+2) {
+      
+      
+      margin-left: 34.5679012346%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    .gallery .gallery__item:nth-child(3n+3), .wanted .cards .card:nth-child(3n+3) {
+      
+      
+      margin-left: 69.1358024691%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+
+  .found .cards .card {
+    width: 22.2222222222%;
+    float: left;
+    
+    
+    
+     }
+    .found .cards .card:nth-child(4n+1) {
+      
+      
+      margin-left: 0;
+      margin-right: -100%;
+      
+      
+      clear: both;
+      margin-left: 0; }
+    .found .cards .card:nth-child(4n+2) {
       
       
       margin-left: 25.9259259259%;
@@ -349,7 +382,7 @@
       
       
       clear: none; }
-    .gallery .gallery__item:nth-child(4n+3), .found .cards .card:nth-child(4n+3) {
+    .found .cards .card:nth-child(4n+3) {
       
       
       margin-left: 51.8518518519%;
@@ -357,7 +390,7 @@
       
       
       clear: none; }
-    .gallery .gallery__item:nth-child(4n+4), .found .cards .card:nth-child(4n+4) {
+    .found .cards .card:nth-child(4n+4) {
       
       
       margin-left: 77.7777777778%;

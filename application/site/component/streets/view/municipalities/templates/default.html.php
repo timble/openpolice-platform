@@ -100,11 +100,11 @@ $external = array(
     <div class="well splash__search">
         <form action="#" method="get">
             <label for="municipality" class="muted"><?= $search[$language] ?>:</label>
-            <div class="search">
-                <div class="search__field">
+            <div class="search-box">
+                <div class="search-box__input">
                     <input autofocus type="text" value="<?= $state->search ? $state->search : '' ?>" name="search" onfocus="this.value = this.value;">
                 </div>
-                <button class="button button--primary"><?= $button[$language] ?></button>
+                <button class="button button--primary search-box__button"><?= $button[$language] ?></button>
             </div>
         </form>
 

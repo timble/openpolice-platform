@@ -108,6 +108,12 @@
       }
     }
 
+    @each $language in $languages {
+      .organization__logo--#{$language}.organization__logo--fed {
+        background-image: url("../images/logo-fed-#{$language}.png");
+      }
+    }
+
     .organization__name {
       margin-left: 57px;
       margin-top: 6px;

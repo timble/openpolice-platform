@@ -1761,6 +1761,14 @@ button.button, input[type="submit"].button {
       background-image: url("../images/logo-fr.png"); }
     .header .organization__logo--de {
       background-image: url("../images/logo-de.png"); }
+    .header .organization__logo--en.organization__logo--fed {
+      background-image: url("../images/logo-fed-en.png"); }
+    .header .organization__logo--nl.organization__logo--fed {
+      background-image: url("../images/logo-fed-nl.png"); }
+    .header .organization__logo--fr.organization__logo--fed {
+      background-image: url("../images/logo-fed-fr.png"); }
+    .header .organization__logo--de.organization__logo--fed {
+      background-image: url("../images/logo-fed-de.png"); }
     .header .organization__name {
       margin-left: 57px;
       margin-top: 6px;
@@ -1956,6 +1964,9 @@ button.button, input[type="submit"].button {
     display: block; }
   .nav li a:hover, .nav li a:focus {
     background-color: #ebf3f4; }
+  .nav ul {
+    list-style: none;
+    margin-left: 0; }
 
 .nav--visited a:visited {
   color: #609; }
@@ -1972,6 +1983,8 @@ button.button, input[type="submit"].button {
     padding-right: 12px;
     padding-left: 12px;
     margin-right: 2px; }
+  .nav--list li li a, .nav--pills li li a {
+    padding-left: 24px; }
 
 @media screen and (min-width: 400px) {
   .nav--horizontal li {
@@ -1983,9 +1996,9 @@ button.button, input[type="submit"].button {
   padding-bottom: 8px;
   border-bottom: 1px solid #eee;
   text-decoration: none; }
-.nav--list li:last-child a {
+.nav--list > li:last-child a {
   border-bottom: 0 none; }
-.nav--list .active a, .nav--list .active a:hover, .nav--list .active a:focus {
+.nav--list .active > a, .nav--list .active > a:hover, .nav--list .active > a:focus {
   color: #505050;
   background-color: #ebf3f4;
   font-weight: bold; }

@@ -35,8 +35,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <div class="header">
             <div class="organization" itemscope itemtype="http://schema.org/Organization">
                 <a itemprop="url" href="<?= $path ?>">
-                    <div class="organization__logo organization__logo--<?= $active->slug; ?>"></div>
-                    <div class="organization__name"><span><?= translate('Police') ?></span> <?= escape($zone->title); ?></div>
+                    <div class="organization__logo organization__logo--<?= $active->slug; ?> organization__logo--<?= $site; ?>"></div>
+                    <div class="organization__name"><span><?= $site != 'fed' ? translate('Police') : ''; ?></span> <?= escape($zone->title); ?></div>
                     <meta itemprop="logo" content="<?= $domains[$active->slug] ?>/theme/mobile/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
                 </a>
                 <button id="hamburger" class="button--hamburger" aria-hidden="true" aria-pressed="false" aria-controls="navigation" onclick="apollo.toggleClass(document.getElementById('navigation'), 'is-shown');apollo.toggleClass(document.getElementById('hamburger'), 'close');hamburger()">MENU <span class="lines"></span></button>
@@ -144,7 +144,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <? endforeach ?>
         </div>
         <div class="copyright--right">
-            © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
+            © <?= date(array('format' => 'Y')) ?> <?= translate('Police') ?> - <?= escape($zone->title); ?>
             <? foreach($pages as $page) : ?>
                 <? if($page->id == '106' || $page->id == '107') : ?>
                     &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
