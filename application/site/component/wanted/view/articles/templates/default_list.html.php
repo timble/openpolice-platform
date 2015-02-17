@@ -8,20 +8,24 @@
  */
 ?>
 
-<ul class="wanted-list clearfix">
+<ul class="cards clearfix">
     <? foreach ($articles as $article) : ?>
-        <li class="wanted-list__item">
+        <li class="card">
             <a href="<?= helper('route.article', array('row' => $article)) ?>">
                 <? if($article->attachments_attachment_id): ?>
                     <?= helper('com:police.image.thumbnail', array(
                         'attachment' => $article->attachments_attachment_id,
                         'attribs' => array('width' => '400', 'height' => '300'))) ?>
-                <? endif; ?>
-                <span class="wanted-list__metadata">
-                <span class="wanted-list__name"><?= escape($article->title) ?></span>
-                <br />
-                    <?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?> <?= $article->city ? translate('in').' '.escape($article->city) : '' ?>
-            </span>
+                <? else : ?>
+                    <img src="assets://found/images/placeholder.jpg" />
+                <? endif ?>
+
+                <span class="card__metadata">
+                    <span class="card__metadata--inner">
+                        <span class="card__name"><?= escape($article->title) ?></span>
+                        <span class="card__date"><?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?> <?= $article->city ? translate('in').' '.escape($article->city) : '' ?></span>
+                    </span>
+                </span>
             </a>
         </li>
     <? endforeach; ?>

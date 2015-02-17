@@ -23,12 +23,15 @@
                 'attribs' => array('width' => '400', 'height' => '300'))) ?>
         </a>
     <? endif ?>
+<?= $category->title ?>
+    <dl>
+        <dt><?= translate('Date section'.$section->id) ?>:</dt>
+        <dd><?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?></dd>
+        <dt><?= translate('Place section'.$section->id) ?>:</dt>
+        <dd><?= $article->city ? $article->city : translate('Unknown') ?></dd>
+    </dl>
 
-    <div class="article__introtext">
-        <?= $article->introtext ?>
-    </div>
-
-    <?= $article->fulltext ?>
+    <?= $article->text ?>
 
     <? if($article->isAttachable()) : ?>
     <div class="entry-content-asset">
@@ -37,7 +40,7 @@
     <? endif ?>
 </article>
 
-<script src="assets://application/components/jquery/jquery.min.js" />
+<script src="assets://application/components/jquery/dist/jquery.min.js" />
 <script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
 <script data-inline>
     $(document).ready(function() {

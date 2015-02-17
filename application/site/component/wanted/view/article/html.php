@@ -28,6 +28,9 @@ class WantedViewArticleHtml extends  Library\ViewHtml
         $this->sections = $this->getObject('com:wanted.model.sections')->getRowset();
         $this->categories = $this->getObject('com:wanted.model.categories')->getRowset();
 
+        $this->section = $section;
+        $this->category = $category;
+
         return parent::render();
     }
 

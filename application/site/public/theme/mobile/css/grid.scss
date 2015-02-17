@@ -3,7 +3,7 @@
 @import "utilities/variables";
 
 @include breakpoint($breakpoint-alpha) {
-  .wanted-list .wanted-list__item,
+  .wanted .cards .card,
   .found .cards .card {
     @include gallery(6 of 12);
   }
@@ -102,7 +102,7 @@
   }
 
   .gallery .gallery__item,
-  .wanted-list .wanted-list__item {
+  .wanted .cards .card {
     @include gallery(4 of 12);
   }
 
