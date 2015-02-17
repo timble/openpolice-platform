@@ -124,7 +124,7 @@ END;
 
         $this->_queries = <<<END
 
-INSERT INTO `pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
+INSERT INTO `fr-be_pages` (`pages_page_id`, `pages_menu_id`, `users_group_id`, `title`, `slug`, `link_url`, `link_id`, `type`, `published`, `hidden`, `home`, `extensions_extension_id`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`, `access`, `params`)
 VALUES
 	(117, 1, 0, 'Avis de recherche', 'avis-de-recherche', 'option=com_wanted&view=sections', NULL, 'component', 0, 0, 0, 49, 1, '2015-02-17 14:06:24', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
 	(118, 2, 0, 'Avis de recherche', 'wanted', 'option=com_wanted&view=articles', NULL, 'component', 0, 0, 0, 49, 1, '2015-02-17 14:07:56', NULL, NULL, NULL, NULL, 0, '');
