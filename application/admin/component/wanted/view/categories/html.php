@@ -15,7 +15,7 @@ class WantedViewCategoriesHtml extends Library\ViewHtml
     {
         $state = $this->getModel()->getState();
 
-        $this->sections = $this->getObject('com:wanted.model.sections')->sort('title')->getRowset();
+        $this->sections = $this->getObject('com:wanted.model.sections')->sort('ordering')->getRowset();
 
         return parent::render();
     }
