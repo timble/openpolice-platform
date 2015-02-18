@@ -120,7 +120,7 @@ END;
         parent::up();
 
         // All multilingual zones.
-        $this->getZones()->where('language', '=', 3);
+        $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = <<<END
 
