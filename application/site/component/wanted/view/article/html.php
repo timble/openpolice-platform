@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class WantedViewArticleHtml extends  Library\ViewHtml
+class WantedViewArticleHtml extends  WantedViewHtml
 {
     public function render()
     {
@@ -24,9 +24,6 @@ class WantedViewArticleHtml extends  Library\ViewHtml
         $this->getObject('application')->getPathway()->addItem($section->title, $this->getTemplate()->getHelper('route')->category(array('row' => $section)));
         $this->getObject('application')->getPathway()->addItem($category->title, $this->getTemplate()->getHelper('route')->category(array('row' => $category)));
         $this->getObject('application')->getPathway()->addItem($article->title, '');
-
-        $this->sections = $this->getObject('com:wanted.model.sections')->getRowset();
-        $this->categories = $this->getObject('com:wanted.model.categories')->getRowset();
 
         $this->section = $section;
         $this->category = $category;
