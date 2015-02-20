@@ -24,7 +24,7 @@ class DatabaseTableContacts extends Library\DatabaseTableAbstract
         $config->append(array(
             'name' => 'contacts',
             'behaviors' => array(
-            	'creatable', 'modifiable', 'lockable', 'sluggable',
+                'sluggable', 'creatable', 'modifiable', 'lockable',
                 'orderable' => array(
                     'strategy' => 'flat'
                 ),

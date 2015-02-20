@@ -23,7 +23,7 @@ class ModelCategories extends Library\ModelTable
             ->insert('published' , 'boolean')
             ->insert('distinct'  , 'string')
             ->insert('category'  , 'int')
-            ->insert('sort'      , 'cmd', 'ordering');
+            ->insert('sort'      , 'cmd', 'title');
     }
 
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)

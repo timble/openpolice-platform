@@ -16,7 +16,7 @@ class DatabaseTableSections extends Library\DatabaseTableAbstract
     {
         $config->append(array(
             'behaviors'  => array(
-                'creatable', 'modifiable', 'lockable', 'sluggable',
+                'sluggable', 'creatable', 'modifiable', 'lockable',
                 'com:languages.database.behavior.translatable'
             ),
             'filters' => array(
