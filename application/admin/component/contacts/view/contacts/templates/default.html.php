@@ -79,9 +79,6 @@
 				<a href="<?= route('view=contact&id='.$contact->id); ?>">
 	   				<?= escape($contact->title); ?>
 	   			</a>
-	   			<? if($contact->access) : ?>
-	   			    <span class="label label-important"><?= translate('Registered') ?></span>
-	   			<? endif; ?>
 			</td>
             <? if($contact->isTranslatable()) : ?>
             <td>
