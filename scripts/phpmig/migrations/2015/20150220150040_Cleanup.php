@@ -9,7 +9,7 @@ class Cleanup extends Migration
      */
     public function up()
     {
-        $this->_queries = "`;";
+        $this->_queries = "";
         $this->_queries .= "ALTER TABLE `about` DROP `access`;";
         $this->_queries .= "ALTER TABLE `about` DROP `description`;";
         $this->_queries .= "ALTER TABLE `about` DROP `publish_on`;";
@@ -27,14 +27,14 @@ class Cleanup extends Migration
 
         $this->_queries .= "ALTER TABLE `questions_categories` DROP `ordering`;";
         $this->_queries .= "ALTER TABLE `questions_categories` DROP `access`;";
+        $this->_queries .= "ALTER TABLE `questions_categories` DROP `image`;";
 
         $this->_queries .= "ALTER TABLE `traffic_categories` DROP `access`;";
         $this->_queries .= "ALTER TABLE `traffic_categories` DROP `ordering`;";
-
-
-
+        $this->_queries .= "ALTER TABLE `traffic_categories` DROP `image`;";
 
         parent::up();
+
 
         // All multilingual zones.
         $this->getZones()->reset()->where('language', '=', 3);
@@ -57,11 +57,11 @@ class Cleanup extends Migration
 
         $this->_queries .= "ALTER TABLE `fr-be_questions_categories` DROP `ordering`;";
         $this->_queries .= "ALTER TABLE `fr-be_questions_categories` DROP `access`;";
+        $this->_queries .= "ALTER TABLE `fr-be_questions_categories` DROP `image`;";
 
         $this->_queries .= "ALTER TABLE `fr-be_traffic_categories` DROP `access`;";
         $this->_queries .= "ALTER TABLE `fr-be_traffic_categories` DROP `ordering`;";
-
-
+        $this->_queries .= "ALTER TABLE `fr-be_traffic_categories` DROP `image`;";
 
         parent::up();
     }
