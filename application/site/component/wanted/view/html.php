@@ -9,19 +9,14 @@
 
 use Nooku\Library;
 
-/**
- * Articles HTML View
- *
- * @author  Tom Janssens <http://nooku.assembla.com/profile/tomjanssens>
- * @package Component\Articles
- */
-class WantedViewArticleHtml extends Library\ViewHtml
+class WantedViewHtml extends Library\ViewHtml
 {
     public function render()
     {
         $state = $this->getModel()->getState();
 
-        $this->sections = $this->getObject('com:wanted.model.sections')->sort('ordering')->getRowset();
+        $this->sections = $this->getObject('com:wanted.model.sections')->sort('ordering')->published('1')->getRowset();
+        $this->categories = $this->getObject('com:wanted.model.categories')->sort('ordering')->published('1')->getRowset();
 
         return parent::render();
     }

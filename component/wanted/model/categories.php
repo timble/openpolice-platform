@@ -20,6 +20,7 @@ class ModelCategories extends Library\ModelTable
         // Set the state
         $this->getState()
             ->insert('section'   , 'int')
+            ->insert('published' , 'int')
             ->insert('sort'      , 'cmd', 'ordering');
     }
 
@@ -37,6 +38,10 @@ class ModelCategories extends Library\ModelTable
 
         if ($state->section) {
             $query->where('tbl.wanted_section_id = :section')->bind(array('section' => $state->section));
+        }
+
+        if (is_numeric($state->published)) {
+            $query->where('tbl.published = :published')->bind(array('published' => $state->published));
         }
     }
 }

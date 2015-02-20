@@ -9,15 +9,14 @@
 
 use Nooku\Library;
 
-class WantedControllerSection extends PoliceControllerLanguage
+class WantedViewCategoriesHtml extends Library\ViewHtml
 {
-    public function getRequest()
+    public function render()
     {
-        $request = parent::getRequest();
+        $state = $this->getModel()->getState();
 
-        //Display only published items
-        $request->query->published = 1;
+        $this->sections = $this->getObject('com:wanted.model.sections')->sort('ordering')->getRowset();
 
-        return $request;
+        return parent::render();
     }
 }

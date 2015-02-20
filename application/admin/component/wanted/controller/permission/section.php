@@ -9,15 +9,7 @@
 
 use Nooku\Library;
 
-class WantedControllerSection extends PoliceControllerLanguage
+class WantedControllerPermissionSection extends ApplicationControllerPermissionAbstract
 {
-    public function getRequest()
-    {
-        $request = parent::getRequest();
 
-        //Display only published items
-        $request->query->published = 1;
-
-        return $request;
-    }
 }

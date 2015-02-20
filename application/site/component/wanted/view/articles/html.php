@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class WantedViewArticlesHtml extends  Library\ViewHtml
+class WantedViewArticlesHtml extends  WantedViewHtml
 {
     public function render()
     {
@@ -37,9 +37,6 @@ class WantedViewArticlesHtml extends  Library\ViewHtml
 
             $this->title    = $section->title.' - '.$category->title;
         }
-
-        $this->sections = $this->getObject('com:wanted.model.sections')->getRowset();
-        $this->categories = $this->getObject('com:wanted.model.categories')->getRowset();
 
         return parent::render();
     }

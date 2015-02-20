@@ -1,6 +1,6 @@
 <?php
 /**
- * Belgian Police Web Platform - Questions Component
+ * Belgian Police Web Platform - Wanted Component
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
@@ -9,12 +9,13 @@
 
 use Nooku\Library;
 
-class QuestionsControllerCategory extends PoliceControllerLanguage
+class WantedControllerCategory extends PoliceControllerLanguage
 {
     public function getRequest()
     {
         $request = parent::getRequest();
 
+        //Display only published items
         $request->query->published = 1;
 
         return $request;

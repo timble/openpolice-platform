@@ -19,6 +19,16 @@ class ModelSections extends Library\ModelTable
 
         // Set the state
         $this->getState()
-            ->insert('sort'      , 'cmd', 'ordering');
+            ->insert('published'      , 'int');
+    }
+
+    protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
+    {
+        parent::_buildQueryWhere($query);
+        $state = $this->getState();
+
+        if (is_numeric($state->published)) {
+            $query->where('tbl.published = :published')->bind(array('published' => $state->published));
+        }
     }
 }

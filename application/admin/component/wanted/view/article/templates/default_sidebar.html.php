@@ -43,7 +43,7 @@
     <legend><?= translate('Category') ?></legend>
     <? foreach ($sections as $section) : ?>
         <h3><?= $section->title ?></h3>
-        <?= helper('com:questions.radiolist.categories', array('row' => $article, 'package' => 'wanted', 'name' => 'wanted_category_id', 'filter' => array('section' => $section->id))) ?>
+        <?= helper('com:questions.radiolist.categories', array('row' => $article, 'package' => 'wanted', 'name' => 'wanted_category_id', 'filter' => array('section' => $section->id, 'sort' => 'ordering'))) ?>
     <? endforeach ?>
 </fieldset>
 

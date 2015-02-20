@@ -23,7 +23,7 @@
                 'attribs' => array('width' => '400', 'height' => '300'))) ?>
         </a>
     <? endif ?>
-<?= $category->title ?>
+
     <dl>
         <dt><?= translate('Date section'.$section->id) ?>:</dt>
         <dd><?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?></dd>
