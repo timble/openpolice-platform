@@ -26,7 +26,6 @@ class ModelContacts extends Library\ModelTable
 		$this->getState()
 			->insert('published', 'boolean')
 			->insert('category' , 'slug')
-			->insert('access'   , 'int')
             ->insert('sort'     , 'cmd', 'ordering');
 	}
 
@@ -61,10 +60,6 @@ class ModelContacts extends Library\ModelTable
 
 		if ($state->search) {
 			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
-		}
-		
-		if (is_numeric($state->access)) {
-		    $query->where('tbl.access <= :access')->bind(array('access' => $state->access));
 		}
 	}
 }

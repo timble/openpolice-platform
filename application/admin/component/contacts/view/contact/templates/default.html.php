@@ -26,7 +26,6 @@
 
 <form action="" method="post" id="contact-form" class="-koowa-form">
     <input type="hidden" name="id" value="<?= $contact->id; ?>" />
-    <input type="hidden" name="access" value="0" />
     <input type="hidden" name="published" value="0" />
 
     <div class="main">

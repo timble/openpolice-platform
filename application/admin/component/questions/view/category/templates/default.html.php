@@ -16,9 +16,7 @@
 <? endif ?>
 
 <form action="" method="post" class="-koowa-form" id="category-form">
-    <input type="hidden" name="access" value="0" />
     <input type="hidden" name="published" value="0" />
-    <input type="hidden" name="table" value="<?= $state->table ?>" />
     <input type="hidden" name="attachments_attachment_id" value="0" />
 
     <div class="main">

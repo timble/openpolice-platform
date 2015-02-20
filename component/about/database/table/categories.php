@@ -12,7 +12,7 @@ use Nooku\Library;
 
 class DatabaseTableCategories extends Library\DatabaseTableAbstract
 {
-    public function  _initialize(Library\ObjectConfig $config)
+    public function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
             'behaviors'  => array(
