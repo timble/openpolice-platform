@@ -17,7 +17,7 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
         $config->append(array(
             'name'         => 'press',
             'behaviors'    =>  array(
-                'sluggable', 'lockable', 'creatable', 'modifiable',
+                'sluggable', 'creatable', 'modifiable', 'lockable',
                 'com:attachments.database.behavior.attachable',
                 'com:languages.database.behavior.translatable',
                 'com:news.database.behavior.publishable' => array('table' => 'press')

@@ -15,7 +15,7 @@ class DatabaseTableDistricts extends Library\DatabaseTableAbstract
     public function  _initialize(Library\ObjectConfig $config)
     {        
         $config->append(array(
-            'behaviors'    =>  array('lockable', 'creatable', 'modifiable', 'sluggable')
+            'behaviors'    =>  array('sluggable', 'creatable', 'modifiable', 'lockable')
         ));
      
         parent::_initialize($config);
