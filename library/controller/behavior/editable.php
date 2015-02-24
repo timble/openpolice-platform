@@ -109,10 +109,21 @@ class ControllerBehaviorEditable extends ControllerBehaviorAbstract
      */
     public function getReferrer(CommandContext $context)
     {
-        $identifier = $this->getMixer()->getIdentifier();
+        $referrer = $context->request->cookies->get('referrer', 'url');
+
+        // Fallback, create referrer if no Cookie is set
+        if(!$referrer)
+        {
+            $controller = $this->getMixer();
+            $identifier = $controller->getIdentifier();
+
+            $option = 'com_' . $identifier->package;
+            $view = StringInflector::pluralize($identifier->name);
+            $referrer = $controller->getView()->getRoute('option=' . $option . '&view=' . $view, true, false);
+        }
 
         $referrer = $this->getObject('lib:http.url',
-            array('url' => $context->request->cookies->get('referrer', 'url'))
+            array('url' => $referrer)
         );
 
         return $referrer;
