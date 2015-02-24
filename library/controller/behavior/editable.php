@@ -109,22 +109,12 @@ class ControllerBehaviorEditable extends ControllerBehaviorAbstract
      */
     public function getReferrer(CommandContext $context)
     {
-        $referrer = $context->request->cookies->get('referrer', 'url');
-
-        // Fallback, create referrer if no Cookie is set
-        if(!$referrer)
+        if($context->request->cookies->has('referrer'))
         {
-            $controller = $this->getMixer();
-            $identifier = $controller->getIdentifier();
-
-            $option = 'com_' . $identifier->package;
-            $view = StringInflector::pluralize($identifier->name);
-            $referrer = $controller->getView()->getRoute('option=' . $option . '&view=' . $view, true, false);
+            $referrer = $context->request->cookies->get('referrer', 'url');
+            $referrer = $this->getObject('lib:http.url', array('url' => $referrer));
         }
-
-        $referrer = $this->getObject('lib:http.url',
-            array('url' => $referrer)
-        );
+        else $referrer = $this->findReferrer($context);
 
         return $referrer;
     }
@@ -162,6 +152,27 @@ class ControllerBehaviorEditable extends ControllerBehaviorAbstract
 
             $context->response->headers->addCookie($cookie);
         }
+    }
+
+    /**
+     * Find the referrer based on the context
+     *
+     * Method is being called when no referrer can be found in the request or when request url and referrer are
+     * identical. Function should return a url that is different from the request url to avoid redirect loops.
+     *
+     * @param ControllerContextInterface $context
+     * @return HttpUrl    A HttpUrl object
+     */
+    public function findReferrer(CommandContext $context)
+    {
+        $controller = $this->getMixer();
+        $identifier = $controller->getIdentifier();
+
+        $component = $identifier->package;
+        $view      = StringInflector::pluralize($identifier->name);
+        $referrer  = $controller->getView()->getRoute('component=' . $component . '&view=' . $view, true, false);
+
+        return $this->getObject('lib:http.url', array('url' => $referrer));
     }
 
     /**
