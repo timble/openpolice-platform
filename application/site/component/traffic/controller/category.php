@@ -23,7 +23,6 @@ class TrafficControllerCategory extends PoliceControllerLanguage
         $request = parent::getRequest();
 
         $request->query->published = 1;
-        $request->query->sort      = 'title';
 
         return $request;
     }
