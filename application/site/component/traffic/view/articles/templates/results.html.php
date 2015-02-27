@@ -15,7 +15,14 @@
         <? foreach ($articles as $article) : ?>
             <tr>
                 <td>
-                    <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a>
+                    <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a><br />
+                    <small>
+                        <? if ($article->isLocatable() && $streets = $article->getStreets()->title) : ?>
+                            <?= implode(", ", $article->getStreets()->title) ?>
+                        <? else : ?>
+                            <?= translate('Territory Police').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
+                        <? endif ?>
+                    </small>
                 </td>
                 <td>
                     <?= round(($article->in_violation / $article->controlled) * 100, 0); ?> %
