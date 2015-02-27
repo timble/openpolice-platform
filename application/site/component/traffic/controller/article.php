@@ -27,6 +27,12 @@ class TrafficControllerArticle extends PoliceControllerLanguage
             $request->query->date = 'upcoming';
         }
 
+        if($request->query->get('view', 'cmd', null) == 'articles' && $request->query->get('layout', 'cmd', 'default') == 'results')
+        {
+            // Sort results in descending order
+            $request->query->direction = 'DESC';
+        }
+
 		return parent::getRequest();
 	}
 }
