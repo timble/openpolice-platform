@@ -26,7 +26,7 @@
                 // the input tag has a value attribute preloaded that points to a preselected movie's id
                 // this function resolves that id attribute to an object that select2 can render
                 // using its formatResult renderer - that way the movie name is shown preselected
-                var id=$jQuery(element).val();
+                var id=$jQuery(element).data("selected");
                 if (id!=="") {
                     $jQuery.ajax("?option=com_streets&view=street&format=json&id="+id, {
                         dataType: "json"
@@ -43,4 +43,4 @@
     });
 </script>
 
-<input type="text" id="autocomplete__streets" placeholder="<?= @translate('Search the street') ?> ..." name="streets" value="<?= $selected ?>" style="width: 100%">
+<input type="text" id="autocomplete__streets" placeholder="<?= @translate('Search the street') ?> ..." name="streets" value="<?= $identifier ?>" data-selected="<?= $selected ?>" style="width: 100%">
