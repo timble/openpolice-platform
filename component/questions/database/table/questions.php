@@ -22,7 +22,8 @@ class DatabaseTableQuestions extends Library\DatabaseTableAbstract
                 'com:languages.database.behavior.translatable'
             ),
           	'filters' => array(
-          	    'text'   => array('html', 'tidy')
+          	    'text'   => array('html', 'tidy'),
+                'params'      => 'json'
           	)
         ));
      

@@ -47,6 +47,16 @@
     </fieldset>
 <? endif ?>
 
+<fieldset>
+    <legend><?= translate('Embeds') ?></legend>
+    <div>
+        <label for="params[youtube]"><?= translate('Youtube') ?></label>
+        <div>
+            <input type="text" name="params[youtube]" value="<?= $article->params['youtube'] ?>" placeholder="http://youtu.be/hPxxxgI_7LY" />
+        </div>
+    </div>
+</fieldset>
+
 <script data-inline>
     $jQuery("input[name=published]").click(function()
     {

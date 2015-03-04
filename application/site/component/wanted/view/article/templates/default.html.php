@@ -33,6 +33,8 @@
 
     <?= $article->text ?>
 
+    <?= import('com:news.view.article.default_youtube.html') ?>
+
     <? if($article->isAttachable()) : ?>
     <div class="entry-content-asset">
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $article->getAttachments(), 'exclude' => array($article->attachments_attachment_id))) ?>

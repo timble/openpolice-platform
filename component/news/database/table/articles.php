@@ -25,6 +25,7 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
           	'filters' => array(
           	    'introtext'   => array('html', 'tidy'),
           	    'fulltext'    => array('html', 'tidy'),
+                'params'      => 'json'
           	)
         ));
      
