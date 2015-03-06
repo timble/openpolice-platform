@@ -56,7 +56,7 @@
                     // since we are using custom formatting functions we do not need to alter remote JSON data
                     var results = [];
                     $.each(data.items, function(i, item) {
-                        results.push(item.data);
+                        results.push({"title": item.data.title, "id": item.data.streets_street_identifier});
                     });
                     return {results: results};
                 }
