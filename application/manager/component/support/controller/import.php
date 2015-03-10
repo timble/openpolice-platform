@@ -12,8 +12,9 @@ class SupportControllerImport extends Library\ControllerAbstract
             ->like(':like')
             ->bind(array('like' => '____'));
 
-        $zones = $adapter->select($query, Library\Database::FETCH_FIELD_LIST);
-
+        $zones   = $adapter->select($query, Library\Database::FETCH_FIELD_LIST);
+        $zones[] = 'fed';
+        
         foreach ($zones as $zone)
         {
             if (in_array($zone, array('demo', 'data'))) {
