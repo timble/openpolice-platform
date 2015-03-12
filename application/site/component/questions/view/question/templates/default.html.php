@@ -29,7 +29,7 @@
 
     <?= $question->text ?>
 
-    <?= import('com:news.view.article.default_youtube.html', array('article' => $question)) ?>
+    <?= import('com:news.view.article.default_youtube.html', array('youtube' => $question->params->get('youtube', false))) ?>
 
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($question->attachments_attachment_id))) ?>
 </article>

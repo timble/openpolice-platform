@@ -1,4 +1,4 @@
-<? if($youtube = $article->params['youtube']) : ?>
+<? if($youtube) : ?>
 <?
     preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+(?=\?)|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $youtube, $matches);
 ?>

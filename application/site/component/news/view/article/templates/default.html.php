@@ -45,7 +45,7 @@
         </div>
         <?= $article->fulltext ?>
 
-        <?= import('default_youtube.html') ?>
+        <?= import('default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
 
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
