@@ -371,6 +371,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row->title = $item['title'];
                 $row->slug = $this->getObject('lib:filter.slug')->sanitize($item['title']);
                 $row->text = stripslashes(html_entity_decode($item['text']));
+                $row->published_on = $item['pubdate'];
+                $row->date = $item['factdate'];
+                $row->case_id = $item['case_id'];
                 $row->published = '1';
 
                 $this->_clean($row, 'wanted', true, 'text');
