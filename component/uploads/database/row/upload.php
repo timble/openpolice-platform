@@ -390,6 +390,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row->date = $item['factdate'];
                 $row->case_id = $item['case_id'];
                 $row->published = '1';
+                $row->params = array('childfocus' => $item['childfocus']);
 
                 $this->_clean($row, 'wanted', true, 'text');
 
@@ -544,8 +545,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
             foreach($dom->getElementsByTagName('a') as $link)
             {
+                $href = $link->attributes->getNamedItem("href")->value;
+
                 // Check if the link is pointing to a local image
-                if(strpos($link->attributes->getNamedItem("href")->value, 'sites/fed/files/files/images/') !== false)
+                if(strpos($href, 'sites/fed/files/files/images/') !== false && strpos($href, 'pixel_bis.jpg') == false && strpos($href, 'dour1.jpg') == false)
                 {
                     $images[] = $link;
                 }
@@ -569,18 +572,22 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             {
                 $fullpath  = $root . '/' . $link;
                 $extension = $this->_getFileExtension($fullpath);
-                $filesize  = filesize($fullpath);
                 $allowed   = in_array($extension, array('jpg', 'jpeg', 'png'));
 
-                list($width, $height) = getimagesize($fullpath);
+                if($allowed && file_exists($fullpath))
+                {
+                    $filesize  = filesize($fullpath);
 
-                if ($extractImages && $allowed && $filesize < 10485760 && $width <= 2048 && $height <= 2048) {
-                    $return = $this->_saveAttachment($row, $fullpath, $table);
-                }
-                else $return = false;
+                    list($width, $height) = getimagesize($fullpath);
 
-                if(!$attachment) {
-                    $attachment = $return;
+                    if ($extractImages && $allowed && $filesize < 10485760 && $width <= 2048 && $height <= 2048) {
+                        $return = $this->_saveAttachment($row, $fullpath, $table);
+                    }
+                    else $return = false;
+
+                    if(!$attachment) {
+                        $attachment = $return;
+                    }
                 }
 
                 $image->parentNode->removeChild($image);
