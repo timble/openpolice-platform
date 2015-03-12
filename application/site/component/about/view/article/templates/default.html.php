@@ -36,7 +36,7 @@
 
     <?= $article->fulltext ?>
 
-    <?= import('com:news.view.article.default_youtube.html') ?>
+    <?= import('com:news.view.article.default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
 
     <? if($article->isAttachable()) : ?>
     <div class="entry-content-asset">

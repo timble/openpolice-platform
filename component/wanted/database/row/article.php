@@ -16,7 +16,7 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
     {
         if($column == 'params')
         {
-            $this->_data['params'] = json_decode($this->_data['params'], true);
+            $this->_data['params'] = $this->getObject('object.config.factory')->getFormat('json')->fromString($this->_data['params']);
         }
 
         return parent::__get($column);
