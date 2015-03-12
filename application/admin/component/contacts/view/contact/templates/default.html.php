@@ -26,7 +26,6 @@
 
 <form action="" method="post" id="contact-form" class="-koowa-form">
     <input type="hidden" name="id" value="<?= $contact->id; ?>" />
-    <input type="hidden" name="access" value="0" />
     <input type="hidden" name="published" value="0" />
 
     <div class="main">
@@ -58,7 +57,7 @@
                         <?= translate( 'Street' ); ?>
                     </label>
                     <div>
-                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => !$contact->isNew() && isset($street) ? $street->streets_street_identifier : '')); ?>
+                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => !$contact->isNew() && isset($street) ? $street->id : '', 'identifier' => !$contact->isNew() && isset($street) ? $street->streets_street_identifier : '')); ?>
                     </div>
                 </div>
                 <div>

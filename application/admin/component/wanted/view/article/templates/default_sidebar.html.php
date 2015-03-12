@@ -57,6 +57,16 @@
 </fieldset>
 <? endif ?>
 
+<fieldset>
+    <legend><?= translate('Embeds') ?></legend>
+    <div>
+        <label for="params[youtube]"><?= translate('Youtube') ?></label>
+        <div>
+            <input type="text" name="params[youtube]" value="<?= $article->params['youtube'] ?>" placeholder="http://youtu.be/hPxxxgI_7LY" />
+        </div>
+    </div>
+</fieldset>
+
 <? if(!$article->wanted_category_id) : ?>
 <script>
     // Set default value for categories radiolist

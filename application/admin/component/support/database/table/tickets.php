@@ -15,7 +15,7 @@ class SupportDatabaseTableTickets extends Library\DatabaseTableAbstract
     {
         $config->append(array(
             'behaviors'  => array(
-                'creatable', 'modifiable', 'lockable', 'sluggable',
+                'sluggable', 'creatable', 'modifiable', 'lockable',
                 'com:comments.database.behavior.discussible',
                 'com:attachments.database.behavior.attachable',
                 'notifiable'

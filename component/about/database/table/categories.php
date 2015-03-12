@@ -12,11 +12,11 @@ use Nooku\Library;
 
 class DatabaseTableCategories extends Library\DatabaseTableAbstract
 {
-    public function  _initialize(Library\ObjectConfig $config)
+    public function _initialize(Library\ObjectConfig $config)
     {
         $config->append(array(
             'behaviors'  => array(
-                'creatable', 'modifiable', 'lockable', 'sluggable',
+                'sluggable', 'creatable', 'modifiable', 'lockable',
                 'com:attachments.database.behavior.attachable',
                 'com:languages.database.behavior.translatable',
                 'deletable',

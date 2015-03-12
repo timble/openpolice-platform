@@ -74,9 +74,6 @@
                     <? else : ?>
                         <?= escape($article->title); ?>
                     <? endif; ?>
-                    <? if($article->access) : ?>
-                        <span class="label label-important"><?= translate('Registered') ?></span>
-                    <? endif; ?>
                 </td>
                 <td>
                     <?= date(array('date' => $article->date, 'format' => 'l d M Y')) ?>

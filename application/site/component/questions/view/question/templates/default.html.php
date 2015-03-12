@@ -28,6 +28,9 @@
     <? endif ?>
 
     <?= $question->text ?>
+
+    <?= import('com:news.view.article.default_youtube.html', array('article' => $question)) ?>
+
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($question->attachments_attachment_id))) ?>
 </article>
 

@@ -8,6 +8,11 @@
  */
 ?>
 
+<?
+$languages  = $this->getObject('application.languages');
+$language   = $languages->getActive();
+?>
+
 <style src="assets://application/components/select2/select2.css" />
 
 <script src="assets://application/components/jquery/dist/jquery.min.js" />
@@ -56,7 +61,7 @@
                     // since we are using custom formatting functions we do not need to alter remote JSON data
                     var results = [];
                     $.each(data.items, function(i, item) {
-                        results.push(item.data);
+                        results.push({"title": item.data.title, "id": item.data.streets_street_identifier});
                     });
                     return {results: results};
                 }
@@ -67,9 +72,9 @@
                 // using its formatResult renderer - that way the movie name is shown preselected
                 var id=$(element).val();
                 if (id!=="") {
-                    $.ajax("?view=street&format=json&id="+id, {
+                    $.ajax("?option=com_streets&view=streets&format=json&iso=<?= $language->slug ?>&source=1&identifier="+id, {
                         dataType: "json"
-                    }).done(function(data) { callback(data.item); });
+                    }).done(function(data) { callback(data.items[0].data); });
                 }
             },
             formatResult: format, // omitted for brevity, see the source of this page

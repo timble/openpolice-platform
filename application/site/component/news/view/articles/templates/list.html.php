@@ -8,10 +8,18 @@
  */
 ?>
 
-<? $site = object('application')->getCfg('site') ?>
+<?
+$site = object('application')->getCfg('site');
+
+$languages  = $this->getObject('application.languages');
+$active     = $languages->getActive();
+
+$path = '/'.$site;
+$path .= count($languages) > '1' ? '/'.$active->slug : '';
+?>
 
 <? foreach ($articles as $article) : ?>
-    <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
+    <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
     <div class="media">
         <? if($article->attachments_attachment_id): ?>
             <a tabindex="-1" class="thumbnail media__object" href="<?= $link ?>">

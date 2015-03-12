@@ -17,11 +17,13 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
         $config->append(array(
             'name'         => 'wanted',
             'behaviors'    =>  array(
-                'sluggable', 'lockable', 'creatable', 'modifiable',
+                'sluggable', 'creatable', 'modifiable', 'lockable',
                 'com:attachments.database.behavior.attachable',
+                //'com:languages.database.behavior.translatable',
             ),
             'filters' => array(
-                'text' => array('html', 'tidy')
+                'text' => array('html', 'tidy'),
+                'params'    => 'json'
             )
         ));
 

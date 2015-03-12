@@ -286,6 +286,21 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $this->_clean($row, 'press', true, 'fulltext');
 
                     $row->save();
+                } elseif($this->override) {
+                    $row->title = $item['title'];
+                    $row->slug = $item['alias'];
+                    $row->introtext = stripslashes($item['introtext']);
+                    $row->fulltext = stripslashes($item['fulltext']);
+                    $row->created_on = $item['created'];
+                    $row->created_by = '1';
+                    $row->modified_on = $item['modified'];
+                    $row->modified_by = $item['modified_by'];
+                    $row->published = $item['state'];
+                    $row->published_on = $item['publish_up'];
+
+                    $this->_clean($row, 'news', false);
+
+                    $row->save();
                 }
             }
         }

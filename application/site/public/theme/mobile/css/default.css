@@ -1322,6 +1322,20 @@ ul.column--double, ul.column--triple, ul.column--quad {
 .article__thumbnail {
   margin-bottom: 0.75em; }
 
+.article__video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+.article__video iframe, .article__video object, .article__video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
 @media screen and (min-width: 400px) {
   .article__thumbnail {
     float: right;
@@ -1362,6 +1376,9 @@ ul.column--double, ul.column--triple, ul.column--quad {
 
   .banner__image--5318 {
     background: url("../images/banners/5318.jpg"); }
+
+  .banner__image--5368 {
+    background: url("../images/banners/5368.jpg"); }
 
   .banner__image--5369 {
     background: url("../images/banners/5369.jpg"); }

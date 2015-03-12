@@ -25,6 +25,8 @@ class ModelStreets extends Library\ModelTable
             ->insert('row' , 'int')
             ->insert('table' , 'string')
             ->insert('iso' , 'string')
+            ->insert('source' , 'int')
+            ->insert('identifier' , 'int')
             ->insert('title' , 'string')
             ->insert('sort'      , 'cmd', 'title');
 	}
@@ -88,6 +90,14 @@ class ModelStreets extends Library\ModelTable
 
         if ($state->iso) {
             $query->where('tbl.iso = :iso')->bind(array('iso' => $state->iso));
+        }
+
+        if ($state->source) {
+            $query->where('tbl.sources_source_id = :source')->bind(array('source' => $state->source));
+        }
+
+        if ($state->identifier) {
+            $query->where('tbl.streets_street_identifier = :identifier')->bind(array('identifier' => $state->identifier));
         }
 
         if ($state->search) {
