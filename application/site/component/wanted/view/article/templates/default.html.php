@@ -44,6 +44,10 @@
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $article->getAttachments(), 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
     <? endif ?>
+
+    <h2><?= translate('Testimonials') ?></h2>
+    <p><?= translate('Do you have more information') ?></p>
+    <p><?= translate('Contact us by email') ?></p>
 </article>
 
 <script src="assets://application/components/jquery/dist/jquery.min.js" />
