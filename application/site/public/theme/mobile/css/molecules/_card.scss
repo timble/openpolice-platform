@@ -51,7 +51,18 @@
   display: block;
 }
 
-.card__date {
+.card__date,
+.card__place {
   display: block;
   color: $color-text;
+}
+
+@include breakpoint($breakpoint-beta) {
+  .card--horizontal {
+    text-align: left;
+
+    img {
+      border-radius: $border-radius 0 0 $border-radius;
+    }
+  }
 }

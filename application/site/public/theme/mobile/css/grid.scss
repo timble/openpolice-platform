@@ -3,9 +3,18 @@
 @import "utilities/variables";
 
 @include breakpoint($breakpoint-alpha) {
-  .wanted .cards .card,
   .found .cards .card {
     @include gallery(6 of 12);
+  }
+
+  .wanted .cards .card--horizontal {
+    img {
+      @include span(first 5 of 12);
+    }
+
+    .card__metadata {
+      @include span(7 of 12);
+    }
   }
 }
 
@@ -16,6 +25,18 @@
 
   .found .cards .card {
     @include gallery(4 of 12);
+  }
+
+  .wanted .cards .card--horizontal {
+    @include gallery(6 of 12);
+
+    img {
+      @include span(first 5 of 12);
+    }
+
+    .card__metadata {
+      @include span(7 of 12);
+    }
   }
 }
 
@@ -101,13 +122,24 @@
     @include span(5 of 12);
   }
 
-  .gallery .gallery__item,
-  .wanted .cards .card {
+  .gallery .gallery__item {
     @include gallery(4 of 12);
   }
 
   .found .cards .card {
-    @include gallery(3 of 12);
+     @include gallery(3 of 12);
+  }
+
+  .wanted .cards .card--horizontal {
+    @include gallery(6 of 12);
+
+    img {
+      @include span(first 5 of 12);
+    }
+
+    .card__metadata {
+      @include span(7 of 12);
+    }
   }
 }
 

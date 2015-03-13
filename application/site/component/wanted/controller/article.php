@@ -17,7 +17,7 @@ class WantedControllerArticle extends PoliceControllerLanguage
 
         //Display only published items
         $request->query->published = 1;
-        $request->query->limit = '12';
+        $request->query->limit = '10';
 
         return $request;
     }

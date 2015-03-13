@@ -10,7 +10,7 @@
 
 <ul class="cards clearfix">
     <? foreach ($articles as $article) : ?>
-        <li class="card">
+        <li class="card card--horizontal">
             <a href="<?= helper('route.article', array('row' => $article)) ?>">
                 <? if($article->attachments_attachment_id): ?>
                     <?= helper('com:police.image.thumbnail', array(

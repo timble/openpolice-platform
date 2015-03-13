@@ -1634,9 +1634,16 @@ button.button, input[type="submit"].button {
   margin-bottom: 0.375em;
   display: block; }
 
-.card__date {
+.card__date, .card__place {
   display: block;
   color: #222; }
+
+@media screen and (min-width: 600px) {
+  .card--horizontal {
+    text-align: left; }
+    .card--horizontal img {
+      border-radius: 4px 0 0 4px; }
+ }
 
 .form__group {
   margin-bottom: 0.75em; }
