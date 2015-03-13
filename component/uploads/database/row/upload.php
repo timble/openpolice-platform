@@ -390,7 +390,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $row->date = $item['factdate'];
                 $row->case_id = $item['case_id'];
                 $row->published = '1';
-                $row->params = array('childfocus' => $item['childfocus']);
+                $row->params = array('childfocus' => $item['childfocus'], 'place' => $item['place']);
 
                 $this->_clean($row, 'wanted', true, 'text');
 
@@ -520,12 +520,33 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
         $this->_cleanAttributes($dom);
 
+        $this->_extractYoutube($row, $dom, $table);
+
         $attachment = $this->_extractImages($row, $dom, $table, $extractImages);
         if(($property == 'introtext' || $property == 'text') && $attachment) {
             $row->attachments_attachment_id = $attachment;
         }
 
         $row->{$property} = $dom->saveHTML();
+    }
+
+    protected function _extractYoutube(Library\DatabaseRowAbstract $row, \DOMDocument $dom, $table)
+    {
+        $videos = $dom->getElementsByTagName('iframe');
+
+        foreach($videos as $video)
+        {
+            if(strpos($video->attributes->getNamedItem("src")->value, 'youtu') !== false )
+            {
+                // Get the video ID, last part in www.youtube.com/embed/KoMUYBnlvm8?rel=0
+                $link = end(explode('/',$video->attributes->getNamedItem("src")->value));
+
+                $row->params = array('youtube' => 'http://www.youtube.com?v='.$link);
+
+                // Only get the first video
+                break;
+            }
+        }
     }
 
     protected function _extractImages(Library\DatabaseRowAbstract $row, \DOMDocument $dom, $table, $extractImages)
@@ -620,7 +641,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
         $filename = basename($filepath);
 
-        $request         = $this->getObject('lib:controller.request', array('query' => array('container' => 'attachments-attachments')));
+        $request         = $this->getObject('lib:controller.request', array('query' => array('container' => $table == 'wanted' ? 'attachments-wanted' : 'attachments-attachments')));
         $file_controller = $this->getObject('com:files.controller.file', array('request' => $request));
         $attachment_controller = $this->getObject('com:attachments.controller.attachment', array('request' => clone $request));
         
@@ -643,7 +664,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $entity = $attachment_controller->add(array(
                 'name' => $filename,
                 'path' => $name,
-                'container' => 'attachments-attachments',
+                'container' => $table == 'wanted' ? 'attachments-wanted' : 'attachments-attachments',
                 'hash' => $hash,
                 'row' => $row->id,
                 'table' => $table
