@@ -78,6 +78,11 @@ class PoliceControllerPage extends Library\ControllerView
 
             if($redirect)
             {
+                // Do not add the language slug if we are on a single-language site
+                if (count($languages) == 1) {
+                    $language = null;
+                }
+
                 $site = $this->getObject('application')->getSite();
                 $path = array_filter(array($site, $language));
 
