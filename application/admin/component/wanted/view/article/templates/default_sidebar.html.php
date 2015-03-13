@@ -29,12 +29,22 @@
             </script>
         </div>
     </div>
+</fieldset>
+
+<fieldset>
+    <legend><?= translate('Place') ?></legend>
     <div>
         <label for="streets_city_id">
-            <?= translate( 'Place' ); ?>
+            <?= translate( 'Belgium' ); ?>
         </label>
         <div>
             <?= import('com:streets.view.cities.autocomplete.html', array('selected' => $article->streets_city_id)); ?>
+        </div>
+    </div>
+    <div>
+        <label for="params[place]"><?= translate('Foreign country') ?></label>
+        <div>
+            <input type="text" name="params[place]" value="<?= $article->params['place'] ?>" />
         </div>
     </div>
 </fieldset>
