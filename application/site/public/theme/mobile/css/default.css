@@ -1641,8 +1641,12 @@ button.button, input[type="submit"].button {
 @media screen and (min-width: 600px) {
   .card--horizontal {
     text-align: left; }
+    .card--horizontal a:hover img {
+      border-bottom: 0px none; }
     .card--horizontal img {
-      border-radius: 4px 0 0 4px; }
+      border-radius: 4px 0 0 4px;
+      border-bottom: 0px none;
+      border-right: 1px solid #e1edee; }
  }
 
 .form__group {

@@ -61,8 +61,14 @@
   .card--horizontal {
     text-align: left;
 
+    a:hover img {
+      border-bottom: 0px none;
+    }
+
     img {
       border-radius: $border-radius 0 0 $border-radius;
+      border-bottom: 0px none;
+      border-right: 1px solid darken($cyanLighter, 3%);
     }
   }
 }
