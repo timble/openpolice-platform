@@ -59,8 +59,13 @@ class PoliceControllerPage extends Library\ControllerView
             }
 
             // Still no language, use the primary
-            if(!$language) {
+            if(!$language)
+            {
                 $language = $languages->getPrimary()->slug;
+
+                if (count($languages) > 1) {
+                    $redirect = true;
+                }
             }
 
             // Check if the correct domain name is used for the language
