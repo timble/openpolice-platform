@@ -17,7 +17,7 @@ class PoliceControllerPage extends Library\ControllerView
 
         $url    = clone($context->request->getUrl());
         $host   = $url->getHost();
-        $path   = $url->getPath();
+        $path   = array_values(array_filter($url->getPath(true)));
 
         $languages  = $this->getObject('application.languages');
 
@@ -26,58 +26,58 @@ class PoliceControllerPage extends Library\ControllerView
 
         if($context->request->getFormat() == 'html')
         {
-            $site = $this->getObject('application')->getSite();
-
             // Are we dealing with a multilingual site?
-            if(count($languages) > '1')
+            if(count($languages) > 1)
             {
                 // Do we have language information in the path?
-                $language = str_replace($site, '', $path);
-                $language = ltrim($language, '/');
-                $language = rtrim($language, '/');
+                $language = isset($path[1]) ? $path[1] : null;
 
                 // No language found, fallback on the browser
-                if(!$language)
+                if(!$language || !in_array($language, $languages->get('slug')))
                 {
                     foreach($this->getObject('request')->getLanguages() as $browser_language)
                     {
                         if(in_array($browser_language, $languages->slug, true))
                         {
                             // Redirect to browser language
-                            $path = '/'.$site.'/'.$browser_language;
                             $language = $browser_language;
                             break;
                         }
                     }
 
-                    $redirect = true;
+                    if ($language) {
+                        $redirect = true;
+                    }
                 }
 
                 // Redirect to the selected language
-                if(isset($url->query['language'])) {
-                    $path = '/'.$site.'/'.$url->query['language'];
+                if(isset($url->query['language']))
+                {
                     $language = $url->query['language'];
-
                     $redirect = true;
                 }
             }
 
             // Still no language, use the primary
-            if(!$language)
-            {
+            if(!$language) {
                 $language = $languages->getPrimary()->slug;
             }
 
-            // Check if to correct domain name is used for the language
-            if($return = $this->getObject('com:police.controller.language')->findHost($host, $language))
+            // Check if the correct domain name is used for the language
+            $preferred = $this->getObject('com:police.controller.language')->findHost($host, $language);
+            if($preferred && $preferred != $host)
             {
-                $host = $return;
+                $host     = $preferred;
                 $redirect = true;
             }
 
             if($redirect)
             {
-                $this->getObject('component')->redirect('http://'.$host.$path);
+                $site = $this->getObject('application')->getSite();
+                $path = array_filter(array($site, $language));
+
+                $this->getObject('component')->redirect('http://'.$host.'/'.implode('/',$path));
+
                 return true;
             }
         }

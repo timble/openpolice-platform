@@ -48,10 +48,10 @@ class ObjectConfigFactory extends Object implements ObjectMultiton
     {
         $config->append(array(
             'formats' => array(
-                'ini'  => 'Nooku\Library\Object\ObjectConfigIni',
-                'json' => 'Nooku\Library\Object\ObjectConfigJson',
-                'xml'  => 'Nooku\Library\Object\ObjectConfigXml',
-                'yaml' => 'Nooku\Library\Object\ObjectConfigYaml'
+                'ini'  => 'Nooku\Library\ObjectConfigIni',
+                'json' => 'Nooku\Library\ObjectConfigJson',
+                'xml'  => 'Nooku\Library\ObjectConfigXml',
+                'yaml' => 'Nooku\Library\ObjectConfigYaml'
             )
         ));
 
