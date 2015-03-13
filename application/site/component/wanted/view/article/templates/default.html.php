@@ -8,6 +8,8 @@
  */
 ?>
 
+<meta content="noimageindex" name="robots" />
+
 <ktml:module position="left">
     <?= import('com:wanted.view.sections.list.html') ?>
 </ktml:module>

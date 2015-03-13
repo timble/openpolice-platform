@@ -8,6 +8,8 @@
  */
 ?>
 
+<meta content="noimageindex" name="robots" />
+
 <ul class="cards clearfix">
     <? foreach ($articles as $article) : ?>
         <li class="card card--horizontal">
