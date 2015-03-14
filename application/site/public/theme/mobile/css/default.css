@@ -1875,7 +1875,8 @@ button.button, input[type="submit"].button {
     border-bottom: 1px solid #004D9F;
     padding: 13px 20px;
     font-weight: bold;
-    color: #fff; }
+    color: #fff;
+    white-space: nowrap; }
   .navbar ul li a:focus, .navbar ul li a:hover {
     background-color: #006bdc;
     color: #fff;
