@@ -16,7 +16,10 @@ class DatabaseTableZones extends Library\DatabaseTableAbstract
     {        
         $config->append(array(
             'name'      => 'data.police_zones',
-            'behaviors' =>  array('lockable', 'creatable', 'modifiable')
+            'behaviors' =>  array('lockable', 'creatable', 'modifiable'),
+            'filters' => array(
+                'social'    => 'json'
+            )
         ));
      
         parent::_initialize($config);

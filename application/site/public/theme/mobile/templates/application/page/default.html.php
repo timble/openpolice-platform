@@ -131,10 +131,16 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     <div class="container container__copyright">
         <div class="copyright--left">
             <? if($zone->twitter) : ?>
-                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>&nbsp;&nbsp;|&nbsp;
+                <a href="https://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>&nbsp;&nbsp;|&nbsp;
             <? endif ?>
             <? if($zone->facebook) : ?>
-                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>&nbsp;&nbsp;|&nbsp;
+                <a href="https://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>&nbsp;&nbsp;|&nbsp;
+            <? endif ?>
+            <? if($zone->youtube) : ?>
+                <a href="https://www.youtube.com/user/<?= $zone->youtube ?>"><i class="icon-facebook"></i> Youtube</a>&nbsp;&nbsp;|&nbsp;
+            <? endif ?>
+            <? if($zone->instagram) : ?>
+                <a href="https://instagram.com/<?= $zone->instagram ?>"><i class="icon-facebook"></i> Instagram</a>&nbsp;&nbsp;|&nbsp;
             <? endif ?>
             <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss"><i class="icon-feed"></i> RSS</a>
             <? foreach($pages as $page) : ?>
