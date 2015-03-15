@@ -1,3 +1,51 @@
+.container.container__footer_menu {
+  .nav--list li a {
+    margin: 0;
+  }
+
+  .nav--social {
+    display: table;
+    border-top: 1px solid $color-border;
+
+    li {
+      display: table-cell;
+      width: 1%;
+
+      a {
+        border: none;
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@include breakpoint($breakpoint-alpha) {
+  .container.container__footer_menu {
+
+    @include clearfix();
+
+    ul {
+      @include clearfix();
+      margin: 0;
+
+      li {
+        display: block;
+        float: left;
+
+        a {
+          border: none;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    .nav--social li {
+      float: none;
+    }
+  }
+}
+
 @include breakpoint($breakpoint-charlie) {
   #wrap {
     border-bottom: 1px solid darken($color-border, 7%);
@@ -139,8 +187,8 @@
   }
 
   .container.container__footer_menu {
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 0px;
+    padding-right: 0px;
 
     ul {
       @include clearfix();
@@ -152,7 +200,6 @@
 
         a {
           border: none;
-          font-size: 14px;
           padding-top: 10px;
           padding-bottom: 10px;
         }
@@ -174,5 +221,37 @@
     border-left: 1px solid darken($color-border, 7%);
     border-right: 1px solid darken($color-border, 7%);
     @include border-radius(0 0 5px 5px);
+  }
+
+  .container.container__footer_menu {
+    ul:first-of-type li:first-child a {
+      border-bottom-left-radius: $border-radius;
+    }
+
+    ul:last-of-type li:last-child a {
+      border-bottom-right-radius: $border-radius;
+    }
+
+    .nav--list {
+      float: left;
+    }
+
+    .nav--social {
+      border-top: 0 none;
+
+      float: right;
+      display: block;
+
+      li {
+        display: block;
+        float: left;
+        width: auto;
+      }
+
+      a {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
   }
 }
