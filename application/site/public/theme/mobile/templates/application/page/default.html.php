@@ -125,38 +125,17 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <? endforeach ?>
         </ul>
         <ul class="nav nav--list nav--social">
-            <? if($zone->twitter) : ?>
+            <? $channels = array('twitter' => 'www.twitter.com', 'facebook' => 'www.facebook.com', 'youtube' => 'www.youtube.com/user', 'instagram' => 'instagram.com') ?>
+            <? foreach($channels as $channel => $site) : ?>
+            <? if($zone->{$channel}) : ?>
             <li>
-                <a href="https://www.twitter.com/<?= $zone->twitter ?>">
-                    <i class="icon-twitter"></i>
-                    <span class="visually-hidden">Twitter</span>
+                <a href="https://<?= $site ?>/<?= $zone->{$channel} ?>">
+                    <i class="icon-<?= $channel ?>"></i>
+                    <span class="visually-hidden"><?= ucfirst($zone->{$channel}) ?></span>
                 </a>
             </li>
             <? endif ?>
-            <? if($zone->facebook) : ?>
-            <li>
-                <a href="https://www.facebook.com/<?= $zone->facebook ?>">
-                    <i class="icon-facebook"></i>
-                    <span class="visually-hidden">Facebook</span>
-                </a>
-            </li>
-            <? endif ?>
-            <? if($zone->youtube) : ?>
-            <li>
-                <a href="https://www.youtube.com/user/<?= $zone->youtube ?>">
-                    <i class="icon-youtube"></i>
-                    <span class="visually-hidden">Youtube</span>
-                </a>
-            </li>
-            <? endif ?>
-            <? if($zone->instagram) : ?>
-            <li>
-                <a href="https://instagram.com/<?= $zone->instagram ?>">
-                    <i class="icon-instagram"></i>
-                    <span class="visually-hidden">Instagram</span>
-                </a>
-            </li>
-            <? endif ?>
+            <? endforeach ?>
             <li>
                 <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss">
                     <i class="icon-feed"></i>
