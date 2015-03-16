@@ -1,3 +1,7 @@
+#wrap {
+  border-bottom: 1px solid darken($color-border, 7%);
+}
+
 .container.container__footer_menu {
   .nav--list li a {
     margin: 0;
@@ -47,10 +51,6 @@
 }
 
 @include breakpoint($breakpoint-charlie) {
-  #wrap {
-    border-bottom: 1px solid darken($color-border, 7%);
-  }
-
   .visible-phone {
     display: none;
   }
@@ -205,6 +205,27 @@
         }
       }
     }
+
+    .nav--list {
+      float: left;
+    }
+    
+    .nav--social {
+      display: block;
+      float: right;
+      border-top: 0 none;
+
+      li {
+        display: block;
+        float: left;
+        width: auto;
+      }
+
+      a {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
   }
 
   .container__copyright {
@@ -230,28 +251,6 @@
 
     ul:last-of-type li:last-child a {
       border-bottom-right-radius: $border-radius;
-    }
-
-    .nav--list {
-      float: left;
-    }
-
-    .nav--social {
-      border-top: 0 none;
-
-      float: right;
-      display: block;
-
-      li {
-        display: block;
-        float: left;
-        width: auto;
-      }
-
-      a {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
     }
   }
 }
