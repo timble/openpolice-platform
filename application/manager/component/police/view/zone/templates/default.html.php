@@ -128,6 +128,23 @@
                     </div>
                 </div>
             </fieldset>
+            <? $channels = array('twitter', 'facebook', 'youtube', 'instagram') ?>
+            <? $languages = array('nl' => 'Dutch', 'fr' => 'French', 'de' => 'German') ?>
+            <? foreach($channels as $channel) : ?>
+            <fieldset>
+                <legend><?= translate(ucfirst($channel)); ?>:</legend>
+                <? foreach($languages as $slug => $name) : ?>
+                <div>
+                    <label for="social[<?= $channel ?>][<?= $slug ?>]">
+                        <?= translate(ucfirst($name)); ?>
+                    </label>
+                    <div>
+                        <input type="text" name="social[<?= $channel ?>][<?= $slug ?>]" value="<?= isset($zone->social->{$channel}->{$slug}) ? $zone->social->{$channel}->{$slug} : ''; ?>" />
+                    </div>
+                </div>
+                <? endforeach ?>
+            </fieldset>
+            <? endforeach ?>
 		</div>
 	</div>
 </form>

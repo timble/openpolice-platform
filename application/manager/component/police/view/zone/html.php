@@ -16,6 +16,7 @@ class PoliceViewZoneHtml extends Library\ViewHtml
         $zone = $this->getModel()->getRow();
 
         $zone->titles = json_decode($zone->titles);
+        $zone->social = json_decode($zone->social);
 
         return parent::render();
     }
