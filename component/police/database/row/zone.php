@@ -12,6 +12,8 @@ use Nooku\Library;
 
 class DatabaseRowZone extends Library\DatabaseRowTable
 {
+    private static $__socialMedia = array('twitter', 'facebook', 'instagram', 'youtube');
+
     public function __get($column)
     {
         $language = $this->getObject('application.languages')->getActive()->slug;
@@ -29,59 +31,34 @@ class DatabaseRowZone extends Library\DatabaseRowTable
             }
         }
 
-        if($column == 'facebook' && !isset($this->_data['facebook']))
-        {
-            $items = json_decode($this->_data['social'], true);
-
-            if (is_array($items))
-            {
-                if (isset($items[$language])) {
-                    $this->_data['facebook'] = $items['facebook'][$language];
-                }
-                else $this->_data['facebook'] = array_shift(array_values($items['facebook']));
-            }
-        }
-
-        if($column == 'twitter' && !isset($this->_data['twitter']))
-        {
-            $items = json_decode($this->_data['social'], true);
-
-            if (is_array($items))
-            {
-                if (isset($items[$language])) {
-                    $this->_data['twitter'] = $items['twitter'][$language];
-                }
-                else $this->_data['twitter'] = array_shift(array_values($items['twitter']));
-            }
-        }
-
-        if($column == 'youtube' && !isset($this->_data['youtube']))
-        {
-            $items = json_decode($this->_data['social'], true);
-
-            if (is_array($items))
-            {
-                if (isset($items[$language])) {
-                    $this->_data['youtube'] = $items['youtube'][$language];
-                }
-                else $this->_data['youtube'] = array_shift(array_values($items['youtube']));
-            }
-        }
-
-        if($column == 'instagram' && !isset($this->_data['instagram']))
-        {
-            $items = json_decode($this->_data['social'], true);
-
-            if (is_array($items))
-            {
-                if (isset($items[$language])) {
-                    $this->_data['instagram'] = $items['instagram'][$language];
-                }
-                else $this->_data['instagram'] = array_shift(array_values($items['instagram']));
-            }
+        if (in_array($column, self::$__socialMedia) && !isset($this->_data[$column])) {
+            $this->_data[$column] = $this->_getSocialAccount($column);
         }
 
         return parent::__get($column);
+    }
+
+    protected function _getSocialAccount($medium)
+    {
+        if (!in_array($medium, self::$__socialMedia)) {
+            return null;
+        }
+
+        $language = $this->getObject('application.languages')->getActive()->slug;
+        $social   = json_decode($this->_data['social'], true);
+
+        if (isset($social[$medium]) && is_array($social[$medium]) && count($social[$medium]))
+        {
+            $accounts = $social[$medium];
+
+            if (($accounts[$language])) {
+                return $accounts[$language];
+            }
+
+            return array_shift(array_values($social[$medium]));
+        }
+
+        return null;
     }
 
     /**
