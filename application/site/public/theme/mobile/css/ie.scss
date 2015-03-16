@@ -72,9 +72,16 @@ form {
 }
 
 // Horizontal align the footer menu items
-.container__footer_menu {
+.container.container__footer_menu {
   li {
     float: left;
+  }
+
+  .nav--social {
+    li {
+      float: left;
+      width: auto;
+    }
   }
 }
 

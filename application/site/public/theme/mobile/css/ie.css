@@ -172,8 +172,11 @@ form {
   clip: auto;
   position: static; }
 
-.container__footer_menu li {
+.container.container__footer_menu li {
   float: left; }
+.container.container__footer_menu .nav--social li {
+  float: left;
+  width: auto; }
 
 #splash {
   display: block;

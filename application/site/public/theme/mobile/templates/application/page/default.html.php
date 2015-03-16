@@ -124,24 +124,38 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <? endif ?>
             <? endforeach ?>
         </ul>
+        <ul class="nav nav--list nav--social">
+            <? $channels = array('twitter' => 'www.twitter.com', 'facebook' => 'www.facebook.com', 'youtube' => 'www.youtube.com/user', 'instagram' => 'instagram.com') ?>
+            <? foreach($channels as $channel => $site) : ?>
+            <? if($zone->{$channel}) : ?>
+            <li>
+                <a href="https://<?= $site ?>/<?= $zone->{$channel} ?>">
+                    <i class="icon-<?= $channel ?>"></i>
+                    <span class="visually-hidden"><?= ucfirst($zone->{$channel}) ?></span>
+                </a>
+            </li>
+            <? endif ?>
+            <? endforeach ?>
+            <li>
+                <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss">
+                    <i class="icon-feed"></i>
+                    <span class="visually-hidden">RSS</span>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 
 <div id="copyright">
     <div class="container container__copyright">
         <div class="copyright--left">
-            <? if($zone->twitter) : ?>
-                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>&nbsp;&nbsp;|&nbsp;
-            <? endif ?>
-            <? if($zone->facebook) : ?>
-                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>&nbsp;&nbsp;|&nbsp;
-            <? endif ?>
-            <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss"><i class="icon-feed"></i> RSS</a>
+            <ul>
             <? foreach($pages as $page) : ?>
                 <? if($page->id == '89' || $page->id == '101' || $page->id == '116') : ?>
-                    &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
+                    <li><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></li>
                 <? endif ?>
             <? endforeach ?>
+            </ul>
         </div>
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Police') ?> - <?= escape($zone->title); ?>
