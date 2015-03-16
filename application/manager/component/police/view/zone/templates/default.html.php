@@ -111,23 +111,24 @@
                         <input type="text" name="email" value="<?= $zone->email ?>" />
                     </div>
                 </div>
-                <div>
-                    <label for="facebook">
-                        <?= translate( 'Facebook' ); ?>
-                    </label>
-                    <div>
-                        <input type="text" name="facebook" value="<?= $zone->facebook ?>" />
-                    </div>
-                </div>
-                <div>
-                    <label for="twitter">
-                        <?= translate( 'Twitter' ); ?>
-                    </label>
-                    <div>
-                        <input type="text" name="twitter" value="<?= $zone->twitter ?>" />
-                    </div>
-                </div>
             </fieldset>
+            <? $channels = array('twitter', 'facebook', 'youtube', 'instagram') ?>
+            <? $languages = array('nl' => 'Dutch', 'fr' => 'French', 'de' => 'German') ?>
+            <? foreach($channels as $channel) : ?>
+            <fieldset>
+                <legend><?= translate(ucfirst($channel)); ?>:</legend>
+                <? foreach($languages as $slug => $name) : ?>
+                <div>
+                    <label for="social[<?= $channel ?>][<?= $slug ?>]">
+                        <?= translate(ucfirst($name)); ?>
+                    </label>
+                    <div>
+                        <input type="text" name="social[<?= $channel ?>][<?= $slug ?>]" value="<?= isset($zone->social->{$channel}->{$slug}) ? $zone->social->{$channel}->{$slug} : ''; ?>" />
+                    </div>
+                </div>
+                <? endforeach ?>
+            </fieldset>
+            <? endforeach ?>
 		</div>
 	</div>
 </form>

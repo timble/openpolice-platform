@@ -751,8 +751,38 @@ button.closed {
   text-align: center;
   border-top: 1px solid gainsboro;
   font-size: 0.85em; }
+  .container__copyright .copyright--left {
+    *zoom: 1;
+    text-align: center;
+    margin: 0 auto;
+    display: table; }
+    .container__copyright .copyright--left:before, .container__copyright .copyright--left:after {
+      display: table;
+      content: " ";
+      line-height: 0; }
+    .container__copyright .copyright--left:after {
+      clear: both; }
   .container__copyright a {
     text-decoration: none; }
+  .container__copyright ul {
+    *zoom: 1;
+    list-style: none;
+    margin-left: 0;
+    display: table-cell; }
+    .container__copyright ul:before, .container__copyright ul:after {
+      display: table;
+      content: " ";
+      line-height: 0; }
+    .container__copyright ul:after {
+      clear: both; }
+    .container__copyright ul li {
+      float: left; }
+      .container__copyright ul li a {
+        border-left: 1px solid #a2a2a2;
+        padding-right: 8px;
+        padding-left: 8px; }
+    .container__copyright ul li:first-child a {
+      border-left: 0 none; }
 
 .container__footer {
   *zoom: 1;
@@ -876,6 +906,47 @@ button.closed {
   .clearfix:after, .homepage__news:after, form:after, .article:after, .header:after, .header .organization:after {
     clear: both; }
 
+.container.container__footer_menu .nav--list li a {
+  margin: 0; }
+.container.container__footer_menu .nav--social {
+  display: table;
+  border-top: 1px solid #eee; }
+  .container.container__footer_menu .nav--social li {
+    display: table-cell;
+    width: 1%; }
+    .container.container__footer_menu .nav--social li a {
+      border: none;
+      font-size: 17px; }
+
+@media screen and (min-width: 400px) {
+  .container.container__footer_menu {
+    *zoom: 1; }
+    .container.container__footer_menu:before, .container.container__footer_menu:after {
+      display: table;
+      content: " ";
+      line-height: 0; }
+    .container.container__footer_menu:after {
+      clear: both; }
+    .container.container__footer_menu ul {
+      *zoom: 1;
+      margin: 0; }
+      .container.container__footer_menu ul:before, .container.container__footer_menu ul:after {
+        display: table;
+        content: " ";
+        line-height: 0; }
+      .container.container__footer_menu ul:after {
+        clear: both; }
+      .container.container__footer_menu ul li {
+        display: block;
+        float: left; }
+        .container.container__footer_menu ul li a {
+          border: none;
+          padding-top: 10px;
+          padding-bottom: 10px; }
+    .container.container__footer_menu .nav--social li {
+      float: none; }
+ }
+
 @media screen and (min-width: 768px) {
   #wrap {
     border-bottom: 1px solid gainsboro; }
@@ -975,8 +1046,8 @@ button.closed {
           margin-top: 0; } }
 
   .container.container__footer_menu {
-    padding-left: 14px;
-    padding-right: 14px; }
+    padding-left: 0px;
+    padding-right: 0px; }
     .container.container__footer_menu ul {
       *zoom: 1;
       margin: 0; }
@@ -991,7 +1062,6 @@ button.closed {
         float: left; }
         .container.container__footer_menu ul li a {
           border: none;
-          font-size: 14px;
           padding-top: 10px;
           padding-bottom: 10px; }
 
@@ -1009,7 +1079,51 @@ button.closed {
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px; }
+
+  .container.container__footer_menu ul:first-of-type li:first-child a {
+    border-bottom-left-radius: 4px; }
+  .container.container__footer_menu ul:last-of-type li:last-child a {
+    border-bottom-right-radius: 4px; }
+  .container.container__footer_menu .nav--list {
+    float: left; }
+  .container.container__footer_menu .nav--social {
+    border-top: 0 none;
+    float: right;
+    display: block; }
+    .container.container__footer_menu .nav--social li {
+      display: block;
+      float: left;
+      width: auto; }
+    .container.container__footer_menu .nav--social a {
+      padding-left: 15px;
+      padding-right: 15px; }
  }
+
+.visually-hidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute; }
+
+.icon-facebook {
+  color: #3b5998; }
+
+.icon-instagram {
+  color: #3f729b; }
+
+.icon-twitter {
+  color: #55ACEE; }
+
+.icon-youtube {
+  color: #cd201f; }
+
+.icon-feed {
+  color: #FF6600;
+  font-size: 15px; }
 
 @font-face {
   font-family: "police-icons";
@@ -1024,7 +1138,7 @@ button.closed {
     src: url("../fonts/icons/police-icons.svg#police-icons") format("svg"); }
  }
 
-.icon-facebook, .icon-feed, .icon-file, .icon-folder-close, .icon-folder-open, .icon-search, .icon-twitter {
+.icon-facebook, .icon-feed, .icon-file, .icon-folder-close, .icon-folder-open, .icon-instagram, .icon-search, .icon-twitter, .icon-youtube {
   speak: none;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -1036,7 +1150,7 @@ button.closed {
   font-variant: normal;
   font-weight: normal;
   font-family: 'police-icons'; }
-  .icon-facebook:before, .icon-feed:before, .icon-file:before, .icon-folder-close:before, .icon-folder-open:before, .icon-search:before, .icon-twitter:before {
+  .icon-facebook:before, .icon-feed:before, .icon-file:before, .icon-folder-close:before, .icon-folder-open:before, .icon-instagram:before, .icon-search:before, .icon-twitter:before, .icon-youtube:before {
     display: inline-block;
     margin: auto; }
 
@@ -1055,11 +1169,17 @@ button.closed {
 .icon-folder-open:before {
   content: "\f105"; }
 
-.icon-search:before {
+.icon-instagram:before {
   content: "\f106"; }
 
-.icon-twitter:before {
+.icon-search:before {
   content: "\f107"; }
+
+.icon-twitter:before {
+  content: "\f108"; }
+
+.icon-youtube:before {
+  content: "\f109"; }
 
 .bigdrop {
   width: 100%; }

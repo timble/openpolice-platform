@@ -62,10 +62,10 @@ module.exports = function(grunt) {
                 files: [
                     'application/site/public/theme/mobile/images/icons/*.svg'
                 ],
-                tasks: ['webfont'],
+                tasks: ['webfont', 'sass'],
                 options: {
-                    interrupt: false,
-                    atBegin: false
+                    interrupt: true,
+                    atBegin: true
                 }
             }
         }

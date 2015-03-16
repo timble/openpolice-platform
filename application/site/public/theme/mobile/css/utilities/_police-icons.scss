@@ -72,16 +72,30 @@
   }
 }
 
-.icon-search {
+.icon-instagram {
   @extend %icon;
   &:before {
     content:"\f106";
   }
 }
 
-.icon-twitter {
+.icon-search {
   @extend %icon;
   &:before {
     content:"\f107";
+  }
+}
+
+.icon-twitter {
+  @extend %icon;
+  &:before {
+    content:"\f108";
+  }
+}
+
+.icon-youtube {
+  @extend %icon;
+  &:before {
+    content:"\f109";
   }
 }
