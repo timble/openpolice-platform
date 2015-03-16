@@ -750,7 +750,6 @@ button.closed {
 
 .container__copyright {
   text-align: center;
-  border-top: 1px solid gainsboro;
   font-size: 0.85em; }
   .container__copyright .copyright--left {
     *zoom: 1;
@@ -909,6 +908,9 @@ button.closed {
   .clearfix:after, .homepage__news:after, form:after, .article:after, .header:after, .header .organization:after {
     clear: both; }
 
+#wrap {
+  border-bottom: 1px solid gainsboro; }
+
 .container.container__footer_menu .nav--list li a {
   margin: 0; }
 .container.container__footer_menu .nav--social {
@@ -951,9 +953,6 @@ button.closed {
  }
 
 @media screen and (min-width: 768px) {
-  #wrap {
-    border-bottom: 1px solid gainsboro; }
-
   .visible-phone {
     display: none; }
 
@@ -1067,6 +1066,19 @@ button.closed {
           border: none;
           padding-top: 10px;
           padding-bottom: 10px; }
+    .container.container__footer_menu .nav--list {
+      float: left; }
+    .container.container__footer_menu .nav--social {
+      display: block;
+      float: right;
+      border-top: 0 none; }
+      .container.container__footer_menu .nav--social li {
+        display: block;
+        float: left;
+        width: auto; }
+      .container.container__footer_menu .nav--social a {
+        padding-left: 15px;
+        padding-right: 15px; }
 
   .container__copyright {
     text-align: left;
@@ -1087,19 +1099,6 @@ button.closed {
     border-bottom-left-radius: 4px; }
   .container.container__footer_menu ul:last-of-type li:last-child a {
     border-bottom-right-radius: 4px; }
-  .container.container__footer_menu .nav--list {
-    float: left; }
-  .container.container__footer_menu .nav--social {
-    border-top: 0 none;
-    float: right;
-    display: block; }
-    .container.container__footer_menu .nav--social li {
-      display: block;
-      float: left;
-      width: auto; }
-    .container.container__footer_menu .nav--social a {
-      padding-left: 15px;
-      padding-right: 15px; }
  }
 
 .visually-hidden {
