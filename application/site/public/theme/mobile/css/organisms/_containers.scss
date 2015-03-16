@@ -46,9 +46,11 @@
   }
 }
 
+.container.container__copyright {
+  padding: 10px 15px;
+}
+
 .container__copyright {
-  padding-top: 13px;
-  padding-bottom: 13px;
   text-align: center;
   border-top: 1px solid darken($color-border, 7%);
   font-size: 0.85em;
@@ -58,6 +60,10 @@
     text-align: center;
     margin: 0 auto;
     display: table;
+
+    li:first-child a {
+      padding-left: 0;
+    }
   }
 
   a {
