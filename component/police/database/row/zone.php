@@ -14,10 +14,10 @@ class DatabaseRowZone extends Library\DatabaseRowTable
 {
     public function __get($column)
     {
+        $language = $this->getObject('application.languages')->getActive()->slug;
+
         if($column == 'title' && !isset($this->_data['title']))
         {
-            $language = $this->getObject('application.languages')->getActive()->slug;
-
             $titles = json_decode($this->_data['titles'], true);
 
             if (is_array($titles))
@@ -26,6 +26,58 @@ class DatabaseRowZone extends Library\DatabaseRowTable
                     $this->_data['title'] = $titles[$language];
                 }
                 else $this->_data['title'] = array_shift(array_values($titles));
+            }
+        }
+
+        if($column == 'facebook' && !isset($this->_data['facebook']))
+        {
+            $items = json_decode($this->_data['social'], true);
+
+            if (is_array($items))
+            {
+                if (isset($items[$language])) {
+                    $this->_data['facebook'] = $items['facebook'][$language];
+                }
+                else $this->_data['facebook'] = array_shift(array_values($items['facebook']));
+            }
+        }
+
+        if($column == 'twitter' && !isset($this->_data['twitter']))
+        {
+            $items = json_decode($this->_data['social'], true);
+
+            if (is_array($items))
+            {
+                if (isset($items[$language])) {
+                    $this->_data['twitter'] = $items['twitter'][$language];
+                }
+                else $this->_data['twitter'] = array_shift(array_values($items['twitter']));
+            }
+        }
+
+        if($column == 'youtube' && !isset($this->_data['youtube']))
+        {
+            $items = json_decode($this->_data['social'], true);
+
+            if (is_array($items))
+            {
+                if (isset($items[$language])) {
+                    $this->_data['youtube'] = $items['youtube'][$language];
+                }
+                else $this->_data['youtube'] = array_shift(array_values($items['youtube']));
+            }
+        }
+
+        if($column == 'instagram' && !isset($this->_data['instagram']))
+        {
+            $items = json_decode($this->_data['social'], true);
+
+            if (is_array($items))
+            {
+                if (isset($items[$language])) {
+                    $this->_data['instagram'] = $items['instagram'][$language];
+                }
+                else $this->_data['instagram'] = array_shift(array_values($items['instagram']));
             }
         }
 
