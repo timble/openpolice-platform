@@ -9,6 +9,7 @@
 ?>
 
 <fieldset>
+    <legend><?= translate('Publish') ?></legend>
     <div>
         <label for="published"><?= translate('Published') ?></label>
         <div>
@@ -31,7 +32,7 @@
 </fieldset>
 
 <fieldset>
-    <legend><?= translate('Date & Place') ?></legend>
+    <legend><?= translate('Metadata') ?></legend>
     <div>
         <label for="date"><?= translate('Date') ?></label>
         <div>
@@ -58,6 +59,12 @@
         <label for="params[place]"><?= translate('Foreign country') ?></label>
         <div>
             <input type="text" name="params[place]" value="<?= $article->params['place'] ?>" />
+        </div>
+    </div>
+    <div>
+        <label for="case_id]"><?= translate('Case ID') ?></label>
+        <div>
+            <input type="text" name="case_id" value="<?= $article->case_id ?>" />
         </div>
     </div>
 </fieldset>
