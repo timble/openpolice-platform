@@ -7,6 +7,7 @@ Attachments.List = new Class({
         this.element = document.id(options.container);
         this.url = options.action;
         this.token = options.token;
+        this.aspectRatio = options.aspectRatio;
         this.coordinates = '';
         this.trueSize = '';
 
@@ -41,8 +42,8 @@ Attachments.List = new Class({
                     boxWidth: 600,
                     boxHeight: 600,
                     trueSize: self.trueSize,
-                    aspectRatio: 4 / 3,
-                    minSize: [200, 150],
+                    aspectRatio: self.aspectRatio,
+                    minSize: [400],
                     setSelect: [0, 0, 200, 150],
                     onSelect: self.setCoordinates.bind(self),
                     onChange: self.setCoordinates.bind(self)
