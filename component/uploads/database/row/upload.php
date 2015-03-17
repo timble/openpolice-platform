@@ -395,6 +395,24 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 $this->_clean($row, 'wanted', true, 'text');
 
                 $row->save();
+            } elseif($this->override)
+            {
+                $item['text'] = htmlspecialchars_decode($item['text']);
+                $item['text'] = str_replace("/fedpol-blog/assets/img/ops", "sites/fed/files/files/images", $item['text']);
+
+                $row->wanted_category_id = $item['wanted_category_id'];
+                $row->title = $item['title'];
+                $row->slug = $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                $row->text = stripslashes(html_entity_decode($item['text']));
+                $row->published_on = $item['pubdate'];
+                $row->date = $item['factdate'];
+                $row->case_id = $item['case_id'];
+                $row->published = '1';
+                $row->params = array('childfocus' => $item['childfocus'], 'place' => $item['place']);
+
+                $this->_clean($row, 'wanted', false, 'text');
+
+                $row->save();
             }
         }
     }
