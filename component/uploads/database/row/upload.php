@@ -60,6 +60,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $this->_importStreets($data);
         }
 
+        if($table == 'wanted'){
+            $this->_importWanted($data);
+        }
+
         return parent::save();
     }
 
@@ -278,7 +282,8 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->published = $item['state'];
                     $row->published_on = $item['publish_up'];
 
-                    $this->_clean($row, 'news', true);
+                    $this->_clean($row, 'press', true, 'introtext');
+                    $this->_clean($row, 'press', true, 'fulltext');
 
                     $row->save();
                 } elseif($this->override) {
@@ -322,7 +327,8 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     $row->modified_by = $item['modified_by'];
                     $row->published = $item['state'];
 
-                    $this->_clean($row, 'press', true);
+                    $this->_clean($row, 'press', true, 'introtext');
+                    $this->_clean($row, 'press', true, 'fulltext');
 
                     $row->text = $row->introtext.$row->fulltext;
 
@@ -363,6 +369,54 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         }
     }
 
+    public function _importWanted($data)
+    {
+        foreach($data as $item)
+        {
+            $row = $this->getObject('com:wanted.database.row.article');
+            $row->id = $item['wanted_article_id'];
+
+            // Only save when the row is new
+            if(!$row->load())
+            {
+                $item['text'] = htmlspecialchars_decode($item['text']);
+                $item['text'] = str_replace("/fedpol-blog/assets/img/ops", "sites/fed/files/files/images", $item['text']);
+
+                $row->wanted_category_id = $item['wanted_category_id'];
+                $row->title = $item['title'];
+                $row->slug = $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                $row->text = stripslashes(html_entity_decode($item['text']));
+                $row->published_on = $item['pubdate'];
+                $row->date = $item['factdate'];
+                $row->case_id = $item['case_id'];
+                $row->published = '1';
+                $row->params = array('childfocus' => $item['childfocus'], 'place' => $item['place']);
+
+                $this->_clean($row, 'wanted', true, 'text');
+
+                $row->save();
+            } elseif($this->override)
+            {
+                $item['text'] = htmlspecialchars_decode($item['text']);
+                $item['text'] = str_replace("/fedpol-blog/assets/img/ops", "sites/fed/files/files/images", $item['text']);
+
+                $row->wanted_category_id = $item['wanted_category_id'];
+                $row->title = $item['title'];
+                $row->slug = $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                $row->text = stripslashes(html_entity_decode($item['text']));
+                $row->published_on = $item['pubdate'];
+                $row->date = $item['factdate'];
+                $row->case_id = $item['case_id'];
+                $row->published = '1';
+                $row->params = array('childfocus' => $item['childfocus'], 'place' => $item['place']);
+
+                $this->_clean($row, 'wanted', false, 'text');
+
+                $row->save();
+            }
+        }
+    }
+
     protected function _loadData(array $file)
     {
         if (!file_exists($file['tmp_name'])) {
@@ -378,10 +432,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 if (($handle = fopen($file['tmp_name'], 'r')) !== FALSE)
                 {
                     // get the first (header) line
-                    $header = fgetcsv($handle, '1000');
+                    $header = fgetcsv($handle, '0', ",");
 
                     // get the rest of the rows
-                    while ($row = fgetcsv($handle, '1000'))
+                    while ($row = fgetcsv($handle, '0', ","))
                     {
                         $arr = array();
 
@@ -445,53 +499,71 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
         return $data;
     }
 
-    protected function _clean(Library\DatabaseRowAbstract $row, $table, $extractImages)
+    protected function _clean(Library\DatabaseRowAbstract $row, $table, $extractImages, $property)
     {
-        $row->introtext = preg_replace("/<em>/", "", $row->introtext);
-        $row->introtext = preg_replace("/<\/em>/", "", $row->introtext);
+        $row->{$property} = preg_replace("/<em>/", "", $row->{$property});
+        $row->{$property} = preg_replace("/<\/em>/", "", $row->{$property});
 
-        foreach(array('introtext', 'fulltext') as $property)
+        $html = trim($row->{$property});
+        $html = stripslashes($html);
+
+        if(empty($html)) {
+            continue;
+        }
+
+        $html = preg_replace("/<wbr ?>/", "", $html);
+        $html = preg_replace("/<wbr ?\/>/", "", $html);
+
+        $pattern = "/<a href=\"mailto:[a-z0-9\"' =:&;\-_%@]+>(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)<\/a>/i";
+        $html    = preg_replace($pattern, '<a href="mailto:$1">$1</a>', $html);
+
+        $config = array(
+            'indent'         => true,
+            'output-xhtml'   => true,
+            'wrap'           => 200
+        );
+
+        $tidy = new \tidy;
+        $tidy->parseString($html, $config, 'utf8');
+        $tidy->cleanRepair();
+
+        $html = (string) $tidy;
+
+        // Deal with DOMDocument breaking UTF-8 characters
+        // See: http://stackoverflow.com/questions/11309194/php-domdocument-failing-to-handle-utf-8-characters
+        $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
+
+        $dom = new \DOMDocument();
+        $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+
+        $this->_cleanAttributes($dom);
+
+        $this->_extractYoutube($row, $dom, $table);
+
+        $attachment = $this->_extractImages($row, $dom, $table, $extractImages);
+        if(($property == 'introtext' || $property == 'text') && $attachment) {
+            $row->attachments_attachment_id = $attachment;
+        }
+
+        $row->{$property} = $dom->saveHTML();
+    }
+
+    protected function _extractYoutube(Library\DatabaseRowAbstract $row, \DOMDocument $dom, $table)
+    {
+        $videos = $dom->getElementsByTagName('iframe');
+
+        foreach($videos as $video)
         {
-            $html = trim($row->{$property});
-            $html = stripslashes($html);
+            if(strpos($video->attributes->getNamedItem("src")->value, 'youtu') !== false )
+            {
+                // Get the video ID, last part in www.youtube.com/embed/KoMUYBnlvm8?rel=0
+                $link = end(explode('/',$video->attributes->getNamedItem("src")->value));
 
-            if(empty($html)) {
-                continue;
+                $row->params = array('youtube' => 'http://www.youtube.com?v='.$link);
+
+                // Only get the first video
+                break;
             }
-
-            $html = preg_replace("/<wbr ?>/", "", $html);
-            $html = preg_replace("/<wbr ?\/>/", "", $html);
-
-            $pattern = "/<a href=\"mailto:[a-z0-9\"' =:&;\-_%@]+>(\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b)<\/a>/i";
-            $html    = preg_replace($pattern, '<a href="mailto:$1">$1</a>', $html);
-
-            $config = array(
-                'indent'         => true,
-                'output-xhtml'   => true,
-                'wrap'           => 200
-            );
-
-            $tidy = new \tidy;
-            $tidy->parseString($html, $config, 'utf8');
-            $tidy->cleanRepair();
-
-            $html = (string) $tidy;
-
-            // Deal with DOMDocument breaking UTF-8 characters
-            // See: http://stackoverflow.com/questions/11309194/php-domdocument-failing-to-handle-utf-8-characters
-            $html = mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8');
-
-            $dom = new \DOMDocument();
-            $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
-
-            $this->_cleanAttributes($dom);
-
-            $attachment = $this->_extractImages($row, $dom, $table, $extractImages);
-            if($property == 'introtext' && $attachment) {
-                $row->attachments_attachment_id = $attachment;
-            }
-
-            $row->{$property} = $dom->saveHTML();
         }
     }
 
@@ -502,30 +574,59 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $root = '/var/www/police.dev';
         }
 
-        $images = $dom->getElementsByTagName('img');
+        if($table != 'wanted')
+        {
+            $images = $dom->getElementsByTagName('img');
+        }
+        else
+        {
+            $images = array();
+
+            foreach($dom->getElementsByTagName('a') as $link)
+            {
+                $href = $link->attributes->getNamedItem("href")->value;
+
+                // Check if the link is pointing to a local image
+                if(strpos($href, 'sites/fed/files/files/images/') !== false && strpos($href, 'pixel_bis.jpg') == false && strpos($href, 'dour1.jpg') == false)
+                {
+                    $images[] = $link;
+                }
+            }
+        }
 
         $attachment = false;
         foreach($images as $image)
         {
-            $link = $image->attributes->getNamedItem("src")->value;
+            if($table != 'wanted')
+            {
+                $link = $image->attributes->getNamedItem("src")->value;
+            }
+            else {
+                $link = $image->attributes->getNamedItem("href")->value;
+            }
+
             $link = urldecode($link);
 
             if(substr($link, 0, strlen('sites/')) == 'sites/')
             {
                 $fullpath  = $root . '/' . $link;
                 $extension = $this->_getFileExtension($fullpath);
-                $filesize  = filesize($fullpath);
                 $allowed   = in_array($extension, array('jpg', 'jpeg', 'png'));
 
-                list($width, $height) = getimagesize($fullpath);
+                if($allowed && file_exists($fullpath))
+                {
+                    $filesize  = filesize($fullpath);
 
-                if ($extractImages && $allowed && $filesize < 10485760 && $width <= 2048 && $height <= 2048) {
-                    $return = $this->_saveAttachment($row, $fullpath, $table);
-                }
-                else $return = false;
+                    list($width, $height) = getimagesize($fullpath);
 
-                if(!$attachment) {
-                    $attachment = $return;
+                    if ($extractImages && $allowed && $filesize < 10485760 && $width <= 2048 && $height <= 2048) {
+                        $return = $this->_saveAttachment($row, $fullpath, $table);
+                    }
+                    else $return = false;
+
+                    if(!$attachment) {
+                        $attachment = $return;
+                    }
                 }
 
                 $image->parentNode->removeChild($image);
@@ -558,7 +659,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
         $filename = basename($filepath);
 
-        $request         = $this->getObject('lib:controller.request', array('query' => array('container' => 'attachments-attachments')));
+        $request         = $this->getObject('lib:controller.request', array('query' => array('container' => $table == 'wanted' ? 'attachments-wanted' : 'attachments-attachments')));
         $file_controller = $this->getObject('com:files.controller.file', array('request' => $request));
         $attachment_controller = $this->getObject('com:attachments.controller.attachment', array('request' => clone $request));
         
@@ -581,7 +682,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $entity = $attachment_controller->add(array(
                 'name' => $filename,
                 'path' => $name,
-                'container' => 'attachments-attachments',
+                'container' => $table == 'wanted' ? 'attachments-wanted' : 'attachments-attachments',
                 'hash' => $hash,
                 'row' => $row->id,
                 'table' => $table

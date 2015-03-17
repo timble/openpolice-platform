@@ -51,7 +51,24 @@
   display: block;
 }
 
-.card__date {
+.card__date,
+.card__place {
   display: block;
   color: $color-text;
+}
+
+@include breakpoint($breakpoint-beta) {
+  .card--horizontal {
+    text-align: left;
+
+    a:hover img {
+      border-bottom: 0px none;
+    }
+
+    img {
+      border-radius: $border-radius 0 0 $border-radius;
+      border-bottom: 0px none;
+      border-right: 1px solid darken($cyanLighter, 3%);
+    }
+  }
 }

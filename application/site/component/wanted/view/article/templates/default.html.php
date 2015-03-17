@@ -8,6 +8,8 @@
  */
 ?>
 
+<meta content="noimageindex" name="robots" />
+
 <ktml:module position="left">
     <?= import('com:wanted.view.sections.list.html') ?>
 </ktml:module>
@@ -20,26 +22,36 @@
         <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
             <?= helper('com:police.image.thumbnail', array(
                 'attachment' => $article->attachments_attachment_id,
-                'attribs' => array('width' => '400', 'height' => '300'))) ?>
+                'attribs' => array('width' => '400', 'height' => '500'))) ?>
         </a>
     <? endif ?>
 
     <dl>
         <dt><?= translate('Date section'.$section->id) ?>:</dt>
         <dd><?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?></dd>
+        <? if($article->city || $article->params->get('place', false)) : ?>
         <dt><?= translate('Place section'.$section->id) ?>:</dt>
-        <dd><?= $article->city ? $article->city : translate('Unknown') ?></dd>
+        <dd><?= $article->city ? $article->city : $article->params->get('place') ?></dd>
+        <? endif ?>
     </dl>
 
     <?= $article->text ?>
-
-    <?= import('com:news.view.article.default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
 
     <? if($article->isAttachable()) : ?>
     <div class="entry-content-asset">
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $article->getAttachments(), 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
     <? endif ?>
+
+    <div style="margin-bottom: 30px">
+        <?= import('com:news.view.article.default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
+    </div>
+
+    <div class="well">
+        <h2><?= translate('Testimonials') ?></h2>
+        <p><?= translate('Do you have more information') ?></p>
+        <p><?= translate('Contact us by email') ?></p>
+    </div>
 </article>
 
 <script src="assets://application/components/jquery/dist/jquery.min.js" />

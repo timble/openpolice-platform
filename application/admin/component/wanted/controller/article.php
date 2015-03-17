@@ -25,12 +25,22 @@ class WantedControllerArticle extends Library\ControllerModel
             'behaviors' => array(
                 'editable',
                 'com:activities.controller.behavior.loggable',
-                'com:attachments.controller.behavior.attachable',
+                'com:attachments.controller.behavior.attachable' => array('container' => 'attachments-wanted'),
                 'com:languages.controller.behavior.translatable'
             )
         ));
 
         parent::_initialize($config);
+    }
+
+    public function getRequest()
+    {
+        $request = parent::getRequest();
+
+        $request->query->sort = 'ordering_date';
+        $request->query->direction   = 'DESC';
+
+        return $request;
     }
 
     public function setDefaultAttachment(Library\CommandContext $context)

@@ -8,14 +8,16 @@
  */
 ?>
 
+<meta content="noimageindex" name="robots" />
+
 <ul class="cards clearfix">
     <? foreach ($articles as $article) : ?>
-        <li class="card">
+        <li class="card card--horizontal">
             <a href="<?= helper('route.article', array('row' => $article)) ?>">
                 <? if($article->attachments_attachment_id): ?>
                     <?= helper('com:police.image.thumbnail', array(
                         'attachment' => $article->attachments_attachment_id,
-                        'attribs' => array('width' => '400', 'height' => '300'))) ?>
+                        'attribs' => array('width' => '400', 'height' => '500'))) ?>
                 <? else : ?>
                     <img src="assets://found/images/placeholder.jpg" />
                 <? endif ?>
@@ -24,6 +26,9 @@
                     <span class="card__metadata--inner">
                         <span class="card__name"><?= escape($article->title) ?></span>
                         <span class="card__date"><?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?> <?= $article->city ? translate('in').' '.escape($article->city) : '' ?></span>
+                        <? if($article->params->get('place', false) || $article->city) : ?>
+                        <span class="card__place"><?= $article->city ? $article->city : $article->params->get('place') ?></span>
+                        <? endif ?>
                     </span>
                 </span>
             </a>

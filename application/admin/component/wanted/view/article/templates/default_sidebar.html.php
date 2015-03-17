@@ -9,12 +9,36 @@
 ?>
 
 <fieldset>
+    <legend><?= translate('Publish') ?></legend>
     <div>
         <label for="published"><?= translate('Published') ?></label>
         <div>
             <input type="checkbox" name="published" value="1" <?= $article->published ? 'checked="checked"' : '' ?> />
         </div>
     </div>
+    <div>
+        <label for="publish_on"><?= translate('Publish on') ?></label>
+        <div class="controls">
+            <input id="publish_on" type="text" name="publish_on" value="<?= $article->publish_on ? helper('date.format', array('date'=> $article->publish_on, 'format' => 'd-m-Y H:i')) : '' ?>" <?= $article->published ? 'disabled="disabled"' : '' ?> />
+            <script data-inline>
+                $jQuery("#publish_on").datetimepicker({
+                    format:'d-m-Y H:i',
+                    lang: '<?= $this->getObject('application.languages')->getActive()->slug; ?>',
+                    dayOfWeekStart: '1'
+                });
+            </script>
+        </div>
+    </div>
+    <div>
+        <label for="solved"><?= translate('Solved') ?></label>
+        <div>
+            <input type="checkbox" name="solved" value="1" <?= $article->solved ? 'checked="checked"' : '' ?> />
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend><?= translate('Metadata') ?></legend>
     <div>
         <label for="date"><?= translate('Date') ?></label>
         <div>
@@ -31,10 +55,22 @@
     </div>
     <div>
         <label for="streets_city_id">
-            <?= translate( 'Place' ); ?>
+            <?= translate( 'Belgium' ); ?>
         </label>
         <div>
             <?= import('com:streets.view.cities.autocomplete.html', array('selected' => $article->streets_city_id)); ?>
+        </div>
+    </div>
+    <div>
+        <label for="params[place]"><?= translate('Foreign country') ?></label>
+        <div>
+            <input type="text" name="params[place]" value="<?= $article->params['place'] ?>" />
+        </div>
+    </div>
+    <div>
+        <label for="case_id]"><?= translate('Case ID') ?></label>
+        <div>
+            <input type="text" name="case_id" value="<?= $article->case_id ?>" />
         </div>
     </div>
 </fieldset>
@@ -77,3 +113,10 @@
     );
 </script>
 <? endif ?>
+
+<script data-inline>
+    $jQuery("input[name=published]").click(function()
+    {
+        $jQuery("input[name=publish_on]").attr('disabled', this.checked)
+    });
+</script>

@@ -20,10 +20,10 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
                 'sluggable', 'creatable', 'modifiable', 'lockable',
                 'com:attachments.database.behavior.attachable',
                 'com:languages.database.behavior.translatable',
+                'com:news.database.behavior.publishable' => array('table' => 'wanted')
             ),
             'filters' => array(
-                'introtext' => array('html', 'tidy'),
-                'fulltext'  => array('html', 'tidy'),
+                'text' => array('html', 'tidy'),
                 'params'    => 'json'
             )
         ));
