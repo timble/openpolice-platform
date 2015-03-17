@@ -43,7 +43,11 @@ class DatabaseRowAttachment extends Library\DatabaseRowTable
 
             if (!file_exists($this->thumbnail_fullpath))
             {
-                $thumbnail->setThumbnailSize(4/3)
+                $thumbnail_size = $this->getObject('com:files.model.container')
+                    ->slug($this->container)
+                    ->getRow()->parameters->thumbnail_size;
+
+                $thumbnail->setThumbnailSize($thumbnail_size ? $thumbnail_size : 4/3)
                     ->generateThumbnail()
                     ->save($this->thumbnail_fullpath);
             }
