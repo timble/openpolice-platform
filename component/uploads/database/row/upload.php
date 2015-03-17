@@ -64,6 +64,10 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             $this->_importWanted($data);
         }
 
+        if($table == 'about'){
+            $this->_importAbout($data);
+        }
+
         return parent::save();
     }
 
@@ -371,6 +375,41 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
 
                     $row->save();
                 }
+            }
+        }
+    }
+
+    public function _importAbout($data)
+    {
+        foreach($data as $item)
+        {
+            $row = $this->getObject('com:about.database.row.article');
+            $row->id = $item['id'];
+
+            if(!$row->load())
+            {
+                $row->title = $item['title'];
+                $row->slug = isset($item['alias']) ? $item['alias'] : $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                $row->text = stripslashes(html_entity_decode($item['text']));
+                $row->created_by = '1';
+                $row->published = '1';
+                $row->about_category_id = $item['about_category_id'];
+
+                $this->_clean($row, 'about', true, 'text');
+
+                $row->save();
+            } elseif($this->override)
+            {
+                $row->title = $item['title'];
+                $row->slug = isset($item['alias']) ? $item['alias'] : $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                $row->text = stripslashes(html_entity_decode($item['text']));
+                $row->created_by = '1';
+                $row->published = '1';
+                $row->about_category_id = $item['about_category_id'];
+
+                $this->_clean($row, 'about', false, 'text');
+
+                $row->save();
             }
         }
     }
