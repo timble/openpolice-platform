@@ -39,7 +39,7 @@
 
     <? if($article->isAttachable()) : ?>
     <div class="entry-content-asset">
-        <?= import('com:attachments.view.attachments.default.html', array('attachments' => $article->getAttachments(), 'exclude' => array(false))) ?>
+        <?= import('com:attachments.view.attachments.default.html', array('attachments' => $article->getAttachments(), 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
     <? endif ?>
 
