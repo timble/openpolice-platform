@@ -17,7 +17,7 @@
                 <? if($article->attachments_attachment_id): ?>
                     <?= helper('com:police.image.thumbnail', array(
                         'attachment' => $article->attachments_attachment_id,
-                        'attribs' => array('width' => '400', 'height' => '300'))) ?>
+                        'attribs' => array('width' => '400', 'height' => '500'))) ?>
                 <? else : ?>
                     <img src="assets://found/images/placeholder.jpg" />
                 <? endif ?>
