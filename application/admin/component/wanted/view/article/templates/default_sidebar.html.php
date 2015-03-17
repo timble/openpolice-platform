@@ -29,6 +29,12 @@
             </script>
         </div>
     </div>
+    <div>
+        <label for="solved"><?= translate('Solved') ?></label>
+        <div>
+            <input type="checkbox" name="solved" value="1" <?= $article->solved ? 'checked="checked"' : '' ?> />
+        </div>
+    </div>
 </fieldset>
 
 <fieldset>

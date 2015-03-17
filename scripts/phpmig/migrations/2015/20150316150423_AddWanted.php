@@ -14,6 +14,7 @@ class AddWanted extends Migration
 ALTER TABLE `wanted` ADD `published_on` DATETIME  NULL  AFTER `published`;
 ALTER TABLE `wanted` ADD `publish_on` DATETIME  NULL  AFTER `locked_on`;
 ALTER TABLE `wanted` ADD `case_id` VARCHAR(255)  NULL  DEFAULT NULL  AFTER `date`;
+ALTER TABLE `wanted` ADD `solved` TINYINT  NULL  DEFAULT NULL  AFTER `case_id`;
 
 INSERT INTO `files_containers` (`files_container_id`, `slug`, `title`, `path`, `parameters`)
 VALUES
@@ -30,7 +31,7 @@ END;
     {
         $this->_queries = <<<END
 
-ALTER TABLE `wanted` DROP `published_on`, DROP `publish_on`, DROP `case_id`;
+ALTER TABLE `wanted` DROP `published_on`, DROP `publish_on`, DROP `case_id`, DROP `solved`;
 
 DELETE FROM `files_containers` WHERE `files_container_id` IN ('3');
 
