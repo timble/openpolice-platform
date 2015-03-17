@@ -310,6 +310,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     {
         foreach($data as $item)
         {
+            $this->catid = $this->catid ? $this->catid : '1';
+            $item['catid'] = isset($item['catid']) ? $item['catid'] : '1';
+
             if($item['catid'] == $this->catid && ($item['state'] == '1' || $item['state'] == '0'))
             {
                 $row = $this->getObject('com:press.database.row.article');
@@ -318,17 +321,51 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 if(!$row->load())
                 {
                     $row->title = $item['title'];
-                    $row->slug = $item['alias'];
-                    $row->introtext = stripslashes($item['introtext']);
-                    $row->fulltext = stripslashes($item['fulltext']);
+                    $row->slug = isset($item['alias']) ? $item['alias'] : $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                    $row->introtext = isset($item['introtext']) ? stripslashes(html_entity_decode($item['introtext'])) : '';
+                    $row->fulltext = isset($item['fulltext']) ? stripslashes(html_entity_decode($item['fulltext'])) : '';
                     $row->created_on = $item['created'];
                     $row->created_by = '1';
-                    $row->modified_on = $item['modified'];
-                    $row->modified_by = $item['modified_by'];
+                    $row->published_on = $item['created'];
+                    $row->modified_on = isset($item['modified']) ? $item['modified'] : '';
+                    $row->modified_by = isset($item['modified_by']) ? $item['modified_by'] : '';
                     $row->published = $item['state'];
 
-                    $this->_clean($row, 'press', true, 'introtext');
-                    $this->_clean($row, 'press', true, 'fulltext');
+                    if($row->introtext)
+                    {
+                        $this->_clean($row, 'press', true, 'introtext');
+                    }
+
+                    if($row->fulltext)
+                    {
+                        $this->_clean($row, 'press', true, 'fulltext');
+                    }
+
+                    $row->text = $row->introtext.$row->fulltext;
+
+                    $row->save();
+                } elseif($this->override)
+                {
+                    $row->title = $item['title'];
+                    $row->slug = isset($item['alias']) ? $item['alias'] : $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                    $row->introtext = isset($item['introtext']) ? stripslashes(html_entity_decode($item['introtext'])) : '';
+                    $row->fulltext = isset($item['fulltext']) ? stripslashes(html_entity_decode($item['fulltext'])) : '';
+                    $row->created_on = $item['created'];
+                    $row->created_by = '1';
+                    $row->published_on = $item['created'];
+                    $row->modified_on = isset($item['modified']) ? $item['modified'] : '';
+                    $row->modified_by = isset($item['modified_by']) ? $item['modified_by'] : '';
+                    $row->published = $item['state'];
+
+                    if($row->introtext)
+                    {
+                        $this->_clean($row, 'press', false, 'introtext');
+                    }
+
+                    if($row->fulltext)
+                    {
+                        $this->_clean($row, 'press', false, 'fulltext');
+                    }
 
                     $row->text = $row->introtext.$row->fulltext;
 
