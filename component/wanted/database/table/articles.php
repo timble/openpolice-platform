@@ -19,7 +19,7 @@ class DatabaseTableArticles extends Library\DatabaseTableAbstract
             'behaviors'    =>  array(
                 'sluggable', 'creatable', 'modifiable', 'lockable',
                 'com:attachments.database.behavior.attachable',
-                //'com:languages.database.behavior.translatable',
+                'com:languages.database.behavior.translatable',
                 'com:news.database.behavior.publishable' => array('table' => 'wanted')
             ),
             'filters' => array(
