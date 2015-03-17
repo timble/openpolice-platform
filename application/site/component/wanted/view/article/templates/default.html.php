@@ -37,17 +37,21 @@
 
     <?= $article->text ?>
 
-    <?= import('com:news.view.article.default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
-
     <? if($article->isAttachable()) : ?>
     <div class="entry-content-asset">
-        <?= import('com:attachments.view.attachments.default.html', array('attachments' => $article->getAttachments(), 'exclude' => array($article->attachments_attachment_id))) ?>
+        <?= import('com:attachments.view.attachments.default.html', array('attachments' => $article->getAttachments(), 'exclude' => array(false))) ?>
     </div>
     <? endif ?>
 
-    <h2><?= translate('Testimonials') ?></h2>
-    <p><?= translate('Do you have more information') ?></p>
-    <p><?= translate('Contact us by email') ?></p>
+    <div style="margin-bottom: 30px">
+        <?= import('com:news.view.article.default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
+    </div>
+
+    <div class="well">
+        <h2><?= translate('Testimonials') ?></h2>
+        <p><?= translate('Do you have more information') ?></p>
+        <p><?= translate('Contact us by email') ?></p>
+    </div>
 </article>
 
 <script src="assets://application/components/jquery/dist/jquery.min.js" />
