@@ -19,6 +19,9 @@ class WantedControllerArticle extends PoliceControllerLanguage
         $request->query->published = 1;
         $request->query->limit = '10';
 
+        $request->query->sort = 'published_on';
+        $request->query->direction   = 'DESC';
+
         return $request;
     }
 }

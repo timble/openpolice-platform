@@ -31,7 +31,9 @@ class ModelArticles extends Library\ModelTable
         $query->columns(array(
             'thumbnail'         => 'attachments.path',
             'wanted_section_id' => 'sections.wanted_section_id',
-            'city'              => 'city.title'
+            'city'              => 'city.title',
+            'ordering_date'     => 'IF(tbl.published_on, tbl.published_on, tbl.publish_on)',
+            'draft'             => 'IF(tbl.published_on OR tbl.publish_on, 0, 1)'
         ));
     }
 
@@ -74,6 +76,19 @@ class ModelArticles extends Library\ModelTable
 
         if(!is_numeric($state->category) && !is_null($state->category)) {
             $query->where('categories.slug = :category')->bind(array('category' => $state->category));
+        }
+    }
+
+    protected function _buildQueryOrder(Library\DatabaseQuerySelect $query)
+    {
+        $state = $this->getState();
+
+        if ($state->sort == 'ordering_date')
+        {
+            $query->order('draft', 'DESC')
+                ->order('ordering_date', 'DESC');
+        } else {
+            $query->order($state->sort, strtoupper($state->direction));
         }
     }
 }

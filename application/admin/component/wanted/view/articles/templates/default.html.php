@@ -37,11 +37,11 @@
                 <?= helper('grid.checkall') ?>
             </th>
             <th width="1"></th>
-            <th>
+            <th width="100%">
                 <?= helper('grid.sort', array('column' => 'title')) ?>
             </th>
             <th>
-                <?= helper('grid.sort', array('column' => 'date')) ?>
+                <?= helper('grid.sort', array('column' => 'ordering_date', 'title' => 'Published on')) ?>
             </th>
             <? if($articles->isTranslatable()) : ?>
             <th width="70">
@@ -67,16 +67,20 @@
                     <?= helper('grid.enable', array('row' => $article, 'field' => 'published')) ?>
                 </td>
                 <td class="ellipsis">
-                    <?if($article->getStatus() != 'deleted') : ?>
-                        <a href="<?= route('view=article&id='.$article->id) ?>">
-                            <?= escape($article->title) ?>
-                        </a>
-                    <? else : ?>
-                        <?= escape($article->title); ?>
-                    <? endif; ?>
+                    <a href="<?= route('view=article&id='.$article->id) ?>">
+                        <?= escape($article->title) ?>
+                    </a>
+                    <? if($article->publish_on > $now) : ?>
+                        <span class="label label-warning"><?= translate('Planned') ?></span>
+                    <? endif ?>
+                    <? if($article->draft) : ?>
+                        <span class="label label-info"><?= translate('Draft') ?></span>
+                    <? endif ?>
                 </td>
                 <td>
-                    <?= date(array('date' => $article->date, 'format' => 'l d M Y')) ?>
+                    <? if($article->publish_on || $article->published_on) : ?>
+                        <?= helper('date.format', array('date'=> $article->publish_on ? $article->publish_on : $article->published_on, 'format' => 'D d/m/Y - G:i')) ?>
+                    <? endif ?>
                 </td>
                 <? if($article->isTranslatable()) : ?>
                 <td>
