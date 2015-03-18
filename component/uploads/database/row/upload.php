@@ -267,6 +267,9 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
     {
         foreach($data as $item)
         {
+            $this->catid = $this->catid ? $this->catid : '1';
+            $item['catid'] = isset($item['catid']) ? $item['catid'] : '1';
+
             if($item['catid'] == $this->catid && ($item['state'] == '1' || $item['state'] == '0'))
             {
                 $row = $this->getObject('com:news.database.row.article');
@@ -276,33 +279,42 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                 if(!$row->load())
                 {
                     $row->title = $item['title'];
-                    $row->slug = $item['alias'];
-                    $row->introtext = stripslashes($item['introtext']);
-                    $row->fulltext = stripslashes($item['fulltext']);
+                    $row->slug = isset($item['alias']) ? $item['alias'] : $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                    $row->introtext = isset($item['introtext']) ? stripslashes(html_entity_decode($item['introtext'])) : '';
+                    $row->fulltext = isset($item['fulltext']) ? stripslashes(html_entity_decode($item['fulltext'])) : '';
                     $row->created_on = $item['created'];
                     $row->created_by = '1';
-                    $row->modified_on = $item['modified'];
-                    $row->modified_by = $item['modified_by'];
+                    $row->modified_on = isset($item['modified']) ? $item['modified'] : '';
+                    $row->modified_by = isset($item['modified_by']) ? $item['modified_by'] : '';
                     $row->published = $item['state'];
-                    $row->published_on = $item['publish_up'];
+                    $row->published_on = isset($item['publish_up']) ? $item['publish_up'] : $item['created'];
 
-                    $this->_clean($row, 'press', true, 'introtext');
-                    $this->_clean($row, 'press', true, 'fulltext');
+                    $this->_clean($row, 'news', true, 'introtext');
+
+                    if($row->fulltext)
+                    {
+                        $this->_clean($row, 'news', true, 'fulltext');
+                    }
 
                     $row->save();
                 } elseif($this->override) {
                     $row->title = $item['title'];
-                    $row->slug = $item['alias'];
-                    $row->introtext = stripslashes($item['introtext']);
-                    $row->fulltext = stripslashes($item['fulltext']);
+                    $row->slug = isset($item['alias']) ? $item['alias'] : $this->getObject('lib:filter.slug')->sanitize($item['title']);
+                    $row->introtext = isset($item['introtext']) ? stripslashes(html_entity_decode($item['introtext'])) : '';
+                    $row->fulltext = isset($item['fulltext']) ? stripslashes(html_entity_decode($item['fulltext'])) : '';
                     $row->created_on = $item['created'];
                     $row->created_by = '1';
-                    $row->modified_on = $item['modified'];
-                    $row->modified_by = $item['modified_by'];
+                    $row->modified_on = isset($item['modified']) ? $item['modified'] : '';
+                    $row->modified_by = isset($item['modified_by']) ? $item['modified_by'] : '';
                     $row->published = $item['state'];
-                    $row->published_on = $item['publish_up'];
+                    $row->published_on = isset($item['publish_up']) ? $item['publish_up'] : $item['created'];
 
-                    $this->_clean($row, 'news', false);
+                    $this->_clean($row, 'news', false, 'introtext');
+
+                    if($row->fulltext)
+                    {
+                        $this->_clean($row, 'news', false, 'fulltext');
+                    }
 
                     $row->save();
                 }
@@ -456,7 +468,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             if(!$row->load())
             {
                 $item['text'] = htmlspecialchars_decode($item['text']);
-                $item['text'] = str_replace("/fedpol-blog/assets/img/ops", "sites/fed/files/files/images", $item['text']);
+                $item['text'] = str_replace("/fedpol-blog/assets", "sites/fed/files/files/images", $item['text']);
 
                 $row->wanted_category_id = $item['wanted_category_id'];
                 $row->title = $item['title'];
@@ -474,7 +486,7 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
             } elseif($this->override)
             {
                 $item['text'] = htmlspecialchars_decode($item['text']);
-                $item['text'] = str_replace("/fedpol-blog/assets/img/ops", "sites/fed/files/files/images", $item['text']);
+                $item['text'] = str_replace("/fedpol-blog/assets", "sites/fed/files/files/images", $item['text']);
 
                 $row->wanted_category_id = $item['wanted_category_id'];
                 $row->title = $item['title'];
