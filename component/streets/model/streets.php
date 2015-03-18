@@ -39,7 +39,7 @@ class ModelStreets extends Library\ModelTable
         $cities = $this->getObject('com:police.model.zones')->id($this->getObject('application')->getSite())->getRow()->cities;
 
         $query->columns(array(
-            'title'             => $cities == '1' ? 'tbl.title' : "CONCAT(tbl.title,' (',city.title,')')",
+            'title'             => $cities !== '1' ? "CONCAT(tbl.title,' (',city.title,')')" : 'tbl.title',
             'title_short'       => 'tbl.title',
             'district_count'    => 'district.district_count',
             'bin_count'         => 'bin.district_count',
@@ -140,7 +140,7 @@ class ModelStreets extends Library\ModelTable
             $query->where('district.district_count IS NOT NULL');
         }
 
-        if(!in_array($this->getObject('application')->getSite(), array('default'))) {
+        if(!in_array($this->getObject('application')->getSite(), array('default', 'fed'))) {
             $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
         }
 	}
