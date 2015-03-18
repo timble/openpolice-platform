@@ -10,22 +10,29 @@
 <?
 $site = object('application')->getCfg('site');
 $zone = object('com:police.model.zone')->id($site)->getRow();
-$cities = object('com:streets.model.cities')->zone($site)->getRowset()->title;
 
 $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
 
 $path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
+
+if ($site == 'fed')
+{
+    $description = translate('Website of the Federal Police');
+} else {
+    $cities = object('com:streets.model.cities')->zone($site)->getRowset()->title;
+
+    $description = translate('Website of the local Police zone').' '.$zone->title;
+
+    if(count($cities) > '1')
+    {
+        $description .= ' (';
+        $description .= implode(", ", $cities);
+        $description .= ')';
+    }
+}
 ?>
-
-<? $description = translate('Website of the local Police zone').' '.$zone->title ?>
-
-<? if(count($cities) > '1') : ?>
-    <? $description .= ' ('; ?>
-    <? $description .= implode(", ", $cities) ?>
-    <? $description .= ')'; ?>
-<? endif ?>
 
 <meta content="<?= $description ?>." name="description" />
 
