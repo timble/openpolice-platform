@@ -43,3 +43,7 @@
 </table>
 
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+
+<? if(object('application')->getCfg('site') == 'fed') : ?>
+<?= import('default_contact.html') ?>
+<? endif; ?>
