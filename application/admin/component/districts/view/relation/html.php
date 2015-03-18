@@ -14,7 +14,7 @@ class DistrictsViewRelationHtml extends Library\ViewHtml
     public function render()
     {
         $model      = $this->getModel();
-        $relation   = $model->getData();
+        $relation   = $model->getRow();
 
         if($relation->isLocatable())
         {
