@@ -57,7 +57,7 @@
                         <?= translate( 'Street' ); ?>
                     </label>
                     <div>
-                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => !$contact->isNew() && isset($street) ? $street->id : '', 'identifier' => !$contact->isNew() && isset($street) ? $street->streets_street_identifier : '')); ?>
+                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => !$contact->isNew() && isset($street) ? $street->top()->id : '', 'identifier' => !$contact->isNew() && isset($street) ? $street->top()->streets_street_identifier : '')); ?>
                     </div>
                 </div>
                 <div>

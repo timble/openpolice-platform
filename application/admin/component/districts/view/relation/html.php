@@ -18,7 +18,7 @@ class DistrictsViewRelationHtml extends Library\ViewHtml
 
         if($relation->isLocatable())
         {
-            $this->street = $relation->getStreets()->top();
+            $this->street = $relation->getStreets();
         }
 
         return parent::render();
