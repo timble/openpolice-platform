@@ -16,9 +16,9 @@ class ContactsViewContactHtml extends Library\ViewHtml
         $model      = $this->getModel();
         $contact    = $model->getRow();
 
-        if($contact->isLocatable())
+        if($contact->isLocatable() && $streets = $contact->getStreets())
         {
-            $this->street = $contact->getStreets();
+            $this->street = $streets->top();
         }
 
         return parent::render();
