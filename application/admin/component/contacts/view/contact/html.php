@@ -14,11 +14,11 @@ class ContactsViewContactHtml extends Library\ViewHtml
     public function render()
     {
         $model      = $this->getModel();
-        $contact    = $model->getData();
+        $contact    = $model->getRow();
 
         if($contact->isLocatable())
         {
-            $this->street = $contact->getStreets()->top();
+            $this->street = $contact->getStreets();
         }
 
         return parent::render();

@@ -14,7 +14,7 @@ class DistrictsViewOfficerHtml extends Library\ViewHtml
     public function render()
     {
         $model      = $this->getModel();
-        $officer    = $model->getData();
+        $officer    = $model->getRow();
 
         if(!$officer->districts_officer_id)
         {

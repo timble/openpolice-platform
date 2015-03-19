@@ -14,11 +14,11 @@ class FoundViewItemHtml extends Library\ViewHtml
     public function render()
     {
         $model      = $this->getModel();
-        $item       = $model->getData();
+        $item       = $model->getRow();
 
         if($item->isLocatable())
         {
-            $this->street = $item->getStreets()->top();
+            $this->street = $item->getStreets();
         }
 
         return parent::render();

@@ -50,7 +50,7 @@ class Backup
 
         // Get a list of all the databases
         $cmd = 'mysql -u'.escapeshellarg($username).' -p'.escapeshellarg($password);
-        $cmd .= ' --raw --skip-column-names -e "SHOW DATABASES LIKE \'____\';"';
+        $cmd .= ' --raw --skip-column-names -e "SELECT schema_name FROM information_schema.schemata WHERE schema_name REGEXP \'^[0-9]{4}$\' OR schema_name IN (\'manager\', \'zones\', \'fed\', \'data\', \'demo\');"';
 
         exec($cmd, $databases);
 
