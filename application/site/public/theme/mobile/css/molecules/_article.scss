@@ -15,6 +15,10 @@
   }
 }
 
+.article__text {
+  @extend .clearfix;
+}
+
 .article__introtext {
   font-weight: bold;
   margin-bottom: $line-height;

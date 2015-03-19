@@ -38,7 +38,7 @@
                 <input type="text" name="slug" maxlength="255" value="<?= escape($article->slug) ?>" />
             </div>
         </div>
-        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text, 'attribs' => array('class' => 'ckeditor-required'))) ?>
+        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text, 'removeButtons' => 'readmore', 'attribs' => array('class' => 'ckeditor-required'))) ?>
     </div>
     <div class="sidebar">
         <?= import('default_sidebar.html', array('categories' => $this->getObject('com:wanted.model.categories')->getRowset())); ?>

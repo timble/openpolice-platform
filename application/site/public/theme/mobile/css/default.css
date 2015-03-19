@@ -899,13 +899,13 @@ button.closed {
   .homepage__contact ul {
     margin-bottom: 0; }
 
-.clearfix, .homepage__news, form, .article, .header, .header .organization {
+.clearfix, .homepage__news, form, .article, .article__text, .header, .header .organization {
   *zoom: 1; }
-  .clearfix:before, .homepage__news:before, form:before, .article:before, .header:before, .header .organization:before, .clearfix:after, .homepage__news:after, form:after, .article:after, .header:after, .header .organization:after {
+  .clearfix:before, .homepage__news:before, form:before, .article:before, .article__text:before, .header:before, .header .organization:before, .clearfix:after, .homepage__news:after, form:after, .article:after, .article__text:after, .header:after, .header .organization:after {
     display: table;
     content: " ";
     line-height: 0; }
-  .clearfix:after, .homepage__news:after, form:after, .article:after, .header:after, .header .organization:after {
+  .clearfix:after, .homepage__news:after, form:after, .article:after, .article__text:after, .header:after, .header .organization:after {
     clear: both; }
 
 #wrap {

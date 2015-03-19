@@ -25,7 +25,7 @@
                 <span class="card__metadata">
                     <span class="card__metadata--inner">
                         <span class="card__name"><?= escape($article->title) ?></span>
-                        <span class="card__date"><?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?> <?= $article->city ? translate('in').' '.escape($article->city) : '' ?></span>
+                        <span class="card__date"><?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?>
                         <? if($article->params->get('place', false) || $article->city) : ?>
                         <span class="card__place"><?= $article->city ? $article->city : $article->params->get('place') ?></span>
                         <? endif ?>
