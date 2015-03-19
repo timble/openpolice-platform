@@ -52,6 +52,9 @@ class ModelStreets extends Library\ModelTable
     {
         $state = $this->getState();
 
+        $languages = $this->getObject('application.languages');
+        $language = $languages->getActive()->slug;
+
         // Join the ISLP ID
         $query->join(array('islps' => 'data.streets_streets_islps'), 'islps.streets_street_identifier = tbl.streets_street_identifier');
 
@@ -60,7 +63,7 @@ class ModelStreets extends Library\ModelTable
             $query->join(array('relations' => 'streets_relations'), 'relations.streets_street_identifier = tbl.streets_street_identifier');
         }
 
-        $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
+        $query->join(array('city' => $language == 'fr' ? 'data.fr-be_streets_cities' : 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
 
         $subquery = $this->getObject('lib:database.query.select')
             ->columns(array('streets_street_identifier', 'district_count' => 'COUNT(row)'))
