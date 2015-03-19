@@ -52,8 +52,6 @@ class ModelArticles extends Library\ModelTable
         parent::_buildQueryWhere($query);
         $state = $this->getState();
 
-        $category_recurse = $this->getObject('com:wanted.model.categories')->id($state->category)->getRow()->parent_id ? false : true;
-
         if ($state->search) {
             $query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
         }
