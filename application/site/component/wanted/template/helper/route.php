@@ -27,6 +27,16 @@ class WantedTemplateHelperRoute extends PagesTemplateHelperRoute
             'layout'        => $config->layout
         );
 
+        $state    = $this->getTemplate()->getView()->getModel()->getState();
+        $current  = $state->section;
+        $offset   = $state->offset;
+
+        if ($section->id != $current && $offset > 0)
+        {
+            $route['offset'] = 0;
+            $route['limit']  = 0;
+        }
+
         return $this->getTemplate()->getView()->getRoute($route);
     }
 
@@ -46,6 +56,16 @@ class WantedTemplateHelperRoute extends PagesTemplateHelperRoute
             'category'      => $category->getSlug(),
             'layout'        => $config->layout
         );
+
+        $state    = $this->getTemplate()->getView()->getModel()->getState();
+        $current  = $state->category;
+        $offset   = $state->offset;
+
+        if ($category->id != $current && $offset > 0)
+        {
+            $route['offset'] = 0;
+            $route['limit']  = 0;
+        }
 
         return $this->getTemplate()->getView()->getRoute($route);
     }
