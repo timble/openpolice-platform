@@ -16,9 +16,9 @@ class FoundViewItemHtml extends Library\ViewHtml
         $model      = $this->getModel();
         $item       = $model->getRow();
 
-        if($item->isLocatable())
+        if($item->isLocatable() && $streets = $item->getStreets())
         {
-            $this->street = $item->getStreets();
+            $this->street =  $streets->top();
         }
 
         return parent::render();

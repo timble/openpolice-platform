@@ -25,9 +25,9 @@ class FoundViewItemHtml extends Library\ViewHtml
         }
 
         // Get the street
-        if($item->isLocatable() && $street = $item->getStreets()->top())
+        if($item->isLocatable() && $streets = $item->getStreets())
         {
-            $item['street'] = $street->title;
+            $item['street'] = $streets->top()->title;
         }
 
         return parent::render();
