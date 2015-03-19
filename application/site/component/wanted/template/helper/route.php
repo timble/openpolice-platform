@@ -33,8 +33,7 @@ class WantedTemplateHelperRoute extends PagesTemplateHelperRoute
 
         if ($section->id != $current && $offset > 0)
         {
-            $route['offset'] = 0;
-            $route['limit']  = 0;
+            $route['offset'] = null;
         }
 
         return $this->getTemplate()->getView()->getRoute($route);
@@ -63,8 +62,7 @@ class WantedTemplateHelperRoute extends PagesTemplateHelperRoute
 
         if ($category->id != $current && $offset > 0)
         {
-            $route['offset'] = 0;
-            $route['limit']  = 0;
+            $route['offset'] = null;
         }
 
         return $this->getTemplate()->getView()->getRoute($route);
