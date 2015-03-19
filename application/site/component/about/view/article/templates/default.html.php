@@ -18,23 +18,25 @@
 
 <article class="article">
     <h1><?= escape($article->title) ?></h1>
-    <? if($article->attachments_attachment_id) : ?>
-        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
-            <?= helper('com:police.image.thumbnail', array(
-                'attachment' => $article->attachments_attachment_id,
-                'attribs' => array('width' => '400', 'height' => '300'))) ?>
-        </a>
-    <? endif ?>
+    <div class="article__text">
+        <? if($article->attachments_attachment_id) : ?>
+            <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
+                <?= helper('com:police.image.thumbnail', array(
+                    'attachment' => $article->attachments_attachment_id,
+                    'attribs' => array('width' => '400', 'height' => '300'))) ?>
+            </a>
+        <? endif ?>
 
-    <? if($article->fulltext) : ?>
-        <div class="article__introtext">
+        <? if($article->fulltext) : ?>
+            <div class="article__introtext">
+                <?= $article->introtext ?>
+            </div>
+        <? else : ?>
             <?= $article->introtext ?>
-        </div>
-    <? else : ?>
-        <?= $article->introtext ?>
-    <? endif ?>
+        <? endif ?>
 
-    <?= $article->fulltext ?>
+        <?= $article->fulltext ?>
+    </div>
 
     <?= import('com:news.view.article.default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
 

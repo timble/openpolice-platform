@@ -31,24 +31,26 @@
         </time>
     </header>
 
-    <? if($article->attachments_attachment_id) : ?>
-    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
-        <?= helper('com:police.image.thumbnail', array(
-        'attachment' => $article->attachments_attachment_id,
-        'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
-    </a>
-    <? endif ?>
+    <div class="article__text">
+        <? if($article->attachments_attachment_id) : ?>
+        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
+            <?= helper('com:police.image.thumbnail', array(
+            'attachment' => $article->attachments_attachment_id,
+            'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
+        </a>
+        <? endif ?>
 
-    <div itemprop="articleBody">
-        <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>
-            <?= $article->introtext ?>
+        <div itemprop="articleBody">
+            <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>
+                <?= $article->introtext ?>
+            </div>
+            <?= $article->fulltext ?>
         </div>
-        <?= $article->fulltext ?>
-
-        <?= import('default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
-
-        <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
     </div>
+
+    <?= import('default_youtube.html', array('youtube' => $article->params->get('youtube', false))) ?>
+
+    <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
 </article>
 
 <script src="assets://application/components/jquery/dist/jquery.min.js" />
