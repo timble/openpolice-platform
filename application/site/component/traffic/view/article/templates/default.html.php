@@ -19,6 +19,7 @@
             <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
         </div>
     </header>
+    <div class="article__text">
     <? if($article->text) : ?>
         <div<?= count($streets) || ($article->controlled && $article->in_violation) ? ' class="traffic__text"' : '' ?>>
             <span itemprop="description"><?= $article->text ?></span>
@@ -49,6 +50,7 @@
             <? endif ?>
         </div>
     <? endif ?>
+    </div>
 
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array(false))) ?>
 </div>
