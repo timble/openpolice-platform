@@ -28,10 +28,10 @@
         <? endif ?>
 
         <dl>
-            <dt><?= translate('Date section'.$section->id) ?>:</dt>
+            <dt><?= translate('Date') ?>:</dt>
             <dd><?= date(array('date' => $article->date, 'format' => 'd/m/y')) ?></dd>
             <? if($article->city || $article->params->get('place', false)) : ?>
-            <dt><?= translate('Place section'.$section->id) ?>:</dt>
+            <dt><?= translate('Place') ?>:</dt>
             <dd><?= $article->city ? $article->city : $article->params->get('place') ?></dd>
             <? endif ?>
         </dl>
