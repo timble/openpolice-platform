@@ -363,7 +363,7 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
                 if($active->iso_code == $primary->iso_code) {
                     $table = $context->query->table;
                 } else {
-                    $table = substr($context->query->table, 6);
+                    $table = substr($context->query->table[0], 6);
                 }
 
                 $table = $this->_tables->find(array('name' => $table))->top();
@@ -417,7 +417,7 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
             if($active->iso_code == $primary->iso_code) {
                 $table = $context->query->table;
             } else {
-                $table = substr($context->query->table['0'], 6);
+                $table = substr($context->query->table[0], 6);
             }
 
             $table = $this->_tables->find(array('name' => $table))->top();
