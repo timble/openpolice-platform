@@ -1253,6 +1253,12 @@ dd {
     padding: 0 0 0.375em 0; }
  }
 
+.component.wanted dt {
+  width: auto;
+  margin-right: 6px; }
+.component.wanted dd {
+  margin: 0; }
+
 figure {
   margin: 0; }
 

@@ -17,9 +17,11 @@ class ModelArticles extends Library\ModelTable
 		parent::__construct($config);
 
 		$this->getState()
-		    ->insert('published' , 'int')
-		    ->insert('exclude' , 'int')
-            ->insert('sticky' , 'boolean', false);
+		    ->insert('published'        , 'int')
+		    ->insert('exclude'          , 'int')
+            ->insert('sticky'           , 'boolean' , false)
+            ->insert('sort'             , 'cmd'     , 'ordering_date')
+            ->insert('direction'        , 'cmd'     , 'DESC');
 	}
     
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
@@ -70,8 +72,8 @@ class ModelArticles extends Library\ModelTable
 
         if ($state->sort == 'ordering_date')
         {
-            $query->order('draft', 'DESC')
-                    ->order('ordering_date', 'DESC');
+            $query->order('draft', $state->direction)
+                    ->order('ordering_date', $state->direction);
         } else {
             $query->order($state->sort, strtoupper($state->direction));
         }
