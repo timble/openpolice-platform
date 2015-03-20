@@ -41,10 +41,13 @@ class ModelArticles extends Library\ModelTable
     {
         parent::_buildQueryJoins($query);
 
+        $languages = $this->getObject('application.languages');
+        $language = $languages->getActive()->slug;
+
         $query->join(array('categories' => 'wanted_categories'), 'categories.wanted_category_id = tbl.wanted_category_id')
               ->join(array('sections' => 'wanted_sections'), 'sections.wanted_section_id = categories.wanted_section_id')
               ->join(array('attachments' => 'attachments'), 'attachments.attachments_attachment_id = tbl.attachments_attachment_id')
-              ->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
+              ->join(array('city' => $language == 'fr' ? 'data.fr-be_streets_cities' : 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
