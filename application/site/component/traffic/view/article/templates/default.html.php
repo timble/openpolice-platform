@@ -25,7 +25,7 @@
         </div>
     <? endif ?>
 
-    <? if(count($streets) || ($article->controlled && $article->in_violation)) : ?>
+    <? if(isset($streets) || ($article->controlled && $article->in_violation)) : ?>
         <div<?= $article->text ? ' class="traffic__sidebar"' : '' ?>>
             <? if($article->controlled && $article->in_violation) : ?>
                 <div<?= $article->text ? ' class="well"' : '' ?>>
@@ -37,7 +37,7 @@
                 </div>
             <? endif ?>
 
-            <? if(count($streets)) : ?>
+            <? if(isset($streets)) : ?>
                 <div<?= $article->text ? ' class="well"' : '' ?>>
                     <strong><?= translate('Streets') ?>:</strong>
                     <ul>
