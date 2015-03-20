@@ -8,6 +8,8 @@
  */
 ?>
 
+<title content="replace"><?= escape(translate('Press Releases')); ?></title>
+
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
 
