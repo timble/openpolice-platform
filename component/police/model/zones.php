@@ -32,7 +32,10 @@ class ModelZones extends Library\ModelTable
 
     protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
     {
-        $query->join(array('city' => 'data.streets_cities'), 'city.police_zone_id = tbl.police_zone_id');
+        $languages = $this->getObject('application.languages');
+        $language = $languages->getActive()->slug;
+
+        $query->join(array('city' => $language == 'fr' ? 'data.fr-be_streets_cities' : 'data.streets_cities'), 'city.police_zone_id = tbl.police_zone_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
