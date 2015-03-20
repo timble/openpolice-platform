@@ -12,8 +12,8 @@
 <? $contact = object('com:contacts.model.contacts')->id($contacts_contact_id)->published(true)->getRow(); ?>
 <? if(!$contact->isNew()) : ?>
 <?
-$email = str_replace("@", "&#64;", $contact->email_to)
-$email = str_replace(".", "&#46;", $email)
+$email = str_replace("@", "&#64;", $contact->email_to);
+$email = str_replace(".", "&#46;", $email);
 
 $site = object('application')->getCfg('site');
 $zone = object('com:police.model.zone')->id($site)->getRow();
