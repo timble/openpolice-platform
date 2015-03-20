@@ -12,7 +12,7 @@ class AddFrenchCityNames extends Migration
 ALTER TABLE `streets_cities` DROP `language`;
 
 CREATE TABLE `fr-be_streets_cities` LIKE `streets_cities`;
-INSERT `fr-be_streets_cities` SELECT * FROM `streets_cities`.recipes;
+INSERT `fr-be_streets_cities` SELECT * FROM `streets_cities`;
 
 UPDATE `fr-be_streets_cities` SET `title` = 'Anderlecht' WHERE `streets_city_id` = 21001;
 UPDATE `fr-be_streets_cities` SET `title` = 'Auderghem' WHERE `streets_city_id` = 21002;
