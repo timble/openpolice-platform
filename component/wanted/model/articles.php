@@ -86,8 +86,8 @@ class ModelArticles extends Library\ModelTable
 
         if ($state->sort == 'ordering_date')
         {
-            $query->order('draft', 'DESC')
-                ->order('ordering_date', 'DESC');
+            $query->order('draft', $state->direction)
+                ->order('ordering_date', $state->direction);
         } else {
             $query->order($state->sort, strtoupper($state->direction));
         }
