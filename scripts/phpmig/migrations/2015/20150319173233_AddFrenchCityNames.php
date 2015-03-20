@@ -1,5 +1,6 @@
 <?php
-use Phpmig\Migration\Migration;
+
+use MyPhpmig\Police\Migration;
 
 class AddFrenchCityNames extends Migration
 {
