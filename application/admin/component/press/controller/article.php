@@ -24,14 +24,4 @@ class PressControllerArticle extends Library\ControllerModel
     
         parent::_initialize($config);
     }
-
-    public function getRequest()
-    {
-        $request = parent::getRequest();
-
-        $request->query->sort = 'created_on';
-        $request->query->direction   = 'DESC';
-
-        return $request;
-    }
 }

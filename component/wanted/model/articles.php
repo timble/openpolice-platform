@@ -20,7 +20,7 @@ class ModelArticles extends Library\ModelTable
             ->insert('published'        , 'int')
             ->insert('section'          , 'string')
             ->insert('category'         , 'string')
-            ->insert('sort'             , 'cmd'     , 'date')
+            ->insert('sort'             , 'cmd'     , 'ordering_date')
             ->insert('direction'        , 'cmd'     , 'DESC');
     }
 
