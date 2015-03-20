@@ -17,8 +17,9 @@ class PressControllerArticle extends PoliceControllerLanguage
 
         // Only return published items.
         $request->query->published = 1;
+        $request->query->limit = 10;
 
-        $request->query->sort = 'created_on';
+        $request->query->sort = 'ordering_date';
         $request->query->direction   = 'DESC';
 
         return $request;
