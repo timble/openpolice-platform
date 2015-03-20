@@ -19,7 +19,7 @@
     <? endforeach ?>
 </ktml:module>
 
-<h1><?= escape(translate('Press')); ?></h1>
+<h1><?= escape(translate('Press Releases')); ?></h1>
 
 <table class="table table--striped">
     <thead>
