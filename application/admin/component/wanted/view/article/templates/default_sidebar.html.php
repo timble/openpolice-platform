@@ -62,7 +62,7 @@
         </div>
     </div>
     <div>
-        <label for="params[place]"><?= translate('Foreign country') ?></label>
+        <label for="params[place]"><?= translate('Other place') ?></label>
         <div>
             <input type="text" name="params[place]" value="<?= $article->params['place'] ?>" />
         </div>
