@@ -1735,6 +1735,7 @@ button.button, input[type="submit"].button {
     border-bottom: 1px solid #f6f6f6; }
   .card a {
     display: inline-block;
+    width: 100%;
     border: 1px solid #eee;
     border-radius: 4px; }
   .card a:hover, .card a:focus {
