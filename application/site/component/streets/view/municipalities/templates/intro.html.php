@@ -24,6 +24,13 @@ $domains = array(
 $url    = $this->getObject('application')->getRequest()->getUrl();
 $host   = $url->getHost();
 
+if (isset($_SERVER['PHP_AUTH_USER']))
+{
+    $user = $url->getUser();
+    $pass = $url->getPass();
+}
+else $user = $pass = null;
+
 // Make sure the given host exists
 if(array_key_exists($host, $domains))
 {
@@ -114,6 +121,7 @@ $footer = array(
         'vclp' => array('name' => 'Kommission', 'url' => 'http://www.lokalepolizei.be/portal/nl'),
     ),
 );
+
 ?>
 
 <title content="replace"><?= $localpolice[$language] ?></title>
