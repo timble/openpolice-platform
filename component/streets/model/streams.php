@@ -15,14 +15,26 @@ class ModelStreams extends Library\ModelAbstract
 {
     protected $_items;
 
+    protected $_authentication;
+
     public function __construct(Library\ObjectConfig $config)
     {
         parent::__construct($config);
 
         $this->getState()
-            ->insert('url', 'url')
-            ->insert('user', 'string')
-            ->insert('pwd', 'string');
+            ->insert('url', 'url');
+    }
+
+    protected function _initialize(Library\ObjectConfig $config)
+    {
+        parent::_initialize($config);
+
+        if (isset($_SERVER['PHP_AUTH_USER']))
+        {
+            $url = $this->getObject('application')->getRequest()->getUrl();
+
+            $this->_authentication = $url->getUser() . ':' . $url->getPass();
+        }
     }
 
     public function getItems()
@@ -45,8 +57,8 @@ class ModelStreams extends Library\ModelAbstract
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Host: ' . $host));
                 curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 
-                if ($state->user && $state->pwd) {
-                    curl_setopt($ch, CURLOPT_USERPWD, $state->user.':'.$state->pwd);
+                if ($this->_authentication) {
+                    curl_setopt($ch, CURLOPT_USERPWD, $this->_authentication);
                 }
 
                 $result = curl_exec($ch);
