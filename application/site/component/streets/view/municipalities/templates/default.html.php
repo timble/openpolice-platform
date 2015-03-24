@@ -34,34 +34,6 @@ if(array_key_exists($host, $domains))
     $domain = 'www';
 }
 
-$search = array(
-    'nl' => array('label' => 'Zoek jouw lokale politiezone via je woonplaats of postcode', 'placeholder' => 'Woonplaats of postcode'),
-    'fr' => array('label' => 'Trouvez votre zone de police locale en saisissant votre ville ou code postal', 'placeholder' => 'Ville ou code postal'),
-    'de' => array('label' => 'Finden Sie Ihren lokalen Polizei durch Ihre Wohnort oder Postleitzahl', 'placeholder' => 'Wohnort oder Postleitzahl'),
-);
-
-$button = array(
-    'en' => 'Search',
-    'nl' => 'Zoeken',
-    'fr' => 'Rechercher',
-    'de' => 'Recherche',
-);
-
-$notfound = array(
-    'en' => '%s not found',
-    'nl' => '%s niet gevonden',
-    'fr' => '%s pas trouvé',
-    'de' => '%s nicht gefunden',
-);
-
-$localpolice = array(
-    'en' => 'Local Police',
-    'nl' => 'Lokale Politie',
-    'fr' => 'Police Locale' ,
-    'de' => 'Lokale Polizei',
-);
-
-
 $external = array(
     'en' => array(
         'federal' => array('name' => 'Federal Police', 'url' => 'http://www.polfed-fedpol.be/org/org_en.php'),
