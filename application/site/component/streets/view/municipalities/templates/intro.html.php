@@ -8,8 +8,8 @@
  */
 ?>
 
-<title content="replace"><?= $localpolice[$language] ?></title>
-<meta content="<?= $search[$language] ?>." name="description" />
+<title content="replace"><?= $intro[$language]['title'] ?></title>
+<meta content="<?= $intro[$language]['description'] ?>." name="description" />
 
 <div class="intro__header">
     <div class="intro__container">

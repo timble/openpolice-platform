@@ -84,6 +84,12 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
 
     protected function _assignStrings()
     {
+        $this->intro = array(
+            'nl' => array('title' => 'Belgische politie', 'description' => 'Portaal van de Belgische politie'),
+            'fr' => array('title' => 'Police belge', 'description' => 'Portail de la Police belge'),
+            'de' => array('title' => 'Belgischen Polizei', 'description' => 'Portal der belgischen Polizei'),
+        );
+
         $this->search = array(
             'nl' => array('label' => 'Zoek jouw lokale politiezone via je woonplaats of postcode', 'placeholder' => 'Woonplaats of postcode'),
             'fr' => array('label' => 'Trouvez votre zone de police locale en saisissant votre ville ou code postal', 'placeholder' => 'Ville ou code postal'),

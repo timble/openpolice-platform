@@ -91,7 +91,7 @@ $external = array(
 ?>
 
 <title content="replace"><?= $localpolice[$language] ?></title>
-<meta content="<?= $search[$language] ?>." name="description" />
+<meta content="<?= $search[$language]['label'] ?>." name="description" />
 
 <div class="splash">
     <div class="splash__logo"><img src="assets://application/images/logo-<?= $language ?>.jpg" /></div>
