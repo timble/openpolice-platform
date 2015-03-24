@@ -35,10 +35,9 @@ if(array_key_exists($host, $domains))
 }
 
 $search = array(
-    'en' => 'Seach your city',
-    'nl' => 'Zoek jouw lokale politiezone via je woonplaats of postcode',
-    'fr' => 'Trouvez votre zone de police locale en saisissant votre ville ou code postal',
-    'de' => 'Finden Sie Ihren lokalen Polizei durch Ihre Wohnort oder Postleitzahl',
+    'nl' => array('label' => 'Zoek jouw lokale politiezone via je woonplaats of postcode', 'placeholder' => 'Woonplaats of postcode'),
+    'fr' => array('label' => 'Trouvez votre zone de police locale en saisissant votre ville ou code postal', 'placeholder' => 'Ville ou code postal'),
+    'de' => array('label' => 'Finden Sie Ihren lokalen Polizei durch Ihre Wohnort oder Postleitzahl', 'placeholder' => 'Wohnort oder Postleitzahl'),
 );
 
 $button = array(
@@ -99,10 +98,10 @@ $external = array(
 
     <div class="well splash__search">
         <form action="#" method="get">
-            <label for="municipality" class="muted"><?= $search[$language] ?>:</label>
+            <label for="municipality" class="muted"><?= $search[$language]['label'] ?>:</label>
             <div class="search-box">
                 <div class="search-box__input">
-                    <input autofocus type="text" value="<?= $state->search ? $state->search : '' ?>" name="search" onfocus="this.value = this.value;">
+                    <input autofocus type="text" value="<?= $state->search ? $state->search : '' ?>" name="search" onfocus="this.value = this.value;" placeholder="<?= $search[$language]['placeholder'] ?>">
                 </div>
                 <button class="button button--primary search-box__button"><?= $button[$language] ?></button>
             </div>

@@ -33,7 +33,9 @@ class ModelArticles extends Library\ModelTable
             'wanted_section_id' => 'sections.wanted_section_id',
             'city'              => 'city.title',
             'ordering_date'     => 'IF(tbl.published_on, tbl.published_on, tbl.publish_on)',
-            'draft'             => 'IF(tbl.published_on OR tbl.publish_on, 0, 1)'
+            'draft'             => 'IF(tbl.published_on OR tbl.publish_on, 0, 1)',
+            'section_slug'      => 'sections.slug',
+            'category_slug'     => 'categories.slug'
         ));
     }
 
@@ -86,8 +88,8 @@ class ModelArticles extends Library\ModelTable
 
         if ($state->sort == 'ordering_date')
         {
-            $query->order('draft', 'DESC')
-                ->order('ordering_date', 'DESC');
+            $query->order('draft', $state->direction)
+                ->order('ordering_date', $state->direction);
         } else {
             $query->order($state->sort, strtoupper($state->direction));
         }
