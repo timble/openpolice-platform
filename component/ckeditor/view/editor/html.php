@@ -56,7 +56,7 @@ class ViewEditorHtml extends Library\ViewHtml
         }
 
         // Show source button only to Super Administrators
-        if($this->getObject('user')->getRole() < 25)
+        if($this->getObject('user')->getRole() != '25' && $this->getObject('application')->getSite() != 'fed')
         {
             $settings->removeButtons = isset($settings->removeButtons) ? $settings->removeButtons.',Source' : 'Source';
         }
