@@ -8,6 +8,8 @@
  */
 ?>
 
+<title content="replace"><?= escape(translate('Press Releases')); ?></title>
+
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
 
@@ -19,7 +21,7 @@
     <? endforeach ?>
 </ktml:module>
 
-<h1><?= escape(translate('Press')); ?></h1>
+<h1><?= escape(translate('Press Releases')); ?></h1>
 
 <table class="table table--striped">
     <thead>

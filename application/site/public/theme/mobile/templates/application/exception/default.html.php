@@ -51,14 +51,16 @@
         <div class="header">
             <div class="organization" itemscope itemtype="http://schema.org/Organization">
                 <a itemprop="url" href="/<?= $site ?>">
-                    <div class="organization__logo organization__logo--<?= $language_short; ?>"></div>
+                    <div class="organization__logo organization__logo--<?= $language_short; ?> organization__logo--<?= $site; ?>"></div>
                     <div class="organization__name"><?= escape($zone->title); ?></div>
                 </a>
             </div>
             <div class="navigation">
                 <span class="slogan">
                     <?= JText::sprintf('Call for urgent police assistance', '101', '101') ?>.
-                    <?= JText::sprintf('No emergency, just police', escape(str_replace(' ', '', $zone->phone_emergency)), escape($zone->phone_emergency)) ?>.
+                    <? if($zone->phone_information || $zone->phone_emergency) : ?>
+                        <?= JText::sprintf('No emergency, just police', $zone->phone_information ? escape($zone->phone_information) : escape($zone->phone_emergency)) ?>.
+                    <? endif ?>
                 </span>
             </div>
         </div>

@@ -29,14 +29,14 @@
  * @group Breakpoint
  */
 @media screen and (min-width: 400px) {
-  .found .cards .card {
+  .cards .card {
     width: 48.1481481481%;
     float: left;
     
     
     
      }
-    .found .cards .card:nth-child(2n+1) {
+    .cards .card:nth-child(2n+1) {
       
       
       margin-left: 0;
@@ -45,7 +45,7 @@
       
       clear: both;
       margin-left: 0; }
-    .found .cards .card:nth-child(2n+2) {
+    .cards .card:nth-child(2n+2) {
       
       
       margin-left: 51.8518518519%;
@@ -54,7 +54,7 @@
       
       clear: none; }
 
-  .wanted .cards .card--horizontal img {
+  .intro .intro__news__item img {
     
     
     
@@ -64,7 +64,7 @@
     
     
      }
-  .wanted .cards .card--horizontal .card__metadata {
+  .intro .intro__news__item .card__metadata {
     
     
     
@@ -135,14 +135,14 @@
       
       clear: none; }
 
-  .wanted .cards .card--horizontal {
+  .cards .card--horizontal {
     width: 48.1481481481%;
     float: left;
     
     
     
      }
-    .wanted .cards .card--horizontal:nth-child(2n+1) {
+    .cards .card--horizontal:nth-child(2n+1) {
       
       
       margin-left: 0;
@@ -151,7 +151,7 @@
       
       clear: both;
       margin-left: 0; }
-    .wanted .cards .card--horizontal:nth-child(2n+2) {
+    .cards .card--horizontal:nth-child(2n+2) {
       
       
       margin-left: 51.8518518519%;
@@ -159,7 +159,7 @@
       
       
       clear: none; }
-    .wanted .cards .card--horizontal img {
+    .cards .card--horizontal img {
       
       
       
@@ -169,7 +169,7 @@
       
       
        }
-    .wanted .cards .card--horizontal .card__metadata {
+    .cards .card--horizontal .card__metadata {
       
       
       
@@ -179,6 +179,27 @@
       
       
        }
+
+  .intro .intro__news__item img {
+    
+    
+    
+    width: 30.8641975309%;
+    float: left;
+    margin-left: 0;
+    
+    
+     }
+  .intro .intro__news__item .card__metadata {
+    
+    
+    
+    width: 65.4320987654%;
+    float: left;
+    margin-left: 3.7037037037%;
+    
+    
+     }
  }
 
 @media screen and (min-width: 768px) {
@@ -504,6 +525,143 @@
       
       
       width: 56.7901234568%;
+      float: left;
+      margin-left: 3.7037037037%;
+      
+      
+       }
+
+  .intro .intro__news__item {
+    width: 30.8641975309%;
+    float: left;
+    
+    
+    
+     }
+    .intro .intro__news__item:nth-child(3n+1) {
+      
+      
+      margin-left: 0;
+      margin-right: -100%;
+      
+      
+      clear: both;
+      margin-left: 0; }
+    .intro .intro__news__item:nth-child(3n+2) {
+      
+      
+      margin-left: 34.5679012346%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    .intro .intro__news__item:nth-child(3n+3) {
+      
+      
+      margin-left: 69.1358024691%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    .intro .intro__news__item img {
+      
+      
+      
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      
+      
+       }
+    .intro .intro__news__item .card__metadata {
+      
+      
+      
+      width: 100%;
+      float: left;
+      margin-left: 0;
+      margin-right: 0;
+      
+       }
+  .intro .intro__search--inner {
+    
+    
+    
+    width: 65.4320987654%;
+    float: left;
+    margin-left: 0;
+    
+    
+     }
+  .intro .external__item {
+    width: 48.1481481481%;
+    float: left;
+    
+    
+    
+     }
+    .intro .external__item:nth-child(2n+1) {
+      
+      
+      margin-left: 0;
+      margin-right: -100%;
+      
+      
+      clear: both;
+      margin-left: 0; }
+    .intro .external__item:nth-child(2n+2) {
+      
+      
+      margin-left: 51.8518518519%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+  .intro .intro__wanted--missing {
+    
+    
+    
+    width: 48.1481481481%;
+    float: left;
+    margin-left: 0;
+    
+    
+     }
+  .intro .intro__wanted--wanted {
+    
+    
+    
+    width: 48.1481481481%;
+    float: left;
+    margin-left: 3.7037037037%;
+    
+    
+     }
+  .intro .intro__wanted .cards .card--horizontal {
+    
+    
+    
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    
+     }
+    .intro .intro__wanted .cards .card--horizontal img {
+      
+      
+      
+      width: 22.2222222222%;
+      float: left;
+      margin-left: 0;
+      
+      
+       }
+    .intro .intro__wanted .cards .card--horizontal .card__metadata {
+      
+      
+      
+      width: 74.0740740741%;
       float: left;
       margin-left: 3.7037037037%;
       

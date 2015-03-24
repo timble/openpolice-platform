@@ -19,6 +19,9 @@ class FoundControllerItem extends PoliceControllerLanguage
         $request->query->published = 1;
         $request->query->limit     = '12';
 
+        $request->query->sort       = 'found_on';
+        $request->query->direction  = 'DESC';
+
         return $request;
     }
 }

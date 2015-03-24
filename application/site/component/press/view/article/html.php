@@ -16,6 +16,9 @@ class PressViewArticleHtml extends Library\ViewHtml
         //Get the article
         $article = $this->getModel()->getData();
 
+        //Get the parameters
+        $this->params = $this->getObject('application')->getParams();
+
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($article->title, '');
 

@@ -19,13 +19,14 @@
             <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
         </div>
     </header>
+    <div class="article__text">
     <? if($article->text) : ?>
         <div<?= count($streets) || ($article->controlled && $article->in_violation) ? ' class="traffic__text"' : '' ?>>
             <span itemprop="description"><?= $article->text ?></span>
         </div>
     <? endif ?>
 
-    <? if(count($streets) || ($article->controlled && $article->in_violation)) : ?>
+    <? if(isset($streets) || ($article->controlled && $article->in_violation)) : ?>
         <div<?= $article->text ? ' class="traffic__sidebar"' : '' ?>>
             <? if($article->controlled && $article->in_violation) : ?>
                 <div<?= $article->text ? ' class="well"' : '' ?>>
@@ -37,7 +38,7 @@
                 </div>
             <? endif ?>
 
-            <? if(count($streets)) : ?>
+            <? if(isset($streets)) : ?>
                 <div<?= $article->text ? ' class="well"' : '' ?>>
                     <strong><?= translate('Streets') ?>:</strong>
                     <ul>
@@ -49,6 +50,7 @@
             <? endif ?>
         </div>
     <? endif ?>
+    </div>
 
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array(false))) ?>
 </div>

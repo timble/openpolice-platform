@@ -70,13 +70,11 @@
     <?= helper('com:questions.radiolist.categories', array('row' => $article, 'package' => 'traffic', 'name' => 'traffic_category_id')) ?>
 </fieldset>
 
-<? if($article->isLocatable()) : ?>
 <fieldset>
     <legend><?= translate('Streets') ?></legend>
-    <?= helper('com:streets.listbox.streets', array('selected' => $article->getStreets()->streets_street_identifier, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
+    <?= helper('com:streets.listbox.streets', array('selected' => isset($streets) ? $streets->streets_street_identifier : '', 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
     <script data-inline> $jQuery(".select-streets").select2(); </script>
 </fieldset>
-<? endif ?>
 
 <fieldset id="results">
     <legend><?= translate('Results') ?></legend>
