@@ -31,7 +31,16 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
             'new.lokalepolizei.be'      => array('language' => 'de', 'domain' => 'new', 'lang' => 'de-be'),
             'staging.lokalepolitie.be'  => array('language' => 'nl', 'domain' => 'staging', 'lang' => 'nl-be'),
             'staging.policelocale.be'   => array('language' => 'fr', 'domain' => 'staging', 'lang' => 'fr-be'),
-            'staging.lokalepolizei.be'  => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-be')
+            'staging.lokalepolizei.be'  => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-be'),
+            'www.politie.be'            => array('language' => 'nl', 'domain' => 'www', 'lang' => 'nl-be'),
+            'www.police.be'             => array('language' => 'fr', 'domain' => 'www', 'lang' => 'fr-be'),
+            'www.polizei.be'            => array('language' => 'de', 'domain' => 'www', 'lang' => 'de-be'),
+            'new.politie.be'            => array('language' => 'nl', 'domain' => 'new', 'lang' => 'nl-be'),
+            'new.police.be'             => array('language' => 'fr', 'domain' => 'new', 'lang' => 'fr-be'),
+            'new.polizei.be'            => array('language' => 'de', 'domain' => 'new', 'lang' => 'de-be'),
+            'staging.politie.be'        => array('language' => 'nl', 'domain' => 'staging', 'lang' => 'nl-be'),
+            'staging.police.be'         => array('language' => 'fr', 'domain' => 'staging', 'lang' => 'fr-be'),
+            'staging.polizei.be'        => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-be')
         );
 
         $url  = $this->getObject('application')->getRequest()->getUrl();
