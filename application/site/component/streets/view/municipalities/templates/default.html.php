@@ -34,34 +34,6 @@ if(array_key_exists($host, $domains))
     $domain = 'www';
 }
 
-$search = array(
-    'nl' => array('label' => 'Zoek jouw lokale politiezone via je woonplaats of postcode', 'placeholder' => 'Woonplaats of postcode'),
-    'fr' => array('label' => 'Trouvez votre zone de police locale en saisissant votre ville ou code postal', 'placeholder' => 'Ville ou code postal'),
-    'de' => array('label' => 'Finden Sie Ihren lokalen Polizei durch Ihre Wohnort oder Postleitzahl', 'placeholder' => 'Wohnort oder Postleitzahl'),
-);
-
-$button = array(
-    'en' => 'Search',
-    'nl' => 'Zoeken',
-    'fr' => 'Rechercher',
-    'de' => 'Recherche',
-);
-
-$notfound = array(
-    'en' => '%s not found',
-    'nl' => '%s niet gevonden',
-    'fr' => '%s pas trouvé',
-    'de' => '%s nicht gefunden',
-);
-
-$localpolice = array(
-    'en' => 'Local Police',
-    'nl' => 'Lokale Politie',
-    'fr' => 'Police Locale' ,
-    'de' => 'Lokale Polizei',
-);
-
-
 $external = array(
     'en' => array(
         'federal' => array('name' => 'Federal Police', 'url' => 'http://www.polfed-fedpol.be/org/org_en.php'),
@@ -91,7 +63,7 @@ $external = array(
 ?>
 
 <title content="replace"><?= $localpolice[$language] ?></title>
-<meta content="<?= $search[$language] ?>." name="description" />
+<meta content="<?= $search[$language]['label'] ?>." name="description" />
 
 <div class="splash">
     <div class="splash__logo"><img src="assets://application/images/logo-<?= $language ?>.jpg" /></div>
@@ -124,9 +96,9 @@ $external = array(
 
     <div class="splash__languages">
         <ul class="nav nav--pills nav--visited nav--horizontal">
-            <li><a href="http://<?= $domain ?>.lokalepolitie.be/intro">Nederlands</a></li>
-            <li><a href="http://<?= $domain ?>.policelocale.be/intro">Français</a></li>
-            <li><a href="http://<?= $domain ?>.lokalepolizei.be/intro">Deutsch</a></li>
+            <li><a href="http://<?= $domain ?>.lokalepolitie.be/zones">Nederlands</a></li>
+            <li><a href="http://<?= $domain ?>.policelocale.be/zones">Français</a></li>
+            <li><a href="http://<?= $domain ?>.lokalepolizei.be/zones">Deutsch</a></li>
         </ul>
     </div>
 
