@@ -235,9 +235,9 @@ $footer = array(
     <div class="intro__languages">
         <div class="intro__container">
             <ul class="nav nav--pills nav--visited nav--horizontal">
-                <li><a href="http://<?= $domain ?>.lokalepolitie.be/intro">Nederlands</a></li>
-                <li><a href="http://<?= $domain ?>.policelocale.be/intro">Français</a></li>
-                <li><a href="http://<?= $domain ?>.lokalepolizei.be/intro">Deutsch</a></li>
+                <li><a href="http://<?= $domain ?>.lokalepolitie.be">Nederlands</a></li>
+                <li><a href="http://<?= $domain ?>.policelocale.be">Français</a></li>
+                <li><a href="http://<?= $domain ?>.lokalepolizei.be">Deutsch</a></li>
             </ul>
         </div>
     </div>
