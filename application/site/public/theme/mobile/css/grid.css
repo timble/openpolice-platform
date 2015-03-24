@@ -28,15 +28,38 @@
  *
  * @group Breakpoint
  */
+@media screen and (min-width: 320px) {
+  .cards .card--horizontal img {
+    
+    
+    
+    width: 30.8641975309%;
+    float: left;
+    margin-left: 0;
+    
+    
+     }
+  .cards .card--horizontal .card__metadata {
+    
+    
+    
+    width: 65.4320987654%;
+    float: left;
+    margin-left: 3.7037037037%;
+    
+    
+     }
+ }
+
 @media screen and (min-width: 400px) {
-  .cards .card {
+  .found .cards .card {
     width: 48.1481481481%;
     float: left;
     
     
     
      }
-    .cards .card:nth-child(2n+1) {
+    .found .cards .card:nth-child(2n+1) {
       
       
       margin-left: 0;
@@ -45,7 +68,7 @@
       
       clear: both;
       margin-left: 0; }
-    .cards .card:nth-child(2n+2) {
+    .found .cards .card:nth-child(2n+2) {
       
       
       margin-left: 51.8518518519%;
@@ -159,26 +182,6 @@
       
       
       clear: none; }
-    .cards .card--horizontal img {
-      
-      
-      
-      width: 39.5061728395%;
-      float: left;
-      margin-left: 0;
-      
-      
-       }
-    .cards .card--horizontal .card__metadata {
-      
-      
-      
-      width: 56.7901234568%;
-      float: left;
-      margin-left: 3.7037037037%;
-      
-      
-       }
 
   .intro .intro__news__item img {
     
@@ -486,51 +489,6 @@
       
       clear: none; }
 
-  .wanted .cards .card--horizontal {
-    width: 48.1481481481%;
-    float: left;
-    
-    
-    
-     }
-    .wanted .cards .card--horizontal:nth-child(2n+1) {
-      
-      
-      margin-left: 0;
-      margin-right: -100%;
-      
-      
-      clear: both;
-      margin-left: 0; }
-    .wanted .cards .card--horizontal:nth-child(2n+2) {
-      
-      
-      margin-left: 51.8518518519%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-    .wanted .cards .card--horizontal img {
-      
-      
-      
-      width: 39.5061728395%;
-      float: left;
-      margin-left: 0;
-      
-      
-       }
-    .wanted .cards .card--horizontal .card__metadata {
-      
-      
-      
-      width: 56.7901234568%;
-      float: left;
-      margin-left: 3.7037037037%;
-      
-      
-       }
-
   .intro .intro__news__item {
     width: 30.8641975309%;
     float: left;
@@ -647,26 +605,6 @@
     margin-right: 0;
     
      }
-    .intro .intro__wanted .cards .card--horizontal img {
-      
-      
-      
-      width: 22.2222222222%;
-      float: left;
-      margin-left: 0;
-      
-      
-       }
-    .intro .intro__wanted .cards .card--horizontal .card__metadata {
-      
-      
-      
-      width: 74.0740740741%;
-      float: left;
-      margin-left: 3.7037037037%;
-      
-      
-       }
  }
 
 @media screen and (min-width: 960px) {

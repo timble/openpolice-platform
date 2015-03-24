@@ -181,7 +181,11 @@ $footer = array(
                         <? if($article->thumbnail): ?>
                             <img width="400px" height="300px" src="<?= 'http://'.object('request')->getUrl()->getHost().'/files/fed/attachments/'.str_replace('.', '_thumb.', $article->thumbnail) ?>" />
                         <? endif ?>
-                        <span class="card__metadata"><?= $article->title ?></span>
+                        <span class="card__metadata">
+                            <span class="card__metadata--inner">
+                                <span class="card__name"><?= $article->title ?></span>
+                            </span>
+                        </span>
                     </a>
                 </div>
             <? endforeach ?>
