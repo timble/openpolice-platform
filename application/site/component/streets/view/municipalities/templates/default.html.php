@@ -124,9 +124,9 @@ $external = array(
 
     <div class="splash__languages">
         <ul class="nav nav--pills nav--visited nav--horizontal">
-            <li><a href="http://<?= $domain ?>.lokalepolitie.be/intro">Nederlands</a></li>
-            <li><a href="http://<?= $domain ?>.policelocale.be/intro">Français</a></li>
-            <li><a href="http://<?= $domain ?>.lokalepolizei.be/intro">Deutsch</a></li>
+            <li><a href="http://<?= $domain ?>.lokalepolitie.be/zones">Nederlands</a></li>
+            <li><a href="http://<?= $domain ?>.policelocale.be/zones">Français</a></li>
+            <li><a href="http://<?= $domain ?>.lokalepolizei.be/zones">Deutsch</a></li>
         </ul>
     </div>
 
