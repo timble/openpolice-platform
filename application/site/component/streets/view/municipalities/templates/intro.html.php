@@ -91,7 +91,7 @@
                         <? foreach ($wanteditems[$section] as $data) : ?>
                             <? $article = $data->data; ?>
                             <li class="card card--horizontal">
-                                <a href="<?= $streams[$language]['wanted'].'/'.$article->section_slug.'/'.$article->category_slug ?>">
+                                <a href="<?= $streams[$language]['wanted'].'/'.$article->section_slug.'/'.$article->category_slug.'/'.$article->id.'-'.$article->slug ?>">
                                     <? if($article->thumbnail): ?>
                                         <img height="500px" width="400px" src="<?= 'http://'.object('request')->getUrl()->getHost().'/files/fed/attachments/'.str_replace('.', '_thumb.', $article->thumbnail) ?>" />
                                     <? else : ?>
