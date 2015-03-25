@@ -39,7 +39,7 @@ class ModelStreets extends Library\ModelTable
         $cities = $this->getObject('com:police.model.zones')->id($this->getObject('application')->getSite())->getRow()->cities;
 
         $query->columns(array(
-            'title'             => $cities == '1' ? 'tbl.title' : "CONCAT(tbl.title,' (',city.title,')')",
+            'title'             => $cities !== '1' ? "CONCAT(tbl.title,' (',city.title,')')" : 'tbl.title',
             'title_short'       => 'tbl.title',
             'district_count'    => 'district.district_count',
             'bin_count'         => 'bin.district_count',
@@ -52,6 +52,9 @@ class ModelStreets extends Library\ModelTable
     {
         $state = $this->getState();
 
+        $languages = $this->getObject('application.languages');
+        $language = $languages->getActive()->slug;
+
         // Join the ISLP ID
         $query->join(array('islps' => 'data.streets_streets_islps'), 'islps.streets_street_identifier = tbl.streets_street_identifier');
 
@@ -60,7 +63,7 @@ class ModelStreets extends Library\ModelTable
             $query->join(array('relations' => 'streets_relations'), 'relations.streets_street_identifier = tbl.streets_street_identifier');
         }
 
-        $query->join(array('city' => 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
+        $query->join(array('city' => $language == 'fr' ? 'data.fr-be_streets_cities' : 'data.streets_cities'), 'city.streets_city_id = tbl.streets_city_id');
 
         $subquery = $this->getObject('lib:database.query.select')
             ->columns(array('streets_street_identifier', 'district_count' => 'COUNT(row)'))
@@ -140,7 +143,7 @@ class ModelStreets extends Library\ModelTable
             $query->where('district.district_count IS NOT NULL');
         }
 
-        if(!in_array($this->getObject('application')->getSite(), array('default'))) {
+        if(!in_array($this->getObject('application')->getSite(), array('default', 'fed'))) {
             $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
         }
 	}

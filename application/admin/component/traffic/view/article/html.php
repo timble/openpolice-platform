@@ -9,22 +9,17 @@
 
 use Nooku\Library;
 
-class DistrictsViewOfficerHtml extends Library\ViewHtml
+class TrafficViewArticleHtml extends Library\ViewHtml
 {
     public function render()
     {
         $model      = $this->getModel();
-        $officer    = $model->getRow();
+        $article    = $model->getRow();
 
-        if(!$officer->districts_officer_id)
+        if($article->isLocatable() && $streets = $article->getStreets())
         {
-            $districts = $this->getObject('com:districts.model.districts_officers')
-                ->officer($officer->id)
-                ->getRowset();
-
-        } else $districts = null;
-
-        $this->districts($districts);
+            $this->streets = $streets;
+        }
 
         return parent::render();
     }

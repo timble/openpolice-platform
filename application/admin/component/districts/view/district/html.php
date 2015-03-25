@@ -14,7 +14,7 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
     public function render()
     {
         $model = $this->getModel();
-        $district = $model->getData();
+        $district = $model->getRow();
 
         if(!$district->districts_district_id)
         {

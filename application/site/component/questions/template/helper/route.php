@@ -51,6 +51,15 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
             'Itemid'        => '36'
         );
 
+        $state    = $this->getTemplate()->getView()->getModel()->getState();
+        $current  = $state->category;
+        $offset   = $state->offset;
+
+        if ($category->id != $current && $offset > 0)
+        {
+            $route['offset'] = null;
+        }
+
         return $this->getTemplate()->getView()->getRoute($route);
     }
 }

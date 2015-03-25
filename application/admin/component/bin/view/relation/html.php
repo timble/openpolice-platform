@@ -14,11 +14,11 @@ class BinViewRelationHtml extends Library\ViewHtml
     public function render()
     {
         $model      = $this->getModel();
-        $relation   = $model->getData();
+        $relation   = $model->getRow();
 
-        if($relation->isLocatable())
+        if($relation->isLocatable() && $streets = $relation->getStreets())
         {
-            $this->street = $relation->getStreets()->top();
+            $this->street = $streets->top();
         }
 
         return parent::render();

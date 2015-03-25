@@ -1,6 +1,6 @@
 <?php
 /**
- * Belgian Police Web Platform - Found Component
+ * Belgian Police Web Platform - Traffic Component
  *
  * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
@@ -9,17 +9,12 @@
 
 use Nooku\Library;
 
-class FoundViewItemHtml extends Library\ViewHtml
+class PressViewArticlesHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $model      = $this->getModel();
-        $item       = $model->getRow();
-
-        if($item->isLocatable() && $streets = $item->getStreets())
-        {
-            $this->street =  $streets->top();
-        }
+        //Get the parameters
+        $this->params = $this->getObject('application')->getParams();
 
         return parent::render();
     }

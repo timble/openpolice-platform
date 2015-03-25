@@ -38,35 +38,12 @@ $statistics = (object) array('cities' => (object) array('updated' => 0), 'street
 
 foreach ($cities as $city)
 {
-    $crab_city = $crab_cities->find(array('NISGemeenteCode' => $city->id, 'TaalCodeGemeenteNaam' => $city->language))->top();
+    $crab_city = $crab_cities->find(array('NISGemeenteCode' => $city->id))->top();
 
     if (!$crab_city->GemeenteId)
     {
         echo "Warning: " . $city->title . ' not found in CRAB database! (#' . $city->id . ')';
         continue;
-    }
-
-    if ($city->crab_city_id != $crab_city->GemeenteId || $city->title != $crab_city->GemeenteNaam)
-    {
-        $old = array('crab_city_id' => $city->crab_city_id, 'title' => $city->title);
-
-        $city->setData(array(
-                'crab_city_id' => $crab_city->GemeenteId,
-                'title'        => $crab_city->GemeenteNaam
-            ))
-            ->save();
-
-        $manager->getObject('com:streets.database.table.logs')->getRow(array(
-            'data' => array(
-                'type'      => 'city',
-                'row'       => $city->id,
-                'action'    => 'edit',
-                'name'      => $city->title,
-                'fields'    => array('old' => $old, 'new' => array('crab_city_id' => $city->crab_city_id, 'title' => $city->title))
-            )
-        ))->save();
-
-        $statistics->cities->updated++;
     }
 
     // Start synchronizing the streets

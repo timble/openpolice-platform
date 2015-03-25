@@ -17,8 +17,8 @@
                 <td>
                     <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a><br />
                     <small>
-                        <? if ($article->isLocatable() && $streets = $article->getStreets()->title) : ?>
-                            <?= implode(", ", $article->getStreets()->title) ?>
+                        <? if ($article->isLocatable() && $streets = $article->getStreets()) : ?>
+                            <?= implode(", ", $streets->title) ?>
                         <? else : ?>
                             <?= translate('Territory Police').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
                         <? endif ?>

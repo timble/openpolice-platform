@@ -49,7 +49,7 @@
                 <div>
                     <label for="found_on"><?= translate('Found on') ?></label>
                     <div class="controls">
-                        <input id="found_on" type="text" name="found_on" value="<?= $item->found_on ? helper('date.format', array('date'=> $item->found_on, 'format' => 'd-m-Y')) : '' ?>" />
+                        <input class="required" id="found_on" type="text" name="found_on" value="<?= helper('date.format', array('date'=> $item->found_on ? $item->found_on : '', 'format' => 'd-m-Y')) ?>" />
                         <script data-inline>
                             $jQuery("#found_on").datetimepicker({
                                 format:'d-m-Y',
@@ -65,7 +65,7 @@
                         <?= translate( 'Street' ); ?>
                     </label>
                     <div>
-                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => !$item->isNew() && isset($street) ? $street->id : '', 'identifier' => !$item->isNew() && isset($street) ? $street->streets_street_identifier : '')); ?>
+                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => isset($street) ? $street->id : '', 'identifier' => isset($street) ? $street->streets_street_identifier : '')); ?>
                     </div>
                 </div>
             </fieldset>

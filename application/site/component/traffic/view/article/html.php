@@ -27,8 +27,8 @@ class TrafficViewArticleHtml extends Library\ViewHtml
         $this->getObject('application')->getPathway()->addItem($article->title, '');
 
         //Get the streets
-        if ($article->id && $article->isLocatable()) {
-            $this->streets($article->getStreets());
+        if ($article->isLocatable() && $streets = $article->getStreets()) {
+            $this->streets = $streets;
         }
 
         $this->url  = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);

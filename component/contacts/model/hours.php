@@ -25,7 +25,7 @@ class ModelHours extends Library\ModelTable
 
 		$this->getState()
             ->insert('published', 'boolean')
-            ->insert('contact' , 'int', $this->getObject('com:contacts.model.contacts')->sort('title')->category('1')->getRowset()->top()->id);
+            ->insert('contact' , 'int', $this->getObject('com:contacts.model.contacts')->sort(array('contacts_category_id', 'title'))->getRowset()->top()->id);
 	}
 	
 	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)

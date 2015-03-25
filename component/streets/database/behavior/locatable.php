@@ -35,8 +35,12 @@ class DatabaseBehaviorLocatable extends Library\DatabaseBehaviorAbstract
                 ->iso($languages->getActive()->slug)
                 ->getRowset();
 
-        } else $streets = $model->getRow();
+            if (count($streets))
+            {
+                return $streets;
+            }
+        }
 
-        return $streets;
+        return false;
     }
 }

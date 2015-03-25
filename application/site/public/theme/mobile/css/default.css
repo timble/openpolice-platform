@@ -1249,6 +1249,12 @@ dd {
     padding: 0 0 0.375em 0; }
  }
 
+.component.wanted dt {
+  width: auto;
+  margin-right: 6px; }
+.component.wanted dd {
+  margin: 0; }
+
 figure {
   margin: 0; }
 
@@ -1725,6 +1731,7 @@ button.button, input[type="submit"].button {
     border-bottom: 1px solid #f6f6f6; }
   .card a {
     display: inline-block;
+    width: 100%;
     border: 1px solid #eee;
     border-radius: 4px; }
   .card a:hover, .card a:focus {
@@ -2232,7 +2239,8 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
   border: 1px solid #eee;
-  width: 100% !important; }
+  width: 100% !important;
+  margin-bottom: 1.5em; }
   table th, table td {
     padding: 0.75em; }
   table caption {
@@ -2259,7 +2267,6 @@ table {
 
 @media screen and (min-width: 768px) {
   .table {
-    margin-bottom: 1.5em;
     border: 0 none; }
     .table tr {
       display: table-row;
