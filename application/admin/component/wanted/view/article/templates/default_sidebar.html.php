@@ -68,9 +68,15 @@
         </div>
     </div>
     <div>
-        <label for="case_id]"><?= translate('Case ID') ?></label>
+        <label for="case_id"><?= translate('Case ID') ?></label>
         <div>
             <input type="text" name="case_id" value="<?= $article->case_id ?>" />
+        </div>
+    </div>
+    <div>
+        <label for="params[childfocus]"><?= translate('Child Focus') ?></label>
+        <div>
+            <?= helper('select.booleanlist', array('name' => 'params[childfocus]', 'selected' => $article->params['childfocus'])) ?>
         </div>
     </div>
 </fieldset>

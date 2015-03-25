@@ -12,6 +12,15 @@
 
 <ktml:module position="left">
     <?= import('com:wanted.view.sections.list.html') ?>
+    <? if($article->params->get('childfocus', false)) : ?>
+    <div class="sidebar__element sidebar__element--childfocus">
+        <p><?= translate('In cooperation with') ?><br />
+            <a href="http://<?= translate('www.childfocus.be') ?>">
+                <img src="assets://wanted/images/childfocus.jpg" />
+            </a>
+        </p>
+    </div>
+    <? endif ?>
 </ktml:module>
 
 <title content="replace"><?= escape($article->title) ?></title>
@@ -51,9 +60,10 @@
 
     <div class="well">
         <h2><?= translate('Testimonials') ?></h2>
-        <p><?= translate('Do you have more information') ?></p>
-        <p><?= translate('Contact us by email') ?></p>
+        <p><?= translate('Do you have more information') ?> <?= $article->params->get('childfocus', false) ? translate('or with Child Focus') : '' ?>.</p>
+        <p><?= translate('Contact us by email') ?>.</p>
     </div>
+
 </article>
 
 <script src="assets://application/components/jquery/dist/jquery.min.js" />
