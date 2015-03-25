@@ -60,7 +60,7 @@ namespace :deploy do
 
     desc "Restart the application."
     task :restart do
-        run "curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
+        run "http_proxy='' curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
     end
 
     # Do nothing in these tasks.
