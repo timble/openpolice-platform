@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="List layout">
+        <message>
+            <![CDATA[Search crime statistics]]>
+        </message>
+    </layout>
+    <state>
+        <name>List layout</name>
+        <description>Search crime statistics</description>
+    </state>
+</metadata>
