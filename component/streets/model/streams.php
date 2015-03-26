@@ -29,11 +29,10 @@ class ModelStreams extends Library\ModelAbstract
     {
         parent::_initialize($config);
 
-        if (isset($_SERVER['PHP_AUTH_USER']))
-        {
-            $url = $this->getObject('application')->getRequest()->getUrl();
+        $headers = $this->getObject('application')->getRequest()->headers;
 
-            $this->_authentication = $url->getUser() . ':' . $url->getPass();
+        if ($headers->has('PHP_AUTH_USER')) {
+            $this->_authentication = $headers->get('PHP_AUTH_USER') . ':' . $headers->get('PHP_AUTH_PW');
         }
     }
 
