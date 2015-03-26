@@ -31,7 +31,16 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
             'new.lokalepolizei.be'      => array('language' => 'de', 'domain' => 'new', 'lang' => 'de-be'),
             'staging.lokalepolitie.be'  => array('language' => 'nl', 'domain' => 'staging', 'lang' => 'nl-be'),
             'staging.policelocale.be'   => array('language' => 'fr', 'domain' => 'staging', 'lang' => 'fr-be'),
-            'staging.lokalepolizei.be'  => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-be')
+            'staging.lokalepolizei.be'  => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-be'),
+            'www.politie.be'            => array('language' => 'nl', 'domain' => 'www', 'lang' => 'nl-be'),
+            'www.police.be'             => array('language' => 'fr', 'domain' => 'www', 'lang' => 'fr-be'),
+            'www.polizei.be'            => array('language' => 'de', 'domain' => 'www', 'lang' => 'de-be'),
+            'new.politie.be'            => array('language' => 'nl', 'domain' => 'new', 'lang' => 'nl-be'),
+            'new.police.be'             => array('language' => 'fr', 'domain' => 'new', 'lang' => 'fr-be'),
+            'new.polizei.be'            => array('language' => 'de', 'domain' => 'new', 'lang' => 'de-be'),
+            'staging.politie.be'        => array('language' => 'nl', 'domain' => 'staging', 'lang' => 'nl-be'),
+            'staging.police.be'         => array('language' => 'fr', 'domain' => 'staging', 'lang' => 'fr-be'),
+            'staging.polizei.be'        => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-be')
         );
 
         $url  = $this->getObject('application')->getRequest()->getUrl();
@@ -84,6 +93,12 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
 
     protected function _assignStrings()
     {
+        $this->intro = array(
+            'nl' => array('title' => 'Belgische politie', 'description' => 'Portaal van de Belgische politie'),
+            'fr' => array('title' => 'Police belge', 'description' => 'Portail de la Police belge'),
+            'de' => array('title' => 'Belgischen Polizei', 'description' => 'Portal der belgischen Polizei'),
+        );
+
         $this->search = array(
             'nl' => array('label' => 'Zoek jouw lokale politiezone via je woonplaats of postcode', 'placeholder' => 'Woonplaats of postcode'),
             'fr' => array('label' => 'Trouvez votre zone de police locale en saisissant votre ville ou code postal', 'placeholder' => 'Ville ou code postal'),

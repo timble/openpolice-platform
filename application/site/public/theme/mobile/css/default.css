@@ -907,14 +907,15 @@ button.closed {
   .intro__logo img {
     height: 74px; }
 
+.intro__wanted--missing, .intro__wanted--wanted {
+  margin-bottom: 30px; }
+
 .intro__languages {
   background-color: #F8F8F8;
   border-top: 1px solid #eee;
   text-align: center; }
   .intro__languages .nav {
     margin-bottom: 0; }
-  .intro__languages a {
-    margin: 0 10px; }
 
 @media screen and (min-width: 400px) {
   .intro__news .card {
@@ -924,6 +925,9 @@ button.closed {
  }
 
 @media screen and (min-width: 768px) {
+  .intro__news .card {
+    text-align: center; }
+
   .intro__search .search__label {
     font-size: 24px; }
  }
@@ -1426,8 +1430,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     line-height: 1;
     color: #999; }
-  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    text-decoration: none; }
 
 h1 {
   font-size: 1.666666667em; }
@@ -1511,6 +1513,8 @@ ul.column--double, ul.column--triple, ul.column--quad {
   margin-bottom: 0.65em; }
   .article__header h1 {
     margin-bottom: 0; }
+  .article__header a {
+    text-decoration: none; }
 
 .article__introtext {
   font-weight: bold;
@@ -1836,7 +1840,7 @@ button.button, input[type="submit"].button {
   display: block;
   color: #222; }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 320px) {
   .card--horizontal {
     text-align: left; }
     .card--horizontal a:hover img {
@@ -2213,7 +2217,7 @@ button.button, input[type="submit"].button {
   .nav--list li li a, .nav--pills li li a {
     padding-left: 24px; }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 320px) {
   .nav--horizontal li {
     display: inline-block; }
  }

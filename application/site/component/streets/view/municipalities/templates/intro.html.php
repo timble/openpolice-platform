@@ -8,8 +8,8 @@
  */
 ?>
 
-<title content="replace"><?= $localpolice[$language] ?></title>
-<meta content="<?= $search[$language] ?>." name="description" />
+<title content="replace"><?= $intro[$language]['title'] ?></title>
+<meta content="<?= $intro[$language]['description'] ?>." name="description" />
 
 <div class="intro__header">
     <div class="intro__container">
@@ -68,7 +68,11 @@
                         <? if($article->thumbnail): ?>
                             <img width="400px" height="300px" src="<?= 'http://'.object('request')->getUrl()->getHost().'/files/fed/attachments/'.str_replace('.', '_thumb.', $article->thumbnail) ?>" />
                         <? endif ?>
-                        <span class="card__metadata"><?= $article->title ?></span>
+                        <span class="card__metadata">
+                            <span class="card__metadata--inner">
+                                <span class="card__name"><?= $article->title ?></span>
+                            </span>
+                        </span>
                     </a>
                 </div>
             <? endforeach ?>
@@ -87,7 +91,7 @@
                         <? foreach ($wanteditems[$section] as $data) : ?>
                             <? $article = $data->data; ?>
                             <li class="card card--horizontal">
-                                <a href="<?= $streams[$language]['wanted'].'/'.$article->section_slug.'/'.$article->category_slug ?>">
+                                <a href="<?= $streams[$language]['wanted'].'/'.$article->section_slug.'/'.$article->category_slug.'/'.$article->id.'-'.$article->slug ?>">
                                     <? if($article->thumbnail): ?>
                                         <img height="500px" width="400px" src="<?= 'http://'.object('request')->getUrl()->getHost().'/files/fed/attachments/'.str_replace('.', '_thumb.', $article->thumbnail) ?>" />
                                     <? else : ?>
@@ -118,9 +122,9 @@
     <div class="intro__languages">
         <div class="intro__container">
             <ul class="nav nav--pills nav--visited nav--horizontal">
-                <li><a href="http://<?= $domain ?>.lokalepolitie.be">Nederlands</a></li>
-                <li><a href="http://<?= $domain ?>.policelocale.be">Français</a></li>
-                <li><a href="http://<?= $domain ?>.lokalepolizei.be">Deutsch</a></li>
+                <li><a href="http://<?= $domain ?>.politie.be/intro">Nederlands</a></li>
+                <li><a href="http://<?= $domain ?>.police.be/intro">Français</a></li>
+                <li><a href="http://<?= $domain ?>.polizei.be/intro">Deutsch</a></li>
             </ul>
         </div>
     </div>

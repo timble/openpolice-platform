@@ -70,6 +70,11 @@
   }
 }
 
+.intro__wanted--missing,
+.intro__wanted--wanted {
+  margin-bottom: 30px;
+}
+
 .intro__languages {
   background-color: $color-background-well;
   border-top: 1px solid $color-border;
@@ -78,10 +83,6 @@
 
   .nav {
     margin-bottom: 0;
-  }
-
-  a {
-    margin: 0 10px;
   }
 }
 
@@ -96,6 +97,10 @@
 }
 
 @include breakpoint($breakpoint-charlie) {
+  .intro__news .card {
+    text-align: center;
+  }
+
   .intro__search
   {
     .search__label {
