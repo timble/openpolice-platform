@@ -17,7 +17,27 @@ class ModelCities extends Library\ModelTable
         parent::__construct($config);
 
         $this->getState()
-            ->insert('zone' , 'int');
+            ->insert('zone' , 'int')
+            ->insert('searchword' , 'string');
+    }
+
+    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
+    {
+        parent::_buildQueryColumns($query);
+
+        $query->columns(array(
+            'province'  => 'province.title',
+            'region'    => 'region.title'
+        ));
+    }
+
+    protected function _buildQueryJoins(Library\DatabaseQuerySelect $query)
+    {
+        $languages = $this->getObject('application.languages');
+        $language = $languages->getActive()->slug;
+
+        $query->join(array('province' => $language == 'fr' ? 'data.fr-be_streets_provinces' : 'data.streets_provinces'), 'province.streets_province_id = tbl.streets_province_id')
+              ->join(array('region' => $language == 'fr' ? 'data.fr-be_streets_regions' : 'data.streets_regions'), 'region.streets_region_id = tbl.streets_region_id');
     }
 
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -27,6 +47,10 @@ class ModelCities extends Library\ModelTable
 
         if ($state->search) {
             $query->where('tbl.title LIKE :search OR tbl.streets_city_id LIKE :search OR tbl.police_zone_id LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
+        }
+
+        if ($state->searchword) {
+            $query->where('tbl.title LIKE :searchword')->bind(array('searchword' => '%'.$state->searchword.'%'));
         }
 
         if(!in_array($this->getObject('application')->getSite(), array('default', 'fed'))) {
