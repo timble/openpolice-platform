@@ -1052,10 +1052,6 @@ button.closed {
     .container__content.homepage {
       padding-left: 25px;
       padding-right: 25px; }
-    .container__content .sidebar {
-      margin-top: 20px; }
-      .container__content .sidebar .sidebar__element {
-        margin-bottom: 40px; }
 
   .container__quicklinks {
     *zoom: 1; }
@@ -1984,21 +1980,21 @@ button.button, input[type="submit"].button {
       margin-left: 10px;
       background-size: 160px 42px; }
     .header .organization__logo--en {
-      background-image: url("../images/logo-en.png"); }
+      background-image: url("../images/logo/logo-loc-en.png"); }
     .header .organization__logo--nl {
-      background-image: url("../images/logo-nl.png"); }
+      background-image: url("../images/logo/logo-loc-nl.png"); }
     .header .organization__logo--fr {
-      background-image: url("../images/logo-fr.png"); }
+      background-image: url("../images/logo/logo-loc-fr.png"); }
     .header .organization__logo--de {
-      background-image: url("../images/logo-de.png"); }
+      background-image: url("../images/logo/logo-loc-de.png"); }
     .header .organization__logo--en.organization__logo--fed {
-      background-image: url("../images/logo-fed-en.png"); }
+      background-image: url("../images/logo/logo-fed-en.png"); }
     .header .organization__logo--nl.organization__logo--fed {
-      background-image: url("../images/logo-fed-nl.png"); }
+      background-image: url("../images/logo/logo-fed-nl.png"); }
     .header .organization__logo--fr.organization__logo--fed {
-      background-image: url("../images/logo-fed-fr.png"); }
+      background-image: url("../images/logo/logo-fed-fr.png"); }
     .header .organization__logo--de.organization__logo--fed {
-      background-image: url("../images/logo-fed-de.png"); }
+      background-image: url("../images/logo/logo-fed-de.png"); }
     .header .organization__name {
       margin-left: 57px;
       margin-top: 6px;
@@ -2387,6 +2383,18 @@ table {
   .table--openinghours tbody td:nth-child(1) {
     text-align: right; }
  }
+
+.sidebar {
+  margin-top: 20px; }
+
+.sidebar__element {
+  margin-bottom: 40px; }
+
+.sidebar__element--childfocus {
+  text-align: center;
+  padding-top: 20px; }
+  .sidebar__element--childfocus img {
+    width: 100px; }
 
 .thumbnail, .article__thumbnail {
   display: block;
