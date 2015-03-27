@@ -18,7 +18,9 @@ class ModelCities extends Library\ModelTable
 
         $this->getState()
             ->insert('zone' , 'int')
-            ->insert('searchword' , 'string');
+            ->insert('searchword' , 'string')
+            ->insert('sort'             , 'cmd'     , 'title')
+            ->insert('direction'        , 'cmd'     , 'ASC');
     }
 
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
