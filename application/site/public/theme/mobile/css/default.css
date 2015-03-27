@@ -2382,8 +2382,10 @@ a.thumbnail:hover, a.article__thumbnail:hover, a.thumbnail:focus, a.article__thu
   background-color: yellow; }
 
 .text--strong {
-  color: #004D9F;
   font-weight: bold; }
+
+.text--primary {
+  color: #004D9F; }
 
 .text--small {
   font-size: 0.85em; }
