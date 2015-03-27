@@ -1,4 +1,6 @@
-<h1><?= translate('Statistics') ?></h1>
+<title content="replace"><?= translate('Statistics') ?> <?= translate('from') ?> <?= escape($city->title) ?></title>
+
+<h1><?= translate('Statistics') ?> <?= translate('from') ?> <?= escape($city->title) ?></h1>
 <h2><?= translate('Crime') ?></h2>
 
 <? $zone = object('com:police.model.zones')->id($city->police_zone_id)->getRow(); ?>

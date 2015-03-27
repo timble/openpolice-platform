@@ -17,4 +17,9 @@
     </li>
 <? endforeach ?>
 </ul>
+
+<? if(!$total) : ?>
+    <span class="text--strong"><?= $state->searchword ?></span> <?= translate('not found') ?>.
+<? endif ?>
+<?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 <? endif ?>
