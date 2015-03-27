@@ -18,6 +18,14 @@ class ContactsViewContactHtml extends Library\ViewHtml
 
         if($contact->isLocatable() && $streets = $contact->getStreets())
         {
+            if(count($streets) > 1)
+            {
+                $languages = $this->getObject('application.languages');
+                $language = $languages->getActive()->slug;
+
+                $streets = $streets->find(array('iso' => $language));
+            }
+
             $this->street = $streets->top();
         }
 

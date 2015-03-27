@@ -17,8 +17,11 @@ class StreetsModelStreets extends Streets\ModelStreets
         parent::_buildQueryWhere($query);
         $state = $this->getState();
 
-        $languages = $this->getObject('application.languages');
+        $languages  = $this->getObject('application.languages');
+        $site       = $this->getObject('application')->getSite();
 
-        $query->where('tbl.iso = :iso')->bind(array('iso' => $languages->getActive()->slug));
+        if (!in_array($site, array('default', 'fed'))) {
+            $query->where('tbl.iso = :iso')->bind(array('iso' => $languages->getActive()->slug));
+        }
     }
 }
