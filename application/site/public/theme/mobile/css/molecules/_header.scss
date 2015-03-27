@@ -104,13 +104,13 @@
 
     @each $language in $languages {
       .organization__logo--#{$language} {
-        background-image: url("../images/logo-#{$language}.png");
+        background-image: url("../images/logo/logo-loc-#{$language}.png");
       }
     }
 
     @each $language in $languages {
       .organization__logo--#{$language}.organization__logo--fed {
-        background-image: url("../images/logo-fed-#{$language}.png");
+        background-image: url("../images/logo/logo-fed-#{$language}.png");
       }
     }
 
