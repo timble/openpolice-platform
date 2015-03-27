@@ -151,7 +151,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <div class="copyright--left">
             <ul>
             <? foreach($pages as $page) : ?>
-                <? if($page->id == '89' || $page->id == '101' || $page->id == '116') : ?>
+                <? if($page->id == '89' || $page->id == '101' || $page->id == '116' || $page->id == '119') : ?>
                     <li><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></li>
                 <? endif ?>
             <? endforeach ?>
