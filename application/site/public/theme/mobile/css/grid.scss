@@ -48,6 +48,16 @@
     padding-right: $grid-padding;
   }
 
+  .statistics__interactive {
+    .one-fourth {
+      @include span(3 of 12);
+    }
+
+    .one-fourth:first-child {
+      @include span(first 3 of 12);
+    }
+  }
+
   .sidebar {
     @include span(first 3 of 12);
   }
