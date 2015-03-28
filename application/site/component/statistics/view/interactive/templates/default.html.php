@@ -1,4 +1,6 @@
-<h1 class="article__header"><?= translate('Interactive') ?></h1>
+<title content="replace"><?= translate('Interactive crime statistics') ?></title>
+
+<h1 class="article__header"><?= translate('Interactive crime statistics') ?></h1>
 
 <div class="statistics__interactive">
     <?= import('default_pages.html') ?>

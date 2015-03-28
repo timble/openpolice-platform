@@ -1,4 +1,4 @@
-<h1 class="article__header"><?= translate('Statistics') ?></h1>
+<h1 class="article__header"><?= translate('Crime statistics') ?></h1>
 
 <div class="statistics__reports">
     <h2><?= translate('Reports') ?></h2>
