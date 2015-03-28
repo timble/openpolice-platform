@@ -142,22 +142,22 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
             'nl' => array(
                 'local' => array('name' => 'Lokale Politie', 'url' => '/zones', 'description' => 'Op lokaal vlak is de politie georganiseerd in 192 politiezones. Uw lokale politiezone is het eerste contact bij de politie.'),
                 'federal' => array('name' => 'Federale Politie', 'url' => '/fed/nl', 'description' => 'Op federaal niveau staat één politiekorps, de federale politie, in voor de gespecialiseerde politiezorg en de ondersteunende opdrachten.'),
-                'wanted' => array('name' => 'Opsporingen', 'url' => '#wanted', 'description' => 'Help ons bij de zoeken naar vermiste personen en daders of slachtoffers van een misdrijf. Hebt u tips?', 'link' => 'Alle gezochte personen'),
                 'help' => array('name' => 'Noodnummers', 'url' => '/fed/nl/contact/noodnummers', 'description' => 'Een noodgeval? Raadpleeg het overzicht van Belgische noodnummers, hulpdiensten en andere nuttige telefoonnummers.'),
+                'wanted' => array('name' => 'Opsporingen', 'url' => '#wanted', 'description' => 'Help ons bij de zoeken naar vermiste personen en daders of slachtoffers van een misdrijf. Hebt u tips?', 'link' => 'Alle gezochte personen'),
                 'pow' => array('name' => 'Online aangifte', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online klacht indienen voor kleine misdrijven, uw alarmsysteem aanmelden en politietoezicht aanvragen voor uw woning tijdens uw vakantie of afwezigheid.'),
             ),
             'fr' => array(
                 'local' => array('name' => 'Lokale Politie', 'url' => '/zones', 'description' => 'Le niveau local est organisé par 192 zones de police. Votre zone de police locale est le premier contact avec la police.'),
                 'federal' => array('name' => 'Police fédérale', 'url' => '/fed/fr', 'description' => 'Au niveau fédéral, une seule police, la police fédérale, assure la fonction de police spécialisée et des missions d\'appui.'),
-                'wanted' => array('name' => 'Avis de recherches', 'url' => '#wanted', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'help' => array('name' => 'Numéros d\'urgence', 'url' => '/fed/fr/contact/des-numeros-durgence', 'description' => 'Un cas d\'urgence ? Consultez l\'aperçu des numéros d\'appel d\'urgence, des services de secours et d\'autres numéros de téléphone utiles.'),
+                'wanted' => array('name' => 'Avis de recherches', 'url' => '#wanted', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Déclaration en ligne', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Porter plainte en ligne pour des petits délits, déclarer votre système d\'alarme et demander une surveillance policière de votre habitation pendant vos vacances ou en cas d\'absence.'),
             ),
             'de' => array(
                 'local' => array('name' => 'Lokale Politie', 'url' => '/zones', 'description' => 'Op lokaal vlak is de politie georganiseerd in 192 politiezones. Je lokale politiezone is je eerste contact met de politie.'),
                 'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polfed-fedpol.be/org/org_de.php'),
-                'search' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polfed-fedpol.be/ops/ops_de.php'),
                 'help' => array('name' => 'Notrufnummern', 'url' => 'http://www.polfed-fedpol.be/hulp_de.php'),
+                'search' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polfed-fedpol.be/ops/ops_de.php'),
                 'pow' => array('name' => 'Online Angabe', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online Bagatelldelikte Anzeige erstatten, Ihr Alarmsystem melden und während Ihres Urlaubs oder Ihrer Abwesendheid für Ihr Zuhause Polizeiüberwachung beantragen.'),
             ),
         );
