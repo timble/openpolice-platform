@@ -17,7 +17,12 @@ class WantedControllerArticle extends PoliceControllerLanguage
 
         //Display only published items
         $request->query->published = 1;
-        $request->query->limit = '10';
+
+        // No need for a hardcoded limit in JSON
+        if($request->getFormat() == 'html')
+        {
+            $request->query->limit = '10';
+        }
 
         $request->query->sort = 'published_on';
         $request->query->direction   = 'DESC';

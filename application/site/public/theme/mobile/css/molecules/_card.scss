@@ -58,7 +58,7 @@
   color: $color-text;
 }
 
-@include breakpoint($breakpoint-beta) {
+@include breakpoint($breakpoint-zero) {
   .card--horizontal {
     text-align: left;
 
