@@ -109,13 +109,18 @@ class PoliceControllerLanguage extends Library\ControllerModel
                 if($package == 'districts')
                 {
                     $item = $this->getObject('com:districts.model.districts')->id($item)->getRowset()->top();
-                } else {
+                }elseif(!in_array($package, array('statistics')))
+                {
                     $item = $this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package)->row($item)->getRowset()->top();
                 }
 
                 if(in_array($package, array('contacts', 'news', 'traffic', 'wanted', 'press')))
                 {
                     $result .= '/'.$item->row.'-'.$item->slug;
+                }
+                elseif(in_array($package, array('statistics')))
+                {
+                    $result .= '/'.$item;
                 }
                 else
                 {

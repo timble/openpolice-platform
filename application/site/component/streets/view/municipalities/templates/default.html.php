@@ -34,35 +34,6 @@ if(array_key_exists($host, $domains))
     $domain = 'www';
 }
 
-$search = array(
-    'en' => 'Seach your city',
-    'nl' => 'Zoek jouw lokale politiezone via je woonplaats of postcode',
-    'fr' => 'Trouvez votre zone de police locale en saisissant votre ville ou code postal',
-    'de' => 'Finden Sie Ihren lokalen Polizei durch Ihre Wohnort oder Postleitzahl',
-);
-
-$button = array(
-    'en' => 'Search',
-    'nl' => 'Zoeken',
-    'fr' => 'Rechercher',
-    'de' => 'Recherche',
-);
-
-$notfound = array(
-    'en' => '%s not found',
-    'nl' => '%s niet gevonden',
-    'fr' => '%s pas trouvé',
-    'de' => '%s nicht gefunden',
-);
-
-$localpolice = array(
-    'en' => 'Local Police',
-    'nl' => 'Lokale Politie',
-    'fr' => 'Police Locale' ,
-    'de' => 'Lokale Polizei',
-);
-
-
 $external = array(
     'en' => array(
         'federal' => array('name' => 'Federal Police', 'url' => 'http://www.polfed-fedpol.be/org/org_en.php'),
@@ -92,17 +63,17 @@ $external = array(
 ?>
 
 <title content="replace"><?= $localpolice[$language] ?></title>
-<meta content="<?= $search[$language] ?>." name="description" />
+<meta content="<?= $search[$language]['label'] ?>." name="description" />
 
 <div class="splash">
     <div class="splash__logo"><img src="assets://application/images/logo-<?= $language ?>.jpg" /></div>
 
     <div class="well splash__search">
         <form action="#" method="get">
-            <label for="municipality" class="muted"><?= $search[$language] ?>:</label>
+            <label for="municipality" class="muted"><?= $search[$language]['label'] ?>:</label>
             <div class="search-box">
                 <div class="search-box__input">
-                    <input autofocus type="text" value="<?= $state->search ? $state->search : '' ?>" name="search" onfocus="this.value = this.value;">
+                    <input autofocus type="text" value="<?= $state->search ? $state->search : '' ?>" name="search" onfocus="this.value = this.value;" placeholder="<?= $search[$language]['placeholder'] ?>">
                 </div>
                 <button class="button button--primary search-box__button"><?= $button[$language] ?></button>
             </div>

@@ -75,15 +75,15 @@ if ($site == 'fed')
             <div class="well well--small">
                 <p>
                     <span class="muted"><?= translate('Urgent police assistance') ?></span><br />
-                    <span class="text--strong">101</span>
+                    <span class="text--strong text--primary">101</span>
                     <? if($zone->phone_emergency) : ?>
-                    <?= @translate('or') ?> <span class="text--strong"><?= $zone->phone_emergency ?></span>
+                    <?= @translate('or') ?> <span class="text--strong text--primary"><?= $zone->phone_emergency ?></span>
                     <? endif ?>
                 </p>
                 <? if($zone->phone_information) : ?>
                 <p>
                     <span class="muted"><?= translate('General information') ?></span><br />
-                    <span class="text--strong"><?= $zone->phone_information ?></span>
+                    <span class="text--strong text--primary"><?= $zone->phone_information ?></span>
                 </p>
                 <? endif ?>
             </div>

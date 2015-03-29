@@ -859,6 +859,79 @@ button.closed {
     margin: 0 10px;
     white-space: nowrap; }
 
+#intro {
+  height: 100%;
+  width: 100%;
+  background-color: #FFF; }
+
+.intro__external .intro__container, .intro__news .intro__container {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee; }
+
+.intro__external, .intro__wanted, .intro__news {
+  margin: 50px 0; }
+
+.intro__header {
+  background-color: #004D9F;
+  color: #FFF;
+  height: 50px; }
+  .intro__header img {
+    margin: 12px 0;
+    height: 26px;
+    float: left; }
+
+.intro__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-right: 25px;
+  padding-left: 25px; }
+
+.intro__container--small {
+  max-width: 800px; }
+
+.intro__search {
+  text-align: left;
+  background-color: #F8F8F8;
+  border-bottom: 1px solid #eee;
+  padding: 40px 0; }
+  .intro__search .search__label {
+    font-size: 19.2px;
+    color: #333;
+    margin-bottom: 0.75em; }
+  .intro__search .municipalities {
+    margin-top: 0.75em; }
+
+.intro__logo {
+  margin-top: 25px;
+  margin-bottom: 50px; }
+  .intro__logo img {
+    height: 74px; }
+
+.intro__wanted--missing, .intro__wanted--wanted {
+  margin-bottom: 30px; }
+
+.intro__languages {
+  background-color: #F8F8F8;
+  border-top: 1px solid #eee;
+  text-align: center; }
+  .intro__languages .nav {
+    margin-bottom: 0; }
+
+@media screen and (min-width: 400px) {
+  .intro__news .card {
+    text-align: left; }
+    .intro__news .card img {
+      border-radius: 4px 0 0 4px; }
+ }
+
+@media screen and (min-width: 768px) {
+  .intro__news .card {
+    text-align: center; }
+
+  .intro__search .search__label {
+    font-size: 24px; }
+ }
+
 .homepage__sticky {
   padding-left: 20px;
   padding-right: 20px; }
@@ -899,13 +972,13 @@ button.closed {
   .homepage__contact ul {
     margin-bottom: 0; }
 
-.clearfix, .homepage__news, form, .article, .article__text, .header, .header .organization {
+.clearfix, .intro__external .intro__container, .intro__news .intro__container, .intro__container, .homepage__news, form, .article, .article__text, .header, .header .organization {
   *zoom: 1; }
-  .clearfix:before, .homepage__news:before, form:before, .article:before, .article__text:before, .header:before, .header .organization:before, .clearfix:after, .homepage__news:after, form:after, .article:after, .article__text:after, .header:after, .header .organization:after {
+  .clearfix:before, .intro__external .intro__container:before, .intro__news .intro__container:before, .intro__container:before, .homepage__news:before, form:before, .article:before, .article__text:before, .header:before, .header .organization:before, .clearfix:after, .intro__external .intro__container:after, .intro__news .intro__container:after, .intro__container:after, .homepage__news:after, form:after, .article:after, .article__text:after, .header:after, .header .organization:after {
     display: table;
     content: " ";
     line-height: 0; }
-  .clearfix:after, .homepage__news:after, form:after, .article:after, .article__text:after, .header:after, .header .organization:after {
+  .clearfix:after, .intro__external .intro__container:after, .intro__news .intro__container:after, .intro__container:after, .homepage__news:after, form:after, .article:after, .article__text:after, .header:after, .header .organization:after {
     clear: both; }
 
 #wrap {
@@ -1353,8 +1426,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     line-height: 1;
     color: #999; }
-  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    text-decoration: none; }
 
 h1 {
   font-size: 1.666666667em; }
@@ -1438,6 +1509,8 @@ ul.column--double, ul.column--triple, ul.column--quad {
   margin-bottom: 0.65em; }
   .article__header h1 {
     margin-bottom: 0; }
+  .article__header a {
+    text-decoration: none; }
 
 .article__introtext {
   font-weight: bold;
@@ -1763,7 +1836,7 @@ button.button, input[type="submit"].button {
   display: block;
   color: #222; }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 320px) {
   .card--horizontal {
     text-align: left; }
     .card--horizontal a:hover img {
@@ -1907,21 +1980,21 @@ button.button, input[type="submit"].button {
       margin-left: 10px;
       background-size: 160px 42px; }
     .header .organization__logo--en {
-      background-image: url("../images/logo-en.png"); }
+      background-image: url("../images/logo/logo-loc-en.png"); }
     .header .organization__logo--nl {
-      background-image: url("../images/logo-nl.png"); }
+      background-image: url("../images/logo/logo-loc-nl.png"); }
     .header .organization__logo--fr {
-      background-image: url("../images/logo-fr.png"); }
+      background-image: url("../images/logo/logo-loc-fr.png"); }
     .header .organization__logo--de {
-      background-image: url("../images/logo-de.png"); }
+      background-image: url("../images/logo/logo-loc-de.png"); }
     .header .organization__logo--en.organization__logo--fed {
-      background-image: url("../images/logo-fed-en.png"); }
+      background-image: url("../images/logo/logo-fed-en.png"); }
     .header .organization__logo--nl.organization__logo--fed {
-      background-image: url("../images/logo-fed-nl.png"); }
+      background-image: url("../images/logo/logo-fed-nl.png"); }
     .header .organization__logo--fr.organization__logo--fed {
-      background-image: url("../images/logo-fed-fr.png"); }
+      background-image: url("../images/logo/logo-fed-fr.png"); }
     .header .organization__logo--de.organization__logo--fed {
-      background-image: url("../images/logo-fed-de.png"); }
+      background-image: url("../images/logo/logo-fed-de.png"); }
     .header .organization__name {
       margin-left: 57px;
       margin-top: 6px;
@@ -2140,7 +2213,7 @@ button.button, input[type="submit"].button {
   .nav--list li li a, .nav--pills li li a {
     padding-left: 24px; }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 320px) {
   .nav--horizontal li {
     display: inline-block; }
  }
@@ -2382,8 +2455,10 @@ a.thumbnail:hover, a.article__thumbnail:hover, a.thumbnail:focus, a.article__thu
   background-color: yellow; }
 
 .text--strong {
-  color: #004D9F;
   font-weight: bold; }
+
+.text--primary {
+  color: #004D9F; }
 
 .text--small {
   font-size: 0.85em; }

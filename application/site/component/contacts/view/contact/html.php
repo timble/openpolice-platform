@@ -56,6 +56,14 @@ class ContactsViewContactHtml extends Library\ViewHtml
         // Get the street
         if($contact->isLocatable() && $streets = $contact->getStreets())
         {
+            if(count($streets) > 1)
+            {
+                $languages = $this->getObject('application.languages');
+                $language = $languages->getActive()->slug;
+
+                $streets = $streets->find(array('iso' => $language));
+            }
+
             $contact['street'] = $streets->top()->title_short;
             $contact['city'] = $streets->top()->city;
         }

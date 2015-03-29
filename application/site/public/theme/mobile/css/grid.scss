@@ -2,18 +2,32 @@
 @import "../components/susy/sass/susy";
 @import "utilities/variables";
 
+@include breakpoint($breakpoint-zero) {
+  .cards .card--horizontal {
+    img {
+      @include span(first 4 of 12);
+    }
+
+    .card__metadata {
+      @include span(8 of 12);
+    }
+  }
+}
+
 @include breakpoint($breakpoint-alpha) {
   .found .cards .card {
     @include gallery(6 of 12);
   }
 
-  .wanted .cards .card--horizontal {
-    img {
-      @include span(first 5 of 12);
-    }
+  .intro {
+    .intro__news__item {
+      img {
+        @include span(first 5 of 12);
+      }
 
-    .card__metadata {
-      @include span(7 of 12);
+      .card__metadata {
+        @include span(7 of 12);
+      }
     }
   }
 }
@@ -27,15 +41,19 @@
     @include gallery(4 of 12);
   }
 
-  .wanted .cards .card--horizontal {
+  .cards .card--horizontal {
     @include gallery(6 of 12);
+  }
 
-    img {
-      @include span(first 5 of 12);
-    }
+  .intro {
+    .intro__news__item {
+      img {
+        @include span(first 4 of 12);
+      }
 
-    .card__metadata {
-      @include span(7 of 12);
+      .card__metadata {
+        @include span(8 of 12);
+      }
     }
   }
 }
@@ -48,6 +66,16 @@
     padding-right: $grid-padding;
   }
 
+  .statistics__interactive {
+    .one-fourth {
+      @include span(3 of 12);
+    }
+
+    .one-fourth:first-child {
+      @include span(first 3 of 12);
+    }
+  }
+
   .sidebar {
     @include span(first 3 of 12);
   }
@@ -58,7 +86,8 @@
 
   // Files view doesn't have a sidebar
   .component.files,
-  .component.found {
+  .component.found,
+  .component.statistics {
     @include span(first 12 of 12);
   }
 
@@ -130,15 +159,37 @@
      @include gallery(3 of 12);
   }
 
-  .wanted .cards .card--horizontal {
-    @include gallery(6 of 12);
+  .intro {
+    .intro__news__item {
+      @include gallery(4 of 12);
 
-    img {
-      @include span(first 5 of 12);
+      img {
+        @include span(first 12 of 12);
+      }
+
+      .card__metadata {
+        @include span(12 of 12);
+      }
     }
 
-    .card__metadata {
-      @include span(7 of 12);
+    .intro__search--inner {
+      @include span(first 8 of 12);
+    }
+
+    .external__item {
+      @include gallery(6 of 12);
+    }
+
+    .intro__wanted--missing {
+      @include span(first 6 of 12);
+    }
+
+    .intro__wanted--wanted {
+      @include span(6 of 12);
+    }
+
+    .intro__wanted .cards .card--horizontal {
+      @include span(12 of 12);
     }
   }
 }
