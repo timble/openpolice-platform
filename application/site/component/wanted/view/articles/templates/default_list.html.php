@@ -19,6 +19,7 @@
 
                     <span class="card__metadata">
                         <span class="card__metadata--inner">
+                            <span class="card__name"><?= escape($article->title) ?></span>
                             <?= translate('The search warrant has been resolved') ?>.
                         </span>
                     </span>

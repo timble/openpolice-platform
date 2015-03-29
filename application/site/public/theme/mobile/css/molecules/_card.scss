@@ -21,6 +21,12 @@
     border-radius: $border-radius;
   }
 
+  a {
+    .card__name {
+      text-decoration: underline;
+    }
+  }
+
   a:hover,
   a:focus {
     color: $color-link-hover;
@@ -48,7 +54,6 @@
 }
 
 .card__name {
-  text-decoration: underline;
   margin-bottom: $base-line-height / 4;
   display: block;
 }

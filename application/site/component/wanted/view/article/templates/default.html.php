@@ -23,19 +23,18 @@
     <? endif ?>
 </ktml:module>
 
+<title content="replace"><?= escape($article->title) ?></title>
 
 <article class="article">
+    <h1><?= escape($article->title) ?></h1>
+
     <? if($article->solved) : ?>
-    <title content="replace"><?= translate('The search warrant has been resolved') ?></title>
-    <h1><?= translate('The search warrant has been resolved') ?></h1>
     <div class="article__text">
         <img class="article__thumbnail" src="assets://wanted/images/solved.png" />
 
         <?= $article->text ?>
     </div>
     <? else : ?>
-    <title content="replace"><?= escape($article->title) ?></title>
-    <h1><?= escape($article->title) ?></h1>
     <div class="article__text">
         <? if($article->attachments_attachment_id) : ?>
             <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
