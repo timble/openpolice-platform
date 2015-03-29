@@ -13,9 +13,13 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
 {
     public function render()
     {
-        $this->_setDomain();
         $this->_assignStrings();
-        $this->_fetchStreams();
+        $this->_setDomain();
+
+        if ($this->getLayout() == 'intro')
+        {
+            $this->_fetchStreams();
+        }
 
         return parent::render();
     }
