@@ -10,7 +10,7 @@
 
 <div class="scopebar">
     <div class="scopebar__group">
-        <a class="<?= is_null($state->search) && is_null($state->date) && is_null($state->published) ? 'active' : ''; ?>" href="<?= route('search=&date=&published=' ) ?>">
+        <a class="<?= is_null($state->search) && is_null($state->date) && is_null($state->published) && is_null($state->solved) ? 'active' : ''; ?>" href="<?= route('search=&date=&published=&solved=' ) ?>">
             <?= translate('All') ?>
         </a>
     </div>
@@ -20,6 +20,11 @@
         </a>
         <a class="<?= $state->published === 0 ? 'active' : ''; ?>" href="<?= route($state->published === 0 ? 'published=' : 'published=0' ) ?>">
             <?= translate('Unpublished') ?>
+        </a>
+    </div>
+    <div class="scopebar__group">
+        <a class="<?= $state->solved === 1 ? 'active' : ''; ?>" href="<?= route($state->solved === 1 ? 'solved=' : 'solved=1' ) ?>">
+            <?= translate('Solved') ?>
         </a>
     </div>
     <div class="scopebar__search">

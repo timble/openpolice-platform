@@ -76,6 +76,9 @@
                     <? if($article->draft) : ?>
                         <span class="label label-info"><?= translate('Draft') ?></span>
                     <? endif ?>
+                    <? if($article->solved) : ?>
+                        <span class="label label-success"><?= translate('Solved') ?></span>
+                    <? endif ?>
                 </td>
                 <td>
                     <? if($article->publish_on || $article->published_on) : ?>

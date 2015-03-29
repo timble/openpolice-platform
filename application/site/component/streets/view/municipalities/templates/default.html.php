@@ -9,30 +9,6 @@
 ?>
 
 <?
-$domains = array(
-    'www.lokalepolitie.be'      => array('language' => 'nl', 'domain' => 'www', 'lang' => 'nl-be'),
-    'www.policelocale.be'       => array('language' => 'fr', 'domain' => 'www', 'lang' => 'fr-be'),
-    'www.lokalepolizei.be'      => array('language' => 'de', 'domain' => 'www', 'lang' => 'de-be'),
-    'new.lokalepolitie.be'      => array('language' => 'nl', 'domain' => 'new', 'lang' => 'nl-be'),
-    'new.policelocale.be'       => array('language' => 'fr', 'domain' => 'new', 'lang' => 'fr-be'),
-    'new.lokalepolizei.be'      => array('language' => 'de', 'domain' => 'new', 'lang' => 'de-be'),
-    'staging.lokalepolitie.be'  => array('language' => 'nl', 'domain' => 'staging', 'lang' => 'nl-be'),
-    'staging.policelocale.be'   => array('language' => 'fr', 'domain' => 'staging', 'lang' => 'fr-be'),
-    'staging.lokalepolizei.be'  => array('language' => 'de', 'domain' => 'staging', 'lang' => 'de-be')
-);
-
-$url    = $this->getObject('application')->getRequest()->getUrl();
-$host   = $url->getHost();
-
-// Make sure the given host exists
-if(array_key_exists($host, $domains))
-{
-    $language = $domains[$host]['language'];
-    $domain = $domains[$host]['domain'];
-} else {
-    $language = 'nl';
-    $domain = 'www';
-}
 
 $external = array(
     'en' => array(

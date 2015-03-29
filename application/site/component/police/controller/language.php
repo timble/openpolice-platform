@@ -25,6 +25,15 @@ class PoliceControllerLanguage extends Library\ControllerModel
             'staging.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'staging'),
             'staging.policelocale.be'   => array('language' => 'fr', 'access' => 'staging'),
             'staging.lokalepolizei.be'  => array('language' => 'de', 'access' => 'staging'),
+            'www.politie.be'            => array('language' => 'nl', 'access' => 'live'),
+            'www.police.be'             => array('language' => 'fr', 'access' => 'live'),
+            'www.polizei.be'            => array('language' => 'de', 'access' => 'live'),
+            'new.politie.be'            => array('language' => 'nl', 'access' => 'production'),
+            'new.police.be'             => array('language' => 'fr', 'access' => 'production'),
+            'new.polizei.be'            => array('language' => 'de', 'access' => 'production'),
+            'staging.politie.be'        => array('language' => 'nl', 'access' => 'staging'),
+            'staging.police.be'         => array('language' => 'fr', 'access' => 'staging'),
+            'staging.polizei.be'        => array('language' => 'de', 'access' => 'staging'),
         );
 
         $this->registerCallback('before.read'   , array($this, 'checkHost'));

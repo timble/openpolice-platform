@@ -1802,11 +1802,13 @@ button.button, input[type="submit"].button {
   .card img {
     border-radius: 4px 4px 0 0;
     border-bottom: 1px solid #f6f6f6; }
-  .card a {
+  .card a, .card .card__box {
     display: inline-block;
     width: 100%;
     border: 1px solid #eee;
     border-radius: 4px; }
+  .card a .card__name {
+    text-decoration: underline; }
   .card a:hover, .card a:focus {
     color: #002852;
     background-color: #ebf3f4;
@@ -1828,7 +1830,6 @@ button.button, input[type="submit"].button {
   vertical-align: middle; }
 
 .card__name {
-  text-decoration: underline;
   margin-bottom: 0.375em;
   display: block; }
 
