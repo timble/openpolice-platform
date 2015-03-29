@@ -28,6 +28,7 @@
     <script src="assets://application/js/chromatable.js" />
 
     <style src="assets://application/stylesheets/default.css" />
+    <style src="assets://police/stylesheets/default.css" />
 
     <script src="assets://application/js/jquery.js" /></script>
     <script type="text/javascript">
