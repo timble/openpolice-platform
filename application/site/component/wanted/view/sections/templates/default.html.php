@@ -20,7 +20,7 @@
             </a>
         </h1>
 
-        <?= import('com:wanted.view.articles.default_list.html', array('articles' => object('com:wanted.model.articles')->section($section->id)->limit('4')->published('1')->getRowset())) ?>
+        <?= import('com:wanted.view.articles.default_list.html', array('articles' => object('com:wanted.model.articles')->section($section->id)->solved('0')->limit('4')->published('1')->getRowset())) ?>
 
         <a class="article__readmore" href="<?= helper('route.section', array('row' => $section)) ?>"><?= translate('All section'.$section->id) ?></a>
     </div>

@@ -23,9 +23,18 @@
     <? endif ?>
 </ktml:module>
 
-<title content="replace"><?= escape($article->title) ?></title>
 
 <article class="article">
+    <? if($article->solved) : ?>
+    <title content="replace"><?= translate('The search warrant has been resolved') ?></title>
+    <h1><?= translate('The search warrant has been resolved') ?></h1>
+    <div class="article__text">
+        <img class="article__thumbnail" src="assets://wanted/images/solved.png" />
+
+        <?= $article->text ?>
+    </div>
+    <? else : ?>
+    <title content="replace"><?= escape($article->title) ?></title>
     <h1><?= escape($article->title) ?></h1>
     <div class="article__text">
         <? if($article->attachments_attachment_id) : ?>
@@ -60,10 +69,10 @@
 
     <div class="well">
         <h2><?= translate('Testimonials') ?></h2>
-        <p><?= translate('Do you have more information') ?> <?= $article->params->get('childfocus', false) ? translate('or with Child Focus') : '' ?>.</p>
+        <p><?= translate('Do you have more information') ?><?= $article->params->get('childfocus', false) ? ' '.translate('or with Child Focus') : '' ?>.</p>
         <p><?= translate('Contact us by email') ?>.</p>
     </div>
-
+    <? endif ?>
 </article>
 
 <script src="assets://application/components/jquery/dist/jquery.min.js" />

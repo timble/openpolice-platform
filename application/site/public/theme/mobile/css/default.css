@@ -1729,7 +1729,7 @@ button.button, input[type="submit"].button {
   .card img {
     border-radius: 4px 4px 0 0;
     border-bottom: 1px solid #f6f6f6; }
-  .card a {
+  .card a, .card .card__box {
     display: inline-block;
     width: 100%;
     border: 1px solid #eee;
