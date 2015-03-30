@@ -259,9 +259,13 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
 
         foreach($translations as $translation)
         {
-            $prefix = $translation->iso_code != $primary->iso_code ? strtolower($translation->iso_code.'_') : '';
-            $query = 'REPLACE INTO '.$database->quoteIdentifier($prefix.$table->name).' '.$select;
-            $database->execute($query);
+            // Only update German from French if translation is missing
+            if($translation->iso_code !== 'de-be' || ($translation->iso_code == 'de-be' && $active->iso_code == 'fr-be'))
+            {
+                $prefix = $translation->iso_code != $primary->iso_code ? strtolower($translation->iso_code.'_') : '';
+                $query = 'REPLACE INTO '.$database->quoteIdentifier($prefix.$table->name).' '.$select;
+                $database->execute($query);
+            }
         }
     }
 
