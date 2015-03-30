@@ -12,12 +12,29 @@
 
 <ktml:module position="left">
     <?= import('com:wanted.view.sections.list.html') ?>
+    <? if($article->params->get('childfocus', false)) : ?>
+    <div class="sidebar__element sidebar__element--childfocus">
+        <p><?= translate('In cooperation with') ?><br />
+            <a href="http://<?= translate('www.childfocus.be') ?>">
+                <img src="assets://wanted/images/childfocus.jpg" />
+            </a>
+        </p>
+    </div>
+    <? endif ?>
 </ktml:module>
 
 <title content="replace"><?= escape($article->title) ?></title>
 
 <article class="article">
     <h1><?= escape($article->title) ?></h1>
+
+    <? if($article->solved) : ?>
+    <div class="article__text">
+        <img class="article__thumbnail" src="assets://wanted/images/solved.png" />
+
+        <?= $article->text ?>
+    </div>
+    <? else : ?>
     <div class="article__text">
         <? if($article->attachments_attachment_id) : ?>
             <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $article->thumbnail ?>" data-gallery="enabled">
@@ -51,9 +68,10 @@
 
     <div class="well">
         <h2><?= translate('Testimonials') ?></h2>
-        <p><?= translate('Do you have more information') ?></p>
-        <p><?= translate('Contact us by email') ?></p>
+        <p><?= translate('Do you have more information') ?><?= $article->params->get('childfocus', false) ? ' '.translate('or with Child Focus') : '' ?>.</p>
+        <p><?= translate('Contact us by email') ?>.</p>
     </div>
+    <? endif ?>
 </article>
 
 <script src="assets://application/components/jquery/dist/jquery.min.js" />

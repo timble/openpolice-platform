@@ -1,0 +1,19 @@
+.label-missing {
+    background-color: #fdebeb;
+    color: #CF1010;
+}
+
+.label-outdated {
+    background-color: #fef4e5;
+    color: #f89406;
+}
+
+.label-completed {
+    background-color: #e3f6ec;
+    color: #297E52;
+}
+
+.label-original {
+    background-color: #e0f5fe;
+    color: #049cdb;
+}

@@ -18,6 +18,7 @@ class ModelArticles extends Library\ModelTable
 
         $this->getState()
             ->insert('published'        , 'int')
+            ->insert('solved'           , 'int')
             ->insert('section'          , 'string')
             ->insert('category'         , 'string')
             ->insert('sort'             , 'cmd'     , 'ordering_date')
@@ -63,6 +64,10 @@ class ModelArticles extends Library\ModelTable
 
         if (is_numeric($state->published)) {
             $query->where('tbl.published = :published')->bind(array('published' => $state->published));
+        }
+
+        if (is_numeric($state->solved)) {
+            $query->where('tbl.solved = :solved')->bind(array('solved' => $state->solved));
         }
 
         if (is_numeric($state->section)) {

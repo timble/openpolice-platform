@@ -217,6 +217,27 @@
       display: block;
       clear: both; }
 
+  .statistics__interactive .one-fourth {
+    
+    
+    
+    width: 22.2222222222%;
+    float: left;
+    margin-left: 3.7037037037%;
+    
+    
+     }
+  .statistics__interactive .one-fourth:first-child {
+    
+    
+    
+    width: 22.2222222222%;
+    float: left;
+    margin-left: 0;
+    
+    
+     }
+
   .sidebar {
     
     
@@ -239,7 +260,7 @@
     
      }
 
-  .component.files, .component.found {
+  .component.files, .component.found, .component.statistics {
     
     
     

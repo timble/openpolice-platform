@@ -13,11 +13,18 @@
     border-bottom: 1px solid lighten($color-border, 3%);
   }
 
-  a {
+  a,
+  .card__box {
     display: inline-block;
     width: 100%;
     border: 1px solid $color-border;
     border-radius: $border-radius;
+  }
+
+  a {
+    .card__name {
+      text-decoration: underline;
+    }
   }
 
   a:hover,
@@ -47,7 +54,6 @@
 }
 
 .card__name {
-  text-decoration: underline;
   margin-bottom: $base-line-height / 4;
   display: block;
 }

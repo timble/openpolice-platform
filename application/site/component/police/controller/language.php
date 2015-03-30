@@ -25,6 +25,15 @@ class PoliceControllerLanguage extends Library\ControllerModel
             'staging.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'staging'),
             'staging.policelocale.be'   => array('language' => 'fr', 'access' => 'staging'),
             'staging.lokalepolizei.be'  => array('language' => 'de', 'access' => 'staging'),
+            'www.politie.be'            => array('language' => 'nl', 'access' => 'live'),
+            'www.police.be'             => array('language' => 'fr', 'access' => 'live'),
+            'www.polizei.be'            => array('language' => 'de', 'access' => 'live'),
+            'new.politie.be'            => array('language' => 'nl', 'access' => 'production'),
+            'new.police.be'             => array('language' => 'fr', 'access' => 'production'),
+            'new.polizei.be'            => array('language' => 'de', 'access' => 'production'),
+            'staging.politie.be'        => array('language' => 'nl', 'access' => 'staging'),
+            'staging.police.be'         => array('language' => 'fr', 'access' => 'staging'),
+            'staging.polizei.be'        => array('language' => 'de', 'access' => 'staging'),
         );
 
         $this->registerCallback('before.read'   , array($this, 'checkHost'));
@@ -109,13 +118,18 @@ class PoliceControllerLanguage extends Library\ControllerModel
                 if($package == 'districts')
                 {
                     $item = $this->getObject('com:districts.model.districts')->id($item)->getRowset()->top();
-                } else {
+                }elseif(!in_array($package, array('statistics')))
+                {
                     $item = $this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package)->row($item)->getRowset()->top();
                 }
 
                 if(in_array($package, array('contacts', 'news', 'traffic', 'wanted', 'press')))
                 {
                     $result .= '/'.$item->row.'-'.$item->slug;
+                }
+                elseif(in_array($package, array('statistics')))
+                {
+                    $result .= '/'.$item;
                 }
                 else
                 {
