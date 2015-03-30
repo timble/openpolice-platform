@@ -57,6 +57,23 @@ SET `content`.`catid` = '1', `content`.`sectionid` = '1'
 WHERE `content`.`id` = `frontpage`.`content_id`;
 
 
+-- Add German language
+UPDATE `languages_translations` AS `translation`
+SET `translation`.`original` = '1'
+WHERE `translation`.`iso_code` = 'fr-be';
+
+UPDATE `languages_translations` AS `translation`
+SET `translation`.`original` = '0'
+WHERE `translation`.`iso_code` = 'nl-be';
+
+UPDATE `languages_translations` AS `translation`
+SET `translation`.`status` = '3'
+WHERE `translation`.`iso_code` = 'fr-be' AND `translation`.`status` = '2';
+
+INSERT INTO `languages` (`languages_language_id`, `application`, `name`, `native_name`, `iso_code`, `slug`, `enabled`, `primary`) VALUES ('5', 'admin', 'German', 'German', 'de-be', 'de', '0', '0');
+INSERT INTO `languages` (`languages_language_id`, `application`, `name`, `native_name`, `iso_code`, `slug`, `enabled`, `primary`) VALUES ('6', 'site', 'German', 'German', 'de-be', 'de', '0', '0');
+
+
 -- Update links in quicklinks
 UPDATE `pages_modules` set `content` = replace(`content`, '5388', '5353');
 

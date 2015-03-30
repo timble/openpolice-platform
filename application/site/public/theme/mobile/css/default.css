@@ -2036,11 +2036,14 @@ button.button, input[type="submit"].button {
 
 .languages__item {
   float: left;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  border-left: 1px solid #eee;
+  margin-left: 5px;
+  padding-left: 5px; }
   .languages__item:first-child {
-    border-right: 1px solid #eee;
-    margin-right: 5px;
-    padding-right: 5px; }
+    border-left: 0px none;
+    margin-right: 0px;
+    padding-right: 0px; }
 
 .media {
   *zoom: 1;
