@@ -137,8 +137,8 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
                 'wanted' => array('name' => 'Recherchés', 'url' => '/fed/fr/avis-de-recherche/recherches', 'description' => 'Aidez-nous à rechercher des auteurs ou victimes de délits.', 'link' => 'Toutes les personnes recherchées'),
             ),
             'de' => array(
-                'missing' => array('name' => 'Disparus', 'url' => '/fed/fr/avis-de-recherche/disparus', 'description' => 'Aidez-nous à retrouver des personnes disparues.', 'link' => 'Toutes les personnes disparues'),
-                'wanted' => array('name' => 'Recherchés', 'url' => '/fed/fr/avis-de-recherche/recherches', 'description' => 'Aidez-nous à rechercher des auteurs ou victimes de délits.', 'link' => 'Toutes les personnes recherchées'),
+                'missing' => array('name' => 'Disparus', 'url' => '/fed/de/avis-de-recherche/disparus', 'description' => 'Aidez-nous à retrouver des personnes disparues.', 'link' => 'Toutes les personnes disparues'),
+                'wanted' => array('name' => 'Recherchés', 'url' => '/fed/de/avis-de-recherche/recherches', 'description' => 'Aidez-nous à rechercher des auteurs ou victimes de délits.', 'link' => 'Toutes les personnes recherchées'),
             ),
         );
 
@@ -158,10 +158,10 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
                 'pow' => array('name' => 'Déclaration en ligne', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Porter plainte en ligne pour des petits délits, déclarer votre système d\'alarme et demander une surveillance policière de votre habitation pendant vos vacances ou en cas d\'absence.'),
             ),
             'de' => array(
-                'local' => array('name' => 'Lokale Politie', 'url' => '/zones', 'description' => 'Op lokaal vlak is de politie georganiseerd in 192 politiezones. Je lokale politiezone is je eerste contact met de politie.'),
-                'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polfed-fedpol.be/org/org_de.php'),
-                'help' => array('name' => 'Notrufnummern', 'url' => 'http://www.polfed-fedpol.be/hulp_de.php'),
-                'search' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polfed-fedpol.be/ops/ops_de.php'),
+                'local' => array('name' => 'Lokale Politie', 'url' => '/zones', 'description' => 'Auf lokaler Ebene ist die Polizei in 192 Polizeizonen aufgeteilt. Ihre lokale Polizei ist der erste Kontakt mit der Polizei.'),
+                'federal' => array('name' => 'Föderale Polizei', 'url' => '/fed/de', 'description' => 'Auf der föderalen Ebene beschäftigt sich ein Polizeikorps, die föderale Polizei, mit der spezialisierten Polizeiarbeit und den Unterstützungsaufträgen.'),
+                'help' => array('name' => 'Notrufnummern', 'url' => '/fed/de/kontakt/notrufnummern', 'description' => 'Un cas d\'urgence ? Consultez l\'aperçu des numéros d\'appel d\'urgence, des services de secours et d\'autres numéros de téléphone utiles.'),
+                'wanted' => array('name' => 'Forschungsansicht', 'url' => '#wanted', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Online Angabe', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online Bagatelldelikte Anzeige erstatten, Ihr Alarmsystem melden und während Ihres Urlaubs oder Ihrer Abwesendheid für Ihr Zuhause Polizeiüberwachung beantragen.'),
             ),
         );
@@ -174,7 +174,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
                 'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.policelocale.be/portal/fr'),
             ),
             'de' => array(
-                'vclp' => array('name' => 'Kommission', 'url' => 'http://www.lokalepolizei.be/portal/nl'),
+                'vclp' => array('name' => 'Kommission', 'url' => 'http://www.lokalepolizei.be/portal/fr'),
             ),
         );
     }
