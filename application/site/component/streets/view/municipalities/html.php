@@ -69,8 +69,8 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
 
         $this->streams = array(
             'nl' => array('news' => 'http://'.$host.'/fed/nl/nieuws', 'wanted' => 'http://'.$host.'/fed/nl/opsporingen'),
-            'fr' => array('news' => 'http://'.$host.'/fed/fr/nouvelles', 'wanted' => 'http://'.$host.'/fed/fr/avis-de-recherche') ,
-            'de' => array('news' => 'http://'.$host.'/fed/de/nouvelles', 'wanted' => 'http://'.$host.'/fed/de/avis-de-recherche'),
+            'fr' => array('news' => 'http://'.$host.'/fed/fr/actualites', 'wanted' => 'http://'.$host.'/fed/fr/avis-de-recherche') ,
+            'de' => array('news' => 'http://'.$host.'/fed/de/actualites', 'wanted' => 'http://'.$host.'/fed/de/avis-de-recherche'),
         );
 
         // Fetch the news first
