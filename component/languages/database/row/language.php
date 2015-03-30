@@ -33,6 +33,9 @@ class DatabaseRowLanguage extends Library\DatabaseRowTable
             {
                 $table_name = strtolower($this->iso_code).'_'.$table->name;
                 
+                $table->name_primary = $table->name;
+                $table->name = 'fr-be_'.$table->name;
+
                 // Add language specific table and copy the content of the original table.
                 $database->execute('CREATE TABLE '.$database->quoteIdentifier($table_name).' LIKE '.$database->quoteIdentifier($table->name));
                 
@@ -60,7 +63,7 @@ class DatabaseRowLanguage extends Library\DatabaseRowTable
                     ->table(array('tbl' => $table_name))
                     ->bind(array(
                         'iso_code'  => $this->iso_code,
-                        'table'     => $table->name,
+                        'table'     => $table->name_primary,
                         'status'    => DatabaseRowTranslation::STATUS_MISSING,
                         'original'  => 0,
                         'slug'      => null
