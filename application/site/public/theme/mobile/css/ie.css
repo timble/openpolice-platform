@@ -186,9 +186,30 @@ form {
   width: 100%;
   height: 100%; }
 
-.card img {
-  width: 100%;
-  height: 100%; }
+.card {
+  text-align: left; }
+  .card img {
+    
+    
+    
+    width: 30.8641975309%;
+    float: left;
+    margin-left: 0;
+    
+    
+    
+    width: 100%;
+    height: 100%; }
+  .card .card__metadata {
+    
+    
+    
+    width: 56.7901234568%;
+    float: left;
+    margin-left: 3.7037037037%;
+    
+    
+     }
 
 .button--hamburger {
   display: none; }
@@ -221,25 +242,3 @@ form {
 
 #intro .search-box__input {
   width: 534px; }
-#intro .card {
-  text-align: left; }
-  #intro .card img {
-    
-    
-    
-    width: 30.8641975309%;
-    float: left;
-    margin-left: 0;
-    
-    
-     }
-  #intro .card .card__metadata {
-    
-    
-    
-    width: 56.7901234568%;
-    float: left;
-    margin-left: 3.7037037037%;
-    
-    
-     }
