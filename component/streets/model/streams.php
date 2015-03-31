@@ -49,24 +49,27 @@ class ModelStreams extends Library\ModelAbstract
 
                 $url->setHost('127.0.0.1');
 
-                $ch = curl_init();
+                $opts = array(
+                    'http'=>array(
+                        'method' => 'GET',
+                        'header' => "Host: $host\r\n"
+                    )
+                );
 
-                curl_setopt($ch, CURLOPT_URL, (string) $url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_HTTPHEADER, array('Host: ' . $host));
-                curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-
-                if ($this->_authentication) {
-                    curl_setopt($ch, CURLOPT_USERPWD, $this->_authentication);
+                if ($this->_authentication)
+                {
+                    $auth = sprintf("Authorization: Basic %s\r\n", base64_encode($this->_authentication));
+                    $opts['http']['header'] .= $auth;
                 }
 
-                $result = curl_exec($ch);
+                $context = stream_context_create($opts);
 
-                if (curl_errno($ch)) {
-                    throw new \Exception('Failed to fetch ' . $state->url . ': ' . curl_error($ch));
+                $fp = fopen((string) $url, 'r', false, $context);
+                $result = '';
+                while (!feof($fp)) {
+                    $result .= fgets($fp);
                 }
-
-                curl_close($ch);
+                fclose($fp);
 
                 $data = json_decode($result);
 
