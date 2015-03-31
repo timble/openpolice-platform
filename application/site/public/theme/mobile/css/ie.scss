@@ -119,19 +119,7 @@ form {
 
   .card {
     text-align: left;
-  }
 
-  .cards .card--horizontal {
-    img {
-      @include span(first 4 of 12);
-    }
-
-    .card__metadata {
-      @include span(7 of 12);
-    }
-  }
-
-  .intro__news__item {
     img {
       @include span(first 4 of 12);
     }

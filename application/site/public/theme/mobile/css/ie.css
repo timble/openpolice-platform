@@ -223,43 +223,23 @@ form {
   width: 534px; }
 #intro .card {
   text-align: left; }
-#intro .cards .card--horizontal img {
-  
-  
-  
-  width: 30.8641975309%;
-  float: left;
-  margin-left: 0;
-  
-  
-   }
-#intro .cards .card--horizontal .card__metadata {
-  
-  
-  
-  width: 56.7901234568%;
-  float: left;
-  margin-left: 3.7037037037%;
-  
-  
-   }
-#intro .intro__news__item img {
-  
-  
-  
-  width: 30.8641975309%;
-  float: left;
-  margin-left: 0;
-  
-  
-   }
-#intro .intro__news__item .card__metadata {
-  
-  
-  
-  width: 56.7901234568%;
-  float: left;
-  margin-left: 3.7037037037%;
-  
-  
-   }
+  #intro .card img {
+    
+    
+    
+    width: 30.8641975309%;
+    float: left;
+    margin-left: 0;
+    
+    
+     }
+  #intro .card .card__metadata {
+    
+    
+    
+    width: 56.7901234568%;
+    float: left;
+    margin-left: 3.7037037037%;
+    
+    
+     }
