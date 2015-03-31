@@ -152,14 +152,14 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
             ),
             'fr' => array(
                 'federal' => array('name' => 'Police fédérale', 'url' => '/fed/fr', 'description' => 'Au niveau fédéral, une seule police, la police fédérale, assure la fonction de police spécialisée et des missions d\'appui.'),
-                'local' => array('name' => 'Lokale Politie', 'url' => 'http://www.policelocale.be/zones', 'description' => 'Le niveau local est organisé par 192 zones de police. Votre zone de police locale est le premier contact avec la police.'),
+                'local' => array('name' => 'Police locale', 'url' => 'http://www.policelocale.be/zones', 'description' => 'Le niveau local est organisé par 192 zones de police. Votre zone de police locale est le premier contact avec la police.'),
                 'help' => array('name' => 'Numéros d\'urgence', 'url' => '/fed/fr/contact/des-numeros-durgence', 'description' => 'Un cas d\'urgence ? Consultez l\'aperçu des numéros d\'appel d\'urgence, des services de secours et d\'autres numéros de téléphone utiles.'),
                 'wanted' => array('name' => 'Avis de recherches', 'url' => '#wanted', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Déclaration en ligne', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Porter plainte en ligne pour des petits délits, déclarer votre système d\'alarme et demander une surveillance policière de votre habitation pendant vos vacances ou en cas d\'absence.'),
             ),
             'de' => array(
                 'federal' => array('name' => 'Föderale Polizei', 'url' => '/fed/de', 'description' => 'Auf der föderalen Ebene beschäftigt sich ein Polizeikorps, die föderale Polizei, mit der spezialisierten Polizeiarbeit und den Unterstützungsaufträgen.'),
-                'local' => array('name' => 'Lokale Politie', 'url' => 'http://www.lokalepolizei.be/zones', 'description' => 'Auf lokaler Ebene ist die Polizei in 192 Polizeizonen aufgeteilt. Ihre lokale Polizei ist der erste Kontakt mit der Polizei.'),
+                'local' => array('name' => 'Lokale Polizei ', 'url' => 'http://www.lokalepolizei.be/zones', 'description' => 'Auf lokaler Ebene ist die Polizei in 192 Polizeizonen aufgeteilt. Ihre lokale Polizei ist der erste Kontakt mit der Polizei.'),
                 'help' => array('name' => 'Notrufnummern', 'url' => '/fed/de/kontakt/notrufnummern', 'description' => 'Un cas d\'urgence ? Consultez l\'aperçu des numéros d\'appel d\'urgence, des services de secours et d\'autres numéros de téléphone utiles.'),
                 'wanted' => array('name' => 'Forschungsansicht', 'url' => '#wanted', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Online Angabe', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online Bagatelldelikte Anzeige erstatten, Ihr Alarmsystem melden und während Ihres Urlaubs oder Ihrer Abwesendheid für Ihr Zuhause Polizeiüberwachung beantragen.'),
