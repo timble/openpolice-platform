@@ -1,16 +1,28 @@
 @import "../components/illusion/sass/illusion/mixins/basics";
-@import "utilities/_variables";
+@import "../components/illusion/sass/illusion/mixins/breakpoint";
+@import "../components/susy/sass/susy";
+@import "utilities/variables";
 
-body {
+
+body,
+#splash,
+#intro {
   width: $breakpoint-beta;
   margin: 0 auto;
+}
+
+#splash,
+#intro {
+  display: block;
+  height: auto;
 }
 
 form {
   margin: 0;
 }
 
-#wrap {
+#wrap,
+#intro {
   border-left: 1px solid darken($grayLighter, 7%);
   border-right: 1px solid darken($grayLighter, 7%);
 }
@@ -49,6 +61,14 @@ form {
   }
 }
 
+.card {
+  img {
+    width: 100%; // IE6
+    height: 100%; // IE6
+  }
+}
+
+
 .button--hamburger {
   display: none;
 }
@@ -85,15 +105,39 @@ form {
   }
 }
 
-#splash {
-  display: block;
-  height: auto;
-  width: $breakpoint-beta;
-  margin: 0 auto;
-}
-
-#splash .nav--horizontal {
+#splash .nav--horizontal,
+#intro .nav--horizontal {
   li {
     display: inline-block;
+  }
+}
+
+#intro {
+  .search-box__input {
+    width: 534px;
+  }
+
+  .card {
+    text-align: left;
+  }
+
+  .cards .card--horizontal {
+    img {
+      @include span(first 4 of 12);
+    }
+
+    .card__metadata {
+      @include span(7 of 12);
+    }
+  }
+
+  .intro__news__item {
+    img {
+      @include span(first 4 of 12);
+    }
+
+    .card__metadata {
+      @include span(7 of 12);
+    }
   }
 }
