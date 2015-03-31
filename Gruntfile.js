@@ -13,11 +13,12 @@ module.exports = function(grunt) {
                 destCss: 'application/site/public/theme/mobile/css/utilities',
                 options: {
                     font: 'police-icons',
-                    hashes: false,
+                    hashes: true,
                     stylesheet: 'scss',
                     relativeFontPath: '../fonts/icons/',
                     template: 'application/site/public/theme/mobile/fonts/icons/template.css',
-                    htmlDemo: false
+                    htmlDemo: false,
+                    types: 'eot,woff,ttf,svg'
                 }
             }
         },

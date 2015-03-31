@@ -1198,8 +1198,8 @@ button.closed {
 
 @font-face {
   font-family: "police-icons";
-  src: url("../fonts/icons/police-icons.eot?v=1");
-  src: url("../fonts/icons/police-icons.eot#iefix") format("embedded-opentype"), url("../fonts/icons/police-icons.woff?v=1") format("woff"), url("../fonts/icons/police-icons.ttf?v=1") format("truetype"), url("../fonts/icons/police-icons.svg#police-icons") format("svg");
+  src: url("../fonts/icons/police-icons.eot");
+  src: url("../fonts/icons/police-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/police-icons.woff") format("woff"), url("../fonts/icons/police-icons.ttf") format("truetype"), url("../fonts/icons/police-icons.svg#police-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
