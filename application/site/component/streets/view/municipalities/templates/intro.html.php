@@ -97,7 +97,7 @@
                                     <? if($article->thumbnail): ?>
                                         <img height="500px" width="400px" src="<?= 'http://'.object('request')->getUrl()->getHost().'/files/fed/attachments/'.str_replace('.', '_thumb.', $article->thumbnail) ?>" />
                                     <? else : ?>
-                                        <img src="assets://found/images/placeholder.jpg" />
+                                        <img src="assets://wanted/images/solved.png" />
                                     <? endif ?>
 
                                     <span class="card__metadata">
