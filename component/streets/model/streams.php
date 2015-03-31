@@ -56,6 +56,12 @@ class ModelStreams extends Library\ModelAbstract
                     )
                 );
 
+                if ($this->_authentication)
+                {
+                    $auth = sprintf("Authorization: Basic %s\r\n", base64_encode($this->_authentication));
+                    $opts['http']['header'] .= $auth;
+                }
+
                 $context = stream_context_create($opts);
 
                 $fp = fopen((string) $url, 'r', false, $context);
