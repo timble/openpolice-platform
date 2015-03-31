@@ -41,11 +41,11 @@
                             <? if($article->params->get('place', false) || $article->city) : ?>
                                 <span class="card__place"><?= $article->city ? $article->city : $article->params->get('place') ?></span>
                             <? endif ?>
+                            </span>
                         </span>
                     </span>
                 </a>
             <? endif ?>
-
         </li>
     <? endforeach; ?>
 </ul>
