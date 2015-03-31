@@ -12,28 +12,28 @@
 
 $external = array(
     'en' => array(
-        'federal' => array('name' => 'Federal Police', 'url' => 'http://www.polfed-fedpol.be/org/org_en.php'),
-        'wanted' => array('name' => 'Wanted', 'url' => 'http://www.polfed-fedpol.be/ops/ops_en.php'),
-        'help' => array('name' => 'Emergency numbers', 'url' => 'http://www.polfed-fedpol.be/hulp_en.php'),
-        'vclp' => array('name' => 'Committee', 'url' => 'http://www.polfed-fedpol.be/hulp_en.php')
+        'federal' => array('name' => 'Federal Police', 'url' => 'http://www.politie.be/fed'),
+        'wanted' => array('name' => 'Wanted', 'url' => 'http://www.politie.be/fed/nl/opsporingen'),
+        'help' => array('name' => 'Emergency numbers', 'url' => 'http://www.politie.be/fed/nl/contact/noodnummers'),
+        'vclp' => array('name' => 'Committee', 'url' => 'http://www.lokalepolitie.be/portal/nl')
     ),
     'nl' => array(
-        'federal' => array('name' => 'Federale Politie', 'url' => 'http://www.polfed-fedpol.be/home_nl.php'),
-        'wanted' => array('name' => 'Opsporingen', 'url' => 'http://www.polfed-fedpol.be/ops/ops_nl.php'),
-        'help' => array('name' => 'Noodnummers', 'url' => 'http://www.polfed-fedpol.be/hulp_nl.php'),
-        'vclp' => array('name' => 'Vaste Commissie', 'url' => 'http://www.lokalepolitie.be/portal/nl')
+        'federal' => array('name' => 'Federale Politie', 'url' => 'http://www.politie.be/fed/nl'),
+        'wanted' => array('name' => 'Opsporingen', 'url' => 'http://www.politie.be/fed/nl/opsporingen'),
+        'help' => array('name' => 'Noodnummers', 'url' => 'http://www.politie.be/fed/nl/contact/noodnummers'),
+        'vclp' => array('name' => 'Vaste Commissie', 'url' => 'http://www.politie.be/portal/nl')
     ),
     'fr' => array(
-        'federal' => array('name' => 'Police fédérale', 'url' => 'http://www.polfed-fedpol.be/home_fr.php'),
-        'wanted' => array('name' => 'Avis de recherche', 'url' => 'http://www.polfed-fedpol.be/ops/ops_fr.php'),
-        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.polfed-fedpol.be/hulp_fr.php'),
-        'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.policelocale.be/portal/fr')
+        'federal' => array('name' => 'Police fédérale', 'url' => 'http://www.police.be/fed/fr'),
+        'wanted' => array('name' => 'Avis de recherche', 'url' => 'http://www.police.be/fed/fr/avis-de-recherche'),
+        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.police.be/fed/fr/contact/des-numeros-durgence'),
+        'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.police.be/portal/fr')
     ),
     'de' => array(
-        'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polfed-fedpol.be/org/org_de.php'),
-        'wanted' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polfed-fedpol.be/ops/ops_de.php'),
-        'help' => array('name' => 'Notrufnummern', 'url' => 'http://www.polfed-fedpol.be/hulp_de.php'),
-        'vclp' => array('name' => 'Kommission', 'url' => 'http://www.lokalepolizei.be/portal/nl')
+        'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polizei.be/fed/de'),
+        'wanted' => array('name' => 'Forschungsansicht', 'url' => 'http://www.polizei.be/fed/de/avis-de-recherche'),
+        'help' => array('name' => 'Notrufnummern', 'url' => 'http://www.polizei.be/fed/de/kontakt/notrufnummern'),
+        'vclp' => array('name' => 'Kommission', 'url' => 'http://www.policelocale.be/portal/fr')
     ),
 );
 ?>
