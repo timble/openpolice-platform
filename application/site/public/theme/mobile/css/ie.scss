@@ -62,12 +62,18 @@ form {
 }
 
 .card {
+  text-align: left;
+
   img {
+    @include span(first 4 of 12);
     width: 100%; // IE6
     height: 100%; // IE6
   }
-}
 
+  .card__metadata {
+    @include span(7 of 12);
+  }
+}
 
 .button--hamburger {
   display: none;
@@ -115,17 +121,5 @@ form {
 #intro {
   .search-box__input {
     width: 534px;
-  }
-
-  .card {
-    text-align: left;
-
-    img {
-      @include span(first 4 of 12);
-    }
-
-    .card__metadata {
-      @include span(7 of 12);
-    }
   }
 }
