@@ -65,9 +65,9 @@ form {
   text-align: left;
 
   img {
-    @include span(first 4 of 12);
     width: 100%; // IE6
     height: 100%; // IE6
+    @include span(first 4 of 12);
   }
 
   .card__metadata {

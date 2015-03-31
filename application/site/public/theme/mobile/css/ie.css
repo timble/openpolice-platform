@@ -189,6 +189,8 @@ form {
 .card {
   text-align: left; }
   .card img {
+    width: 100%;
+    height: 100%;
     
     
     
@@ -197,9 +199,7 @@ form {
     margin-left: 0;
     
     
-    
-    width: 100%;
-    height: 100%; }
+     }
   .card .card__metadata {
     
     
