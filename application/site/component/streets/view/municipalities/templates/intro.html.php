@@ -67,6 +67,8 @@
                     <a href="<?= $streams[$language]['news'].'/'.$article->id.'-'.$article->slug ?>">
                         <? if($article->thumbnail): ?>
                             <img width="400px" height="300px" src="<?= 'http://'.object('request')->getUrl()->getHost().'/files/fed/attachments/'.str_replace('.', '_thumb.', $article->thumbnail) ?>" />
+                        <? else : ?>
+                            <img src="assets://news/images/placeholder.png" />
                         <? endif ?>
                         <span class="card__metadata">
                             <span class="card__metadata--inner">
