@@ -861,7 +861,9 @@ button.closed {
 
 #intro {
   height: 100%;
-  width: 100%;
+  width: 100%; }
+
+.intro {
   background-color: #FFF; }
 
 .intro__external .intro__container, .intro__news .intro__container {
