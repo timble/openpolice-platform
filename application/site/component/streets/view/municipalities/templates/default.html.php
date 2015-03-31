@@ -21,13 +21,13 @@ $external = array(
         'federal' => array('name' => 'Federale Politie', 'url' => 'http://www.politie.be/fed/nl'),
         'wanted' => array('name' => 'Opsporingen', 'url' => 'http://www.politie.be/fed/nl/opsporingen'),
         'help' => array('name' => 'Noodnummers', 'url' => 'http://www.politie.be/fed/nl/contact/noodnummers'),
-        'vclp' => array('name' => 'Vaste Commissie', 'url' => 'http://www.politie.be/portal/nl')
+        'vclp' => array('name' => 'Vaste Commissie', 'url' => 'http://www.lokalepolitie.be/portal/nl')
     ),
     'fr' => array(
         'federal' => array('name' => 'Police fédérale', 'url' => 'http://www.police.be/fed/fr'),
         'wanted' => array('name' => 'Avis de recherche', 'url' => 'http://www.police.be/fed/fr/avis-de-recherche'),
         'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.police.be/fed/fr/contact/des-numeros-durgence'),
-        'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.police.be/portal/fr')
+        'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.policelocale.be/portal/fr')
     ),
     'de' => array(
         'federal' => array('name' => 'Föderale Polizei', 'url' => 'http://www.polizei.be/fed/de'),
