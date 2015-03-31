@@ -38,7 +38,7 @@ class PoliceControllerPage extends Library\ControllerView
                     if($hostLanguage = $this->getObject('com:police.controller.language')->findLanguage($host))
                     {
                         // Make sure the given language is enabled
-                        if(array_key_exists($host, $languages))
+                        if(in_array($hostLanguage, $languages->slug))
                         {
                             $language = $hostLanguage;
                         }
