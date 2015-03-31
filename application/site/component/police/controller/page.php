@@ -35,13 +35,12 @@ class PoliceControllerPage extends Library\ControllerView
                 // No language found, fallback on the browser
                 if(!$language || !in_array($language, $languages->get('slug')))
                 {
-                    foreach($this->getObject('request')->getLanguages() as $browser_language)
+                    if($hostLanguage = $this->getObject('com:police.controller.language')->findLanguage($host))
                     {
-                        if(in_array($browser_language, $languages->slug, true))
+                        // Make sure the given language is enabled
+                        if(array_key_exists($host, $languages))
                         {
-                            // Redirect to browser language
-                            $language = $browser_language;
-                            break;
+                            $language = $hostLanguage;
                         }
                     }
 

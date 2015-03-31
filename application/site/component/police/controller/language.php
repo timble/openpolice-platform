@@ -183,4 +183,15 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
         return false;
     }
+
+    public function findLanguage($host)
+    {
+        // Make sure the given host exists
+        if(array_key_exists($host, $this->_domains))
+        {
+            return $this->_domains[$host]['language'];
+        }
+
+        return false;
+    }
 }
