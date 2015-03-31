@@ -927,6 +927,8 @@ button.closed {
 @media screen and (min-width: 768px) {
   .intro__news .card {
     text-align: center; }
+    .intro__news .card img {
+      border-radius: 4px 4px 0 0; }
 
   .intro__search .search__label {
     font-size: 24px; }

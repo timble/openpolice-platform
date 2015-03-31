@@ -99,6 +99,10 @@
 @include breakpoint($breakpoint-charlie) {
   .intro__news .card {
     text-align: center;
+
+    img {
+      border-radius: $border-radius $border-radius 0 0;
+    }
   }
 
   .intro__search
