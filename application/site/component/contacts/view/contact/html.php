@@ -61,7 +61,13 @@ class ContactsViewContactHtml extends Library\ViewHtml
                 $languages = $this->getObject('application.languages');
                 $language = $languages->getActive()->slug;
 
-                $streets = $streets->find(array('iso' => $language));
+                // Temporary fix since not all DE streets are available in NL/FR
+                if(count($streets->find(array('iso' => $language))) >= 1)
+                {
+                    $streets = $streets->find(array('iso' => $language));
+                } else {
+                    $streets = $streets->find(array('iso' => 'de'));
+                }
             }
 
             $contact['street'] = $streets->top()->title_short;
