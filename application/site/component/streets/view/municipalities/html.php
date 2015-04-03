@@ -130,7 +130,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
         $this->wanted = array(
             'nl' => array(
                 'missing' => array('name' => 'Vermist', 'url' => '/fed/nl/opsporingen/vermist', 'description' => 'Help ons bij het terug vinden van vermiste personen. Hebt u tips?', 'link' => 'Alle vermiste personen'),
-                'wanted' => array('name' => 'Gezocht', 'url' => '/fed/nl/opsporingen/gezocht', 'description' => 'Help ons bij de zoeken naar daders of slachtoffers van een misdrijf.', 'link' => 'Alle gezochte personen'),
+                'wanted' => array('name' => 'Gezocht', 'url' => '/fed/nl/opsporingen/gezocht', 'description' => 'Help ons bij het zoeken naar daders of slachtoffers van een misdrijf.', 'link' => 'Alle gezochte personen'),
             ),
             'fr' => array(
                 'missing' => array('name' => 'Disparus', 'url' => '/fed/fr/avis-de-recherche/disparus', 'description' => 'Aidez-nous à retrouver des personnes disparues.', 'link' => 'Toutes les personnes disparues'),
@@ -147,14 +147,14 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
                 'federal' => array('name' => 'Federale Politie', 'url' => '/fed/nl', 'description' => 'Op federaal niveau staat één politiekorps, de federale politie, in voor de gespecialiseerde politiezorg en de ondersteunende opdrachten.'),
                 'local' => array('name' => 'Lokale Politie', 'url' => 'http://www.lokalepolitie.be/zones', 'description' => 'Op lokaal vlak is de politie georganiseerd in 192 politiezones. Uw lokale politiezone is het eerste contact bij de politie.'),
                 'help' => array('name' => 'Noodnummers', 'url' => '/fed/nl/contact/noodnummers', 'description' => 'Een noodgeval? Raadpleeg het overzicht van Belgische noodnummers, hulpdiensten en andere nuttige telefoonnummers.'),
-                'wanted' => array('name' => 'Opsporingen', 'url' => '#wanted', 'description' => 'Help ons bij de zoeken naar vermiste personen en daders of slachtoffers van een misdrijf. Hebt u tips?', 'link' => 'Alle gezochte personen'),
+                'wanted' => array('name' => 'Opsporingen', 'url' => '#wanted', 'description' => 'Help ons bij het zoeken naar vermiste personen en daders of slachtoffers van een misdrijf. Hebt u tips?', 'link' => 'Alle gezochte personen'),
                 'pow' => array('name' => 'Online aangifte', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online klacht indienen voor kleine misdrijven, uw alarmsysteem aanmelden en politietoezicht aanvragen voor uw woning tijdens uw vakantie of afwezigheid.'),
             ),
             'fr' => array(
                 'federal' => array('name' => 'Police fédérale', 'url' => '/fed/fr', 'description' => 'Au niveau fédéral, une seule police, la police fédérale, assure la fonction de police spécialisée et des missions d\'appui.'),
                 'local' => array('name' => 'Police locale', 'url' => 'http://www.policelocale.be/zones', 'description' => 'Le niveau local est organisé par 192 zones de police. Votre zone de police locale est le premier contact avec la police.'),
                 'help' => array('name' => 'Numéros d\'urgence', 'url' => '/fed/fr/contact/des-numeros-durgence', 'description' => 'Un cas d\'urgence ? Consultez l\'aperçu des numéros d\'appel d\'urgence, des services de secours et d\'autres numéros de téléphone utiles.'),
-                'wanted' => array('name' => 'Avis de recherches', 'url' => '#wanted', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
+                'wanted' => array('name' => 'Avis de recherche', 'url' => '#wanted', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Déclaration en ligne', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Porter plainte en ligne pour des petits délits, déclarer votre système d\'alarme et demander une surveillance policière de votre habitation pendant vos vacances ou en cas d\'absence.'),
             ),
             'de' => array(

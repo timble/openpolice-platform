@@ -89,11 +89,15 @@ UPDATE `contacts` set `telephone` = replace(`telephone`, '/', ' ');
 UPDATE `contacts` set `telephone` = replace(`telephone`, '.', ' ');
 UPDATE `contacts` set `telephone` = replace(`telephone`, '   ', ' ');
 UPDATE `contacts` set `telephone` = replace(`telephone`, '  ', ' ');
+UPDATE `contacts` set `telephone` = replace(`telephone`, '+32 ', '0');
+UPDATE `contacts` set `telephone` = replace(`telephone`, '+32', '0');
 
 UPDATE `contacts` set `fax` = replace(`fax`, '/', ' ');
 UPDATE `contacts` set `fax` = replace(`fax`, '.', ' ');
 UPDATE `contacts` set `fax` = replace(`fax`, '   ', ' ');
 UPDATE `contacts` set `fax` = replace(`fax`, '  ', ' ');
+UPDATE `contacts` set `fax` = replace(`fax`, '+32 ', '0');
+UPDATE `contacts` set `fax` = replace(`fax`, '+32', '0');
 
 UPDATE `contacts` set `mobile` = replace(`mobile`, '/', ' ');
 UPDATE `contacts` set `mobile` = replace(`mobile`, '.', ' ');

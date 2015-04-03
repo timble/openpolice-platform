@@ -8,6 +8,8 @@
  */
 ?>
 
+<title content="replace"><?= escape($params->get('page_title')) ?></title>
+
 <? if(count($articles) > '1') : ?>
 <ktml:module position="left">
     <?= import('com:categories.view.categories.list.html') ?>

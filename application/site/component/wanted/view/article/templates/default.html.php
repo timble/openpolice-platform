@@ -69,7 +69,7 @@
     <div class="well">
         <h2><?= translate('Testimonials') ?></h2>
         <p><?= translate('Do you have more information') ?><?= $article->params->get('childfocus', false) ? ' '.translate('or with Child Focus') : '' ?>.</p>
-        <p><?= translate('Contact us by email') ?>.</p>
+        <p><?= str_replace('case_id', $article->case_id, translate('Contact us by email')) ?>.</p>
     </div>
     <? endif ?>
 </article>
