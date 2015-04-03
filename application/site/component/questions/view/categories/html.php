@@ -13,6 +13,9 @@ class QuestionsViewCategoriesHtml extends QuestionsViewHtml
 {
     public function render()
     {
+        //Get the parameters
+        $this->params = $this->getObject('application')->getParams();
+
         // Get the zone
         $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getCfg('site'))->getRow();
 

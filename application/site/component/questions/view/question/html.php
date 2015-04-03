@@ -13,6 +13,9 @@ class QuestionsViewQuestionHtml extends QuestionsViewHtml
 {
     public function render()
     {
+        //Get the parameters
+        $this->params = $this->getObject('application')->getParams();
+
         //Get the article
         $question = $this->getModel()->getData();
 
