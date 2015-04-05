@@ -976,13 +976,13 @@ button.closed {
   .homepage__contact ul {
     margin-bottom: 0; }
 
-.clearfix, .intro__external .intro__container, .intro__news .intro__container, .intro__container, .homepage__news, form, .article, .article__text, .header, .header .organization {
+.clearfix, .intro__external .intro__container, .intro__news .intro__container, .intro__container, .homepage__news, form, .article, .article__text, .card .card__box, .header, .header .organization {
   *zoom: 1; }
-  .clearfix:before, .intro__external .intro__container:before, .intro__news .intro__container:before, .intro__container:before, .homepage__news:before, form:before, .article:before, .article__text:before, .header:before, .header .organization:before, .clearfix:after, .intro__external .intro__container:after, .intro__news .intro__container:after, .intro__container:after, .homepage__news:after, form:after, .article:after, .article__text:after, .header:after, .header .organization:after {
+  .clearfix:before, .intro__external .intro__container:before, .intro__news .intro__container:before, .intro__container:before, .homepage__news:before, form:before, .article:before, .article__text:before, .card .card__box:before, .header:before, .header .organization:before, .clearfix:after, .intro__external .intro__container:after, .intro__news .intro__container:after, .intro__container:after, .homepage__news:after, form:after, .article:after, .article__text:after, .card .card__box:after, .header:after, .header .organization:after {
     display: table;
     content: " ";
     line-height: 0; }
-  .clearfix:after, .intro__external .intro__container:after, .intro__news .intro__container:after, .intro__container:after, .homepage__news:after, form:after, .article:after, .article__text:after, .header:after, .header .organization:after {
+  .clearfix:after, .intro__external .intro__container:after, .intro__news .intro__container:after, .intro__container:after, .homepage__news:after, form:after, .article:after, .article__text:after, .card .card__box:after, .header:after, .header .organization:after {
     clear: both; }
 
 #wrap {
@@ -1807,7 +1807,7 @@ button.button, input[type="submit"].button {
     border-radius: 4px 4px 0 0;
     border-bottom: 1px solid #f6f6f6; }
   .card .card__box {
-    display: inline-block;
+    display: block;
     width: 100%;
     border: 1px solid #eee;
     border-radius: 4px; }
