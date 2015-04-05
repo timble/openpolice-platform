@@ -22,6 +22,8 @@
   }
 
   a {
+    text-decoration: none;
+
     .card__name {
       text-decoration: underline;
     }
@@ -33,10 +35,6 @@
     background-color: $cyanLighter;
     border-color: $color-link;
     @include box-shadow(0 1px 4px rgba(0, 105, 214, .25));
-
-    img {
-      border-bottom: 1px solid darken($cyanLighter, 3%);
-    }
   }
 }
 
@@ -44,13 +42,6 @@
   display: block;
   padding: $base-line-height / 2;
   width: 100%;
-
-  display: table;
-}
-
-.card__metadata--inner {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .card__name {
@@ -66,6 +57,33 @@
 
 @include breakpoint($breakpoint-zero) {
   .card--horizontal {
+    .card__box {
+      display: table;
+      width: 100%;
+    }
+
+    .card__image,
+    .card__metadata {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .card__image {
+      margin-right: 10px;
+      border-right: 1px solid $color-border;
+
+      img {
+        display: block;
+        max-width: 80px;
+      }
+    }
+
+    .card__metadata {
+      width: 100%;
+    }
+  }
+
+  .card--horizontal {
     text-align: left;
 
     a:hover img {
@@ -75,7 +93,16 @@
     img {
       border-radius: $border-radius 0 0 $border-radius;
       border-bottom: 0px none;
-      border-right: 1px solid darken($cyanLighter, 3%);
+    }
+  }
+}
+
+@include breakpoint($breakpoint-alpha) {
+  .card--horizontal {
+    .card__image {
+      img {
+        max-width: 100px;
+      }
     }
   }
 }
