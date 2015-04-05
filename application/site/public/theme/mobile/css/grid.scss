@@ -2,18 +2,6 @@
 @import "../components/susy/sass/susy";
 @import "utilities/variables";
 
-@include breakpoint($breakpoint-zero) {
-  .cards .card--horizontal {
-    img {
-      @include span(first 4 of 12);
-    }
-
-    .card__metadata {
-      @include span(8 of 12);
-    }
-  }
-}
-
 @include breakpoint($breakpoint-alpha) {
   .found .cards .card {
     @include gallery(6 of 12);
@@ -39,10 +27,6 @@
 
   .found .cards .card {
     @include gallery(4 of 12);
-  }
-
-  .cards .card--horizontal {
-    @include gallery(6 of 12);
   }
 
   .intro {
@@ -154,11 +138,7 @@
   .gallery .gallery__item {
     @include gallery(4 of 12);
   }
-
-  .found .cards .card {
-     @include gallery(3 of 12);
-  }
-
+  
   .intro {
     .intro__news__item {
       @include gallery(4 of 12);
@@ -186,10 +166,6 @@
 
     .intro__wanted--wanted {
       @include span(6 of 12);
-    }
-
-    .intro__wanted .cards .card--horizontal {
-      @include span(12 of 12);
     }
   }
 }
@@ -238,5 +214,13 @@
 
   .gallery .gallery__item {
     @include gallery(3 of 12);
+  }
+
+  .found .cards .card {
+    @include gallery(3 of 12);
+  }
+
+  .wanted .cards .card--horizontal {
+    @include gallery(6 of 12);
   }
 }
