@@ -122,37 +122,7 @@
  *
  * @group Basics
  */
-/**
- * Returns "@content" in either a media querie or regular
- * based on if $fix-mqs is set and to what number
- *
- * @param {string} $width - The width unit for single media queries
- * @param {string} $type (min) - Either "min", "max" or "range"
- * @param {string} $width--max (false) - The max width when using the "range" type
- *
- * @example scss
- * breakpoint(600px) { ... }
- * // will return @media screen and (min-width: 600px) { ... }
- *
- * @example scss
- * breakpoint(800px, max) { ... }
- * // will return @media screen and (max-width: 800px) { ... }
- *
- * @example scss
- * breakpoint(600px, range, 800px) { @content }
- * // will return @media screen and (min-width: 600px) and (max-width: 800px) { ... }
- *
- * @group Breakpoint
- */
-/**
- * Returns "@content" based on if $fix-mqs is set and to what number
- *
- * @example scss
- * old-ie { ... }
- *
- * @group Breakpoint
- */
-body, #splash, #intro {
+#wrap, #splash, #intro {
   width: 600px;
   margin: 0 auto; }
 
@@ -166,9 +136,6 @@ form {
 #wrap, #intro {
   border-left: 1px solid gainsboro;
   border-right: 1px solid gainsboro; }
-
-.form__left input {
-  width: 95%; }
 
 * html .navbar__logo {
   padding-top: 10px; }
@@ -188,28 +155,17 @@ form {
 
 .card {
   text-align: left; }
+  .card .card__box {
+    width: 558px; }
   .card .card__image {
-    width: 100%;
-    height: 100%;
-    
-    
-    
-    width: 30.8641975309%;
     float: left;
-    margin-left: 0;
-    
-    
-     }
+    width: 110px; }
+    .card .card__image img {
+      width: 100%;
+      height: 100%; }
   .card .card__metadata {
-    
-    
-    
-    width: 56.7901234568%;
     float: left;
-    margin-left: 3.7037037037%;
-    
-    
-     }
+    width: 418px; }
 
 .button--hamburger {
   display: none; }
@@ -240,5 +196,8 @@ form {
 #splash .nav--horizontal li, #intro .nav--horizontal li {
   display: inline-block; }
 
-#intro .search-box__input {
+.search-box__input {
   width: 534px; }
+
+.well .search-box__input {
+  width: 494px; }

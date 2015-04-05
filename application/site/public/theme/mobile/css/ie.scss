@@ -1,10 +1,7 @@
 @import "../components/illusion/sass/illusion/mixins/basics";
-@import "../components/illusion/sass/illusion/mixins/breakpoint";
-@import "../components/susy/sass/susy";
 @import "utilities/variables";
 
-
-body,
+#wrap,
 #splash,
 #intro {
   width: $breakpoint-beta;
@@ -25,12 +22,6 @@ form {
 #intro {
   border-left: 1px solid darken($grayLighter, 7%);
   border-right: 1px solid darken($grayLighter, 7%);
-}
-
-.form__left {
-  input {
-    width: 95%; // IE6
-  }
 }
 
 // IE6 and below
@@ -64,14 +55,23 @@ form {
 .card {
   text-align: left;
 
+  .card__box {
+    width: $breakpoint-beta - 40px - 2px;
+  }
+
   .card__image {
-    width: 100%; // IE6
-    height: 100%; // IE6
-    @include span(first 4 of 12);
+    float: left;
+    width: 110px;
+
+    img {
+      width: 100%; // IE6
+      height: 100%; // IE6
+    }
   }
 
   .card__metadata {
-    @include span(7 of 12);
+    float: left;
+    width: $breakpoint-beta - 40px - 2px - 110px - 30px;
   }
 }
 
@@ -118,8 +118,12 @@ form {
   }
 }
 
-#intro {
+.search-box__input {
+  width: 534px;
+}
+
+.well {
   .search-box__input {
-    width: 534px;
+    width: 494px;
   }
 }
