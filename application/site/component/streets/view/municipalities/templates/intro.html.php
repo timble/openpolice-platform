@@ -64,17 +64,17 @@
             <? foreach ($newsitems as $item) : ?>
                 <? $article = $item->data; ?>
                 <div class="intro__news__item card">
-                    <a href="<?= $streams[$language]['news'].'/'.$article->id.'-'.$article->slug ?>">
+                    <a class="card__box" href="<?= $streams[$language]['news'].'/'.$article->id.'-'.$article->slug ?>">
+                        <div class="card__image">
                         <? if($article->thumbnail): ?>
                             <img width="400px" height="300px" src="<?= 'http://'.object('request')->getUrl()->getHost().'/files/fed/attachments/'.str_replace('.', '_thumb.', $article->thumbnail) ?>" />
                         <? else : ?>
                             <img src="assets://news/images/placeholder.png" />
                         <? endif ?>
-                        <span class="card__metadata">
-                            <span class="card__metadata--inner">
-                                <span class="card__name"><?= $article->title ?></span>
-                            </span>
-                        </span>
+                        </div>
+                        <div class="card__metadata">
+                            <span class="card__name"><?= $article->title ?></span>
+                        </div>
                     </a>
                 </div>
             <? endforeach ?>

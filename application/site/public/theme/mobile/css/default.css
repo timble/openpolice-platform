@@ -1869,15 +1869,6 @@ button.button, input[type="submit"].button {
 .form__group {
   margin-bottom: 0.75em; }
 
-.form__left {
-  margin-right: 8em; }
-
-.form__right {
-  width: 7em;
-  float: right; }
-  .form__right .button {
-    width: 100%; }
-
 .has-error .form__label {
   color: #a94442; }
 .has-error .form__input, .has-error .select2-default {
