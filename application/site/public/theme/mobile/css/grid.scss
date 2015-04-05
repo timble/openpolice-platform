@@ -138,15 +138,7 @@
   .gallery .gallery__item {
     @include gallery(4 of 12);
   }
-
-  .found .cards .card {
-     @include gallery(3 of 12);
-  }
-
-  .wanted .cards .card--horizontal {
-    @include gallery(6 of 12);
-  }
-
+  
   .intro {
     .intro__news__item {
       @include gallery(4 of 12);
@@ -222,5 +214,13 @@
 
   .gallery .gallery__item {
     @include gallery(3 of 12);
+  }
+
+  .found .cards .card {
+    @include gallery(3 of 12);
+  }
+
+  .wanted .cards .card--horizontal {
+    @include gallery(6 of 12);
   }
 }
