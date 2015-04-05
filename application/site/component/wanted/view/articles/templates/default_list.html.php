@@ -26,7 +26,7 @@
                 </div>
             <? else : ?>
                 <a class="card__box" href="<?= helper('route.article', array('row' => $article)) ?>">
-                    <div class="card__image">
+                    <div class="card__image card__image--wanted">
                         <? if($article->attachments_attachment_id) : ?>
                             <?= helper('com:police.image.thumbnail', array(
                                 'attachment' => $article->attachments_attachment_id,

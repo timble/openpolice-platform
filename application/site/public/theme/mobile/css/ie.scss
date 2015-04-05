@@ -61,11 +61,18 @@ form {
 
   .card__image {
     float: left;
-    width: 110px;
+    width: 112px;
 
     img {
-      width: 100%; // IE6
-      height: 100%; // IE6
+      width: 112px;
+      height: 84px;
+    }
+  }
+
+  .card__image--wanted {
+    img {
+      width: 112px;
+      height: 140px;
     }
   }
 
