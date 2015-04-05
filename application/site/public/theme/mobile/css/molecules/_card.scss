@@ -14,7 +14,8 @@
   }
 
   .card__box {
-    display: inline-block;
+    display: block;
+    @extend .clearfix;
     width: 100%;
     border: 1px solid $color-border;
     border-radius: $border-radius;

@@ -159,9 +159,7 @@ form {
 .card {
   text-align: left; }
   .card .card__box {
-    width: 558px;
-    *display: inline;
-    zoom: 1; }
+    width: 558px; }
   .card .card__image {
     float: left;
     width: 112px; }
