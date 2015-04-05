@@ -159,10 +159,13 @@ form {
     width: 558px; }
   .card .card__image {
     float: left;
-    width: 110px; }
+    width: 112px; }
     .card .card__image img {
-      width: 100%;
-      height: 100%; }
+      width: 112px;
+      height: 84px; }
+  .card .card__image--wanted img {
+    width: 112px;
+    height: 140px; }
   .card .card__metadata {
     float: left;
     width: 418px; }
