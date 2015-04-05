@@ -421,72 +421,6 @@
       
       clear: none; }
 
-  .found .cards .card {
-    width: 22.2222222222%;
-    float: left;
-    
-    
-    
-     }
-    .found .cards .card:nth-child(4n+1) {
-      
-      
-      margin-left: 0;
-      margin-right: -100%;
-      
-      
-      clear: both;
-      margin-left: 0; }
-    .found .cards .card:nth-child(4n+2) {
-      
-      
-      margin-left: 25.9259259259%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-    .found .cards .card:nth-child(4n+3) {
-      
-      
-      margin-left: 51.8518518519%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-    .found .cards .card:nth-child(4n+4) {
-      
-      
-      margin-left: 77.7777777778%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-
-  .wanted .cards .card--horizontal {
-    width: 48.1481481481%;
-    float: left;
-    
-    
-    
-     }
-    .wanted .cards .card--horizontal:nth-child(2n+1) {
-      
-      
-      margin-left: 0;
-      margin-right: -100%;
-      
-      
-      clear: both;
-      margin-left: 0; }
-    .wanted .cards .card--horizontal:nth-child(2n+2) {
-      
-      
-      margin-left: 51.8518518519%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-
   .intro .intro__news__item {
     width: 30.8641975309%;
     float: left;
@@ -741,6 +675,72 @@
       
       
       margin-left: 77.7777777778%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+
+  .found .cards .card {
+    width: 22.2222222222%;
+    float: left;
+    
+    
+    
+     }
+    .found .cards .card:nth-child(4n+1) {
+      
+      
+      margin-left: 0;
+      margin-right: -100%;
+      
+      
+      clear: both;
+      margin-left: 0; }
+    .found .cards .card:nth-child(4n+2) {
+      
+      
+      margin-left: 25.9259259259%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    .found .cards .card:nth-child(4n+3) {
+      
+      
+      margin-left: 51.8518518519%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+    .found .cards .card:nth-child(4n+4) {
+      
+      
+      margin-left: 77.7777777778%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+
+  .wanted .cards .card--horizontal {
+    width: 48.1481481481%;
+    float: left;
+    
+    
+    
+     }
+    .wanted .cards .card--horizontal:nth-child(2n+1) {
+      
+      
+      margin-left: 0;
+      margin-right: -100%;
+      
+      
+      clear: both;
+      margin-left: 0; }
+    .wanted .cards .card--horizontal:nth-child(2n+2) {
+      
+      
+      margin-left: 51.8518518519%;
       margin-right: -100%;
       
       
