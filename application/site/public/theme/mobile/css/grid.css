@@ -28,29 +28,6 @@
  *
  * @group Breakpoint
  */
-@media screen and (min-width: 320px) {
-  .cards .card--horizontal img {
-    
-    
-    
-    width: 30.8641975309%;
-    float: left;
-    margin-left: 0;
-    
-    
-     }
-  .cards .card--horizontal .card__metadata {
-    
-    
-    
-    width: 65.4320987654%;
-    float: left;
-    margin-left: 3.7037037037%;
-    
-    
-     }
- }
-
 @media screen and (min-width: 400px) {
   .found .cards .card {
     width: 48.1481481481%;
@@ -153,31 +130,6 @@
       
       
       margin-left: 69.1358024691%;
-      margin-right: -100%;
-      
-      
-      clear: none; }
-
-  .cards .card--horizontal {
-    width: 48.1481481481%;
-    float: left;
-    
-    
-    
-     }
-    .cards .card--horizontal:nth-child(2n+1) {
-      
-      
-      margin-left: 0;
-      margin-right: -100%;
-      
-      
-      clear: both;
-      margin-left: 0; }
-    .cards .card--horizontal:nth-child(2n+2) {
-      
-      
-      margin-left: 51.8518518519%;
       margin-right: -100%;
       
       
@@ -510,6 +462,31 @@
       
       clear: none; }
 
+  .wanted .cards .card--horizontal {
+    width: 48.1481481481%;
+    float: left;
+    
+    
+    
+     }
+    .wanted .cards .card--horizontal:nth-child(2n+1) {
+      
+      
+      margin-left: 0;
+      margin-right: -100%;
+      
+      
+      clear: both;
+      margin-left: 0; }
+    .wanted .cards .card--horizontal:nth-child(2n+2) {
+      
+      
+      margin-left: 51.8518518519%;
+      margin-right: -100%;
+      
+      
+      clear: none; }
+
   .intro .intro__news__item {
     width: 30.8641975309%;
     float: left;
@@ -614,16 +591,6 @@
     float: left;
     margin-left: 3.7037037037%;
     
-    
-     }
-  .intro .intro__wanted .cards .card--horizontal {
-    
-    
-    
-    width: 100%;
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
     
      }
  }

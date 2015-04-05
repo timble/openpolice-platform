@@ -64,7 +64,7 @@ form {
 .card {
   text-align: left;
 
-  img {
+  .card__image {
     width: 100%; // IE6
     height: 100%; // IE6
     @include span(first 4 of 12);
