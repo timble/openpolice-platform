@@ -1,5 +1,74 @@
 # Changelog
 
+## v2.9
+
+### Site Enhancements
+
+* Added new portal page for the integrated police
+* Added meta description to homepage
+* Added hreflang to the language links
+* Added correct language values (nl-BE, fr-BE & de-BE)
+* Added optional link to a contact on the questions pages
+* Added fallback to domain name language instead of browser language
+* Renamed 'Nouvelles' to 'Actualités'
+* Improved streets autocomplete when returning to previous page
+* Single column in 'Your district' on non-full width screens
+* Truncate zone names on small screens
+* Merged 'District officer' and 'BIN' pages
+* Break out of an iFrame
+
+### Administrator Enhancements
+
+* Added Youtube embed in news and about articles
+* Added publish on field to press articles
+* Found on date is now required and 'today' as default
+* Fixed scrolling issue
+* Improved analytics screen
+
+### Bug Fixes
+
+* Fixed issue when referrer Cookie is empty by adding a fallback
+* Fixed news links in multilingual sites
+* Fixed sluggable behavior in multilingual setup
+* Fixed layout issue when searching questions
+* Fixed multiple minor multilingual improvements
+* Fixed thumbnails on IE8
+* Fixed parsing issue of the route when it contained the sitename
+* Fixed sorting of press articles by published on date
+* Fixed navigation items that got wrapped to a new line on IE8 and lower
+* Fixed missing city names in French
+* Fixed missing streets in traffic results
+
+### Refactoring
+
+* Streets database refactor, from multiple tables to one `streets_relations` table
+
+### Development
+
+* Added BrowserSync to Grunt
+* Refactored to Libsass for faster compilation
+
+### Sites
+
+Release of:
+
+* [Federale Politie](http://www.politie.be/fed/nl)
+* [Police Hesbaye-Ouest](http://www.policelocale.be/5293)
+* [Police Famenne-Ardenne](http://www.policelocale.be/5300)
+* [Police Des Trieux](http://www.policelocale.be/5336)
+* [Politie Ukkel/WB/Oudergem](http://www.lokalepolitie.be/5342)
+* [Politie Balen-Dessel-Mol](http://www.lokalepolitie.be/5368)
+* [Politie Neteland](http://www.lokalepolitie.be/5369)
+* [Politie West-Limburg](http://www.lokalepolitie.be/5374)
+* [Politie Noordoost-Limburg](http://www.lokalepolitie.be/5385)
+* [Politie HerKo](http://www.lokalepolitie.be/5393)
+* [Politie Aalter-Knesselare](http://www.lokalepolitie.be/5423)
+* [Politie Sint-Niklaas](http://www.lokalepolitie.be/5432)
+* [Politie Blankenberge/Zuienkerke](http://www.lokalepolitie.be/5445)
+* [Politie MIRA](http://www.lokalepolitie.be/5457)
+* [Politie Waasland-Noord](http://www.lokalepolitie.be/5904)
+
+
 ## v2.8
 
 ### Site Enhancements
