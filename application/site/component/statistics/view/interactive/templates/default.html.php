@@ -7,5 +7,7 @@
 </div>
 
 <? if($graph) : ?>
-<iframe frameborder="0" width="100%" height="680" src="/files/fed/crime/<?= $graph ?>.html?lang=<?= $language ?>"></iframe>
+<iframe frameborder="0" width="100%" height="680" src="/files/fed/crime/<?= $graph ?>.html?lang=<?= $language->slug ?>"></iframe>
 <? endif ?>
+
+<?= import('com:statistics.view.cities.default_footer.html', array('language' => $language)) ?>

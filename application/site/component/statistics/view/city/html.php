@@ -19,11 +19,10 @@ class StatisticsViewCityHtml extends Library\ViewHtml
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($city->title, '');
 
-        $languages      = $this->getObject('application.languages');
-        $this->active   = $languages->getActive();
+        $languages          = $this->getObject('application.languages');
+        $this->language     = $languages->getActive();
 
-        $this->notes = array('abbreviations', 'description', 'context', 'definitions', 'modifications', 'explanatory note', 'pv register');
-
+        $this->notes = array('warning', 'abbreviations', 'description', 'context', 'definitions', 'modifications', 'explanatory note', 'pv register');
 
         return parent::render();
     }

@@ -14,7 +14,7 @@ class StatisticsViewInteractiveHtml extends Library\ViewHtml
     public function render()
     {
         $languages      = $this->getObject('application.languages');
-        $this->language = $languages->getActive()->slug;
+        $this->language = $languages->getActive();
 
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem('Interactive', '');
