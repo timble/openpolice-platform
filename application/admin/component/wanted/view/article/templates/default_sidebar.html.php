@@ -79,6 +79,12 @@
             <?= helper('select.booleanlist', array('name' => 'params[childfocus]', 'selected' => $article->params['childfocus'])) ?>
         </div>
     </div>
+    <div>
+        <label for="params[requestor]"><?= translate('Requestor') ?></label>
+        <div>
+            <input type="text" name="params[requestor]" value="<?= $article->params['requestor'] ?>" />
+        </div>
+    </div>
 </fieldset>
 
 <fieldset>
