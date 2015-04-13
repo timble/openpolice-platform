@@ -54,6 +54,12 @@
         </dl>
 
         <?= $article->text ?>
+
+        <? if($article->params->get('requestor', false)) : ?>
+        <p class="text--small">
+            <?= sprintf(translate('Spread on %s at the request of %s'), date(array('date' => $article->published_on, 'format' => 'd/m/Y')), $article->params->get('requestor')) ?>.
+        </p>
+        <? endif ?>
     </div>
 
     <? if($article->isAttachable()) : ?>
