@@ -43,7 +43,7 @@
     </h1>
     <p><?= translate('A neighborhood information network is a partnership between citizens and the police within a certain area'); ?>. <a href="/<?= $site ?>/<?= strtolower(translate('questions')) ?>/<?= translate('neighborhood-information-network') ?>"><?= translate('More information') ?></a>.</p>
     <? if(isset($bin)) : ?>
-        <p><?= translate('Contact your coordinator to join') ?>.</p>
+        <p><?= translate('Contact your coordinator to join') ?>:</p>
         <?= import('default_bin.html', array('bin' => $bin)); ?>
     <? endif; ?>
     <? if(!isset($bin)) : ?>
