@@ -12,10 +12,10 @@
 
 <? $articles = object('com:traffic.model.articles')->street($street->id)->getRowset(); ?>
 
-<? $categories = object('com:categories.model.categories')->table('traffic')->getRowset(); ?>
+<? $categories = object('com:traffic.model.categories')->getRowset(); ?>
 
 <? foreach($categories as $category) : ?>
-    <? $items = $articles->find(array('categories_category_id' => $category->id)) ?>
+    <? $items = $articles->find(array('traffic_category_id' => $category->id)) ?>
     <? if(count($items)) : ?>
     <h2><?= $category->title ?></h2>
     <? foreach($items as $article) : ?>

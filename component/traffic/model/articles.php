@@ -18,6 +18,7 @@ class ModelArticles extends Library\ModelTable
 
 		$this->getState()
 		    ->insert('published' , 'int')
+		    ->insert('street' , 'int')
             ->insert('category' , 'string')
             ->insert('type' , 'string')
 		    ->insert('date' , 'string')
@@ -30,6 +31,12 @@ class ModelArticles extends Library\ModelTable
         $state = $this->getState();
 
         $query->join(array('categories'  => 'traffic_categories'), 'categories.traffic_category_id = tbl.traffic_category_id');
+
+        if(is_numeric($state->street)){
+            $query->join(array('street_relation' => 'streets_relations'), 'street_relation.row = tbl.traffic_article_id')
+                ->join(array('street' => 'data.streets'), 'street.streets_street_identifier = street_relation.streets_street_identifier');
+
+        }
     }
 	
 	protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
@@ -64,6 +71,11 @@ class ModelArticles extends Library\ModelTable
         if ($state->results) {
             $query->where('(tbl.controlled IS NOT NULL AND tbl.in_violation IS NOT NULL)');
             $query->where('tbl.end_on < :past')->bind(array('past' => date('Y-m-d')));
+        }
+
+        if(is_numeric($state->street)){
+            $query->where('street_relation.table = :table')->bind(array('table' => 'traffic'));
+            $query->where('street.streets_street_identifier = :street')->bind(array('street' => $state->street));
         }
 	}
 }
