@@ -104,7 +104,7 @@
 
                                     <div class="card__metadata">
                                         <span class="card__name"><?= escape($article->title) ?></span>
-                                        <span class="card__date"><?= date(array('date' => $article->date, 'format' => 'd/m/Y')) ?>
+                                        <span class="card__date"><?= date(array('date' => $article->date, 'format' => translate('DATE_FORMAT_LC4'))) ?>
                                             <? $params = json_decode($article->params); ?>
                                             <? if(isset($params->place) || $article->city) : ?>
                                                 <span class="card__place"><?= $article->city ? $article->city : $params->place ?></span>

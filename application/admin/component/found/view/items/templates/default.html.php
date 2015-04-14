@@ -70,7 +70,7 @@
                     </a>
                 </td>
                 <td>
-                    <?= helper('date.format', array('date'=> $item->found_on, 'format' => 'D d/m/Y')) ?>
+                    <?= helper('date.format', array('date'=> $item->found_on, 'format' => translate('DATE_FORMAT_LC4'))) ?>
                 </td>
                 <td>
                     <?= $item->tracking_number ?>

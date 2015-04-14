@@ -46,7 +46,7 @@
 
         <dl>
             <dt><?= translate('Date') ?>:</dt>
-            <dd><?= date(array('date' => $article->date, 'format' => 'd/m/Y')) ?></dd>
+            <dd><?= date(array('date' => $article->date, 'format' => translate('DATE_FORMAT_LC4'))) ?></dd>
             <? if($article->city || $article->params->get('place', false)) : ?>
             <dt><?= translate('Place') ?>:</dt>
             <dd><?= $article->city ? $article->city : $article->params->get('place') ?></dd>

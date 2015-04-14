@@ -82,7 +82,7 @@
                 </td>
                 <td>
                     <? if($article->publish_on || $article->published_on) : ?>
-                        <?= helper('date.format', array('date'=> $article->publish_on ? $article->publish_on : $article->published_on, 'format' => 'D d/m/Y - G:i')) ?>
+                        <?= helper('date.format', array('date'=> $article->publish_on ? $article->publish_on : $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?>
                     <? endif ?>
                 </td>
                 <? if($article->isTranslatable()) : ?>

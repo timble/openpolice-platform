@@ -37,7 +37,7 @@
                     </div>
                     <div class="card__metadata">
                         <span class="card__name"><?= escape($item->title) ?></span>
-                        <span class="card__date"><?= date(array('date' => $item->found_on, 'format' => 'd/m/y')) ?></span>
+                        <span class="card__date"><?= date(array('date' => $item->found_on, 'format' => translate('DATE_FORMAT_LC4'))) ?></span>
                     </div>
                 </a>
             </li>
