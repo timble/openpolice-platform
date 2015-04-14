@@ -15,7 +15,6 @@
 </ul>
 <? endif; ?>
 
-<h2><?= translate('Coordinator') ?></h2>
 <h3><?= $bin->coordinator_firstname .' '.$bin->coordinator_lastname ?></h3>
 
 <address class="vcard">

@@ -15,7 +15,7 @@
 
     <dl>
         <dt><?= translate('Found on') ?>:</dt>
-        <dd><?= date(array('date' => $item->found_on, 'format' => 'd/m/y')) ?></dd>
+        <dd><?= date(array('date' => $item->found_on, 'format' => translate('DATE_FORMAT_LC4'))) ?></dd>
         <dt><?= translate('Find place') ?>:</dt>
         <dd><?= $item->street ? $item->street : translate('Unknown') ?></dd>
         <dt><?= translate('Tracking number') ?>:</dt>
