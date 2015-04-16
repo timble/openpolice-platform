@@ -10,6 +10,19 @@
 
 <ktml:module position="left">
     <?= import('list.html') ?>
+
+    <h3>Nieuwsbrief</h3>
+    <form action="http://fedpol.fb.emailing.belgium.be/c253/h89ee4" method="post" name="">
+        <p><input name="id" type="hidden" value="506"><span style="font-size:14px;">Schrijf u in om al de opsporingsberichten in uw mailbox te ontvangen.</span></p>
+
+        <p><input name="email" type="text" value="" placeholder="naam@email.be"></p>
+
+        <p><input class="button button--primary" name="action_subscribe" type="submit" value="Inschrijving"></p>
+
+        <input name="type" type="hidden" value="0">
+        <input name="ret" type="hidden" value="http://fedpol.fb.emailing.belgium.be/c250/h0d438">
+        <input name="status" type="hidden" value="0">
+    </form>
 </ktml:module>
 
 <? foreach($sections as $section) : ?>
