@@ -2,8 +2,11 @@
   @extend .clearfix;
   margin-bottom: $gutter-width;
 
-  p img[align="right"] {
-    margin: 0 0 $line-height $line-height;
+  p img[align="right"],
+  p img[align="left"] {
+    margin-top: $line-height;
+    margin-bottom: $line-height;
+    width: 100%;
   }
 }
 
@@ -57,5 +60,23 @@
     width: 40%;
     max-width: 200px;
     margin: 0 0 $line-height $line-height;
+  }
+
+  .article {
+    p img[align="right"],
+    p img[align="left"] {
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+      width: 40%;
+      max-width: 200px;
+    }
+
+    p img[align="right"] {
+      margin-left: $line-height;
+    }
+
+    p img[align="left"] {
+      margin-right: $line-height;
+    }
   }
 }

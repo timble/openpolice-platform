@@ -140,6 +140,15 @@ form {
 * html .navbar__logo {
   padding-top: 10px; }
 
+.article p img[align="right"], .article p img[align="left"] {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  width: 200px; }
+.article p img[align="right"] {
+  margin-left: 1.5em; }
+.article p img[align="left"] {
+  margin-right: 1.5em; }
+
 .article__thumbnail {
   float: right;
   width: 200px;

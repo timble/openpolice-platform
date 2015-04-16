@@ -29,6 +29,23 @@ form {
   padding-top: 10px; // IE6
 }
 
+.article {
+    p img[align="right"],
+    p img[align="left"] {
+      margin-top: $line-height;
+      margin-bottom: $line-height;
+      width: 200px;
+    }
+
+    p img[align="right"] {
+      margin-left: $line-height;
+    }
+
+    p img[align="left"] {
+      margin-right: $line-height;
+    }
+}
+
 // Right alignment of the thumbnail, on mobile it is on top
 .article__thumbnail {
   float: right;
