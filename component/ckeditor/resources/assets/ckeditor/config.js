@@ -109,6 +109,14 @@ CKEDITOR.editorConfig = function( config ) {
                                 if (height) {
                                     element.attributes.height = height;
                                 }
+
+                                // Get the float value from the style.
+                                match = /(?:^|\s)float\s*:\s*(\w+)/i.exec( style );
+                                var float = match && match[1];
+
+                                if (float) {
+                                    element.attributes.align = float;
+                                }
                             }
                         }
 
