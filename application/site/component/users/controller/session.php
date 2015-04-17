@@ -56,6 +56,11 @@ class UsersControllerSession extends Library\ControllerModel
 
                 if(!$password->verify($context->request->data->get('password', 'string'))) {
                     throw new Library\ControllerExceptionUnauthorized('Wrong password');
+
+                    //Count login attempts
+                    $user->login_attempts += 1;
+                    $user->enabled = ($user->login_attempts >= $params->get('maximum_login_attempts', '5')) ?  0 : $user->enabled;
+                    $user->save();
                 }
             }
 
@@ -66,6 +71,10 @@ class UsersControllerSession extends Library\ControllerModel
             $context->user->values($user->getSessionData(true));
         }
         else throw new Library\ControllerExceptionUnauthorized('Wrong email');
+
+        //Reset login attempts on successful authentication
+        $user->login_attempts = 0;
+        $user->save();
 
         return true;
     }

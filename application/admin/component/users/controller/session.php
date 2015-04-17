@@ -52,6 +52,9 @@ class UsersControllerSession extends Library\ControllerModel
         //Load the user
         $user = $this->getObject('com:users.model.users')->email($context->request->data->get('email', 'email'))->getRow();
 
+        //Load parameters
+        $params = $this->getObject('application.extensions')->users->params;
+
         if(!$user->isNew())
         {
             //Authenticate the user
@@ -59,7 +62,13 @@ class UsersControllerSession extends Library\ControllerModel
             {
                 $password = $user->getPassword();
 
-                if(!$password->verify($context->request->data->get('password', 'string'))) {
+                if(!$password->verify($context->request->data->get('password', 'string')))
+                {
+                    //Count login attempts
+                    $user->login_attempts += 1;
+                    $user->enabled = ($user->login_attempts >= $params->get('maximum_login_attempts', '5')) ?  0 : $user->enabled;
+                    $user->save();
+
                     throw new Library\ControllerExceptionUnauthorized('Wrong password');
                 }
             }
@@ -72,6 +81,10 @@ class UsersControllerSession extends Library\ControllerModel
             $context->user->values($user->getSessionData(true));
         }
         else throw new Library\ControllerExceptionUnauthorized('Wrong email');
+
+        //Reset login attempts on successful authentication
+        $user->login_attempts = 0;
+        $user->save();
 
         return true;
     }
