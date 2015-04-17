@@ -53,8 +53,11 @@ class UsersControllerSession extends Library\ControllerModel
 
     public function authorize(Library\CommandContext $context)
     {
-        //If the user is blocked, redirect with an error
-        if (!$context->user->isEnabled()) {
+        // If the user is blocked, destroy the session and redirect with an error
+        if (!$context->user->isEnabled())
+        {
+            $context->user->session->destroy();
+            
             throw new Library\ControllerExceptionForbidden('Account disabled');
         }
 
