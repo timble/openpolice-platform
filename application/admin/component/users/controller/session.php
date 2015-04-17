@@ -66,7 +66,7 @@ class UsersControllerSession extends Library\ControllerModel
                 {
                     //Count login attempts
                     $user->login_attempts += 1;
-                    $user->enabled = ($user->login_attempts >= $params->get('maximum_login_attempts', '5')) ?  0 : $user->enabled;
+                    $user->enabled = ($user->login_attempts >= $params->get('maximum_login_attempts', 5)) ?  0 : $user->enabled;
                     $user->save();
 
                     throw new Library\ControllerExceptionUnauthorized('Wrong password');
