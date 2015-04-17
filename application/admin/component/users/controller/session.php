@@ -24,9 +24,6 @@ class UsersControllerSession extends Library\ControllerModel
         //Only authenticate POST requests
         $this->registerCallback('before.add' , array($this, 'authenticate'));
 
-        //Authorize the user before adding
-        $this->registerCallback('before.add' , array($this, 'authorize'));
-
         //Lock the referrer to prevent it from being overridden for read requests
         if ($this->isDispatched() && !$this->getRequest()->isAjax())
         {
@@ -65,6 +62,11 @@ class UsersControllerSession extends Library\ControllerModel
             }
             else throw new Library\ControllerExceptionUnauthorized('Wrong email');
 
+            //Check if user is enabled
+            if (!$user->enabled) {
+                throw new Library\ControllerExceptionUnauthorized('Account disabled');
+            }
+
             //Start the session (if not started already)
             $context->user->session->start();
 
@@ -72,16 +74,6 @@ class UsersControllerSession extends Library\ControllerModel
             $context->user->values($user->getSessionData(true));
         }
         else throw new Library\ControllerExceptionUnauthorized('Wrong email');
-
-        return true;
-    }
-
-    public function authorize(Library\CommandContext $context)
-    {
-        //If the user is blocked, redirect with an error
-        if (!$context->user->isEnabled()) {
-            throw new Library\ControllerExceptionForbidden('Account disabled');
-        }
 
         return true;
     }
