@@ -39,7 +39,7 @@ class UsersControllerSession extends Library\ControllerModel
 
             //Check if user is enabled
             if (!$user->enabled) {
-                throw new Library\ControllerExceptionRequestNotAuthenticated('Account disabled');
+                throw new Library\ControllerExceptionUnauthorized('Account disabled');
             }
 
             //Start the session (if not started already)
