@@ -40,25 +40,54 @@ class UsersControllerSession extends Library\ControllerModel
 
     public function authenticate(Library\CommandContext $context)
     {
+        //Load the user
         $user = $this->getObject('com:users.model.users')
             ->email($context->request->data->get('email', 'email'))
             ->getRow();
 
+        //Load parameters
+        $params = $this->getObject('application.extensions')->users->params;
+
+        $max_login_attempts = (int) $params->get('maximum_login_attempts', 5);
+        $lockout_time       = (int) $params->get('lockout_time', 900);
+
         if(!$user->isNew())
         {
-
             //Authenticate the user
             if($user->id)
             {
+                $locked_out = ($user->login_attempts >= $max_login_attempts);
+
+                if ($locked_out)
+                {
+                    $expired = (strtotime(gmdate('Y-m-d H:i:s')) - strtotime($user->last_login_attempt) < $lockout_time);
+
+                    if ($expired) {
+                        throw new Library\ControllerExceptionUnauthorized('You have been temporarily locked out');
+                    }
+
+                    //Reset the attempt count as soon as lock-out expires to prevent being immediately locked out again
+                    $user->login_attempts = 0;
+                }
+
                 $password = $user->getPassword();
 
-                if(!$password->verify($context->request->data->get('password', 'string'))) {
-                    throw new Library\ControllerExceptionUnauthorized('Wrong password');
-
+                if(!$password->verify($context->request->data->get('password', 'string')))
+                {
                     //Count login attempts
-                    $user->login_attempts += 1;
-                    $user->enabled = ($user->login_attempts >= $params->get('maximum_login_attempts', 5)) ?  0 : $user->enabled;
+                    $user->setData(array(
+                        'login_attempts'     => $user->login_attempts + 1,
+                        'last_login_attempt' => gmdate('Y-m-d H:i:s')
+                    ));
+
                     $user->save();
+
+                    if ($user->login_attempts >= $max_login_attempts) {
+                        $message = 'Too many failed login attempts. You have been temporarily locked out of your account';
+                    }
+                    else $message = 'Wrong password';
+
+                    throw new Library\ControllerExceptionUnauthorized($message);
                 }
             }
 
@@ -76,7 +105,11 @@ class UsersControllerSession extends Library\ControllerModel
         else throw new Library\ControllerExceptionUnauthorized('Wrong email');
 
         //Reset login attempts on successful authentication
-        $user->login_attempts = 0;
+        $user->setData(array(
+            'login_attempts'     => 0,
+            'last_login_attempt' => ''
+        ));
+
         $user->save();
 
         return true;
