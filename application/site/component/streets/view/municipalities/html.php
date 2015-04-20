@@ -85,7 +85,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
 
         foreach ($this->sections as $section => $config)
         {
-            $url = $this->streams[$this->language]['wanted'] . '.json?view=articles&limit=4&section='.$config['section'];
+            $url = $this->streams[$this->language]['wanted'] . '.json?view=articles&limit=4&solved=0&section='.$config['section'];
 
             $wanteditems[$section] = $this->getObject('com:streets.model.streams')
                                         ->url($url)
