@@ -9,7 +9,7 @@ class AddLoginAttempts extends Migration
      */
     public function up()
     {
-        $this->getZones()->append(array('manager' => 'Manager'));
+        $this->getZones()->append('manager', 'Manager');
 
         $this->_queries = <<<EOL
 ALTER TABLE `users` ADD `login_attempts` INT NOT NULL  DEFAULT 0 AFTER `send_email`;
@@ -26,7 +26,7 @@ EOL;
      */
     public function down()
     {
-        $this->getZones()->append(array('manager' => 'Manager'));
+        $this->getZones()->append('manager', 'Manager');
 
         $this->_queries = <<<EOL
 ALTER TABLE `users` DROP `login_attempts`;
