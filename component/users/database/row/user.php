@@ -136,27 +136,6 @@ class DatabaseRowUser extends Library\DatabaseRowTable
             $this->_role = null;
         }
 
-        if (!$this->isNew())
-        {
-            // Load the current user row for checks.
-            $current = $this->getObject('com:users.database.table.users')
-                ->select($this->id, Library\Database::FETCH_ROW);
-
-            // There must be at least one enabled super administrator
-            if (($this->isModified('role_id') || ($this->isModified('enabled') && !$this->enabled)) && $current->role_id == 25)
-            {
-                $query = $this->getObject('lib:database.query.select')->where('enabled = :enabled')
-                    ->where('users_role_id = :role_id')->bind(array('enabled' => 1, 'role_id' => 25));
-
-                if ($this->getObject('com:users.database.table.users')->count($query) <= 1)
-                {
-                    $this->setStatus(Library\Database::STATUS_FAILED);
-                    $this->setStatusMessage('There must be at least one enabled super administrator');
-                    return false;
-                }
-            }
-        }
-
         return parent::save();
     }
 
