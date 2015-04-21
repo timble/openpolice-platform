@@ -49,6 +49,15 @@
             </li>
         <? endforeach ?>
     </ul>
+
+    <h3><?= translate('National') ?></h3>
+    <ul class="nav nav--pills">
+        <li>
+            <a download="2014-1-<?= object('lib:filter.slug')->sanitize('belgium').'_'.$language->slug ?>" href="<?= 'files://'.'crime/2014-1/national/'.$language->slug.'.pdf' ?>">
+                <?= translate('Belgium') ?> (pdf, 1,5 MB)
+            </a>
+        </li>
+    </ul>
 </div>
 
 <hr />
