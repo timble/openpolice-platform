@@ -27,7 +27,7 @@ class StatisticsViewCityHtml extends Library\ViewHtml
             $this->language->slug = 'fr';
         }
 
-        $this->notes = array('abbreviations', 'description', 'context', 'definitions', 'modifications', 'explanatory note', 'pv register');
+        $this->notes = array('warning', 'abbreviations', 'description', 'context', 'definitions', 'modifications', 'explanatory note', 'pv register');
 
         return parent::render();
     }
