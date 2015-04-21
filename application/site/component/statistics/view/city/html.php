@@ -22,6 +22,11 @@ class StatisticsViewCityHtml extends Library\ViewHtml
         $languages          = $this->getObject('application.languages');
         $this->language     = $languages->getActive();
 
+        if($this->language->slug == 'de')
+        {
+            $this->language->slug = 'fr';
+        }
+
         $this->notes = array('warning', 'abbreviations', 'description', 'context', 'definitions', 'modifications', 'explanatory note', 'pv register');
 
         return parent::render();
