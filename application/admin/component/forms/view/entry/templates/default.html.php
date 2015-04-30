@@ -18,9 +18,23 @@
 
 <form action="" method="post" id="form-form" class="-koowa-form">
     <div class="main">
+        <div class="title">
+            <?= $entry->form ?>
+        </div>
+
         <div class="scrollable">
-            <?= $entry->email ?>
-            <?= $entry->text ?>
+            <dl>
+                <dt><?= translate('Name') ?></dt>
+                <dd><?= $entry->name ?></dd>
+
+                <dt><?= translate('Email') ?></dt>
+                <dd><?= $entry->email ?></dd>
+
+                <? foreach(json_decode($entry->text) as $key => $value) : ?>
+                <dt><?= $key ?></dt>
+                <dd><?= $value ?></dd>
+                <? endforeach ?>
+            </dl>
         </div>
     </div>
 </form>

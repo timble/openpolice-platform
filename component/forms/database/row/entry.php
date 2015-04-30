@@ -12,8 +12,8 @@ use Nooku\Library;
 
 class DatabaseRowEntry extends Library\DatabaseRowTable
 {
-    public function save() {
-
+    public function save()
+    {
         $text = array();
 
         foreach($this->_data as $key => $value)
