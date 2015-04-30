@@ -16,7 +16,6 @@ CREATE TABLE `forms` (
   `forms_form_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` text NOT NULL,
   `slug` varchar(250) DEFAULT NULL,
-  `fields` mediumtext NOT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0',
   `created_on` datetime DEFAULT NULL,
   `created_by` int(11) unsigned NOT NULL DEFAULT '0',
@@ -27,7 +26,7 @@ CREATE TABLE `forms` (
   `params` text,
   PRIMARY KEY (`forms_form_id`),
   UNIQUE KEY `slug` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Create syntax for TABLE 'forms_entries'
 CREATE TABLE `forms_entries` (

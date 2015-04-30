@@ -11,54 +11,68 @@ use Nooku\Library;
 
 class FormsTemplateHelperString extends Library\TemplateHelperDefault
 {
-    public function textarea($config = array())
+    public function element($config = array())
     {
         $config   = new Library\ObjectConfig($config);
+        $config->append(array(
+            'element' => 'input',
+            'attribs'	=> array(
+                'name' => $this->getObject('lib:filter.slug')->sanitize($config->label),
+                'type' => 'text',
+                'value' => ''
+            )
+        ))->append(array(
+            'attribs'	=> array(
+                'id' => $config->attribs->name,
+            )
+        ));
 
-        $field = $config->field;
-        $key = $config->key;
-
-        $html = '<label>'.$field->label.'</label>';
-        $html .= '<textarea name="text['.$key.']">Enter text here...</textarea>';
+        $html = $this->{$config->element}($config);
 
         return $html;
     }
 
-    public function email($config = array())
+    public function input($config)
     {
-        $config   = new Library\ObjectConfig($config);
+        if($config->attribs->type == 'checkbox' || $config->attribs->type == 'radio')
+        {
+            return $this->optionlist($config);
+        } else {
+            $html = '<label for="'.$config->attribs->id.'">'.$this->translate($config->label).'</label>';
+            $html .= '<input '.$this->buildAttributes($config->attribs).' />';
 
-        $field = $config->field;
-        $key = $config->key;
+            return $html;
+        }
+    }
 
-        $html = '<label>'.$field->label.'</label>';
-        $html .= '<input type="email" name="'.$key.'" value="" />';
+    public function textarea($config)
+    {
+        $html = '<label for="'.$config->attribs->id.'">'.$this->translate($config->label).'</label>';
+        $html .= '<textarea '.$this->buildAttributes($config->attribs).'"></textarea>';
 
         return $html;
     }
 
-    public function text($config = array())
+    public function optionlist($config)
     {
-        $config   = new Library\ObjectConfig($config);
+        if($config->attribs->type == 'checkbox')
+        {
+            $config->attribs->name = $config->attribs->name.'[]';
+        }
 
-        $field = $config->field;
-        $key = $config->key;
+        $html = '<fieldset>';
+        $html .= '<legend>'.$config->label.'</legend>';
 
-        $html = '<label>'.$field->label.'</label>';
-        $html .= '<input type="text" name="text['.$key.']" value="" />';
+        foreach($config->options as $option)
+        {
+            $config->attribs->id = $this->getObject('lib:filter.slug')->sanitize($option);
+            $config->attribs->value = $option;
 
-        return $html;
-    }
+            $html .= '<input '.$this->buildAttributes($config->attribs).' />';
+            $html .= '<label for="'.$config->attribs->id.'">'.$this->translate($option).'</label>';
+        }
 
-    public function checkbox($config = array())
-    {
-        $config   = new Library\ObjectConfig($config);
-
-        $field  = $config->field;
-        $key    = $config->key;
-
-        $html = '<label>'.$field->label.'</label>';
-        $html .= '<input type="checkbox" name="text['.$key.']" value="" />';
+        $html .= '</fieldset>';
 
         return $html;
     }

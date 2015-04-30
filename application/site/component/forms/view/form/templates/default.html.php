@@ -19,15 +19,4 @@
     </h1>
 </header>
 
-<form action="?view=entry" method="post" class="-koowa-form">
-    <input type="hidden" name="forms_form_id" value="<?= $form->id ?>" />
-
-    <? foreach($fields as $key => $field) : ?>
-        <?= helper('string.'.$field->type, array('field' => $field, 'key' => $key)); ?>
-    <? endforeach ?>
-
-    <div class="form-actions">
-        <button class="btn btn-primary" type="submit"><?= translate('Send'); ?></button>
-    </div>
-</form>
-
+<?= import($form->id.'.html') ?>
