@@ -15,4 +15,14 @@ class FormsControllerPermissionEntry extends ApplicationControllerPermissionAbst
     {
         return true;
     }
+
+    public function canBrowse()
+    {
+        return false;
+    }
+
+    public function canRead()
+    {
+        return false;
+    }
 }
