@@ -14,6 +14,11 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
 {
     public function save()
     {
+        $validation = true;
+
+        // Validate the reCaptcha response
+        $validation = $this->recaptcha($this->_data['g-recaptcha-response']);
+
         $text = array();
 
         foreach($this->_data as $key => $value)
@@ -29,12 +34,10 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
         // enable user error handling
         libxml_use_internal_errors(true);
 
-        $html = file_get_contents('http://police.dev/5388/forms/voetbalfraude');
+        $html = file_get_contents('http://police.dev/5388/forms?view=form&id='.$this->forms_form_id);
 
         $dom = new \DOMDocument();
         $dom->loadHTML($html);
-
-        $validation = true;
 
         foreach($dom->getElementsByTagName('input') as $element)
         {
@@ -60,5 +63,22 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
         }
 
         return false;
+    }
+
+    public function recaptcha($gRecaptchaResponse, $remoteIp = false)
+    {
+        require_once(JPATH_VENDOR . '/autoload.php');
+
+        $recaptcha = new \ReCaptcha\ReCaptcha(\JFactory::getConfig()->getValue('config.reCaptchaSecret'));
+        $response = $recaptcha->verify($gRecaptchaResponse, $remoteIp);
+
+        if ($response->isSuccess())
+        {
+            return true;
+        } else {
+            $errors = $response->getErrorCodes();
+        }
+
+        return $errors;
     }
 }
