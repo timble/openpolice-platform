@@ -13,7 +13,7 @@
     <?= helper('string.element', array('element' => 'textarea', 'label' => 'Message', 'attribs' => array('rows' => '5'))); ?>
     <?= helper('string.element', array('label' => 'Identity protection', 'attribs' => array('type' => 'checkbox'), 'options' => array('I require the protection of my identity data'))); ?>
 
-    <div class="g-recaptcha" data-sitekey="6LcvTgYTAAAAALXwjXJdbza7S-7otdpk46XRVgIO"></div>
+    <div class="g-recaptcha" data-sitekey="<?= \JFactory::getConfig()->getValue('config.reCaptchaSiteKey') ?>"></div>
 
     <div class="form__actions">
         <button class="button button--primary" type="submit"><?= translate('Send'); ?></button>

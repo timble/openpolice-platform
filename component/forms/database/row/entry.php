@@ -69,7 +69,7 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
     {
         require_once(JPATH_VENDOR . '/autoload.php');
 
-        $recaptcha = new \ReCaptcha\ReCaptcha(\JFactory::getConfig()->getValue('config.reCaptchaSecret'));
+        $recaptcha = new \ReCaptcha\ReCaptcha(\JFactory::getConfig()->getValue('config.reCaptchaSecretKey'));
         $response = $recaptcha->verify($gRecaptchaResponse, $remoteIp);
 
         if ($response->isSuccess())
