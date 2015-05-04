@@ -11,3 +11,30 @@
 .has-error {
   @include form-control-validation(#a94442, #a94442, #f2dede);
 }
+
+.forms {
+  .form__group {
+    max-width: 400px;
+
+    textarea {
+      max-width: 100%;
+    }
+  }
+
+  .form__checkbox,
+  .form__radio {
+    input {
+      width: auto;
+      height: auto;
+    }
+
+    label {
+      display: inline-block;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  .form__actions {
+    margin-top: $grid-padding * 2;
+  }
+}
