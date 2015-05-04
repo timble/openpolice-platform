@@ -160,7 +160,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
             'de' => array(
                 'federal' => array('name' => 'Föderale Polizei', 'url' => '/fed/de', 'description' => 'Auf der föderalen Ebene beschäftigt sich ein Polizeikorps, die föderale Polizei, mit der spezialisierten Polizeiarbeit und den Unterstützungsaufträgen.'),
                 'local' => array('name' => 'Lokale Polizei ', 'url' => 'http://www.lokalepolizei.be/zones', 'description' => 'Auf lokaler Ebene ist die Polizei in 192 Polizeizonen aufgeteilt. Ihre lokale Polizei ist der erste Kontakt mit der Polizei.'),
-                'help' => array('name' => 'Notrufnummern', 'url' => '/fed/de/kontakt/notrufnummern', 'description' => 'Ein Notfall? In der Liste finden Sie die Notrufnummern, die Hilfsdienste und andere nützliche Telefonnummern'),
+                'help' => array('name' => 'Notrufnummern', 'url' => '/fed/de/kontakt/notrufnummern', 'description' => 'Ein Notfall? In der Liste finden Sie die Notrufnummern, die Hilfsdienste und andere nützliche Telefonnummern.'),
                 'wanted' => array('name' => 'Forschungsansicht', 'url' => '/fed/de/avis-de-recherche', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Online Angabe', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online Bagatelldelikte Anzeige erstatten, Ihr Alarmsystem melden und während Ihres Urlaubs oder Ihrer Abwesendheid für Ihr Zuhause Polizeiüberwachung beantragen.'),
             ),
