@@ -17,6 +17,7 @@ CREATE TABLE `forms` (
   `title` text NOT NULL,
   `slug` varchar(250) DEFAULT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0',
+  `text` mediumtext,
   `created_on` datetime DEFAULT NULL,
   `created_by` int(11) unsigned NOT NULL DEFAULT '0',
   `modified_on` datetime DEFAULT NULL,

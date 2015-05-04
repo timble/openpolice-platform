@@ -28,8 +28,16 @@
             </div>
         </div>
 
-        <div class="scrollable">
-
-        </div>
+        <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $form->text, 'attribs' => array('class' => 'ckeditor-required'))) ?>
+    </div>
+    <div class="sidebar">
+        <?= import('default_sidebar.html'); ?>
     </div>
 </form>
+
+<script data-inline>
+    CKEDITOR.replace( 'text', {
+        toolbar : 'standard',
+        removeButtons: 'readmore'
+    } );
+</script>

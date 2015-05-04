@@ -27,7 +27,9 @@ class FormsTemplateHelperString extends Library\TemplateHelperDefault
             )
         ));
 
-        $html = $this->{$config->element}($config);
+        $html = '<div class="form__group">';
+        $html .= $this->{$config->element}($config);
+        $html .= '</div>';
 
         return $html;
     }
@@ -68,8 +70,10 @@ class FormsTemplateHelperString extends Library\TemplateHelperDefault
             $config->attribs->id = $this->getObject('lib:filter.slug')->sanitize($option);
             $config->attribs->value = $option;
 
+            $html .= '<div class="form__'.$config->attribs->type.'">';
             $html .= '<input '.$this->buildAttributes($config->attribs).' />';
             $html .= '<label for="'.$config->attribs->id.'">'.$this->translate($option).'</label>';
+            $html .= '</div>';
         }
 
         $html .= '</fieldset>';

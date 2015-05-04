@@ -19,4 +19,6 @@
     </h1>
 </header>
 
+<?= $form->text ?>
+
 <?= import($form->id.'.html') ?>
