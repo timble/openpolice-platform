@@ -2,7 +2,6 @@
     "require": {
         "swiftmailer/swiftmailer": "5.0.*",
         "imagine/imagine": "0.4.*",
-        "firebase/php-jwt": "1.0.0",
-        "google/recaptcha": "~1.1"
+        "firebase/php-jwt": "1.0.0"
     }
 }

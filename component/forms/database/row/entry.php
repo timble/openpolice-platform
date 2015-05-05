@@ -16,9 +16,6 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
     {
         $validation = true;
 
-        // Validate the reCaptcha response
-        $validation = $this->recaptcha($this->_data['g-recaptcha-response']);
-
         $text = array();
 
         foreach($this->_data as $key => $value)
@@ -63,22 +60,5 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
         }
 
         return false;
-    }
-
-    public function recaptcha($gRecaptchaResponse, $remoteIp = false)
-    {
-        require_once(JPATH_VENDOR . '/autoload.php');
-
-        $recaptcha = new \ReCaptcha\ReCaptcha(\JFactory::getConfig()->getValue('config.reCaptchaSecretKey'));
-        $response = $recaptcha->verify($gRecaptchaResponse, $remoteIp);
-
-        if ($response->isSuccess())
-        {
-            return true;
-        } else {
-            $errors = $response->getErrorCodes();
-        }
-
-        return $errors;
     }
 }
