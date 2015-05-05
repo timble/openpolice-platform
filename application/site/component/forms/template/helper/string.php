@@ -18,16 +18,19 @@ class FormsTemplateHelperString extends Library\TemplateHelperDefault
             'element' => 'input',
             'attribs'	=> array(
                 'name' => $this->getObject('lib:filter.slug')->sanitize($config->label),
-                'type' => 'text',
-                'value' => ''
+                'type' => 'text'
             )
         ))->append(array(
             'attribs'	=> array(
                 'id' => $config->attribs->name,
-            )
+                'value' => isset($config->entry->text->{$config->attribs->name}) ? $config->entry->text->{$config->attribs->name} : ''
+            ),
+            'validation' => isset($config->entry->validation->{$config->attribs->name}) ? $config->entry->validation->{$config->attribs->name} : false
         ));
 
-        $html = '<div class="form__group">';
+        $class = $config->validation ? ' validation-error' : '';
+
+        $html = '<div class="form__group'.$class.'">';
         $html .= $this->{$config->element}($config);
         $html .= '</div>';
 
@@ -40,7 +43,7 @@ class FormsTemplateHelperString extends Library\TemplateHelperDefault
         {
             return $this->optionlist($config);
         } else {
-            $html = '<label for="'.$config->attribs->id.'">'.$this->translate($config->label).'</label>';
+            $html = $this->label($config);
             $html .= '<input '.$this->buildAttributes($config->attribs).' />';
 
             return $html;
@@ -49,8 +52,25 @@ class FormsTemplateHelperString extends Library\TemplateHelperDefault
 
     public function textarea($config)
     {
-        $html = '<label for="'.$config->attribs->id.'">'.$this->translate($config->label).'</label>';
+        $html = $this->label($config);
         $html .= '<textarea '.$this->buildAttributes($config->attribs).'"></textarea>';
+
+        return $html;
+    }
+
+    public function label($config)
+    {
+        $html = '<label for="'.$config->attribs->id.'">';
+        $html .= $this->translate($config->label);
+
+        if($config->validation)
+        {
+            $html .= '<span class="validation-message">';
+            $html .= $this->translate($config->validation);
+            $html .= '</span>';
+        }
+
+        $html .= '</label>';
 
         return $html;
     }

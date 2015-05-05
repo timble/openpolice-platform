@@ -15,9 +15,14 @@
 .forms {
   .form__group {
     max-width: 400px;
+    margin: 1em 0;
 
     textarea {
       max-width: 100%;
+    }
+
+    legend {
+      margin-bottom: 1em;
     }
   }
 
@@ -36,5 +41,16 @@
 
   .form__actions {
     margin-top: $grid-padding * 2;
+  }
+
+  .validation-message {
+    display: block;
+    color: #df3034;
+  }
+
+  .validation-error {
+    padding: 1em;
+    border-left: 3px solid #df3034;
+    background: #fae1e1;
   }
 }

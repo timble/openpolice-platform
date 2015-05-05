@@ -33,8 +33,11 @@ CREATE TABLE `forms` (
 CREATE TABLE `forms_entries` (
   `forms_entry_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `forms_form_id` int(11) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `text` text NOT NULL,
+  `validation` text NOT NULL,
+  `is_valid` tinyint(1) DEFAULT '0',
   `created_by` int(11) unsigned DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
   `modified_by` int(11) unsigned DEFAULT NULL,

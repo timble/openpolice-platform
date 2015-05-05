@@ -16,6 +16,22 @@ class FormsControllerPermissionEntry extends ApplicationControllerPermissionAbst
         return true;
     }
 
+    public function canEdit()
+    {
+        $result  = false;
+        $entry = $this->getModel()->getRow();
+
+        if (!$entry->isNew())
+        {
+            //Only if the entry is not yet valid
+            if ($entry->is_valid == 0) {
+                $result = true;
+            }
+        }
+
+        return $result;
+    }
+
     public function canBrowse()
     {
         return false;

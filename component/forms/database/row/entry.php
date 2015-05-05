@@ -17,6 +17,7 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
         $validation = true;
 
         $text = array();
+        $validation = array();
 
         foreach($this->_data as $key => $value)
         {
@@ -31,34 +32,41 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
         // enable user error handling
         libxml_use_internal_errors(true);
 
-        $html = file_get_contents('http://police.dev/5388/forms?view=form&id='.$this->forms_form_id);
+        $html = file_get_contents('http://police.dev/5388/forms?view=form&id='.$this->_data['forms_form_id']);
 
         $dom = new \DOMDocument();
         $dom->loadHTML($html);
 
         foreach($dom->getElementsByTagName('input') as $element)
         {
-            $type = $element->getAttribute('type');
+            if($element->getAttribute('required') && $this->{$element->getAttribute('name')} == "")
+            {
+                $validation[$element->getAttribute('name')] = 'Can not be blank';
+                $validation = false;
+            }
 
-            if($type == 'email'){
-                $validation = $this->validateEmail($this->{$element->getAttribute('name')});
+            if($element->getAttribute('type') == 'email' && !filter_var($this->{$element->getAttribute('name')}, FILTER_VALIDATE_EMAIL))
+            {
+                $validation[$element->getAttribute('name')] = 'The email address is not valid';
+                $validation = false;
             }
         }
 
+        $this->validation = $validation;
+        $this->is_valid = $validation;
+
+        $result = parent::save();
+
+        $path = $this->getObject('request')->getUrl()->getPath();
+        $path = trim($path, '/');
+
         if($validation)
         {
-            return parent::save();
+            setcookie("forms_entry_id", "", time()-3600, $path);
+        } else {
+            setcookie("forms_entry_id", $this->id, time()+1200, $path);
         }
 
-        return false;
-    }
-
-    public function validateEmail($value)
-    {
-        if (filter_var($value, FILTER_VALIDATE_EMAIL)) {
-            return true;
-        }
-
-        return false;
+        return $result;
     }
 }

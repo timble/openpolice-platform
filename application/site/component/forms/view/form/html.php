@@ -16,6 +16,19 @@ class FormsViewFormHtml extends AboutViewHtml
         //Get the article
         $form = $this->getModel()->getData();
 
+        if(isset($_COOKIE['forms_entry_id'])) {
+            $this->entry = $this->getObject('com:forms.model.entries')->is_valid('0')->id($_COOKIE['forms_entry_id'])->getRow();
+
+            $this->entry->text      = json_decode($this->entry->text);
+            $this->entry->validation    = json_decode($this->entry->validation);
+
+            // Add name and email to text to simplify the template helper
+            $this->entry->text->name    .= $this->entry->name;
+            $this->entry->text->email   .= $this->entry->email;
+        } else {
+            $this->entry = false;
+        }
+
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($form->title, '');
 

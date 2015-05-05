@@ -1825,9 +1825,12 @@ button.button, input[type="submit"].button {
   color: #a94442; }
 
 .forms .form__group {
-  max-width: 400px; }
+  max-width: 400px;
+  margin: 1em 0; }
   .forms .form__group textarea {
     max-width: 100%; }
+  .forms .form__group legend {
+    margin-bottom: 1em; }
 .forms .form__checkbox input, .forms .form__radio input {
   width: auto;
   height: auto; }
@@ -1836,6 +1839,13 @@ button.button, input[type="submit"].button {
   margin: 0 0 0 10px; }
 .forms .form__actions {
   margin-top: 50px; }
+.forms .validation-message {
+  display: block;
+  color: #df3034; }
+.forms .validation-error {
+  padding: 1em;
+  border-left: 3px solid #df3034;
+  background: #fae1e1; }
 
 .gallery {
   margin-left: 0;

@@ -18,6 +18,7 @@ class ModelEntries extends Library\ModelTable
 
         $this->getState()
             ->insert('form' , 'int')
+            ->insert('is_valid' , 'int')
             ->insert('sort'             , 'cmd'     , 'created_on')
             ->insert('direction'        , 'cmd'     , 'DESC');
     }
@@ -49,6 +50,10 @@ class ModelEntries extends Library\ModelTable
 
         if (is_numeric($state->form)) {
             $query->where('tbl.forms_form_id = :form')->bind(array('form' => $state->form));
+        }
+
+        if (is_numeric($state->is_valid)) {
+            $query->where('tbl.is_valid = :is_valid')->bind(array('is_valid' => $state->is_valid));
         }
     }
 }

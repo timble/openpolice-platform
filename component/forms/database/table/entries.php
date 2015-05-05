@@ -19,7 +19,8 @@ class DatabaseTableEntries extends Library\DatabaseTableAbstract
                 'creatable', 'modifiable', 'lockable',
             ),
             'filters' => array(
-                'text'      => 'json'
+                'text'          => 'json',
+                'validation'    => 'json',
             )
         ));
 
