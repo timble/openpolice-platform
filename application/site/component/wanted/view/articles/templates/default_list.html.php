@@ -15,7 +15,9 @@
         <li class="card card--horizontal">
             <? if($article->solved): ?>
                 <div class="card__box">
-                    <img src="assets://wanted/images/solved.png" />
+                    <div class="card__image card__image--wanted">
+                        <img src="assets://wanted/images/solved.png" />
+                    </div>
 
                     <span class="card__metadata">
                         <span class="card__metadata--inner">
@@ -32,7 +34,7 @@
                                 'attachment' => $article->attachments_attachment_id,
                                 'attribs' => array('width' => '400', 'height' => '500'))) ?>
                         <? else : ?>
-                            <img class="card__image" src="assets://found/images/placeholder.jpg" />
+                            <img src="assets://wanted/images/solved.png" />
                         <? endif ?>
                     </div>
 

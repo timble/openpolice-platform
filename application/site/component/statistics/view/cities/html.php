@@ -9,22 +9,17 @@
 
 use Nooku\Library;
 
-class StatisticsViewInteractiveHtml extends Library\ViewHtml
+class StatisticsViewCitiesHtml extends Library\ViewHtml
 {
     public function render()
     {
-        $languages       = $this->getObject('application.languages');
-        $this->language  = $languages->getActive();
+        $languages      = $this->getObject('application.languages');
+        $this->language = $languages->getActive();
 
         if($this->language->slug == 'de')
         {
             $this->language->slug = 'fr';
         }
-
-        //Set the pathway
-        $this->getObject('application')->getPathway()->addItem('Interactive', '');
-
-        $this->graph = isset($_GET['graph']) ? $_GET['graph'] : false;
 
         return parent::render();
     }
