@@ -149,6 +149,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
                 'help' => array('name' => 'Noodnummers', 'url' => '/fed/nl/contact/noodnummers', 'description' => 'Een noodgeval? Raadpleeg het overzicht van Belgische noodnummers, hulpdiensten en andere nuttige telefoonnummers.'),
                 'wanted' => array('name' => 'Opsporingen', 'url' => '/fed/nl/opsporingen', 'description' => 'Help ons bij het zoeken naar vermiste personen en daders of slachtoffers van een misdrijf. Hebt u tips?', 'link' => 'Alle gezochte personen'),
                 'pow' => array('name' => 'Online aangifte', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online klacht indienen voor kleine misdrijven, uw alarmsysteem aanmelden en politietoezicht aanvragen voor uw woning tijdens uw vakantie of afwezigheid.'),
+                'football' => array('name' => 'Meldpunt voetbalfraude', 'url' => 'http://fraudefootball.be/index-nl.html', 'description' => 'Via dit meldpunt kan iedere burger informatie inzake voetbalfraude melden.'),
             ),
             'fr' => array(
                 'federal' => array('name' => 'Police fédérale', 'url' => '/fed/fr', 'description' => 'Au niveau fédéral, une seule police, la police fédérale, assure la fonction de police spécialisée et des missions d\'appui.'),
@@ -156,6 +157,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
                 'help' => array('name' => 'Numéros d\'urgence', 'url' => '/fed/fr/contact/des-numeros-durgence', 'description' => 'Un cas d\'urgence ? Consultez l\'aperçu des numéros d\'appel d\'urgence, des services de secours et d\'autres numéros de téléphone utiles.'),
                 'wanted' => array('name' => 'Avis de recherche', 'url' => '/fed/fr/avis-de-recherche', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Déclaration en ligne', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Porter plainte en ligne pour des petits délits, déclarer votre système d\'alarme et demander une surveillance policière de votre habitation pendant vos vacances ou en cas d\'absence.'),
+                'football' => array('name' => 'Formulaire Fraude Football', 'url' => 'http://fraudefootball.be/index-fr.html', 'description' => 'Via ce point de contact, chaque citoyen a la possibilité de communiquer des informations concernant la fraude dans le milieu du football.'),
             ),
             'de' => array(
                 'federal' => array('name' => 'Föderale Polizei', 'url' => '/fed/de', 'description' => 'Auf der föderalen Ebene beschäftigt sich ein Polizeikorps, die föderale Polizei, mit der spezialisierten Polizeiarbeit und den Unterstützungsaufträgen.'),
@@ -163,6 +165,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
                 'help' => array('name' => 'Notrufnummern', 'url' => '/fed/de/kontakt/notrufnummern', 'description' => 'Ein Notfall? In der Liste finden Sie die Notrufnummern, die Hilfsdienste und andere nützliche Telefonnummern.'),
                 'wanted' => array('name' => 'Forschungsansicht', 'url' => '/fed/de/avis-de-recherche', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Online Angabe', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online Bagatelldelikte Anzeige erstatten, Ihr Alarmsystem melden und während Ihres Urlaubs oder Ihrer Abwesendheid für Ihr Zuhause Polizeiüberwachung beantragen.'),
+                'football' => array('name' => 'Formular Betrug bei Fußballspielen', 'url' => 'http://fraudefootball.be/index-de.html', 'description' => 'Jeder Bürger kann dieser Beschwerdestelle Informationen über den Betrug bei Fußballspielen übermitteln.'),
             ),
         );
 
