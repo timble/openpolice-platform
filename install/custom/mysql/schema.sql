@@ -1101,7 +1101,6 @@ CREATE TABLE `users_sessions` (
   KEY `time` (`time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 --
 -- Create database `data`
 --
@@ -1109,6 +1108,98 @@ CREATE TABLE `users_sessions` (
 DROP DATABASE IF EXISTS `data`;
 
 CREATE DATABASE `data`;
+
+-- 
+-- Table structure for table `data`.`table analytics`
+--
+
+DROP TABLE IF EXISTS `data`.`analytics`;
+
+CREATE TABLE `data`.`analytics` (
+  `analytics_analytic_id` int(11) unsigned NOT NULL auto_increment,
+  `token` varchar(250) default NULL,
+  `expires_on` int(10) default NULL,
+  `created` int(10) default NULL,
+  PRIMARY KEY  (`analytics_analytic_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- 
+-- Table structure for table `data`.`table de-be_streets_regions`
+--
+
+DROP TABLE IF EXISTS `data`.`de-be_streets_regions`;
+
+CREATE TABLE `data`.`de-be_streets_regions` (
+  `streets_region_id` int(11) unsigned NOT NULL,
+  `title` varchar(40) default NULL,
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+-- 
+-- Table structure for table `data`.`table fr-be_streets_cities`
+--
+
+DROP TABLE IF EXISTS `data`.`fr-be_streets_cities`;
+
+CREATE TABLE `data`.`fr-be_streets_cities` (
+  `streets_city_id` int(11) unsigned NOT NULL,
+  `streets_region_id` int(11) default NULL,
+  `streets_province_id` int(11) default NULL,
+  `title` varchar(40) default NULL,
+  `police_zone_id` int(11) default NULL,
+  `crab_city_id` int(11) NOT NULL default '0',
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_city_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 
+-- Table structure for table `data`.`table fr-be_streets_provinces`
+--
+
+DROP TABLE IF EXISTS `data`.`fr-be_streets_provinces`;
+
+CREATE TABLE `data`.`fr-be_streets_provinces` (
+  `streets_province_id` int(11) unsigned NOT NULL auto_increment,
+  `title` varchar(40) default NULL,
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_province_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- 
+-- Table structure for table `data`.`table fr-be_streets_regions`
+--
+
+DROP TABLE IF EXISTS `data`.`fr-be_streets_regions`;
+
+CREATE TABLE `data`.`fr-be_streets_regions` (
+  `streets_region_id` int(11) unsigned NOT NULL,
+  `title` varchar(40) default NULL,
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Table structure data for table `data`.`migrations`
@@ -1119,31 +1210,6 @@ DROP TABLE IF EXISTS `data`.`migrations`;
 CREATE TABLE `data`.`migrations` (
   `version` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
---
--- Table structure data for table `data`.`police_municipalities`
---
-
-DROP TABLE IF EXISTS `data`.`police_municipalities`;
-
-CREATE TABLE `data`.`police_municipalities` (
-  `police_municipality_id` int(20) NOT NULL AUTO_INCREMENT,
-  `parent_id` int(11) NOT NULL DEFAULT '0',
-  `police_zone_id` int(11) NOT NULL DEFAULT '0',
-  `postcode` varchar(250) NOT NULL,
-  `title` varchar(250) NOT NULL,
-  `slug` varchar(250) NOT NULL,
-  `iso_code` varchar(250) NOT NULL,
-  `created_by` int(11) NOT NULL DEFAULT '0',
-  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `modified_by` int(11) NOT NULL DEFAULT '0',
-  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `locked_by` int(11) NOT NULL DEFAULT '0',
-  `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`police_municipality_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 --
 -- Table structure data for table `data`.`police_zones`
@@ -1170,14 +1236,13 @@ CREATE TABLE `data`.`police_zones` (
   PRIMARY KEY  (`police_zone_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 --
 -- Table structure data for table `data`.`streets`
 --
 
 DROP TABLE IF EXISTS `data`.`streets`;
 
-CREATE TABLE `streets` (
+CREATE TABLE `data`.`streets` (
   `streets_street_id` int(11) unsigned NOT NULL auto_increment,
   `streets_city_id` int(5) default NULL,
   `streets_street_identifier` int(11) default NULL,
@@ -1199,15 +1264,16 @@ CREATE TABLE `streets` (
 
 
 --
--- Table structure data for table `data`.`streets_cities`
+-- Table structure for table `data`.`table streets_cities`
 --
 
 DROP TABLE IF EXISTS `data`.`streets_cities`;
 
-CREATE TABLE `streets_cities` (
+CREATE TABLE `data`.`streets_cities` (
   `streets_city_id` int(11) unsigned NOT NULL,
+  `streets_region_id` int(11) default NULL,
+  `streets_province_id` int(11) default NULL,
   `title` varchar(40) default NULL,
-  `language` varchar(2) default NULL,
   `police_zone_id` int(11) default NULL,
   `crab_city_id` int(11) NOT NULL default '0',
   `created_by` int(11) default NULL,
@@ -1220,12 +1286,152 @@ CREATE TABLE `streets_cities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+--
+-- Table structure for table `data`.`table streets_islp`
+--
+
+DROP TABLE IF EXISTS `data`.`streets_islp`;
+
+CREATE TABLE `data`.`streets_islp` (
+  `taal` varchar(2) NOT NULL default '',
+  `fgem` int(11) default NULL,
+  `straat` varchar(250) NOT NULL default '',
+  `aktief` int(11) default NULL,
+  `benaming` varchar(250) default NULL,
+  `postcode` varchar(4) default NULL,
+  `streets_city_id` int(11) default NULL,
+  KEY `title` (`benaming`),
+  KEY `postcode` (`postcode`),
+  KEY `streets_city_id` (`streets_city_id`),
+  KEY `straat` (`straat`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for table `data`.`table streets_logs`
+--
+
+DROP TABLE IF EXISTS `data`.`streets_logs`;
+
+CREATE TABLE `data`.`streets_logs` (
+  `streets_log_id` int(11) unsigned NOT NULL auto_increment,
+  `type` enum('city','street') default NULL,
+  `action` enum('add','delete','edit') default NULL,
+  `row` int(5) default NULL,
+  `name` varchar(160) default NULL,
+  `fields` text,
+  `created_on` datetime default NULL,
+  PRIMARY KEY  (`streets_log_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Logs the actions generated by syncing with CRAB database';
+
+
+--
+-- Table structure for table `data`.`table streets_municipalities`
+--
+
+DROP TABLE IF EXISTS `data`.`streets_municipalities`;
+
+CREATE TABLE `data`.`streets_municipalities` (
+  `streets_municipality_id` int(20) NOT NULL,
+  `language` varchar(250) NOT NULL default '',
+  `streets_city_id` int(11) default NULL,
+  `parent_id` int(11) NOT NULL default '0',
+  `postcode` varchar(250) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `slug` varchar(250) NOT NULL,
+  `created_by` int(11) NOT NULL default '0',
+  `created_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  `modified_by` int(11) NOT NULL default '0',
+  `modified_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  `locked_by` int(11) NOT NULL default '0',
+  `locked_on` datetime NOT NULL default '0000-00-00 00:00:00',
+  UNIQUE KEY `streets_municipality_id` (`streets_municipality_id`,`language`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for table `data`.`table streets_postcodes`
+--
+
+DROP TABLE IF EXISTS `data`.`streets_postcodes`;
+
+CREATE TABLE `data`.`streets_postcodes` (
+  `streets_postcode_id` int(11) unsigned NOT NULL,
+  `streets_city_id` int(11) NOT NULL default '0',
+  `title` varchar(255) default NULL,
+  `fgem` int(11) default NULL,
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_postcode_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for table `data`.`table streets_provinces`
+--
+
+DROP TABLE IF EXISTS `data`.`streets_provinces`;
+
+CREATE TABLE `data`.`streets_provinces` (
+  `streets_province_id` int(11) unsigned NOT NULL auto_increment,
+  `title` varchar(40) default NULL,
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_province_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for table `data`.`table streets_regions`
+--
+
+DROP TABLE IF EXISTS `data`.`streets_regions`;
+
+CREATE TABLE `data`.`streets_regions` (
+  `streets_region_id` int(11) unsigned NOT NULL,
+  `title` varchar(40) default NULL,
+  `created_by` int(11) default NULL,
+  `created_on` datetime default NULL,
+  `modified_by` int(11) default NULL,
+  `modified_on` datetime default NULL,
+  `locked_by` int(11) default NULL,
+  `locked_on` datetime default NULL,
+  PRIMARY KEY  (`streets_region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure for table `data`.`table streets_relations`
+--
+
+DROP TABLE IF EXISTS `data`.`streets_relations`;
+
+CREATE TABLE `data`.`streets_relations` (
+  `streets_street_identifier` bigint(20) unsigned NOT NULL,
+  `row` bigint(20) unsigned NOT NULL,
+  `table` varchar(255) NOT NULL,
+  PRIMARY KEY  (`streets_street_identifier`,`row`,`table`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Relations table for streets';
+
+
+--
+-- Table structure for table `data`.`table streets_streets_islps`
+--
+
 DROP TABLE IF EXISTS `data`.`streets_streets_islps`;
 
 CREATE TABLE `data`.`streets_streets_islps` (
   `streets_street_identifier` int(11) unsigned NOT NULL,
-  `islp` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`streets_street_identifier`),
+  `islp` varchar(20) default NULL,
+  PRIMARY KEY  (`streets_street_identifier`),
   KEY `islp` (`islp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
