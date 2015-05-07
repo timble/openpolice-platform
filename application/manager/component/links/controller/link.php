@@ -13,25 +13,28 @@ class LinksControllerLink extends Library\ControllerModel
 {
     protected function _actionBootup(Library\CommandContext $context)
     {
-        $host = $this->getObject('request')->getUrl()->getHost();
-        $site = $this->getObject('application')->getSite();
-
         $zones = $this->getObject('com:police.model.zones')
             ->platform('2')
             ->getRowset();
 
+//        $domains = ['www.police.be', 'www.politie.be', 'www.polizei.be', 'www.lokalepolitie.be', 'www.policelocale.be', 'www.lokalepolizei.be'];
+        $domains = ['police.dev'];
+
         foreach($zones as $zone)
         {
-            $url = 'http://'.$host.'/'.$zone->id;
+            foreach($domains as $domain)
+            {
+                $url = 'http://'.$domain.'/'.$zone->id;
 
-            $link           = $this->getObject('com:links.database.row.link');
-            $link->id       = md5($url);
-            $link->status   = $this->getStatus($url);
-            $link->last_checked_on  = gmdate('Y-m-d H:i:s');
-            $link->url              = $url;
-            $link->title            = $this->getTitle($link->url);
-            $link->police_zone_id   = $this->getZone($link->url);
-            $link->save();
+                $link                   = $this->getObject('com:links.database.row.link');
+                $link->id               = md5($url);
+                $link->status           = $this->getStatus($url);
+                $link->last_checked_on  = gmdate('Y-m-d H:i:s');
+                $link->url              = $url;
+                $link->title            = $this->getTitle($link->url);
+                $link->police_zone_id   = $this->getZone($link->url);
+                $link->save();
+            }
         }
     }
 
@@ -40,45 +43,42 @@ class LinksControllerLink extends Library\ControllerModel
         // Server, give us some time, please
         ini_set('max_execution_time', 0);
 
-        $links = $this->getObject('com:links.model.links')
+        $link = $this->getObject('com:links.model.links')
             ->crawled('0')
             ->status('200')
             ->limit('1')
-            ->getRowset();
+            ->getRowset()->top();
 
-        foreach($links as $link)
+        $urls = $this->crawler($link->url, '2', false);
+
+        foreach($urls as $url)
         {
-            $urls = $this->crawler($link->url, '2', false);
+            $row        = $this->getObject('com:links.database.row.link');
+            $row->id    = md5($url['url']);
 
-            foreach($urls as $url)
-            {
-                $row        = $this->getObject('com:links.database.row.link');
-                $row->id    = md5($url['url']);
-
-                if(!$row->load()) {
-                    $row->url               = $url['url'];
-                    $row->police_zone_id    = $this->getZone($url['url']);
-                }
-
-                $row->status            = $this->getStatus($url['url']);
-                $row->title             = $this->getTitle($url['url']);
-                $row->last_checked_on   = gmdate('Y-m-d H:i:s');
-                $row->save();
-
-                // Save the links on each page as relations
-                $relation = $this->getObject('com:links.database.row.relation');
-                $relation->links_link_id    = md5($url['url']);
-                $relation->linked_on     = $link->id;
-
-                if(!$relation->load() && ($relation->links_link_id !== $relation->linked_on)) {
-                    $relation->save();
-                }
+            if(!$row->load()) {
+                $row->url               = $url['url'];
+                $row->police_zone_id    = $this->getZone($url['url']);
             }
 
-            $link->last_crawled_on = gmdate('Y-m-d H:i:s');
-            $link->crawled = true;
-            $link->save();
+            $row->status            = $this->getStatus($url['url']);
+            $row->title             = $this->getTitle($url['url']);
+            $row->last_checked_on   = gmdate('Y-m-d H:i:s');
+            $row->save();
+
+            // Save the links on each page as relations
+            $relation = $this->getObject('com:links.database.row.relation');
+            $relation->links_link_id    = md5($url['url']);
+            $relation->linked_on     = $link->id;
+
+            if(!$relation->load() && ($relation->links_link_id !== $relation->linked_on)) {
+                $relation->save();
+            }
         }
+
+        $link->last_crawled_on = gmdate('Y-m-d H:i:s');
+        $link->crawled = true;
+        $link->save();
     }
 
     public function crawler($url, $depth, $same_host)
