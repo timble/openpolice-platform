@@ -53,7 +53,8 @@ class PoliceTemplateHelperListbox extends Library\TemplateHelperListbox
 	    $options[] = $this->option(array('label' => $this->translate( 'French' ) , 'value' => '2' ));
 	    $options[] = $this->option(array('label' => $this->translate( 'Dutch & French' ), 'value' => '3' ));
 	    $options[] = $this->option(array('label' => $this->translate( 'German' ), 'value' => '4' ));
-	
+	    $options[] = $this->option(array('label' => $this->translate( 'Dutch, French & German' ), 'value' => '7' ));
+
 	    //Add the options to the config object
 	    $config->options = $options;
 	    
