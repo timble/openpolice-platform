@@ -15,6 +15,7 @@ class LinksControllerLink extends Library\ControllerModel
     {
         $zones = $this->getObject('com:police.model.zones')
             ->platform('2')
+            ->id('5388')
             ->getRowset();
 
 //        $domains = ['www.police.be', 'www.politie.be', 'www.polizei.be', 'www.lokalepolitie.be', 'www.policelocale.be', 'www.lokalepolizei.be'];
