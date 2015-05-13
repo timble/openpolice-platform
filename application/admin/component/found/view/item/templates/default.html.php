@@ -43,7 +43,7 @@
                 <div>
                     <label for="tracking_number"><?= translate('Tracking number') ?></label>
                     <div>
-                        <input type="text" name="tracking_number" value="<?= $item->tracking_number ?>" class="required" />
+                        <input type="text" name="tracking_number" value="<?= $item->tracking_number ?>" class="required validate-digits" />
                     </div>
                 </div>
                 <div>
