@@ -25,7 +25,7 @@
         <? if($item->file->isImage()) : ?>
             <img width="140" class="thumbnail" src="attachments://<?= $item->path ?>" />
         <? endif ?>
-    <? else : ?>
+    <? elseif(!($officer->phone || $officer->mobile || $officer->email || $district->email)) : ?>
         <img width="140" class="thumbnail" src="assets://districts/images/placeholder.png" />
     <? endif ?>
 <? endif ?>
