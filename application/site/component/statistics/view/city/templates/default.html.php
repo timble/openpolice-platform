@@ -40,7 +40,7 @@
 <ul>
 <? foreach($notes as $note) : ?>
     <li>
-        <a href="<?= 'files://'.'crime/notes/'.$language->slug.'/'.object('lib:filter.slug')->sanitize(translate($note)).'.pdf' ?>">
+        <a href="<?= 'files://'.'crime/notes/'.$language->slug.'/'.object('lib:filter.slug')->sanitize(str_replace("é","e",translate($note))).'.pdf' ?>">
             <?= translate($note) ?>
         </a>
     </li>
