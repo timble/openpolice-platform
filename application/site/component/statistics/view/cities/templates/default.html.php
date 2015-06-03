@@ -32,7 +32,7 @@
     <ul class="nav nav--pills column--double">
         <? foreach(object('com:streets.model.provinces')->getRowset() as $province) : ?>
             <li>
-                <a download="2014-1-<?= object('lib:filter.slug')->sanitize($province->title).'_'.$language->slug ?>" href="<?= 'files://'.'crime/2014-1/province/'.$province->id.'_'.$language->slug.'.pdf' ?>">
+                <a download="<?= object('lib:filter.slug')->sanitize($province->title).'_'.$language->slug ?>" href="<?= 'files://'.'crime/province/'.$province->id.'_'.$language->slug.'.pdf' ?>">
                     <?= $province->title ?> (pdf, 1,5 MB)
                 </a>
             </li>
@@ -43,7 +43,7 @@
     <ul class="nav nav--pills column--double">
         <? foreach(object('com:streets.model.regions')->getRowset() as $region) : ?>
             <li>
-                <a download="2014-1-<?= object('lib:filter.slug')->sanitize($region->title).'_'.$language->slug ?>" href="<?= 'files://'.'crime/2014-1/region/'.$region->id.'_'.$language->slug.'.pdf' ?>">
+                <a download="<?= object('lib:filter.slug')->sanitize($region->title).'_'.$language->slug ?>" href="<?= 'files://'.'crime/region/'.$region->id.'_'.$language->slug.'.pdf' ?>">
                     <?= $region->title ?> (pdf, 1,5 MB)
                 </a>
             </li>
@@ -53,7 +53,7 @@
     <h3><?= translate('National') ?></h3>
     <ul class="nav nav--pills">
         <li>
-            <a download="2014-1-<?= object('lib:filter.slug')->sanitize('belgium').'_'.$language->slug ?>" href="<?= 'files://'.'crime/2014-1/national/'.$language->slug.'.pdf' ?>">
+            <a download="<?= object('lib:filter.slug')->sanitize('belgium').'_'.$language->slug ?>" href="<?= 'files://'.'crime/national/'.$language->slug.'.pdf' ?>">
                 <?= translate('Belgium') ?> (pdf, 1,5 MB)
             </a>
         </li>
