@@ -20,7 +20,7 @@ set :copy_exclude, [".git"]
 set :keep_releases, 3
 
 # Repository settings.
-set :repository, "https://github.com/belgianpolice/internet-platform.git"
+set :repository, "git@github.com:belgianpolice/internet-platform.git"
 set :scm, :git
 set :scm_username, "deploy@timble.net"
 
