@@ -5,7 +5,7 @@
 
 <? $zone = object('com:police.model.zones')->id($city->police_zone_id)->getRow(); ?>
 
-<h3><?= translate('Quarter') ?> 3, 2014</h3>
+<h3>2000 - 2014</h3>
 
 <ul>
     <li>
