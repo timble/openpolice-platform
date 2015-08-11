@@ -68,16 +68,10 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
         $host = $url->getHost();
 
         $this->streams = array(
-            'nl' => array('news' => 'http://'.$host.'/fed/nl/nieuws', 'wanted' => 'http://'.$host.'/fed/nl/opsporingen'),
-            'fr' => array('news' => 'http://'.$host.'/fed/fr/actualites', 'wanted' => 'http://'.$host.'/fed/fr/avis-de-recherche') ,
-            'de' => array('news' => 'http://'.$host.'/fed/de/actualites', 'wanted' => 'http://'.$host.'/fed/de/avis-de-recherche'),
+            'nl' => array('wanted' => 'http://'.$host.'/fed/nl/opsporingen'),
+            'fr' => array('wanted' => 'http://'.$host.'/fed/fr/avis-de-recherche') ,
+            'de' => array('wanted' => 'http://'.$host.'/fed/de/avis-de-recherche'),
         );
-
-        // Fetch the news first
-        $url = $this->streams[$this->language]['news'] . '.json?limit=3';
-        $this->newsitems = $this->getObject('com:streets.model.streams')
-                        ->url($url)
-                        ->getItems();
 
         // Now fetch the different wanted sections
         $this->sections = array('missing' => array('section' => '1', 'name' => 'missing'), 'wanted' => array('section' => '2', 'name' => 'wanted'));
