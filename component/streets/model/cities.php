@@ -55,7 +55,7 @@ class ModelCities extends Library\ModelTable
             $query->where('tbl.title LIKE :searchword')->bind(array('searchword' => '%'.$state->searchword.'%'));
         }
 
-        if(!in_array($this->getObject('application')->getSite(), array('default', 'fed', '8506'))) {
+        if(!in_array($this->getObject('application')->getSite(), array('default', 'fed', '5806'))) {
             $query->where('tbl.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
         }
     }

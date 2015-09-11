@@ -20,7 +20,7 @@ class StreetsModelStreets extends Streets\ModelStreets
         $languages  = $this->getObject('application.languages');
         $site       = $this->getObject('application')->getSite();
 
-        if (!in_array($site, array('default', 'fed', '8506'))) {
+        if (!in_array($site, array('default', 'fed', '5806'))) {
             $query->where('tbl.iso = :iso')->bind(array('iso' => $languages->getActive()->slug));
         }
     }
