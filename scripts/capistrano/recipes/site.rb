@@ -9,10 +9,10 @@ namespace :site do
 
         # Get the necessary info from the user
         begin
-            zone = Capistrano::CLI.ui.ask("New zone number [5xxx] : ")
+            zone = Capistrano::CLI.ui.ask("New zone number [xxxx] : ")
 
-            puts "Invalid zone number!" if (zone !~ /^5[0-9]{3}$/ or zone.empty?)
-        end while zone !~ /^5[0-9]{3}$/
+            puts "Provide zone number!" if (zone.empty?)
+        end while zone.empty?
 
         # Make sure zone doesn't exist
         path = "#{deploy_to}/shared/sites/#{zone}"
