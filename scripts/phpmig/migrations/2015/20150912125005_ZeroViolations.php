@@ -11,6 +11,7 @@ class ZeroViolations extends Migration
     {
 
         $this->_queries = "ALTER TABLE `traffic` CHANGE `in_violation` `in_violation` INT(11) NOT NULL;";
+        $this->_queries = "ALTER TABLE `traffic` CHANGE `controlled` `controlled` INT(11) NOT NULL;";
 
         parent::up();
 
@@ -18,6 +19,7 @@ class ZeroViolations extends Migration
         $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "ALTER TABLE `be-fr_traffic` CHANGE `in_violation` `in_violation` INT(11) NOT NULL;";
+        $this->_queries = "ALTER TABLE `be-fr_traffic` CHANGE `controlled` `controlled` INT(11) NOT NULL;";
 
         parent::up();
 
@@ -25,6 +27,7 @@ class ZeroViolations extends Migration
         $this->getZones()->reset()->where('language', '=', 7);
 
         $this->_queries = "ALTER TABLE `be-de_traffic` CHANGE `in_violation` `in_violation` INT(11) NOT NULL;";
+        $this->_queries = "ALTER TABLE `be-de_traffic` CHANGE `controlled` `controlled` INT(11) NOT NULL;";
 
         parent::up();
     }
@@ -36,6 +39,7 @@ class ZeroViolations extends Migration
     {
 
         $this->_queries = "ALTER TABLE `traffic` CHANGE `in_violation` `in_violation` INT(11) NULL;";
+        $this->_queries = "ALTER TABLE `traffic` CHANGE `controlled` `controlled` INT(11) NULL;";
 
         parent::down();
 
@@ -43,6 +47,7 @@ class ZeroViolations extends Migration
         $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "ALTER TABLE `be-fr_traffic` CHANGE `in_violation` `in_violation` INT(11) NULL;";
+        $this->_queries = "ALTER TABLE `be-fr_traffic` CHANGE `controlled` `controlled` INT(11) NULL;";
 
         parent::down();
 
@@ -50,6 +55,7 @@ class ZeroViolations extends Migration
         $this->getZones()->reset()->where('language', '=', 7);
 
         $this->_queries = "ALTER TABLE `be-de_traffic` CHANGE `in_violation` `in_violation` INT(11) NULL;";
+        $this->_queries = "ALTER TABLE `be-de_traffic` CHANGE `controlled` `controlled` INT(11) NULL;";
 
         parent::down();
     }
