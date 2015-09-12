@@ -12,10 +12,14 @@ class ZeroViolations extends Migration
 
         $this->_queries = "ALTER TABLE `traffic` CHANGE `in_violation` `in_violation` INT(11) NOT NULL;";
 
+        parent::up();
+
         // All the Multilingual speaking zones.
         $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "ALTER TABLE `be-fr_traffic` CHANGE `in_violation` `in_violation` INT(11) NOT NULL;";
+
+        parent::up();
 
         // All the Multilingual speaking zones.
         $this->getZones()->reset()->where('language', '=', 7);
@@ -33,16 +37,20 @@ class ZeroViolations extends Migration
 
         $this->_queries = "ALTER TABLE `traffic` CHANGE `in_violation` `in_violation` INT(11) NULL;";
 
+        parent::down();
+
         // All the Multilingual speaking zones.
         $this->getZones()->reset()->where('language', '=', 3);
 
         $this->_queries = "ALTER TABLE `be-fr_traffic` CHANGE `in_violation` `in_violation` INT(11) NULL;";
+
+        parent::down();
 
         // All the Multilingual speaking zones.
         $this->getZones()->reset()->where('language', '=', 7);
 
         $this->_queries = "ALTER TABLE `be-de_traffic` CHANGE `in_violation` `in_violation` INT(11) NULL;";
 
-        parent::up();
+        parent::down();
     }
 }
