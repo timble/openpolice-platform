@@ -62,7 +62,7 @@ class ModelArticles extends Library\ModelTable
 		}
 
         if ($state->results) {
-            $query->where('(tbl.controlled IS NOT NULL AND tbl.in_violation IS NOT NULL)');
+            $query->where('(tbl.controlled > 0 AND tbl.in_violation >= 0)');
             $query->where('tbl.end_on < :past')->bind(array('past' => date('Y-m-d')));
         }
 	}

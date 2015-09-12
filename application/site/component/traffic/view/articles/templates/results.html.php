@@ -25,7 +25,7 @@
                     </small>
                 </td>
                 <td>
-                    <?= round(($article->in_violation / $article->controlled) * 100, 0); ?> %
+                    <?= $article->in_violation ? round(($article->in_violation / $article->controlled) * 100, 0) : 0; ?> %
                 </td>
                 <td>
                     <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
