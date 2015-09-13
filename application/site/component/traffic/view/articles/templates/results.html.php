@@ -7,7 +7,7 @@
         <thead>
             <tr>
                 <th width="100%"></th>
-                <th nowrap><?= @translate('In violation') ?></th>
+                <th nowrap><?= @translate('In line') ?></th>
                 <th nowrap><?= @translate('Date') ?></th>
             </tr>
         </thead>
@@ -25,7 +25,8 @@
                     </small>
                 </td>
                 <td>
-                    <?= $article->in_violation ? round(($article->in_violation / $article->controlled) * 100, 0) : 0; ?> %
+                    <? $in_violation = $article->in_violation ? round(($article->in_violation / $article->controlled) * 100, 0) : 0 ?>
+                    <?= (100 - $in_violation); ?> %
                 </td>
                 <td>
                     <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
