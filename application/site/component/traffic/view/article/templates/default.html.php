@@ -33,7 +33,7 @@
                     <strong><?= translate('Results') ?>:</strong>
                     <ul>
                         <li><?= translate('Controlled') ?>: <?= $article->controlled ?></li>
-                        <li><?= translate('In violation') ?>: <?= $article->in_violation ?></li>
+                        <li><?= translate('In line') ?>: <?= $article->controlled - $article->in_violation ?></li>
                     </ul>
                 </div>
             <? endif ?>
