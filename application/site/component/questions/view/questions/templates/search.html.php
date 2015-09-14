@@ -19,7 +19,7 @@
 <?= import('default_search.html') ?>
 
 <? if(count($questions)) : ?>
-    <ul class="nav nav--pills nav--visited">
+    <ul class="nav nav--pills">
         <? foreach ($questions as $question) : ?>
             <li>
                 <a href="<?= helper('route.question', array('row' => $question)) ?>">

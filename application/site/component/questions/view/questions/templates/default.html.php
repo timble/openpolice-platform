@@ -17,7 +17,7 @@
 <h1 class="article__header"><?= escape(translate($params->get('page_title'))); ?></h1>
 
 <? if(count($questions)) : ?>
-<ul class="nav nav--pills nav--visited">
+<ul class="nav nav--pills">
 <? foreach ($questions as $question) : ?>
     <li>
         <a href="<?= helper('route.question', array('row' => $question)) ?>">

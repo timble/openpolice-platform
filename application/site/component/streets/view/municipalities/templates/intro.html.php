@@ -33,7 +33,7 @@
 
                 <? if($state->search) : ?>
                     <div class="municipalities">
-                        <ul class="nav nav--pills nav--visited column--double">
+                        <ul class="nav nav--pills column--double">
                             <? foreach ($municipalities as $municipality) : ?>
                                 <li><a href="?municipality=<?= $municipality->streets_municipality_id.'&language='.$municipality->language ?>"><?= $municipality->title ?></a></li>
                             <? endforeach ?>
@@ -64,7 +64,7 @@
 
     <div class="intro__languages">
         <div class="intro__container">
-            <ul class="nav nav--pills nav--visited nav--horizontal">
+            <ul class="nav nav--pills nav--horizontal">
                 <li><a href="http://<?= $domain ?>.politie.be/intro">Nederlands</a></li>
                 <li><a href="http://<?= $domain ?>.police.be/intro">Français</a></li>
                 <li><a href="http://<?= $domain ?>.polizei.be/intro">Deutsch</a></li>
