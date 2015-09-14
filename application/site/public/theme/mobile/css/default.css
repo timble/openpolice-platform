@@ -1502,7 +1502,8 @@ ul.column--double, ul.column--triple, ul.column--quad {
   padding-bottom: 56.25%;
   padding-top: 30px;
   height: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 1.5em; }
 
 .article__video iframe, .article__video object, .article__video embed {
   position: absolute;
