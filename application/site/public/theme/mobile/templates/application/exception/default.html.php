@@ -69,7 +69,7 @@
     <div class="container container__content">
         <h1><?= translate('Page not found') ?> - <?= $code ?></h1>
 
-        <div class="exception">
+        <div class="exception clearfix">
             <div class="exception__message component">
                 <p><strong><?= translate('You may not be able to visit this page because of'); ?>:</strong></p>
                 <ul>

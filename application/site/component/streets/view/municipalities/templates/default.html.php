@@ -83,7 +83,6 @@ $external = array(
             <li><a href="<?= $external[$language]['help']['url'] ?>"><?= $external[$language]['help']['name'] ?></a></li>
             <li><a href="<?= $external[$language]['wanted']['url'] ?>"><?= $external[$language]['wanted']['name'] ?></a></li>
             <li><a href="https://policeonweb.belgium.be">Police On Web</a></li>
-            <li><a href="http://www.ecops.be/">eCops</a></li>
             <li><a href="<?= $external[$language]['federal']['url'] ?>"><?= $external[$language]['federal']['name'] ?></a></li>
             <li><a href="<?= $external[$language]['vclp']['url'] ?>"><?= $external[$language]['vclp']['name'] ?></a></li>
         </ul>

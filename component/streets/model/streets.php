@@ -93,7 +93,7 @@ class ModelStreets extends Library\ModelTable
 
         $site = $this->getObject('application')->getSite();
 
-        if ($state->iso && !in_array($site, array('default', 'fed'))) {
+        if ($state->iso && !in_array($site, array('default', 'fed', '5806'))) {
             $query->where('tbl.iso = :iso')->bind(array('iso' => $state->iso));
         }
 
@@ -145,7 +145,7 @@ class ModelStreets extends Library\ModelTable
             $query->where('district.district_count IS NOT NULL');
         }
 
-        if(!in_array($site, array('default', 'fed'))) {
+        if(!in_array($site, array('default', 'fed', '5806'))) {
             $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
         }
 	}
@@ -156,7 +156,7 @@ class ModelStreets extends Library\ModelTable
 
         $site = $this->getObject('application')->getSite();
 
-        if(!$state->isUnique() && $state->row && $state->table && !in_array($site, array('default', 'fed'))) {
+        if(!$state->isUnique() && $state->row && $state->table && !in_array($site, array('default', 'fed', '5806'))) {
             $query->group('relations.streets_street_identifier');
         }
 

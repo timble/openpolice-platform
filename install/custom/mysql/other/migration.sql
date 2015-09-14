@@ -57,6 +57,11 @@ SET `content`.`catid` = '1', `content`.`sectionid` = '1'
 WHERE `content`.`id` = `frontpage`.`content_id`;
 
 
+-- After news migration
+UPDATE `news` set `introtext` = replace(`introtext`, '�', '');
+UPDATE `news` set `fulltext` = replace(`fulltext`, '�', '');
+
+
 -- Add German language
 INSERT INTO `languages` (`languages_language_id`, `application`, `name`, `native_name`, `iso_code`, `slug`, `enabled`, `primary`) VALUES ('5', 'admin', 'German', 'German', 'de-be', 'de', '0', '0');
 INSERT INTO `languages` (`languages_language_id`, `application`, `name`, `native_name`, `iso_code`, `slug`, `enabled`, `primary`) VALUES ('6', 'site', 'German', 'German', 'de-be', 'de', '0', '0');
