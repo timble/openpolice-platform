@@ -8,18 +8,17 @@
  */
 ?>
 
-<ul class="breadcrumb">
+<ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
     <? foreach($list as $item) : ?>
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemprop="item" onClick="ga('send', 'event', 'Breadcrumbs', 'Link', '<?=escape($item->name)?>');" href="<?= $item->link ?>">
+                <span itemprop="name"><?= escape($item->name) ?></span>
+                <meta itemprop="position" content="<?= array_search($item, $list) + 1 ?>" />
+            </a>
+        </li>
         <? // If not the last item in the breadcrumbs add the separator ?>
         <? if($item !== end($list)) : ?>
-            <? if(!empty($item->link)) : ?>
-                <li><a onClick="ga('send', 'event', 'Breadcrumbs', 'Link', '<?=escape($item->name)?>');" href="<?= $item->link ?>" class="pathway"><?= escape($item->name) ?></a></li>
-            <? else : ?>
-                <li><?= escape($item->name) ?></li>
-            <? endif ?>
-            <span class="divider">&rsaquo;</span>
-        <? else : ?>
-            <li><?= escape($item->name) ?></li>
+        <span class="divider">&rsaquo;</span>
         <? endif ?>
     <? endforeach ?>
-</ul>
+</ol>
