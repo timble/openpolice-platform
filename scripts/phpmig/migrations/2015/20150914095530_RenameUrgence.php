@@ -13,7 +13,7 @@ class RenameUrgence extends Migration
         $this->getZones()->reset()->where('language', '=', 2);
 
         $this->_queries = "UPDATE `pages` SET `title` = 'Numéros d\'urgence' WHERE `pages_page_id` = '66';";
-        $this->_queries .= "UPDATE `slug` SET `slug` = 'numeros-durgence' WHERE `pages_page_id` = '66';";
+        $this->_queries .= "UPDATE `pages` SET `slug` = 'numeros-durgence' WHERE `pages_page_id` = '66';";
         $this->_queries .= "UPDATE `contacts_categories` SET `title` = 'Numéros d\'urgence' WHERE `contacts_category_id` = '18';";
 
         parent::up();
@@ -47,7 +47,7 @@ class RenameUrgence extends Migration
         $this->getZones()->reset()->where('language', '=', 2);
 
         $this->_queries = "UPDATE `pages` SET `title` = 'Des numéros d\'urgence' WHERE `pages_page_id` = '66';";
-        $this->_queries .= "UPDATE `slug` SET `slug` = 'des-numeros-durgence' WHERE `pages_page_id` = '66';";
+        $this->_queries .= "UPDATE `pages` SET `slug` = 'des-numeros-durgence' WHERE `pages_page_id` = '66';";
         $this->_queries .= "UPDATE `contacts_categories` SET `title` = 'Des numéros d\'urgence' WHERE `contacts_category_id` = '18';";
 
         parent::down();
