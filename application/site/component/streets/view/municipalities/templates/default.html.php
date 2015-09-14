@@ -26,7 +26,7 @@ $external = array(
     'fr' => array(
         'federal' => array('name' => 'Police fédérale', 'url' => 'http://www.police.be/fed/fr'),
         'wanted' => array('name' => 'Avis de recherche', 'url' => 'http://www.police.be/fed/fr/avis-de-recherche'),
-        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.police.be/fed/fr/contact/des-numeros-durgence'),
+        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.police.be/fed/fr/contact/numeros-durgence'),
         'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.policelocale.be/portal/fr')
     ),
     'de' => array(
