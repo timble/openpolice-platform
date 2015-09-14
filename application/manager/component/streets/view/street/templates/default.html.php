@@ -21,7 +21,7 @@
 <form action="" method="post" class="-koowa-form">
 	<div class="main">
 		<div class="title">
-		    <input disabled class="required" type="text" name="title" maxlength="255" value="<?= $street->title ?>" placeholder="<?= translate('Title') ?>" />
+		    <input disabled class="required" type="text" name="title" maxlength="255" value="<?= escape($street->title) ?>" placeholder="<?= translate('Title') ?>" />
 		</div>
 	
 		<div class="scrollable">
@@ -40,7 +40,7 @@
                         <?= translate( 'ISLP' ); ?>
                     </label>
                     <div>
-                        <input type="text" name="islp" class="required" value="<?= $street->islp ?>" />
+                        <input type="text" name="islp" class="required" value="<?= escape($street->islp) ?>" />
                     </div>
                 </div>
 			</fieldset>
