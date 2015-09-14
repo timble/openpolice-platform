@@ -17,15 +17,9 @@ class StreetsModelStreets extends Library\ModelTable
 
         $this->getState()
             ->insert('city' , 'int')
-            ->insert('islp' , 'string')
             ->insert('no_islp' , 'int')
-            ->insert('row' , 'int')
-            ->insert('table' , 'string')
-            ->insert('iso' , 'string')
-            ->insert('source' , 'int')
-            ->insert('identifier' , 'int')
             ->insert('title' , 'string')
-            ->insert('sort'      , 'cmd', 'title');
+            ->insert('sort' , 'cmd', 'title');
     }
 
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
@@ -65,35 +59,8 @@ class StreetsModelStreets extends Library\ModelTable
 
         $site = $this->getObject('application')->getSite();
 
-        if ($state->iso && !in_array($site, array('default', 'fed', '5806'))) {
-            $query->where('tbl.iso = :iso')->bind(array('iso' => $state->iso));
-        }
-
-        if ($state->source) {
-            $query->where('tbl.sources_source_id = :source')->bind(array('source' => $state->source));
-        }
-
-        if ($state->identifier) {
-            $query->where('tbl.streets_street_identifier = :identifier')->bind(array('identifier' => $state->identifier));
-        }
-
         if ($state->search) {
             $query->where('(tbl.title LIKE :search OR islps.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%' . $state->search . '%'));
-        }
-
-        if(!$state->isUnique() && $state->row && $state->table)
-        {
-            if($state->table) {
-                $query->where('relations.table = :table')->bind(array('table' => $state->table));
-            }
-
-            if($state->row) {
-                $query->where('relations.row IN :row')->bind(array('row' => (array) $state->row));
-            }
-        }
-
-        if ($state->title) {
-            $query->where('tbl.title LIKE :title')->bind(array('title' => $state->title));
         }
 
         if ($state->city) {

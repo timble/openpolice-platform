@@ -47,6 +47,8 @@ class ModelCities extends Library\ModelTable
         parent::_buildQueryWhere($query);
         $state = $this->getState();
 
+        $site = $this->getObject('application')->getSite();
+
         if ($state->search) {
             $query->where('tbl.title LIKE :search OR tbl.streets_city_id LIKE :search OR tbl.police_zone_id LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
         }
@@ -55,8 +57,16 @@ class ModelCities extends Library\ModelTable
             $query->where('tbl.title LIKE :searchword')->bind(array('searchword' => '%'.$state->searchword.'%'));
         }
 
-        if(!in_array($this->getObject('application')->getSite(), array('default', 'fed', '5806'))) {
-            $query->where('tbl.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
+        if(!in_array($site, array('default', 'fed', '5806', '5906'))) {
+            $query->where('tbl.police_zone_id = :zone')->bind(array('zone' => $site));
+        }
+
+        if($site == '5906') {
+            $query->where('tbl.police_zone_id IN :zone')->bind(array('zone' => array('5357', '5358')));
+        }
+
+        if($site == '5907') {
+            $query->where('tbl.police_zone_id IN :zone')->bind(array('zone' => array('5370', '5374')));
         }
     }
 }
