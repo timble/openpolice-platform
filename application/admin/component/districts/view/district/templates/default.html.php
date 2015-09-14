@@ -22,7 +22,7 @@
 <form action="" method="post" class="-koowa-form">
 	<div class="main">
 		<div class="title">
-		    <input id="title" class="required" type="text" name="title" size="32" maxlength="250" value="<?= $district->title; ?>" />
+		    <input id="title" class="required" type="text" name="title" size="32" maxlength="250" value="<?= $district->title; ?>" placeholder="<?= translate('Title') ?>" />
 		</div>
 
 		<div class="scrollable">
