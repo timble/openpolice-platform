@@ -16,7 +16,7 @@ class DistrictsViewDistrictHtml extends Library\ViewHtml
         $model = $this->getModel();
         $district = $model->getRow();
 
-        if(!$district->districts_district_id)
+        if(!$district->isNew())
         {
             $officers = $this->getObject('com:districts.model.districts_officers')
                 ->district($district->id)
