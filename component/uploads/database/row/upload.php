@@ -200,8 +200,12 @@ class DatabaseRowUpload extends Library\DatabaseRowTable
                     break;
             }
 
-            $item['districts_district_id'] = $this->getObject('com:districts.model.district')->islp($item['district_id'])->getRow()->id;
             $item['range_parity'] = $parity;
+
+            if(array_key_exists('district_id', $item))
+            {
+                $item['districts_district_id'] = $this->getObject('com:districts.model.district')->islp($item['district_id'])->getRow()->id;
+            }
 
             // Add row to districts_relations table when ID is unique
             $row = $this->getObject('com:districts.database.row.relation');
