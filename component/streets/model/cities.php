@@ -62,7 +62,7 @@ class ModelCities extends Library\ModelTable
         }
 
         if($site == '5906') {
-            $query->where('tbl.police_zone_id IN :zone')->bind(array('zone' => array('5358')));
+            $query->where('tbl.police_zone_id IN :zone')->bind(array('zone' => array('5357', '5358')));
         }
     }
 }
