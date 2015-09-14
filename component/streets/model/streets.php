@@ -145,12 +145,16 @@ class ModelStreets extends Library\ModelTable
             $query->where('district.district_count IS NOT NULL');
         }
 
-        if(!in_array($site, array('default', 'fed', '5806', '5906'))) {
+        if(!in_array($site, array('default', 'fed', '5806', '5906', '5907'))) {
             $query->where('city.police_zone_id = :zone')->bind(array('zone' => $site));
         }
 
         if($site == '5906') {
             $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5357', '5358')));
+        }
+
+        if($site == '5907') {
+            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5370', '5374')));
         }
 	}
 
