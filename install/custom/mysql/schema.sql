@@ -1409,20 +1409,6 @@ CREATE TABLE `data`.`streets_regions` (
 
 
 --
--- Table structure for table `data`.`table streets_relations`
---
-
-DROP TABLE IF EXISTS `data`.`streets_relations`;
-
-CREATE TABLE `data`.`streets_relations` (
-  `streets_street_identifier` bigint(20) unsigned NOT NULL,
-  `row` bigint(20) unsigned NOT NULL,
-  `table` varchar(255) NOT NULL,
-  PRIMARY KEY  (`streets_street_identifier`,`row`,`table`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Relations table for streets';
-
-
---
 -- Table structure for table `data`.`table streets_streets_islps`
 --
 
