@@ -45,6 +45,11 @@
     @include opacity(65);
     @include box-shadow(none);
   }
+
+  // Visited state
+  &:visited {
+    color: $color-text;
+  }
 }
 
 // Cross-browser Jank

@@ -1642,6 +1642,8 @@ ul.column--double, ul.column--triple, ul.column--quad {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; }
+  .button:visited {
+    color: #222; }
 
 button.button, input[type="submit"].button {
   *padding-top: 3px;
@@ -1752,6 +1754,8 @@ button.button, input[type="submit"].button {
     color: #fff;
     background-color: #006bdc;
     border-color: #002d5d; }
+  .button--primary:visited {
+    color: #fff; }
 
 .cards {
   list-style: none;
