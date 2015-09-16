@@ -949,7 +949,7 @@ button.closed {
   .homepage__contact a {
     color: white;
     text-decoration: none; }
-    .homepage__contact a:hover {
+    .homepage__contact a:hover, .homepage__contact a:visited {
       color: white; }
   .homepage__contact .text--strong {
     color: white; }
