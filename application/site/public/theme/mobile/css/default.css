@@ -1062,7 +1062,7 @@ button.closed {
     background-color: transparent;
     border-top: 0px none;
     color: #222; }
-    .homepage__contact a, .homepage__contact a:hover, .homepage__contact .text--strong {
+    .homepage__contact a, .homepage__contact a:hover, .homepage__contact a:visited, .homepage__contact .text--strong {
       color: #004D9F; }
     .homepage__contact .nav--list li a {
       border-bottom: 1px solid #eee; }
