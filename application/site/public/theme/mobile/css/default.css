@@ -949,7 +949,7 @@ button.closed {
   .homepage__contact a {
     color: white;
     text-decoration: none; }
-    .homepage__contact a:hover {
+    .homepage__contact a:hover, .homepage__contact a:visited {
       color: white; }
   .homepage__contact .text--strong {
     color: white; }
@@ -1062,7 +1062,7 @@ button.closed {
     background-color: transparent;
     border-top: 0px none;
     color: #222; }
-    .homepage__contact a, .homepage__contact a:hover, .homepage__contact .text--strong {
+    .homepage__contact a, .homepage__contact a:hover, .homepage__contact a:visited, .homepage__contact .text--strong {
       color: #004D9F; }
     .homepage__contact .nav--list li a {
       border-bottom: 1px solid #eee; }
@@ -1576,12 +1576,16 @@ ul.column--double, ul.column--triple, ul.column--quad {
     background: url("../images/banners/5388.jpg"); }
   .banner__image--5396 {
     background: url("../images/banners/5396.jpg"); }
+  .banner__image--5398 {
+    background: url("../images/banners/5398.jpg"); }
   .banner__image--5417 {
     background: url("../images/banners/5417.jpg"); }
   .banner__image--5421 {
     background: url("../images/banners/5421.jpg"); }
   .banner__image--5423 {
     background: url("../images/banners/5423.jpg"); }
+  .banner__image--5424 {
+    background: url("../images/banners/5424.jpg"); }
   .banner__image--5427 {
     background: url("../images/banners/5427.jpg"); }
   .banner__image--5430 {
@@ -1653,6 +1657,8 @@ ul.column--double, ul.column--triple, ul.column--quad {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; }
+  .button:visited {
+    color: #222; }
 
 button.button, input[type="submit"].button {
   *padding-top: 3px;
@@ -1763,6 +1769,8 @@ button.button, input[type="submit"].button {
     color: #fff;
     background-color: #006bdc;
     border-color: #002d5d; }
+  .button--primary:visited {
+    color: #fff; }
 
 .cards {
   list-style: none;

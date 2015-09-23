@@ -9,4 +9,9 @@
     background-color: $navbarBackgroundHighlight;
     border-color: $navbarBorder;
   }
+
+  // Visited state
+  &:visited {
+    color: $white;
+  }
 }
