@@ -150,7 +150,7 @@ class ModelStreets extends Library\ModelTable
         }
 
         if($site == '5905') {
-            $query->where('tbl.police_zone_id IN :zone')->bind(array('zone' => array('5404', '5413', '5414')));
+            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5404', '5413', '5414')));
         }
 
         if($site == '5906') {
