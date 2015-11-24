@@ -3,7 +3,7 @@
     <meta content="@<?= $zone->twitter ?>" name="twitter:site" />
 <? endif ?>
     <meta content="<?= @translate('Police') ?> <?= $zone->title ?>" property="og:site_name" />
-    <meta content="<?= url(); ?>" property="og:url" />
+    <meta content="<?= escape(url()); ?>" property="og:url" />
 <? if(isset($article->title)) : ?>
     <meta content="<?= escape($article->title) ?>" property="og:title" />
 <? endif ?>
