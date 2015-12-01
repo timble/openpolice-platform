@@ -17,7 +17,7 @@
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 <head>
-    <base href="<?= url(); ?>" />
+    <base href="<?= escape(url()); ?>" />
     <title><?= $code; ?> - <?= translate('Page not found') ?></title>
 
     <ktml:title>
