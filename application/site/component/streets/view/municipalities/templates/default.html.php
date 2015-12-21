@@ -26,7 +26,7 @@ $external = array(
     'fr' => array(
         'federal' => array('name' => 'Police fédérale', 'url' => 'http://www.police.be/fed/fr'),
         'wanted' => array('name' => 'Avis de recherche', 'url' => 'http://www.police.be/fed/fr/avis-de-recherche'),
-        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.police.be/fed/fr/contact/des-numeros-durgence'),
+        'help' => array('name' => 'Numéros d\'urgence', 'url' => 'http://www.police.be/fed/fr/contact/numeros-durgence'),
         'vclp' => array('name' => 'Commission Permanente', 'url' => 'http://www.policelocale.be/portal/fr')
     ),
     'de' => array(
@@ -57,7 +57,7 @@ $external = array(
 
         <? if($state->search) : ?>
         <div class="municipalities">
-            <ul class="nav nav--pills nav--visited column--double">
+            <ul class="nav nav--pills column--double">
                 <? foreach ($municipalities as $municipality) : ?>
                     <li><a href="?municipality=<?= $municipality->streets_municipality_id.'&language='.$municipality->language ?>"><?= $municipality->title ?></a></li>
                 <? endforeach ?>
@@ -71,7 +71,7 @@ $external = array(
     </div>
 
     <div class="splash__languages">
-        <ul class="nav nav--pills nav--visited nav--horizontal">
+        <ul class="nav nav--pills nav--horizontal">
             <li><a href="http://<?= $domain ?>.lokalepolitie.be/zones">Nederlands</a></li>
             <li><a href="http://<?= $domain ?>.policelocale.be/zones">Français</a></li>
             <li><a href="http://<?= $domain ?>.lokalepolizei.be/zones">Deutsch</a></li>
@@ -79,7 +79,7 @@ $external = array(
     </div>
 
     <div class="splash__external">
-        <ul class="nav nav--pills nav--visited nav--horizontal">
+        <ul class="nav nav--pills nav--horizontal">
             <li><a href="<?= $external[$language]['help']['url'] ?>"><?= $external[$language]['help']['name'] ?></a></li>
             <li><a href="<?= $external[$language]['wanted']['url'] ?>"><?= $external[$language]['wanted']['name'] ?></a></li>
             <li><a href="https://policeonweb.belgium.be">Police On Web</a></li>

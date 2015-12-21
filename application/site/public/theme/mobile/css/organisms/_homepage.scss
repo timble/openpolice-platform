@@ -20,7 +20,8 @@
     color: white;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:visited {
       color: white;
     }
   }
