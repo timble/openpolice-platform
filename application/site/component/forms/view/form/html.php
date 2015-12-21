@@ -23,8 +23,8 @@ class FormsViewFormHtml extends AboutViewHtml
             $this->entry->validation    = json_decode($this->entry->validation);
 
             // Add name and email to text to simplify the template helper
-            $this->entry->text->name    .= $this->entry->name;
-            $this->entry->text->email   .= $this->entry->email;
+            $this->entry->text->name    = $this->entry->name;
+            $this->entry->text->email   = $this->entry->email;
         } else {
             $this->entry = false;
         }

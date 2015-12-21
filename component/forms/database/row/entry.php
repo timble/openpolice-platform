@@ -14,7 +14,7 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
 {
     public function save()
     {
-        $validation = true;
+        $is_valid = true;
 
         $text = array();
         $validation = array();
@@ -42,25 +42,25 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
             if($element->getAttribute('required') && $this->{$element->getAttribute('name')} == "")
             {
                 $validation[$element->getAttribute('name')] = 'Can not be blank';
-                $validation = false;
+                $is_valid = false;
             }
 
             if($element->getAttribute('type') == 'email' && !filter_var($this->{$element->getAttribute('name')}, FILTER_VALIDATE_EMAIL))
             {
                 $validation[$element->getAttribute('name')] = 'The email address is not valid';
-                $validation = false;
+                $is_valid = false;
             }
         }
 
         $this->validation = $validation;
-        $this->is_valid = $validation;
+        $this->is_valid = $is_valid;
 
         $result = parent::save();
 
         $path = $this->getObject('request')->getUrl()->getPath();
         $path = trim($path, '/');
 
-        if($validation)
+        if($is_valid)
         {
             setcookie("forms_entry_id", "", time()-3600, $path);
         } else {
