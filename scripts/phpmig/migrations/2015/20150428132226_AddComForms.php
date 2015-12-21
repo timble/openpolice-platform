@@ -14,7 +14,7 @@ class AddComForms extends Migration
 -- Create syntax for TABLE 'forms'
 CREATE TABLE `forms` (
   `forms_form_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `title` text NOT NULL,
+  `title` varchar(250) DEFAULT NULL,
   `slug` varchar(250) DEFAULT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0',
   `text` mediumtext,
@@ -63,6 +63,14 @@ INSERT INTO `pages_orderings` (`pages_page_id`, `title`, `custom`)
 VALUES
 	(121, 00000000004, 00000000014);
 
+
+-- Sample data --
+
+	INSERT INTO `forms` (`forms_form_id`, `title`, `slug`, `published`, `text`, `created_on`, `created_by`, `modified_on`, `modified_by`, `locked_by`, `locked_on`, `params`)
+VALUES
+	(1, 'Test', 'test', 1, NULL, NULL, 0, NULL, 0, NULL, NULL, NULL);
+
+
 EOL;
 
         parent::up();
@@ -73,6 +81,6 @@ EOL;
      */
     public function down()
     {
-        parent::up();
+        parent::down();
     }
 }
