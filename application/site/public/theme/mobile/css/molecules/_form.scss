@@ -13,6 +13,12 @@
 }
 
 .forms {
+  .form__fieldset {
+    legend {
+      margin-bottom: 0;
+    }
+  }
+
   .form__group {
     max-width: 400px;
     margin: 1em 0;
@@ -37,6 +43,16 @@
       display: inline-block;
       margin: 0 0 0 10px;
     }
+  }
+
+  .form__hint {
+    color: #6f777b;
+    font-size: 0.9375em;
+    margin: 0;
+  }
+
+  .form__honey-pot {
+    display: none;
   }
 
   .form__actions {

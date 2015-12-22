@@ -19,7 +19,8 @@ class FormsTemplateHelperString extends Library\TemplateHelperDefault
             'attribs'	=> array(
                 'name' => $this->getObject('lib:filter.slug')->sanitize($config->label),
                 'type' => 'text'
-            )
+            ),
+            'hint' => false
         ))->append(array(
             'attribs'	=> array(
                 'id' => $config->attribs->name,
@@ -71,6 +72,11 @@ class FormsTemplateHelperString extends Library\TemplateHelperDefault
         }
 
         $html .= '</label>';
+
+        if($config->hint)
+        {
+            $html .= '<p class="form__hint">'.$config->hint.'</p>';
+        }
 
         return $html;
     }

@@ -39,7 +39,7 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
 
         foreach($dom->getElementsByTagName('input') as $element)
         {
-            if($element->getAttribute('required') && $this->{$element->getAttribute('name')} == "")
+            if($this->{$element->getAttribute('name')} == "")
             {
                 $validation[$element->getAttribute('name')] = 'Can not be blank';
                 $is_valid = false;
