@@ -93,7 +93,7 @@ class ModelStreets extends Library\ModelTable
 
         $site = $this->getObject('application')->getSite();
 
-        if ($state->iso && !in_array($site, array('default', 'fed'))) {
+        if ($state->iso && !in_array($site, array('default', 'fed', '5806'))) {
             $query->where('tbl.iso = :iso')->bind(array('iso' => $state->iso));
         }
 
@@ -145,8 +145,20 @@ class ModelStreets extends Library\ModelTable
             $query->where('district.district_count IS NOT NULL');
         }
 
-        if(!in_array($site, array('default', 'fed'))) {
-            $query->where('city.police_zone_id = :zone')->bind(array('zone' => $this->getObject('application')->getSite()));
+        if(!in_array($site, array('default', 'fed', '5806', '5905', '5906', '5907'))) {
+            $query->where('city.police_zone_id = :zone')->bind(array('zone' => $site));
+        }
+
+        if($site == '5905') {
+            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5404', '5413', '5414')));
+        }
+
+        if($site == '5906') {
+            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5357', '5358')));
+        }
+
+        if($site == '5907') {
+            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5370', '5374')));
         }
 	}
 
@@ -156,7 +168,7 @@ class ModelStreets extends Library\ModelTable
 
         $site = $this->getObject('application')->getSite();
 
-        if(!$state->isUnique() && $state->row && $state->table && !in_array($site, array('default', 'fed'))) {
+        if(!$state->isUnique() && $state->row && $state->table && !in_array($site, array('default', 'fed', '5806'))) {
             $query->group('relations.streets_street_identifier');
         }
 

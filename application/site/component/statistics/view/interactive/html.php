@@ -23,9 +23,7 @@ class StatisticsViewInteractiveHtml extends Library\ViewHtml
 
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem('Interactive', '');
-
-        $this->graph = isset($_GET['graph']) ? $_GET['graph'] : false;
-
+        
         return parent::render();
     }
 }

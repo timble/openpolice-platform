@@ -9,7 +9,7 @@
 ?>
 
 <head>
-    <base href="<?= url(); ?>" />
+    <base href="<?= escape(url()); ?>" />
     <title><?= title().' - '. translate( 'Administration'); ?></title>
 
     <meta content="text/html; charset=utf-8" http-equiv="content-type"  />

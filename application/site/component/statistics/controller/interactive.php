@@ -11,5 +11,13 @@ use Nooku\Library;
 
 class StatisticsControllerInteractive extends PoliceControllerPage
 {
+    public function _actionRender(Library\CommandContext $context)
+    {
+        $view  = $this->getView();
+        $graph = $context->request->query->get('graph', 'cmd', false);
 
+        $view->set('graph', $graph);
+
+        return parent::_actionRender($context);
+    }
 }

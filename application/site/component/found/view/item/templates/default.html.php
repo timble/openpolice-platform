@@ -20,8 +20,10 @@
         <dd><?= $item->street ? $item->street : translate('Unknown') ?></dd>
         <dt><?= translate('Tracking number') ?>:</dt>
         <dd><?= $item->tracking_number ?></dd>
+        <? if($item->text) : ?>
         <dt><?= translate('Description') ?>:</dt>
         <dd><?= $item->text ?></dd>
+        <? endif ?>
     </dl>
 
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array(0))) ?>

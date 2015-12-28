@@ -68,16 +68,10 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
         $host = $url->getHost();
 
         $this->streams = array(
-            'nl' => array('news' => 'http://'.$host.'/fed/nl/nieuws', 'wanted' => 'http://'.$host.'/fed/nl/opsporingen'),
-            'fr' => array('news' => 'http://'.$host.'/fed/fr/actualites', 'wanted' => 'http://'.$host.'/fed/fr/avis-de-recherche') ,
-            'de' => array('news' => 'http://'.$host.'/fed/de/actualites', 'wanted' => 'http://'.$host.'/fed/de/avis-de-recherche'),
+            'nl' => array('wanted' => 'http://'.$host.'/fed/nl/opsporingen'),
+            'fr' => array('wanted' => 'http://'.$host.'/fed/fr/avis-de-recherche') ,
+            'de' => array('wanted' => 'http://'.$host.'/fed/de/avis-de-recherche'),
         );
-
-        // Fetch the news first
-        $url = $this->streams[$this->language]['news'] . '.json?limit=3';
-        $this->newsitems = $this->getObject('com:streets.model.streams')
-                        ->url($url)
-                        ->getItems();
 
         // Now fetch the different wanted sections
         $this->sections = array('missing' => array('section' => '1', 'name' => 'missing'), 'wanted' => array('section' => '2', 'name' => 'wanted'));
@@ -154,7 +148,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
             'fr' => array(
                 'federal' => array('name' => 'Police fédérale', 'url' => '/fed/fr', 'description' => 'Au niveau fédéral, une seule police, la police fédérale, assure la fonction de police spécialisée et des missions d\'appui.'),
                 'local' => array('name' => 'Police locale', 'url' => 'http://www.policelocale.be/zones', 'description' => 'Le niveau local est organisé par 192 zones de police. Votre zone de police locale est le premier contact avec la police.'),
-                'help' => array('name' => 'Numéros d\'urgence', 'url' => '/fed/fr/contact/des-numeros-durgence', 'description' => 'Un cas d\'urgence ? Consultez l\'aperçu des numéros d\'appel d\'urgence, des services de secours et d\'autres numéros de téléphone utiles.'),
+                'help' => array('name' => 'Numéros d\'urgence', 'url' => '/fed/fr/contact/numeros-durgence', 'description' => 'Un cas d\'urgence ? Consultez l\'aperçu des numéros d\'appel d\'urgence, des services de secours et d\'autres numéros de téléphone utiles.'),
                 'wanted' => array('name' => 'Avis de recherche', 'url' => '/fed/fr/avis-de-recherche', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Déclaration en ligne', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Porter plainte en ligne pour des petits délits, déclarer votre système d\'alarme et demander une surveillance policière de votre habitation pendant vos vacances ou en cas d\'absence.'),
                 'football' => array('name' => 'Formulaire Fraude Football', 'url' => 'http://fraudefootball.be/index-fr.html', 'description' => 'Via ce point de contact, chaque citoyen a la possibilité de communiquer des informations concernant la fraude dans le milieu du football.'),
@@ -162,7 +156,7 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
             'de' => array(
                 'federal' => array('name' => 'Föderale Polizei', 'url' => '/fed/de', 'description' => 'Auf der föderalen Ebene beschäftigt sich ein Polizeikorps, die föderale Polizei, mit der spezialisierten Polizeiarbeit und den Unterstützungsaufträgen.'),
                 'local' => array('name' => 'Lokale Polizei ', 'url' => 'http://www.lokalepolizei.be/zones', 'description' => 'Auf lokaler Ebene ist die Polizei in 192 Polizeizonen aufgeteilt. Ihre lokale Polizei ist der erste Kontakt mit der Polizei.'),
-                'help' => array('name' => 'Notrufnummern', 'url' => '/fed/de/kontakt/notrufnummern', 'description' => 'Ein Notfall? In der Liste finden Sie die Notrufnummern, die Hilfsdienste und andere nützliche Telefonnummern.'),
+                'help' => array('name' => 'Notrufnummern', 'url' => '/fed/de/kontakt/notrufnummern', 'description' => 'Ein Notfall? In der Liste finden Sie die Notrufnummern, die Hilfsdienste und andere nützliche Telefonnummern in Belgien.'),
                 'wanted' => array('name' => 'Forschungsansicht', 'url' => '/fed/de/avis-de-recherche', 'description' => 'Aidez-nous à retrouver des personnes disparues et des auteurs ou victimes de délits.'),
                 'pow' => array('name' => 'Online Angabe', 'url' => 'https://policeonweb.belgium.be', 'description' => 'Online Bagatelldelikte Anzeige erstatten, Ihr Alarmsystem melden und während Ihres Urlaubs oder Ihrer Abwesendheid für Ihr Zuhause Polizeiüberwachung beantragen.'),
                 'football' => array('name' => 'Formular Betrug bei Fußballspielen', 'url' => 'http://fraudefootball.be/index-de.html', 'description' => 'Jeder Bürger kann dieser Beschwerdestelle Informationen über den Betrug bei Fußballspielen übermitteln.'),

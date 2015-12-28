@@ -1,4 +1,4 @@
-![Screenshot](https://dl.dropboxusercontent.com/u/77404/timble/police/github/devices.jpg)
+![Screenshot](screenshot.jpg)
 
 # Belgian Police Internet Platform
 
