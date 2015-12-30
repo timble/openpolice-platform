@@ -125,7 +125,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <? endforeach ?>
         </ul>
         <ul class="nav nav--list nav--social">
-            <? $channels = array('twitter' => 'www.twitter.com', 'facebook' => 'www.facebook.com', 'youtube' => 'www.youtube.com/user', 'instagram' => 'instagram.com') ?>
+            <? $channels = array('twitter' => 'twitter.com', 'facebook' => 'www.facebook.com', 'youtube' => 'www.youtube.com/user', 'instagram' => 'instagram.com') ?>
             <? foreach($channels as $channel => $site) : ?>
             <? if($zone->{$channel}) : ?>
             <li>
