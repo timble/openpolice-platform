@@ -18,6 +18,7 @@ class ModelLinks extends Library\ModelTable
 
         $this->getState()
             ->insert('crawled', 'int')
+            ->insert('internal', 'int')
             ->insert('zone',    'string')
             ->insert('status',  'int');
     }
@@ -55,6 +56,10 @@ class ModelLinks extends Library\ModelTable
 
         if(is_numeric($state->status)) {
             $query->where('tbl.status = :status')->bind(array('status' => $state->status));
+        }
+
+        if(is_numeric($state->internal)) {
+            $query->where('tbl.internal = :internal')->bind(array('internal' => $state->internal));
         }
 
         if(!in_array($site, array('default'))) {

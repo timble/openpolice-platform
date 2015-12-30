@@ -32,6 +32,7 @@ class LinksControllerLink extends Library\ControllerModel
                 $link->status           = $this->getStatus($url);
                 $link->last_checked_on  = gmdate('Y-m-d H:i:s');
                 $link->url              = $url;
+                $link->internal         = '1';
                 $link->title            = $this->getTitle($link->url);
                 $link->police_zone_id   = $this->getZone($link->url);
                 $link->save();
@@ -47,6 +48,7 @@ class LinksControllerLink extends Library\ControllerModel
         $link = $this->getObject('com:links.model.links')
             ->crawled('0')
             ->status('200')
+            ->internal('1')
             ->limit('1')
             ->getRowset()->top();
 
@@ -60,6 +62,12 @@ class LinksControllerLink extends Library\ControllerModel
             if(!$row->load()) {
                 $row->url               = $url['url'];
                 $row->police_zone_id    = $this->getZone($url['url']);
+
+                if($this->getZone($url['url'])) {
+                    $row->internal = '1';
+                } else {
+                    $row->internal = '0';
+                }
             }
 
             $row->status            = $this->getStatus($url['url']);
