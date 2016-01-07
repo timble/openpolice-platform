@@ -20,7 +20,6 @@ class DatabaseTableForms extends Library\DatabaseTableAbstract
                 'sluggable', 'creatable', 'modifiable', 'lockable',
             ),
             'filters' => array(
-                'fields'      => 'json',
                 'text'   => array('html', 'tidy')
             )
         ));
