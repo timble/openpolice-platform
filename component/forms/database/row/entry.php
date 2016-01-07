@@ -32,7 +32,14 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
         // enable user error handling
         libxml_use_internal_errors(true);
 
-        $html = file_get_contents('http://police.dev/5388/forms?view=form&id='.$this->_data['forms_form_id']);
+        // Build the URL
+        $base = $this->getObject('request')->getBaseUrl()->toString(Library\HttpUrl::BASE);
+        $url  = $this->getObject('lib:http.url', array('url' => $base))
+                        ->setPass('staging')
+                        ->setPath(array('', $this->getObject('application')->getSite(), 'forms'))
+                        ->setQuery('view=form&id='.$this->_data['forms_form_id']);
+
+        $html = file_get_contents($url->toString());
 
         $dom = new \DOMDocument();
         $dom->loadHTML($html);
