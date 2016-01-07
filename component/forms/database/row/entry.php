@@ -35,6 +35,7 @@ class DatabaseRowEntry extends Library\DatabaseRowTable
         // Build the URL
         $base = $this->getObject('request')->getBaseUrl()->toString(Library\HttpUrl::BASE);
         $url  = $this->getObject('lib:http.url', array('url' => $base))
+                        ->setUser('staging')
                         ->setPass('staging')
                         ->setPath(array('', $this->getObject('application')->getSite(), 'forms'))
                         ->setQuery('view=form&id='.$this->_data['forms_form_id']);
