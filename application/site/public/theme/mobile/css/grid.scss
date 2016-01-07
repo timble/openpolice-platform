@@ -71,7 +71,8 @@
   // Files view doesn't have a sidebar
   .component.files,
   .component.found,
-  .component.statistics {
+  .component.statistics,
+  .component.forms {
     @include span(first 12 of 12);
   }
 
