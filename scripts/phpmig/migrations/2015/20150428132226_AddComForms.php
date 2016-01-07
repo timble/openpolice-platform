@@ -68,7 +68,7 @@ VALUES
 
 	INSERT INTO `forms` (`forms_form_id`, `title`, `slug`, `published`, `text`, `created_on`, `created_by`, `modified_on`, `modified_by`, `locked_by`, `locked_on`, `params`)
 VALUES
-	(1, 'Test', 'test', 1, NULL, NULL, 0, NULL, 0, NULL, NULL, NULL);
+	(1, 'Melding indoor evenement', 'melding-indoor-evenement', 1, NULL, NULL, 0, NULL, 0, NULL, NULL, NULL);
 
 
 EOL;
