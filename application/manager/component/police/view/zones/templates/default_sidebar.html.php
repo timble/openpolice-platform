@@ -10,3 +10,6 @@
 
 <h3><?= translate('Districts')?></h3>
 <?= import('com:streets.view.districts.list.html', array('districts' => object('com:streets.model.districts')->sort('title')->getRowset())); ?>
+
+<h3><?= translate('Provinces')?></h3>
+<?= import('com:streets.view.provinces.list.html', array('provinces' => object('com:streets.model.provinces')->sort('title')->getRowset())); ?>
