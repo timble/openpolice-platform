@@ -17,6 +17,10 @@
     <ktml:toolbar type="actionbar">
 </ktml:module>
 
+<ktml:module position="sidebar">
+	<?= import('default_sidebar.html'); ?>
+</ktml:module>
+
 <form action="" method="get" class="-koowa-grid">
 	<?= import('default_scopebar.html'); ?>
 	<table>
