@@ -15,7 +15,6 @@ class NewsBootstrapper extends Library\BootstrapperAbstract
     {
         $manager = $this->getObjectManager();
 
-        $manager->registerAlias('com:news.model.categories', 'com:categories.model.categories');
         $manager->registerAlias('com:news.view.attachment.file', 'com:attachments.view.attachment.file');
         $manager->registerAlias('com:news.controller.attachment', 'com:attachments.controller.attachment');
     }

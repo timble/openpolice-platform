@@ -8,7 +8,7 @@
  */
 use Nooku\Library;
 
-class TrafficViewArticleHtml extends TrafficViewHtml
+class TrafficViewArticleHtml extends Library\ViewHtml
 {
     public function render()
     {
@@ -18,9 +18,21 @@ class TrafficViewArticleHtml extends TrafficViewHtml
         //Get the category
         $category = $this->getCategory();
 
+        //Get the attachments
+        if ($article->id && $article->isAttachable()) {
+            $this->attachments($article->getAttachments());
+        }
+
         //Set the pathway
-        $this->getObject('application')->getPathway()->addItem($category->title, $this->getTemplate()->getHelper('route')->category(array('row' => $category)));
         $this->getObject('application')->getPathway()->addItem($article->title, '');
+
+        //Get the streets
+        if ($article->isLocatable() && $streets = $article->getStreets()) {
+            $this->streets = $streets;
+        }
+
+        $this->url  = $this->getObject('application')->getRequest()->getUrl()->toString(Library\HttpUrl::HOST);
+        $this->zone = $this->getObject('com:police.model.zone')->id($this->getObject('application')->getSite())->getRow();
 
         return parent::render();
     }

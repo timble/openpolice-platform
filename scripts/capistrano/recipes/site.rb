@@ -4,24 +4,24 @@ namespace :site do
         zone     = ''
         db_user  = 'fedpol'
         db_pass  = ''
-        language = 'nl-NL'
+        language = 'nl-be'
         title    = ''
 
         # Get the necessary info from the user
         begin
-            zone = Capistrano::CLI.ui.ask("New zone number [5xxx] : ")
+            zone = Capistrano::CLI.ui.ask("New zone number [xxxx] : ")
 
-            puts "Invalid zone number!".red if (zone !~ /^5[0-9]{3}$/ or zone.empty?)
-        end while zone !~ /^5[0-9]{3}$/
+            puts "Provide zone number!" if (zone.empty?)
+        end while zone.empty?
 
         # Make sure zone doesn't exist
         path = "#{deploy_to}/shared/sites/#{zone}"
         if remote_file_exists?(path)
-            abort "Site #{zone} already exists!".red
+            abort "Site #{zone} already exists!"
         end
 
         if remote_database_exists?(zone, db_user, db_pass)
-            abort "Database #{zone} already exists!".red
+            abort "Database #{zone} already exists!"
         end
 
         begin
@@ -31,15 +31,15 @@ namespace :site do
         title = title.gsub(/"|'/, %q(\\\'))
 
         begin
-            language = Capistrano::CLI.ui.ask("Language [default: nl-NL] : ")
-            language = 'nl-NL' if language.empty?
-        end while ! ['nl-NL', 'fr-FR'].include? language
+            language = Capistrano::CLI.ui.ask("Language [default: nl-be] : ")
+            language = 'nl-be' if language.empty?
+        end while ! ['nl-be', 'fr-be'].include? language
 
         template = Capistrano::CLI.ui.ask("Database template [default: 5388] : ")
         template = '5388' if template.empty?
 
         unless (remote_database_exists?(template, db_user, db_pass) or template != zone)
-            abort "Database #{template} doesn't exist!".red
+            abort "Database #{template} doesn't exist!"
         end
 
         db_pass = Capistrano::CLI.password_prompt("Database password [user: #{db_user}]: ")
@@ -75,7 +75,7 @@ namespace :site do
         run "rm -f /tmp/#{zone}.sql"
 
         # Output the Nginx directives and success message
-        puts "#{zone} has been created!".green
+        puts "#{zone} has been created!"
         nginx = <<-NGINX.gsub(/^ {12}/, '')
             ======== START =========
 

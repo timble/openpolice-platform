@@ -27,6 +27,7 @@
     padding: 13px 20px;
     font-weight: bold;
     color: $navbarLinkColor;
+    white-space: nowrap;
   }
 
   // Hover/focus
@@ -62,7 +63,7 @@
   }
 }
 
-@include respond-min($breakpoint-beta) {
+@include breakpoint($breakpoint-beta) {
   .button--hamburger {
     display: none;
   }
@@ -90,7 +91,7 @@
   }
 }
 
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-charlie) {
   // JS dependencies
   .js-enabled {
     // Hide the navbar

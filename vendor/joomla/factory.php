@@ -233,7 +233,8 @@ class JFactory
     {
         jimport('joomla.language.language');
 
-        $languages  = $this->getObject('application.languages');
+        //Get the active language
+        $languages  = Nooku\Library\ObjectManager::getInstance()->getObject('application.languages');
         $active     = $languages->getActive()->iso_code;
 
         $conf =& JFactory::getConfig();

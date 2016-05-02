@@ -9,6 +9,10 @@ a:focus {
   text-decoration: underline;
 }
 
+a:visited {
+  color: $color-link-visited;
+}
+
 // Anchors don't have an 'href' property
 a:not([href]) {
   color: inherit;

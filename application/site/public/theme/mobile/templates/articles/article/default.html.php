@@ -1,4 +1,4 @@
-<title content="replace"><?= $article->title ?></title>
+<title content="replace"><?= escape($article->title) ?></title>
 
 <article class="article">
     <? if (object('component')->getController()->canEdit()) : ?>
@@ -6,7 +6,7 @@
             <ktml:toolbar type="actionbar">
         </div>
     <? endif; ?>
-    <h1 class="article__header"><?= $article->title ?></h1>
+    <h1 class="article__header"><?= escape($article->title) ?></h1>
 
     <? if($article->thumbnail) : ?>
     <img class="article__thumbnail" align="right" src="<?= $article->thumbnail ?>" />

@@ -80,9 +80,6 @@
                     <? else : ?>
                         <?= escape($article->title); ?>
                     <? endif; ?>
-                    <? if($article->access) : ?>
-                        <span class="label label-important"><?= translate('Registered') ?></span>
-                    <? endif; ?>
                 </td>
                 <? if($article->isTranslatable()) : ?>
                 <td>

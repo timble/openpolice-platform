@@ -37,6 +37,10 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
         $this->addContacts();
         $this->addSeparator();
         $this->addStreets();
+        $this->addSeparator();
+        $this->addWanted();
+        $this->addSeparator();
+        $this->addAbout();
     }
 
     protected function _commandDistricts(Library\ControllerToolbarCommand $command)
@@ -91,5 +95,17 @@ class ControllerToolbarUpload extends Library\ControllerToolbarActionbar
     {
         $command->label = 'Streets';
         $command->href = 'option=com_uploads&view=upload&table=streets';
+    }
+
+    protected function _commandWanted(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'Wanted';
+        $command->href = 'option=com_uploads&view=upload&table=wanted';
+    }
+
+    protected function _commandAbout(Library\ControllerToolbarCommand $command)
+    {
+        $command->label = 'About';
+        $command->href = 'option=com_uploads&view=upload&table=about';
     }
 }

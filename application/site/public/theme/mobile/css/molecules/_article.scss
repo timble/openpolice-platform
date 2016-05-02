@@ -13,6 +13,14 @@
   h1 {
     margin-bottom: 0;
   }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.article__text {
+  @extend .clearfix;
 }
 
 .article__introtext {
@@ -25,7 +33,26 @@
   margin-bottom: $line-height / 2;
 }
 
-@include respond-min($breakpoint-alpha) {
+.article__video {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: $line-height;
+}
+
+.article__video iframe,
+.article__video object,
+.article__video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@include breakpoint($breakpoint-alpha) {
   .article__thumbnail {
     float: right;
     width: 40%;

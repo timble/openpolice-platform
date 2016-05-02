@@ -8,7 +8,7 @@
  */
 ?>
 
-<title content="replace"><?= $article->title ?></title>
+<title content="replace"><?= escape($article->title) ?></title>
 
 <article <?= !$article->published ? 'class="article-unpublished"' : '' ?>>
     <header>
@@ -17,7 +17,7 @@
             <ktml:toolbar type="actionbar">
         </div>
 	    <? endif; ?>
-	    <h1><?= $article->title ?></h1>
+	    <h1><?= escape($article->title) ?></h1>
 	    <?= helper('date.timestamp', array('row' => $article, 'show_modify_date' => false)); ?>
 	    <? if (!$article->published) : ?>
 	    <span class="label label-info"><?= translate('Unpublished') ?></span>
@@ -27,7 +27,7 @@
 	    <? endif ?>
 	</header>
 
-    <?= helper('com:attachments.image.thumbnail', array(
+    <?= helper('com:police.image.thumbnail', array(
         'attachment' => $article->attachments_attachment_id,
         'attribs' => array('width' => '200', 'align' => 'right', 'class' => 'thumbnail'))) ?>
 

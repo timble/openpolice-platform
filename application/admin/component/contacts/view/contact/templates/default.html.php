@@ -26,7 +26,6 @@
 
 <form action="" method="post" id="contact-form" class="-koowa-form">
     <input type="hidden" name="id" value="<?= $contact->id; ?>" />
-    <input type="hidden" name="access" value="0" />
     <input type="hidden" name="published" value="0" />
 
     <div class="main">
@@ -54,21 +53,23 @@
                     </div>
                 </div>
                 <div>
-                    <label for="address"><?= translate( 'Street Address' ); ?></label>
+                    <label for="streets_street_id">
+                        <?= translate( 'Street' ); ?>
+                    </label>
                     <div>
-                        <input type="text" name="address" maxlength="255" value="<?= $contact->address;?>" />
+                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => isset($street) ? $street->id : '', 'identifier' => isset($street) ? $street->streets_street_identifier : '')); ?>
+                    </div>
+                </div>
+                <div>
+                    <label for="number"><?= translate( 'Number' ); ?></label>
+                    <div>
+                        <input type="text" name="number" maxlength="255" value="<?= $contact->number;?>" />
                     </div>
                 </div>
                 <div>
                     <label for="postcode"><?= translate( 'Postal Code/ZIP' ); ?></label>
                     <div>
                         <input type="text" name="postcode" maxlength="100" value="<?= $contact->postcode; ?>" />
-                    </div>
-                </div>
-                <div>
-                    <label for="suburb"><?= translate( 'Town/Suburb' ); ?></label>
-                    <div>
-                        <input type="text" name="suburb" maxlength="100" value="<?= $contact->suburb;?>" />
                     </div>
                 </div>
                 <div>

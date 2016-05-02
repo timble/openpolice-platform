@@ -89,15 +89,6 @@
 </div>
 
 <? if ($state->street && is_numeric($state->number)) : ?>
-    <ul>
-        <? foreach ($relations as $relation) : ?>
-        <li>
-            <a href="<?= helper('route.district', array('row' => $relation)) ?>">
-                <?= $relation->street ?> <?= helper('string.street', array('row' => $relation)) ?>
-            </a>
-        </li>
-        <? endforeach; ?>
-    </ul>
     <? if(!count($relations)) : ?>
         <h2 role="alert" style="text-align: center;margin: 60px 0"><?= translate('No neighbourhood coordinator found') ?>.</h2>
         <? $zone = object('com:police.model.zone')->id($this->getObject('application')->getCfg('site' ))->getRow() ?>
@@ -105,9 +96,7 @@
         <? $email = str_replace(".", "&#46;", $email) ?>
 
         <div class="well well--small text-center">
-            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ? $zone->phone_information : $zone->phone_emergency ?></span>.
+            <?= translate('Contact us at') ?> <a href="mailto:<?= $email ?>"><?= $email ?></a><? if($zone->phone_information) : ?> <?= translate('or') ?> <span class="nowrap"><?= $zone->phone_information ?></span><? endif ?>.
         </div>
     <? endif ?>
-
-    <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 <? endif ?>

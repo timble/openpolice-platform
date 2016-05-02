@@ -17,7 +17,7 @@
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>">
 <head>
-    <base href="<?= url(); ?>" />
+    <base href="<?= escape(url()); ?>" />
     <title><?= $code; ?> - <?= translate('Page not found') ?></title>
 
     <ktml:title>
@@ -27,8 +27,9 @@
     <link href="assets://application/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <style src="assets://application/css/default.css" />
-    <style src="assets://application/css/ie.css" condition="if IE 8" />
-    <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
+    <style src="assets://application/css/grid.css" />
+    <style src="assets://application/css/ie.css" condition="if lte IE 8" />
+    <style src="assets://application/css/ie9.css" condition="if lte IE 9" />
 
     <script>
         function toggleBacktrace() {
@@ -50,14 +51,16 @@
         <div class="header">
             <div class="organization" itemscope itemtype="http://schema.org/Organization">
                 <a itemprop="url" href="/<?= $site ?>">
-                    <div class="organization__logo organization__logo--<?= $language_short; ?>"></div>
+                    <div class="organization__logo organization__logo--<?= $language_short; ?> organization__logo--<?= $site; ?>"></div>
                     <div class="organization__name"><?= escape($zone->title); ?></div>
                 </a>
             </div>
             <div class="navigation">
                 <span class="slogan">
                     <?= JText::sprintf('Call for urgent police assistance', '101', '101') ?>.
-                    <?= JText::sprintf('No emergency, just police', escape(str_replace(' ', '', $zone->phone_emergency)), escape($zone->phone_emergency)) ?>.
+                    <? if($zone->phone_information || $zone->phone_emergency) : ?>
+                        <?= JText::sprintf('No emergency, just police', $zone->phone_information ? escape($zone->phone_information) : escape($zone->phone_emergency)) ?>.
+                    <? endif ?>
                 </span>
             </div>
         </div>
@@ -66,7 +69,7 @@
     <div class="container container__content">
         <h1><?= translate('Page not found') ?> - <?= $code ?></h1>
 
-        <div class="exception">
+        <div class="exception clearfix">
             <div class="exception__message component">
                 <p><strong><?= translate('You may not be able to visit this page because of'); ?>:</strong></p>
                 <ul>

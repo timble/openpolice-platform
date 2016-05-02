@@ -13,9 +13,13 @@ use Nooku\Library;
 class DatabaseTableCities extends Library\DatabaseTableAbstract
 {    
     public function  _initialize(Library\ObjectConfig $config)
-    {        
+    {
+        $languages = $this->getObject('application.languages');
+        $language = $languages->getActive()->slug;
+
         $config->append(array(
-            'name'      => 'data.streets_cities'
+            'name'      => $language == 'fr' ? 'data.fr-be_streets_cities' : 'data.streets_cities',
+            'behaviors' => 'lockable', 'creatable', 'modifiable'
         ));
      
         parent::_initialize($config);

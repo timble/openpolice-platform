@@ -16,6 +16,9 @@ class PressViewArticleHtml extends Library\ViewHtml
         //Get the article
         $article = $this->getModel()->getData();
 
+        //Get the parameters
+        $this->params = $this->getObject('application')->getParams();
+
         //Set the pathway
         $this->getObject('application')->getPathway()->addItem($article->title, '');
 
@@ -24,8 +27,8 @@ class PressViewArticleHtml extends Library\ViewHtml
             $this->attachments($article->getAttachments());
         }
 
-        $created_on = new DateTime($article->created_on);
-        $this->created_on = $created_on->format('c');
+        $published_on = new DateTime($article->published_on);
+        $this->published_on = $published_on->format('c');
 
         return parent::render();
     }

@@ -14,7 +14,7 @@ class DistrictsViewOfficerHtml extends Library\ViewHtml
     public function render()
     {
         $model      = $this->getModel();
-        $officer    = $model->getData();
+        $officer    = $model->getRow();
 
         if(!$officer->districts_officer_id)
         {
@@ -25,7 +25,6 @@ class DistrictsViewOfficerHtml extends Library\ViewHtml
         } else $districts = null;
 
         $this->districts($districts);
-        $this->params($officer->params);
 
         return parent::render();
     }

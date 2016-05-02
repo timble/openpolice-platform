@@ -25,7 +25,7 @@
 
 <form action="" method="get" class="-koowa-grid">
 	<?= import('default_scopebar.html'); ?>
-	<table>
+    <table>
 	<thead>
 		<tr>
 			<th width="10">
@@ -36,7 +36,7 @@
 				<?= helper('grid.sort', array('column' => 'title')) ?>
 			</th>
             <th>
-                <?= helper('grid.sort', array('column' => 'ordering_date', 'title' => 'Created on')) ?>
+                <?= helper('grid.sort', array('column' => 'ordering_date', 'title' => 'Published on')) ?>
             </th>
             <? if($articles->isTranslatable()) : ?>
             <th width="70">
@@ -66,11 +66,19 @@
                     <i class="icon-star"></i>
                 <? endif ?>
                 <a href="<?= route( 'view=article&task=edit&id='.$article->id ); ?>">
-					<?= $article->title ?>
+					<?= escape($article->title) ?>
 				</a>
-			</td>
+                <? if($article->publish_on > $now) : ?>
+                <span class="label label-warning"><?= translate('Planned') ?></span>
+			    <? endif ?>
+                <? if($article->draft) : ?>
+                <span class="label label-info"><?= translate('Draft') ?></span>
+                <? endif ?>
+            </td>
             <td>
-                <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => 'D d/m/Y - G:i')) ?>
+                <? if($article->publish_on || $article->published_on) : ?>
+                <?= helper('date.format', array('date'=> $article->publish_on ? $article->publish_on : $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?>
+                <? endif ?>
             </td>
             <? if($article->isTranslatable()) : ?>
             <td>

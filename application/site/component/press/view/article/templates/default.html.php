@@ -19,13 +19,13 @@
     <? endforeach ?>
 </ktml:module>
 
-<title content="replace"><?= $article->title ?></title>
+<title content="replace"><?= escape($article->title) ?></title>
 
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
-        <h1 itemprop="name"><?= $article->title ?></h1>
-        <time class="timestamp" itemprop="datePublished" datetime="<?= $created_on ?>">
-            <?= helper('date.format', array('date'=> $article->created_on, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
+        <h1 itemprop="name"><?= escape($article->title) ?></h1>
+        <time class="text--small" itemprop="datePublished" datetime="<?= $published_on ?>">
+            <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
 
@@ -34,3 +34,7 @@
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array('0'))) ?>
     </div>
 </article>
+
+<? if(object('application')->getCfg('site') == 'fed') : ?>
+    <?= import('com:press.view.articles.default_contact.html') ?>
+<? endif; ?>

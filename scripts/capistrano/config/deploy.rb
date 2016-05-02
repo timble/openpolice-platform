@@ -6,7 +6,7 @@ set :default_stage, "staging"
 
 ## Application settings.
 set :application, "portal"
-set :app_symlinks, ["sites", "config/config.php"]
+set :app_symlinks, ["sites", "config/config.php", "config/key.p12"]
 
 # Server user settings.
 set :user, "deploy"
@@ -20,7 +20,7 @@ set :copy_exclude, [".git"]
 set :keep_releases, 3
 
 # Repository settings.
-set :repository, "git@git.assembla.com:timble-police.2.git"
+set :repository, "git@github.com:belgianpolice/internet-platform.git"
 set :scm, :git
 set :scm_username, "deploy@timble.net"
 
@@ -30,7 +30,7 @@ namespace :deploy do
     task :finalize_update, :roles => :app, :except => { :no_release => true } do
         run "chmod -R g+w #{release_path}" if fetch(:group_writable, true)
     end
-    
+
     desc "Create symbolic links for shared directories."
     task :symlink_shared, :roles => :app do
         if app_symlinks
@@ -55,12 +55,12 @@ namespace :deploy do
 
     desc "Run composer"
     task :composer, :roles => :app do
-        run "cd #{release_path}/install/custom/ && composer --no-progress install"
+        run "cd #{release_path}/ && composer --no-progress install"
     end
 
     desc "Restart the application."
     task :restart do
-        run "curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
+        run "http_proxy='' curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
     end
 
     # Do nothing in these tasks.

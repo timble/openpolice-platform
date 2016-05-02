@@ -1,13 +1,13 @@
 #!/usr/bin/env sh
 
-#:     Title: Update Nooku Framework
+#:     Title: Update Nooku Platform
 #:  Synopsis: update
 #:    Author: Gergo Erdosi
 #: Copyright: Copyright (C) 2011 - 2013 Timble CVBA and Contributors. (http://www.timble.net).
 
 ## Variable initialization
 repo=$(cd "$(dirname $0)/../.."; pwd -P)
-branch="feature/337-multilanguage"
+branch="master"
 temp="/tmp/police-$RANDOM"
 
 dirs=(
@@ -40,7 +40,7 @@ dirs=(
   "application/site/component/traffic"
   "application/site/component/trafficinfo"
   "application/site/public/theme/mobile"
-  "application/site/public/theme/portal"
+  "application/site/public/theme/intro"
   "component/about"
   "component/announcements"
   "component/bin"
@@ -65,16 +65,19 @@ dirs=(
 
 files=(
   ".gitignore"
+  "composer.json"
+  "composer.lock"
   "README.md"
   "Vagrantfile"
   "vendor/.gitignore"
   "config/config.php"
-  "application/admin/component/application/resources/language/nl-NL.ini"
-  "application/admin/component/application/resources/language/fr-FR.ini"
-  "application/site/component/application/resources/language/nl-NL.ini"
-  "application/site/component/application/resources/language/fr-FR.ini"
-  "application/site/component/files/resources/language/nl-NL.ini"
-  "application/site/component/files/resources/language/fr-FR.ini"
+  "application/admin/component/application/resources/language/nl-be.ini"
+  "application/admin/component/application/resources/language/fr-be.ini"
+  "application/site/component/application/resources/language/nl-be.ini"
+  "application/site/component/application/resources/language/fr-be.ini"
+  "application/site/component/files/controller/directory.php"
+  "application/site/component/files/resources/language/nl-be.ini"
+  "application/site/component/files/resources/language/fr-be.ini"
   "component/ckeditor/resources/assets/ckeditor/config.js"
 )
 
@@ -98,7 +101,7 @@ fi
 BRANCH=$(git symbolic-ref --short -q HEAD)
 if [[ $BRANCH != feature/* ]]
 then
-  die 1 "You can only update the framework on a feature branch."
+  die 1 "You can only update the platform on a feature branch."
 fi
 
 # Test if Git repository is empty
@@ -123,23 +126,23 @@ do
   mkdir -p "$(dirname $temp/files/$file)" && cp -r "$repo/$file" "$(dirname $temp/files/$file)"
 done
 
-# Update Nooku Framework
-printf "$(tput bold)%s$(tput sgr0)\n" "Updating Nooku Framework..."
+# Update Nooku Platform
+printf "$(tput bold)%s$(tput sgr0)\n" "Updating Nooku Platform..."
 mkdir -p "$HOME/.git-cache"
 
-if test ! -d "$HOME/.git-cache/nooku-framework"
+if test ! -d "$HOME/.git-cache/nooku-platform"
 then
-  git clone --quiet git@github.com:nooku/nooku-framework.git $HOME/.git-cache/nooku-framework
+  git clone --quiet git@github.com:nooku/nooku-platform.git $HOME/.git-cache/nooku-platform
 fi
 
-cd "$HOME/.git-cache/nooku-framework"
+cd "$HOME/.git-cache/nooku-platform"
 git fetch origin $branch
 git checkout $branch
 git pull --rebase
 
 rm -rf "$repo/application" "$repo/component" "$repo/config" "$repo/library" "$repo/install" "$repo/vendor"
 rm "$repo/LICENSE.md" "$repo/README.md"
-rsync -a --exclude='.git' "$HOME/.git-cache/nooku-framework/" "$repo"
+rsync -a --exclude='.git' "$HOME/.git-cache/nooku-platform/" "$repo"
 
 # Move custom files back into repository
 printf "$(tput bold)%s$(tput sgr0)\n" "Moving custom files back into repository..."
@@ -176,12 +179,12 @@ find . -path ./.git -prune -type d -print0 | xargs -0 chmod 0775
 find . -path ./.git -prune -type f -print0 | xargs -0 chmod 0664
 
 git add -A
-# git commit -m "Update Nooku Framework.
+# git commit -m "Update Nooku Platform.
 #
 # Branch: origin/$branch
-# Commit: $(git --git-dir=$HOME/.git-cache/nooku-framework/.git rev-parse origin/$branch)"
+# Commit: $(git --git-dir=$HOME/.git-cache/nooku-platform/.git rev-parse origin/$branch)"
 
 # Composer
 printf "$(tput bold)%s$(tput sgr0)\n" "Running custom composer..."
-cd "$repo/install/custom"
+cd "$repo"
 composer install

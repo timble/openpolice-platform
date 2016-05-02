@@ -3,7 +3,7 @@
     // Set default value for categories radiolist
     $jQuery(document).ready(
         function(){
-            $jQuery('fieldset[name=traffic_category_id] label:first-of-type input:radio').prop('checked', true);
+            $jQuery('fieldset[name=traffic_category_id] label[for=traffic_category_id19] input:radio').prop('checked', true);
         }
     );
 </script>
@@ -44,7 +44,7 @@
             <?= translate('End on') ?>
         </label>
         <div>
-            <input type="text" name="end_on" id="end_on" class="required" value="<?= helper('date.format', array('date'=> $article->end_on, 'format' => 'd-m-Y')) ?>" />
+            <input type="text" name="end_on" id="end_on" value="<?= $article->end_on ? helper('date.format', array('date'=> $article->end_on, 'format' => 'd-m-Y')) : '' ?>" />
             <script date-inline>
                 $jQuery(function(){
                     $jQuery('#end_on').datetimepicker({
@@ -70,10 +70,47 @@
     <?= helper('com:questions.radiolist.categories', array('row' => $article, 'package' => 'traffic', 'name' => 'traffic_category_id')) ?>
 </fieldset>
 
-<? if($article->isStreetable()) : ?>
 <fieldset>
     <legend><?= translate('Streets') ?></legend>
-    <?= helper('com:streets.listbox.streets', array('selected' => $article->getStreets()->streets_street_id, 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
+    <?= helper('com:streets.listbox.streets', array('selected' => isset($streets) ? $streets->streets_street_identifier : '', 'deselect' => false, 'attribs' => array('multiple' => 'multiple', 'class' => 'select-streets', 'style' => 'width:100%;'))); ?>
     <script data-inline> $jQuery(".select-streets").select2(); </script>
 </fieldset>
+
+<fieldset id="results">
+    <legend><?= translate('Results') ?></legend>
+    <div>
+        <label for="controlled"><?= translate('Controlled') ?></label>
+        <div>
+            <input type="number" name="controlled" value="<?= $article->controlled ?>" <?= $article->id && $article->traffic_category_id != '19' ? 'disabled' : '' ?> />
+        </div>
+    </div>
+    <div>
+        <label for="in_violation"><?= translate('In violation') ?></label>
+        <div>
+            <input type="number" name="in_violation" value="<?= $article->in_violation ?>" <?= $article->id && $article->traffic_category_id != '19' ? 'disabled' : '' ?> />
+        </div>
+    </div>
+</fieldset>
+
+<script data-inline>
+    $jQuery("input[name=traffic_category_id]").click(function()
+    {
+        if($jQuery('#traffic_category_id19').is(':checked'))
+        {
+            $jQuery( "#results input").prop("disabled", false);
+        } else {
+            $jQuery("#results input").prop("disabled", true);
+        }
+    });
+</script>
+
+<? if($article->isAttachable()) : ?>
+<fieldset>
+    <legend><?= translate('Attachments') ?></legend>
+    <? if (!$article->isNew()) : ?>
+        <?= import('com:attachments.view.attachments.list.html', array('attachments' => $article->getAttachments())) ?>
+    <? endif ?>
+    <?= import('com:attachments.view.attachments.upload.html') ?>
+</fieldset>
 <? endif ?>
+

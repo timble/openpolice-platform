@@ -1,0 +1,75 @@
+$fix-mqs: false !default;
+$old-ie: false !default;
+
+/**
+ * Returns "@content" in either a media querie or regular
+ * based on if $fix-mqs is set and to what number
+ *
+ * @param {string} $width - The width unit for single media queries
+ * @param {string} $type (min) - Either "min", "max" or "range"
+ * @param {string} $width--max (false) - The max width when using the "range" type
+ *
+ * @example scss
+ * breakpoint(600px) { ... }
+ * // will return @media screen and (min-width: 600px) { ... }
+ *
+ * @example scss
+ * breakpoint(800px, max) { ... }
+ * // will return @media screen and (max-width: 800px) { ... }
+ *
+ * @example scss
+ * breakpoint(600px, range, 800px) { @content }
+ * // will return @media screen and (min-width: 600px) and (max-width: 800px) { ... }
+ *
+ * @group Breakpoint
+ */
+
+@mixin breakpoint($width, $type: min, $width--max: false) {
+
+  // If we're outputting for a fixed media query set...
+  @if $fix-mqs {
+    // ...and if we should apply these rules...
+    @if $type == min and $fix-mqs >= $width {
+      // ...output the content the user gave us.
+      @content;
+    } @else if $type == max and $fix-mqs <= $width {
+      // ...output the content the user gave us.
+      @content;
+    } @else if $type == range and $fix-mqs <= $width--max {
+      // ...output the content the user gave us.
+      @content;
+    }
+  } @else {
+    @if $type == min {
+      // Otherwise, output it using a regular media query
+      @media screen and (min-width: $width) {
+        @content;
+      }
+    } @else if $type == max {
+      // Otherwise, output it using a regular media query
+      @media screen and (max-width: $width) {
+        @content;
+      }
+    } @else if $type == range {
+      // Otherwise, output it using a regular media query
+      @media screen and (min-width: $width) and (max-width: $width--max) {
+        @content;
+      }
+    }
+  }
+}
+
+/**
+ * Returns "@content" based on if $fix-mqs is set and to what number
+ *
+ * @example scss
+ * old-ie { ... }
+ *
+ * @group Breakpoint
+ */
+
+@mixin old-ie() {
+  @if $old-ie {
+    @content;
+  }
+}

@@ -11,7 +11,10 @@
 $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
 
+$domains = array('nl' => 'http://www.lokalepolitie.be', 'fr' => 'http://www.policelocale.be', 'de' => 'http://www.lokalepolizei.be', 'en' => 'http://www.police.be');
+
 $zone = object('com:police.model.zone')->id($site)->getRow();
+
 $singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
 
 $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
@@ -24,6 +27,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
 <?= import('page_head.html') ?>
 <body id="page" class="no-js">
+<?php if( extension_loaded('newrelic') ) { echo '<script data-inline type="text/javascript" pagespeed_no_defer="">'.newrelic_get_browser_timing_header(false).'</script>'; } ?>
 <script data-inline type="text/javascript" pagespeed_no_defer="">function hasClass(e,t){return e.className.match(new RegExp("(\\s|^)"+t+"(\\s|$)"))}var el=document.getElementById("page");var cl="no-js";if(hasClass(el,cl)){var reg=new RegExp("(\\s|^)"+cl+"(\\s|$)");el.className=el.className.replace(reg,"js-enabled")}</script>
 
 <div id="wrap">
@@ -31,9 +35,9 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <div class="header">
             <div class="organization" itemscope itemtype="http://schema.org/Organization">
                 <a itemprop="url" href="<?= $path ?>">
-                    <div class="organization__logo organization__logo--<?= $active->slug; ?>"></div>
-                    <div class="organization__name"><span><?= translate('Police') ?></span> <?= escape($zone->title); ?></div>
-                    <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
+                    <div class="organization__logo organization__logo--<?= $active->slug; ?> organization__logo--<?= $site; ?>"></div>
+                    <div class="organization__name"><span><?= $site != 'fed' ? translate('Police') : ''; ?></span> <?= escape($zone->title); ?></div>
+                    <meta itemprop="logo" content="<?= $domains[$active->slug] ?>/theme/mobile/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
                 </a>
                 <button id="hamburger" class="button--hamburger" aria-hidden="true" aria-pressed="false" aria-controls="navigation" onclick="apollo.toggleClass(document.getElementById('navigation'), 'is-shown');apollo.toggleClass(document.getElementById('hamburger'), 'close');hamburger()">MENU <span class="lines"></span></button>
             </div>
@@ -41,7 +45,9 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <div class="navigation">
                 <span class="slogan">
                     <?= JText::sprintf('Call for urgent police assistance', '101') ?>.
-                    <?= JText::sprintf('No emergency, just police', escape($zone->phone_information)) ?>.
+                    <? if($zone->phone_information || $zone->phone_emergency) : ?>
+                    <?= JText::sprintf('No emergency, just police', $zone->phone_information ? escape($zone->phone_information) : escape($zone->phone_emergency)) ?>.
+                    <? endif ?>
                 </span>
                 <div id="navigation" class="navbar">
                     <ktml:modules position="navigation">
@@ -52,11 +58,13 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
     </div>
 
+    <? if($zone->banner) : ?>
     <div class="container container__banner">
         <div class="banner__image banner__image--<?= $site ?>">
 
         </div>
     </div>
+    <? endif ?>
 
     <ktml:modules position="breadcrumbs">
         <div class="container container__breadcrumb">
@@ -65,7 +73,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </div>
     </ktml:modules>
 
-    <div class="container container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
+    <div class="container container__content <?= $extension ?> <?= $layout ?>">
         <ktml:modules position="left">
             <aside class="sidebar">
                 <ktml:modules:content>
@@ -73,7 +81,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         </ktml:modules>
 
         <? if(!$singleColumn) : ?>
-        <div class="component <?= $extension ?>">
+        <div class="component <?= $extension ?> <?= $view ?> <?= $layout ?>">
             <? endif ?>
             <ktml:content>
                 <? if(!$singleColumn) : ?>
@@ -94,15 +102,15 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <div class="row">
                 <div class="footer__news">
                     <h3><?= translate('Latest news') ?></h3>
-                    <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('ordering_date')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
+                    <?= import('com:news.view.articles.list.html', array('articles' =>  object('com:news.model.articles')->sort('published_on')->direction('DESC')->published(true)->limit('2')->getRowset())) ?>
                 </div>
-                <? if($site !== '5888') : ?>
-                    <div class="footer__districts">
-                        <h3><?= translate('Your district officer') ?></h3>
-                        <p><?= translate('You know the responsible district officer in your area? He or she is your first contact with the police.') ?></p>
-                        <a href="<?= $path ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district officer')) ?>"><?= translate('Contact your district officer') ?>.</a>
-                    </div>
-                <?php endif; ?>
+                <? if(count($pages->find(array('id' => '43')))) : ?>
+                <div class="footer__districts">
+                    <h3><?= translate('Your district officer') ?></h3>
+                    <p><?= translate('You know the responsible district officer in your area? He or she is your first contact with the police.') ?></p>
+                    <a href="<?= $path ?>/contact/<?= object('lib:filter.slug')->sanitize(translate('Your district')) ?>"><?= translate('Contact your district officer') ?>.</a>
+                </div>
+                <? endif; ?>
             </div>
         </div>
     <?php endif; ?>
@@ -116,33 +124,55 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <? endif ?>
             <? endforeach ?>
         </ul>
+        <ul class="nav nav--list nav--social">
+            <? $channels = array('twitter' => 'www.twitter.com', 'facebook' => 'www.facebook.com', 'youtube' => 'www.youtube.com/user', 'instagram' => 'instagram.com') ?>
+            <? foreach($channels as $channel => $site) : ?>
+            <? if($zone->{$channel}) : ?>
+            <li>
+                <a href="https://<?= $site ?>/<?= $zone->{$channel} ?>">
+                    <i class="icon-<?= $channel ?>"></i>
+                    <span class="visually-hidden"><?= ucfirst($zone->{$channel}) ?></span>
+                </a>
+            </li>
+            <? endif ?>
+            <? endforeach ?>
+            <li>
+                <a href="<?= $path ?>/<?= object('lib:filter.slug')->sanitize(translate('news')) ?>.rss">
+                    <i class="icon-feed"></i>
+                    <span class="visually-hidden">RSS</span>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 
 <div id="copyright">
     <div class="container container__copyright">
         <div class="copyright--left">
-            <? if($zone->twitter) : ?>
-                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
-            <? endif ?>
-            <?= $zone->twitter && $zone->facebook ? '&nbsp;|&nbsp;' : '' ?>
-            <? if($zone->facebook) : ?>
-                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
-            <? endif ?>
+            <ul>
             <? foreach($pages as $page) : ?>
-                <? if($page->id == '89' || $page->id == '101') : ?>
+                <? if($page->id == '89' || $page->id == '101' || $page->id == '116' || $page->id == '119') : ?>
+                    <li><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></li>
+                <? endif ?>
+            <? endforeach ?>
+            </ul>
+        </div>
+        <div class="copyright--right">
+            © <?= date(array('format' => 'Y')) ?> <?= translate('Police') ?> - <?= escape($zone->title); ?>
+            <? foreach($pages as $page) : ?>
+                <? if($page->id == '106' || $page->id == '107') : ?>
                     &nbsp;|&nbsp;&nbsp;<a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>
         </div>
-        <div class="copyright--right">
-            © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?> - <?= escape($zone->title); ?>
-            <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a> -
-            <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/privacy.html">Privacy</a> -
-            <a href="http://www.belgium.be/<?= $active->slug ?>">Belgium.be</a>
-        </div>
     </div>
 </div>
 
+<script data-inline>
+    // Break out of an iframe
+    // http://css-tricks.com/snippets/javascript/break-out-of-iframe/
+    this.top.location !== this.location && (this.top.location = this.location);
+</script>
+<?php if( extension_loaded('newrelic') ) { echo '<script data-inline type="text/javascript" pagespeed_no_defer="">'.newrelic_get_browser_timing_footer(false).'</script>'; } ?>
 </body>
 </html>

@@ -9,31 +9,36 @@
 
 use Nooku\Library;
 
-class DistrictsControllerRelation extends Library\ControllerModel
+class DistrictsControllerRelation extends PoliceControllerLanguage
 {
     public function _actionBrowse(Library\CommandContext $context)
     {
         $relations = parent::_actionBrowse($context);
 
-        if(count($relations) == '1') {
-            foreach($relations as $relation) {
-                // Redirect the user if the request doesn't include layout=form
-                if ($context->request->getFormat() == 'html')
-                {
-                    if ($relation->districts_district_id) {
-                        $district = $this->getObject('com:districts.model.district')->id($relation->districts_district_id)->getRow();
+        $street      = isset($context->request->getUrl()->query['street']) ? $context->request->getUrl()->query['street'] : false;
+        $number      = isset($context->request->getUrl()->query['number']) ? $context->request->getUrl()->query['number'] : false;
 
-                        $url = clone($context->request->getUrl());
-                        $url->query['view'] = 'district';
-                        $url->query['option'] = 'com_districts';
-                        $url->query['id'] = $district->getSlug();
-                        unset($url->query['street']);
-                        unset($url->query['number']);
+        // Find unique streets
+        $streets    = array_unique($relations->streets_street_identifier);
 
-                        $this->getObject('application')->getRouter()->build($url);
+        // Street and number are required, if the street is unique we can redirect to the district
+        if(count($streets) == '1' && $number != '' && $street && is_numeric($number)) {
+            $relation = $relations->top();
 
-                        return $this->getObject('component')->redirect($url);
-                    }
+            // Redirect the user if the request doesn't include layout=form
+            if ($context->request->getFormat() == 'html' && isset($relation))
+            {
+                if ($relation->districts_district_id) {
+                    $district = $this->getObject('com:districts.model.district')->id($relation->districts_district_id)->getRow();
+
+                    $url = clone($context->request->getUrl());
+                    $url->query['view'] = 'district';
+                    $url->query['option'] = 'com_districts';
+                    $url->query['id'] = $district->getSlug();
+
+                    $this->getObject('application')->getRouter()->build($url);
+
+                    return $this->getObject('component')->redirect($url);
                 }
             }
         }

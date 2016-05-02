@@ -36,10 +36,11 @@ $white: #fff !default;
 
 // Breakpoints
 // -------------------------
+$breakpoint-zero: 320px;
 $breakpoint-alpha: 400px;
 $breakpoint-beta: 600px;
 $breakpoint-charlie: 768px;
-$breakpoint-delta: 1024px;
+$breakpoint-delta: 960px;
 
 
 $font-size: 16px;
@@ -58,6 +59,7 @@ $color-text: $grayDarker;
 
 $color-link: $blue;
 $color-link-hover: darken($color-link, 15%) !default;
+$color-link-visited: #609 !default;
 
 $border-radius: 4px !default;
 

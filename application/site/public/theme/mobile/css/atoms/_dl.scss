@@ -1,0 +1,34 @@
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0;
+  padding: 0 0 $line-height / 4 0;
+}
+
+@include breakpoint($breakpoint-beta) {
+  dt {
+    float: left;
+    clear: left;
+    width: 150px;
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  dd {
+    margin: 0 0 0 160px;
+    padding: 0 0 $line-height / 4 0;
+  }
+}
+
+.component.wanted {
+  dt {
+    width: auto;
+    margin-right: 6px;
+  }
+
+  dd {
+    margin: 0;
+  }
+}

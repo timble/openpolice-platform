@@ -11,7 +11,7 @@
 <? $email_to = str_replace("@", "&#64;", $district->coordinator_email) ?>
 <? $email_to = str_replace(".", "&#46;", $email_to) ?>
 
-<h2 class="article__header"><?= $district->coordinator_firstname .' '.$district->coordinator_lastname ?></h2>
+<h3><?= $district->coordinator_firstname .' '.$district->coordinator_lastname ?></h3>
 
 <address class="vcard">
     <div class="adr">

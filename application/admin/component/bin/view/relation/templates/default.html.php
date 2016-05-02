@@ -36,9 +36,9 @@
 				    <label for="streets_street_id">
 				    	<?= translate( 'Street' ); ?>
 				    </label>
-				    <div>
-                        <?= import('com:streets.view.streets.autocomplete.html', array('selected' => $relation->streets_street_id)); ?>
-                    </div>
+					<div>
+						<?= import('com:streets.view.streets.autocomplete.html', array('selected' => isset($street) ? $street->id : '', 'identifier' => isset($street) ? $street->streets_street_identifier : '')); ?>
+					</div>
 				</div>
 			</fieldset>
 			<fieldset>

@@ -12,7 +12,17 @@ use Nooku\Library;
 
 class ModelDistricts extends Library\ModelTable
 {
-	protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
+    public function __construct(Library\ObjectConfig $config)
+    {
+        parent::__construct($config);
+
+        $this->getState()
+            ->insert('islp' , 'string')
+            ->insert('street' , 'string')
+            ->insert('number' , 'int');
+    }
+
+    protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
 	{
 		parent::_buildQueryColumns($query);
 
@@ -34,5 +44,9 @@ class ModelDistricts extends Library\ModelTable
 		if ($state->search) {
 			$query->where('tbl.title LIKE :search')->bind(array('search' => '%'.$state->search.'%'));
 		}
+
+        if ($state->islp) {
+            $query->where('tbl.islp = :islp')->bind(array('islp' => $state->islp));
+        }
 	}
 }

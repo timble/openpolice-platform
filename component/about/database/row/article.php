@@ -19,8 +19,9 @@ class DatabaseRowArticle extends Library\DatabaseRowTable
             $this->_data['text'] = $this->fulltext ? $this->introtext.'<hr id="system-readmore" />'.$this->fulltext : $this->introtext;
         }
 
-        if($column == 'thumbnail' && !isset($this->_data['thumbnail'])) {
-            $this->_data['thumbnail'] = $this->getObject('com:attachments.database.row.attachment')->set('id', $this->attachments_attachment_id)->load()->path;
+        if($column == 'params')
+        {
+            $this->_data['params'] = $this->getObject('object.config.factory')->getFormat('json')->fromString($this->_data['params']);
         }
 
         return parent::__get($column);

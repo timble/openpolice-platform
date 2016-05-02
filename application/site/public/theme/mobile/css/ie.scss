@@ -1,23 +1,140 @@
+@import "../components/illusion/sass/illusion/mixins/basics";
 @import "utilities/variables";
 
-$old-ie: true;
-$fix-mqs: $breakpoint-delta;
-@import 'default';
-
-#wrap {
-  width: 942px;
+#wrap,
+#splash,
+#intro {
+  width: $breakpoint-beta;
+  margin: 0 auto;
 }
 
-.container__header {
-  .nav li {
-    display: block;
-    float: left;
-    width: 130px;
+#splash,
+#intro {
+  display: block;
+  height: auto;
+}
+
+form {
+  margin: 0;
+}
+
+#wrap,
+#intro {
+  border-left: 1px solid darken($grayLighter, 7%);
+  border-right: 1px solid darken($grayLighter, 7%);
+}
+
+// IE6 and below
+* html .navbar__logo {
+  padding-top: 10px; // IE6
+}
+
+// Right alignment of the thumbnail, on mobile it is on top
+.article__thumbnail {
+  float: right;
+  width: 200px;
+  height: 150px;
+  margin: 0 0 $line-height $line-height;
+
+  img {
+    width: 100%; // IE6
+    height: 100%; // IE6
   }
 }
 
-.container__footer {
-  input {
-    width: 188px;
+.article__thumbnail--wanted {
+  height: 250px;
+}
+
+.homepage__sticky,
+.footer__news {
+  .media__object {
+    img {
+      width: 100%; // IE6
+      height: 100%; // IE6
+    }
+  }
+}
+
+.card {
+  text-align: left;
+
+  .card__box {
+    width: $breakpoint-beta - 40px - 2px;
+  }
+
+  .card__image {
+    float: left;
+    width: 112px;
+
+    img {
+      width: 112px;
+      height: 84px;
+    }
+  }
+
+  .card__image--wanted {
+    img {
+      width: 112px;
+      height: 140px;
+    }
+  }
+
+  .card__metadata {
+    float: left;
+    width: $breakpoint-beta - 40px - 2px - 110px - 30px;
+  }
+}
+
+.button--hamburger {
+  display: none;
+}
+
+// Horizontal align the footer menu items
+.navbar {
+  ul li {
+    float: left;
+  }
+  ul li a {
+    text-align: center;
+    border: 0 none;
+    font-weight: normal;
+    padding: 10px 20px;
+  }
+}
+
+// Always show the navbar
+.js-enabled .navbar {
+  @include visually-shown;
+}
+
+// Horizontal align the footer menu items
+.container.container__footer_menu {
+  li {
+    float: left;
+  }
+
+  .nav--social {
+    li {
+      float: left;
+      width: auto;
+    }
+  }
+}
+
+#splash .nav--horizontal,
+#intro .nav--horizontal {
+  li {
+    display: inline-block;
+  }
+}
+
+.search-box__input {
+  width: 534px;
+}
+
+.well {
+  .search-box__input {
+    width: 494px;
   }
 }

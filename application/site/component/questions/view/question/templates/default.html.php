@@ -8,6 +8,8 @@
  */
 ?>
 
+<?= import('com:news.view.article.metadata.html', array('article' => $question)) ?>
+
 <ktml:module position="left">
     <?= import('com:categories.view.categories.list.html') ?>
 </ktml:module>
@@ -17,15 +19,20 @@
 <article class="article">
     <h1 class="article__header"><?= escape($question->title); ?></h1>
 
-    <? if($question->attachments_attachment_id) : ?>
-    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
-    <?= helper('com:attachments.image.thumbnail', array(
-        'attachment' => $question->attachments_attachment_id,
-        'attribs' => array('width' => '400', 'height' => '300'))) ?>
-    </a>
-    <? endif ?>
+    <div class="article__text">
+        <? if($question->attachments_attachment_id) : ?>
+        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
+        <?= helper('com:police.image.thumbnail', array(
+            'attachment' => $question->attachments_attachment_id,
+            'attribs' => array('width' => '400', 'height' => '300'))) ?>
+        </a>
+        <? endif ?>
 
-    <?= $question->text ?>
+        <?= $question->text ?>
+    </div>
+
+    <?= import('com:news.view.article.default_youtube.html', array('youtube' => $question->params->get('youtube', false))) ?>
+
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($question->attachments_attachment_id))) ?>
 </article>
 

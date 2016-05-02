@@ -10,24 +10,22 @@
 
 <meta content="noimageindex" name="robots" />
 
-<h2 class="article__header"><?= $officer->title ?></h2>
-
-<? if($officer->phone || $officer->mobile || $officer->email) : ?>
+<h<?= isset($heading) ? $heading + 2 : 2 ?> class="article__header"><?= $officer->title ?></h<?= isset($heading) ? $heading + 2 : 2 ?>>
+<? if($officer->phone || $officer->mobile || $officer->email || $district->email) : ?>
 <ul>
     <? if($officer->phone) : ?><li><?= translate('Phone') ?>: <?= $officer->phone ?></li><? endif ?>
     <? if($officer->mobile) : ?><li><?= translate('Mobile') ?>: <?= $officer->mobile ?></li><? endif ?>
-    <? if($officer->email) : ?><li><?= translate('Email') ?>: <a href="mailto:<?= $officer->email ?>"><?= $officer->email ?></a></li><? endif ?>
+    <? if($officer->email || $district->email) : ?><li><?= translate('Email') ?>: <a href="mailto:<?= $officer->email ? $officer->email : $district->email ?>"><?= $officer->email ? $officer->email : $district->email ?></a></li><? endif ?>
 </ul>
 <? endif ?>
 
 <? if($officer->isAttachable()) : ?>
     <? if(count($officer->getAttachments())) : ?>
-    <? foreach($officer->getAttachments() as $item) : ?>
+        <? $item = $officer->getAttachments()->top() ?>
         <? if($item->file->isImage()) : ?>
             <img width="140" class="thumbnail" src="attachments://<?= $item->path ?>" />
         <? endif ?>
-    <? endforeach ?>
-    <? else : ?>
+    <? elseif(!($officer->phone || $officer->mobile || $officer->email || $district->email)) : ?>
         <img width="140" class="thumbnail" src="assets://districts/images/placeholder.png" />
     <? endif ?>
 <? endif ?>

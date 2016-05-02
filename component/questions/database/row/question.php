@@ -18,6 +18,11 @@ class DatabaseRowQuestion extends Library\DatabaseRowTable
             $this->_data['text'] = $this->fulltext ? $this->introtext.'<hr id="system-readmore" />'.$this->fulltext : $this->introtext;
         }
 
+        if($column == 'params')
+        {
+            $this->_data['params'] = $this->getObject('object.config.factory')->getFormat('json')->fromString($this->_data['params']);
+        }
+
         return parent::__get($column);
     }
 

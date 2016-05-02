@@ -1,32 +1,39 @@
-curl -s -XPUT "http://localhost:9200/support"
-
-curl -s -XPUT "http://localhost:9200/support/ticket/_mapping" -d '{
-    "ticket" : {
-        "properties" : {
-            "support_ticket_id" : { "type" : "integer" },
-            "title": {
-                "type": "string",
-                "analyzer": "english",
-                "fields": {
-                    "raw": {
-                        "type":  "string",
-                        "index": "not_analyzed"
+curl -s -XPUT "http://localhost:9200/support_v1" -d '
+{
+    "mappings": {
+        "ticket" : {
+            "properties" : {
+                "support_ticket_id" : { "type" : "integer" },
+                "title": {
+                    "type": "string",
+                    "analyzer": "english",
+                    "fields": {
+                        "raw": {
+                            "type":  "string",
+                            "index": "not_analyzed"
+                        }
                     }
-                }
-            },
-            "zone" : { "type" : "integer" },
-            "last_activity_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
+                },
+                "last_activity_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
+            }
+        },
+        "comment" : {
+            "properties" : {
+                "comments_comment_id" : { "type" : "integer" },
+                "row" : { "type" : "integer" },
+                "created_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
+            }
         }
     }
 }'
 
-curl -s -XPUT "http://localhost:9200/support/comment/_mapping" -d '{
-    "comment" : {
-        "properties" : {
-            "comments_comment_id" : { "type" : "integer" },
-            "zone" : { "type" : "integer" },
-            "row" : { "type" : "integer" },
-            "created_on" : { "type" : "date", "format" : "yyyy-MM-dd HH:mm:ss" }
+curl -s -XPOST "http://localhost:9200/_aliases" -d '
+{
+    "actions": [{
+            "add": {
+                "alias": "support",
+                "index": "support_v1"
+            }
         }
-    }
+    ]
 }'

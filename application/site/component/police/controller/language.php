@@ -16,16 +16,28 @@ class PoliceControllerLanguage extends Library\ControllerModel
         parent::__construct($config);
 
         $this->_domains = array(
-            'www.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'live'),
-            'www.policelocale.be'   => array('language' => 'fr', 'access' => 'live'),
-            'www.lokalepolizei.be'  => array('language' => 'de', 'access' => 'live'),
-            'p.pol-nl.be'           => array('language' => 'nl', 'access' => 'production'),
-            'p.pol-fr.be'           => array('language' => 'fr', 'access' => 'production'),
-            'p.pol-de.be'           => array('language' => 'de', 'access' => 'production'),
-            's.pol-nl.be'           => array('language' => 'nl', 'access' => 'staging'),
-            's.pol-fr.be'           => array('language' => 'fr', 'access' => 'staging'),
-            's.pol-de.be'           => array('language' => 'de', 'access' => 'staging'),
+            'www.lokalepolitie.be'      => array('language' => 'nl', 'access' => 'live', 'group' => 'local'),
+            'www.policelocale.be'       => array('language' => 'fr', 'access' => 'live', 'group' => 'local'),
+            'www.lokalepolizei.be'      => array('language' => 'de', 'access' => 'live', 'group' => 'local'),
+            'new.lokalepolitie.be'      => array('language' => 'nl', 'access' => 'production', 'group' => 'local'),
+            'new.policelocale.be'       => array('language' => 'fr', 'access' => 'production', 'group' => 'local'),
+            'new.lokalepolizei.be'      => array('language' => 'de', 'access' => 'production', 'group' => 'local'),
+            'staging.lokalepolitie.be'  => array('language' => 'nl', 'access' => 'staging', 'group' => 'local'),
+            'staging.policelocale.be'   => array('language' => 'fr', 'access' => 'staging', 'group' => 'local'),
+            'staging.lokalepolizei.be'  => array('language' => 'de', 'access' => 'staging', 'group' => 'local'),
+            'www.politie.be'            => array('language' => 'nl', 'access' => 'live', 'group' => 'integrated'),
+            'www.police.be'             => array('language' => 'fr', 'access' => 'live', 'group' => 'integrated'),
+            'www.polizei.be'            => array('language' => 'de', 'access' => 'live', 'group' => 'integrated'),
+            'new.politie.be'            => array('language' => 'nl', 'access' => 'production', 'group' => 'integrated'),
+            'new.police.be'             => array('language' => 'fr', 'access' => 'production', 'group' => 'integrated'),
+            'new.polizei.be'            => array('language' => 'de', 'access' => 'production', 'group' => 'integrated'),
+            'staging.politie.be'        => array('language' => 'nl', 'access' => 'staging', 'group' => 'integrated'),
+            'staging.police.be'         => array('language' => 'fr', 'access' => 'staging', 'group' => 'integrated'),
+            'staging.polizei.be'        => array('language' => 'de', 'access' => 'staging', 'group' => 'integrated'),
         );
+
+        $this->registerCallback('before.read'   , array($this, 'checkHost'));
+        $this->registerCallback('before.browse' , array($this, 'checkHost'));
     }
 
     public function _actionBrowse(Library\CommandContext $context)
@@ -61,6 +73,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
         $site       = $this->getObject('application')->getSite();
         $package    = $this->getIdentifier()->package;
+        $section    = isset($model->getState()->section) ? $model->getState()->section : null;
         $category   = isset($model->getState()->category) ? $model->getState()->category : null;
         $item       = isset($row) ? $row->id : null;
 
@@ -81,7 +94,13 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
             $result .= '/'.$this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table('pages')->row($page->id)->getRowset()->top()->slug;
 
-            if($category && $package != 'contacts')
+            if($section && $package == 'wanted')
+            {
+                $current = $this->getObject('com:languages.model.translations')->iso_code($active->iso_code)->table($package.'_sections')->slug($section)->getRowset()->top();
+                $result .= '/'.$this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package.'_sections')->row($current->row)->getRowset()->top()->slug;
+            }
+
+            if($category && !in_array($package, array('contacts', 'traffic')))
             {
                 if(is_numeric($category))
                 {
@@ -96,11 +115,21 @@ class PoliceControllerLanguage extends Library\ControllerModel
 
             if($item)
             {
-                $item = $this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package)->row($item)->getRowset()->top();
+                if($package == 'districts')
+                {
+                    $item = $this->getObject('com:districts.model.districts')->id($item)->getRowset()->top();
+                }elseif(!in_array($package, array('statistics')))
+                {
+                    $item = $this->getObject('com:languages.model.translations')->iso_code($language->iso_code)->table($package)->row($item)->getRowset()->top();
+                }
 
-                if($package == 'news' || $package == 'contacts')
+                if(in_array($package, array('contacts', 'news', 'traffic', 'wanted', 'press')))
                 {
                     $result .= '/'.$item->row.'-'.$item->slug;
+                }
+                elseif(in_array($package, array('statistics')))
+                {
+                    $result .= '/'.$item;
                 }
                 else
                 {
@@ -109,7 +138,7 @@ class PoliceControllerLanguage extends Library\ControllerModel
             }
         }
 
-        if($return = $this->redirectHost($host, $language->slug, $languages))
+        if($return = $this->findHost($host, $language->slug))
         {
             $host = $return;
         }
@@ -120,17 +149,47 @@ class PoliceControllerLanguage extends Library\ControllerModel
         return true;
     }
 
-    public function redirectHost($host, $language, $languages)
+    public function checkHost($context)
     {
-        // Make sure we are using the proper domain name
-        if(array_key_exists($host, $this->_domains) && count($languages) == '1')
+        $url    = $context->request->getUrl();
+        $host   = $url->getHost();
+        $path   = $url->getPath();
+
+        $languages  = $this->getObject('application.languages');
+        $active     = $languages->getActive();
+
+        // Check if host and language are in sync
+        if($return = $this->findHost($host, $active->slug))
         {
+            $this->getObject('component')->redirect('http://'.$return.$path);
+
+            return true;
+        }
+    }
+
+    public function findHost($host, $language)
+    {
+        // Make sure the given host exists
+        if(array_key_exists($host, $this->_domains))
+        {
+            // Check if host and language are in sync
             if($this->_domains[$host]['language'] != $language)
             {
-                $needle = array('language' => $language, 'access' => $this->_domains[$host]['access']);
+                $needle = array('language' => $language, 'access' => $this->_domains[$host]['access'], 'group' => $this->_domains[$host]['group']);
 
                 return array_search($needle, $this->_domains);
             }
+        }
+
+        return false;
+    }
+
+    public function findLanguage($host)
+    {
+        // Make sure the given host exists
+        if(array_key_exists($host, $this->_domains))
+        {
+            return $this->_domains[$host]['language'];
         }
 
         return false;

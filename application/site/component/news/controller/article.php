@@ -17,9 +17,14 @@ class NewsControllerArticle extends PoliceControllerLanguage
 
         // Only return published items.
         $request->query->published = 1;
-        $request->query->limit     = '3';
 
-        $request->query->sort = 'ordering_date';
+        // No need for a hardcoded limit in JSON
+        if($request->getFormat() == 'html')
+        {
+            $request->query->limit = '3';
+        }
+
+        $request->query->sort = 'published_on';
         $request->query->direction   = 'DESC';
 
         return $request;

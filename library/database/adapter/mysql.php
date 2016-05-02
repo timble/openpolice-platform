@@ -416,6 +416,17 @@ class DatabaseAdapterMysql extends DatabaseAdapterAbstract
             ->like(':like')
             ->bind(array('like' => $table));
 
+        if (strpos($table, '.') !== false)
+        {
+            list($from, $like) = explode('.', $table);
+
+            if ($from != $table)
+            {
+                $query->from($from)
+                      ->bind(array('like' => $like));
+            }
+        }
+
         if($info = $this->select($query, Database::FETCH_OBJECT)) {
             $return = $this->_parseTableInfo($info);
         }

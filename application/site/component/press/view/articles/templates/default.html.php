@@ -8,6 +8,8 @@
  */
 ?>
 
+<title content="replace"><?= escape(translate('Press Releases')); ?></title>
+
 <ktml:module position="left">
     <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
 
@@ -19,7 +21,7 @@
     <? endforeach ?>
 </ktml:module>
 
-<h1><?= escape(translate('Press')); ?></h1>
+<h1><?= escape(translate('Press Releases')); ?></h1>
 
 <table class="table table--striped">
     <thead>
@@ -35,11 +37,15 @@
     <tbody>
         <? foreach ($articles as $article) : ?>
             <tr>
-                <td><a href="<?= helper('route.article', array('row' => $article)) ?>"><?= $article->title ?></a></td>
-                <td nowrap><?= helper('date.format', array('date'=> $article->created_on, 'format' => translate('DATE_FORMAT_LC5'))) ?></td>
+                <td><a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a></td>
+                <td nowrap><?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?></td>
             </tr>
         <? endforeach; ?>
     </tbody>
 </table>
 
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
+
+<? if(object('application')->getCfg('site') == 'fed') : ?>
+<?= import('default_contact.html') ?>
+<? endif; ?>

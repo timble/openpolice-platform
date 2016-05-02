@@ -20,9 +20,9 @@
 </ktml:module>
 
 <? if($article->isTranslatable()) : ?>
-<ktml:module position="actionbar" content="append">
-    <?= helper('com:languages.listbox.languages') ?>
-</ktml:module>
+    <ktml:module position="actionbar" content="append">
+        <?= helper('com:languages.listbox.languages', array('attribs' => array('disabled' => 'true'))) ?>
+    </ktml:module>
 <? endif ?>
 
 <form action="" method="post" id="article-form" class="-koowa-form">
@@ -31,15 +31,15 @@
 
     <div class="main">
         <div class="title">
-            <input class="required" type="text" name="title" maxlength="255" value="<?= $article->title ?>" placeholder="<?= translate('Title') ?>" />
+            <input class="required" type="text" name="title" maxlength="255" value="<?= escape($article->title) ?>" placeholder="<?= translate('Title') ?>" />
             <div class="slug">
                 <span class="add-on"><?= translate('Slug') ?></span>
-                <input type="text" name="slug" maxlength="255" value="<?= $article->slug ?>" />
+                <input type="text" name="slug" maxlength="255" value="<?= escape($article->slug) ?>" />
             </div>
         </div>
         <?= object('com:ckeditor.controller.editor')->render(array('name' => 'text', 'text' => $article->text, 'attribs' => array('class' => 'ckeditor-required'))) ?>
     </div>
-    <div class="sidebar no--scrollbar">
+    <div class="sidebar">
         <?= import('default_sidebar.html'); ?>
     </div>
 </form>

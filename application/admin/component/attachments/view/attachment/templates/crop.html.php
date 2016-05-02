@@ -10,7 +10,8 @@
         new Attachments.List({
             container: 'attachment',
             action: '<?= route('view=attachment&format=json&layout=crop&id='.$attachment->id) ?>',
-            token: '<?= $this->getObject('user')->getSession()->getToken() ?>'
+            token: '<?= $this->getObject('user')->getSession()->getToken() ?>',
+            aspectRatio: <?= $aspect_ratio ?>
         });
     });
 </script>

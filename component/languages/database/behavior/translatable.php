@@ -259,9 +259,13 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
 
         foreach($translations as $translation)
         {
-            $prefix = $translation->iso_code != $primary->iso_code ? strtolower($translation->iso_code.'_') : '';
-            $query = 'REPLACE INTO '.$database->quoteIdentifier($prefix.$table->name).' '.$select;
-            $database->execute($query);
+            // Only update German from French if translation is missing
+            if($translation->iso_code !== 'de-be' || ($translation->iso_code == 'de-be' && $active->iso_code == 'fr-be'))
+            {
+                $prefix = $translation->iso_code != $primary->iso_code ? strtolower($translation->iso_code.'_') : '';
+                $query = 'REPLACE INTO '.$database->quoteIdentifier($prefix.$table->name).' '.$select;
+                $database->execute($query);
+            }
         }
     }
 
@@ -363,7 +367,7 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
                 if($active->iso_code == $primary->iso_code) {
                     $table = $context->query->table;
                 } else {
-                    $table = substr($context->query->table, 6);
+                    $table = substr($context->query->table[0], 6);
                 }
 
                 $table = $this->_tables->find(array('name' => $table))->top();
@@ -389,7 +393,7 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
 
         }
     }
-    
+
     protected function _beforeAdapterDelete(Library\CommandContext $context)
     {
         $languages = $this->getObject('application.languages');
@@ -404,7 +408,7 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
             }
         }
     }
-    
+
     protected function _afterAdapterDelete(Library\CommandContext $context)
     {
         if($context->affected)
@@ -417,7 +421,7 @@ class DatabaseBehaviorTranslatable extends Library\DatabaseBehaviorAbstract impl
             if($active->iso_code == $primary->iso_code) {
                 $table = $context->query->table;
             } else {
-                $table = substr($context->query->table['0'], 6);
+                $table = substr($context->query->table[0], 6);
             }
 
             $table = $this->_tables->find(array('name' => $table))->top();

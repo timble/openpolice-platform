@@ -15,24 +15,30 @@ class DatabaseRowCategory extends Library\DatabaseRowTable
 {
     public function save()
     {
-
         // Map pages_page_id to contacts_category_id
         $pages = array(
             '1'     => '42',
             '2'     => '44',
             '18'    => '66',
-            '24'    => '43',
-            '34'    => '105'
+            '24'    => '43'
         );
 
-        $row = $this->getObject('com:pages.database.row.page');
-        $row->id = $pages[$this->id];
+        $page = $this->getObject('com:pages.database.table.pages')->select($pages[$this->id], Library\Database::FETCH_ROW);
 
         // Keep Page published state in sync with the category
-        if($row->load() && ($this->published != $row->published))
+        if($this->published != $page->published)
         {
-            $row->published = $this->published;
-            $row->save();
+            $query = $this->getObject('lib:database.query.update')
+                ->table(array('tbl' => $page->getTable()->getBase()))
+                ->values(array('tbl.published = :published'))
+                ->where('tbl.pages_page_id = :id');
+
+            $query->bind(array(
+                'id' => $page->id,
+                'published' => $this->published,
+            ));
+
+            $page->getTable()->getAdapter()->update($query);
         }
 
         return parent::save();

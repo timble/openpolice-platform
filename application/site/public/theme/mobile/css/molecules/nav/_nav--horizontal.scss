@@ -1,0 +1,7 @@
+@include breakpoint($breakpoint-zero) {
+  .nav--horizontal {
+    li {
+      display: inline-block;
+    }
+  }
+}

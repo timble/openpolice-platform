@@ -75,7 +75,7 @@ class ModelAnnouncements extends Library\ModelAbstract
 
     protected function _fetchData()
     {
-        $feed = 'http://belgianpolice.github.io/blog.json';
+        $feed = 'http://www.openpolice.be/blog.json';
 
         $options = array(
             'http' => array(
@@ -113,6 +113,10 @@ class ModelAnnouncements extends Library\ModelAbstract
 
             return ($a > $b) ? -1 : 1;
         });
+
+        foreach ($data as $key => $value) {
+            $data[$key]['identifier'] = md5($value['date'] . $value['title']);
+        }
 
         return $data;
     }

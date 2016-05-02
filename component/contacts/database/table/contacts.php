@@ -24,12 +24,13 @@ class DatabaseTableContacts extends Library\DatabaseTableAbstract
         $config->append(array(
             'name' => 'contacts',
             'behaviors' => array(
-            	'creatable', 'modifiable', 'lockable', 'sluggable',
+                'sluggable', 'creatable', 'modifiable', 'lockable',
                 'orderable' => array(
                     'strategy' => 'flat'
                 ),
                 'com:attachments.database.behavior.attachable',
                 'com:languages.database.behavior.translatable',
+                'com:streets.database.behavior.locatable'
             ),
              'filters' => array(
                  'misc'     => array('html', 'tidy'),

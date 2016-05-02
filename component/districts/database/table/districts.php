@@ -17,7 +17,7 @@ class DatabaseTableDistricts extends Library\DatabaseTableAbstract
         $config->append(array(
             'name'         => 'districts',
             'behaviors'    =>  array(
-                'lockable', 'creatable', 'modifiable', 'sluggable',
+                'sluggable', 'creatable', 'modifiable', 'lockable',
                 'com:languages.database.behavior.translatable'
             )
         ));

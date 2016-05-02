@@ -11,65 +11,96 @@
 <? $email_to = str_replace("@", "&#64;", $contact->email_to) ?>
 <? $email_to = str_replace(".", "&#46;", $email_to) ?>
 
-<address class="vcard">
-    <h1 class="article__header fn"><?= $contact->title?></h1>
-    <? if($contact->name) : ?>
+<address>
+    <h1 class="article__header"><?= $contact->title?></h1>
+    <? if($contact->name && $category->id == '2') : ?>
     <h2><?= $contact->name?></h2>
     <? endif ?>
-    <? if($contact->isAttachable()) : ?>
-        <? foreach($contact->getAttachments() as $item) : ?>
-            <? if($item->file->isImage()) : ?>
-                <img width="400" height="300" class="photo article__thumbnail" align="right" src="attachments://<?= $item->thumbnail ?>" />
-            <? endif ?>
-        <? endforeach ?>
+    <? if(isset($thumbnail)) : ?>
+        <img class="article__thumbnail" width="400" height="300" align="right" src="attachments://<?= $thumbnail ?>" />
     <? endif ?>
-    <div class="adr">
-        <? if ($contact->address) : ?>
-            <div class="street-address"><?= $contact->address?></div>
+    <div>
+        <? if (isset($contact->street) || $contact->number) : ?>
+            <span><?= $contact->street ?> <?= $contact->number ?></span><br />
         <? endif; ?>
-        <?if ($contact->postcode) : ?>
-            <span class="postal-code"><?= $contact->postcode?></span>
+        <?if (isset($contact->street) && $contact->postcode) : ?>
+            <span><?= $contact->postcode ?></span>
         <? endif; ?>
-        <? if ( $contact->suburb) : ?>
-            <span class="locality"><?= $contact->suburb?></span>
+        <? if (isset($contact->street)) : ?>
+            <span><?= $contact->city ?></span>
         <? endif; ?>
     </div>
     <ul>
         <? if ($contact->telephone) :?>
-            <li class="tel">
-                <span class="type"><?= translate('Phone') ?></span>:
-                <span class="value"><?= $contact->telephone?></span>
+            <li>
+                <span><?= translate('Phone') ?></span>:
+                <span><?= $contact->telephone?></span>
             </li>
         <? endif; ?>
         <? if ($contact->fax) :?>
-            <li class="tel">
-                <span class="type"><?= translate('Fax') ?></span>:
-                <span class="value"><?= $contact->fax?></span>
+            <li>
+                <span><?= translate('Fax') ?></span>:
+                <span><?= $contact->fax?></span>
             </li>
         <? endif; ?>
         <?if ($contact->mobile) :?>
-            <li class="tel">
-                <span class="type"><?= translate('Mobile') ?></span>:
-                <span class="value"><?= $contact->mobile?></span>
+            <li>
+                <span><?= translate('Mobile') ?></span>:
+                <span><?= $contact->mobile?></span>
             </li>
         <? endif; ?>
         <?if ($contact->email_to) :?>
             <li>
-                <span class="type"><?= translate('Email') ?></span>:
-                <a class="email" href="mailto:<?= $email_to?>"><?= $email_to?></a>
+                <span><?= translate('Email') ?></span>:
+                <a href="mailto:<?= $email_to?>"><?= $email_to?></a>
             </li>
         <? endif; ?>
         <?if ($contact->url) :?>
             <li>
-                <span class="type"><?= translate('Website') ?></span>:
-                <a class="url" href="<?= $contact->url ?>"><?= str_replace('http://', '', $contact->url); ?></a>
+                <span><?= translate('Website') ?></span>:
+                <a href="<?= $contact->url ?>"><?= str_replace('http://', '', $contact->url); ?></a>
             </li>
         <? endif; ?>
     </ul>
 
     <?if ($contact->misc) :?>
-        <span class="note">
+        <span>
             <?= $contact->misc ?>
         </span>
     <? endif; ?>
+
+    <?= object('com:contacts.controller.hour')->contact($contact->id)->render(array('contact' => $contact)); ?>
 </address>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "<?= $category->id == '1' ? 'http://schema.org/PoliceStation' : 'http://schema.org/CivicStructure' ?>"
+  ,"address": {
+    "@type": "PostalAddress",
+    "addressLocality": "<?= $contact->city ?>",
+    "postalCode": "<?= $contact->postcode ?>",
+    "streetAddress": "<?= $contact->street ?> <?= $contact->number ?>"
+  }
+  <? if($contact->misc) : ?>
+  ,"description": "<?= trim(preg_replace('/\s\s+/', ' ', strip_tags($contact->misc))) ?>"
+  <? endif ?>
+  ,"name": "<?= $contact->title ?>"
+  <? if($contact->telephone) : ?>
+  ,"telephone": "<?= $contact->telephone ?>"
+  <? endif ?>
+  <? if($contact->fax) : ?>
+  ,"faxNumber": "<?= $contact->fax ?>"
+  <? endif ?>
+  <? if($contact->email) : ?>
+  ,"email": "<?= $contact->email ?>"
+  <? endif ?>
+  <? if($contact->url) : ?>
+  ,"sameAs": "<?= $contact->url ?>"
+  <? endif ?>
+  <? if(isset($thumbnail)) : ?>
+  ,"photo": "attachments://<?= $thumbnail ?>"
+  <? endif ?>
+  <?= object('com:contacts.controller.hour')->contact($contact->id)->layout('schema')->render(array('contact' => $contact)); ?>
+}
+</script>

@@ -26,8 +26,9 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
         $route = array(
             'view'     => 'question',
             'id'       => $question->getSlug(),
-            'layout'   => $config->layout,
-            'category' => $category->getSlug()
+            'layout'   => 'default',
+            'category' => $category->getSlug(),
+            'Itemid'   => '36'
         );
 
         return $this->getTemplate()->getView()->getRoute($route);
@@ -45,9 +46,19 @@ class QuestionsTemplateHelperRoute extends PagesTemplateHelperRoute
         $route = array(
             'view'          => 'questions',
             'category'      => $category->getSlug(),
-            'layout'        => $config->layout,
-            'searchword'    => null
+            'layout'        => 'default',
+            'searchword'    => null,
+            'Itemid'        => '36'
         );
+
+        $state    = $this->getTemplate()->getView()->getModel()->getState();
+        $current  = $state->category;
+        $offset   = $state->offset;
+
+        if ($category->id != $current && $offset > 0)
+        {
+            $route['offset'] = null;
+        }
 
         return $this->getTemplate()->getView()->getRoute($route);
     }

@@ -68,9 +68,6 @@
                     <a href="<?= route( 'view=category&id='.$category->id ); ?>">
                         <?= escape($category->title); ?>
                     </a>
-                    <? if($category->access) : ?>
-                        <span class="label label-important"><?= translate('Registered') ?></span>
-                    <? endif; ?>
                 </td>
                 <td align="center">
                     <?= $category->count; ?>

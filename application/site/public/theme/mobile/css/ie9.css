@@ -1,0 +1,41 @@
+/**
+ * Returns "@content" in either a media querie or regular
+ * based on if $fix-mqs is set and to what number
+ *
+ * @param {string} $width - The width unit for single media queries
+ * @param {string} $type (min) - Either "min", "max" or "range"
+ * @param {string} $width--max (false) - The max width when using the "range" type
+ *
+ * @example scss
+ * breakpoint(600px) { ... }
+ * // will return @media screen and (min-width: 600px) { ... }
+ *
+ * @example scss
+ * breakpoint(800px, max) { ... }
+ * // will return @media screen and (max-width: 800px) { ... }
+ *
+ * @example scss
+ * breakpoint(600px, range, 800px) { @content }
+ * // will return @media screen and (min-width: 600px) and (max-width: 800px) { ... }
+ *
+ * @group Breakpoint
+ */
+/**
+ * Returns "@content" based on if $fix-mqs is set and to what number
+ *
+ * @example scss
+ * old-ie { ... }
+ *
+ * @group Breakpoint
+ */
+ul.column--double li, ul.column--triple li, ul.column--quad li {
+  float: left;
+  width: 50%; }
+
+@media screen and (min-width: 768px) {
+  ul.column--triple li {
+    float: left;
+    width: 33%; }
+  ul.column--quad li {
+    float: left;
+    width: 25%; } }

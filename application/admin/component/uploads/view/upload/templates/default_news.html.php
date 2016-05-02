@@ -5,7 +5,7 @@
             <?= translate( 'Category ID' ); ?>
         </label>
         <div>
-            <input class="required" type="text" name="catid" value="" />
+            <input type="text" name="catid" value="" />
         </div>
     </div>
 </fieldset>
