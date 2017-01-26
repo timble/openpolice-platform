@@ -547,7 +547,7 @@ VALUES
 
 INSERT INTO `data`.`police_zones` (`police_zone_id`, `titles`, `language`, `phone_emergency`, `phone_information`, `email`, `social`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`)
 VALUES
-  (9999, '{"nl": "Example Zone"}', 1, '123 456 789', NULL, '9999@examplezone.police', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
+  (9999, '{"nl": "Open Police"}', 1, '123 456 789', NULL, '9999@examplezone.police', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET TIME_ZONE=@OLD_TIME_ZONE;
