@@ -30,7 +30,6 @@ You can run the project easily with the supplied Vagrantfile - make sure you und
 * Install [VirtualBox](http://www.virtualbox.org/)
 * Install [Vagrant](http://www.vagrantup.com/downloads.html)
 * Clone this repository
-    ```$ git clone https://github.com/belgianpolice/internet-platform.git```
 * Go to the repository folder and bootup the server
     ```$ vagrant up```
 * Add the following line to your hosts file
