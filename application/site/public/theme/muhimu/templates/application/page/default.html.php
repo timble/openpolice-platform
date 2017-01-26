@@ -36,7 +36,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <a itemprop="url" href="<?= $path ?>">
                 <span class="organization__logo"></span>
                 <span class="organization__name">
-                    <span><?= translate('Police') ?></span> <?= escape($zone->title); ?>
+                    <span><?= escape($zone->title); ?></span>
                 </span>
                 <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
             </a>
