@@ -1,6 +1,5 @@
 // External libraries
-@import 'illusion/basics';
-@import 'illusion/ie';
+@import '../../../../../../bower_components/illusion/sass/illusion';
 
 // Variables, mixins & functions
 @import 'utilities/variables';
@@ -8,7 +7,7 @@
 @import 'utilities/functions';
 
 // External components
-@import '../components/magnific-popup/src/css/main';
+@import '../../../../../../bower_components/magnific-popup/src/css/main';
 @import 'utilities/select2';
 @import 'utilities/system';
 
@@ -54,20 +53,3 @@
 
 
 @import "utilities/shame";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

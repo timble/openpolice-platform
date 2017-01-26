@@ -10,13 +10,13 @@ h1, %h1style {
   line-height: 1em; // 24px
   margin-bottom: 1em; // 24px
 
-  @include respond-min($breakpoint-alpha) {
+  @include breakpoint($breakpoint-alpha) {
     font-size: 1.875em; // 30px
     line-height: 1.2em; // 36px
     margin-bottom: 0.8em; // 24px
   }
 
-  @include respond-min($breakpoint-charlie) {
+  @include breakpoint($breakpoint-charlie) {
     font-size: 2.25em; // 36px
     line-height: 1em; //36px
     margin-bottom: 0.66666666666667em; //24px
@@ -30,7 +30,7 @@ h2, %h2style {
   line-height: 1.09090909090909em; // 24px
   margin-bottom: 1.09090909090909em; // 24px
 
-  @include respond-min($breakpoint-beta) {
+  @include breakpoint($breakpoint-beta) {
     font-size: 1.875em; // 30px
     line-height: 1.2em; // 36px
     margin-bottom: 0.8em; // 24px
@@ -42,7 +42,7 @@ h3, %h3style {
   line-height: 1.09090909090909em; // 24px
   margin-bottom: 1.09090909090909em; // 24px
 
-  @include respond-min($breakpoint-beta) {
+  @include breakpoint($breakpoint-beta) {
     font-size: 1.5em; // 24px
     line-height: 1em; // 24px
     margin-bottom: 1em; // 24px
@@ -54,7 +54,7 @@ h4, %h4style {
   line-height: 1.2em; // 24px
   margin-bottom: 1.2em; // 24px
 
-  @include respond-min($breakpoint-beta) {
+  @include breakpoint($breakpoint-beta) {
     font-size: 1.375em; // 22px
     line-height: 1.09090909090909em; // 24px
     margin-bottom: 1.09090909090909em; // 24px

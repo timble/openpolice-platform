@@ -11,7 +11,7 @@
 .media__title {
   @extend %h6style;
 
-  @include respond-min($breakpoint-alpha) {
+  @include breakpoint($breakpoint-alpha) {
     font-size: 1.25em; // 20px
     line-height: 1.2em; // 24px
     margin-bottom: 1.2em; // 24px

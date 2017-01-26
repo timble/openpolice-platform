@@ -4,3 +4,5 @@ config/config.php
 *.css.map
 config/key.p12
 .bundle
+
+/bower_components

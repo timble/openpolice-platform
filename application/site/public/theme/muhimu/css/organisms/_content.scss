@@ -7,7 +7,7 @@
   padding-top: $spacing;
   padding-bottom: $spacing;
 
-  @include respond-min($breakpoint-charlie) {
+  @include breakpoint($breakpoint-charlie) {
     padding-top: $spacing-xl;
   }
 }
@@ -22,7 +22,7 @@
   article {
     @extend %clearfix;
 
-    @include respond-min($breakpoint-delta) {
+    @include breakpoint($breakpoint-delta) {
       max-width: 42em;
     }
   }

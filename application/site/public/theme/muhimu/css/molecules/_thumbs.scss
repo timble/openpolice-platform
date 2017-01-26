@@ -14,7 +14,7 @@
   @include hover_background($padding: 4px);
 }
 
-@include respond-min($breakpoint-alpha) {
+@include breakpoint($breakpoint-alpha) {
   .article__thumbnail {
     float: right;
     width: 40%;

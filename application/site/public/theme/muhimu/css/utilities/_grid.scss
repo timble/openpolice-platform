@@ -1,4 +1,4 @@
-@import 'susy';
+@import '../../../../../../../bower_components/susy/sass/susy';
 
 .container__top,
 .container__header,
@@ -12,12 +12,12 @@
   padding-left: $spacing-s;
   padding-right: $spacing-s;
 
-  @include respond-min($breakpoint-charlie) {
+  @include breakpoint($breakpoint-charlie) {
     padding-left: $spacing;
     padding-right: $spacing;
   }
 
-  @include respond-min($breakpoint-delta) {
+  @include breakpoint($breakpoint-delta) {
     padding-left: $spacing-l;
     padding-right: $spacing-l;
   }
@@ -35,7 +35,7 @@
 }
 
 // Alpha
-@include respond-min($breakpoint-alpha) {
+@include breakpoint($breakpoint-alpha) {
   .news.articles {
     .media__image {
       @include span(first 4 of 12);
@@ -48,7 +48,7 @@
 }
 
 // Beta
-@include respond-min($breakpoint-beta) {
+@include breakpoint($breakpoint-beta) {
 
   .organization {
     @include span(first 3 of 6);
@@ -81,7 +81,7 @@
 
 
 // Charlie
-@include respond-min($breakpoint-charlie) {
+@include breakpoint($breakpoint-charlie) {
 
   .organization {
     @include span(first 8 of 12);
@@ -149,7 +149,7 @@
 }
 
 // Delta
-@include respond-min($breakpoint-delta) {
+@include breakpoint($breakpoint-delta) {
   .articles.article {
     @include span(first 8 of 12)
   }

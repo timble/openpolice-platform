@@ -10,12 +10,12 @@
   padding-top: 10px;
   padding-bottom: 10px;
 
-  @include respond-min($breakpoint-beta) {
+  @include breakpoint($breakpoint-beta) {
     padding-top: 20px;
     padding-bottom: 20px;
   }
 
-  @include respond-min($breakpoint-charlie) {
+  @include breakpoint($breakpoint-charlie) {
     padding-top: 0;
     padding-bottom: 20px;
   }
@@ -24,19 +24,19 @@
     font-size: 1.125em;
     margin: 1em 0 .5em 0;
 
-    @include respond-min($breakpoint-alpha) {
+    @include breakpoint($breakpoint-alpha) {
       font-size: 1.25em;
     }
 
-    @include respond-min($breakpoint-beta) {
+    @include breakpoint($breakpoint-beta) {
       margin-top: 0;
     }
 
-    @include respond-min($breakpoint-charlie) {
+    @include breakpoint($breakpoint-charlie) {
       font-size: 1.375em;
     }
 
-    @include respond-min($breakpoint-delta) {
+    @include breakpoint($breakpoint-delta) {
       margin-top: 0;
       font-size: 1.5em;
     }
@@ -52,7 +52,7 @@
     font-size: 1em;
     margin: 0;
 
-    @include respond-min($breakpoint-alpha) {
+    @include breakpoint($breakpoint-alpha) {
       font-size: 1.125em;
     }
   }
@@ -70,7 +70,7 @@
     padding-bottom: $spacing;
     border-bottom: 2px solid palette(turquoise, light);
 
-    @include respond-min($breakpoint-charlie) {
+    @include breakpoint($breakpoint-charlie) {
       padding-bottom: 0;
       border: none;
     }
@@ -80,7 +80,7 @@
     margin-top: $spacing;
     margin-bottom: 0;
 
-    @include respond-min($breakpoint-alpha) {
+    @include breakpoint($breakpoint-alpha) {
       margin-top: 0;
     }
   }

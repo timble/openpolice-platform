@@ -16,7 +16,7 @@
     color: palette(blue);
   }
 
-  @include respond-min($breakpoint-charlie) {
+  @include breakpoint($breakpoint-charlie) {
 
     @at-root .container__copyright {
       display: table;
