@@ -24,15 +24,10 @@ CREATE TABLE `about` (
   `modified_on` datetime DEFAULT NULL,
   `locked_by` int(11) unsigned DEFAULT NULL,
   `locked_on` datetime DEFAULT NULL,
-  `publish_on` datetime DEFAULT NULL,
-  `unpublish_on` datetime DEFAULT NULL,
   `params` text,
   `ordering` int(11) NOT NULL DEFAULT '0',
-  `description` text,
-  `access` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`about_article_id`),
   UNIQUE KEY `slug` (`slug`),
-  KEY `idx_access` (`access`),
   KEY `idx_state` (`published`),
   KEY `idx_createdby` (`created_by`),
   KEY `idx_catid` (`about_category_id`)
@@ -47,7 +42,6 @@ CREATE TABLE `about_categories` (
   `attachments_attachment_id` int(11) unsigned NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   `slug` varchar(255) NOT NULL default '',
-  `image` varchar(255) NOT NULL default '',
   `description` text NOT NULL,
   `published` tinyint(1) NOT NULL default '0',
   `created_by` int(10) unsigned default NULL,
@@ -57,12 +51,10 @@ CREATE TABLE `about_categories` (
   `locked_by` int(10) unsigned default NULL,
   `locked_on` datetime default NULL,
   `ordering` int(11) NOT NULL default '0',
-  `access` tinyint(3) unsigned NOT NULL default '0',
   `params` text NOT NULL,
   PRIMARY KEY  (`about_category_id`),
   UNIQUE KEY `slug` (`slug`),
-  KEY `cat_idx` (`published`,`access`),
-  KEY `idx_access` (`access`)
+  KEY `cat_idx` (`published`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -299,7 +291,6 @@ CREATE TABLE `contacts` (
   `locked_on` datetime default NULL,
   `ordering` int(11) NOT NULL default '0',
   `params` text NOT NULL,
-  `access` tinyint(3) unsigned NOT NULL default '0',
   `mobile` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`contacts_contact_id`),
   KEY `category` (`contacts_category_id`)
@@ -314,7 +305,6 @@ CREATE TABLE `contacts_categories` (
   `attachments_attachment_id` int(11) unsigned NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   `slug` varchar(255) NOT NULL default '',
-  `image` varchar(255) NOT NULL default '',
   `description` text NOT NULL,
   `published` tinyint(1) NOT NULL default '0',
   `hidden` tinyint(1) NOT NULL default '0',
@@ -325,12 +315,10 @@ CREATE TABLE `contacts_categories` (
   `locked_by` int(10) unsigned default NULL,
   `locked_on` datetime default NULL,
   `ordering` int(11) NOT NULL default '0',
-  `access` tinyint(3) unsigned NOT NULL default '0',
   `params` text NOT NULL,
   PRIMARY KEY  (`contacts_category_id`),
   UNIQUE KEY `slug` (`slug`),
-  KEY `cat_idx` (`published`,`access`),
-  KEY `idx_access` (`access`)
+  KEY `cat_idx` (`published`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -505,6 +493,30 @@ CREATE TABLE `files_thumbnails` (
   KEY `filename` (`filename`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+--
+-- Table structure data for table `found`
+--
+
+CREATE TABLE `found` (
+  `found_item_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `contacts_contact_id` int(11) DEFAULT NULL,
+  `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `text` mediumtext NOT NULL,
+  `found_on` date DEFAULT NULL,
+  `tracking_number` varchar(250) DEFAULT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `created_by` int(11) unsigned DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `modified_by` int(11) unsigned DEFAULT NULL,
+  `modified_on` datetime DEFAULT NULL,
+  `locked_by` int(11) unsigned DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  `params` text,
+  PRIMARY KEY (`found_item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Table structure data for table `languages`
@@ -780,7 +792,6 @@ CREATE TABLE `questions` (
   `modified_on` datetime DEFAULT NULL,
   `locked_by` int(11) unsigned DEFAULT NULL,
   `locked_on` datetime DEFAULT NULL,
-  `ordering` int(11) DEFAULT '0',
   `params` text,
   PRIMARY KEY (`questions_question_id`),
   UNIQUE KEY `slug` (`slug`)
@@ -795,7 +806,6 @@ CREATE TABLE `questions_categories` (
   `attachments_attachment_id` int(11) unsigned NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   `slug` varchar(255) NOT NULL default '',
-  `image` varchar(255) NOT NULL default '',
   `description` text NOT NULL,
   `published` tinyint(1) NOT NULL default '0',
   `created_by` int(10) unsigned default NULL,
@@ -804,13 +814,10 @@ CREATE TABLE `questions_categories` (
   `modified_on` datetime default NULL,
   `locked_by` int(10) unsigned default NULL,
   `locked_on` datetime default NULL,
-  `ordering` int(11) NOT NULL default '0',
-  `access` tinyint(3) unsigned NOT NULL default '0',
   `params` text NOT NULL,
   PRIMARY KEY  (`questions_category_id`),
   UNIQUE KEY `slug` (`slug`),
-  KEY `cat_idx` (`published`,`access`),
-  KEY `idx_access` (`access`)
+  KEY `cat_idx` (`published`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -920,8 +927,8 @@ CREATE TABLE `traffic` (
   `text` text NOT NULL,
   `start_on` datetime DEFAULT NULL,
   `end_on` datetime DEFAULT NULL,
-  `controlled` int(11) DEFAULT NULL,
-  `in_violation` int(11) DEFAULT NULL,
+  `controlled` int(11) NOT NULL,
+  `in_violation` int(11) NOT NULL,
   `published` tinyint(1) NOT NULL DEFAULT '0',
   `created_by` int(11) DEFAULT NULL,
   `created_on` datetime DEFAULT NULL,
@@ -930,7 +937,7 @@ CREATE TABLE `traffic` (
   `locked_by` int(11) DEFAULT NULL,
   `locked_on` datetime DEFAULT NULL,
   PRIMARY KEY (`traffic_article_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=748 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `traffic_categories`;
@@ -941,7 +948,6 @@ CREATE TABLE `traffic_categories` (
   `attachments_attachment_id` int(11) unsigned NOT NULL default '0',
   `title` varchar(255) NOT NULL default '',
   `slug` varchar(255) NOT NULL default '',
-  `image` varchar(255) NOT NULL default '',
   `description` text NOT NULL,
   `published` tinyint(1) NOT NULL default '0',
   `created_by` int(10) unsigned default NULL,
@@ -950,13 +956,10 @@ CREATE TABLE `traffic_categories` (
   `modified_on` datetime default NULL,
   `locked_by` int(10) unsigned default NULL,
   `locked_on` datetime default NULL,
-  `ordering` int(11) NOT NULL default '0',
-  `access` tinyint(3) unsigned NOT NULL default '0',
   `params` text NOT NULL,
   PRIMARY KEY  (`traffic_category_id`),
   UNIQUE KEY `slug` (`slug`),
-  KEY `cat_idx` (`published`,`access`),
-  KEY `idx_access` (`access`)
+  KEY `cat_idx` (`published`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
@@ -1002,6 +1005,8 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL DEFAULT '',
   `enabled` tinyint(1) NOT NULL DEFAULT '1',
   `send_email` tinyint(1) DEFAULT '0',
+  `login_attempts` int(11) NOT NULL DEFAULT '0',
+  `last_login_attempt` datetime DEFAULT NULL,
   `users_role_id` int(11) unsigned NOT NULL DEFAULT '18',
   `last_visited_on` datetime DEFAULT NULL,
   `created_by` int(10) unsigned DEFAULT NULL,
@@ -1101,6 +1106,94 @@ CREATE TABLE `users_sessions` (
   KEY `time` (`time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
+--
+-- Table structure data for table `wanted`
+--
+
+DROP TABLE IF EXISTS `wanted`;
+
+CREATE TABLE `wanted` (
+  `wanted_article_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `wanted_category_id` int(11) DEFAULT NULL,
+  `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `streets_city_id` int(11) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
+  `slug` varchar(255) DEFAULT NULL,
+  `text` mediumtext NOT NULL,
+  `date` date DEFAULT NULL,
+  `case_id` varchar(255) DEFAULT NULL,
+  `solved` tinyint(4) DEFAULT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `published_on` datetime DEFAULT NULL,
+  `created_by` int(11) unsigned DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `modified_by` int(11) unsigned DEFAULT NULL,
+  `modified_on` datetime DEFAULT NULL,
+  `locked_by` int(11) unsigned DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  `publish_on` datetime DEFAULT NULL,
+  `params` text,
+  PRIMARY KEY (`wanted_article_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure data for table `wanted_categories`
+--
+
+DROP TABLE IF EXISTS `wanted_categories`;
+
+CREATE TABLE `wanted_categories` (
+  `wanted_category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `wanted_section_id` int(11) NOT NULL DEFAULT '0',
+  `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `slug` varchar(255) NOT NULL DEFAULT '',
+  `image` varchar(255) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `created_by` int(10) unsigned DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `modified_by` int(10) unsigned DEFAULT NULL,
+  `modified_on` datetime DEFAULT NULL,
+  `locked_by` int(10) unsigned DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `params` text NOT NULL,
+  PRIMARY KEY (`wanted_category_id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `cat_idx` (`published`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+--
+-- Table structure data for table `wanted_sections`
+--
+
+DROP TABLE IF EXISTS `wanted_sections`;
+
+CREATE TABLE `wanted_sections` (
+  `wanted_section_id` int(11) NOT NULL AUTO_INCREMENT,
+  `attachments_attachment_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `slug` varchar(255) NOT NULL DEFAULT '',
+  `image` varchar(255) NOT NULL DEFAULT '',
+  `description` text NOT NULL,
+  `published` tinyint(1) NOT NULL DEFAULT '0',
+  `created_by` int(10) unsigned DEFAULT NULL,
+  `created_on` datetime DEFAULT NULL,
+  `modified_by` int(10) unsigned DEFAULT NULL,
+  `modified_on` datetime DEFAULT NULL,
+  `locked_by` int(10) unsigned DEFAULT NULL,
+  `locked_on` datetime DEFAULT NULL,
+  `ordering` int(11) NOT NULL DEFAULT '0',
+  `params` text NOT NULL,
+  PRIMARY KEY (`wanted_section_id`),
+  UNIQUE KEY `slug` (`slug`),
+  KEY `cat_idx` (`published`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Create database `data`
 --
@@ -1109,7 +1202,7 @@ DROP DATABASE IF EXISTS `data`;
 
 CREATE DATABASE `data`;
 
--- 
+--
 -- Table structure for table `data`.`table analytics`
 --
 
@@ -1124,7 +1217,7 @@ CREATE TABLE `data`.`analytics` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 
+--
 -- Table structure for table `data`.`table de-be_streets_regions`
 --
 
@@ -1143,7 +1236,7 @@ CREATE TABLE `data`.`de-be_streets_regions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
--- 
+--
 -- Table structure for table `data`.`table fr-be_streets_cities`
 --
 
@@ -1165,7 +1258,7 @@ CREATE TABLE `data`.`fr-be_streets_cities` (
   PRIMARY KEY  (`streets_city_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 
+--
 -- Table structure for table `data`.`table fr-be_streets_provinces`
 --
 
@@ -1183,7 +1276,7 @@ CREATE TABLE `data`.`fr-be_streets_provinces` (
   PRIMARY KEY  (`streets_province_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 
+--
 -- Table structure for table `data`.`table fr-be_streets_regions`
 --
 
@@ -1219,21 +1312,20 @@ DROP TABLE IF EXISTS `data`.`police_zones`;
 
 CREATE TABLE `data`.`police_zones` (
   `police_zone_id` int(11) unsigned NOT NULL,
-  `platform` int(11) default NULL,
-  `titles` TEXT NOT NULL default '',
+  `platform` int(11) DEFAULT NULL,
+  `titles` text NOT NULL,
   `language` int(11) NOT NULL,
-  `phone_emergency` varchar(250) default NULL,
-  `phone_information` varchar(250) default NULL,
-  `email` varchar(250) default NULL,
-  `twitter` varchar(250) default NULL,
-  `facebook` varchar(250) default NULL,
-  `created_by` int(11) NOT NULL default '0',
-  `created_on` datetime NOT NULL default '0000-00-00 00:00:00',
-  `modified_by` int(11) NOT NULL default '0',
-  `modified_on` datetime NOT NULL default '0000-00-00 00:00:00',
-  `locked_by` int(11) NOT NULL default '0',
-  `locked_on` datetime NOT NULL default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`police_zone_id`)
+  `phone_emergency` varchar(250) DEFAULT NULL,
+  `phone_information` varchar(250) DEFAULT NULL,
+  `email` varchar(250) DEFAULT NULL,
+  `social` text,
+  `created_by` int(11) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` int(11) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `locked_by` int(11) NOT NULL DEFAULT '0',
+  `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`police_zone_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
