@@ -20,7 +20,7 @@
     <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
 <? endif ?>
 
-<meta content="<?= $published_on ?>" property="article:published_time" />
+<meta content="<?= $article->published_on_utc ?>" property="article:published_time" />
 
 <title content="replace"><?= $article->title ?></title>
 
@@ -40,7 +40,7 @@
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
         <h1 itemprop="name"><?= $article->title ?></h1>
-        <time class="text--small" itemprop="datePublished" datetime="<?= $published_on ?>">
+        <time class="text--small" itemprop="datePublished" datetime="<?= $article->published_on_utc ?>">
             <?= helper('date.format', array('date'=> $article->ordering_date, 'format' => translate('j F Y - H:i'), 'attribs' => array('class' => 'published'))) ?>
         </time>
     </header>
