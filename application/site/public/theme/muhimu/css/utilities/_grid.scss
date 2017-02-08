@@ -36,6 +36,7 @@
 
 // Alpha
 @include breakpoint($breakpoint-alpha) {
+  .press.articles,
   .news.articles {
     .media__image {
       @include span(first 4 of 12);
@@ -131,7 +132,8 @@
     }
   }
 
-  .news.articles {
+  .news.articles,
+  .press.articles {
     article {
       @include gallery(6 of 12);
     }
