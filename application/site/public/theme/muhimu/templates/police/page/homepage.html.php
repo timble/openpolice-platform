@@ -3,7 +3,9 @@ $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
 
 $site = object('application')->getCfg('site');
+
 $pages = object('com:pages.model.pages')->menu('1')->sort('title')->direction('ASC')->published('true')->getRowset();
+$pages = $pages->find(array('level' => '1', 'hidden' => false));
 
 $path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
@@ -34,12 +36,10 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
 <div class="container__navigation">
 <? foreach($pages as $page) : ?>
-    <? if($page->level == '1' && $page->hidden == false) : ?>
     <section class="navigation__item">
         <h2><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></h2>
         <p><?= $page->getParams('page')->get('page_description') ?></p>
     </section>
-    <? endif ?>
 <? endforeach ?>
 </div>
 
