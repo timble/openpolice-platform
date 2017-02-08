@@ -10,31 +10,33 @@
 
 <title content="replace"><?= escape($district->title) ?></title>
 
-<div class="article">
-    <h1 class="article__header">
-        <?= @translate('Your district officer') ?>
-    </h1>
+<h1>
+    <?= escape($district->title) ?>
+</h1>
 
-    <? $officers = object('com:districts.model.districts_officers')->district($district->id)->getRowset(); ?>
+<? $officers = object('com:districts.model.districts_officers')->district($district->id)->getRowset(); ?>
 
-    <? if(count($officers)) : ?>
-    <div class="districts__officers">
-        <? foreach ($officers as $officer) : ?>
-            <div class="districts__officer">
-                <?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
-            </div>
-        <? endforeach ?>
+<div class="grid-row">
+    <div class="column column--one-half">
+        <h2><?= translate('Your local policing team') ?></h2>
+        <? if(count($officers)) : ?>
+            <? foreach ($officers as $officer) : ?>
+                <div class="districts__officer">
+                    <?= import('com:districts.view.district.default_officer.html', array('officer' => object('com:districts.model.officers')->id($officer->districts_officer_id)->getRow())); ?>
+                </div>
+            <? endforeach ?>
+        <? else : ?>
+        <p><?= translate('No neighbourhood officer found') ?></p>
+        <? endif ?>
     </div>
-    <? else : ?>
-    <h2><?= translate('No neighbourhood officer found') ?></h2>
-    <? endif ?>
 
     <? if($contact->id) : ?>
-    <div class="districts__contact">
+    <div class="column column--one-half">
         <?= import('default_contact.html', array('contact' => $contact)); ?>
     </div>
     <? endif ?>
 </div>
+
 
 <? if($state->street && $state->number && count($this->getObject('com:bin.model.relations')->getRowset())) : ?>
     <div class="article">
