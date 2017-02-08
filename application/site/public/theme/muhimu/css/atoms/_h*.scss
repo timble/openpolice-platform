@@ -1,74 +1,71 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: $serif;
   line-height: $spacing-s;
-  color: palette(blue, light);
   vertical-align: bottom;
+  font-weight: 600;
 }
 
 h1, %h1style {
-  font-size: 1.5em; // 24px
-  line-height: 1em; // 24px
-  margin-bottom: 1em; // 24px
+  font-size: 1.5em;
+  line-height: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 1.2em;
 
   @include breakpoint($breakpoint-alpha) {
-    font-size: 1.875em; // 30px
-    line-height: 1.2em; // 36px
-    margin-bottom: 0.8em; // 24px
+    font-size: 1.875em;
+    line-height: 1.2em;
   }
 
   @include breakpoint($breakpoint-charlie) {
-    font-size: 2.25em; // 36px
-    line-height: 1em; //36px
-    margin-bottom: 0.66666666666667em; //24px
+    font-size: 2.25em;
+    line-height: 1em;
   }
-
-  color: palette(blue);
 }
 
 h2, %h2style {
-  font-size: 1.375em; // 22px
-  line-height: 1.09090909090909em; // 24px
-  margin-bottom: 1.09090909090909em; // 24px
+  font-size: 1.375em;
+  line-height: 1.09090909090909em;
+  margin-bottom: 1.09090909090909em;
 
   @include breakpoint($breakpoint-beta) {
-    font-size: 1.875em; // 30px
-    line-height: 1.2em; // 36px
-    margin-bottom: 0.8em; // 24px
+    font-size: 1.5em;
+    line-height: 1.2em;
+    margin-bottom: 1.125em;
   }
 }
 
 h3, %h3style {
-  font-size: 1.375em; // 22px
-  line-height: 1.09090909090909em; // 24px
-  margin-bottom: 1.09090909090909em; // 24px
+  font-size: 1.25em;
+  line-height: 1.09090909090909em;
+  margin-bottom: 1.09090909090909em;
 
   @include breakpoint($breakpoint-beta) {
-    font-size: 1.5em; // 24px
-    line-height: 1em; // 24px
-    margin-bottom: 1em; // 24px
+    font-size: 1.125em;
+    line-height: 1em;
+    margin-bottom: 1em;
   }
 }
 
 h4, %h4style {
-  font-size: 1.25em; // 20px
-  line-height: 1.2em; // 24px
-  margin-bottom: 1.2em; // 24px
+  font-size: 1.125em;
+  line-height: 1.2em;
+  margin-bottom: 1.2em;
 
   @include breakpoint($breakpoint-beta) {
-    font-size: 1.375em; // 22px
-    line-height: 1.09090909090909em; // 24px
-    margin-bottom: 1.09090909090909em; // 24px
+    font-size: 1.125em;
+    line-height: 1.09090909090909em;
+    margin-bottom: 1.09090909090909em;
   }
 }
 
 h5, %h5style {
-  font-size: 1.25em; // 20px
-  line-height: 1.2em; // 24px
-  margin-bottom: 1.2em; // 24px
+  font-size: 1em;
+  line-height: 1.2em;
+  margin-bottom: 1.2em;
 }
 
 h6, %h6style {
-  font-size: 1.125em; // 20px
-  line-height: 1.33333333333333em; // 24px
-  margin-bottom: 1.33333333333333em; // 24px
+  font-size: 1em;
+  line-height: 1.33333333333333em;
+  margin-bottom: 1.33333333333333em;
 }
