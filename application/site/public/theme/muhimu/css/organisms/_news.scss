@@ -22,14 +22,9 @@
 
   h1 {
     font-size: 1.125em;
-    margin: 1em 0 .5em 0;
 
     @include breakpoint($breakpoint-alpha) {
       font-size: 1.25em;
-    }
-
-    @include breakpoint($breakpoint-beta) {
-      margin-top: 0;
     }
 
     @include breakpoint($breakpoint-charlie) {
@@ -37,20 +32,14 @@
     }
 
     @include breakpoint($breakpoint-delta) {
-      margin-top: 0;
       font-size: 1.5em;
     }
-  }
-
-  p {
-    margin: 0;
   }
 }
 
 .news__other {
   h1 {
     font-size: 1em;
-    margin: 0;
 
     @include breakpoint($breakpoint-alpha) {
       font-size: 1.125em;
