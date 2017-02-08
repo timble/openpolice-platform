@@ -35,6 +35,7 @@ body {
         @include flex-grow(1);
         @include flex-shrink(0);
         @include flex-justify-content(space-between);
+        @include flex-direction(column);
 
         .navigation__badge {
             @include flex-grow(0);
