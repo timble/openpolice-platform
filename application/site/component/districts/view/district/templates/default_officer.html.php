@@ -10,22 +10,33 @@
 
 <meta content="noimageindex" name="robots" />
 
-<h<?= isset($heading) ? $heading + 2 : 2 ?> class="article__header"><?= $officer->title ?></h<?= isset($heading) ? $heading + 2 : 2 ?>>
-<? if($officer->phone || $officer->mobile || $officer->email || $district->email) : ?>
-<ul>
-    <? if($officer->phone) : ?><li><?= translate('Phone') ?>: <?= $officer->phone ?></li><? endif ?>
-    <? if($officer->mobile) : ?><li><?= translate('Mobile') ?>: <?= $officer->mobile ?></li><? endif ?>
-    <? if($officer->email || $district->email) : ?><li><?= translate('Email') ?>: <a href="mailto:<?= $officer->email ? $officer->email : $district->email ?>"><?= $officer->email ? $officer->email : $district->email ?></a></li><? endif ?>
-</ul>
-<? endif ?>
-
-<? if($officer->isAttachable()) : ?>
-    <? if(count($officer->getAttachments())) : ?>
-        <? $item = $officer->getAttachments()->top() ?>
-        <? if($item->file->isImage()) : ?>
-            <img width="140" class="thumbnail" src="attachments://<?= $item->path ?>" />
+<div class="card card--horizontal">
+    <div class="card__box">
+        <? if($officer->isAttachable()) : ?>
+            <div class="card__image">
+            <? if(count($officer->getAttachments())) : ?>
+                <? $item = $officer->getAttachments()->top() ?>
+                <? if($item->file->isImage()) : ?>
+                    <img src="attachments://<?= $item->path ?>" />
+                <? endif ?>
+            <? elseif(!($officer->phone || $officer->mobile || $officer->email || $district->email)) : ?>
+                <img src="assets://districts/images/placeholder.png" />
+            <? endif ?>
+            </div>
         <? endif ?>
-    <? elseif(!($officer->phone || $officer->mobile || $officer->email || $district->email)) : ?>
-        <img width="140" class="thumbnail" src="assets://districts/images/placeholder.png" />
-    <? endif ?>
-<? endif ?>
+        <div class="card__metadata">
+            <div class="card__name">
+                <?= $officer->title ?>
+            </div>
+            <div class="card__date">
+                <? if($officer->phone || $officer->mobile || $officer->email || $district->email) : ?>
+                <ul>
+                    <? if($officer->phone) : ?><li><?= translate('Phone') ?>: <?= $officer->phone ?></li><? endif ?>
+                    <? if($officer->mobile) : ?><li><?= translate('Mobile') ?>: <?= $officer->mobile ?></li><? endif ?>
+                    <? if($officer->email || $district->email) : ?><li><?= translate('Email') ?>: <a href="mailto:<?= $officer->email ? $officer->email : $district->email ?>"><?= $officer->email ? $officer->email : $district->email ?></a></li><? endif ?>
+                </ul>
+                <? endif ?>
+            </div>
+        </div>
+    </div>
+</div>
