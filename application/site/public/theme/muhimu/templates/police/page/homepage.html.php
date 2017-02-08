@@ -18,11 +18,11 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <ktml:module position="breadcrumbs">
     <div class="container__header">
         <div class="quick_links">
-            <p class="phone_numbers"><span>Bel <strong>101</strong></span> voor dringende politiehulp. Geen spoed, wél politie? <span>Bel <strong>016 21 06 11</strong></span>.</p>
+            <p class="phone_numbers"><span>Call <strong>112</strong></span> in an emergency. Non-emergency? <span>Call <strong>000 000 000</strong></span>.</p>
             <ul>
-                <li><a href="#">Aangifte of melding doen</a></li>
-                <li><a href="#">Je wijkinspecteur zoeken</a></li>
-                <li><a href="#">Contacteer ons</a></li>
+                <li><a href="<?= $path ?>/declaration-or-report">Report a crime or disorder</a></li>
+                <li><a href="<?= $path ?>/contact/your-neighbourhood">Find your neighbourhood</a></li>
+                <li><a href="<?= $path ?>/licences-and-permits">Apply for a license or permit</a></li>
             </ul>
         </div>
         <div class="my_police">
@@ -45,8 +45,6 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
 <hr class="divide" />
 
-<h1>Nieuws</h1>
-
 <div class="container__news">
     <? $stickies = object('com:news.model.articles')->sticky(true)->getRowset();
     $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('ordering_date')->direction('DESC')->published(true)->getRowset()->top(); ?>
@@ -54,7 +52,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     <div class="news__featured">
         <section class="media">
             <div class="media__image">
-                <a class="media__image__inner" data-content="Lees meer" href="<?= $link ?>">
+                <a class="media__image__inner" data-content="<?= translate('Read more') ?>" href="<?= $link ?>">
                     <?= helper('com:attachments.image.thumbnail', array(
                         'attachment' => $article->attachments_attachment_id,
                         'attribs' => array('width' => '560', 'height' => '420'))) ?>

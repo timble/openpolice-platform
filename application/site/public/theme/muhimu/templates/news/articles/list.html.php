@@ -4,7 +4,7 @@
     <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
     <section class="media">
         <div class="media__image">
-            <a class="media__image__inner" data-content="Lees meer" href="<?= $link ?>">
+            <a class="media__image__inner" data-content="<?= translate('Read more') ?>" href="<?= $link ?>">
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
                     'attribs' => array('width' => '560', 'height' => '420'))) ?>

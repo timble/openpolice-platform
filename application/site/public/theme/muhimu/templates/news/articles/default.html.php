@@ -12,7 +12,7 @@
     <? $link = helper('route.article', array('row' => $article)); ?>
     <article class="media">
         <div class="media__image">
-            <a class="media__image__inner" data-content="Lees meer" href="<?= $link ?>">
+            <a class="media__image__inner" data-content="<?= translate('Read more') ?>" href="<?= $link ?>">
                 <?= helper('com:attachments.image.thumbnail', array(
                     'attachment' => $article->attachments_attachment_id,
                     'attribs' => array('width' => '560', 'height' => '420'))) ?>
