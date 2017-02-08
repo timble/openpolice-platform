@@ -8,44 +8,4 @@
  */
 ?>
 
-<title content="replace"><?= escape(translate('Press Releases')); ?></title>
-
-<ktml:module position="left">
-    <? $modules = object('com:pages.model.modules')->position('quicklinks')->published('true')->getRowset(); ?>
-
-    <? foreach($modules as $module) : ?>
-        <div class="sidebar__element">
-            <h3><?= $module->title ?></h3>
-            <?= $module->content ?>
-        </div>
-    <? endforeach ?>
-</ktml:module>
-
-<h1><?= escape(translate('Press Releases')); ?></h1>
-
-<table class="table table--striped">
-    <thead>
-        <tr>
-            <th>
-                <?= @translate('Title') ?>
-            </th>
-            <th>
-                <?= @translate('Datum') ?>
-            </th>
-        </tr>
-        </thead>
-    <tbody>
-        <? foreach ($articles as $article) : ?>
-            <tr>
-                <td><a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a></td>
-                <td nowrap><?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC5'))) ?></td>
-            </tr>
-        <? endforeach; ?>
-    </tbody>
-</table>
-
-<?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
-
-<? if(object('application')->getCfg('site') == 'fed') : ?>
-<?= import('default_contact.html') ?>
-<? endif; ?>
+<?= import('com:news.view.articles.default.html', array('articles' => $articles)) ?>
