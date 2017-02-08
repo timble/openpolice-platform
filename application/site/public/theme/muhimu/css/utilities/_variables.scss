@@ -35,6 +35,18 @@ $palettes: (
   ),
   yellow: (
     base:  $color-sub-yellow
+  ),
+  green: (
+    base:  #00823C,
+    light: #51cf66,
+    dark: #00692f
+  ),
+  gray: (
+    base: #505050,
+    light: #999,
+    x-light: #eee,
+    dark: #333,
+    x-dark: #333
   )
 );
 
@@ -42,10 +54,12 @@ $palettes: (
   @return map-get(map-get($palettes, $palette), $tone);
 }
 
+$color-border: #eee;
+$color-border-input: #bfc1c3 !default;
 
+$color-background-table-accent: #f9f9f9 !default;
 
-
-
+$border-radius: 4px !default;
 
 
 // Fonts
@@ -77,6 +91,7 @@ $one-px: 1em/16;                  // 1px based on 16px
 
 // Breakpoints
 // -------------------------
+$breakpoint-zero:       20em;     // 320px
 $breakpoint-alpha:      25em;     // 400px
 $breakpoint-beta:       37.5em;   // 600px  Small tablets
 $breakpoint-charlie:    48em;     // 768px  Portrait bigger tablets
@@ -86,8 +101,10 @@ $breakpoint-foxtrot:    90em;     // 1440px Desktop
 $breakpoint-golf:       100em;    // 1600px Extra wide
 
 $font-size: 16px;
+$font-size-large: 18px;
 $font-family: Helvetica, sans-serif;
 $line-height: 1.5em;
+$line-height-input: 1.38888888em;  // 25px / 16px
 
 $gutter-width: 3em;
 $grid-padding: 20px;
