@@ -1,0 +1,16 @@
+.button--primary {
+  background-color: palette(green);
+  color: #FFF;
+  box-shadow: 0 2px 0 palette(green, dark);
+
+  // in these cases the gradient won't cover the background, so we override
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled], &.pseudo-class-hover, &.pseudo-class-active, &.pseudo-class-disabled {
+    color: #FFF;
+    background-color: palette(green, dark);
+  }
+
+  // Visited state
+  &:visited {
+    color: #FFF;
+  }
+}
