@@ -16,7 +16,7 @@ use Nooku\Library;
  * @package     Nooku_Server
  * @subpackage  Contacts
  */
-class TrafficControllerCategory extends PoliceControllerLanguage
+class TrafficControllerCategory extends Library\ControllerModel
 {
     public function getRequest()
     {
