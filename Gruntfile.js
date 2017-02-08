@@ -5,6 +5,20 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
 
+        // Copy bower files
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['bower_components/select2/*.*'],
+                        dest: 'application/site/public/theme/muhimu/components/select2',
+                        flatten: true
+                    },
+                ]
+            },
+        },
+
         // Sass
         sass: {
             dist: {
@@ -12,6 +26,20 @@ module.exports = function(grunt) {
                     'application/site/public/theme/muhimu/css/default.css': 'application/site/public/theme/muhimu/css/default.scss',
                     'application/site/public/theme/muhimu/css/ie.css': 'application/site/public/theme/muhimu/css/ie.scss',
                     'application/site/public/theme/muhimu/css/ie7.css': 'application/site/public/theme/muhimu/css/ie7.scss'
+                }
+            }
+        },
+
+        // Uglify
+        uglify: {
+            options: {
+                soureMap: true
+            },
+            build: {
+                files: {
+                    'application/site/public/theme/muhimu/js/jquery.js': [
+                        'bower_components/jquery/dist/jquery.min.js'
+                    ]
                 }
             }
         },
@@ -39,9 +67,19 @@ module.exports = function(grunt) {
                     interrupt: false,
                     atBegin: true
                 }
+            },
+            uglify: {
+                files: [
+                    // 'application/site/public/theme/wepo/js/*.js'
+                ],
+                tasks: ['uglify'],
+                options: {
+                    interrupt: false,
+                    atBegin: true
+                }
             }
         }
     });
 
-    grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('default', ['uglify', 'copy', 'browserSync', 'watch']);
 };

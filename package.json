@@ -4,6 +4,8 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-browser-sync": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-sass": "^2.0.0",
     "grunt-shell": "^2.1.0",
