@@ -9,9 +9,7 @@
 ?>
 
 
-<title content="replace"><?= $category->title ?></title>
-
-<h1 class="article__header"><?= escape($params->get('page_title')); ?></h1>
+<h1><?= escape($params->get('page_title')); ?></h1>
 
 <? if ($category->image || $category->description) : ?>
     <div class="clearfix">
@@ -22,40 +20,12 @@
     </div>
 <? endif; ?>
 
-<table class="table table--striped">
-    <thead>
-    <tr>
-        <th width="100%">
-            <?= translate('Name'); ?>
-        </th>
-        <th>
-            <?= translate('Phone'); ?>
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <? foreach($contacts as $contact) : ?>
-        <tr>
-            <td>
-                <a href="<?= helper('route.contact', array('row' => $contact)) ?>">
-                    <?= $contact->title; ?>
-                </a>
-            </td>
-            <td nowrap="nowrap">
-                <?= escape($contact->telephone ? $contact->telephone : $contact->mobile); ?>
-            </td>
-        </tr>
+<ul class="categories_wrapper">
+    <? foreach ($contacts as $contact): ?>
+    <li>
+        <a href="<?= helper('route.contact', array('row' => $contact)) ?>"><?= $contact->title ?></a>
+    </li>
     <? endforeach; ?>
-    </tbody>
-</table>
+</ul>
 
 <?= helper('paginator.pagination', array('total' => $total, 'show_limit' => false, 'show_count' => false)); ?>
-
-<ktml:module position="sidebar">
-    <section>
-        <h1><?= @translate('Mijn Politie') ?></h1>
-        <p>De wijkinspecteur, commissariaat en verkeersinformatie uit jouw buurt.</p>
-
-        <p><a href="#">Meer informatie over “mijn politie”</a></p>
-    </section>
-</ktml:module>
