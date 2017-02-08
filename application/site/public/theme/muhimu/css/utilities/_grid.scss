@@ -109,20 +109,14 @@
 
   .component {
     @include span(first 8 of 12);
+  }
 
-    // A full span on certain pages
-    &.news.articles {
-      @include span(first 12 of 12);
-    }
+  .component--no-sidebar {
+    @include span(12 of 12);
+  }
 
-    // Half span
-    &.contacts.contacts {
-      @include span(first 6 of 12);
-
-      & + aside {
-        @include span(6 of 12);
-      }
-    }
+  .sidebar {
+    @include span(4 of 12);
   }
 
   .news__featured {
@@ -150,10 +144,6 @@
 
 // Delta
 @include breakpoint($breakpoint-delta) {
-  .articles.article {
-    @include span(first 8 of 12)
-  }
-
   .news__featured {
     @include span(first 8 of 12);
 

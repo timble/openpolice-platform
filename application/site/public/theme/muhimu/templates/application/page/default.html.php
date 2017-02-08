@@ -12,7 +12,6 @@ $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();
 
 $zone = object('com:police.model.zone')->id($site)->getRow();
-$singleColumn = $extension == 'police' OR $extension == 'files' ? 'true' : 'false';
 
 $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
 
@@ -22,7 +21,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
 <?= import('page_head.html') ?>
-<body id="page">
+<body id="page" class="<?= $extension ?> <?= $view ?>">
 <script data-inline type="text/javascript" pagespeed_no_defer>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
 
 <div id="wrapper">
@@ -59,19 +58,16 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </ktml:modules>
 
     <div id="content" class="container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
-        <? if(!$singleColumn) : ?>
-        <div class="component <?= $extension ?> <?= $view ?>">
-            <? endif ?>
-                <ktml:content>
-            <? if(!$singleColumn) : ?>
+        <? $extension_view = $extension.'-'.$view; ?>
+        <? $class = in_array($extension_view, array('police-page', 'files', 'districts-relations', 'districts-district', 'news-articles', 'press-articles')) ? ' component--no-sidebar' : '' ?>
+        <div class="component <?= $class ?>">
+            <ktml:content>
         </div>
-
         <ktml:modules position="sidebar">
             <aside class="sidebar">
                 <ktml:modules:content>
             </aside>
         </ktml:modules>
-    <? endif ?>
     </div>
 
 </div>

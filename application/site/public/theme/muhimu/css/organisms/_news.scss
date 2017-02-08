@@ -52,7 +52,8 @@
   @extend %h3style;
 }
 
-.component.news.articles {
+body.news.articles,
+body.press.articles {
 
   .media {
     margin-bottom: $spacing;
