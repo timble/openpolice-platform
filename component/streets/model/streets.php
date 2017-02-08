@@ -106,7 +106,7 @@ class ModelStreets extends Library\ModelTable
         }
 
         if ($state->search) {
-            $query->where('(tbl.title LIKE :search OR islps.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%' . $state->search . '%'));
+            $query->where('(tbl.title LIKE :search OR city.title LIKE :search OR islps.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%' . $state->search . '%'));
         }
 
         if(!$state->isUnique() && $state->row && $state->table)
