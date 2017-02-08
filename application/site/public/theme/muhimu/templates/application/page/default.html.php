@@ -88,7 +88,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <? endif ?>
         </div>
         <div class="copyright--right">
-            © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?>
+            © <?= date(array('format' => 'Y')) ?> <?= escape($zone->title); ?>
             <div class="copyright__menu">
                 <a style="margin-left: 10px" href="#">Disclaimer</a>
                 <a target="_blank" href="#">Privacy</a>
