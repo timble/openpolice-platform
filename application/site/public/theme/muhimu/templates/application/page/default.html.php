@@ -76,7 +76,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     <div class="container__copyright">
         <div class="copyright--left">
             <? foreach($pages as $page) : ?>
-                <? if($page->id == '89' || $page->id == '101' || $page->id == '41' || $page->id == '40') : ?>
+                <? if($page->id == '89' || $page->id == '101' || $page->id == '41') : ?>
                     <a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>
@@ -90,9 +90,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <div class="copyright--right">
             © <?= date(array('format' => 'Y')) ?> <?= translate('Local Police') ?>
             <div class="copyright__menu">
-                <a style="margin-left: 10px" target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/disclaimer.html">Disclaimer</a>
-                <a target="_blank" href="http://www.lokalepolitie.be/portal/<?= $active->slug ?>/privacy.html">Privacy</a>
-                <a href=#" class="active">NL</a> - <a href="#">FR</a>
+                <a style="margin-left: 10px" href="#">Disclaimer</a>
+                <a target="_blank" href="#">Privacy</a>
             </div>
         </div>
     </div>
