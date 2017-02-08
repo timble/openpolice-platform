@@ -1,18 +1,13 @@
 /* ==========================================================================
    Sidebar
    ========================================================================== */
-.sidebar section {
-  padding-top: 20px;
-  padding-bottom: 20px;
-
-  @include breakpoint($breakpoint-delta) {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
+.sidebar {
+  border-top: 6px solid palette(turquoise);
+  margin-top: 20px;
 
   h1 {
+    font-size: 24px;
     font-family: $sans;
-    font-weight: 300;
     color: palette(text, light);
   }
 }
