@@ -427,11 +427,9 @@ DROP TABLE IF EXISTS `districts_relations`;
 CREATE TABLE `districts_relations` (
   `districts_relation_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `districts_district_id` int(10) NOT NULL,
-  `streets_street_id` int(11) DEFAULT NULL,
   `range_start` int(11) NOT NULL DEFAULT '1',
   `range_end` int(11) NOT NULL DEFAULT '9999',
   `range_parity` varchar(250) NOT NULL,
-  `islp` varchar(250) NOT NULL,
   `created_by` int(11) NOT NULL DEFAULT '0',
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_by` int(11) NOT NULL DEFAULT '0',
