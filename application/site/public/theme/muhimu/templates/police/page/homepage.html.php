@@ -23,7 +23,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             <p class="phone_numbers"><span>Call <strong>112</strong></span> in an emergency. Non-emergency? <span>Call <strong>000 000 000</strong></span>.</p>
             <ul>
                 <li><a href="<?= $path ?>/declaration-or-report">Report a crime or disorder</a></li>
-                <li><a href="<?= $path ?>/contact/your-neighbourhood">Find your neighbourhood</a></li>
+                <li><a href="<?= $path ?>//contact/your-neighbourhood">Find your neighbourhood</a></li>
                 <li><a href="<?= $path ?>/licences-and-permits">Apply for a license or permit</a></li>
             </ul>
         </div>
