@@ -20,7 +20,7 @@ $path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
 ?>
 <!DOCTYPE HTML>
-<html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#"">
+<html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
 <?= import('page_head.html') ?>
 <body id="page">
 <script data-inline type="text/javascript" pagespeed_no_defer>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
