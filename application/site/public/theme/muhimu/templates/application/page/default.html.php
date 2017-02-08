@@ -81,10 +81,10 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <? endif ?>
             <? endforeach ?>
             <? if($zone->twitter) : ?>
-                <a href="http://www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
+                <a href="//www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
             <? endif ?>
             <? if($zone->facebook) : ?>
-                <a href="http://www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
+                <a href="//www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
             <? endif ?>
         </div>
         <div class="copyright--right">
