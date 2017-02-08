@@ -35,7 +35,7 @@ $language   = $languages->getActive();
     $(document).ready(function() {
         function format(item) { return item.title; };
         $("#autocomplete__streets").select2({
-            placeholder: "<?= translate('Search your street') ?> ...",
+            placeholder: "",
             minimumInputLength: 3,
             ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
                 url: "?view=streets&format=json",
@@ -77,16 +77,16 @@ $language   = $languages->getActive();
 </script>
 
 <div class="well">
-    <form action="" method="get" class="-koowa-form">
+    <form action="" method="get" class="-koowa-form form">
         <div class="form__group<?= is_null($state->street) ? ' has-error' : '' ?>">
-            <label class="form__label" for="street"><?= @translate('Street') ?><sup>*</sup>:</label>
+            <label class="form__label" for="street"><?= @translate('Street') ?></label>
             <div class="contenedor-select2">
-                <input required type="text" class="bigdrop form__input" id="autocomplete__streets" placeholder="<?= @translate('Search your street') ?> ..." tabindex="1" name="street" value="<?= $state->street != '0' ? $state->street : '' ?>">
+                <input required type="text" class="form__input" id="autocomplete__streets" tabindex="1" name="street" value="<?= $state->street != '0' ? $state->street : '' ?>">
             </div>
         </div>
         <div class="form__group<?= !is_numeric($state->number) || is_null($state->number) ? ' has-error' : '' ?>">
-            <label class="form__label" for="number"><?= @translate('Street number') ?><sup>*</sup>:</label>
-            <input required class="form__input" type="number" min="1" placeholder="<?= @translate('Street number') ?>" tabindex="2" id="number" name="number" value="<?= $state->number != '0' ? $state->number : '' ?>">
+            <label class="form__label" for="number"><?= @translate('Number') ?></label>
+            <input required class="form__input form__input--numeric" type="number" min="1" tabindex="2" id="number" name="number" value="<?= $state->number != '0' ? $state->number : '' ?>">
             <? if(is_null($state->number)) : ?>
                 <span class="form__feedback"><?= @translate('This field is required') ?>.</span>
             <? elseif(!is_numeric($state->number)) : ?>

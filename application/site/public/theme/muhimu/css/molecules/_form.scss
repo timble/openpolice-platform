@@ -1,0 +1,45 @@
+// HORIZONTAL & VERTICAL FORMS
+// ---------------------------
+
+// Common properties
+// -----------------
+// Margin to space out fieldsets
+.form {
+  margin-bottom: $grid-padding;
+}
+
+.form__group {
+  margin-bottom: $grid-padding * 1.5;
+}
+
+.form__label,
+.form__input {
+  font-size: $font-size-large;
+  line-height: $line-height-input;
+  width: 100%;
+}
+
+.form__label {
+  display: block;
+
+  padding-bottom: 4px;
+}
+
+.form__input {
+  padding: 4px;
+  border: 1px solid $color-border-input;
+
+  @include breakpoint($breakpoint-beta) {
+    width: 50%;
+  }
+}
+
+.form__input--numeric {
+  @include breakpoint($breakpoint-alpha) {
+    width: 6em;
+  }
+}
+
+.has-error {
+  @include form-control-validation(#a94442, #a94442, #f2dede);
+}
