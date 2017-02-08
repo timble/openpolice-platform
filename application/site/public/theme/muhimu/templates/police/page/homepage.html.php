@@ -26,15 +26,9 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             </ul>
         </div>
         <div class="my_police">
-            <h2 class="my_police__header">Mijn<span>Politie</span></h2>
-            <p>Nieuws en verkeersinformatie uit jouw buurt.</p>
-            <p class="margin-zero"><a href="#">Stationsstraat, Geel.</a></p>
+            <h2 class="my_police__header">Search</h2>
+            <input type="text" name="search" placeholder="Search this website ..." />
         </div>
-
-        <div class="my_police_wrapper">
-            Hello
-        </div>
-
     </div>
 </ktml:module>
 
