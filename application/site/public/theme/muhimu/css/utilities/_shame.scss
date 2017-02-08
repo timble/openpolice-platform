@@ -2,19 +2,26 @@
   margin-bottom: $spacing;
 }
 
-.table--openinghours {
-  display: table;
-  clear: both;
-  width: 100%;
+@include breakpoint($breakpoint-charlie, max) {
+  .grid-row {
+    .column {
+      margin-bottom: $grid-padding * 2;
+    }
 
-  caption {
-    @extend %h4style;
-    text-align: left;
-    margin-top: $spacing;
-    color: palette(blue, light);
+    .column:last-of-type {
+      margin-bottom: 0px;
+    }
   }
+}
 
-  td:first-child {
-    width: 33% !important;
+@include breakpoint($breakpoint-charlie) {
+  .grid-row {
+    .column--one-half {
+      @include span(6 of 12);
+    }
+
+    .column--one-half:first-of-type {
+      @include span(first 6 of 12);
+    }
   }
 }
