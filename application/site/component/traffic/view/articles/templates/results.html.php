@@ -4,32 +4,30 @@
 
 <? if(count($articles)) : ?>
     <table class="table table--striped">
-        <thead>
-            <tr>
-                <th width="100%"></th>
-                <th nowrap><?= @translate('In line') ?></th>
-                <th nowrap><?= @translate('Date') ?></th>
-            </tr>
-        </thead>
         <tbody>
         <? foreach ($articles as $article) : ?>
             <tr>
-                <td>
-                    <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a><br />
-                    <small>
+                <td nowrap>
+                    <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
+                </td>
+                <td width="100%">
+                    <? if($article->text) : ?>
+                    <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a>
+                    <? else : ?>
+                    <?= escape($article->title) ?>
+                    <? endif ?>
+                    <div class="text--small text--muted">
                         <? if ($article->isLocatable() && $streets = $article->getStreets()) : ?>
                             <?= implode(", ", $streets->title) ?>
                         <? else : ?>
                             <?= translate('Territory Police').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
                         <? endif ?>
-                    </small>
+                    </div>
                 </td>
-                <td>
+                <td nowrap>
                     <? $in_violation = $article->in_violation ? round(($article->in_violation / $article->controlled) * 100, 0) : 0 ?>
                     <?= (100 - $in_violation); ?> %
-                </td>
-                <td>
-                    <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
+                    <span><?= strtolower(translate('In line')) ?></span>
                 </td>
             </tr>
         <? endforeach; ?>
