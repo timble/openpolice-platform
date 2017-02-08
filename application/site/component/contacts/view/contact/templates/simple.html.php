@@ -14,8 +14,6 @@
 
 <?= import('hcard.html') ?>
 
-<?= object('com:contacts.controller.hour')->contact($contact->id)->render(array('contact' => $contact)); ?>
-
 <?if ($contact->params->get('allow_vcard', false)) :?>
     <p>
         <?= translate( 'Download information as a' );?>
