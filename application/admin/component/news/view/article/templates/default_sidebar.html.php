@@ -37,6 +37,11 @@
     </div>
 </fieldset>
 
+<fieldset>
+    <legend><?= translate('Description') ?></legend>
+    <textarea name="description" rows="4" cols="50" maxlength="150" class="required"><?= $article->description ?></textarea>
+</fieldset>
+
 <? if($article->isAttachable()) : ?>
     <fieldset>
         <legend><?= translate('Attachments') ?></legend>
