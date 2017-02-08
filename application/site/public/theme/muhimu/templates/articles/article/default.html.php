@@ -16,37 +16,20 @@
 </ktml:module>
 <? endif ?>
 
-<article <?= !$article->published ? 'class="article-unpublished"' : '' ?>>
-    <header>
-	    <? if (object('component')->getController()->canEdit()) : ?>
-        <div class="btn-toolbar">
-            <ktml:toolbar type="actionbar">
-        </div>
-	    <? endif; ?>
-	    <h1><?= $article->title ?></h1>
-	    <?= helper('date.timestamp', array('row' => $article, 'show_modify_date' => false)); ?>
-	    <? if (!$article->published) : ?>
-	    <span class="label label-info"><?= translate('Unpublished') ?></span>
-	    <? endif ?>
-	    <? if ($article->access) : ?>
-	    <span class="label label-important"><?= translate('Registered') ?></span>
-	    <? endif ?>
-	</header>
+<article class="article">
+    <h1 class="article__header"><?= escape($article->title); ?></h1>
 
-    <?= helper('com:attachments.image.thumbnail', array(
-        'attachment' => $article->attachments_attachment_id,
-        'attribs' => array('width' => '200', 'align' => 'right', 'class' => 'thumbnail'))) ?>
+    <div class="article__text">
+        <? if($article->attachments_attachment_id) : ?>
+        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
+        <?= helper('com:police.image.thumbnail', array(
+            'attachment' => $article->attachments_attachment_id,
+            'attribs' => array('width' => '400', 'height' => '300'))) ?>
+        </a>
+        <? endif ?>
 
-    <? if($article->fulltext) : ?>
-        <div class="article__introtext">
-            <?= $article->introtext ?>
-        </div>
-    <? else : ?>
-        <?= $article->introtext ?>
-    <? endif ?>
+        <?= $article->text ?>
+    </div>
 
-    <?= $article->fulltext ?>
-
-    <?= import('com:tags.view.tags.default.html') ?>
     <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array($article->attachments_attachment_id))) ?>
 </article>
