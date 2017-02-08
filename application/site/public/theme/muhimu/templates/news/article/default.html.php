@@ -24,19 +24,6 @@
 
 <title content="replace"><?= $article->title ?></title>
 
-
-<ktml:module position="sidebar">
-    <section>
-        <h1 class="attachments"><?= @translate('Latest news') ?></h1>
-        <ul class="categories_wrapper">
-            <li><a href="#">Tien bestuurders met glas teveel op</a></li>
-            <li><a href="#">Bestuurder zwaar gewond in Wilsele</a></li>
-            <li><a href="#">Hogere onmiddellijke inningen voor dronken rijden</a></li>
-        </ul>
-    </section>
-</ktml:module>
-
-
 <article class="article" itemscope itemtype="http://schema.org/Article">
     <header class="article__header">
         <time class="text--small" itemprop="datePublished" datetime="<?= $article->published_on_utc ?>">
