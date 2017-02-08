@@ -425,7 +425,7 @@ CREATE TABLE `districts_officers` (
 DROP TABLE IF EXISTS `districts_relations`;
 
 CREATE TABLE `districts_relations` (
-  `districts_relation_id` varchar(40) NOT NULL DEFAULT '',
+  `districts_relation_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `districts_district_id` int(10) NOT NULL,
   `streets_street_id` int(11) DEFAULT NULL,
   `range_start` int(11) NOT NULL DEFAULT '1',
