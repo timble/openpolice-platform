@@ -65,7 +65,9 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                     <?= helper('date.format', array('date'=> $article->published_on, 'format' => translate('DATE_FORMAT_LC3'), 'attribs' => array('class' => 'published'))) ?>
                 </span>
                 <h1 class="media__title"><a href="<?= $link ?>"><?= $article->title ?></a></h1>
-                <?= $article->introtext ?>
+                <p>
+                    <?= $article->description ?>
+                </p>
             </div>
         </section>
     </div>

@@ -26,11 +26,9 @@
                 <h1 class="media__title"><a href="<?= $link ?>"><?= $article->title ?></a></h1>
             </header>
 
-            <?= $article->introtext ?>
-
-            <? if ($article->fulltext) : ?>
-                <a href="<?= $link ?>"><?= translate('Read more') ?></a>
-            <? endif; ?>
+            <p>
+                <?= $article->description ?>
+            </p>
         </div>
     </article>
 <? endforeach; ?>

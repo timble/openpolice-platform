@@ -11,10 +11,17 @@
 .media__title {
   @extend %h6style;
 
+  margin: 0;
+
   @include breakpoint($breakpoint-alpha) {
-    font-size: 1.25em; // 20px
-    line-height: 1.2em; // 24px
-    margin-bottom: 1.2em; // 24px
+    font-size: 1.25em;
+    line-height: 1.2em;
+  }
+}
+
+.media__content {
+  p {
+    margin: $spacing-xxs 0 0;
   }
 }
 
