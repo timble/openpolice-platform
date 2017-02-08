@@ -33,6 +33,15 @@
             <?= helper('date.datetime', array('row' => $article, 'name' => 'unpublish_on')) ?>
         </div>
     </div>
+    <div>
+        <label for="contacts_contact_id">
+            <?= translate( 'Contact' ); ?>
+        </label>
+        <div>
+            <?= helper('com:contacts.listbox.contacts', array('name' => 'contacts_contact_id', 'selected' => $article->contacts_contact_id, 'deselect' => true, 'attribs' => array('class' => 'select-contacts', 'style' => 'width:100%;'))); ?>
+            <script data-inline> $jQuery(".select-contacts").select2(); </script>
+        </div>
+    </div>
 </fieldset>
 
 <div class="tabs tabs-horizontal">

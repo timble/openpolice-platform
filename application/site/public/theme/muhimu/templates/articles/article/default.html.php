@@ -10,10 +10,11 @@
 
 <title content="replace"><?= $article->title ?></title>
 
+<? if($article->contacts_contact_id) : ?>
 <ktml:module position="sidebar">
-    <section>
-        <?= import('com:contacts.view.contact.simple.html', array('contact' => object('com:contacts.model.contact')->id('4')->getRow())); ?>
+    <?= object('com:contacts.controller.contact')->layout('simple')->id($article->contacts_contact_id)->render(); ?>
 </ktml:module>
+<? endif ?>
 
 <article <?= !$article->published ? 'class="article-unpublished"' : '' ?>>
     <header>
