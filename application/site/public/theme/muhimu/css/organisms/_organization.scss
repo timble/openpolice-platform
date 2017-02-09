@@ -8,21 +8,10 @@
 
 .organization {
   @extend %clearfix;
-  margin-top: $spacing-xxs;
-  margin-bottom: $spacing-xxs;
-  height: $spacing;
+  margin-top: $spacing-s;
+  margin-bottom: $spacing-s;
+  height: $spacing-l;
   position: relative;
-
-  @include breakpoint($breakpoint-beta) {
-    margin-top: $spacing;
-    margin-bottom: $spacing;
-  }
-
-  @include breakpoint($breakpoint-charlie) {
-    margin-top: $spacing-s;
-    margin-bottom: $spacing-s;
-    height: $spacing-l;
-  }
 
   a {
     @extend %clearfix;
@@ -48,15 +37,10 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: $spacing;
-    height: $spacing;
+    width: $spacing-l;
+    height: $spacing-l;
     background: url("../images/avatar.png");
     background-size: cover;
-
-    @include breakpoint($breakpoint-charlie) {
-      width: $spacing-l;
-      height: $spacing-l;
-    }
   }
 
   &__name {
@@ -69,10 +53,8 @@
     line-height: ($spacing - $one-px);
     border-bottom: 1px solid transparent;
 
-    @include breakpoint($breakpoint-charlie) {
-      font-size: $spacing-s;
-      line-height: $spacing;
-    }
+    font-size: $spacing-s;
+    line-height: $spacing;
 
     span {
       font-weight: 700;

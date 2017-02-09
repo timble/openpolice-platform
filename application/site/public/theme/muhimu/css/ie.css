@@ -2093,15 +2093,10 @@ table {
    Organization
    ========================================================================== */
 .organization {
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-  height: 1.5em;
-  position: relative;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
   margin-top: 1.25em;
   margin-bottom: 1.25em;
-  height: 2em; }
+  height: 2em;
+  position: relative; }
   .organization a {
     display: inline-block;
     text-decoration: none;
@@ -2119,12 +2114,10 @@ table {
     position: absolute;
     top: 0;
     left: 0;
-    width: 1.5em;
-    height: 1.5em;
-    background: url("../images/avatar.png");
-    background-size: cover;
     width: 2em;
-    height: 2em; }
+    height: 2em;
+    background: url("../images/avatar.png");
+    background-size: cover; }
   .organization__name {
     font-weight: 300;
     color: #26338c;

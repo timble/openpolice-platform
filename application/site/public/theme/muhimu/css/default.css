@@ -2106,19 +2106,10 @@ table {
    Organization
    ========================================================================== */
 .organization {
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-  height: 1.5em;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  height: 2em;
   position: relative; }
-  @media screen and (min-width: 37.5em) {
-    .organization {
-      margin-top: 1.5em;
-      margin-bottom: 1.5em; } }
-  @media screen and (min-width: 48em) {
-    .organization {
-      margin-top: 1.25em;
-      margin-bottom: 1.25em;
-      height: 2em; } }
   .organization a {
     display: inline-block;
     text-decoration: none;
@@ -2136,14 +2127,10 @@ table {
     position: absolute;
     top: 0;
     left: 0;
-    width: 1.5em;
-    height: 1.5em;
+    width: 2em;
+    height: 2em;
     background: url("../images/avatar.png");
     background-size: cover; }
-    @media screen and (min-width: 48em) {
-      .organization__logo {
-        width: 2em;
-        height: 2em; } }
   .organization__name {
     font-weight: 300;
     color: #26338c;
@@ -2152,11 +2139,9 @@ table {
     overflow: hidden;
     margin-left: 2.25em;
     line-height: 1.4375em;
-    border-bottom: 1px solid transparent; }
-    @media screen and (min-width: 48em) {
-      .organization__name {
-        font-size: 1.25em;
-        line-height: 1.5em; } }
+    border-bottom: 1px solid transparent;
+    font-size: 1.25em;
+    line-height: 1.5em; }
     .organization__name span {
       font-weight: 700;
       font-size: 1.25em;

@@ -56,7 +56,7 @@
             <a itemprop="url" href="/<?= $site ?>">
                 <span class="organization__logo"></span>
                 <span class="organization__name">
-                    <span><?= escape($zone->title); ?></span>
+                    <span><?= $zone->title ? escape($zone->title) : 'Open Police'; ?></span>
                 </span>
                 <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
             </a>
