@@ -2367,6 +2367,9 @@ body.press.articles time {
 .adr {
   margin-bottom: 1.5em; }
 
+.is-hidden {
+  display: none; }
+
 .grid-row .column--one-half {
   width: 48.1481481481%;
   float: left;

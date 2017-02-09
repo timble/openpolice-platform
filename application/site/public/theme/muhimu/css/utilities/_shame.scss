@@ -2,6 +2,10 @@
   margin-bottom: $spacing;
 }
 
+.is-hidden {
+  display: none;
+}
+
 @include breakpoint($breakpoint-charlie, max) {
   .grid-row {
     .column {
