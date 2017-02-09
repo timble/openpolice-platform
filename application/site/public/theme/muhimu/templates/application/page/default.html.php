@@ -40,14 +40,12 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
             </a>
         </div>
-        <!--
         <div class="search">
             <form>
-                <input type="search" placeholder="Wat wilt u vinden?" />
+                <input type="search" placeholder="<?= translate('Search this website ...') ?>" />
                 <button type="submit" />
             </form>
         </div>
-        -->
     </div>
 
     <ktml:modules position="breadcrumbs">

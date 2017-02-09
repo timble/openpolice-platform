@@ -7,17 +7,22 @@
   margin-bottom: $spacing-xs;
   position: relative;
 
+  $padding: 5px;
+  $border: 1px;
+  $button-width: 36px;
+
   input {
     -webkit-appearance: none;
     margin: 0;
     width: 100%;
     display: block;
-    padding: 5px;
-    border: 1px solid palette(blue);
+    padding: $padding;
+    border: $border solid palette(blue);
     color: #777;
     font-style: italic;
     font-size: 1em;
-    height: ($spacing-s * 2);
+    min-height: 36px - (($padding + $border) * 2);
+    width: calc(100% - #{(($button-width + ($padding * 2)) + $border)});
   }
 
   button {
@@ -27,8 +32,8 @@
     border: none;
     display: block;
     font-size: 1em;
-    height: ($spacing-s * 2);
-    width: ($spacing-s * 2);
+    height: $button-width;
+    width: $button-width;
     color: #fff;
     font-weight: 700;
     @extend %icon--search;
