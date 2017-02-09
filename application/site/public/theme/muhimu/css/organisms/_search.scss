@@ -18,8 +18,7 @@
     display: block;
     padding: $padding;
     border: $border solid palette(blue);
-    color: #777;
-    font-style: italic;
+    color: palette(text);
     font-size: 1em;
     min-height: 36px - (($padding + $border) * 2);
     width: calc(100% - #{(($button-width + ($padding * 2)) + $border)});

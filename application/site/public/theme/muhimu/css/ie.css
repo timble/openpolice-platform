@@ -2155,8 +2155,7 @@ table {
     display: block;
     padding: 5px;
     border: 1px solid #26338c;
-    color: #777;
-    font-style: italic;
+    color: #2c2c2c;
     font-size: 1em;
     min-height: 24px;
     width: calc(100% - 47px); }
