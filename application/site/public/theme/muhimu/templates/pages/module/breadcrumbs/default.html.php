@@ -9,7 +9,7 @@
 ?>
 
 <ul class="breadcrumb">
-    <? foreach($list as $item) : ?>
+    <? foreach($list as $key => $item) : ?>
         <? // If not the last item in the breadcrumbs add the separator ?>
         <? if($item !== end($list)) : ?>
             <? if(!empty($item->link)) : ?>
@@ -17,9 +17,9 @@
             <? else : ?>
                 <li><?= escape($item->name) ?></li>
             <? endif ?>
+            <? if($key !== count($list) - 2) : ?>
             <span class="divider">&rsaquo;</span>
-        <? else : ?>
-            <li><?= escape($item->name) ?></li>
+            <? endif ?>
         <? endif ?>
     <? endforeach ?>
 </ul>
