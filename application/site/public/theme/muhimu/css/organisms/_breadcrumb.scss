@@ -3,8 +3,21 @@
    ========================================================================== */
 
 .container__breadcrumb {
-  background: palette(blue) url("../images/graphic_line.png") no-repeat right bottom;
-  color: #fff;
+  $base: palette(blue);
+  $dark: darken(palette(blue), 2%);
+
+  background: palette(blue);
+  // background: linear-gradient(135deg, palette(blue) 50%, darken(palette(blue), 5%) 100%);
+
+  background: repeating-linear-gradient(
+  135deg,
+  $base,
+  $base 10px,
+  $dark 10px,
+  $dark 20px
+);
+
+  color: #FFF;
   border-top: ($spacing-xxxs / 2) solid palette(turquoise);
   padding-top: $spacing-s / 2;
   padding-bottom: $spacing-s / 2;

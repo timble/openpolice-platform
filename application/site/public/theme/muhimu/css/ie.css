@@ -2169,8 +2169,9 @@ table {
    Header / Breadcrumb
    ========================================================================== */
 .container__breadcrumb {
-  background: #26338c url("../images/graphic_line.png") no-repeat right bottom;
-  color: #fff;
+  background: #26338c;
+  background: repeating-linear-gradient(135deg, #26338c, #26338c 10px, #243084 10px, #243084 20px);
+  color: #FFF;
   border-top: 0.25em solid #8ac7cb;
   padding-top: 0.625em;
   padding-bottom: 0.625em;
