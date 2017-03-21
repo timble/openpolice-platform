@@ -89,7 +89,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             © <?= date(array('format' => 'Y')) ?> <?= escape($zone->title); ?>
             <div class="copyright__menu">
                 <a style="margin-left: 10px" href="#">Disclaimer</a>
-                <a target="_blank" href="#">Privacy</a>
+                <a href="#">Privacy</a>
             </div>
         </div>
     </div>
