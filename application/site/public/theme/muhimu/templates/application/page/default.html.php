@@ -72,9 +72,9 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
 <footer class="copyright">
     <div class="container__copyright">
-        <div class="copyright--left">
+        <div class="copyright__menu">
             <? foreach($pages as $page) : ?>
-                <? if($page->id == '89' || $page->id == '101' || $page->id == '41') : ?>
+                <? if(in_array($page->id, array('89', '101', '41', '106', '107'))) : ?>
                     <a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>
@@ -85,12 +85,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
                 <a href="//www.facebook.com/<?= $zone->facebook ?>"><i class="icon-facebook"></i> Facebook</a>
             <? endif ?>
         </div>
-        <div class="copyright--right">
-            © <?= date(array('format' => 'Y')) ?> <?= escape($zone->title); ?>
-            <div class="copyright__menu">
-                <a style="margin-left: 10px" href="#">Disclaimer</a>
-                <a href="#">Privacy</a>
-            </div>
+        <div class="text--small">
+            All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
         </div>
     </div>
 </footer>

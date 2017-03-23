@@ -1166,12 +1166,12 @@ table {
 .container__content:before,
 .breadcrumb:before,
 .container__copyright:before, .card .card__box:before, .media:before, .pagination:before, .skip .container__skip:before, .organization:before, .organization a:before, .container__navigation:before, .container__news:before, .component:before, .component.article article:before,
-.component.news article:before, .container__top:after,
+.component.news article:before, .copyright__menu:before, .container__top:after,
 .container__header:after,
 .container__content:after,
 .breadcrumb:after,
 .container__copyright:after, .card .card__box:after, .media:after, .pagination:after, .skip .container__skip:after, .organization:after, .organization a:after, .container__navigation:after, .container__news:after, .component:after, .component.article article:after,
-.component.news article:after {
+.component.news article:after, .copyright__menu:after {
   display: table;
   content: " ";
   line-height: 0; }
@@ -1181,7 +1181,7 @@ table {
 .container__content:after,
 .breadcrumb:after,
 .container__copyright:after, .card .card__box:after, .media:after, .pagination:after, .skip .container__skip:after, .organization:after, .organization a:after, .container__navigation:after, .container__news:after, .component:after, .component.article article:after,
-.component.news article:after {
+.component.news article:after, .copyright__menu:after {
   clear: both; }
 
 .categories_wrapper li {
@@ -2297,32 +2297,23 @@ body.press.articles time {
   background: #dee0e2;
   border-top: 1px solid #d0d3d6;
   padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center; }
-  .copyright .copyright__menu {
-    display: inline-block; }
-  .copyright a {
-    display: inline-block;
-    margin: 0 5px; }
-    .copyright a:hover {
+  padding-bottom: 20px; }
+
+.copyright__menu {
+  margin-bottom: 0.75em; }
+  .copyright__menu a {
+    margin-bottom: 0.375em; }
+    .copyright__menu a:hover {
       color: #171819; }
-  @media screen and (min-width: 48em) {
-    .container__copyright {
-      display: table;
-      width: 100%; }
-    .copyright--left, .copyright--right {
-      display: table-cell;
-      width: auto; }
-    .copyright--left {
-      text-align: left;
-      padding-right: 10px; }
-      .copyright--left a {
-        margin-left: 0; }
-    .copyright--right {
-      text-align: right;
-      padding-left: 10px; }
-      .copyright--right a:last-child {
-        margin-right: 0; } }
+  @media screen and (max-width: 25em) {
+    .copyright__menu a {
+      float: left;
+      clear: left; } }
+  @media screen and (min-width: 25em) {
+    .copyright__menu a {
+      display: inline-block; }
+      .copyright__menu a:not(:last-of-type) {
+        margin-right: 0.75em; } }
 
 /* ==========================================================================
    Sidebar

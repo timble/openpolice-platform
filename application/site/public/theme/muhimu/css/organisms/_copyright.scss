@@ -8,49 +8,33 @@
   border-top: 1px solid darken($color-background-body, 5%);
   padding-top: 20px;
   padding-bottom: 20px;
-  text-align: center;
+}
 
-  .copyright__menu {
-    display: inline-block;
-  }
+.copyright__menu {
+  margin-bottom: $spacing / 2;
+  @extend %clearfix;
 
   a {
-    display: inline-block;
-    margin: 0 5px;
+    margin-bottom: $spacing / 4;
 
     &:hover {
       color: $color-text-footer-hover;
     }
   }
 
-  @include breakpoint($breakpoint-charlie) {
-
-    @at-root .container__copyright {
-      display: table;
-      width: 100%;
+  @include breakpoint($breakpoint-alpha, max) {
+    a {
+      float: left;
+      clear: left;
     }
+  }
 
-    &--left,
-    &--right {
-      display: table-cell;
-      width: auto;
-    }
+  @include breakpoint($breakpoint-alpha) {
+    a {
+      display: inline-block;
 
-    &--left {
-      text-align: left;
-      padding-right: 10px;
-
-      a {
-        margin-left: 0;
-      }
-    }
-
-    &--right {
-      text-align: right;
-      padding-left: 10px;
-
-      a:last-child {
-        margin-right: 0;
+      &:not(:last-of-type) {
+        margin-right: $spacing / 2;
       }
     }
   }
