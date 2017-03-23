@@ -1,0 +1,12 @@
+# Ignore everything in this directory
+*
+# Except this file
+!.gitignore
+!0bed6fd4478881b4dec821129a95b8a0_thumb.png
+!0bed6fd4478881b4dec821129a95b8a0.png
+!5bafe279da2571f4acd0607a52701188_thumb.png
+!5bafe279da2571f4acd0607a52701188.png
+!8f460761fa9ec0c60380c19d3795acd8_thumb.png
+!8f460761fa9ec0c60380c19d3795acd8.png
+!739e11eb8e90a6d3b064fab1aa15fd8d_thumb.png
+!739e11eb8e90a6d3b064fab1aa15fd8d.png
