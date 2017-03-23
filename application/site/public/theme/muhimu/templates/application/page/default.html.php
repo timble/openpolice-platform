@@ -70,18 +70,23 @@ $extensionViewLayout = $extension.'-'.$view.'-'.$layout;
             </aside>
         </ktml:modules>
     </div>
-
 </div>
 
 <footer class="copyright">
     <div class="container__copyright">
         <div class="copyright__menu">
+            <ul>
             <? foreach($pages as $page) : ?>
                 <? if(in_array($page->id, array('89', '101', '41', '106', '107'))) : ?>
-                    <a href="/<?= $page->slug ?>"><?= $page->title ?></a>
+                    <li>
+                        <a href="/<?= $page->slug ?>"><?= $page->title ?></a>
+                    </li>
                 <? endif ?>
             <? endforeach ?>
-            Built by <a href="https://www.timble.net/platform/open-police/">Timble</a>
+            <li>
+                Built by <a href="https://www.timble.net/platform/open-police/">Timble</a>
+            </li>
+        </ul>
             <? if($zone->twitter) : ?>
                 <a href="//www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
             <? endif ?>

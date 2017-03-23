@@ -14,28 +14,21 @@
   margin-bottom: $spacing / 2;
   @extend %clearfix;
 
-  a {
+  li {
     margin-bottom: $spacing / 4;
 
-    &:hover {
-      color: $color-text-footer-hover;
-    }
-  }
-
-  @include breakpoint($breakpoint-alpha, max) {
-    a {
+    @include breakpoint($breakpoint-alpha) {
       float: left;
-      clear: left;
-    }
-  }
-
-  @include breakpoint($breakpoint-alpha) {
-    a {
-      display: inline-block;
 
       &:not(:last-of-type) {
         margin-right: $spacing / 2;
       }
+    }
+  }
+
+  a {
+    &:hover {
+      color: $color-text-footer-hover;
     }
   }
 }

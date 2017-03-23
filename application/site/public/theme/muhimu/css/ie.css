@@ -2280,14 +2280,13 @@ body.press.articles time {
 
 .copyright__menu {
   margin-bottom: 0.75em; }
-  .copyright__menu a {
-    margin-bottom: 0.375em; }
-    .copyright__menu a:hover {
-      color: #171819; }
-  .copyright__menu a {
-    display: inline-block; }
-    .copyright__menu a:not(:last-of-type) {
+  .copyright__menu li {
+    margin-bottom: 0.375em;
+    float: left; }
+    .copyright__menu li:not(:last-of-type) {
       margin-right: 0.75em; }
+  .copyright__menu a:hover {
+    color: #171819; }
 
 /* ==========================================================================
    Sidebar

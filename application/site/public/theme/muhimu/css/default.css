@@ -2325,19 +2325,15 @@ body.press.articles time {
 
 .copyright__menu {
   margin-bottom: 0.75em; }
-  .copyright__menu a {
+  .copyright__menu li {
     margin-bottom: 0.375em; }
-    .copyright__menu a:hover {
-      color: #171819; }
-  @media screen and (max-width: 25em) {
-    .copyright__menu a {
-      float: left;
-      clear: left; } }
-  @media screen and (min-width: 25em) {
-    .copyright__menu a {
-      display: inline-block; }
-      .copyright__menu a:not(:last-of-type) {
-        margin-right: 0.75em; } }
+    @media screen and (min-width: 25em) {
+      .copyright__menu li {
+        float: left; }
+        .copyright__menu li:not(:last-of-type) {
+          margin-right: 0.75em; } }
+  .copyright__menu a:hover {
+    color: #171819; }
 
 /* ==========================================================================
    Sidebar
