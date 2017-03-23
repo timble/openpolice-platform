@@ -2,6 +2,10 @@
    Search
    ========================================================================== */
 
+.search {
+  margin-top: 2px;
+}
+
 .search-input {
   $padding: 5px;
   $border: 1px;
@@ -41,7 +45,9 @@
 }
 
 .toggle-search + .search-input {
-  margin-top: $spacing-xl;
+  @include breakpoint($breakpoint-beta, max) {
+    margin-top: $spacing-xl;
+  }
 }
 
 .toggle-search {

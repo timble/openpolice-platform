@@ -2081,6 +2081,9 @@ table {
 /* ==========================================================================
    Search
    ========================================================================== */
+.search {
+  margin-top: 2px; }
+
 .search-input {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -2109,8 +2112,9 @@ table {
     font-weight: 700;
     background-color: #26338c; }
 
-.toggle-search + .search-input {
-  margin-top: 2.25em; }
+@media screen and (max-width: 37.5em) {
+  .toggle-search + .search-input {
+    margin-top: 2.25em; } }
 
 .toggle-search {
   display: none; }
