@@ -398,6 +398,9 @@ UPDATE `support_tickets` SET `created_on` = now();
 UPDATE `traffic` SET `start_on` = now() WHERE `controlled` = '0';
 UPDATE `traffic` SET `end_on` = now() WHERE `controlled` = '0';
 
+UPDATE `traffic` SET `start_on` = NOW() - INTERVAL 1 DAY WHERE `controlled` != '0';
+UPDATE `traffic` SET `end_on` = NOW() - INTERVAL 1 DAY WHERE `controlled` != '0';
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET TIME_ZONE=@OLD_TIME_ZONE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
