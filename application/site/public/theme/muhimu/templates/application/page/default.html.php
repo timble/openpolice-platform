@@ -41,7 +41,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             </a>
         </div>
         <div class="search">
-            <form>
+            <form action="<?= $path ?>/search">
                 <input type="search" placeholder="<?= translate('Search') ?>" />
                 <button type="submit" />
             </form>
