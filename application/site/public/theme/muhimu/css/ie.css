@@ -1420,8 +1420,10 @@ table {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body *:focus {
-  outline: 3px solid #ffcc32; }
+body a:focus,
+body input:focus {
+  outline: 3px solid #ffcc32;
+  outline-offset: 0; }
 
 body {
   min-height: 100%;

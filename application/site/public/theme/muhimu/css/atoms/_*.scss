@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
-body *:focus {
-  outline: 3px solid palette(yellow);
+body {
+  a:focus,
+  input:focus {
+    outline: 3px solid palette(yellow);
+    outline-offset: 0;
+  }
 }
