@@ -15,7 +15,7 @@ class Installer
     );
 
     public $task;
-    public $database = '9999';
+    public $database = 'default';
     public $www = '/var/www/internet.openpolice.be';
 
     public function __construct($task)
@@ -79,7 +79,7 @@ class Installer
     {
     }
 
-    public function createMultisite($site = '9999')
+    public function createMultisite($site = 'default')
     {
         `chmod -R 0777 $this->www/sites/$site/files`;
     }

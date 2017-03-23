@@ -1,14 +1,6 @@
 <?
-$languages  = $this->getObject('application.languages');
-$active     = $languages->getActive();
-
-$site = object('application')->getCfg('site');
-
 $pages = object('com:pages.model.pages')->menu('1')->sort('title')->direction('ASC')->published('true')->getRowset();
 $pages = $pages->find(array('level' => '1', 'hidden' => false));
-
-$path = '/'.$site;
-$path .= count($languages) > '1' ? '/'.$active->slug : '';
 ?>
 
 <style type="text/css">
@@ -21,9 +13,9 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     <div class="container__header">
         <p class="phone_numbers"><span>Call <strong>112</strong></span> in an emergency. Non-emergency? <span>Call <strong>000 000 000</strong></span>.</p>
         <ul>
-            <li><a href="<?= $path ?>/declaration-or-report">Report a crime or disturbance</a></li>
-            <li><a href="<?= $path ?>/contact/your-neighbourhood">Find your neighbourhood</a></li>
-            <li><a href="<?= $path ?>/licences-and-permits">Apply for a license or permit</a></li>
+            <li><a href="/declaration-or-report">Report a crime or disturbance</a></li>
+            <li><a href="/contact/your-neighbourhood">Find your neighbourhood</a></li>
+            <li><a href="/licences-and-permits">Apply for a license or permit</a></li>
         </ul>
     </div>
 </ktml:module>
@@ -31,7 +23,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <div class="container__navigation">
 <? foreach($pages as $page) : ?>
     <section class="navigation__item">
-        <h2><a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a></h2>
+        <h2><a href="/<?= $page->slug ?>"><?= $page->title ?></a></h2>
         <p><?= $page->getParams('page')->get('page_description') ?></p>
     </section>
 <? endforeach ?>
@@ -42,7 +34,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 <div class="container__news">
     <? $stickies = object('com:news.model.articles')->sticky(true)->getRowset();
     $article = $stickies->count() ? $stickies->top() : object('com:news.model.articles')->limit('1')->sort('ordering_date')->direction('DESC')->published(true)->getRowset()->top(); ?>
-    <? $link = $path.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
+    <? $link = '/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
     <div class="news__featured">
         <section class="media">
             <div class="media__image">

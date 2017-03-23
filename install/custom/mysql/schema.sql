@@ -1350,7 +1350,7 @@ CREATE TABLE `data`.`migrations` (
 DROP TABLE IF EXISTS `data`.`police_zones`;
 
 CREATE TABLE `data`.`police_zones` (
-  `police_zone_id` int(11) unsigned NOT NULL,
+  `police_zone_id` varchar(250) NOT NULL DEFAULT '',
   `platform` int(11) DEFAULT NULL,
   `titles` text NOT NULL,
   `language` int(11) NOT NULL,

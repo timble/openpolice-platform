@@ -14,9 +14,6 @@ $active     = $languages->getActive();
 $zone = object('com:police.model.zone')->id($site)->getRow();
 
 $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
-
-$path = '/'.$site;
-$path .= count($languages) > '1' ? '/'.$active->slug : '';
 ?>
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
@@ -32,7 +29,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
     </div>
     <div class="container__top">
         <div class="organization" itemscope itemtype="http://schema.org/Organization">
-            <a itemprop="url" href="<?= $path ?>">
+            <a itemprop="url" href="/">
                 <span class="organization__logo"></span>
                 <span class="organization__name">
                     <span><?= $zone->title ? escape($zone->title) : 'Open Police'; ?></span>
@@ -41,7 +38,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
             </a>
         </div>
         <div class="search">
-            <form action="<?= $path ?>/search">
+            <form action="/search">
                 <input type="search" placeholder="<?= translate('Search') ?>" />
                 <button type="submit" />
             </form>
@@ -74,7 +71,7 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
         <div class="copyright__menu">
             <? foreach($pages as $page) : ?>
                 <? if(in_array($page->id, array('89', '101', '41', '106', '107'))) : ?>
-                    <a href="<?= $path ?>/<?= $page->slug ?>"><?= $page->title ?></a>
+                    <a href="/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>
             <? if($zone->twitter) : ?>

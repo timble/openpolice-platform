@@ -1,7 +1,5 @@
-<? $site = object('application')->getCfg('site') ?>
-
 <? foreach($articles as $article) : ?>
-    <? $link = '/'.$site.'/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
+    <? $link = '/'.object('lib:filter.slug')->sanitize(translate('News')).'/'.$article->id.'-'.$article->slug ?>
     <section class="media">
         <div class="media__image">
             <a class="media__image__inner" data-content="<?= translate('Read more') ?>" href="<?= $link ?>">
