@@ -3,7 +3,8 @@
    ========================================================================== */
 
 .copyright {
-  background: palette(turquoise, light);
+  background: $color-background-body;
+  border-top: 1px solid darken($color-background-body, 5%);
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
@@ -14,6 +15,8 @@
 
   a {
     color: palette(blue);
+    display: inline-block;
+    margin: 0 5px;
   }
 
   @include breakpoint($breakpoint-charlie) {
@@ -24,38 +27,27 @@
     }
 
     &--left,
-  &--right {
-  display: table-cell;
-    width: auto;
-  }
+    &--right {
+      display: table-cell;
+      width: auto;
+    }
 
     &--left {
-  text-align: left;
-    padding-right: 10px;
+      text-align: left;
+      padding-right: 10px;
 
-    a {
-      margin-left: 0;
+      a {
+        margin-left: 0;
+      }
+    }
+
+    &--right {
+      text-align: right;
+      padding-left: 10px;
+
+      a:last-child {
+        margin-right: 0;
+      }
     }
   }
-
-  &--right {
-text-align: right;
-  padding-left: 10px;
-
-  a:last-child {
-    margin-right: 0;
-  }
-}
-}
-
-a {
-  display: inline-block;
-  margin: 0 5px;
-
-  &.active {
-    color: palette(turquoise, dark);
-    font-weight: 700;
-    text-decoration: none;
-  }
-}
 }

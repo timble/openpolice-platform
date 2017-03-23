@@ -1424,7 +1424,7 @@ body *:focus {
 
 body {
   min-height: 100%;
-  background: #d7e2e0;
+  background: #dee0e2;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
   color: #2c2c2c; }
@@ -2351,14 +2351,17 @@ body.press.articles time {
    Copyright
    ========================================================================== */
 .copyright {
-  background: #d7e2e0;
+  background: #dee0e2;
+  border-top: 1px solid #d0d3d6;
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center; }
   .copyright .copyright__menu {
     display: inline-block; }
   .copyright a {
-    color: #26338c; }
+    color: #26338c;
+    display: inline-block;
+    margin: 0 5px; }
   @media screen and (min-width: 48em) {
     .container__copyright {
       display: table;
@@ -2376,13 +2379,6 @@ body.press.articles time {
       padding-left: 10px; }
       .copyright--right a:last-child {
         margin-right: 0; } }
-  .copyright a {
-    display: inline-block;
-    margin: 0 5px; }
-    .copyright a.active {
-      color: #00637c;
-      font-weight: 700;
-      text-decoration: none; }
 
 /* ==========================================================================
    Sidebar
