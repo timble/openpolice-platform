@@ -43,7 +43,7 @@ $extensionViewLayout = $extension.'-'.$view.'-'.$layout;
             <? if($extensionViewLayout != 'police-page-homepage') : ?>
             <button id="toggle-search" class="toggle-search" href="#" aria-pressed="false" onclick="apollo.toggleClass(document.getElementById('search-input'), 'is-shown');toggler()"></button>
             <? endif ?>
-            <form id="search-input" class="search-input<?= $extensionViewLayout == 'police-page-homepage' ? ' is-shown' : '' ?>">
+            <form id="search-input" class="search-input<?= $extensionViewLayout == 'police-page-homepage' ? ' is-shown' : '' ?>" action="/search">
                 <input type="search" placeholder="<?= translate('Search') ?>" />
                 <button type="submit" />
             </form>
