@@ -508,7 +508,7 @@ VALUES
 -- Dumping data for table `data`.`migrations`
 --
 
-INSERT INTO `migrations` (`version`)
+INSERT INTO `data`.`migrations` (`version`)
 VALUES
 	('20140128171714'),
 	('20140210180553'),
