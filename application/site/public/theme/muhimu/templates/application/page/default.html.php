@@ -14,6 +14,8 @@ $active     = $languages->getActive();
 $zone = object('com:police.model.zone')->id($site)->getRow();
 
 $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowset();
+
+$extensionViewLayout = $extension.'-'.$view.'-'.$layout;
 ?>
 <!DOCTYPE HTML>
 <html lang="<?= $language; ?>" dir="<?= $direction; ?>" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
@@ -37,12 +39,17 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
                 <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
             </a>
         </div>
-        <div class="search">
-            <form action="/search">
+        <? if($extensionViewLayout == 'police-page-homepage') : ?>
+        <form class="search" action="/search">
+            <a id="toggle-search" class="toggle-search" href="#" aria-pressed="false" onclick="apollo.toggleClass(document.getElementById('search-input'), 'is-shown');toggler()">
+
+            </a>
+            <div id="search-input" class="search-input">
                 <input type="search" placeholder="<?= translate('Search') ?>" />
                 <button type="submit" />
-            </form>
-        </div>
+            </div>
+        </form>
+        <? endif ?>
     </div>
 
     <ktml:modules position="breadcrumbs">
@@ -52,8 +59,8 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
         </div>
     </ktml:modules>
 
-    <div id="content" class="container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
-        <? $class = !in_array($extension.'-'.$view.'-'.$layout, array('police-page-homepage', 'police-page-catalogue', 'districts-district-default', 'news-articles-default', 'press-articles-default')) ? ' component--sidebar' : '' ?>
+    <div id="content" class="container__content<?= $extensionViewLayout == 'police-page-homepage' ? ' homepage' : '' ?>">
+        <? $class = !in_array($extensionViewLayout, array('police-page-homepage', 'police-page-catalogue', 'districts-district-default', 'news-articles-default', 'press-articles-default')) ? ' component--sidebar' : '' ?>
         <div class="component<?= $class ?>">
             <ktml:content>
         </div>

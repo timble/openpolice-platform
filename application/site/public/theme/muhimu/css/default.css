@@ -1983,7 +1983,7 @@ table {
     .pagination .pagination__offset {
       display: inline; } }
 
-.search button {
+.search-input button, .js-enabled .toggle-search {
   background: #26338c url("../images/icon--search.png") no-repeat static center;
   background: transparent url("../images/icon--search@2x.png") center center/50% 50% no-repeat; }
 
@@ -2081,11 +2081,11 @@ table {
 /* ==========================================================================
    Search
    ========================================================================== */
-.search {
-  margin-top: 1em;
+.search-input {
+  margin-top: 2.25em;
   margin-bottom: 1em;
   position: relative; }
-  .search input {
+  .search-input input {
     -webkit-appearance: none;
     margin: 0;
     width: 100%;
@@ -2096,7 +2096,7 @@ table {
     font-size: 1em;
     min-height: 24px;
     width: calc(100% - 47px); }
-  .search button {
+  .search-input button {
     position: absolute;
     right: 0;
     top: 0;
@@ -2108,6 +2108,30 @@ table {
     color: #fff;
     font-weight: 700;
     background-color: #26338c; }
+
+.toggle-search {
+  display: none; }
+
+.js-enabled .search-input {
+  display: none; }
+  .js-enabled .search-input.is-shown {
+    display: block; }
+  @media screen and (min-width: 37.5em) {
+    .js-enabled .search-input {
+      margin-top: 1em;
+      display: block; } }
+
+.js-enabled .toggle-search {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 72px;
+  width: 72px;
+  background-color: #26338c; }
+  @media screen and (min-width: 37.5em) {
+    .js-enabled .toggle-search {
+      display: none; } }
 
 /* ==========================================================================
    Header / Breadcrumb

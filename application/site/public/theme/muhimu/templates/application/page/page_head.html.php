@@ -34,7 +34,7 @@
     <style src="assets://application/css/ie7.css" condition="if lte IE 7" />
 
     <script src="assets://application/js/apollo.min.js" />
-    <script src="assets://application/js/hamburger.js" />
+    <script src="assets://application/js/toggler.js" />
     <script src="assets://application/components/html5shiv/dist/html5shiv-printshiv.min.js" condition="if lte IE 8" />
     <script src="assets://application/js/placeholder.js" condition="if lte IE 9" />
 

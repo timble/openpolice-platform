@@ -2,14 +2,14 @@
    Search
    ========================================================================== */
 
-.search {
-  margin-top: $spacing-xs;
-  margin-bottom: $spacing-xs;
-  position: relative;
-
+.search-input {
   $padding: 5px;
   $border: 1px;
   $button-width: 36px;
+
+  margin-top: $spacing-xl;
+  margin-bottom: $spacing-xs;
+  position: relative;
 
   input {
     -webkit-appearance: none;
@@ -37,5 +37,43 @@
     font-weight: 700;
     @extend %icon--search;
     background-color: palette(blue);
+  }
+}
+
+.toggle-search {
+  display: none;
+}
+
+.js-enabled {
+  .search-input {
+    display: none;
+
+    &.is-shown {
+      display: block;
+    }
+
+    @include breakpoint($breakpoint-beta) {
+      margin-top: $spacing-xs;
+      display: block;
+    }
+  }
+
+  .toggle-search {
+    display: block;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 72px;
+    width: 72px;
+
+    background-color: palette(blue);
+
+    @extend %icon--search;
+
+    @include breakpoint($breakpoint-beta) {
+      display: none;
+    }
   }
 }

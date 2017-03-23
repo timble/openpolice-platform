@@ -1,6 +1,6 @@
-function hamburger()
+function toggler()
 {
-    toggleAttribute(document.getElementById('hamburger'), 'aria-pressed');
+    toggleAttribute(document.getElementById('toggle-search'), 'aria-pressed');
 }
 
 function toggleAttribute(element, attribute)
