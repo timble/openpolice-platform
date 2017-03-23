@@ -72,4 +72,5 @@ class JConfig
 
 	/* Template Settings */
 	var $theme = 'bootstrap';
+    var $analytics = '';
 }

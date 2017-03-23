@@ -171,6 +171,8 @@ class Installer
         $replace('mailfrom', 'policebox@localhost.home');
         $replace('fromname', 'Police Box');
 
+        $replace('analytics', 'UA-20242887-6');
+
         file_put_contents($output, $contents);
         chmod($output, 0644);
     }
