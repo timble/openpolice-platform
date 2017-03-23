@@ -1347,9 +1347,9 @@ CREATE TABLE `data`.`migrations` (
 # Dump of table police_zones
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `police_zones`;
+DROP TABLE IF EXISTS `data`.`police_zones`;
 
-CREATE TABLE `police_zones` (
+CREATE TABLE `data`.`police_zones` (
   `police_zone_id` int(11) unsigned NOT NULL,
   `platform` int(11) DEFAULT NULL,
   `titles` text NOT NULL,
@@ -1485,9 +1485,9 @@ CREATE TABLE `data`.`streets_municipalities` (
 # Dump of table streets_postcodes
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `streets_postcodes`;
+DROP TABLE IF EXISTS `data`.`streets_postcodes`;
 
-CREATE TABLE `streets_postcodes` (
+CREATE TABLE `data`.`streets_postcodes` (
   `streets_postcode_id` int(11) unsigned NOT NULL,
   `streets_city_id` int(11) NOT NULL DEFAULT '0',
   `title` varchar(255) DEFAULT NULL,
