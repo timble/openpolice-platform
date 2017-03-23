@@ -81,27 +81,6 @@ class Installer
 
     public function createMultisite($site = '9999')
     {
-        $template = <<<EOF
-<?php
-class JSiteConfig extends JConfig
-{
-	var \$theme = 'mobile';
-	var \$analytics = 'UA-20242887-6';
-	var \$site = '$site';
-}
-EOF;
-
-        $dir = $this->www."/sites/$site/config";
-        if (!is_dir($dir)) {
-            mkdir($dir, 0777, true);
-        }
-
-        file_put_contents($dir.'/config.php', $template);
-
-        mkdir($this->www."/sites/$site/files/attachments", 0777, true);
-        mkdir($this->www."/sites/$site/files/files/downloads", 0777, true);
-        mkdir($this->www."/sites/$site/files/files/images", 0777, true);
-
         `chmod -R 0777 $this->www/sites/$site/files`;
     }
 
