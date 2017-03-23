@@ -50,7 +50,7 @@ class Installer
 
     public function install()
     {
-        `cd $this->www && git pull origin master`;
+        `cd $this->www && git pull --rebase origin master`;
 
         $this->createDatabase();
         $this->setupMapping();
@@ -134,16 +134,6 @@ class Installer
     {
         `cd $this->www && git reset --hard HEAD`;
         `cd $this->www && git clean -d -x -f`;
-
-        foreach (array('9999', 'default') as $site)
-        {
-            $path = $this->www.'/sites/'.$site.'/';
-
-            if (file_exists($path))
-            {
-                `rm -rf $path`;
-            }
-        }
     }
 
     public function modifyConfiguration()
