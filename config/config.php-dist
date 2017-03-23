@@ -16,7 +16,7 @@
  *
  * Now edit this file and configure the parameters for your site and database.
  */
-class JConfig 
+class JConfig
 {
 	/**
 	* -------------------------------------------------------------------------
@@ -26,7 +26,7 @@ class JConfig
 
 	/* Site Settings */
 	var $offline    = '0';
-	var $sitename   = 'Nooku Server';		// Name of the site
+	var $sitename   = 'Open Police';		// Name of the site
 	var $list_limit = '20';
 	var $feed_limit =  10;
 
@@ -71,6 +71,6 @@ class JConfig
 	var $debug_lang = '0';
 
 	/* Template Settings */
-	var $theme = 'bootstrap';
+	var $theme = 'muhimu';
     var $analytics = '';
 }
