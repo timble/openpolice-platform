@@ -96,14 +96,6 @@
     @include gallery(4 of 12);
   }
 
-  .component--sidebar {
-    @include span(first 8 of 12);
-  }
-
-  .sidebar {
-    @include span(4 of 12);
-  }
-
   .news__featured {
     .media__image {
       @include span(first 4 of 12);
@@ -130,6 +122,14 @@
 
 // Delta
 @include breakpoint($breakpoint-delta) {
+  .component--sidebar {
+    @include span(first 8 of 12);
+  }
+
+  .sidebar {
+    @include span(4 of 12);
+  }
+
   .news__featured {
     @include span(first 8 of 12);
 

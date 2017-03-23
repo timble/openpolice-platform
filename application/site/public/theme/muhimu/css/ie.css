@@ -1329,16 +1329,6 @@ table {
     margin-right: -100%;
     clear: none; }
 
-.component--sidebar {
-  width: 65.4320987654%;
-  float: left;
-  margin-left: 0; }
-
-.sidebar {
-  width: 30.8641975309%;
-  float: left;
-  margin-left: 3.7037037037%; }
-
 .news__featured .media__image {
   width: 30.8641975309%;
   float: left;
@@ -1377,6 +1367,16 @@ table {
     margin-left: 51.8518518519%;
     margin-right: -100%;
     clear: none; }
+
+.component--sidebar {
+  width: 65.4320987654%;
+  float: left;
+  margin-left: 0; }
+
+.sidebar {
+  width: 30.8641975309%;
+  float: left;
+  margin-left: 3.7037037037%; }
 
 .news__featured {
   width: 65.4320987654%;
