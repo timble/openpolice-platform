@@ -160,7 +160,7 @@ class Installer
         };
 
         $replace('sendmail', '/usr/bin/env catchmail');
-        $replace('theme', 'mobile');
+        $replace('theme', 'muhimu');
         $replace('user', 'police');
         $replace('password', 'police');
         $replace('db', $this->database);
