@@ -107,7 +107,7 @@ EOF;
 
     public function createDatabase()
     {
-        $result = `echo 'SHOW DATABASES LIKE "$this->database"' | mysql -udemo -pdemo`;
+        $result = `echo 'SHOW DATABASES LIKE "$this->database"' | mysql -upolice -ppolice`;
         if (!empty($result))
         {
             $this->out("Database table exists.\nRun 'police reinstall' if you would like to re-create it");
@@ -115,7 +115,7 @@ EOF;
             return;
         }
 
-        $result = shell_exec("echo 'CREATE DATABASE `$this->database` CHARACTER SET utf8' | mysql -udemo -pdemo");
+        $result = shell_exec("echo 'CREATE DATABASE `$this->database` CHARACTER SET utf8' | mysql -upolice -ppolice");
         if (!empty($result)) { // MySQL returned an error
             throw new \Exception(sprintf('Cannot create database %s. Error: %s', $this->database, $result));
         }
@@ -124,7 +124,7 @@ EOF;
 
         foreach (self::$files as $file)
         {
-            $result = `mysql -pdemo -udemo $this->database < $dir/$file`;
+            $result = `mysql -ppolice -upolice $this->database < $dir/$file`;
             if (!empty($result)) { // MySQL returned an error
                 throw new \Exception(sprintf('Cannot import file %s. Error: %s', $file, $result));
             }
@@ -140,7 +140,7 @@ EOF;
 
     public function deleteDatabase()
     {
-        $result = shell_exec("echo 'DROP DATABASE IF EXISTS `$this->database`' | mysql -udemo -pdemo");
+        $result = shell_exec("echo 'DROP DATABASE IF EXISTS `$this->database`' | mysql -upolice -ppolice");
         if (!empty($result)) { // MySQL returned an error
             throw new \Exception(sprintf('Cannot delete database %s. Error: %s', $this->database, $result));
         }
@@ -182,8 +182,8 @@ EOF;
 
         $replace('sendmail', '/usr/bin/env catchmail');
         $replace('theme', 'mobile');
-        $replace('user', 'demo');
-        $replace('password', 'demo');
+        $replace('user', 'police');
+        $replace('password', 'police');
         $replace('db', $this->database);
 
         $replace('mailer', 'smtp');
