@@ -83,7 +83,7 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
             <? endif ?>
         </div>
         <div class="text--small">
-            All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.
+            All code is available under a free software license on <a href="https://github.com/timble/openpolice-platform">GitHub</a>.
         </div>
     </div>
 </footer>
