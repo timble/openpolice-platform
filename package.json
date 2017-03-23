@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-autoprefixer": "latest",
     "grunt-browser-sync": "latest",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-uglify": "latest",

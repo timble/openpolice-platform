@@ -30,6 +30,19 @@ module.exports = function(grunt) {
             }
         },
 
+        // Autoprefixer
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'ie 10']
+            },
+            files: {
+                expand: true,
+                flatten: true,
+                src: 'application/site/public/theme/muhimu/css/*.css',
+                dest: 'application/site/public/theme/muhimu/css/'
+            }
+        },
+
         // Uglify
         uglify: {
             options: {
@@ -62,7 +75,7 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: '**/*.scss',
-                tasks: ['sass'],
+                tasks: ['sass', 'autoprefixer'],
                 options: {
                     interrupt: false,
                     atBegin: true
