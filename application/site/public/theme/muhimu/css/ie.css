@@ -1862,6 +1862,7 @@ table {
 
 .form__label,
 .form__input {
+  appearance: none;
   font-size: 18px;
   line-height: 1.38888888em;
   width: 100%; }
@@ -1873,6 +1874,7 @@ table {
 .form__input {
   padding: 4px;
   border: 1px solid #bfc1c3;
+  border-radius: 0;
   width: 50%; }
 
 .form__input--numeric {

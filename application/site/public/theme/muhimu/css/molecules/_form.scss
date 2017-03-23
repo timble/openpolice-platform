@@ -14,6 +14,8 @@
 
 .form__label,
 .form__input {
+  appearance: none;
+
   font-size: $font-size-large;
   line-height: $line-height-input;
   width: 100%;
@@ -28,6 +30,7 @@
 .form__input {
   padding: 4px;
   border: 1px solid $color-border-input;
+  border-radius: 0;
 
   @include breakpoint($breakpoint-beta) {
     width: 50%;
