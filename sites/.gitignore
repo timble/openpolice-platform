@@ -3,4 +3,5 @@
 
 # But not these
 !.gitignore
-!default
+!default/*
+!9999/*
