@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .copyright {
+  color: $color-text-footer;
   background: $color-background-body;
   border-top: 1px solid darken($color-background-body, 5%);
   padding-top: 20px;
@@ -14,9 +15,12 @@
   }
 
   a {
-    color: palette(blue);
     display: inline-block;
     margin: 0 5px;
+
+    &:hover {
+      color: $color-text-footer-hover;
+    }
   }
 
   @include breakpoint($breakpoint-charlie) {

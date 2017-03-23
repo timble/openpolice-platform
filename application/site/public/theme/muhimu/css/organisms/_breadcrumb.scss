@@ -32,11 +32,11 @@
     li, .divider {
       display: inline-block;
       margin-right: 5px;
-      color: palette(turquoise, light);
       font-weight: 300;
     }
 
     .divider {
+      color: palette(turquoise, light);
       display: inline-block;
       width: 8px;
       height: 0;
@@ -47,7 +47,6 @@
     }
 
     a {
-      color: #fff;
       font-weight: 400;
     }
   }
@@ -91,7 +90,6 @@
     }
 
     a {
-      color: #fff;
       padding-left: $spacing;
       display: inline-block;
 

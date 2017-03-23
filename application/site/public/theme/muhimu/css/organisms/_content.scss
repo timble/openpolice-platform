@@ -7,6 +7,19 @@
   padding-top: $spacing;
   padding-bottom: $spacing;
 
+  a {
+    color: palette(blue, light);
+
+    &:hover,
+    &:focus {
+      color: palette(blue, dark);
+    }
+
+    &:visited {
+      color: palette(purple, light);
+    }
+  }
+
   ul, ol {
     margin-bottom: $spacing;
   }

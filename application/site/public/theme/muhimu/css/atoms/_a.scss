@@ -1,12 +1,3 @@
 a {
-  color: palette(blue, light);
-
-  &:hover,
-  &:focus {
-    color: palette(blue, dark);
-  }
-
-  &:visited {
-    color: palette(purple, light);
-  }
+  color: inherit;
 }

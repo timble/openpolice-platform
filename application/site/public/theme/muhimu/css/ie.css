@@ -1485,11 +1485,7 @@ p {
   line-height: 1.5em; }
 
 a {
-  color: #3142b4; }
-  a:hover, a:focus {
-    color: #1b2464; }
-  a:visited {
-    color: #6c3b7f; }
+  color: inherit; }
 
 strong {
   font-weight: 700; }
@@ -2172,9 +2168,9 @@ table {
   .container__breadcrumb .breadcrumb li, .container__breadcrumb .breadcrumb .divider {
     display: inline-block;
     margin-right: 5px;
-    color: #d7e2e0;
     font-weight: 300; }
   .container__breadcrumb .breadcrumb .divider {
+    color: #d7e2e0;
     display: inline-block;
     width: 8px;
     height: 0;
@@ -2182,7 +2178,6 @@ table {
     padding-top: 1.5em;
     vertical-align: middle; }
   .container__breadcrumb .breadcrumb a {
-    color: #fff;
     font-weight: 400; }
 
 .container__header {
@@ -2212,7 +2207,6 @@ table {
       padding-top: 1.5em;
       vertical-align: middle; }
     .container__header li a {
-      color: #fff;
       padding-left: 1.5em;
       display: inline-block; }
       .container__header li a:hover {
@@ -2287,6 +2281,12 @@ body.press.articles time {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   padding-top: 2.25em; }
+  .container__content a {
+    color: #3142b4; }
+    .container__content a:hover, .container__content a:focus {
+      color: #1b2464; }
+    .container__content a:visited {
+      color: #6c3b7f; }
   .container__content ul, .container__content ol {
     margin-bottom: 1.5em; }
 
@@ -2310,6 +2310,7 @@ body.press.articles time {
    Copyright
    ========================================================================== */
 .copyright {
+  color: #454a4c;
   background: #dee0e2;
   border-top: 1px solid #d0d3d6;
   padding-top: 20px;
@@ -2318,9 +2319,10 @@ body.press.articles time {
   .copyright .copyright__menu {
     display: inline-block; }
   .copyright a {
-    color: #26338c;
     display: inline-block;
     margin: 0 5px; }
+    .copyright a:hover {
+      color: #171819; }
   .container__copyright {
     display: table;
     width: 100%; }
