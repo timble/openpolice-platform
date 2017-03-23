@@ -76,7 +76,7 @@
     </div>
 
     <div id="content" class="container container__content">
-        <div class="component component--no-sidebar">
+        <div class="component">
             <article class="article">
                 <h1 class="article__header"><?= translate('Page not found') ?></h1>
 

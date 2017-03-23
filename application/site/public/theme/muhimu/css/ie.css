@@ -1329,16 +1329,10 @@ table {
     margin-right: -100%;
     clear: none; }
 
-.component {
+.component--sidebar {
   width: 65.4320987654%;
   float: left;
   margin-left: 0; }
-
-.component--no-sidebar {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0; }
 
 .sidebar {
   width: 30.8641975309%;

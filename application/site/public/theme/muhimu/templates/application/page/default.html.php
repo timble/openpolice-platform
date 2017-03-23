@@ -57,8 +57,8 @@ $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
     <div id="content" class="container__content<?= $extension == 'police' ? ' homepage' : '' ?>">
         <? $extension_view = $extension.'-'.$view; ?>
-        <? $class = in_array($extension_view, array('police-page', 'files', 'districts-relations', 'districts-district', 'news-articles', 'press-articles')) ? ' component--no-sidebar' : '' ?>
-        <div class="component <?= $class ?>">
+        <? $class = !in_array($extension_view, array('police-page', 'files', 'districts-relations', 'districts-district', 'news-articles', 'press-articles')) ? ' component--sidebar' : '' ?>
+        <div class="component<?= $class ?>">
             <ktml:content>
         </div>
         <ktml:modules position="sidebar">

@@ -96,12 +96,8 @@
     @include gallery(4 of 12);
   }
 
-  .component {
+  .component--sidebar {
     @include span(first 8 of 12);
-  }
-
-  .component--no-sidebar {
-    @include span(12 of 12);
   }
 
   .sidebar {
