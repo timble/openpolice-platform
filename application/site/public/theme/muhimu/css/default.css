@@ -2322,11 +2322,11 @@ body.press.articles time {
 .container__content {
   padding-top: 1.5em;
   padding-bottom: 1.5em; }
-  .container__content a {
+  .container__content a:not(.button) {
     color: #3142b4; }
-    .container__content a:hover, .container__content a:focus {
+    .container__content a:not(.button):hover, .container__content a:not(.button):focus {
       color: #1b2464; }
-    .container__content a:visited {
+    .container__content a:not(.button):visited {
       color: #6c3b7f; }
   .container__content ul, .container__content ol {
     margin-bottom: 1.5em; }

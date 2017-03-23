@@ -7,7 +7,7 @@
   padding-top: $spacing;
   padding-bottom: $spacing;
 
-  a {
+  a:not(.button) {
     color: palette(blue, light);
 
     &:hover,
