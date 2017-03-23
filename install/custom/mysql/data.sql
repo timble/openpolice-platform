@@ -148,7 +148,7 @@ VALUES
 	(118, 2, 0, 'Wanted', 'wanted', 'option=com_wanted&view=articles', NULL, 'component', 1, 0, 0, 49, 1, '2015-02-17 14:07:56', NULL, NULL, NULL, NULL, 0, ''),
 	(119, 1, 0, 'Statistieken', 'statistieken', 'option=com_statistics&view=cities', NULL, 'component', 0, 1, 0, 50, 1, '2015-03-25 17:13:31', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"'),
 	(120, 1, 0, 'Parking', 'parking', 'option=com_articles&view=articles&category=10', NULL, 'component', 1, 0, 0, 20, 1, '2017-01-27 10:33:31', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"\npage_description=\"On parking in the city\"\narticles_per_page=\"99\"\nsort_by=\"title\"'),
-	(121, 1, 0, 'Declaration or report', 'declaration-or-report', 'option=com_articles&view=articles&category=6', NULL, 'component', 1, 0, 0, 20, 1, '2017-01-27 10:33:31', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"\npage_description=\"Including reporting suspected crimes or disorder\"\narticles_per_page=\"99\"\nsort_by=\"title\"'),
+	(121, 1, 0, 'Declaration or report', 'declaration-or-report', 'option=com_articles&view=articles&category=6', NULL, 'component', 1, 0, 0, 20, 1, '2017-01-27 10:33:31', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"\npage_description=\"Including reporting suspected crimes or disturbance\"\narticles_per_page=\"99\"\nsort_by=\"title\"'),
 	(122, 1, 0, 'Police stations', 'police-stations', 'option=com_contacts&view=contacts&category=1', NULL, 'component', 1, 0, 0, 7, 1, '2013-04-28 19:52:53', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"\npage_description=\"List of all the police stations across our territory\"'),
 	(123, 1, 0, 'Search', 'search', 'option=com_police&view=page&layout=search\n', NULL, 'component', 1, 1, 0, 41, 1, '2014-09-08 10:05:27', NULL, NULL, NULL, NULL, 0, 'page_title=\"\"');
 
