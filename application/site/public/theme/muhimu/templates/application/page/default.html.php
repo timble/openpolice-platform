@@ -74,6 +74,7 @@ $pages = object('com:pages.model.pages')->menu('1')->published('true')->getRowse
                     <a href="/<?= $page->slug ?>"><?= $page->title ?></a>
                 <? endif ?>
             <? endforeach ?>
+            Built by <a href="https://www.timble.net/platform/open-police/">Timble</a>
             <? if($zone->twitter) : ?>
                 <a href="//www.twitter.com/<?= $zone->twitter ?>"><i class="icon-twitter"></i> Twitter</a>
             <? endif ?>
