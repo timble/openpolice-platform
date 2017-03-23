@@ -7,7 +7,7 @@
   $border: 1px;
   $button-width: 36px;
 
-  margin-top: $spacing-xl;
+  margin-top: $spacing-xs;
   margin-bottom: $spacing-xs;
   position: relative;
 
@@ -40,6 +40,10 @@
   }
 }
 
+.toggle-search + .search-input {
+  margin-top: $spacing-xl;
+}
+
 .toggle-search {
   display: none;
 }
@@ -53,7 +57,6 @@
     }
 
     @include breakpoint($breakpoint-beta) {
-      margin-top: $spacing-xs;
       display: block;
     }
   }
