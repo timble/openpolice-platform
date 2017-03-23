@@ -1511,11 +1511,9 @@ th {
 th, td {
   padding: 3px 0; }
 
-article ul {
-  margin-bottom: 1.5em; }
-  article ul li {
-    list-style: circle;
-    margin-left: 1.5em; }
+article ul li {
+  list-style: circle;
+  margin-left: 1.5em; }
 
 .button {
   font-size: 18px;
@@ -2295,6 +2293,8 @@ body.press.articles time {
   padding-top: 1.5em;
   padding-bottom: 1.5em;
   padding-top: 2.25em; }
+  .container__content ul, .container__content ol {
+    margin-bottom: 1.5em; }
 
 .component.article article,
 .component.news article {

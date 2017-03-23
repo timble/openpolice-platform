@@ -7,6 +7,10 @@
   padding-top: $spacing;
   padding-bottom: $spacing;
 
+  ul, ol {
+    margin-bottom: $spacing;
+  }
+
   @include breakpoint($breakpoint-charlie) {
     padding-top: $spacing-xl;
   }
