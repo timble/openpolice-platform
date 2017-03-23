@@ -1,17 +1,15 @@
 <?
 /**
- * Nooku Framework - http://www.nooku.org
+ * Belgian Police Web Platform - Police Component
  *
- * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
+ * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
+ * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
 
 <?
     $zone = object('com:police.model.zone')->id($site)->getRow();
-    $language_short = explode("-", $language);
-    $language_short = $language_short[0];
 ?>
 
 <!DOCTYPE HTML>
@@ -71,7 +69,7 @@
 
     <div class="container__breadcrumb">
         <ul class="breadcrumb">
-            <li><a href="/<?= $site ?>" class="pathway">Home</a></li>
+            <li><a href="/" class="pathway">Home</a></li>
         </ul>
     </div>
 
@@ -94,7 +92,7 @@
                 </div>
 
                 <p style="margin-top: 30px; clear: both">
-                    <a class="button button--primary" href="/<?= $site ?>" title="<?= translate('Go to the homepage'); ?>"><?= translate('Go to the homepage'); ?></a>
+                    <a class="button button--primary" href="/" title="<?= translate('Go to the homepage'); ?>"><?= translate('Go to the homepage'); ?></a>
                 </p>
 
                 <? if(count($trace)) : ?>

@@ -5,5 +5,5 @@
 </p>
 
 <p>
-    <a class="button button--primary" href="./" title="<?= translate('Go to the homepage'); ?>"><?= translate('Go to the homepage'); ?></a>
+    <a class="button button--primary" href="/" title="<?= translate('Go to the homepage'); ?>"><?= translate('Go to the homepage'); ?></a>
 </p>
