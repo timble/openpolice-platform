@@ -2126,6 +2126,7 @@ table {
   position: absolute;
   right: 0;
   top: 0;
+  border: none;
   height: 72px;
   width: 72px;
   background-color: #26338c; }

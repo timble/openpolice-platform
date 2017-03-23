@@ -39,17 +39,15 @@ $extensionViewLayout = $extension.'-'.$view.'-'.$layout;
                 <meta itemprop="logo" content="assets://application/images/logo-<?= array_shift(str_split($language, 2)); ?>.png" />
             </a>
         </div>
-        <? if($extensionViewLayout == 'police-page-homepage') : ?>
-        <form class="search" action="/search">
-            <a id="toggle-search" class="toggle-search" href="#" aria-pressed="false" onclick="apollo.toggleClass(document.getElementById('search-input'), 'is-shown');toggler()">
-
-            </a>
-            <div id="search-input" class="search-input">
+        <div class="search" action="/search">
+            <? if($extensionViewLayout != 'police-page-homepage') : ?>
+            <button id="toggle-search" class="toggle-search" href="#" aria-pressed="false" onclick="apollo.toggleClass(document.getElementById('search-input'), 'is-shown');toggler()"></button>
+            <? endif ?>
+            <form id="search-input" class="search-input<?= $extensionViewLayout == 'police-page-homepage' ? ' is-shown' : '' ?>">
                 <input type="search" placeholder="<?= translate('Search') ?>" />
                 <button type="submit" />
-            </div>
-        </form>
-        <? endif ?>
+            </form>
+        </div>
     </div>
 
     <ktml:modules position="breadcrumbs">
