@@ -1745,10 +1745,6 @@ table {
     color: #fff;
     background-color: #26338c; }
 
-@media screen and (max-width: 37.5em) {
-  .toggle-search + .search-input {
-    margin-top: 2.25em; } }
-
 .toggle-search {
   display: none; }
 
@@ -1763,15 +1759,18 @@ table {
 .js-enabled .toggle-search {
   display: block;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 16px;
+  top: 16px;
+  height: 40px;
+  width: 40px;
+  background-color: #26338c;
   border: none;
-  height: 72px;
-  width: 72px;
-  background-color: #26338c; }
+  border-radius: 8px; }
   @media screen and (min-width: 37.5em) {
     .js-enabled .toggle-search {
       display: none; } }
+  .js-enabled .toggle-search.is-pressed {
+    display: none; }
 
 /* ==========================================================================
    Header / Breadcrumb

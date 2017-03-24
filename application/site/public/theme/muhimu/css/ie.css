@@ -1745,13 +1745,16 @@ table {
 .js-enabled .toggle-search {
   display: block;
   position: absolute;
-  right: 0;
-  top: 0;
-  border: none;
-  height: 72px;
-  width: 72px;
+  right: 16px;
+  top: 16px;
+  height: 40px;
+  width: 40px;
   background-color: #26338c;
+  border: none;
+  border-radius: 8px;
   display: none; }
+  .js-enabled .toggle-search.is-pressed {
+    display: none; }
 
 /* ==========================================================================
    Header / Breadcrumb

@@ -41,10 +41,10 @@ $extensionViewLayout = $extension.'-'.$view.'-'.$layout;
         </div>
         <div class="search" action="/search">
             <? if($extensionViewLayout != 'police-page-homepage') : ?>
-            <button id="toggle-search" class="toggle-search" href="#" aria-pressed="false" onclick="apollo.toggleClass(document.getElementById('search-input'), 'is-shown');toggler()"></button>
+            <button id="toggle-search" class="toggle-search" href="#" aria-pressed="false" onclick="apollo.toggleClass(document.getElementById('search-input'), 'is-shown');apollo.toggleClass(document.getElementById('toggle-search'), 'is-pressed');document.getElementById('search-input-field').focus();toggler()"></button>
             <? endif ?>
             <form id="search-input" class="search-input<?= $extensionViewLayout == 'police-page-homepage' ? ' is-shown' : '' ?>" action="/search">
-                <input type="search" placeholder="<?= translate('Search') ?>" />
+                <input id="search-input-field" type="search" placeholder="<?= translate('Search') ?>" />
                 <button type="submit" />
             </form>
         </div>
