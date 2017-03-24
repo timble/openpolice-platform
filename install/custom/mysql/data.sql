@@ -574,7 +574,7 @@ VALUES
 
 INSERT INTO `data`.`police_zones` (`police_zone_id`, `platform`, `titles`, `language`, `phone_emergency`, `phone_information`, `email`, `social`, `created_by`, `created_on`, `modified_by`, `modified_on`, `locked_by`, `locked_on`)
 VALUES
-	('default', NULL, '{\"nl\": \"Open Police\"}', 1, '123 456 789', NULL, 'info@example.com', '', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
+	('default', NULL, '{\"en\":\"Open Police\"}', 1, '123 456 789', NULL, 'info@example.com', '{\"twitter\":{\"en\":\"OpenPoliceBE\"},\"facebook\":{\"en\":\"\"}}', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00');
 
 
 
