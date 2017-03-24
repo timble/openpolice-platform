@@ -25,7 +25,8 @@ module.exports = function(grunt) {
                 files: {
                     'application/site/public/theme/muhimu/css/default.css': 'application/site/public/theme/muhimu/css/default.scss',
                     'application/site/public/theme/muhimu/css/fonts.css': 'application/site/public/theme/muhimu/css/fonts.scss',
-                    'application/site/public/theme/muhimu/css/ie.css': 'application/site/public/theme/muhimu/css/ie.scss'
+                    'application/site/public/theme/muhimu/css/ie.css': 'application/site/public/theme/muhimu/css/ie.scss',
+                    'application/site/public/theme/muhimu/css/select2.css': 'application/site/public/theme/muhimu/css/select2.scss'
                 }
             }
         },
@@ -65,7 +66,10 @@ module.exports = function(grunt) {
             },
             site: {
                 files: {
-                    'application/site/public/theme/muhimu/css/default.css': 'application/site/public/theme/muhimu/css/default.css'
+                    'application/site/public/theme/muhimu/css/default.css': 'application/site/public/theme/muhimu/css/default.css',
+                    'application/site/public/theme/muhimu/css/ie.css': 'application/site/public/theme/muhimu/css/ie.css',
+                    'application/site/public/theme/muhimu/css/fonts.css': 'application/site/public/theme/muhimu/css/fonts.css',
+                    'application/site/public/theme/muhimu/css/select2.css': 'application/site/public/theme/muhimu/css/select2.css'
                 }
             }
         },

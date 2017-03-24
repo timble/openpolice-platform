@@ -1,0 +1,33 @@
+// Variables, mixins & functions
+@import 'utilities/variables';
+
+.select2-container-active .select2-choice.select2-choice {
+  box-shadow: none;
+}
+
+.select2-choice.select2-choice {
+  line-height: 25px;
+
+  padding: 0;
+  background: none;
+  background-image: none;
+  border: 0px none;
+  border-radius: 0;
+
+  .select2-arrow {
+    display: none;
+  }
+}
+
+.select2-search.select2-search input {
+  font-size: $font-size-large;
+  line-height: $line-height-input;
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-bottom: 4px;
+  background: none;
+}
+
+.select2-default.select2-default {
+  color: #555555;
+}

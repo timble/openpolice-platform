@@ -11,6 +11,7 @@
 <? $site = escape(object('application')->getCfg('site' )) ?>
 
 <style src="assets://application/components/select2/select2.css" />
+<style src="assets://application/css/select2.css" />
 
 <script src="assets://application/js/jquery.js" />
 <script src="assets://application/components/select2/select2.js" />
