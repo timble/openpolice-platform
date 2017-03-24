@@ -15,7 +15,7 @@
         <? foreach($list as $item) : ?>
             <? if($item->file->isImage() && !in_array($item->id, Nooku\Library\ObjectConfig::unbox($exclude))) : ?>
                 <li class="gallery__item">
-                    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="thumbnail" data-gallery="enabled" href="attachments://<?= $item->path; ?>">
+                    <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" class="thumbnail" href="attachments://<?= $item->path; ?>">
                         <img width="640px" src="attachments://<?= $item->thumbnail ?>" />
                     </a>
                 </li>
@@ -30,18 +30,4 @@
             <? endif ?>
         <? endforeach ?>
     </ul>
-
-    <script src="assets://application/components/jquery/dist/jquery.min.js" />
-    <script src="assets://application/components/magnific-popup/dist/jquery.magnific-popup.min.js" />
-    <script data-inline>
-        $(document).ready(function() {
-            // This will create a single gallery from all elements that have class data-gallery="enabled"
-            $('[data-gallery="enabled"]').magnificPopup({
-                type: 'image',
-                gallery:{
-                    enabled:true
-                }
-            });
-        });
-    </script>
 <? endif ?>
