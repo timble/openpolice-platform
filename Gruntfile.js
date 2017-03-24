@@ -25,8 +25,7 @@ module.exports = function(grunt) {
                 files: {
                     'application/site/public/theme/muhimu/css/default.css': 'application/site/public/theme/muhimu/css/default.scss',
                     'application/site/public/theme/muhimu/css/fonts.css': 'application/site/public/theme/muhimu/css/fonts.scss',
-                    'application/site/public/theme/muhimu/css/ie.css': 'application/site/public/theme/muhimu/css/ie.scss',
-                    'application/site/public/theme/muhimu/css/ie7.css': 'application/site/public/theme/muhimu/css/ie7.scss'
+                    'application/site/public/theme/muhimu/css/ie.css': 'application/site/public/theme/muhimu/css/ie.scss'
                 }
             }
         },
