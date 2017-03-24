@@ -4,7 +4,7 @@
 .container__header,
 .container__content,
 .breadcrumb,
-.container__copyright {
+.container__footer {
   @extend %clearfix;
   margin-right: auto;
   margin-left: auto;
@@ -45,6 +45,14 @@
     .media__content {
       @include span(8 of 12);
     }
+  }
+
+  .footer--left {
+    @include span(first 10 of 12);
+  }
+
+  .footer--right {
+    @include span(2 of 12);
   }
 }
 

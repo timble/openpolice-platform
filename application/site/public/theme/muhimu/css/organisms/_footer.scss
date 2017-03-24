@@ -2,7 +2,7 @@
    Copyright
    ========================================================================== */
 
-.copyright {
+.footer {
   color: $color-text-footer;
   background: $color-background-body;
   border-top: 1px solid darken($color-background-body, 5%);
@@ -10,12 +10,21 @@
   padding-bottom: 20px;
 }
 
-.copyright__menu {
-  margin-bottom: $spacing / 2;
+.footer--group {
   @extend %clearfix;
+}
+
+.footer__menu {
+  margin-bottom: $spacing / 2;
+
+  ul {
+    @extend %clearfix;
+  }
 
   li {
-    margin-bottom: $spacing / 4;
+    @include breakpoint($breakpoint-alpha, max) {
+      margin-bottom: $spacing / 4;
+    }
 
     @include breakpoint($breakpoint-alpha) {
       float: left;
@@ -30,5 +39,22 @@
     &:hover {
       color: $color-text-footer-hover;
     }
+  }
+}
+
+.footer__menu--social {
+  ul {
+    @include breakpoint($breakpoint-alpha) {
+      float: right;
+    }
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  svg {
+    height: 24px;
+    width: 24px;
   }
 }
