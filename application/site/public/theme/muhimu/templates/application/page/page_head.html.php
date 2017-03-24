@@ -21,8 +21,6 @@
     <link rel="shortcut icon" type="image/png" href="assets://application/images/touch-icon.png" />
     <link rel="apple-touch-icon" type="image/png" href="assets://application/images/touch-icon.png" />
 
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-
     <ktml:title>
     <ktml:meta>
     <ktml:link>
@@ -36,6 +34,10 @@
     <script src="assets://application/js/apollo.min.js" />
     <script src="assets://application/js/toggler.js" />
     <script src="assets://application/components/html5shiv/dist/html5shiv-printshiv.min.js" condition="if lte IE 8" />
+
+    <script src="assets://application/js/modernizr.js" />
+    <script src="assets://application/js/fonts.js" />
+    <noscript><link href="assets://application/css/fonts.css" rel="stylesheet"></noscript>
 
     <?php if($site && $analytics = object('application')->getCfg('analytics')) : ?>
     <script>
