@@ -58,6 +58,19 @@ module.exports = function(grunt) {
             }
         },
 
+        // CSSmin
+        cssmin: {
+            options: {
+                roundingPrecision: -1,
+                level: 2
+            },
+            site: {
+                files: {
+                    'application/site/public/theme/muhimu/css/default.css': 'application/site/public/theme/muhimu/css/default.css'
+                }
+            }
+        },
+
         browserSync: {
             dev: {
                 bsFiles: {
@@ -76,7 +89,7 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: '**/*.scss',
-                tasks: ['sass', 'autoprefixer'],
+                tasks: ['sass', 'cssmin', 'autoprefixer'],
                 options: {
                     interrupt: false,
                     atBegin: true

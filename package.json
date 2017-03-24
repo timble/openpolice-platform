@@ -6,6 +6,7 @@
     "grunt-autoprefixer": "latest",
     "grunt-browser-sync": "latest",
     "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-sass": "^2.0.0",
