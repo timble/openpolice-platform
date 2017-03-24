@@ -17,6 +17,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name=”mobile-web-app-capable” content=”yes” />
 
+    <link rel="dns-prefetch" href="//openpolice.imgix.net">
+
     <link rel="shortcut icon" type="image/ico" href="assets://application/images/favicon.ico" />
     <link rel="shortcut icon" type="image/png" href="assets://application/images/touch-icon.png" />
     <link rel="apple-touch-icon" type="image/png" href="assets://application/images/touch-icon.png" />
