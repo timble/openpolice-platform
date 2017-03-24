@@ -17,7 +17,7 @@
 <meta content="<?= $article->title ?>" property="og:title" />
 <meta content="<?= trim(preg_replace('/\s+/', ' ', strip_tags($article->introtext))) ?>" property="og:description" />
 <? if($article->attachments_attachment_id) : ?>
-    <meta content="http://<?= $url ?>attachments://<?= $thumbnail ?>" property="og:image" />
+    <meta content="http://<?= $url ?>attachments://<?= $article->thumbnail ?>" property="og:image" />
 <? endif ?>
 
 <meta content="<?= $article->published_on_utc ?>" property="article:published_time" />
@@ -34,11 +34,9 @@
 
     <div itemprop="articleBody">
         <? if($article->attachments_attachment_id) : ?>
-        <a onClick="ga('send', 'event', 'Attachments', 'Modalbox', 'Image');" data-content="Vergroten" class="article__thumbnail" href="attachments://<?= $thumbnail ?>" data-gallery="enabled">
             <?= helper('com:attachments.image.thumbnail', array(
                 'attachment' => $article->attachments_attachment_id,
-                'attribs' => array('width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
-        </a>
+                'attribs' => array('class' => 'article__thumbnail', 'width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
         <? endif ?>
 
         <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>
