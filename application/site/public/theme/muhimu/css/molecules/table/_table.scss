@@ -2,7 +2,7 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
   border: 1px solid $color-border;
-  width: 100% !important;
+  width: 100%;
   margin-bottom: $line-height;
 
   th, td {
@@ -18,7 +18,6 @@ table {
 
 .table {
   max-width: 100%;
-  width: 100%;
   border: 0 none;
 
   tr {
@@ -38,7 +37,7 @@ table {
   }
 }
 
-@include breakpoint($breakpoint-charlie) {
+@include breakpoint($breakpoint-beta) {
   .table {
     border: 0 none; // Override default style
 
@@ -50,7 +49,7 @@ table {
     // Cells
     th,
     td {
-      display: table-cell !important;
+      display: table-cell;
       line-height: $line-height;
       text-align: left;
       vertical-align: top;

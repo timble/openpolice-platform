@@ -11,10 +11,6 @@
     font-weight: bold;
   }
 
-  tbody td:nth-child(n+2) {
-    display: block;
-  }
-
   tfoot td {
     padding-top: 1em;
     text-align: center;
@@ -31,14 +27,10 @@
     text-align: left;
     margin-top: $spacing;
   }
-
-  td:first-child {
-    width: 33% !important;
-  }
 }
 
 
-@include breakpoint($breakpoint-charlie) {
+@include breakpoint($breakpoint-beta) {
   .table--openinghours {
     th,
     td {

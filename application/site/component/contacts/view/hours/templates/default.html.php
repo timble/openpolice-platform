@@ -27,7 +27,7 @@
                 <? $list = count($exceptions) ? $exceptions : $weekly ?>
                 <? $closed = isset($list->top()->closed) ? $list->top()->closed : false ?>
                 <tr>
-                    <td width="25%" nowrap>
+                    <td width="33%" nowrap>
                         <? if($date == $today) : ?>
                         <?= translate('Today') ?>:
                         <? elseif($date == $tomorrow) : ?>
