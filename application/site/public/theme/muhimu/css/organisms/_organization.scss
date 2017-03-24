@@ -44,7 +44,6 @@
   }
 
   &__name {
-    font-weight: 300;
     color: $color-main-blue;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -57,7 +56,7 @@
     line-height: $spacing;
 
     span {
-      font-weight: 700;
+      font-weight: 600;
       font-size: $spacing-s;
       padding-right: ($spacing-xs / 2);
     }

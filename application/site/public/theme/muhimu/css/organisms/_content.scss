@@ -32,27 +32,3 @@
 .component {
   @extend %clearfix;
 }
-
-.component.article,
-.component.news {
-
-  article {
-    @extend %clearfix;
-
-    @include breakpoint($breakpoint-delta) {
-      max-width: 42em;
-    }
-  }
-
-  header {
-    margin-bottom: $spacing;
-  }
-
-  time {
-    display: block;
-    font-size: 1.25em;
-    line-height: 1.2em;
-    color: palette(blue, light);
-    font-weight: 300;
-  }
-}

@@ -21,7 +21,7 @@
     <link rel="shortcut icon" type="image/png" href="assets://application/images/touch-icon.png" />
     <link rel="apple-touch-icon" type="image/png" href="assets://application/images/touch-icon.png" />
 
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
     <ktml:title>
     <ktml:meta>
