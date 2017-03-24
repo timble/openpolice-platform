@@ -13,18 +13,14 @@ use Nooku\Library;
 class DatabaseTableOfficers extends Library\DatabaseTableAbstract
 {
     public function  _initialize(Library\ObjectConfig $config)
-    {        
+    {
         $config->append(array(
             'behaviors'    =>  array(
                 'lockable', 'creatable', 'modifiable',
                 'com:attachments.database.behavior.attachable',
-            ),
-          	'filters' => array(
-             	'text' 		=> array('html', 'tidy'),
-             	'params'    => array('json')
-              )
+            )
         ));
-     
+
         parent::_initialize($config);
      }
 }

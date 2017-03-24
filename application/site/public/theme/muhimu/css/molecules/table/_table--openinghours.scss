@@ -1,0 +1,52 @@
+.table--openinghours {
+  tr {
+    padding: 0.5em 0.75em 0;
+  }
+
+  td {
+    padding: 0 0 0.5em 0;
+  }
+
+  tbody td:nth-child(1) {
+    font-weight: bold;
+  }
+
+  tbody td:nth-child(n+2) {
+    display: block;
+  }
+
+  tfoot td {
+    padding-top: 1em;
+    text-align: center;
+  }
+}
+
+.table--openinghours {
+  display: table;
+  clear: both;
+  width: 100%;
+
+  caption {
+    @extend %h4style;
+    text-align: left;
+    margin-top: $spacing;
+  }
+
+  td:first-child {
+    width: 33% !important;
+  }
+}
+
+
+@include breakpoint($breakpoint-charlie) {
+  .table--openinghours {
+    th,
+    td {
+      padding: 0.5em;
+    }
+
+    tbody td:nth-child(1) {
+      text-align: right;
+    }
+  }
+}

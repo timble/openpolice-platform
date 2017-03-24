@@ -19,7 +19,7 @@
     <? if(isset($thumbnail)) : ?>
         <img class="article__thumbnail" width="400" height="300" align="right" src="attachments://<?= $thumbnail ?>" />
     <? endif ?>
-    <div>
+    <p>
         <? if (isset($contact->street) || $contact->number) : ?>
             <span><?= $contact->street ?> <?= $contact->number ?></span><br />
         <? endif; ?>
@@ -29,7 +29,7 @@
         <? if (isset($contact->street)) : ?>
             <span><?= $contact->city ?></span>
         <? endif; ?>
-    </div>
+    </p>
     <ul>
         <? if ($contact->telephone) :?>
             <li>
@@ -75,7 +75,7 @@
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
-  "@type": "<?= $category->id == '1' ? 'http://schema.org/PoliceStation' : 'http://schema.org/CivicStructure' ?>"
+  "@type": "<?= $contact->contacts_category_id == '1' ? 'http://schema.org/PoliceStation' : 'http://schema.org/CivicStructure' ?>"
   ,"address": {
     "@type": "PostalAddress",
     "addressLocality": "<?= $contact->city ?>",

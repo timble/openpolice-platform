@@ -10,11 +10,11 @@ set :app_symlinks, ["sites", "config/config.php", "config/key.p12"]
 
 # Server user settings.
 set :user, "deploy"
-set :port, 9999
+set :port, 22
 set :use_sudo, false
 
 # Deployment settings.
-set :deploy_to, "/var/www/v2.lokalepolitie.be/capistrano"
+set :deploy_to, "/var/www/v2.mijnpolitie.be/capistrano"
 set :deploy_via, :remote_cache
 set :copy_exclude, [".git"]
 set :keep_releases, 3
@@ -50,7 +50,7 @@ namespace :deploy do
 
     desc "Migrate database."
     task :migrate do
-        run "cd #{release_path}/scripts/phpmig && phpmig migrate"
+        run "cd #{release_path}/scripts/phpmig && composer --no-progress install && bin/phpmig migrate"
     end
 
     desc "Run composer"
@@ -59,9 +59,9 @@ namespace :deploy do
     end
 
     desc "Restart the application."
-    task :restart do
-        run "http_proxy='' curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
-    end
+    #task :restart do
+    #   run "http_proxy='' curl -vs -o /dev/null http://localhost/apc_clear.php > /dev/null 2>&1"
+    #end
 
     # Do nothing in these tasks.
     task :cold do; end

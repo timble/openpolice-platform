@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Header / Breadcrumb
+   ========================================================================== */
+
+.container__breadcrumb {
+  $base: palette(blue);
+  $dark: darken(palette(blue), 2%);
+
+  background: palette(blue);
+  // background: linear-gradient(135deg, palette(blue) 50%, darken(palette(blue), 5%) 100%);
+
+  background: repeating-linear-gradient(
+  135deg,
+  $base,
+  $base 10px,
+  $dark 10px,
+  $dark 20px
+);
+
+  color: #FFF;
+  border-top: ($spacing-xxxs / 2) solid palette(turquoise);
+  padding-top: $spacing-s / 2;
+  padding-bottom: $spacing-s / 2;
+
+  @include breakpoint($breakpoint-charlie) {
+    padding-top: $spacing-xs;
+    padding-bottom: $spacing-xs;
+  }
+
+  .breadcrumb {
+
+    li, .divider {
+      display: inline-block;
+      margin-right: 5px;
+      font-weight: 300;
+    }
+
+    .divider {
+      color: palette(turquoise, light);
+      display: inline-block;
+      width: 8px;
+      height: 0;
+      overflow: hidden;
+      padding-top: 1.5em;
+      vertical-align: middle;
+      @extend %icon--arrow--blue;
+    }
+
+    a {
+      font-weight: 400;
+    }
+  }
+}
+
+.container__header {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 14px;
+
+  @include breakpoint($breakpoint-delta) {
+    padding-top: $spacing;
+    padding-bottom: $spacing;
+  }
+
+  li {
+    display: block;
+    font-size: 1.125em;
+    line-height: 1.2em;
+    font-weight: 300;
+    padding-top: .6em;
+    padding-bottom: .6em;
+    position: relative;
+
+    @include breakpoint($breakpoint-beta) {
+      font-size: 1.25em;
+    }
+
+    &:before {
+      position: absolute;
+      top: .5em;
+      left: 0;
+      display: inline-block;
+      content: " ";
+      width: 10px;
+      height: 0;
+      overflow: hidden;
+      padding-top: 1.5em;
+      vertical-align: middle;
+      @extend %icon--arrow--blue--large;
+    }
+
+    a {
+      padding-left: $spacing;
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.phone_numbers {
+  margin-bottom: $spacing-xxs;
+
+  span {
+    white-space: nowrap;
+  }
+}

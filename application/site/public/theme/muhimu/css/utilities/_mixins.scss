@@ -1,0 +1,109 @@
+/**
+ * Mixin to create areas that keep their ratio
+ *
+ * Usage:
+ * @include ratio(percentage, content-element, overflow) {}
+ *
+ * The percentage defines the ratio. Examples:
+ * 1:1 = 100%
+ * 2:1 = 50%
+ * 4:3 = 75%
+ * 16:9 = 56.25%
+ *
+ * The content element is the first child element to place the content in.
+ * Default is: div
+ *
+ * The default overflow is auto but set to hidden when prefered
+ *
+ */
+
+@mixin ratio($ratio: 100%, $elem: div, $overflow: auto) {
+  position: relative;
+  width: 100%;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: $ratio;
+  }
+
+  #{$elem} {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: $overflow;
+  }
+}
+
+
+
+
+
+/**
+ * Mixin for transitions
+ */
+
+@mixin transition($transition: $default-transition) {
+  -webkit-transition: $transition;
+     -moz-transition: $transition;
+      -ms-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Image hovers
+ */
+
+@mixin hover_background($content: attr(data-content), $padding: 0, $background: palette(blue), $color: #fff, $opacity: .8 ) {
+  &:before {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: $padding;
+    left: 0;
+    display: block;
+    content: " ";
+    width: 100%;
+    background: rgba($background, 0);
+    cursor: pointer;
+    @include transition;
+  }
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    content: $content;
+    text-align: center;
+    color: $color;
+    @include transition;
+  }
+
+  &:hover {
+    &:before {
+      background: rgba($background, $opacity);
+      top: $padding;
+      bottom: $padding;
+    }
+
+    &:after {
+      top: 50%;
+      margin-top: -.75em;
+    }
+  }
+}

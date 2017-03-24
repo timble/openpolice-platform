@@ -9,7 +9,7 @@
 
 use Nooku\Library;
 
-class StatisticsControllerCity extends PoliceControllerLanguage
+class StatisticsControllerCity extends Library\ControllerModel
 {
 
 }

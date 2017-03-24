@@ -5,32 +5,54 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
 
-        // Iconfont
-        webfont: {
-            icons: {
-                src: 'application/site/public/theme/mobile/images/icons/*.svg',
-                dest: 'application/site/public/theme/mobile/fonts/icons',
-                destCss: 'application/site/public/theme/mobile/css/utilities',
-                options: {
-                    font: 'police-icons',
-                    hashes: true,
-                    stylesheet: 'scss',
-                    relativeFontPath: '../fonts/icons/',
-                    template: 'application/site/public/theme/mobile/fonts/icons/template.css',
-                    htmlDemo: false,
-                    types: 'eot,woff,ttf,svg'
-                }
-            }
+        // Copy bower files
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['bower_components/select2/*.*'],
+                        dest: 'application/site/public/theme/muhimu/components/select2',
+                        flatten: true
+                    },
+                ]
+            },
         },
 
         // Sass
         sass: {
             dist: {
                 files: {
-                    'application/site/public/theme/mobile/css/default.css': 'application/site/public/theme/mobile/css/default.scss',
-                    'application/site/public/theme/mobile/css/grid.css': 'application/site/public/theme/mobile/css/grid.scss',
-                    'application/site/public/theme/mobile/css/ie.css': 'application/site/public/theme/mobile/css/ie.scss',
-                    'application/site/public/theme/mobile/css/ie9.css': 'application/site/public/theme/mobile/css/ie9.scss'
+                    'application/site/public/theme/muhimu/css/default.css': 'application/site/public/theme/muhimu/css/default.scss',
+                    'application/site/public/theme/muhimu/css/ie.css': 'application/site/public/theme/muhimu/css/ie.scss',
+                    'application/site/public/theme/muhimu/css/ie7.css': 'application/site/public/theme/muhimu/css/ie7.scss'
+                }
+            }
+        },
+
+        // Autoprefixer
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'ie 10']
+            },
+            files: {
+                expand: true,
+                flatten: true,
+                src: 'application/site/public/theme/muhimu/css/*.css',
+                dest: 'application/site/public/theme/muhimu/css/'
+            }
+        },
+
+        // Uglify
+        uglify: {
+            options: {
+                soureMap: true
+            },
+            build: {
+                files: {
+                    'application/site/public/theme/muhimu/js/jquery.js': [
+                        'bower_components/jquery/dist/jquery.min.js'
+                    ]
                 }
             }
         },
@@ -38,7 +60,7 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : 'application/site/public/theme/mobile/css/default.css'
+                    src : 'application/site/public/theme/muhimu/css/default.css'
                 },
                 options: {
                     proxy: "police.dev",
@@ -53,24 +75,24 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: '**/*.scss',
-                tasks: ['sass'],
+                tasks: ['sass', 'autoprefixer'],
                 options: {
                     interrupt: false,
                     atBegin: true
                 }
             },
-            fontcustom: {
+            uglify: {
                 files: [
-                    'application/site/public/theme/mobile/images/icons/*.svg'
+                    // 'application/site/public/theme/wepo/js/*.js'
                 ],
-                tasks: ['webfont', 'sass'],
+                tasks: ['uglify'],
                 options: {
-                    interrupt: true,
+                    interrupt: false,
                     atBegin: true
                 }
             }
         }
     });
 
-    grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('default', ['uglify', 'copy', 'browserSync', 'watch']);
 };

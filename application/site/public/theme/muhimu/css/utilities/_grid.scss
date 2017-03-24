@@ -1,0 +1,174 @@
+@import '../../../../../../../bower_components/susy/sass/susy';
+
+.container__top,
+.container__header,
+.container__content,
+.breadcrumb,
+.container__footer {
+  @extend %clearfix;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $max-width-page;
+  padding-left: $spacing-s;
+  padding-right: $spacing-s;
+
+  @include breakpoint($breakpoint-charlie) {
+    padding-left: $spacing;
+    padding-right: $spacing;
+  }
+
+  @include breakpoint($breakpoint-delta) {
+    padding-left: $spacing-l;
+    padding-right: $spacing-l;
+  }
+}
+
+// Default
+.news__other {
+  .media__image {
+    @include span(first 2 of 6);
+  }
+
+  .media__content {
+    @include span(4 of 6);
+  }
+}
+
+// Alpha
+@include breakpoint($breakpoint-alpha) {
+  .press.articles,
+  .news.articles {
+    .media__image {
+      @include span(first 4 of 12);
+    }
+
+    .media__content {
+      @include span(8 of 12);
+    }
+  }
+
+  .footer--left {
+    @include span(first 10 of 12);
+  }
+
+  .footer--right {
+    @include span(2 of 12);
+  }
+}
+
+// Beta
+@include breakpoint($breakpoint-beta) {
+
+  .organization {
+    @include span(first 3 of 6);
+  }
+
+  .search {
+    @include span(3 of 6);
+  }
+
+  .navigation__item {
+    @include gallery(3 of 6);
+  }
+
+  .news__other {
+    .media {
+      @include gallery(3 of 6)
+    }
+  }
+
+  .news__featured {
+    .media__image {
+      @include span(first 3 of 12);
+    }
+
+    .media__content {
+      @include span(9 of 12);
+    }
+  }
+}
+
+
+// Charlie
+@include breakpoint($breakpoint-charlie) {
+
+  .organization {
+    @include span(first 8 of 12);
+  }
+
+  .search {
+    @include span(4 of 12);
+  }
+
+  .navigation__item {
+    @include gallery(4 of 12);
+  }
+
+  .news__featured {
+    .media__image {
+      @include span(first 4 of 12);
+    }
+
+    .media__content {
+      @include span(8 of 12);
+    }
+  }
+
+  .news__other {
+    .media {
+      @include gallery(6 of 12);
+    }
+  }
+
+  .news.articles,
+  .press.articles {
+    article {
+      @include gallery(6 of 12);
+    }
+  }
+}
+
+// Delta
+@include breakpoint($breakpoint-delta) {
+  .component--sidebar {
+    @include span(first 8 of 12);
+  }
+
+  .sidebar {
+    @include span(4 of 12);
+  }
+
+  .news__featured {
+    @include span(first 8 of 12);
+
+    .media__image {
+      @include span(first 3 of 9);
+    }
+
+    .media__content {
+      @include span(6 of 9);
+    }
+  }
+
+  .news__other {
+    @include span(4 of 12);
+
+    .media {
+      @include gallery(1 of 1);
+    }
+
+    .media.media {
+      clear: left;
+    }
+  }
+
+  .news.articles {
+    .media__image {
+      @include span(first 4 of 12);
+    }
+
+    .media__content {
+      @include span(8 of 12);
+    }
+  }
+}

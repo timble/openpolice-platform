@@ -33,7 +33,7 @@
                         <? elseif($date == $tomorrow) : ?>
                         <?= translate('Tomorrow') ?>:
                         <? else : ?>
-                        <?= translate($date->format('l')).' '.$date->format('j').' '.translate($date->format('F')) ?>:
+                        <?= translate($date->format('D')).' '.$date->format('j').' '.translate($date->format('M')) ?>:
                         <? endif ?>
                     </td>
                     <td>
@@ -42,9 +42,7 @@
                             <? foreach ($list as $hour) : ?>
                                 <? if ($hour->opening_time && $hour->closing_time) : ?>
                                     <time>
-                                        <?= $hour->opening_time ?>
-                                        <?= translate('till') ?>
-                                        <?= $hour->closing_time ?>
+                                        <?= $hour->opening_time ?> - <?= $hour->closing_time ?>
                                     </time>
                                     <?= $i < $count ? translate('and from') : '' ?>
                                     <? $i++ ?>

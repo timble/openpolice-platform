@@ -42,6 +42,7 @@ class ArticlesControllerArticle extends Library\ControllerModel
             if ($request->getFormat() != 'json')
             {
                 $sort_by_map = array(
+                    'title'  => array('title' => 'ASC'),
                     'newest' => array('ordering_date' => 'DESC'),
                     'oldest' => array('ordering_date' => 'ASC'),
                     'order'  => array('ordering' => 'ASC'));

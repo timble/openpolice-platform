@@ -20,15 +20,21 @@
     <? foreach ($articles as $article) : ?>
         <tr>
             <td>
+                <?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?>
+            </td>
+            <td width="100%">
+                <? if($article->text) : ?>
                 <a href="<?= helper('route.article', array('row' => $article)) ?>"><?= escape($article->title) ?></a>
-                <span style="float: right; white-space: nowrap"><?= helper('date.timestamp', array('start_on'=> $article->start_on, 'end_on' => $article->end_on)) ?></span><br />
-                <small>
+                <? else : ?>
+                <?= escape($article->title) ?>
+                <? endif ?>
+                <div class="text--small text--muted">
                     <? if ($article->isLocatable() && $streets = $article->getStreets()) : ?>
                         <?= implode(", ", $streets->title) ?>
                     <? else : ?>
                         <?= translate('Territory Police').' '.object('com:police.model.zone')->id(object('application')->getCfg('site' ))->getRow()->title ?>
                     <? endif ?>
-                </small>
+                </div>
             </td>
         </tr>
     <? endforeach; ?>
@@ -38,11 +44,11 @@
 <?= helper('com:application.paginator.pagination', array('total' => $total, 'show_count' => false, 'show_limit' => false)) ?>
 
 <? elseif($category->count) : ?>
-    <h2 class="text-center" style="padding-top: 20px"><?= @translate('No'.' '.$category->slug.' announced') ?></h2>
+    <p><?= @translate('No'.' '.strtolower($category->title).' announced') ?></p>
 <? endif ?>
 
 <? if($category->id == '19' && count($this->getObject('com:traffic.model.articles')->published(true)->results(true)->getRowset())) : ?>
-<p class="text-center">
-    <a href="./<?= $category->slug ?>/<?= object('lib:filter.slug')->sanitize(translate('results')) ?>"><?= translate('Roadside safety check results') ?>.</a>
+<p class="text--center">
+    <a class="button button--primary" href="./<?= $category->slug ?>/<?= object('lib:filter.slug')->sanitize(translate('results')) ?>"><?= translate('Check results') ?></a>
 </p>
 <? endif ?>

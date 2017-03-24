@@ -1,0 +1,48 @@
+/* ==========================================================================
+   A media container for news
+   ========================================================================== */
+
+.media {
+  @extend %clearfix;
+  margin-top: $spacing-xxs;
+  margin-bottom: $spacing-xxs;
+}
+
+.media__title {
+  @extend %h6style;
+
+  margin: 0;
+
+  @include breakpoint($breakpoint-alpha) {
+    font-size: 1.25em;
+    line-height: 1.2em;
+  }
+}
+
+.media__content {
+  p {
+    margin: $spacing-xxs 0 0;
+  }
+}
+
+.media__image {
+  @include ratio(75%, '&__inner', hidden);
+
+  // Always make image as large as container
+  img {
+    width: 100%;
+  }
+}
+
+.media__image__inner {
+  background: palette(turquoise) url("../images/avatar--white.png") no-repeat center;
+  background-size: 50%;
+  @include transition;
+  @include hover_background;
+}
+
+.news__other {
+  .media__image__inner {
+    font-size: .8125em;
+  }
+}

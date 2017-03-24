@@ -1,6 +1,6 @@
 <?php
 class JSiteConfig extends JConfig
 {
-	var $sitename = 'Nooku Server - Default';
+	var $site = "9999";
 }
 ?>

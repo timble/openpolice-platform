@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.container__content {
+  @extend %clearfix;
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+
+  a:not(.button) {
+    color: palette(blue, light);
+
+    &:hover,
+    &:focus {
+      color: palette(blue, dark);
+    }
+
+    &:visited {
+      color: palette(purple, light);
+    }
+  }
+
+  ul, ol {
+    margin-bottom: $spacing;
+  }
+
+  @include breakpoint($breakpoint-charlie) {
+    padding-top: $spacing-xl;
+  }
+}
+
+.component {
+  @extend %clearfix;
+}
+
+.component.article,
+.component.news {
+
+  article {
+    @extend %clearfix;
+
+    @include breakpoint($breakpoint-delta) {
+      max-width: 42em;
+    }
+  }
+
+  header {
+    margin-bottom: $spacing;
+  }
+
+  time {
+    display: block;
+    font-size: 1.25em;
+    line-height: 1.2em;
+    color: palette(blue, light);
+    font-weight: 300;
+  }
+}

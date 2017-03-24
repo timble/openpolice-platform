@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Copyright
+   ========================================================================== */
+
+.footer {
+  color: $color-text-footer;
+  background: $color-background-body;
+  border-top: 1px solid darken($color-background-body, 5%);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer--group {
+  @extend %clearfix;
+}
+
+.footer__menu {
+  margin-bottom: $spacing / 2;
+
+  ul {
+    @extend %clearfix;
+  }
+
+  li {
+    @include breakpoint($breakpoint-alpha, max) {
+      margin-bottom: $spacing / 4;
+    }
+
+    @include breakpoint($breakpoint-alpha) {
+      float: left;
+
+      &:not(:last-of-type) {
+        margin-right: $spacing / 2;
+      }
+    }
+  }
+
+  a {
+    &:hover {
+      color: $color-text-footer-hover;
+    }
+  }
+}
+
+.footer__menu--social {
+  ul {
+    @include breakpoint($breakpoint-alpha) {
+      float: right;
+    }
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  svg {
+    height: 24px;
+    width: 24px;
+  }
+}

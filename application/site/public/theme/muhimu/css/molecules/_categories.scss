@@ -1,0 +1,6 @@
+.categories_wrapper {
+  li {
+    margin-bottom: $spacing-xxs;
+    @extend %white--arrow;
+  }
+}

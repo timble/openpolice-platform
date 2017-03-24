@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Search
+   ========================================================================== */
+
+.search {
+  margin-top: 2px;
+}
+
+.search-input {
+  $padding: 5px;
+  $border: 1px;
+  $button-width: 36px;
+
+  margin-top: $spacing-xs;
+  margin-bottom: $spacing-xs;
+  position: relative;
+
+  input {
+    -webkit-appearance: none;
+    margin: 0;
+    width: 100%;
+    display: block;
+    padding: $padding;
+    border: $border solid palette(blue);
+    color: palette(text);
+    font-size: 1em;
+    min-height: 36px - (($padding + $border) * 2);
+    width: calc(100% - #{(($button-width + ($padding * 2)) + $border)});
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    display: block;
+    font-size: 1em;
+    height: $button-width;
+    width: $button-width;
+    color: #fff;
+    font-weight: 700;
+    @extend %icon--search;
+    background-color: palette(blue);
+  }
+}
+
+.toggle-search + .search-input {
+  @include breakpoint($breakpoint-beta, max) {
+    margin-top: $spacing-xl;
+  }
+}
+
+.toggle-search {
+  display: none;
+}
+
+.js-enabled {
+  .search-input {
+    display: none;
+
+    &.is-shown {
+      display: block;
+    }
+
+    @include breakpoint($breakpoint-beta) {
+      display: block;
+    }
+  }
+
+  .toggle-search {
+    display: block;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+
+    height: 72px;
+    width: 72px;
+
+    background-color: palette(blue);
+
+    @extend %icon--search;
+
+    @include breakpoint($breakpoint-beta) {
+      display: none;
+    }
+  }
+}

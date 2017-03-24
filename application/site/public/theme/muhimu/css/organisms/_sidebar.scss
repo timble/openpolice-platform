@@ -1,0 +1,13 @@
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+.sidebar {
+  border-top: 6px solid palette(turquoise);
+  margin-top: 20px;
+
+  h1 {
+    font-size: 24px;
+    font-family: $sans;
+    color: palette(text, light);
+  }
+}

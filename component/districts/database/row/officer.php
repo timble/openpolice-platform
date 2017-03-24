@@ -18,13 +18,6 @@ class DatabaseRowOfficer extends Library\DatabaseRowTable
             $this->_data['title'] = $this->firstname.' '.$this->lastname;
         }
 
-        if($column == 'params' && !is_array($this->_data['params'])) {
-            $this->_data['params'] = $this->getObject('com:districts.database.row.officer')
-                ->setData(json_decode($this->_data['params'], true));
-        }
-
-
-
         return parent::__get($column);
     }
 }

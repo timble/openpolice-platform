@@ -4409,6 +4409,7 @@ body {
   -webkit-flex-shrink: 0;
   -moz-flex-shrink: 0;
   flex-shrink: 0;
+  flex-direction: column;
 }
 /* line 33, _flexbox.scss */
 .navigation a {

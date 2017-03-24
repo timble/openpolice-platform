@@ -15,7 +15,7 @@ use Nooku\Library;
  * @author  Arunas Mazeika <http://nooku.assembla.com/profile/arunasmazeika>
  * @package Component\Files
  */
-class FilesControllerDirectory extends PoliceControllerLanguage
+class FilesControllerDirectory extends Library\ControllerModel
 {
     public function getRequest()
     {

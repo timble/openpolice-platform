@@ -106,7 +106,7 @@ class ModelStreets extends Library\ModelTable
         }
 
         if ($state->search) {
-            $query->where('(tbl.title LIKE :search OR islps.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%' . $state->search . '%'));
+            $query->where('(tbl.title LIKE :search OR city.title LIKE :search OR islps.islp LIKE :search OR tbl.streets_street_id LIKE :search)')->bind(array('search' => '%' . $state->search . '%'));
         }
 
         if(!$state->isUnique() && $state->row && $state->table)
@@ -143,22 +143,6 @@ class ModelStreets extends Library\ModelTable
 
         if ($state->district == '1') {
             $query->where('district.district_count IS NOT NULL');
-        }
-
-        if(!in_array($site, array('default', 'fed', '5806', '5905', '5906', '5907'))) {
-            $query->where('city.police_zone_id = :zone')->bind(array('zone' => $site));
-        }
-
-        if($site == '5905') {
-            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5404', '5413', '5414')));
-        }
-
-        if($site == '5906') {
-            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5357', '5358')));
-        }
-
-        if($site == '5907') {
-            $query->where('city.police_zone_id IN :zone')->bind(array('zone' => array('5370', '5374')));
         }
 	}
 

@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Organization
+   ========================================================================== */
+
+.container__top {
+  @extend %clearfix;
+}
+
+.organization {
+  @extend %clearfix;
+  margin-top: $spacing-s;
+  margin-bottom: $spacing-s;
+  height: $spacing-l;
+  position: relative;
+
+  a {
+    @extend %clearfix;
+    display: inline-block;
+    text-decoration: none;
+    max-width: 100%;
+
+    &:hover,
+    &:focus {
+      .organization__name {
+        border-bottom-color: palette(turquoise);
+      }
+    }
+  }
+
+  &__logo,
+  &__name {
+    display: block;
+    @include transition;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $spacing-l;
+    height: $spacing-l;
+    background: url("../images/avatar.png");
+    background-size: cover;
+  }
+
+  &__name {
+    font-weight: 300;
+    color: $color-main-blue;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: $spacing-xxs + $spacing;
+    line-height: ($spacing - $one-px);
+    border-bottom: 1px solid transparent;
+
+    font-size: $spacing-s;
+    line-height: $spacing;
+
+    span {
+      font-weight: 700;
+      font-size: $spacing-s;
+      padding-right: ($spacing-xs / 2);
+    }
+  }
+}

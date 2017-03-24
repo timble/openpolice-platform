@@ -1,0 +1,81 @@
+/* ==========================================================================
+   News
+   ========================================================================== */
+
+.container__news {
+  @extend %clearfix;
+}
+
+.news__featured {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @include breakpoint($breakpoint-beta) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @include breakpoint($breakpoint-charlie) {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 1.125em;
+
+    @include breakpoint($breakpoint-alpha) {
+      font-size: 1.25em;
+    }
+
+    @include breakpoint($breakpoint-charlie) {
+      font-size: 1.375em;
+    }
+
+    @include breakpoint($breakpoint-delta) {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.news__other {
+  h1 {
+    font-size: 1em;
+
+    @include breakpoint($breakpoint-alpha) {
+      font-size: 1.125em;
+    }
+  }
+}
+
+.attachments {
+  margin-top: 0.54545454545455em;
+  @extend %h3style;
+}
+
+body.news.articles,
+body.press.articles {
+
+  .media {
+    margin-bottom: $spacing;
+    padding-bottom: $spacing;
+    border-bottom: 2px solid palette(turquoise, light);
+
+    @include breakpoint($breakpoint-charlie) {
+      padding-bottom: 0;
+      border: none;
+    }
+  }
+
+  h1 {
+    margin-top: $spacing;
+    margin-bottom: 0;
+
+    @include breakpoint($breakpoint-alpha) {
+      margin-top: 0;
+    }
+  }
+  time {
+    font-size: 1em;
+    margin: 0.6em 0 0;
+  }
+}

@@ -18,7 +18,9 @@ class ModelZones extends Library\ModelTable
 
         $this->getState()
             ->insert('platform' , 'int')
-            ->insert('language' , 'int');
+            ->insert('language' , 'int')
+            ->insert('province' , 'int')
+            ->insert('district' , 'int');
     }
 
     protected function _buildQueryColumns(Library\DatabaseQuerySelect $query)
@@ -53,6 +55,14 @@ class ModelZones extends Library\ModelTable
 
         if (is_numeric($state->language)) {
             $query->where('tbl.language = :language')->bind(array('language' => $state->language));
+        }
+
+        if (is_numeric($state->province)) {
+            $query->where('city.streets_province_id = :province')->bind(array('province' => $state->province));
+        }
+
+        if (is_numeric($state->district)) {
+            $query->where('city.streets_district_id = :district')->bind(array('district' => $state->district));
         }
 	}
 

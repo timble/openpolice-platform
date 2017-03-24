@@ -15,7 +15,7 @@ class Installer
     );
 
     public $task;
-    public $database = '9999';
+    public $database = 'default';
     public $www = '/var/www/internet.openpolice.be';
 
     public function __construct($task)
@@ -50,7 +50,7 @@ class Installer
 
     public function install()
     {
-        `cd $this->www && git pull origin master`;
+        `cd $this->www && git pull --rebase origin master`;
 
         $this->createDatabase();
         $this->setupMapping();
@@ -79,35 +79,14 @@ class Installer
     {
     }
 
-    public function createMultisite($site = '9999')
+    public function createMultisite($site = 'default')
     {
-        $template = <<<EOF
-<?php
-class JSiteConfig extends JConfig
-{
-	var \$theme = 'mobile';
-	var \$analytics = 'UA-20242887-6';
-	var \$site = '$site';
-}
-EOF;
-
-        $dir = $this->www."/sites/$site/config";
-        if (!is_dir($dir)) {
-            mkdir($dir, 0777, true);
-        }
-
-        file_put_contents($dir.'/config.php', $template);
-
-        mkdir($this->www."/sites/$site/files/attachments", 0777, true);
-        mkdir($this->www."/sites/$site/files/files/downloads", 0777, true);
-        mkdir($this->www."/sites/$site/files/files/images", 0777, true);
-
         `chmod -R 0777 $this->www/sites/$site/files`;
     }
 
     public function createDatabase()
     {
-        $result = `echo 'SHOW DATABASES LIKE "$this->database"' | mysql -udemo -pdemo`;
+        $result = `echo 'SHOW DATABASES LIKE "$this->database"' | mysql -upolice -ppolice`;
         if (!empty($result))
         {
             $this->out("Database table exists.\nRun 'police reinstall' if you would like to re-create it");
@@ -115,7 +94,7 @@ EOF;
             return;
         }
 
-        $result = shell_exec("echo 'CREATE DATABASE `$this->database` CHARACTER SET utf8' | mysql -udemo -pdemo");
+        $result = shell_exec("echo 'CREATE DATABASE `$this->database` CHARACTER SET utf8' | mysql -upolice -ppolice");
         if (!empty($result)) { // MySQL returned an error
             throw new \Exception(sprintf('Cannot create database %s. Error: %s', $this->database, $result));
         }
@@ -124,7 +103,7 @@ EOF;
 
         foreach (self::$files as $file)
         {
-            $result = `mysql -pdemo -udemo $this->database < $dir/$file`;
+            $result = `mysql -ppolice -upolice $this->database < $dir/$file`;
             if (!empty($result)) { // MySQL returned an error
                 throw new \Exception(sprintf('Cannot import file %s. Error: %s', $file, $result));
             }
@@ -140,7 +119,7 @@ EOF;
 
     public function deleteDatabase()
     {
-        $result = shell_exec("echo 'DROP DATABASE IF EXISTS `$this->database`' | mysql -udemo -pdemo");
+        $result = shell_exec("echo 'DROP DATABASE IF EXISTS `$this->database`' | mysql -upolice -ppolice");
         if (!empty($result)) { // MySQL returned an error
             throw new \Exception(sprintf('Cannot delete database %s. Error: %s', $this->database, $result));
         }
@@ -155,16 +134,6 @@ EOF;
     {
         `cd $this->www && git reset --hard HEAD`;
         `cd $this->www && git clean -d -x -f`;
-
-        foreach (array('9999', 'default') as $site)
-        {
-            $path = $this->www.'/sites/'.$site.'/';
-
-            if (file_exists($path))
-            {
-                `rm -rf $path`;
-            }
-        }
     }
 
     public function modifyConfiguration()
@@ -181,9 +150,9 @@ EOF;
         };
 
         $replace('sendmail', '/usr/bin/env catchmail');
-        $replace('theme', 'mobile');
-        $replace('user', 'demo');
-        $replace('password', 'demo');
+        $replace('theme', 'muhimu');
+        $replace('user', 'police');
+        $replace('password', 'police');
         $replace('db', $this->database);
 
         $replace('mailer', 'smtp');
@@ -191,6 +160,8 @@ EOF;
         $replace('smtpport', 1025);
         $replace('mailfrom', 'policebox@localhost.home');
         $replace('fromname', 'Police Box');
+
+        $replace('analytics', 'UA-20242887-6');
 
         file_put_contents($output, $contents);
         chmod($output, 0644);

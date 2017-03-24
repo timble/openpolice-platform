@@ -1,0 +1,22 @@
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table--striped {
+  thead {
+    tr {
+      border-bottom: 1px solid $color-border;
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid $color-border;
+    }
+
+    tr:last-of-type {
+      border-bottom: 0 none;
+    }
+
+    > tr:nth-child(even) {
+      background-color: $color-background-table-accent;
+    }
+  }
+}
