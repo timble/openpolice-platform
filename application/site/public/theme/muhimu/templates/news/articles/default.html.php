@@ -13,9 +13,14 @@
     <article class="media">
         <div class="media__image">
             <a class="media__image__inner" data-content="<?= translate('Read more') ?>" href="<?= $link ?>">
-                <?= helper('com:attachments.image.thumbnail', array(
-                    'attachment' => $article->attachments_attachment_id,
-                    'attribs' => array('width' => '560', 'height' => '420'))) ?>
+                <? if($article->attachments_attachment_id) : ?>
+                <?= helper('com:police.image.picture', array(
+                        'attachment' => $article->attachments_attachment_id,
+                        'srcset' => array(200, 400),
+                        'sizes' => array('768px' => '15vw', '400px' => '30vw'),
+                        'ratio' => '4/3',
+                        'attribs' => array())) ?>
+                <? endif ?>
             </a>
         </div>
         <div class="media__content">

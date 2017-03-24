@@ -52,4 +52,85 @@ class PoliceTemplateHelperImage extends Library\TemplateHelperDefault
 
         return false;
     }
+
+    public function picture($config = array())
+    {
+        $config   = new Library\ObjectConfig($config);
+        $config->append(array(
+            'attachment' => false,
+            'attribs' => array(),
+            'parameters' => array('auto' => 'format', 'q' => '80', 'fit' => 'crop', 'bg' => 'FFFFFF'),
+            'ratio' => '2/1',
+            'srcset' => array(),
+            'sizes' => array(),
+            'max_width' => false
+        ));
+
+        if(!$config->max_width)
+        {
+            $config->max_width = $config->srcset[count($config->srcset) - 1];
+        }
+
+        $thumbnail = $this->getObject('com:attachments.database.row.attachment')->set('id', $config->attachment)->load();
+
+        //Make sure the attachment is set
+        if($thumbnail)
+        {
+            $widths = array();
+            $srcset = array();
+            $sizes = array();
+
+            // Add retina sizes
+            foreach ($config->srcset as $width)
+            {
+                $widths[] = $width;
+                $widths[] = $width * 2;
+            }
+
+            // Sort array
+            asort($widths);
+
+            foreach ($widths as $width)
+            {
+                $srcset[] = $this->buildSource($config, $thumbnail, $width, true);
+            }
+
+            foreach ($config->sizes as $viewport => $image_width)
+            {
+                $sizes[] = '(min-width: '.$viewport.') '.$image_width;
+            }
+
+            $return = '<img';
+            $return .= ' src="'.$this->buildSource($config, $thumbnail, $config->max_width).'"';
+            $return .= ' '.$this->buildAttributes($config->attribs);
+            $return .= ' srcset="'.implode(', ',$srcset).'"';
+            $return .= ' sizes="'.implode(', ',$sizes).'"';
+            $return .= ' >';
+
+            return $return;
+        }
+
+        return false;
+    }
+
+    public function buildSource($config, $thumbnail, $width, $srcset = false)
+    {
+        $source = $this->getObject('application')->getCfg('imgix', '');
+        $source .= 'attachments://'.$thumbnail->path;
+
+        $ratio = explode('/', $config->ratio);
+        $ratio = $ratio[0] / $ratio[1];
+
+        $sizes = array(
+            'w' => $width,
+            'h' => $config->ratio ? round($width / $ratio) : ''
+        );
+
+        $query = array_merge($config['parameters'], $sizes);
+
+        $source .= '?'.http_build_query((array) $query);
+        $source .= $srcset ? ' '.$width.'w' : '';
+
+        return $source;
+    }
 }

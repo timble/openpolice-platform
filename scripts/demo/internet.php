@@ -162,6 +162,7 @@ class Installer
         $replace('fromname', 'Police Box');
 
         $replace('analytics', 'UA-20242887-6');
+        $replace('imgix', 'https://openpolice.imgix.net');
 
         file_put_contents($output, $contents);
         chmod($output, 0644);

@@ -34,9 +34,12 @@
 
     <div itemprop="articleBody">
         <? if($article->attachments_attachment_id) : ?>
-            <?= helper('com:attachments.image.thumbnail', array(
+        <?= helper('com:police.image.picture', array(
                 'attachment' => $article->attachments_attachment_id,
-                'attribs' => array('class' => 'article__thumbnail', 'width' => '400', 'height' => '300', 'itemprop'=> "image"))) ?>
+                'srcset' => array(200, 400),
+                'sizes' => array('540px' => '200px', '400px' => '40vw'),
+                'ratio' => '4/3',
+                'attribs' => array('class' => 'article__thumbnail', 'itemprop' => "image"))) ?>
         <? endif ?>
 
         <div<?= $article->fulltext ? ' class="article__introtext"' : '' ?>>

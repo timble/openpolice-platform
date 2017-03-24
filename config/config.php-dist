@@ -73,4 +73,5 @@ class JConfig
 	/* Template Settings */
 	var $theme = 'muhimu';
     var $analytics = '';
+    var $imgix = '';
 }
