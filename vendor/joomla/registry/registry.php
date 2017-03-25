@@ -143,8 +143,8 @@ class JRegistry extends JObject
 					if((isset($ns->$nodes[$i]))) $ns =& $ns->$nodes[$i];
 				}
 
-				if(isset($ns->$nodes[$i])) {
-					$result = $ns->$nodes[$i];
+				if(isset($ns->{$nodes[$i]})) {
+					$result = $ns->{$nodes[$i]};
 				}
 			}
 		}
@@ -197,9 +197,9 @@ class JRegistry extends JObject
 		}
 
 		// Get the old value if exists so we can return it
-		$ns->$nodes[$i] =& $value;
+		$ns->{$nodes[$i]} =& $value;
 
-		return $ns->$nodes[$i];
+		return $ns->{$nodes[$i]};
 	}
 
 	/**

@@ -103,7 +103,7 @@ class Installer
 
         foreach (self::$files as $file)
         {
-            $result = `mysql -ppolice -upolice $this->database < $dir/$file`;
+            $result = `mysql -upolice -ppolice $this->database < $dir/$file`;
             if (!empty($result)) { // MySQL returned an error
                 throw new \Exception(sprintf('Cannot import file %s. Error: %s', $file, $result));
             }

@@ -96,11 +96,7 @@ class EventDispatcherException extends EventDispatcherAbstract
      */
     public function registerExceptionHandler()
     {
-        $self = $this; //Cannot use $this as a lexical variable in PHP 5.3
-
-        $previous = set_exception_handler(function($exception) use ($self) {
-            $self->dispatchException('onException', array('exception' => $exception));
-        });
+        $previous = set_exception_handler(array($this, '_handleException'));
 
         return $previous;
     }
@@ -113,27 +109,7 @@ class EventDispatcherException extends EventDispatcherAbstract
      */
     public function registerErrorHandler()
     {
-        $error_level = $this->_error_level;
-        $self        = $this; //Cannot use $this as a lexical variable in PHP 5.3
-
-        $previous = set_error_handler(function($level, $message, $file, $line, $context) use ($self, $error_level)
-        {
-            if (0 === $error_level) {
-                return false;
-            }
-
-            if (error_reporting() & $level && $error_level & $level)
-            {
-                $exception = new ExceptionError($message, 500, $level, $file, $line);
-                $self->dispatchException('onException', array(
-                    'exception' => $exception,
-                    'context'   => $context
-                ));
-            }
-
-            //Let the normal error flow continue
-            return false;
-        });
+        $previous = set_error_handler(array($this, '_handleError'));
 
         return $previous;
     }
@@ -200,5 +176,87 @@ class EventDispatcherException extends EventDispatcherAbstract
         }
 
         return $event;
+    }
+
+    /**
+     * Error Handler
+     *
+     * Do not call this method directly. Function visibility is public because set_error_handler does not allow for
+     * protected method callbacks.
+     *
+     * @param int    $level      The level of the error raised
+     * @param string $message    The error message
+     * @param string $file       The filename that the error was raised in
+     * @param int    $line       The line number the error was raised at
+     * @param array  $context    An array that points to the active symbol table at the point the error occurred
+     * @return bool
+     */
+    public function _handleError($level, $message, $file, $line, $context = null, $previous = null)
+    {
+        $result = false;
+        $error_level = $this->_error_level;
+
+        if (0 === $level) {
+            return $result;
+        }
+
+        if (error_reporting() & $level && $error_level & $level)
+        {
+            $exception = new ExceptionError(
+                $message, HttpResponse::INTERNAL_SERVER_ERROR, $level, $file, $line, $previous
+            );
+
+            // $result = $this->_handleException($exception);
+        }
+
+        //Let the normal error flow continue
+        return $result;
+    }
+
+    /**
+     * Exception Handler
+     *
+     * Do not call this method directly. Function visibility is public because set_exception_handler does not allow for
+     * protected method callbacks.
+     *
+     * @param  object $exception  The exception to be handled
+     * @return bool
+     */
+    public function _handleException($exception)
+    {
+        $result = false;
+
+        // Handle \Error Exceptions in PHP7
+        if (class_exists('Error') && $exception instanceof Error)
+        {
+            $message = $exception->getMessage();
+            $file    = $exception->getFile();
+            $line    = $exception->getLine();
+            $type    = E_ERROR; //Set to E_ERROR by default
+
+            if($exception instanceof \DivisionByZeroError) {
+                $type = E_WARNING;
+            }
+
+            if($exception instanceof \AssertionError) {
+                $type = E_WARNING;
+            }
+
+            if($exception instanceof \ParseError) {
+                $type = E_PARSE;
+            }
+
+            if($exception instanceof \TypeError) {
+                $type =  E_RECOVERABLE_ERROR;
+            }
+
+            $result = $this->_handleError($type, $message, $file, $line, $exception);
+        }
+        else
+        {
+            $this->dispatchException('onException', array('exception' => $exception));
+        }
+
+        return $result;
     }
 }

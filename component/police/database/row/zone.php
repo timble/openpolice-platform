@@ -55,7 +55,9 @@ class DatabaseRowZone extends Library\DatabaseRowTable
                 return $accounts[$language];
             }
 
-            return array_shift(array_values($social[$medium]));
+            $values = array_values($social[$medium]);
+
+            return array_shift($values);
         }
 
         return null;

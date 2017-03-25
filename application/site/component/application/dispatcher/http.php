@@ -254,12 +254,18 @@ class ApplicationDispatcherHttp extends Library\DispatcherAbstract implements Li
             JFactory::getConfig()->loadArray($this->getConfig()->options->toArray());
 
             //Load the global config settings
-            require_once( $this->getConfig()->options->config_file );
-            JFactory::getConfig()->loadObject(new JConfig());
+            require_once($this->getConfig()->options->config_file);
+
+            $config = new JConfig();
+
+            JFactory::getConfig()->loadObject($config);
 
             //Load the site config settings
-            require_once( JPATH_SITES.'/'.$this->getSite().'/config/config.php');
-            JFactory::getConfig()->loadObject(new JSiteConfig());
+            require_once(JPATH_SITES.'/'.$this->getSite().'/config/config.php');
+
+            $siteConfig = new JSiteConfig();
+
+            JFactory::getConfig()->loadObject($siteConfig);
         }
         else throw new Library\ControllerExceptionNotFound('Site :'.$this->getSite().' not found');
     }
@@ -438,7 +444,9 @@ class ApplicationDispatcherHttp extends Library\DispatcherAbstract implements Li
             // Lets cascade the parameters if we have menu item parameters
             if (is_object($page))
             {
-                $params->merge(new JParameter((string) $page->params));
+                $parameters = new JParameter((string) $page->params);
+
+                $params->merge($parameters);
                 $title = $page->title;
             }
 
@@ -495,11 +503,13 @@ class ApplicationDispatcherHttp extends Library\DispatcherAbstract implements Li
                 // Check folder
                 $base = $this->getRequest()->getBaseUrl()->getPath();
                 $path = trim(str_replace($base, '', $uri->getPath()), '/');
-                if(!empty($path)) {
-                    $site = array_shift(explode('/', $path));
-                } else {
-                    $site = 'default';
+
+                if(!empty($path))
+                {
+                    $parts = explode('/', $path);
+                    $site  = array_shift($parts);
                 }
+                else $site = 'default';
 
                 //Check if the site can be found, otherwise use 'default'
                 if(!$this->getObject('com:sites.model.sites')->getRowset()->find($site)) {
