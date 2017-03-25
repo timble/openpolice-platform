@@ -206,7 +206,7 @@ class EventDispatcherException extends EventDispatcherAbstract
                 $message, HttpResponse::INTERNAL_SERVER_ERROR, $level, $file, $line, $previous
             );
 
-            // $result = $this->_handleException($exception);
+            $result = $this->_handleException($exception);
         }
 
         //Let the normal error flow continue
