@@ -1,26 +1,33 @@
 ![Screenshot](screenshot.jpg)
 
-# Belgian Police Internet Platform
+# Open Police
 
-An **open government platform** specifically built for the internet websites of the Belgian Police that allows any Police zone to create an open data site. It uses a component based architecture. Written in PHP, HTML, CSS and Javascript. Made by [passionate open source technologists](http://www.timble.net/about/).
+Open Police is an **open source** web publishing platform for police forces. It makes creating an open, modern, affordable, website to better connect with citizens very easy.
 
-Check an example website at [www.lokalepolitie.be/leuven](http://www.lokalepolitie.be/leuven) or visit the project's website at [www.openpolice.be](http://www.openpolice.be/).
+It uses a component based architecture. Written in PHP, HTML, CSS and Javascript. Made by [passionate open source technologists](http://www.timble.net/about/) and built on a purely [free and open source software stack](https://www.timble.net/platform/open-police/stack/).
 
-## Benefits
+Check our [demo website](https://internet.openpolice.be/) or visit our [project's website](https://www.timble.net/platform/open-police/).
 
-### Accessibility
+## Features
 
-* Conforms to [WCAG 2.0](http://www.w3.org/TR/WCAG20/) level AAA
-* Leverages [WAI-ARIA](http://www.w3.org/TR/wai-aria/) & [HTML5](http://www.w3.org/TR/html5/) to further enhance accessibility
+* Mobile-First responsive design
+* Optimized for performance and security
+* Features a component based architecture
+* Dynamic and cascading HMVC
+* Level 3 JSON REST API
 
-### Interoperability
+[Discover all features](https://www.timble.net/platform/open-police/#all-features).
 
-* Support for HTML data ([Microformats.org](http://www.microformats.org/), [Schema.org](http://www.schema.org/))
+## Used by
 
-### Mobile-First Responsive Web Design
+Open Police v2 is being used by the **Belgian local and federal police**.
 
-* Following a Progressive Enhancement strategy
-* Optimized for performance
+A few live websites (in dutch or french):
+
+- [Federal police](http://www.politie.be/fed/nl)
+- [Local police force of Ghent](http://www.lokalepolitie.be/5415)
+- [Local police force of Louvain](http://www.lokalepolitie.be/5388)
+- [Local police force of Namur](http://www.policelocale.be/5303)
 
 ## Installation
 
@@ -31,16 +38,19 @@ You can run the project easily with the supplied Vagrantfile - make sure you und
 * Install [Vagrant](http://www.vagrantup.com/downloads.html)
 * Clone this repository
 * Go to the repository folder and bootup the server
-    ```$ vagrant up```
+    ```
+    $ vagrant up
+    ```
 * Add the following line to your hosts file
-    ```192.168.52.10 police.dev phpmyadmin.police.dev```
-* You can now access the sample site at [police.dev/9999](http://police.dev/9999)
+    ```
+    192.168.52.10 police.dev phpmyadmin.police.dev
+    ```
+* You can now access the sample site at [police.dev](http://police.dev/)
 
 ### Access
 
-* The example site application is available at [http://police.dev/9999](http://police.dev/9999).
-* The example admin application is available at [http://police.dev/administrator/9999](http://police.dev/administrator/9999).
-
+* The example site application is available at [http://police.dev](http://police.dev/).
+* The example admin application is available at [http://police.dev/administrator](http://police.dev/administrator/).
     ```
     email: demo@example.com
     password: police
@@ -51,10 +61,16 @@ You can run the project easily with the supplied Vagrantfile - make sure you und
 
 We are using [Grunt](http://gruntjs.com/) to automate repetitive tasks like [Sass](http://sass-lang.com/) compilation, synchronised browser testing, etc.
 
-* Install [node.js](http://nodejs.org/)
-* Install [Grunt](http://gruntjs.com/): ```npm install -g grunt-cli```
-* Go to the repository folder and install the dependencies: ```npm install```
-* Finally run Grunt ```grunt```
+* Install [Bower](https://bower.io/)
+* Install [Yarn](https://yarnpkg.com)
+* Go to the repository folder and install the dependencies: 
+    ```
+    yarn install
+    ```
+* Finally run Grunt 
+    ```
+    grunt
+    ```
 
 ### Vagrant command-line interface
 
@@ -87,23 +103,9 @@ To see a list of all migrations and their status, run ```bin/phpmig status```. U
 
 For more information, please refer to the [Phpmig GitHub page](https://github.com/davedevelopment/phpmig).
 
-## Built on Open Source software
-
-The Police Internet Platform is purely built on [an open source software stack](http://www.openpolice.be/stack/) and wouldn't be as productive without these projects around.
-
-
-## Open Data resources
-
-The Police Internet Platform leverages open data resources and and wouldn't be as productive without these open data projects.
-We simply just want to say thank you to the following projects for helping us out:
-
-* [Flemish Geographical Information Agency](https://www.agiv.be/)
-
-
 ## How to contribute?
 
 Check our [contributing](CONTRIBUTING.md) guide.
-
 
 ## License
 
