@@ -3,7 +3,7 @@
 #:     Title: Update Nooku Platform
 #:  Synopsis: update
 #:    Author: Gergo Erdosi
-#: Copyright: Copyright (C) 2011 - 2013 Timble CVBA and Contributors. (http://www.timble.net).
+#: Copyright: Copyright (C) 2011 - 2017 Timble CVBA and Contributors. (http://www.timble.net).
 
 ## Variable initialization
 repo=$(cd "$(dirname $0)/../.."; pwd -P)

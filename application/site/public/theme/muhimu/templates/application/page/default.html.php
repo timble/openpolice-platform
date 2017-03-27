@@ -1,12 +1,13 @@
 <?
 /**
- * Belgian Police Web Platform - Police Component
+ * Belgian Police Web Platform - Theme
  *
- * @copyright	Copyright (C) 2012 - 2013 Timble CVBA. (http://www.timble.net)
+ * @copyright	Copyright (C) 2012 - 2017 Timble CVBA. (http://www.timble.net)
  * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
  * @link		https://github.com/belgianpolice/internet-platform
  */
 ?>
+
 <?
 $languages  = $this->getObject('application.languages');
 $active     = $languages->getActive();

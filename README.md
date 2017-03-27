@@ -107,4 +107,4 @@ Check our [contributing](CONTRIBUTING.md) guide.
 
 ## License
 
-The files in this archive are released under the GPLv3 license. You can find a copy of this license in [LICENSE](LICENSE.md).
+The files in this archive are released under the AGPLv3 license. You can find a copy of this license in [LICENSE](LICENSE.md).
