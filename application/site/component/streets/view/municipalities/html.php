@@ -16,11 +16,6 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
         $this->_assignStrings();
         $this->_setDomain();
 
-        if ($this->getLayout() == 'intro')
-        {
-            $this->_fetchStreams();
-        }
-
         return parent::render();
     }
 
@@ -60,33 +55,6 @@ class StreetsViewMunicipalitiesHtml extends ArticlesViewHtml
             $this->language = 'nl';
             $this->domain   = 'www';
         }
-    }
-
-    protected function _fetchStreams()
-    {
-        $url  = $this->getObject('application')->getRequest()->getUrl();
-        $host = $url->getHost();
-
-        $this->streams = array(
-            'nl' => array('wanted' => 'http://'.$host.'/fed/nl/opsporingen'),
-            'fr' => array('wanted' => 'http://'.$host.'/fed/fr/avis-de-recherche') ,
-            'de' => array('wanted' => 'http://'.$host.'/fed/de/avis-de-recherche'),
-        );
-
-        // Now fetch the different wanted sections
-        $this->sections = array('missing' => array('section' => '1', 'name' => 'missing'), 'wanted' => array('section' => '2', 'name' => 'wanted'));
-        $wanteditems    = array();
-
-        foreach ($this->sections as $section => $config)
-        {
-            $url = $this->streams[$this->language]['wanted'] . '.json?view=articles&limit=4&solved=0&section='.$config['section'];
-
-            $wanteditems[$section] = $this->getObject('com:streets.model.streams')
-                                        ->url($url)
-                                        ->getItems();
-        }
-
-        $this->wanteditems = $wanteditems;
     }
 
     protected function _assignStrings()

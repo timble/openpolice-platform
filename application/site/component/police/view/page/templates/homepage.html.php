@@ -17,20 +17,15 @@ $active     = $languages->getActive();
 $path = '/'.$site;
 $path .= count($languages) > '1' ? '/'.$active->slug : '';
 
-if ($site == 'fed')
+$cities = object('com:streets.model.cities')->zone($site)->getRowset()->title;
+
+$description = translate('Website of the Police force').' '.$zone->title;
+
+if(count($cities) > '1')
 {
-    $description = translate('Website of the Federal Police');
-} else {
-    $cities = object('com:streets.model.cities')->zone($site)->getRowset()->title;
-
-    $description = translate('Website of the local Police zone').' '.$zone->title;
-
-    if(count($cities) > '1')
-    {
-        $description .= ' (';
-        $description .= implode(", ", $cities);
-        $description .= ')';
-    }
+    $description .= ' (';
+    $description .= implode(", ", $cities);
+    $description .= ')';
 }
 ?>
 

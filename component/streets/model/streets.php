@@ -11,7 +11,7 @@ namespace Nooku\Component\Streets;
 use Nooku\Library;
 
 class ModelStreets extends Library\ModelTable
-{	
+{
 	public function __construct(Library\ObjectConfig $config)
 	{
 		parent::__construct($config);
@@ -85,17 +85,13 @@ class ModelStreets extends Library\ModelTable
 
         parent::_buildQueryJoins($query);
     }
-	
+
     protected function _buildQueryWhere(Library\DatabaseQuerySelect $query)
 	{
 		parent::_buildQueryWhere($query);
 		$state = $this->getState();
 
         $site = $this->getObject('application')->getSite();
-
-        if ($state->iso && !in_array($site, array('default', 'fed', '5806'))) {
-            $query->where('tbl.iso = :iso')->bind(array('iso' => $state->iso));
-        }
 
         if ($state->source) {
             $query->where('tbl.sources_source_id = :source')->bind(array('source' => $state->source));
@@ -152,7 +148,7 @@ class ModelStreets extends Library\ModelTable
 
         $site = $this->getObject('application')->getSite();
 
-        if(!$state->isUnique() && $state->row && $state->table && !in_array($site, array('default', 'fed', '5806'))) {
+        if(!$state->isUnique() && $state->row && $state->table) {
             $query->group('relations.streets_street_identifier');
         }
 

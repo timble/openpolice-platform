@@ -34,7 +34,3 @@
         <?= import('com:attachments.view.attachments.default.html', array('attachments' => $attachments, 'exclude' => array('0'))) ?>
     </div>
 </article>
-
-<? if(object('application')->getCfg('site') == 'fed') : ?>
-    <?= import('com:press.view.articles.default_contact.html') ?>
-<? endif; ?>
