@@ -1,7 +1,7 @@
-# Contributing Guide
+# Contributing guide
 
-We welcome every contribution using pull requests. GitHub wrote a great [contributing guide](https://guides.github.com/activities/contributing-to-open-source/#contributing).
+It's simple, we welcome every contribution. GitHub wrote a great guide on [contributing to open source projects](https://guides.github.com/activities/contributing-to-open-source/).
 
-## Additional Resources
+## Additional resources
 
 * [General GitHub documentation](https://help.github.com/)
