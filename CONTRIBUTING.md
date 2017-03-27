@@ -5,7 +5,7 @@ Third-party patches are possible by [using pull requests](https://help.github.co
 ## Get Started
 
 * Make sure you have a [GitHub account](https://github.com/signup/free).
-* [Fork our repository](https://help.github.com/articles/fork-a-repo) on GitHub - [https://github.com/belgianpolice/internet-platform](https://github.com/belgianpolice/internet-platform).
+* [Fork our repository](https://help.github.com/articles/fork-a-repo) on GitHub - [https://github.com/timble/openpolice-platform](https://github.com/timble/openpolice-platform).
 
 
 ## Make Changes
