@@ -1,4 +1,14 @@
 <?
+/**
+ * Belgian Police Web Platform - Theme
+ *
+ * @copyright	Copyright (C) 2012 - 2017 Timble CVBA. (http://www.timble.net)
+ * @license		GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
+ * @link		https://github.com/timble/openpolice-platform
+ */
+?>
+
+<?
 $pages = object('com:pages.model.pages')->menu('1')->sort('title')->direction('ASC')->published('true')->getRowset();
 $pages = $pages->find(array('level' => '1', 'hidden' => false));
 ?>

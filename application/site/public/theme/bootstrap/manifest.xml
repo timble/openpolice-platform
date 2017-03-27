@@ -6,8 +6,8 @@
 	<author>Tom Janssens</author>
 	<authorEmail>tom@nooku.org</authorEmail>
 	<authorUrl>http://www.nooku.org</authorUrl>
-	<copyright>Copyright (C) 2011 - 2012 Timble CVBA and Contributors. (http://www.timble.net)</copyright>
-	<license>GNU GPLv3</license>
+	<copyright>Copyright (C) 2011 - 2017 Timble CVBA. (http://www.timble.net)</copyright>
+	<license>GNU AGPLv3</license>
 	<version>1.0.2</version>
 	<description>Bootstrap</description>
 </install>

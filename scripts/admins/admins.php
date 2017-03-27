@@ -44,11 +44,11 @@ foreach($sites as $site)
 {
     $mysqli->select_db($site);
     $result = $mysqli->query($sql);
-    
+
     while($row = $result->fetch_assoc()) {
         $users[$row['email']] = array($row['name'], $row['email'], $site, $row['users_role_id']);
     }
-    
+
     $result->close();
 }
 

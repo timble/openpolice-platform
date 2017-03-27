@@ -1,3 +1,13 @@
+<?php
+/**
+ * Belgian Police Web Platform - Statistics Component
+ *
+ * @copyright	Copyright (C) 2012 - 2017 Timble CVBA. (http://www.timble.net)
+ * @license		GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
+ * @link		https://github.com/timble/openpolice-platform
+ */
+ ?>
+
 <h1 class="article__header"><?= translate('Crime statistics') ?></h1>
 
 <div class="statistics__reports">
@@ -66,5 +76,3 @@
 <div class="statistics__interactive">
     <?= import('com:statistics.view.interactive.default_pages.html') ?>
 </div>
-
-

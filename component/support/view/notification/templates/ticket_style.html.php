@@ -1,3 +1,13 @@
+<?
+/**
+ * Belgian Police Web Platform - Support Component
+ *
+ * @copyright	Copyright (C) 2012 - 2017 Timble CVBA. (http://www.timble.net)
+ * @license		GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
+ * @link		https://github.com/timble/openpolice-platform
+ */
+ ?>
+
 <style type="text/css">
     /* Client-specific Styles */
     #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */

@@ -1,13 +1,12 @@
 <?
 /**
- * Nooku Framework - http://www.nooku.org
+ * Belgian Police Web Platform - Theme
  *
- * @copyright	Copyright (C) 2011 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
- * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
+ * @copyright	Copyright (C) 2012 - 2017 Timble CVBA. (http://www.timble.net)
+ * @license		GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
+ * @link		https://github.com/timble/openpolice-platform
  */
 ?>
-
 
 <h1><?= escape($params->get('page_title')); ?></h1>
 

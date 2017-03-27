@@ -2,9 +2,9 @@
 /**
  * Nooku Framework - http://www.nooku.org
  *
- * @copyright	Copyright (C) 2007 - 2013 Johan Janssens and Timble CVBA. (http://www.timble.net)
- * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
- * @link		git://git.assembla.com/nooku-framework.git for the canonical source repository
+ * @copyright	Copyright (C) 2007 - 2017 Johan Janssens and Timble CVBA. (http://www.timble.net)
+ * @license		GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
+ * @link		https://github.com/timble/openpolice-platform
  */
 
 namespace Nooku\Library;
@@ -15,7 +15,7 @@ namespace Nooku\Library;
  * The command queue implements a double linked list. The command handle is used as the key. Each command can have a
  * priority, default priority is 3 The queue is ordered by priority, commands with a higher priority are called first.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Command
  */
 class CommandChain extends ObjectQueue implements CommandChainInterface

@@ -1,3 +1,13 @@
+<?
+/**
+ * Belgian Police Web Platform - Theme
+ *
+ * @copyright	Copyright (C) 2012 - 2017 Timble CVBA. (http://www.timble.net)
+ * @license		GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
+ * @link		https://github.com/timble/openpolice-platform
+ */
+?>
+
 <title content="replace"><?= $category->title ?></title>
 
 <h1><?= $category->title ?></h1>

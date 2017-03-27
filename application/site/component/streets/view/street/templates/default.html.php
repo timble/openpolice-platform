@@ -1,3 +1,13 @@
+<?
+/**
+ * Belgian Police Web Platform - Police Component
+ *
+ * @copyright	Copyright (C) 2012 - 2017 Timble CVBA. (http://www.timble.net)
+ * @license		GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
+ * @link		https://github.com/timble/openpolice-platform
+ */
+?>
+
 <? if($street->id) : ?>
 <ktml:module position="left">
     <img src="http://maps.googleapis.com/maps/api/staticmap?center=<?= $street->title ?>,Leuven,Belgium&zoom=12&size=200x400&maptype=roadmap

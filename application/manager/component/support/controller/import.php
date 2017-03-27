@@ -1,4 +1,12 @@
 <?php
+/**
+ * Belgian Police Web Platform - Support Component
+ *
+ * @copyright	Copyright (C) 2012 - 2017 Timble CVBA. (http://www.timble.net)
+ * @license		GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
+ * @link		https://github.com/timble/openpolice-platform
+ */
+
 use Nooku\Library;
 
 class SupportControllerImport extends Library\ControllerAbstract
@@ -14,7 +22,7 @@ class SupportControllerImport extends Library\ControllerAbstract
 
         $zones   = $adapter->select($query, Library\Database::FETCH_FIELD_LIST);
         $zones[] = 'fed';
-        
+
         foreach ($zones as $zone)
         {
             if (in_array($zone, array('demo', 'data'))) {
@@ -99,4 +107,3 @@ class SupportControllerImport extends Library\ControllerAbstract
         return $context;
     }
 }
- 
