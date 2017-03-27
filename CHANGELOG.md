@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0
+
+### Site Enhancements
+
+- Complete redesign that significantly improves usability
+
 ## v2.10
 
 ### Site Enhancements
