@@ -19,6 +19,4 @@
 </div>
 <? endif; ?>
 
-<? if(object('application')->getCfg('site') != '5455') : ?>
 <?= import('default_search.html'); ?>
-<? endif ?>
