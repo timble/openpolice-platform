@@ -1,5 +1,75 @@
 # Changelog
 
+## v2.10
+
+### Site Enhancements
+
+- Added privacy-enhanced mode for Youtube embeds - #163
+- Added structured data markup for breadcrumbs - #187
+- Added margin below Youtube embed - #188
+- Added purple styling for all visited links - #189
+- Added new statistics - #170
+- Added statistics for the provinces and regions - #151
+- Changed 'In violation' to 'Not in violation' - #160
+- Changed dates format to the NBN Z01-002 standard - #103
+- Fixed issue with solved status of wanted persons - #150
+- Fixed broken 404 page - #162
+- Fixed unsanitized Javascript in path - #211
+- Fixed XSS vulnerability in statistics - #175
+- Fixed multiple French translations - #157
+- Renamed 'Des numéros d'urgence' to 'Numéros d'urgence' - #186
+- Replaced image on the 404 page - #181
+- Removed eCops link - #177
+- Removed news fetching in the background - #172
+- Removed district officer avatar placeholder - #131
+- District officer search form on the website of Grensleie is hidden - #220
+
+### Administrator Enhancements
+
+- Added limitation of login attempts - #149
+- Added province filter to zones - #230
+- Added district filter to zones - #229
+- Added customised model for streets #190
+- Added ability to add non-numeric references to found items - #158
+- Added 'NL, FR & DE' option to listbox in the zone form - #153
+- Added requestor field for wanted persons - #144
+- Fixed selection of all district officers when creating a new district - #191
+- Fixed accessible activities view - #178
+- Fixed inability to add zero violations - #176
+- Fixed undefined method when editing a checked out district - #36
+- District ID is now optional for relations import - #194
+- Make all streets available in specific sites - #180 & #135
+
+### Development
+
+- Fixed capistrano issue with zone numbers - #179
+
+### Sites
+
+Release of:
+
+- [Police Arlon - Attert - Habay - Martelange](http://www.policelocale.be/5297) - #212
+- [Police Botte de Hainaut](http://www.policelocale.be/5334) - #227
+- [Police de Val de L'Escaut](http://www.policelocale.be/5320) - #203
+- [Police Des 3 Vallées](http://www.policelocale.be/5311) - #164  
+- [Police Des Fagnes](http://www.policelocale.be/5287) - #166
+- [Police de Tournaisis](http://www.policelocale.be/5316) - #142
+- [Police Hermeton-et-Heure](http://www.policelocale.be/5315) - #156
+- [Police Meuse-Hesbaye](http://www.policelocale.be/5294) - #217
+- [Police Namur](http://www.policelocale.be/5303) - #169
+- [Police La Louvière](http://www.policelocale.be/5325) - #197
+- [Police Lesse et Lhomme](http://www.policelocale.be/5313) - #228
+- [Politie BRT](http://www.lokalepolitie.be/5399) - #174
+- [Politie Denderleeuw/Haaltert](http://www.lokalepolitie.be/5439) - #185
+- [Politie Dijleland](http://www.lokalepolitie.be/5398) - #195
+- [Politie Grensleie](http://www.lokalepolitie.be/5455) - #222
+- [Politie Limburg Regio Hoofdstad](http://www.lokalepolitie.be/5907) - #225 & #193
+- [Politie Maldegem](http://www.lokalepolitie.be/5424) - #210
+- [Politie Pajottenland](http://www.lokalepolitie.be/5405) - #168
+- [Politie Spoorkin](http://www.lokalepolitie.be/5459) - #155  
+- [Politie TARL](http://www.lokalepolitie.be/5407) - #159
+- [Politie Zennevallei](http://www.lokalepolitie.be/5905) - #226 & #196
+
 ## v2.9
 
 ### Site Enhancements
