@@ -19,7 +19,7 @@ require_once dirname(__FILE__).'/registry/registry.php';
 /**
  * Class Loader
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Class
  */
 class ClassLoader implements ClassLoaderInterface

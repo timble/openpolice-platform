@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Items Html View
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Cache
  */
 class CacheViewItemsHtml extends Library\ViewHtml

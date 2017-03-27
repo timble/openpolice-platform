@@ -12,7 +12,7 @@ use Nooku\Library, Nooku\Component\Users;
 /**
  * Resettable Controller Behavior
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Users
  */
 class UsersControllerBehaviorResettable extends Users\ControllerBehaviorResettable

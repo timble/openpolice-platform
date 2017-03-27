@@ -17,7 +17,7 @@ namespace Nooku\Library;
  *
  * @link http://www.php.net/manual/en/ref.filesystem.php
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\FileSystem
  */
 interface FilesystemStreamInterface

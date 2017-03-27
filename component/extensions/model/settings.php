@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Settings Model
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Extensions
  */
 class ModelSettings extends Library\ModelAbstract

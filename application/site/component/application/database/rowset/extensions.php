@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Components Database Rowset
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Application
  */
 class ApplicationDatabaseRowsetExtensions extends Library\DatabaseRowsetAbstract implements Library\ObjectMultiton

@@ -15,7 +15,7 @@ namespace Nooku\Library;
  * Class can be used as a mixin in classes that want to implement a an event dispatcher and allow adding and removing
  * listeners.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Event
  */
 class EventMixin extends ObjectMixinAbstract

@@ -16,7 +16,7 @@ namespace Nooku\Library;
  * the POST again, breaking the back button, causing browser warnings and pop-ups, and sometimes reposting the form.
  * Instead, when receiving a POST we should redirect the user to a GET request.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Dispatcher
  */
 class DispatcherBehaviorResettable extends ControllerBehaviorAbstract

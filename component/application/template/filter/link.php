@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Link Template Filter
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Application
  */
 class TemplateFilterLink extends Library\TemplateFilterLink

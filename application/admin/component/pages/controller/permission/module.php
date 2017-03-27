@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Module Controller Permission
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Pages
  */
 class PagesControllerPermissionModule extends ApplicationControllerPermissionAbstract

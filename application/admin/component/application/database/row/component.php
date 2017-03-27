@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Component Database Row
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Application
  */
 class ApplicationDatabaseRowComponent extends Library\DatabaseRowAbstract

@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Dispatcher Interface
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Dispatcher
  */
 interface DispatcherInterface extends ControllerInterface

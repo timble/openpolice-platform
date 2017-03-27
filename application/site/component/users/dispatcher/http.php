@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Http Dispatcher
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Users
  */
 class UsersDispatcherHttp extends Library\DispatcherHttp

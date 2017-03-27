@@ -15,7 +15,7 @@ namespace Nooku\Library;
  * API interface inspired upon the DOM Level 2 Event spec. Implementation provides a priority based event capturing
  * approach. Higher priority event listeners are called first.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Event
  * @see http://www.w3.org/TR/DOM-Level-2-Events/events.html
  */

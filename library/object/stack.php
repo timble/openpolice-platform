@@ -14,7 +14,7 @@ namespace Nooku\Library;
   * 
   * Implements a simple stack collection (LIFO) 
   *
-  * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+  * @author  Johan Janssens <https://github.com/johanjanssens>
   * @package Nooku\Library\Object
   */
 class ObjectStack extends Object implements \Countable

@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * MySQL Database Adapter
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @author  Gergo Erdosi <http://nooku.assembla.com/profile/gergoerdosi>
  * @package Nooku\Library\Database
  */

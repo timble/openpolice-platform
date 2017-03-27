@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Default Bootstrapper
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Bootstrapper
  */
 final class BootstrapperDefault extends BootstrapperAbstract

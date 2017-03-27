@@ -15,7 +15,7 @@ namespace Nooku\Library;
  * Filter that enables full HTTP cache support by rewriting asset urls so they're unique, and update them when
  * the file is modified.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Template
  */
 class TemplateFilterExpire extends TemplateFilterAbstract implements TemplateFilterRenderer

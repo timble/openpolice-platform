@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Extension Controller
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Extensions
  */
 class ExtensionsControllerExtension extends Library\ControllerModel

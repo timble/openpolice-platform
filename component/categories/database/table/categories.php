@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Categories Database Table
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Categories
  */
 class DatabaseTableCategories extends Library\DatabaseTableAbstract

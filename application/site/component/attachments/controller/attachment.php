@@ -13,7 +13,7 @@ use Nooku\Component\Attachments;
 /**
  * Attachment Controller
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Attachments
  */
 class AttachmentsControllerAttachment extends Attachments\ControllerAttachment

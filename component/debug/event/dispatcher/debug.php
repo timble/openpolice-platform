@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Debug Event Dispatcher
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Debug
  */
 class EventDispatcherDebug extends Library\EventDispatcher

@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Item Database Row
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Cache
  */
 class CacheDatabaseRowItem extends Library\DatabaseRowAbstract

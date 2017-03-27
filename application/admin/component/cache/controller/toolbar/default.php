@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Default Controller Toolbar
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Cache
  */
 class CacheControllerToolbarDefault extends Library\ControllerToolbarActionbar

@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Buffer FileSystem Stream Wrapper
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\FileSystem
  */
 class FilesystemStreamWrapperBuffer extends FilesystemStreamWrapperAbstract

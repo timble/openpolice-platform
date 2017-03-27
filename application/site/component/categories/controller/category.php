@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Category Controller
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Categories
  */
 abstract class CategoriesControllerCategory extends Library\ControllerModel

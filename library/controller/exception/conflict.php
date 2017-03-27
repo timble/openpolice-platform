@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Conflict Controller Exception
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Controller
  */
 class ControllerExceptionConflict extends HttpExceptionConflict implements ControllerException {}

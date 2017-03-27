@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Groups Model
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Cache
  */
 class CacheModelGroups extends Library\ModelAbstract

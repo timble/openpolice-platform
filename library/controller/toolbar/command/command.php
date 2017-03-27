@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Controller Toolbar Command
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Controller
  */
 class ControllerToolbarCommand extends ObjectConfig implements ControllerToolbarCommandInterface

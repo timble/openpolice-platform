@@ -13,7 +13,7 @@ use Nooku\Component\Pages;
 /**
  * Module Template Helper
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Application
  */
 class ApplicationTemplateHelperModule extends Pages\TemplateHelperModule

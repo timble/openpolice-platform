@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Menubar Controller Toolbar
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Cache
  */
 class CacheControllerToolbarMenubar extends BaseControllerToolbarMenubar

@@ -15,7 +15,7 @@ namespace Nooku\Library;
  * ObjectQueue is a type of container adaptor implemented as a double linked list and specifically designed such that
  * its first element is always the greatest of the elements it contains based on the priority of the element.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Object
  * @see     http://www.php.net/manual/en/class.splpriorityqueue.php
  */

@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Setting Database Row
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Extensions
  */
 abstract class DatabaseRowSetting extends Library\DatabaseRowAbstract

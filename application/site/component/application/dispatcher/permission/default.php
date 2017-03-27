@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Default Dispatcher Permission
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Application
  */
 class ApplicationDispatcherPermissionDefault extends Library\DispatcherPermissionAbstract

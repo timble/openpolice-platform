@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * String Filter
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Filter
  */
 class FilterString extends FilterAbstract implements FilterTraversable

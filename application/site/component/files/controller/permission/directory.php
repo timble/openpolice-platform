@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Directory Controller Permission
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Files
  */
 class FilesControllerPermissionDirectory extends ApplicationControllerPermissionAbstract

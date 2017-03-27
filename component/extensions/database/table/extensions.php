@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Extensions Database Table
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Extensions
  */
 class DatabaseTableExtensions extends Library\DatabaseTableAbstract

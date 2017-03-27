@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Contacts Html View
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Contacts
  */
 class ContactsViewContactsHtml extends Library\ViewHtml

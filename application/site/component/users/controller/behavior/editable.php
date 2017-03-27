@@ -13,7 +13,7 @@ use Nooku\Component\Extensions;
 /**
  * Editable Controller Behavior
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Users
  */
 class UsersControllerBehaviorEditable extends Extensions\ControllerBehaviorEditable

@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Editable Controller Behavior
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Extensions
  */
 class ControllerBehaviorEditable extends Library\ControllerBehaviorEditable

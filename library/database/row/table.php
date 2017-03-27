@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Table Database Row
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Database
  */
 class DatabaseRowTable extends DatabaseRowAbstract

@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Abstract Template View
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\View
  */
 abstract class ViewTemplate extends ViewAbstract

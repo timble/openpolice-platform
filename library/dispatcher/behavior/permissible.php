@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Dispatcher Permissible Behavior
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Dispatcher
  */
 class DispatcherBehaviorPermissible extends ControllerBehaviorAbstract

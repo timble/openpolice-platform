@@ -15,7 +15,7 @@ namespace Nooku\Library;
  * Generates a slug, a short label for the row, containing only letters, numbers, underscores or hyphens. A slug is
  * generaly using a URL.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Database
  * @see     http://en.wikipedia.org/wiki/Slug_(web_publishing)
  */

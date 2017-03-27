@@ -36,7 +36,7 @@ namespace Nooku\Library;
  *
  * Helper class for utf-8 data. All functions assume the validity of utf-8 strings.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\String
  * @static
  */

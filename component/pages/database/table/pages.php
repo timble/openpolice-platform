@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Pages Database Table
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Pages
  */
 class DatabaseTablePages extends Library\DatabaseTableAbstract

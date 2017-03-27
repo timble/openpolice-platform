@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Forbidden Controller Exception
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Controller
  */
 class ControllerExceptionForbidden extends HttpExceptionForbidden implements ControllerException {}

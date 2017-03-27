@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Controller User
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Controller
  */
 class ControllerUser extends User implements ControllerUserInterface

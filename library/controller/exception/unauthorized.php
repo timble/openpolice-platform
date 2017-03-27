@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Unauthorized Controller Exception
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Controller
  */
 class ControllerExceptionUnauthorized extends HttpExceptionUnauthorized implements ControllerException {}

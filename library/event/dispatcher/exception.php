@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Error Event Dispatcher
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Event
  */
 class EventDispatcherException extends EventDispatcherAbstract

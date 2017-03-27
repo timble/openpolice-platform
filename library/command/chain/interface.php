@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Command Chain Interface
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Command
  */
 interface CommandChainInterface

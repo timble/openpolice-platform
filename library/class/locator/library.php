@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Library Class Locator
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Class
  */
 class ClassLocatorLibrary extends ClassLocatorAbstract

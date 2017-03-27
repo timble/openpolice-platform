@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Session Controller
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Users
  */
 class UsersControllerSession extends Library\ControllerModel

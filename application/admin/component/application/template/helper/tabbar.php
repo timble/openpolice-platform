@@ -11,7 +11,7 @@ use Nooku\Library;
 /**
  * Tabbar Template Helper
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Application
  */
 class ApplicationTemplateHelperTabbar extends Library\TemplateHelperAbstract

@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Abstract Http Exception
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Http
  */
 abstract class HttpExceptionAbstract extends \RuntimeException implements HttpException

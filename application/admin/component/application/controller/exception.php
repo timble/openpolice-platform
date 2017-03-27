@@ -13,7 +13,7 @@ use Nooku\Component\Application;
 /**
  * Exception Controller
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Application
  */
 class ApplicationControllerException extends Application\ControllerException

@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Items Model
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Cache
  */
 class CacheModelItems extends Library\ModelAbstract

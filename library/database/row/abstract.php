@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Abstract Database Row
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Database
  */
 abstract class DatabaseRowAbstract extends ObjectArray implements DatabaseRowInterface

@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Database Query Parameters
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Database
  */
 class DatabaseQueryParameters extends ObjectArray

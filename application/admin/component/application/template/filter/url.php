@@ -15,7 +15,7 @@ use Nooku\Library;
  * Filter allows to create url aliases that are replaced on compile and render. A default assets:// alias is
  * added that is rewritten to '<baseurl>/assets/'.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Template
  */
 class ApplicationTemplateFilterUrl extends Library\TemplateFilterUrl

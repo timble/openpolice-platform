@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Http Cookie
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Http
  */
 class HttpCookie extends Object implements HttpCookieInterface

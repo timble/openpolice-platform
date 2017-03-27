@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Controller Exception Interface
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Controller
  */
 interface ControllerException extends Exception {}

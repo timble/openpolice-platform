@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Comment Controller Permission
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Comments
  */
 class CommentsControllerPermissionComment extends ApplicationControllerPermissionAbstract

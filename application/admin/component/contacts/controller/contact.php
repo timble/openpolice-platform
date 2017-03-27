@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Contact Controller
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Contacts
  */
 class ContactsControllerContact extends Library\ControllerModel

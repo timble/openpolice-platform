@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Recursive Node Iterator
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Files
  */
 class DatabaseIteratorNode extends \RecursiveIteratorIterator

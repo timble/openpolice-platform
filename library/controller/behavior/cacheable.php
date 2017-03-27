@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Cacheable Controller Behavior
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Controller
  */
 class ControllerBehaviorCacheable extends ControllerBehaviorAbstract

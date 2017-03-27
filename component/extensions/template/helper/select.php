@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Select Template Helper
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Extensions
  */
 class TemplateHelperSelect extends Library\TemplateHelperSelect

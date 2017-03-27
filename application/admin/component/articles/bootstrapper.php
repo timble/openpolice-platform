@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Bootstrapper
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Articles
  */
  class ArticlesBootstrapper extends Library\BootstrapperAbstract

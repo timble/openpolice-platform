@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * MySql Database Adapter
  *
- * @author   Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author   Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Application
  */
 class ApplicationDatabaseAdapterMysql extends Library\DatabaseAdapterMysql implements Library\ObjectMultiton

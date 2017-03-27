@@ -14,7 +14,7 @@ namespace Nooku\Library;
  *
  * PSR-0 compliant autoloader. Allows autoloading of namespaced classes.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Class
  */
 class ClassLocatorStandard extends ClassLocatorAbstract

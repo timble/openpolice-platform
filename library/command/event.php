@@ -18,7 +18,7 @@ namespace Nooku\Library;
  * The 'clone_context' config option defines if the context is clone before being passed to the event dispatcher or
  * it passed by reference instead. By default the context is cloned.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Command
  */
 class CommandEvent extends EventMixin implements CommandInterface

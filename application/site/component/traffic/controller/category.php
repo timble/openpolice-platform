@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Category Controller Class
  *
- * @author      Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author      Johan Janssens <https://github.com/johanjanssens>
  * @package     Nooku_Server
  * @subpackage  Contacts
  */

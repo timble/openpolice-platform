@@ -14,7 +14,7 @@ namespace Nooku\Library;
  *
  * ObjectConfig provides a property based interface to an array
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Object
  */
 interface ObjectConfigInterface extends \IteratorAggregate, \ArrayAccess, \Countable

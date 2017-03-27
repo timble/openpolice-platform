@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * User Interface
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\User
  */
 interface UserInterface

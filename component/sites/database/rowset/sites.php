@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Site Database Rowset
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Sites
  */
 class DatabaseRowsetSites extends Library\DatabaseRowsetAbstract

@@ -16,7 +16,7 @@ namespace Nooku\Library;
  * all data is stored and retrieved from the session attribute container, using a special 'user' namespace to avoid
  * conflicts.
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\User
  */
 class User extends UserAbstract implements ObjectInstantiable, ObjectSingleton

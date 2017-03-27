@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Default Database Row
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Database
  */
 final class DatabaseRowDefault extends DatabaseRowTable { }

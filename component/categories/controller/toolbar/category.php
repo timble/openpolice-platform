@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Category Controller Toolbar
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Categories
  */
 class ControllerToolbarCategory extends Library\ControllerToolbarActionbar

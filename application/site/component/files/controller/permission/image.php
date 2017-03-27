@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Image Controller Permission
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Files
  */
 class FilesControllerPermissionImage extends ApplicationControllerPermissionAbstract

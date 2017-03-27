@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Session Database Row
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Users
  */
 class DatabaseRowSession extends Library\DatabaseRowTable

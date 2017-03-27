@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * FileSystem Stream Wrapper Interface
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\FileSystem
  */
 interface FilesystemStreamWrapperInterface extends ObjectInterface, ObjectMultiton

@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Exception Controller
  *   
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Application
  */
 class ControllerException extends Library\ControllerView

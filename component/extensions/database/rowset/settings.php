@@ -14,7 +14,7 @@ use Nooku\Library;
 /**
  * Settings Database Rowset
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Component\Extensions
  */
 class DatabaseRowsetSettings extends Library\DatabaseRowsetAbstract

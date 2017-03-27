@@ -12,7 +12,7 @@ use Nooku\Library;
 /**
  * Tag Controller Permission
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Component\Tags
  */
 class TagsControllerPermissionTag extends ApplicationControllerPermissionAbstract

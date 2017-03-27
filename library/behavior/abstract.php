@@ -12,7 +12,7 @@ namespace Nooku\Library;
 /**
  * Abstract Behavior
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\Behavior
  */
 abstract class BehaviorAbstract extends ObjectMixinAbstract implements BehaviorInterface

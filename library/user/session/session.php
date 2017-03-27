@@ -14,7 +14,7 @@ namespace Nooku\Library;
  *
  * Force the user object to a singleton
  *
- * @author  Johan Janssens <http://nooku.assembla.com/profile/johanjanssens>
+ * @author  Johan Janssens <https://github.com/johanjanssens>
  * @package Nooku\Library\User
  */
 class UserSession extends UserSessionAbstract implements ObjectInstantiable, ObjectSingleton
