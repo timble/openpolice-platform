@@ -3,7 +3,7 @@
  * @package     Nooku_Media
  * @subpackage  Javascript
  * @copyright   Copyright (C) 2007 - 2012 Johan Janssens. All rights reserved.
- * @license     GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @license     GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
  * @link        http://www.nooku.org
  */
 

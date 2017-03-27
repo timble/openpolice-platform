@@ -4,7 +4,7 @@
  * @package        Nooku_Server
  * @subpackage     Articles
  * @copyright      Copyright (C) 2011 - 2017 Johan Janssens and Timble CVBA. (http://www.timble.net)
- * @license        GNU GPLv3 <http://www.gnu.org/licenses/gpl.html>
+ * @license        GNU AGPLv3 <https://www.gnu.org/licenses/agpl.html>
  * @link           http://www.nooku.org
  */
 
