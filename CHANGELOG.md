@@ -4,7 +4,15 @@
 
 ### Site Enhancements
 
-- Complete redesign that significantly improves usability
+- Complete redesign that significantly improves usability - #23
+- Avoid redirect in link to twitter.com - #223
+
+### Development
+
+- Relicensed to AGPLv3 - #235
+- Update installation SQL - #233
+- Removed old themes - #236
+- Removed site-specific overrides - #237
 
 ## v2.10
 
